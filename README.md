@@ -43,7 +43,7 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Added the ability to set the resolution alongside the ratio. All ratios except for 4:3, 16:10, 16:9, 3:2 and 5:4 are removed.\
 -Moved the Clean Screen options to Arcade Option.\
 -Changed the values of the Lifebar Adjustment option, so you don't need to go to metrics.ini to change the lifebars for widescreen anymore. Lifebar Adjustment is now set to 0 by default.\
--Changed the help text in Edit Mode to reflect NotITG edit mode functions.
+-Changed the help text in Edit Mode to reflect NotITG edit mode functions.\
 -Removed Reset Menu button in Options as it screws up the game real badly. (not so surprising isn't it)
 
 # DANCE WITH INTENSITY
