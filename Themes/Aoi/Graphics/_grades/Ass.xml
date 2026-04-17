@@ -1,0 +1,25 @@
+<!-- My own shitty recreation of SpinGrades, since SpinGrades is hardcoded to only work with 7 Tiers -->
+<ActorFrame>
+	<children>
+		<Actor
+			File="Ass roulette"
+			OnCommand="glowshift;effectperiod,2;  zoom,4;xywh,-20,262,300,600;customtexturerect,0,0,1,1;cropbottom,0.875;texcoordvelocity,0,-1;sleep,3;diffusealpha,0;"
+            OffCommand="accelerate,0.2;diffusealpha,0"
+        />
+        <Actor
+			File="Ass roulette"
+			OnCommand="glowshift;effectperiod,2;  zoom,4;xywh,-20,262,300,600;customtexturerect,0,0,1,1;cropbottom,0.875;diffusealpha,0;sleep,3;diffusealpha,1;sleep,1;diffusealpha,0;"
+            OffCommand="accelerate,0.2;diffusealpha,0"
+        />
+        <Actor
+			File="Ass roulette"
+			OnCommand="glowshift;effectperiod,2;  zoom,4;xywh,-20,262,300,600;customtexturerect,0,0,1,1;cropbottom,0.875;texcoordvelocity,0,1;diffusealpha,0;sleep,4;diffusealpha,1;sleep,0.75;diffusealpha,0;"
+            OffCommand="accelerate,0.2;diffusealpha,0"
+        />
+        <Actor
+			File="final grades"
+			OnCommand="glowshift;effectperiod,2;  x,-85;diffusealpha,0;sleep,4.75;diffusealpha,1;setstate,3;animate,0;"
+            OffCommand="accelerate,0.2;diffusealpha,0"
+        />
+	</children>
+</ActorFrame>

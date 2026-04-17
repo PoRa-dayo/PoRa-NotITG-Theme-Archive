@@ -1,0 +1,9 @@
+<ActorFrame><children>
+	<!-- no animation, needs to be empty so OpenITG doesn't do anything with the default -->
+	<Layer Font="Common Normal"
+		Text=""
+		OnCommand="%function(self)
+		end"
+	/>
+    <ActorFrame Command="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
+</children></ActorFrame>

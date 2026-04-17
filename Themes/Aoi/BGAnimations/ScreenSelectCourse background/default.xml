@@ -1,0 +1,14 @@
+<ActorFrame><children>
+	<!-- This will act as the BGAnimation LengthSeconds command. -->
+	<Layer Type="Quad" OnCommand="%function(self) self:zoom(0) self:sleep(.3) end" />
+	
+	<Layer File="../_shared background" />
+    <Layer File="back.png" OnCommand="x,SCREEN_CENTER_X-160;y,SCREEN_CENTER_Y+75;zoom,0.5;zoomy,0;decelerate,0.25;zoomy,0.5" OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"/>
+    <Layer File="scoreCourse.png" OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X+(254-320))
+        self:y(SCREEN_CENTER_Y+(394-240))
+        self:diffusealpha(0)
+        self:decelerate(0.25)
+        self:diffusealpha(1)
+    end" OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"/>
+</children></ActorFrame>

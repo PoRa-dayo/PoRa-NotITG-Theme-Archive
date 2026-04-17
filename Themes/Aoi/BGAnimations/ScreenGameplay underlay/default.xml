@@ -1,0 +1,41 @@
+<ActorFrame> <children>
+	<Layer
+		File="ScreenGameplay life frame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(24-240);addy,-100;sleep,0.5;linear,1;addy,100"
+        OffCommand="linear,1;addy,-100"
+	/>
+	<Layer
+		File="ScreenGameplay score frame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(464-240);addy,100;sleep,0.5;linear,1;addy,-100"
+        OffCommand="linear,1;addy,100"
+	/>
+    <Layer
+		File="ScreenGameplay difficulty icons"
+		OnCommand="%function(self)
+            self:x(SCREEN_CENTER_X-210)
+            self:y(SCREEN_CENTER_Y+(464-253))
+            self:addy(100)
+            self:sleep(0.5)
+            self:linear(1)
+            self:addy(-100)
+            self:animate(0)
+            GameplayDiffIcon(self,1)
+        end"
+        OffCommand="linear,1;addy,100"
+	/>
+    <Layer
+		File="ScreenGameplay difficulty icons"
+		OnCommand="%function(self)
+            self:x(SCREEN_CENTER_X+210)
+            self:y(SCREEN_CENTER_Y+(464-253))
+            self:addy(100)
+            self:sleep(0.5)
+            self:linear(1)
+            self:addy(-100)
+            self:animate(0)
+            GameplayDiffIcon(self,2)
+        end"
+        OffCommand="linear,1;addy,100"
+	/>
+</children> </ActorFrame>
+

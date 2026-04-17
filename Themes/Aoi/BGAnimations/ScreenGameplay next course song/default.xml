@@ -1,0 +1,8 @@
+<ActorFrame> <children>
+    <Layer File="songbackground"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+		StartCommand="hibernate,1.5;zoomtowidth,700;zoomtoheight,0;diffusealpha,0;accelerate,0.25;diffusealpha,1;zoomtoheight,480;zoomtowidth,640"
+        FinishCommand="sleep,0.3;linear,0.3;diffusealpha,0"
+    />
+
+</children> </ActorFrame>

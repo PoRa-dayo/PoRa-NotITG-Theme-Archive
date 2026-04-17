@@ -1,0 +1,58 @@
+<ActorFrame><children>
+
+	<Layer
+		Font="ScreenManager credits"
+		Text=" "
+		OnCommand="%function(self)
+		self:x( SCREEN_LEFT+10 );
+		self:y( SCREEN_CENTER_Y+(477-240) );
+		self:horizalign('left');
+		self:queuecommand('ProfileCheck');
+		end"
+		ProfileCheckCommand="%function(self)
+
+		if not GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:PlayersCanJoin() then
+			self:settext('PRESS START')
+		elseif GAMESTATE:IsPlayerEnabled(PLAYER_1) and not PREFSMAN:GetPreference('MemoryCardProfiles') then
+			if GAMESTATE:GetPlayerDisplayName(PLAYER_1) == 'Player 1' then
+				self:settext( 'Loading...' )
+			else
+				self:settext( GAMESTATE:GetPlayerDisplayName(PLAYER_1) )
+			end
+		else
+			self:settext(' ')
+		end
+
+		self:sleep(1/60)
+		self:queuecommand('ProfileCheck')
+
+		end" />
+
+	<Layer
+		Font="ScreenManager credits"
+		Text="PRESS START"
+		OnCommand="%function(self)
+		self:x( SCREEN_RIGHT-10 );
+		self:y( SCREEN_CENTER_Y+(477-240) );
+		self:horizalign('right');
+		self:queuecommand('ProfileCheck');
+		end"
+		ProfileCheckCommand="%function(self)
+
+		if not GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:PlayersCanJoin() then
+			self:settext('PRESS START')
+		elseif GAMESTATE:IsPlayerEnabled(PLAYER_2) and not PREFSMAN:GetPreference('MemoryCardProfiles') then
+			if GAMESTATE:GetPlayerDisplayName(PLAYER_2) == 'Player 2' then
+				self:settext( 'Loading...' )
+			else
+				self:settext( GAMESTATE:GetPlayerDisplayName(PLAYER_2) )
+			end
+		else
+			self:settext('NOT PRESENT')
+		end
+
+		self:sleep(1/60)
+		self:queuecommand('ProfileCheck')
+
+		end" />
+</children></ActorFrame>
