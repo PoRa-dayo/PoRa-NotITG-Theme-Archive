@@ -37,5 +37,13 @@
         end"
         OffCommand="linear,1;addy,100"
 	/>
+    <ActorFrame
+		OnCommand="%function(self)
+			self:stopeffect()
+			if FUCK_EXE then
+				stitch('lua.death').Start()
+			end
+		end" 
+	/>
 </children> </ActorFrame>
 

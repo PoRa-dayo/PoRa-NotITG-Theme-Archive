@@ -596,6 +596,7 @@ function SongSelectionScreen()
 	if GAMESTATE:IsCourseMode() then s = "ScreenSelectCourse" end
 	return s
 end
+function GetStartScreen() PREFSMAN:SetPreference("DelayedScreenLoad",false) if PREFSMAN:GetPreference('BreakComboToGetItem') and GetInputType and GetInputType() == "" then return "ScreenArcadeStart" end return THEME:GetMetric('Common','FirstAttractScreen') end
 
 function StarCheck()
     local title

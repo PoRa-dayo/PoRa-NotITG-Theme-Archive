@@ -8,8 +8,8 @@ end"><children>
 		<Layer File="abg.jpg"   Condition="STATSMAN:GetBestGrade() <= 10 and STATSMAN:GetBestGrade() > 8"   />
 		<Layer File="bbg.jpg"   Condition="STATSMAN:GetBestGrade() <= 12 and STATSMAN:GetBestGrade() > 10"   />
 		<Layer File="cbg.jpg"   Condition="STATSMAN:GetBestGrade() <= 14 and STATSMAN:GetBestGrade() > 12"   />
-		<Layer File="dbg.jpg"   Condition="STATSMAN:GetBestGrade() >= 15 and STATSMAN:GetBestGrade() < 21"   />
-        <Layer File="omesbg.jpg"   Condition="STATSMAN:GetBestGrade() == 21"   />
+		<Layer File="dbg.jpg"   Condition="STATSMAN:GetBestGrade() >= 15 and STATSMAN:GetBestGrade() < 20"   />
+        <Layer File="omesbg.jpg"   Condition="STATSMAN:GetBestGrade() >= 20"   />
 		<!-- Will think about the extras later
 			<Layer File="exbg.jpg"     Condition="IsFinalStage() and GetBestGrade() <= Grade('AA')"   />
 			<Layer File="omesbg.jpg"   Condition="IsExtraStage() and GetBestGrade() <= Grade('AA')"   />

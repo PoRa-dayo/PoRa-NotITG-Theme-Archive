@@ -141,7 +141,7 @@ The accelerated operational interface for Stepmania 3.95 ported to NotITG!
 -Default sort option is set to Group.\
 -Changed all the .gif files into .png files.\
 -Redirected more fonts into using the _shared1 font.\
--Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font (Judge Skin) customization option, added Music Rate customization option\
+-Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font customization option, added Music Rate customization option\
 -Replaced the "Loading..." sprite with an original one.\
 -Changed the layering of the timer bar and difficulty frame, as well as removing some duplicated elements in the song selection screen.\
 -Changed the layering of the life bar, score bar and difficulty bar so they don't show up in modfiles, and slightly change their animation so that it makes sense.\
