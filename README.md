@@ -1,10 +1,12 @@
 This archive only hosts NotITG-compatible themes that do not already have a NotITG fork maintained by anyone else, with the exception being Simply ITG because idk how to contact the creator.
 So here's a list of themes that do have NotITG forks and are still currently maintained by other people:
 
-Simply Love - Oat vs. Rya's Fork: https://github.com/oatmealine/simply-love-oat-fork \
-GrooveNights - Star's Fork: https://github.com/StarUndrscre/GrooveNights-StarFork
+[Simply Love - Oat vs. Rya's Fork](https://github.com/oatmealine/simply-love-oat-fork) \
+[GrooveNights - Star's Fork](https://github.com/StarUndrscre/GrooveNights-StarFork)
 
 # Welcome to my NotITG theme archive!
+
+Head on to the [releases](https://github.com/PoRa-dayo/PoRa-NotITG-Theme-Archive/releases/tag/v1.0.0) to download!
 
 **NOTE: The game might give errors if you try to play files immediately after switching themes. Restarting the game fixes the problem.**
 
