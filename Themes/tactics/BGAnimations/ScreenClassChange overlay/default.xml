@@ -1,0 +1,475 @@
+<ActorFrame><children>
+	<Layer Type="ActorFrame" Condition="GAMESTATE:GetEnv('class') == '000'" InitCommand="x,SCREEN_CENTER_X+3;y,SCREEN_CENTER_Y+11"><children>
+		<Layer
+			File="@GetClassShadow()"
+		/>
+		<Layer
+			File="@GetClass('000')"
+			InitCommand="@GetClassInit('000')"
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" Condition="GAMESTATE:GetEnv('class') ~= '000'" InitCommand="x,SCREEN_CENTER_X+3;y,SCREEN_CENTER_Y+11"><children>
+		<Layer
+			File="@GetClassShadow(1)"
+			OnCommand="zoom,0;sleep,2;zoom,1"
+		/>
+		<Layer Type="ActorFrame" Condition="not GAMESTATE:GetEnv('chocobo')"><children>
+			<Layer
+				File="@GetClass('000')"
+				InitCommand="@GetClassInit('000')"
+				OnCommand="@GetClassOut('000')"
+			/>
+			<Layer
+				File="@GetClass()"
+				InitCommand="@GetClassInit()"
+				OnCommand="@GetClassIn()"
+			/>
+		</children></Layer>
+		<Layer Type="ActorFrame" Condition="GAMESTATE:GetEnv('chocobo') and not IsRidingChocobo()"><children>
+			<Layer
+				File="@GetChocobo()"
+				InitCommand="@GetChocoboInit()"
+				OnCommand="@GetClassOut('076')"
+			/>
+			<Layer Type="ActorFrame" InitCommand="x,5;y,-19"><children>
+				<Layer
+					File="@GetClassPath('000')"
+					InitCommand="@GetClassRiding1('000')"
+					OnCommand="linear,1;fadebottom,.1;fadetop,.1;linear,1;croptop,.19;cropbottom,.81"
+				/>
+				<Layer
+					File="@GetClassPath('000')"
+					InitCommand="@GetClassRiding2('000')"
+					OnCommand="linear,1;fadebottom,.1;fadetop,.1;linear,1;croptop,.31;cropbottom,.69"
+				/>
+			</children></Layer>
+			<Layer
+				File="@GetChocoboOverlay()"
+				InitCommand="@GetChocoboInit()"
+				OnCommand="@GetClassOut('076')"
+			/>		
+			<Layer
+				File="@GetClass()"
+				InitCommand="@GetClassInit()"
+				OnCommand="@GetClassIn()"
+			/>
+		</children></Layer>
+		<Layer Type="ActorFrame" Condition="GAMESTATE:GetEnv('chocobo') and IsRidingChocobo()"><children>
+			<Layer
+				File="@GetChocobo()"
+				InitCommand="@GetChocoboInit()"
+			/>
+			<Layer Type="ActorFrame" InitCommand="x,5;y,-19"><children>
+				<Layer
+					File="@GetClassPath('000')"
+					InitCommand="@GetClassRiding1('000')"
+					OnCommand="linear,1;fadebottom,.1;fadetop,.1;linear,1;croptop,.19;cropbottom,.81"
+				/>
+				<Layer
+					File="@GetClassPath('000')"
+					InitCommand="@GetClassRiding2('000')"
+					OnCommand="linear,1;fadebottom,.1;fadetop,.1;linear,1;croptop,.31;cropbottom,.69"
+				/>
+				<Layer
+					File="@GetClassPath()"
+					InitCommand="@GetClassRiding1()"
+					OnCommand="fadeleft,.1;faderight,.1;cropleft,.07;cropright,.93;linear,1.8;fadeleft,.03;faderight,.03;cropleft,0;cropright,.875;linear,.2;fadeleft,0;faderight,0"
+				/>
+				<Layer
+					File="@GetClassPath()"
+					InitCommand="@GetClassRiding2()"
+					OnCommand="fadeleft,.1;faderight,.1;cropleft,.20;cropright,.8;linear,1.8;fadeleft,.03;faderight,.03;cropleft,.20;cropright,.71;linear,.2;fadeleft,0;faderight,0"
+				/>
+			</children></Layer>
+			<Layer
+				File="@GetChocoboOverlay()"
+				InitCommand="@GetChocoboInit()"
+			/>		
+		</children></Layer>
+	</children></Layer>
+	<Layer Type="ActorFrame" Condition="GAMESTATE:GetEnv('class') ~= '000'" OnCommand="x,SCREEN_CENTER_X;zoom,0;linear,.3;zoom,1;sleep,1.4;linear,.3;zoom,0"><children>
+		<Layer
+			File="1.png"
+			InitCommand="y,SCREEN_CENTER_Y+60;vertalign,bottom;zoom,1"
+			OnCommand="zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0"
+			OffCommand="hidden,1"
+		/>
+		<Layer
+			File="2.png"
+			InitCommand="y,SCREEN_CENTER_Y+60;vertalign,bottom;zoom,0"
+			OnCommand="zoom,0;sleep,.1;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0"
+			OffCommand="hidden,1"
+		/>
+		<Layer
+			File="3.png"
+			InitCommand="y,SCREEN_CENTER_Y+60;vertalign,bottom;zoom,0"
+			OnCommand="zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0;sleep,.2;zoom,1;sleep,.1;zoom,0"
+			OffCommand="hidden,1"
+		/>
+	</children></Layer>
+	<ActorFrame 
+		InitCommand="x,SCREEN_CENTER_X+2;y,SCREEN_CENTER_Y+15;zoomx,2.3;zoomy,1.15"
+		OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.6); self:rotationz(150); self:zoomx(6.9); self:zoomy(3.45); end"
+		><children>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+00)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('000')"
+					InitCommand="@GetClassInit('000')"
+					OnCommand="@GetClassScroller('000')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+01)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('001')"
+					InitCommand="@GetClassInit('001')"
+					OnCommand="@GetClassScroller('001')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+02)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('002')"
+					InitCommand="@GetClassInit('002')"
+					OnCommand="@GetClassScroller('002')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+03)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('003')"
+					InitCommand="@GetClassInit('003')"
+					OnCommand="@GetClassScroller('003')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+04)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('004')"
+					InitCommand="@GetClassInit('004')"
+					OnCommand="@GetClassScroller('004')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+05)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('005')"
+					InitCommand="@GetClassInit('005')"
+					OnCommand="@GetClassScroller('005')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+06)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('006')"
+					InitCommand="@GetClassInit('006')"
+					OnCommand="@GetClassScroller('006')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+07)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('007')"
+					InitCommand="@GetClassInit('007')"
+					OnCommand="@GetClassScroller('007')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+08)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('008')"
+					InitCommand="@GetClassInit('008')"
+					OnCommand="@GetClassScroller('008')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+09)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('009')"
+					InitCommand="@GetClassInit('009')"
+					OnCommand="@GetClassScroller('009')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+10)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('010')"
+					InitCommand="@GetClassInit('010')"
+					OnCommand="@GetClassScroller('010')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+11)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('011')"
+					InitCommand="@GetClassInit('011')"
+					OnCommand="@GetClassScroller('011')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+12)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('012')"
+					InitCommand="@GetClassInit('012')"
+					OnCommand="@GetClassScroller('012')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+13)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('013')"
+					InitCommand="@GetClassInit('013')"
+					OnCommand="@GetClassScroller('013')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+14)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('014')"
+					InitCommand="@GetClassInit('014')"
+					OnCommand="@GetClassScroller('014')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+15)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('015')"
+					InitCommand="@GetClassInit('015')"
+					OnCommand="@GetClassScroller('015')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+16)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('016')"
+					InitCommand="@GetClassInit('016')"
+					OnCommand="@GetClassScroller('016')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+17)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('017')"
+					InitCommand="@GetClassInit('017')"
+					OnCommand="@GetClassScroller('017')"
+				/>
+			</children></ActorFrame>
+		</children></ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+18)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('018')"
+					InitCommand="@GetClassInit('018')"
+					OnCommand="@GetClassScroller('018')"
+				/>
+			</children></ActorFrame>
+		</children>	</ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+19)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('019')"
+					InitCommand="@GetClassInit('019')"
+					OnCommand="@GetClassScroller('019')"
+				/>
+			</children></ActorFrame>
+		</children>	</ActorFrame>
+		<ActorFrame 
+			InitCommand="%function(self) local theta=(-GAMESTATE:GetEnv('rot')+20)*math.pi*2/21; self:x(math.sin(theta)*105); self:y(math.cos(theta)*105); self:z(math.cos(theta)*.1); self:zoomx(.45); self:zoomy(.45); end"
+			><children>
+			<ActorFrame 
+				OnCommand="%function(self) if GAMESTATE:GetEnv('class') ~= '000' then self:sleep(2.6); end; self:linear(.3); self:rotationz(-75); self:zoom(.5); self:linear(.3); self:rotationz(-150); self:zoom(.3); end"
+				><children>
+				<Layer
+					File="@GetClassShadow(1)"
+					InitCommand="zoomy,2;zbuffer,1"
+				/>
+				<Layer
+					File="@GetClassPath('020')"
+					InitCommand="@GetClassInit('020')"
+					OnCommand="@GetClassScroller('020')"
+				/>
+			</children></ActorFrame>
+		</children>	</ActorFrame>
+	</children>	</ActorFrame>
+	<Layer
+		File="@THEME:GetPath( EC_BGANIMATIONS, '', '_boarder' )"
+	/>
+</children></ActorFrame>

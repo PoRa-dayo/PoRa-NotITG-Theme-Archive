@@ -1,0 +1,4 @@
+<ActorFrame><children>
+	<Layer File="Jump1" Command="x,-65*lvlSpd" />
+	<Layer File="Jump1" Command="x,80*lvlSpd" />
+</children></ActorFrame>

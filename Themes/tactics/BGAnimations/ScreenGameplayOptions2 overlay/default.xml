@@ -1,0 +1,20 @@
+<ActorFrame> <children>
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Text="You may adjust the volume and background::brightness on this screen."
+		InitCommand="x,SCREEN_CENTER_X-183;y,SCREEN_CENTER_Y-140;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+		OnCommand="cropright,1.2;sleep,.6;linear,1;cropright,-.2"
+		OffCommand="stoptweening;zoom,0"
+	/>
+	<Layer
+		File="background.png"
+		OnCommand="x,SCREEN_CENTER_X+160;y,SCREEN_CENTER_Y+132;zoom,0;sleep,.4;zoom,1" 
+		OffCommand="zoom,0"	
+	/>
+	<Layer
+		File="Options.png"
+		OnCommand="x,SCREEN_CENTER_X+205;y,SCREEN_CENTER_Y+24;zoom,0;sleep,.4;zoom,1" 
+		OffCommand="zoom,0"	
+	/>
+</children> </ActorFrame>

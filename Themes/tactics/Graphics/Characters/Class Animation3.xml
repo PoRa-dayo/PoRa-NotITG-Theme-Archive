@@ -1,0 +1,28 @@
+<ActorFrame><children>
+	<Layer
+		Type="Quad"
+		PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(1); self:queuecommand('Pulse') end"
+		InitCommand="hidden,1;playcommand,Pulse"
+	/>
+	<Layer
+		Type="Quad"
+		FloatCommand="%function(self) MESSAGEMAN:Broadcast('Float'); self:sleep(1.6); self:queuecommand('Float') end"
+		InitCommand="hidden,1;playcommand,Float"
+	/>
+	<ActorFrame 
+		FloatMessageCommand="%function(self) if GetClassType() == '3' then self:y(-15); self:sleep(.2); self:y(-17); self:sleep(.2); self:y(-19); self:sleep(.2); self:y(-21);self:sleep(.2); self:y(-23); self:sleep(.2); self:y(-21); self:sleep(.2); self:y(-19); self:sleep(.2); self:y(-17); end; end"><children>
+		<Layer 
+			File="@GetClass()"
+			InitCommand="zoomy,1.2;Playcommand,Frame1"
+			PulseMessageCommand="finishtweening;playcommand,Frame1"
+			Frame1Command="x,136;y,237;cropleft,.19;cropright,.625;croptop,0;cropbottom,.83;sleep,.125;Playcommand,Frame2"
+			Frame2Command="x,136;y,141;cropleft,.19;cropright,.625;croptop,.17;cropbottom,.666;sleep,.125;Playcommand,Frame3"
+			Frame3Command="x,16;y,237;cropleft,.375;cropright,.44;croptop,0;cropbottom,.83;sleep,.125;Playcommand,Frame4"
+			Frame4Command="x,136;y,141;cropleft,.19;cropright,.625;croptop,.17;cropbottom,.666;sleep,.125;Playcommand,Frame5"
+			Frame5Command="x,136;y,237;cropleft,.19;cropright,.625;croptop,0;cropbottom,.83;sleep,.125;Playcommand,Frame6"
+			Frame6Command="x,256;y,141;cropleft,0;cropright,.81;croptop,.17;cropbottom,.666;sleep,.125;Playcommand,Frame7"
+			Frame7Command="x,256;y,237;cropleft,0;cropright,.81;croptop,0;cropbottom,.83;sleep,.125;Playcommand,Frame8"
+			Frame8Command="x,256;y,141;cropleft,0;cropright,.81;croptop,.17;cropbottom,.666"
+		/>			
+	</children></ActorFrame>
+</children></ActorFrame>

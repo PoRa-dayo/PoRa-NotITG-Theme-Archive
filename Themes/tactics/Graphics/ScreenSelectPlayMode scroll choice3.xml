@@ -1,0 +1,16 @@
+<ActorFrame><children>
+	<Layer
+		File="ScreenSelect curspr.png"
+		InitCommand="y,-20;x,-5;horizalign,right;ShadowLength,3;"
+		GainFocusCommand="hidden,0;finishtweening"
+		LoseFocusCommand="hidden,1"
+	/>
+	<Layer
+		Text="Marathon"
+		Font="_FFT2 white"
+		InitCommand="horizalign,center;ShadowLength,0;Zoomx,1.25"
+		GainFocusCommand="hidden,0;finishtweening"
+		LoseFocusCommand="hidden,1"
+	/>
+</children></ActorFrame>
+

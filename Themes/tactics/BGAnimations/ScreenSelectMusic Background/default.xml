@@ -1,0 +1,30 @@
+<ActorFrame><children>
+	<Layer
+		Condition="not GAMESTATE:IsCourseMode()" 
+		File="BG1.png"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	/>
+	<Layer
+		Condition="GAMESTATE:IsCourseMode()" 
+		File="BG2.png"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	/>
+	<Layer Type="ActorFrame" Condition="not GAMESTATE:IsCourseMode()" OnCommand="x,SCREEN_CENTER_X+78;y,SCREEN_CENTER_Y+127" ><children>
+		<Layer
+			File="@GetClassShadow()"
+		/>
+		<Layer
+			File="@GetClass()"
+			InitCommand="@GetClassInit()"		
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" Condition="GAMESTATE:IsCourseMode()" OnCommand="x,SCREEN_CENTER_X+148;y,SCREEN_CENTER_Y+167" ><children>
+		<Layer
+			File="@GetClassShadow()"
+		/>
+		<Layer
+			File="@GetClass()"
+			InitCommand="@GetClassInit()"		
+		/>
+	</children></Layer>
+</children></ActorFrame>

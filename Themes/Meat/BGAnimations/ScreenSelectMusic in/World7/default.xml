@@ -1,0 +1,11 @@
+<ActorFrame
+    ><children>
+	<Layer
+		File="Title.png"
+		OnCommand="x,-10;y,-49;zoom,.34"
+	/>
+	<Layer
+		File="Bandage.png"
+		OnCommand="x,-7;y,48;zoom,.32"
+	/>
+	</children></ActorFrame>

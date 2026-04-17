@@ -1,0 +1,35 @@
+<ActorFrame> <children>
+	<Layer 
+		File="../Professor.png"
+		InitCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y-151"
+	 />
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Text="These code are for the generic classes and::can be entered on the World Maps screens."
+		InitCommand="x,SCREEN_CENTER_X-183;y,SCREEN_CENTER_Y-140;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+		OnCommand="cropright,1;sleep,.4;linear,1;cropright,-.2"
+		OffCommand="stoptweening;zoom,0"
+	/>
+	<ActorFrame OnCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y+68;zoom,0;sleep,.2;linear,.2;zoom,1"> <children>
+		<Layer
+			File="codes.png"
+		/>
+	</children></ActorFrame>
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Text=":: Gender: Male:: Gender: Female::(Default Gender: Male):: Colors: Party & Guests:: Colors: Hokuten Knights:: Colors: Nanten Knights:: Colors: Rogues & Neutral:: Colors: Glabados & Riovanes::(Default Colors: Party & Guests)"
+		InitCommand="x,SCREEN_CENTER_X-292;y,SCREEN_CENTER_Y-102;shadowlength,0;horizalign,left;vertalign,top;zoom,1.25;zoomy,1"
+		OnCommand="cropleft,1;sleep,.5;cropleft,0"
+		OffCommand="stoptweening;zoom,0"
+	/>
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Text="::L D U R::L U D R:: ::L R L R L R::L R L L L L::L R U U U U::L R D D D D::L R R R R R"
+		InitCommand="x,SCREEN_CENTER_X+120;y,SCREEN_CENTER_Y-102;shadowlength,0;horizalign,left;vertalign,top;zoom,1.25;zoomy,1"
+		OnCommand="cropleft,1;sleep,.5;cropleft,0"
+		OffCommand="stoptweening;zoom,0"
+	/>
+</children> </ActorFrame>

@@ -1,0 +1,6 @@
+<ActorFrame><children>
+	<Layer
+		File="blob.png"
+		Command="x,0;y,24;zoom,.3;diffuse,#000000;rotationz,-90"
+	/>
+</children></ActorFrame>	

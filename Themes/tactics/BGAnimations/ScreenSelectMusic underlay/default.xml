@@ -1,0 +1,62 @@
+<ActorFrame> <children>
+	<Layer Class="AutoActor" 
+		File="../Banner underlay" 
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-166;zoomy,.5;diffusealpha,0;linear,.2;zoomy,1;diffusealpha,1" 
+		OffCommand="zoomy,1;diffusealpha,1;linear,.2;zoomy,.5;diffusealpha,0"
+	/>
+	<Layer 
+		File="Artist"
+		OnCommand="x,SCREEN_CENTER_X+160;y,SCREEN_CENTER_Y-167"
+		OffCommand="hidden,1"
+	 />
+	<Layer Class="BitmapText" 
+		Font="_FFT2"
+		Text="BPM"
+		InitCommand="x,SCREEN_CENTER_X+50;y,SCREEN_CENTER_Y-132;shadowlength,0;zoomx,1.25"
+		OffCommand="hidden,1"
+	/>
+	<Layer Type="ActorFrame" Condition="not GAMESTATE:IsCourseMode()" > <children>
+		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-148;y,SCREEN_CENTER_Y+118;zoom,0;linear,.2;zoom,1" OffCommand="zoom,0"> <children>
+			<Layer
+				File="SongWheel.png"
+			/>
+			<Layer Class="BitmapText" 
+				Font="_FFT2 white"
+				Text="Songs"
+				InitCommand="x,-117;y,-112;shadowlength,0;zoomx,1.25"
+			/>
+		</children></Layer>
+		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X+215;y,SCREEN_CENTER_Y+103;zoom,0;linear,.2;zoom,1" OffCommand="zoom,0"> <children>
+			<Layer
+				File="Difficulty.png"
+			/>
+			<Layer Class="BitmapText" 
+				Font="_FFT2 white"
+				Text="Difficulty"
+				InitCommand="x,-22;y,-80;shadowlength,0;zoomx,1.25"
+			/>
+		</children></Layer>
+	</children></Layer>
+	<Layer Type="ActorFrame" Condition="GAMESTATE:IsCourseMode()" > <children>
+		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-148;y,SCREEN_CENTER_Y-12;zoom,0;linear,.2;zoom,1" OffCommand="zoom,0"> <children>
+			<Layer
+				File="CourseWheel.png"
+			/>
+			<Layer Class="BitmapText" 
+				Font="_FFT2 white"
+				Text="Courses"
+				InitCommand="x,-106;y,-88;shadowlength,0;zoomx,1.25"
+			/>
+		</children></Layer>
+		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-148;y,SCREEN_CENTER_Y+158;zoom,0;linear,.2;zoom,1" OffCommand="zoom,0"> <children>
+			<Layer
+				File="Contents.png"
+			/>
+			<Layer Class="BitmapText" 
+				Font="_FFT2 white"
+				Text="Contents"
+				InitCommand="x,-105;y,-65;shadowlength,0;zoomx,1.25"
+			/>
+		</children></Layer>
+	</children></Layer>
+</children> </ActorFrame>

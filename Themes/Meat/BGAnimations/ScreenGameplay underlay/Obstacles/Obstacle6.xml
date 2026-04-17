@@ -1,0 +1,28 @@
+<ActorFrame><children>
+<!-- Obstacle 6: Salt Pile -->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="addx,32"
+	><children>
+		<Layer Type="Quad" OnCommand="stretchto,-70,27,70,55;blend,noeffect;zwrite,1" />
+		<Layer
+			File="Salt2.png"
+			OnCommand="zoom,.3;x,-38;y,22;rotationz,10;ztest,1"
+		/>
+		<Layer
+			File="Salt2.png"
+			OnCommand="zoom,.3;x,36;y,20;rotationy,180;rotationz,10;ztest,1"
+		/>
+		<Layer
+			File="Salt1.png"
+			OnCommand="zoom,.3;x,-8;y,20;rotationz,-15;ztest,1"
+		/>
+		<Layer
+			File="Salt1.png"
+			OnCommand="zoom,.3;x,8;y,18;rotationz,15;ztest,1"
+		/>
+		<Layer File="ground mask.png" OnCommand="zoom,.5;x,-16;y,18;blend,noeffect;zwrite,1" />
+		<Layer File="ground mask.png" OnCommand="zoom,.5;x,16;y,18;blend,noeffect;zwrite,1" />
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.95;queuecommand,Jump2" />
+</children></ActorFrame>

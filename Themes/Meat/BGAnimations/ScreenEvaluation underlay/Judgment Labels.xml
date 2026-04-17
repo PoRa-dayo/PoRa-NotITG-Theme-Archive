@@ -1,0 +1,13 @@
+<ActorFrame> <children>
+	<ActorFrame InitCommand="%function() a = .5 end" />
+	<Layer Type="BitmapText" Font="MusicWheel" Text="Fantastic:"	OnCommand="y,16*0;zoom,0.4;horizalign,left;ShadowLength,2" InitCommand="%function(self) self:diffuse(JudgmentColorDark(1,a)) end" />
+	<Layer Type="BitmapText" Font="MusicWheel" Text="Excellent:"	OnCommand="y,16*1;zoom,0.4;horizalign,left;ShadowLength,2" InitCommand="%function(self) self:diffuse(JudgmentColorDark(2,a)) end" />
+	<Layer Type="BitmapText" Font="MusicWheel" Text="Great:"		OnCommand="y,16*2;zoom,0.4;horizalign,left;ShadowLength,2" InitCommand="%function(self) self:diffuse(JudgmentColorDark(3,a)) end" />
+	<Layer Type="BitmapText" Font="MusicWheel" Text="Decent:"		OnCommand="y,16*3;zoom,0.4;horizalign,left;ShadowLength,2" InitCommand="%function(self) self:diffuse(JudgmentColorDark(4,a)) end" />
+	<Layer Type="BitmapText" Font="MusicWheel" Text="Way Off:"		OnCommand="y,16*4;zoom,0.4;horizalign,left;ShadowLength,2" InitCommand="%function(self) self:diffuse(JudgmentColorDark(5,a)) end" />
+	<Layer Type="BitmapText" Font="MusicWheel" Text="Miss:"			OnCommand="y,16*5;zoom,0.4;horizalign,left;ShadowLength,2" InitCommand="%function(self) self:diffuse(JudgmentColorDark(6,a)) end" />
+	<Layer Type="BitmapText" Font="MusicWheel" Text="Holds:"		OnCommand="y,16*6.5;zoom,0.4;horizalign,left;ShadowLength,2;diffuse,.8,.8,.8,1" />
+	<Layer Type="BitmapText" Font="MusicWheel" Text="Rolls:"		OnCommand="y,16*7.5;zoom,0.4;horizalign,left;ShadowLength,2;diffuse,.8,.8,.8,1" />
+	<Layer Type="BitmapText" Font="MusicWheel" Text="Mines:"		OnCommand="y,16*8.5;zoom,0.4;horizalign,left;ShadowLength,2;diffuse,.8,.8,.8,1" />
+</children> </ActorFrame>
+

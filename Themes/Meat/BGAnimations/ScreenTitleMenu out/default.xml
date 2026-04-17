@@ -1,0 +1,30 @@
+<ActorFrame><children>
+	<ActorFrame
+		Command="sleep,.01"
+	/>
+	<Layer
+		Type="ActorFrame"
+		Command="queuecommand,Check"
+		CheckCommand="%function(self) if Off == 1 then self:queuecommand('Go') Sound('CharacterSelect_Curtain.ogg') end end"
+	><children>
+		<Layer Type="Quad" Command="zoom,0" GoCommand="diffuse,#000000;diffusealpha,0;stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-240,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+240;sleep,.06;linear,.3;diffusealpha,.6" />
+		<Layer Type="Quad" Command="zoom,0" GoCommand="diffuse,#000000;diffusealpha,0;stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-240,SCREEN_CENTER_X+320,SCREEN_CENTER_Y;sleep,.06;sleep,.2;diffusealpha,1" />
+		<Layer
+			File="Curtains.png"
+			Command="zoom,0" 
+			GoCommand="x,SCREEN_CENTER_X+55;y,SCREEN_CENTER_Y-292;ZoomToWidth,660;ZoomToHeight,289;customtexturerect,0,0,6,1;diffuse,#000000;sleep,.06;linear,.3;y,SCREEN_CENTER_Y+28"
+		/>
+		<Layer Type="Quad" Command="zoom,0" GoCommand="diffuse,#000000;stretchto,SCREEN_CENTER_X-600,SCREEN_CENTER_Y-240,SCREEN_CENTER_X-280,SCREEN_CENTER_Y+240;sleep,.06;linear,.3;addx,200" />
+		<Layer
+			File="Side1.png"
+			Command="zoom,0" 
+			GoCommand="x,SCREEN_CENTER_X-261;y,SCREEN_CENTER_Y+13;zoomx,.31;zoomy,0.375;diffuse,#000000;sleep,.06;linear,.3;addx,200"
+		/>
+		<Layer Type="Quad" Command="zoom,0" GoCommand="diffuse,#000000;stretchto,SCREEN_CENTER_X+600,SCREEN_CENTER_Y-240,SCREEN_CENTER_X+280,SCREEN_CENTER_Y+240;sleep,.06;linear,.3;addx,-200" />
+		<Layer
+			File="Side1.png"
+			Command="zoom,0"
+			GoCommand="x,SCREEN_CENTER_X+262;y,SCREEN_CENTER_Y+13;zoomx,.31;zoomy,0.375;rotationy,180;diffuse,#000000;linear,.3;addx,-200"
+		/>
+	</children></Layer>
+</children></ActorFrame>

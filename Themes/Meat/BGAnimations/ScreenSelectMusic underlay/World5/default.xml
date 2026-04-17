@@ -1,0 +1,125 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+		<Layer Type="Quad" Command="diffuse,#C3CBD0;stretchto,-320,-240,320,240" />
+<!--Bottom Buildings-->
+		<Layer Type="Quad" Command="diffuse,#778993;stretchto,-320,-92,320,240" />
+		<Layer File="Lattice3.xml" Command="x,-250;y,-115;zoomx,.61;zoomy,.54;rotationy,180" />
+		<Layer File="Lattice3.xml" Command="x,-80;y,-115;zoomx,.61;zoomy,.54;rotationy,180" />
+		<Layer File="Lattice3.xml" Command="x,60;y,-114;zoomx,.52;zoomy,.54;rotationy,180" />
+		<Layer File="Lattice3.xml" Command="x,206;y,-113;zoomx,.54;zoomy,.56;rotationy,180" />
+<!--Middle Buildings-->
+		<Layer Type="Quad" Command="diffuse,#455157;stretchto,-320,-84,320,240" />
+		<Layer Type="Quad" Command="diffuse,#455157;stretchto,-20,-88,320,240" />
+		<Layer File="Lattice2.xml" Command="x,-167;y,-106;zoomx,.67;zoomy,.55" />
+		<Layer File="Lattice2.xml" Command="x,18;y,-107;zoomx,.67;zoomy,.55" />
+		<Layer File="Lattice2.xml" Command="x,240;y,-111;zoomx,.67;zoomy,.55" />
+<!--Top Buildings-->
+		<Layer Type="Quad" Command="diffuse,#22272B;stretchto,-320,-67,320,240" />
+		<Layer File="Lattice1.xml" Command="x,-85;y,-108;zoomy,1.03" />
+		<Layer File="Lattice1.xml" Command="x,190;y,-111;zoomy,1.03" />
+<!--Lower Buildings-->
+		<Layer
+			File="wire.png"
+			Command="x,-262;y,108;zoomx,.1;zoomy,.1;rotationy,180;rotationz,-65;diffuse,#1C2123"
+		/>
+		<Layer
+			File="wire.png"
+			Command="x,-159;y,119;zoomx,.28;zoomy,.1;rotationz,-85;diffuse,#1C2123"
+		/>
+		<Layer
+			File="wire.png"
+			Command="x,-104;y,119;zoomx,.1;zoomy,.1;rotationy,180;rotationz,-25;diffuse,#1C2123"
+		/>
+		<Layer
+			File="wire.png"
+			Command="x,-79;y,119;zoomx,.28;zoomy,.1;rotationz,-85;diffuse,#1C2123"
+		/>
+		<Layer
+			File="wire.png"
+			Command="x,119;y,118;zoomx,.1;zoomy,.1;rotationy,180;rotationz,-65;diffuse,#1C2123"
+		/>
+		<Layer
+			File="wire.png"
+			Command="x,147;y,115;zoomx,.24;zoomy,.1;rotationz,-90;diffuse,#1C2123"
+		/>
+		<Layer
+			File="wire.png"
+			Command="x,174;y,122;zoomx,.1;zoomy,.1;rotationz,-55;diffuse,#1C2123"
+		/>
+		<Layer
+			File="wire.png"
+			Command="x,227;y,105;zoomx,.24;zoomy,.1;rotationz,-105;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Post.png"
+			Command="x,-254;y,121;zoom,.2;rotationz,-6;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Post.png"
+			Command="x,-182;y,131;zoom,.2;rotationz,3;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Post.png"
+			Command="x,-134;y,136;zoom,.2;rotationz,-6;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Post.png"
+			Command="x,-98;y,131;zoom,.2;rotationz,-9;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Post.png"
+			Command="x,-57;y,137;zoom,.2;rotationz,-1;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Post.png"
+			Command="x,127;y,130;zoom,.2;rotationz,-1;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Post.png"
+			Command="x,168;y,133;zoom,.2;rotationz,7;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Post.png"
+			Command="x,208;y,123;zoom,.2;rotationz,9;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Stack.png"
+			Command="x,-257;y,134;zoomx,.16;zoomy,.8;rotationz,-90;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Stack.png"
+			Command="x,-98;y,161;zoomx,1.2;zoomy,.3;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Stack.png"
+			Command="x,128;y,157;zoomx,1.2;zoomy,.3;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Stack.png"
+			Command="x,235;y,137;zoomx,.3;zoomy,1.2;rotationz,-90;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Building1.png"
+			Command="x,-239;y,161;zoomx,.34;zoomy,.4;rotationz,.5;diffuse,#1C2123"
+		/>
+		<Layer
+			File="Building1.png"
+			Command="x,-279;y,146;zoomx,.5;zoomy,.63;rotationy,180;rotationz,.5;diffuse,#0F1213"
+		/>
+		<Layer
+			File="Building1.png"
+			Command="x,253;y,147;zoomx,.5;zoomy,.63;rotationy,180;rotationz,.5;diffuse,#0F1213"
+		/>
+		<Layer
+			File="Building1.png"
+			Command="x,-324;y,113;zoomx,.74;zoomy,.91;diffuse,#000000"
+		/>
+		<Layer
+			File="Building2.png"
+			Command="x,302;y,106;zoomx,.8;zoomy,.98;diffuse,#000000"
+		/>
+		</children></Layer>
+</children></ActorFrame>

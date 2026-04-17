@@ -1,0 +1,40 @@
+<ActorFrame><children>
+	<Layer Type="Quad" InitCommand="stretchto,-280,-48,280,-46;fadeleft,0.3;faderight,0.3" SetCommand="%function(self) if math.mod(k,4) == 1 then self:zoom(0) end end" />
+	<Layer Type="Quad" InitCommand="stretchto,-280,-47,280,47;fadeleft,0.1;faderight,0.1;diffuse,0,0,0,0.2" />
+
+	<Layer File="../_blank" Type="Sprite" 		InitCommand="y,0"							SetCommand="%function(self) local path = AllScores[k]['Song']:GetBannerPath() if path then self:Load(path) else self:Load(Path('Graphics','Common fallback banner')) end self:scaletoclipped(125,50) end" />
+    <Layer Font="_Meat" Text="Song"				InitCommand="zoom,.5;shadowlength,0;y,-39"	SetCommand="%function(self) self:settext(AllScores[k]['Song']:GetDisplayFullTitle()) end"/>
+    <Layer Font="_numbers" Text="BPMandRate"	InitCommand="zoom,.3;shadowlength,0;y,33"	SetCommand="%function(self) bpm = AllScores[k]['BPM'] local rate = modRate modRate = AllScores[k]['Rate'] local s = AdjustedBPM() .. ' bpm ' .. RateModAppend() modRate = rate s = string.gsub(s,' Music','') self:settext(s) end"/>
+
+	<ActorFrame InitCommand="%function() function CommonEval(self,i) self:zoom(0.35) self:shadowlength(1) self:y(-37+12*i) self:horizalign('right') end end" />
+	<Layer Type="ActorFrame" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" ><children>
+		<Layer Font="_numbers" Text="ScoreP1"	InitCommand="x,-68;horizalign,right;zoom,.9;shadowlength,0;y,-18"	SetCommand="%function(self) self:settext(string.format('%01.2f',AllScores[k]['Score'][1])) if AllScores[k]['Fail'][1] then self:diffuse(1,0,0,1) end end"/>
+		<Layer Font="musicwheel" Text="MeterP1"	InitCommand="x,-70;horizalign,right;zoom,.35;shadowlength,1;y,5"	SetCommand="%function(self) self:settext(AllScores[k]['Steps'][1]:GetMeter()) self:diffuse(DifficultyColorRGB(AllScores[k]['Steps'][1]:GetDifficulty())) end"/>
+		<Layer Font="_Meat"    Text="DescrP1"	InitCommand="x,-70;horizalign,right;zoom,.3;shadowlength,0;y,20"	SetCommand="%function(self) self:settext(MaxLength(AllScores[k]['Steps'][1]:GetDescription(),19)) end"/>
+		
+		<ActorFrame SetCommand="%function() judgeIndex = 1 pn = 1 function JudgeFunction(self) CommonEval(self,judgeIndex) self:x(-195) local s = AllScores[k]['Judge'][pn][judgeIndex] if judgeIndex <= 6 then s = string.gsub(s,' ','') self:diffuse(JudgmentColor(judgeIndex)) else self:diffuse(0.6,0.6,0.6,1) end self:settext(s) judgeIndex = judgeIndex + 1  end end" />
+		<Layer Font="musicwheel" Text="" SetCommand="%function(self) JudgeFunction(self) end" />
+		<Layer Font="musicwheel" Text="" SetCommand="%function(self) JudgeFunction(self) end" />
+		<Layer Font="musicwheel" Text="" SetCommand="%function(self) JudgeFunction(self) end" />
+		<Layer Font="musicwheel" Text="" SetCommand="%function(self) JudgeFunction(self) end" />
+		<Layer Font="musicwheel" Text="" SetCommand="%function(self) JudgeFunction(self) end" />
+		<Layer Font="musicwheel" Text="" SetCommand="%function(self) JudgeFunction(self) end" />
+
+	</children></Layer>
+
+	<Layer Type="ActorFrame" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" ><children>
+		<Layer Font="_numbers" Text="ScoreP1"	InitCommand="x,70;horizalign,left;zoom,.9;shadowlength,0;y,-18"	SetCommand="%function(self) self:settext(string.format('%01.2f',AllScores[k]['Score'][2])) if AllScores[k]['Fail'][2] then self:diffuse(1,0,0,1) end end"/>
+		<Layer Font="musicwheel" Text="MeterP1"	InitCommand="x,70;horizalign,left;zoom,.35;shadowlength,1;y,5"	SetCommand="%function(self) self:settext(AllScores[k]['Steps'][2]:GetMeter()) self:diffuse(DifficultyColorRGB(AllScores[k]['Steps'][2]:GetDifficulty())) end"/>
+		<Layer Font="_Meat"    Text="DescrP1"	InitCommand="x,70;horizalign,left;zoom,.3;shadowlength,0;y,20"	SetCommand="%function(self) self:settext(MaxLength(AllScores[k]['Steps'][2]:GetDescription(),19)) end"/>
+
+		<ActorFrame SetCommand="%function() judgeIndex = 1 pn = 2 function JudgeFunction(self) CommonEval(self,judgeIndex) self:x(222) local s = AllScores[k]['Judge'][pn][judgeIndex] if judgeIndex <= 6 then s = string.gsub(s,' ','') self:diffuse(JudgmentColor(judgeIndex)) else self:diffuse(0.6,0.6,0.6,1) end self:settext(s) judgeIndex = judgeIndex + 1  end end" />
+		<Layer Font="musicwheel" Text="" SetCommand="%function(self) JudgeFunction(self) end" />
+		<Layer Font="musicwheel" Text="" SetCommand="%function(self) JudgeFunction(self) end" />
+		<Layer Font="musicwheel" Text="" SetCommand="%function(self) JudgeFunction(self) end" />
+		<Layer Font="musicwheel" Text="" SetCommand="%function(self) JudgeFunction(self) end" />
+		<Layer Font="musicwheel" Text="" SetCommand="%function(self) JudgeFunction(self) end" />
+		<Layer Font="musicwheel" Text="" SetCommand="%function(self) JudgeFunction(self) end" />
+
+	</children></Layer>
+		
+</children></ActorFrame>

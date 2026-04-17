@@ -1,0 +1,9 @@
+<ActorFrame>
+	<children>
+		<BitmapText
+			Text="Survival"
+			Font="_FFT2"
+			OnCommand="horizalign,right;ShadowLength,0;zoomx,1.25"
+		/>
+	</children>
+</ActorFrame>

@@ -1,0 +1,5 @@
+<ActorFrame><children>
+<!-- Obstacle 14: Quad Cannon -->
+	<Layer File="Quad Cannon.xml" Command="y,-45;x,40;queuecommand,PreRotate" GoCommand="sleep,1.8;queuecommand,Animate;sleep,1.3;queuecommand,Animate" Pass2Command="stoptweening" Fail3Command="x,52;sleep,.6;queuecommand,Animate;sleep,1.3;queuecommand,Animate"/>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.95;queuecommand,Jump1" />
+</children></ActorFrame>

@@ -1,0 +1,38 @@
+<ActorFrame><children>
+	<ActorFrame 
+		GainFocusCommand="sleep,.15;zoom,1"
+		LoseFocusCommand="sleep,.15;zoom,0"
+		><children>
+		<Layer 
+			File="@GetClassPath('080')"
+			OnCommand="addx,-194;addy,-111"
+			InitCommand="@GetClassBanner('080')"
+		/>
+		<Layer Type="BitmapText"
+			Font="_FFT2 white"
+			Text=""
+			InitCommand="y,-204;x,-80;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+			OnCommand="%function(self) self:settext(GetClassName('080')) end"
+			/>
+		<Layer Type="BitmapText"
+			Font="_FFT2 white"
+			Text=""
+			InitCommand="y,-176;x,-80;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+			OnCommand="%function(self) self:settext(GetClassCode('080')) end"
+		/>
+		<Layer 
+			File="@GetClassPath('080')"
+			OnCommand="addx,180"
+			InitCommand="@GetClassDead('080')"
+		/>
+		<Layer 
+			File="@GetClassPath('080')"
+			InitCommand="@GetClassHurt('080')"
+		/>
+		<Layer
+			File="@GetClassPath('080')"
+			OnCommand="addx,-180"
+			InitCommand="@GetClassInit('080')"
+		/>		
+	</children></ActorFrame>
+</children></ActorFrame>

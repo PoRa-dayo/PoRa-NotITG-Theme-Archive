@@ -1,0 +1,22 @@
+<ActorFrame><children>
+		<ActorFrame GainFocusCommand="%function() Off = 1 end" />
+	<Layer
+		Font="_Meat"
+		Text="One Player"
+		InitCommand="hidden,0;HorizAlign,left;ShadowLength,0;zoomx,.41;zoomy,.43"
+		GainFocusCommand="x,8"
+		LoseFocusCommand="x,0"
+		EnabledCommand="hidden,0"
+		DisabledCommand="hidden,1"
+	/>
+	<Layer
+		File="Arrow.png"
+		InitCommand="hidden,0;x,-11;y,3;rotationz,180;diffusealpha,0;playcommand,Animate"
+		OffCommand="diffusealpha,0;finishtweening"
+		GainFocusCommand="diffusealpha,1;finishtweening;Playcommand,Animate"
+		LoseFocusCommand="diffusealpha,0;finishtweening"
+		EnabledCommand="hidden,0"
+		DisabledCommand="hidden,1"
+		AnimateCommand="zoom,.22;sleep,1.75;linear,.1;x,-8;sleep,0;linear,.05;zoomx,.18;zoomy,.26;addx,1;linear,.05;zoom,.22;addx,-1;sleep,.05;accelerate,.3;x,-11;queuecommand,Animate"
+	/>
+</children></ActorFrame>

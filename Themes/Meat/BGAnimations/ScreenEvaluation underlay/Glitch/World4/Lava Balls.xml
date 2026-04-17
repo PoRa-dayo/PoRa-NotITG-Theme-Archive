@@ -1,0 +1,28 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		InitCommand="x,SCREEN_CENTER_X-250;y,SCREEN_CENTER_Y-180;queuecommand,Register" 
+		RegisterCommand="%function(self) Register(self,-10,10,10,10,5) bounce[n] = .5 end"
+		ResetMessageCommand="%function(self) self:x(SCREEN_CENTER_X-250); self:y(SCREEN_CENTER_Y-180); n = self:GetZ() Sy1[n] = 30; Sy2[n] = 40; self:sleep(math.random()/2) self:queuecommand('Move1') end"
+		Move1Command="%function(self) Move(self,.12,.2,0,0,'Dy','>',120,2) end" 
+		Move2Command="%function(self) Move(self,'','',0,0,'Dy','>',390,3) Sy1[n] = -10; Sy2[n] = 10; end" 
+		Move3Command="%function(self) Move(self,'','',0,0,'Dy','>',440,4) Sy1[n] = -50; Sy2[n] = -60; end" 
+		Move4Command="%function(self) Remove(self) end" 
+		MoveCommand="%function(self) Update(self) end"
+	><children>
+		<Layer File="@'lava ball'..Pallette()..'.png'" OnCommand="zoom,.4;y,-1;spin;effectmagnitude,0,0,360" />
+	</children></Layer>
+	<Layer
+		Type="ActorFrame"
+		InitCommand="x,SCREEN_CENTER_X+250;y,SCREEN_CENTER_Y-180;queuecommand,Register" 
+		RegisterCommand="%function(self) Register(self,-10,10,10,10,5) bounce[n] = .5 end"
+		ResetMessageCommand="%function(self) self:x(SCREEN_CENTER_X+250); self:y(SCREEN_CENTER_Y-180); n = self:GetZ() Sy1[n] = 30; Sy2[n] = 40; self:sleep(math.random()/2) self:queuecommand('Move1') end"
+		Move1Command="%function(self) Move(self,-.12,.2,0,0,'Dy','>',120,2) end" 
+		Move2Command="%function(self) Move(self,'','',0,0,'Dy','>',390,3) Sy1[n] = -10; Sy2[n] = 10; end" 
+		Move3Command="%function(self) Move(self,'','',0,0,'Dy','>',440,4) Sy1[n] = -50; Sy2[n] = -60; end" 
+		Move4Command="%function(self) Remove(self) end" 
+		MoveCommand="%function(self) Update(self) end"
+	><children>
+		<Layer File="@'lava ball'..Pallette()..'.png'" OnCommand="zoom,.4;y,-1;spin;effectmagnitude,0,0,-360" />
+	</children></Layer>
+</children></ActorFrame>

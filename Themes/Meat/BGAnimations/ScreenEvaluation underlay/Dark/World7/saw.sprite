@@ -1,0 +1,6 @@
+[Sprite]
+Texture=_saw 2x1.png
+Frame0000=0
+Delay0000=100000
+Frame0001=1
+Delay0001=100000

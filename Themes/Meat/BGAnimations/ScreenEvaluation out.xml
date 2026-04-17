@@ -1,0 +1,10 @@
+<ActorFrame><children>
+	<Layer
+		Condition="(not IsFinalStage() and OnePassed()) or GAMESTATE:IsEventMode()"
+		File="_Meatboy out" Command="playcommand,Start"
+	/>
+	<Layer
+		Condition="(IsFinalStage() or AllFailed()) and not GAMESTATE:IsEventMode()"
+		File="_Meatboy out final" Command="playcommand,Start"
+	/>
+</children></ActorFrame>

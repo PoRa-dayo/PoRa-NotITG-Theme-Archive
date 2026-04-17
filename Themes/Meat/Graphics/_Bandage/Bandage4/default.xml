@@ -1,0 +1,15 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		Command="%function(self) self:zoom(1.7*blockSize/50) end"
+	><children>
+		<Layer
+			File="Bandage"
+			InitCommand="zoom,.28;y,2"
+			ResetMessageCommand="stoptweening;Animate,1;zoom,.28"
+			AnimateCommand="Animate,0;setstate,2;sleep,.03;queuecommand,State3"
+			State3Command="setstate,3;sleep,.03;queuecommand,State4"
+			State4Command="setstate,4;sleep,.03;zoom,0"
+		/>
+	</children></Layer>
+</children></ActorFrame>

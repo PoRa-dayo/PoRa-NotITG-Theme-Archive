@@ -1,0 +1,19 @@
+<ActorFrame><children>
+	<Layer
+		File="ScreenSelect curspr.png"
+		InitCommand="x,-10;horizalign,right;ShadowLength,3;"
+		OnCommand="bounce;effectmagnitude,-8,0,0;effectperiod,0.8"
+		GainFocusCommand="hidden,0;finishtweening"
+		LoseFocusCommand="hidden,1"
+	/>
+	<Layer
+		Text="Doubles Mode"
+		Font="_FFT"
+		InitCommand="horizalign,left;ShadowLength,0;Zoomx,1.25"
+		GainFocusCommand=""
+		LoseFocusCommand=""
+		EnabledCommand="Diffuse,1,1,1,1"
+		DisabledCommand="Diffuse,0.5,0.5,0.5,1"
+	/>
+</children></ActorFrame>
+

@@ -1,0 +1,9 @@
+<ActorFrame><children>
+	<ActorFrame
+		InitCommand="%function() Beep = 0 end"
+		GlitchCommand="%function(self) s = math.random(2,3)*.0375 self:sleep(s) s = 'Sound'; s = s .. math.random(1,3) self:queuecommand(s) Beep = Beep + 1; if Beep < 15 then self:queuecommand('Glitch') else Beep = 0 end end" 
+		Sound1Command="%function() Sound('Retro_blink0.ogg') end" 
+		Sound2Command="%function() Sound('Retro_blink1.ogg') end"
+		Sound3Command="%function() Sound('Retro_blink2.ogg') end"
+	/>
+</children></ActorFrame>

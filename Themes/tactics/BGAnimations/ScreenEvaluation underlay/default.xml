@@ -1,0 +1,39 @@
+<ActorFrame><children>
+	<Layer Class="AutoActor" 
+		File="../Banner underlay.png" 
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-166;zoomy,.5;diffusealpha,0;sleep,.5;linear,.2;zoomy,1;diffusealpha,1" 
+		OffCommand="zoomy,1;diffusealpha,1;linear,.2;zoomy,.5;diffusealpha,0"
+	/>
+	<Layer
+		File="graph frame underlay.png"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		OnCommand="x,SCREEN_CENTER_X-165;y,SCREEN_CENTER_Y-55;zoom,0;sleep,.5;linear,.2;zoom,1"
+		OffCommand="hidden,1"
+	/>
+	<Layer
+		File="graph frame underlay.png"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		OnCommand="x,SCREEN_CENTER_X+165;y,SCREEN_CENTER_Y-55;zoom,0;sleep,.5;linear,.2;zoom,1"
+		OffCommand="hidden,1"
+	/>
+	<Layer Type="ActorFrame" InitCommand="x,SCREEN_CENTER_X+6;y,SCREEN_CENTER_Y+105" OffCommand="zoom,0"><children>
+		<Layer
+			File="@GetClassShadow()"
+		/>
+		<Layer 
+			Condition="OnePassed() and STATSMAN:GetBestGrade() <= GRADE_TIER08"
+			File="@GetClass()"
+			InitCommand="@GetClassInit()"	
+		 />
+		<Layer 
+			Condition="OnePassed() and STATSMAN:GetBestGrade() > GRADE_TIER08"
+			File="@GetClass()"
+			InitCommand="@GetClassHurt()"	
+		 />
+		<Layer 
+			Condition="not OnePassed()"
+			File="@GetClass()"
+			InitCommand="@GetClassDead()"	
+		 />
+	</children></Layer>
+</children></ActorFrame>

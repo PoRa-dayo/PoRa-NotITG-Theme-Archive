@@ -1,0 +1,10 @@
+<ActorFrame><children>
+	<Layer
+		File="blob.png"
+		Command="x,0;y,24;zoom,.3;diffuse,#000000;rotationz,-90"
+	/>
+	<Layer
+		File="Rock3.png"
+		Command="x,-39;y,-18;zoomx,.23;zoomy,.23;diffuse,#000000"
+	/>
+</children></ActorFrame>	

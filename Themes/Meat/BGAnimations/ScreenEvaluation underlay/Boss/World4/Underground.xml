@@ -1,0 +1,17 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+
+		<Layer File="lava pit.sprite" Command="y,172;zoom,.65" />
+	</children></Layer>
+
+	<ActorFrame
+		OnCommand="%function(self)
+		x = SCREEN_CENTER_X; y = SCREEN_CENTER_Y
+
+		Register(self,x-65,y+160,x+65,y+178,4)
+		end"
+	/>
+</children></ActorFrame>

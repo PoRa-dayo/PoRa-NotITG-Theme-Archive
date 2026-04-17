@@ -1,0 +1,21 @@
+<ActorFrame Command="%MusicTransitionAspectScale" ><children>
+	<Layer
+		Condition="musicload == 1"
+		Type="ActorFrame"
+		OnCommand="%function() musicload = 0 end"
+	><children>	
+		<Layer
+			File="@'../'..SelectMusicFirstIn()"
+			InitCommand="zoomx,SCREEN_WIDTH/640"
+			OnCommand="x,SCREEN_WIDTH;sleep,.5;linear,.4;addx,-SCREEN_WIDTH*1.4"
+		/>
+		<Layer
+			File="@'World' .. world"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,1;sleep,.5;linear,.4;addx,-500"
+		/>
+		<Layer Type="Quad" OnCommand="sleep,.3;queuecommand,Sound" SoundCommand="%function() Sound('Whoosh_low2') end" />
+	</children></Layer>
+	<Layer Condition="musicload == 0" File="../_meatboy in" Command="queuecommand,Zoom" ZoomCommand="zoom,1" />
+	<Layer Condition="musicload == 2" File="../_meatboy in" OnCommand="%function(self) musicload = 0 self:queuecommand('Zoom') end" ZoomCommand="zoom,1" />
+	<Layer Condition="musicload == 3" File="../_fetus in" OnCommand="%function() musicload = 0 end" />
+</children></ActorFrame>

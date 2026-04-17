@@ -1,0 +1,46 @@
+<ActorFrame> <children>
+	<Layer
+		File="start.png"
+		InitCommand="x,5;y,105"
+		OffCommand="hidden,1" 
+	/>
+	<Layer
+		File="start.png"
+		InitCommand="x,5;y,105;diffuse,.6,.65,.7,1"
+		ExitSelectedP1Command="zoom,0"
+		ExitUnselectedP1Command="zoom,1"
+		OffCommand="hidden,1" 
+	/>
+	<Layer
+		File="start.png"
+		InitCommand="x,5;y,105;diffuse,.6,.65,.7,1"
+		ExitSelectedP2Command="zoom,0"
+		ExitUnselectedP2Command="zoom,1"
+		OffCommand="hidden,1" 
+	/>
+	<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsPlayerEnabled(PLAYER_2)"> <children>
+		<BitmapText
+			Text="Player 1 Ready"
+			Font="_FFT2 white" 
+			InitCommand="x,-220;y,-130;shadowlength,0;zoomx,0"
+			ExitSelectedP1Command="zoomx,1.25"
+			ExitUnselectedP1Command="zoomx,0"
+		/>
+		<BitmapText
+			Text="Player 2 Ready"
+			Font="_FFT2 white" 
+			InitCommand="x,-220;y,-100;shadowlength,0;zoomx,0"
+			ExitSelectedP2Command="zoomx,1.25"
+			ExitUnselectedP2Command="zoomx,0"
+		/>
+	</children> </ActorFrame>
+	<BitmapText
+		Condition="not GAMESTATE:IsPlayerEnabled(PLAYER_1) or not GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		Text="Ready"
+		Font="_FFT2 white" 
+		InitCommand="x,-270;y,-130;shadowlength,0;zoomx,0"
+		ExitSelectedP1Command="zoomx,1.25"
+		ExitUnselectedP1Command="zoomx,0"
+	/>
+
+</children> </ActorFrame>

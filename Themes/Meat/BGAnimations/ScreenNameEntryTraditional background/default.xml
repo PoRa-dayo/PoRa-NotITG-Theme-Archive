@@ -1,0 +1,5 @@
+<ActorFrame InitCommand="%AspectScale" ><children>
+	<Layer File="Intro.png" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-5" />
+	<Layer Font="_Meat" Text="Saving Scores" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffuse,0,0,0,1;shadowlength,0"  />
+	<Layer File="BG.xml" OnCommand="%function(self) BG = self end" OutCommand="linear,.05;skewx,.7;addx,100;linear,.2;addx,SCREEN_WIDTH" />
+</children></ActorFrame>

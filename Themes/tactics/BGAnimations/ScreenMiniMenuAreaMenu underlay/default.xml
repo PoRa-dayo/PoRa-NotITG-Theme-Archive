@@ -1,0 +1,12 @@
+<ActorFrame> <children>
+	<ActorFrame OnCommand="x,SCREEN_CENTER_X+25;y,SCREEN_CENTER_Y+17;zoom,0;linear,.2;zoom,1" OffCommand="linear,.1;zoom,0"> <children>
+		<Layer
+			File="underlay.png"
+		/>
+		<Layer Class="BitmapText" 
+			Font="_FFT2 white"
+			Text="Edit Menu"
+			InitCommand="x,-97;y,-207;shadowlength,0;zoomx,1.25"
+		/>
+	</children></ActorFrame>
+</children> </ActorFrame>

@@ -1,0 +1,404 @@
+﻿Dance With Intensity - The OpenITG / NotITG Theme Changelog
+-------------------------------------------------------------------------------------------------------
+
+Version 1.6.5 - Fixes on the Goodies
+---------------------
+
+TWEAK: Removed MaxCombo from Nonstop
+	Still need to check for things, so i need to maybe re-add it.
+
+BUGFIX: Fixed several Fade cutouts that left a part of the screen still show up when fading away.
+BUGFIX: Fixed Stage Labeling for Non-Event mode usage in Gameplay
+TWEAK: Background now applies to screen borders
+NEW: Exiting from Skin Selection reloads the whole theme
+NEW: Removed Combo coloring functions
+TWEAK: Cleanedup AudioPlay commands
+TWEAK: Cleanup for CourseTimer
+TWEAK: Remade CourseTimer commands for Nonstop Mode
+NEW: Removed Forced Beginner mods
+NEW: Disabled Bonus area in Nonstop Evaluation (Because it isn't there in DWI)
+TWEAK: Replaced a MenuTimer command and redirection
+BUGFIX: Fixed Summary screens for Single and Double being not properly placed
+EXTRA: Removed ScreenStage files
+	Because we don't even use that screen anymore.
+EXTRA: Removed the _screen globals
+	Never ended up using it....
+
+Version 1.6.0 - Extra Goodies
+---------------------
+Ok, i lied a little bit about ending development.
+
+NEW: Online mode!
+	To access, go to Options/Network Options and login to your favorite server!
+	( This feature does not work in NITG. That one has internet completely removed.
+	Which is why you don't see the option when using NITG. )
+
+TWEAK: Improvements on Next Course Song fading
+NEW: Added functionalty for Banner loading in SMO Select Music
+TWEAK: More Code improvements.
+	Thanks to Jousway for a ton of tips!
+	
+NEW: Profile command for loading and saving now exists! ( Profile() & SaveProfiles() )
+EXTRA: Added complete Special thanks to the repo's README.
+BUGFIX: Fixed a bug that crashed Gameplay due to the new code structure.
+BUGFIX: Fixed a bug that prevented players from accesing the main menu when opening the game.
+NEW: Stats Info is now on a new location.
+	And also is more exact to they way DWI showcases data, by only showing FPS info.
+
+Version 1.5.0 - The Final Release.
+---------------------
+NEW: Proper Course entry items on Nonstop Mode.
+TWEAK: Fade animation during Nonstop mode now goes behind the playfield, just like in the game. 
+TWEAK: EVERY SINGLE CODE HAS BEEN MODIFIED.
+	To provide a more clean experience.
+	
+TWEAK: IMPROVED SELECTMUSIC SCRIPT
+	This took a fuckton of work, but i'm in love of what i've made. It's just so c l e a n 
+
+TWEAK: Finally fixed the combo label's position.
+TWEAK: Slightly changed the animation speed for the judgment.
+	This is another attempt to try to match with the original game's animation.
+	I think I nailed it this time.
+
+NEW: Added check for the Radar.
+	This is here for a reason.
+	Some machines have a weird bug with the Radar, that shows up as rotated squares rather than an actual pentagon.
+	This is because of SmoothLines. It is required to be enabled in order to make the radar function correctly. If it's not on, then warn about it, so the player can re-enable it, if his/her machine supports it anyway.
+
+TWEAK: Fixed position of EXIT text on Player Options
+BUGFIX: Random Pulling from Credits to Demo mode was fixed
+	I really have no idea what caused it, but it's fixed now.
+
+BUGFIX: Fixed Skin Selector Screen
+	It switched the theme... but it stayed on the same screen. causing a "!() = ScreenName" panic attack.
+	I also added the Aspect Ratio on the same screen.
+
+NEW: AutoGen icon is now functional.
+NEW: Recreated Music format from credits sequence
+	Unfortunately, i cannot recreate the audio fade. Not even with the Dim command.
+	(And also, if you pay attention, you might notice how this was achieved.)
+
+TWEAK: Decided to match the speed of the BG's in the credits sequence to the credits text.
+TWEAK: Added silence when pressing start in the evaluation screen.
+NEW: Options Menu has been completely remade.
+	New screens include: DWISystemOptions, DWISoundOptions, BackgroundOptions, DWISkinSelect
+
+NEW: System Options is now in the Options Menu (This one includes the Judgment Window Preview)
+NEW: Included a more exact Background Options to match the original game's screen.
+TWEAK: Replaced descriptions, names and labels from the original DWI to the theme.
+BUGFIX: Fixed many OptionIcons in the Evaluation Screen that were wrongly being activated.
+	The special case being the 5x mod, which activated whenever a 5x was found on the playermods string.
+	(A.k.a 1.5x, 0.25x, 0.5x, 0.75x were hidden by the 5x.)
+	
+NEW: Recreated the short time allowed to access settings.
+	You'll have to quickly press the enter key twice to access the player options.
+	DWI was really agressive with the Access options time.
+
+NEW: Editor Mode
+	It is a little similar to SM's regular editor, with a few tweaks.
+		- Information is now on the left, and help on the right.
+		- Theme Build is displayed on the editor.
+		- Score display is hidden when previewing a song.
+
+	In order to access it, you need to press L,D,U,R on the title screen.
+
+NEW: ROULETTE Text now does a rainbow animation
+BUGFIX: Fixed the Double "On" Command bug that ocurred on the Credits sequence.
+NEW: Added a Judgment Window Preview
+	It detects the current timings that are on your Judge difficulty and shows it on a line.
+NEW: Difficulty can now be changed by pressing UP or DOWN once.
+TWEAK: Cleanup on DWICredits and EvaluationStage's Code.
+TWEAK: Animations on Menus are now more like DWI's static placement.
+TWEAK: Remade some animations to redirs because some were the same.
+BUGFIX: Fixed Debug Text Tween.
+	It crashes because it cannot look for a lua because the lua loads after the .INI gets loaded.
+	And thus, the DebugTween command doesn't exist yet, causing the crash.
+TWEAK: The Random Company feature is now gone, as there's was no reason to have it in the first place.
+	And also the fact that it was implemented simply as a joke.
+
+And with this update, I can call this theme Feature-Complete. No more features need to be added.
+Bug fixes will still be provided if bugs are found; Which I believe there shouldn't be any by this
+point, as i checked every single little thing for this update to be the most stable update of them all.
+
+But please, if you find any bugs, please let me know via the Repo's issue tracker.
+
+Thanks for the ride, it's been fun. Stay cool.
+- Jose_Varela
+
+
+Version 1.4.5
+---------------------
+BUGFIX: Repaired Underlay and Overlay for Battle Mode
+TWEAK: Remade Debug Text Tween
+TWEAK: Remade ScreenSelectMaster Commands
+NEW: Created Feature to Delete Profile Data
+	This will delete Dance AND Nonstop Data.
+
+Version 1.4.0
+---------------------
+NEW: Changed Banner for Mode Selection in Music Wheel
+NEW: PlayerMods Reset was removed.
+TWEAK: Mode Select in Mode Wheel will only appear for 2 players.
+NEW: Battle mode in gameplay now functional.
+NEW: Created Evaluation screen for Battle Mode Results.
+BUGFIX: Repaired the Sort Order font from Music Wheel.
+BUGFIX: Replaced Mode Selection with Fallback Banner.
+
+Version 1.3.85
+---------------------
+NEW: Added Battle Mode Icon
+TWEAK: Changed and added stuff to the utilities file.
+NEW: Added Fallback BG for areas that have nothing. (It's called dwi2-fallback.png)
+NEW: Evaluation Narrator system completely changed in favor of a more flexible system without having to make so many if statements.
+TWEAK: Changed position of Song Score a little bit as it was really close to the total score
+TWEAK: Remade Music Wheel Graphics to better fit 16:9 screens
+
+	Also i started working on the editor, so stay tuned for that. :)
+
+Version 1.3.5
+---------------------
+- Fixed Overlapping of Characters with 3D Noteskins.
+- Added Message on Profile Check if a Memory Card is detected.
+- Fixed some cropping of the overlay in Gameplay.
+
+Version 1.3.0
+---------------------
+- Fixed Option Icons
+- Moved Profile Info Quads to separate XML
+- Removed Fake Bonus Frame information from Scores Evaluation Stage, as the actual bonus frame now works.
+- Correctly Cropped parts of Gameplay so textures didn't overlap when zooming out of the screen.
+- Managed to make Debug text display the Correct Font
+- Deletion of Unecessary files
+- Added Version Date 
+- Added Character Support ( This feature will unfortunatelly not work in NotITG V3, but it will still work in NotITG V2, and OpenITG. )
+
+Version 1.2.25
+---------------------
+- Fix on the Marathon Label in MusicWheel
+
+Version 1.2.2
+---------------------
+- Added Notifier Icons to Music Wheel
+- Added Functional Bonus Frame in Evaluation
+- Code Opimizations
+- Working BPM Label
+- Added Correct LyricDisplay font
+
+Version 1.1.0
+---------------------
+- Added Highest Total Sesion Score to ScreenProfileCheck
+- Fixed Music Wheel In Nonstop Mode
+- Removed Messy "Ready" Code in Gameplay
+- Changed Grade Ratings and Fixed AAA Check
+- Created IsUsingWideScreen()
+- Created Newer Instructions for prople who want to get into theming
+- Replaced PREFSMAN Commands regarding Resolution to use IsUsingWideScreen()
+- Remade Song Wheel
+- Recreated BPM Display
+- Recreated OptionRowIcons
+
+
+Version 1.0.0
+---------------------
+( First Public Release )
+- Added Support for OpenITG
+- Remade Menu Timer for Music Wheel
+
+Version 0.9.9 - Pre-Release
+---------------------
+( Final Pre-Release Update )
+- Fixes in Profile Check and Metrics.ini
+- Added SongNamePosition()
+
+Version 0.9.55 - Pre-Release
+---------------------
+- Removed Test Elements from Theme for Public First Relase
+
+Version 0.9.5 - Pre-Release
+---------------------
+- Completed Profile Support
+- Completed Nonstop Mode
+- Created Save Function to Profile
+- Audio Fixes
+
+Version 0.8.2
+---------------------
+- Fixed in Noteskins
+- Added TopCap to DWIDance to ensure Compatibility
+
+Version 0.7.0
+---------------------
+- Fixes in Solo Receptors
+- Added Song Info for Stepfiles Without Banners
+
+Version 0.6.95
+---------------------
+- Completed (?) Solo Support to DWIDance, DWIClassic, DWISolo and Theme
+
+Version 0.6.9
+---------------------
+- Remade Score Handler System from the ground up
+
+Version 0.6.85
+---------------------
+- Updated Metrics.ini to repair more things.
+
+Version 0.6.8
+---------------------
+- Changed TitleMusicRedirect()'s Script
+
+Version 0.6.75
+---------------------
+- Added DWIDance
+- Added Solo Support to Noteskins
+- Added Solo support to Theme
+
+Version 0.6.7
+---------------------
+- Added DWIClassic and DWISolo Noteskins
+
+Version 0.6.65
+---------------------
+- Added color graphics from DWI
+- Hold Judgment doesn't rotate anymore
+- Height of Scroll bar in Select Music fixed
+
+Version 0.6.6
+---------------------
+- Added Danger Graphic
+
+Version 0.6.55
+---------------------
+- Created Functions to help code organization
+	▼ StageNumberAdded()
+	▼ StageNumber()
+	▼ AnnouncerAudio()
+	▼ DangerSize()
+
+
+Version 0.6.5
+---------------------
+- Massive Code And Lua Optimization
+	▼ Evaluation
+	▼ Gameplay
+	▼ OptionsMenu
+	▼ SelectMusic
+
+- Created Low Health animations
+
+Version 0.6.45
+---------------------
+- Enhanced Load time and Bar in DWIIntro
+
+Version 0.6.4
+---------------------
+- Fixed P2 Only Crash in Normal Evaluation
+
+Version 0.6.35
+---------------------
+- Improved Load Screen
+- Fixed Difficulty Icons
+
+Version 0.6.3
+---------------------
+- Recreated Fade Animation in Credits Text
+
+Version 0.6.25
+---------------------
+- Changed Position on Combo
+- Applied HurryTweening to Difficulty Tick system to avoid Message Overflow
+- Added Mod Text as a Text Layer, hiding the Engine Controled Layer.
+
+Version 0.6.2
+---------------------
+- Added function for SOUND ( AudioPlay() )
+- Massive Code Optimization on these files:
+	▼ Metrics.ini
+	▼ ScreenTitleMenu
+	▼ ScreenSummarySingle
+	▼ ScreenSummaryDouble
+	▼ ScreenSelectStyle
+	▼ ScreenSelectStyleNonstop
+	▼ ScreenSelectMusic
+	▼ ScreenRecords
+	▼ ScreenNewSongs
+	▼ ScreenGameplay
+	▼ ScreenEvaluationSummary
+	▼ ScreenDWIIntro
+	▼ ScreenDWICredits
+	▼ OptionIcons
+
+Version 0.6.0
+---------------------
+- Cleaned Utilities for Public Beta release
+
+Version 0.5.0
+---------------------
+- Added Tween Animations for Gameplay Elements:
+	▼ Combo ( ComboTween() )
+	▼ Judgment ( JudgmentTween() )
+	▼ Hold Result ( HoldTween() )
+
+Version 0.4.0
+---------------------
+Readded Extra Commands in Utilities:
+	▼ DWIToggleDemonstration()
+	▼ DWI_StrSplit()
+
+Version 0.3.0
+---------------------
+Fixed and added new things on:
+	▼ ScreenDWICredits
+		- Implemented BG's that show in the credits sequence
+
+	▼ ScreenDWIIntro
+		- Added Working progress bar for the BootUp Animation Sequence
+
+	▼ ScreenEvaluationStage
+		- Added Stage Number
+		- Added Profile Name to Profile Images
+		- Added Percentage Scoring to results
+
+	▼ ScreenNewSongs
+		- Implemented the RandomCompanyName Script
+
+	▼ ScreenSelectMusic
+		- Changed positioning of Percentage score when the other player isn't enabled.
+
+Version 0.2.5
+---------------------
+- Added Missing Graphic on BootUp Loading Screen
+
+Version 0.2.0
+---------------------
+- Completed Credits Screen
+- Created Loading Screen for Bootup
+- Created Toggle for Demonstration
+
+Version 0.1.0
+---------------------
+- Code Optimizations on:
+	▼ ScreenDWICredits background
+	▼ ScreenEvaluationStage background
+	▼ ScreenOptions background
+
+Version 0.0.57
+---------------------
+- Fixed Profile Names, came with the ones from testing.
+
+Version 0.0.56
+---------------------
+- Added Difficulty Icons in Player Options. (Now Deprecated)
+
+Version 0.0.55 
+---------------------
+- Created Profile Support
+- Fixed Percentage Overflow in Select Music
+
+Version 0.0.5
+---------------------
+- Added GitHub Banner
+
+Version 0.0.5
+---------------------
+- Added Main files from the theme for Beta Testing

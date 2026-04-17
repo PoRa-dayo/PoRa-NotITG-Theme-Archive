@@ -1,0 +1,46 @@
+<ActorFrame><children>
+<!--Exit Screen-->
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-240,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+240" />
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y+25,SCREEN_CENTER_X-366,SCREEN_CENTER_Y+240" />
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-55,SCREEN_CENTER_X-359,SCREEN_CENTER_Y-240" />
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-120,SCREEN_CENTER_X-397,SCREEN_CENTER_Y-240" />
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-150,SCREEN_CENTER_X-411,SCREEN_CENTER_Y-240" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X-358;y,SCREEN_CENTER_Y+90;zoomx,1.2;zoomy,1.2;rotationz,90"  />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X-352;y,SCREEN_CENTER_Y+20;zoomx,.7;zoomy,1.3" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X-316;y,SCREEN_CENTER_Y+10;zoomx,.8;zoomy,1.3" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X-335;y,SCREEN_CENTER_Y-63;zoomx,.7;zoomy,1.2" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X-367;y,SCREEN_CENTER_Y-140;zoomx,.9;zoomy,3" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X-388;y,SCREEN_CENTER_Y-157;zoomx,.6;zoomy,1.5" />
+<!--Enter Screen-->
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+5,SCREEN_CENTER_X+410,SCREEN_CENTER_Y+240" />
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+134,SCREEN_CENTER_X+483,SCREEN_CENTER_Y+240" />
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+153,SCREEN_CENTER_X+503,SCREEN_CENTER_Y+240" />
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+119,SCREEN_CENTER_X+535,SCREEN_CENTER_Y+110" />
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+96,SCREEN_CENTER_X+462,SCREEN_CENTER_Y+83" />
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+58,SCREEN_CENTER_X+522,SCREEN_CENTER_Y+53" />
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+13,SCREEN_CENTER_X+453,SCREEN_CENTER_Y-7" />
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X+320,SCREEN_CENTER_Y-110,SCREEN_CENTER_X+418,SCREEN_CENTER_Y-90" />
+	<Layer Type="Quad" Command="Diffuse,#000000;Stretchto,SCREEN_CENTER_X+320,SCREEN_CENTER_Y-240,SCREEN_CENTER_X+345,SCREEN_CENTER_Y-90" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+535;y,SCREEN_CENTER_Y-116;zoomx,.18;zoomy,.4" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+415;y,SCREEN_CENTER_Y-105;zoomx,.18;zoomy,.4" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+345;y,SCREEN_CENTER_Y-109;zoomx,.27;zoomy,.6" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+415;y,SCREEN_CENTER_Y-97;zoomx,.27;zoomy,.6" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+321;y,SCREEN_CENTER_Y-91;zoomx,.18;zoomy,.4" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+365;y,SCREEN_CENTER_Y-75;zoomx,.18;zoomy,.4" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+452;y,SCREEN_CENTER_Y-66;zoomx,.18;zoomy,.4" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+318;y,SCREEN_CENTER_Y-9;zoomx,.18;zoomy,.4" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+418;y,SCREEN_CENTER_Y-6;zoomx,.25;zoomy,.4" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+454;y,SCREEN_CENTER_Y-3;zoomx,.18;zoomy,.4" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+448;y,SCREEN_CENTER_Y+7;zoomx,.25;zoomy,.55" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+408;y,SCREEN_CENTER_Y+12;zoomx,.18;zoomy,.4" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+412;y,SCREEN_CENTER_Y+51;zoomx,.27;zoomy,.6" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+522;y,SCREEN_CENTER_Y+55;zoomx,.18;zoomy,.36" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+458;y,SCREEN_CENTER_Y+85;zoomx,.16;zoomy,.33" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+463;y,SCREEN_CENTER_Y+92;zoomx,.18;zoomy,.4" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+411;y,SCREEN_CENTER_Y+109;zoomx,.22;zoomy,.4" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+539;y,SCREEN_CENTER_Y+114;zoomx,.27;zoomy,.6" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+409;y,SCREEN_CENTER_Y+118;zoomx,.18;zoomy,.36" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+479;y,SCREEN_CENTER_Y+137;zoomx,.27;zoomy,.6" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+410;y,SCREEN_CENTER_Y+138;zoomx,.27;zoomy,.6" />
+	<Layer File="blob.png" Command="x,SCREEN_CENTER_X+500;y,SCREEN_CENTER_Y+159;zoomx,.29;zoomy,.6" />
+</children></ActorFrame>

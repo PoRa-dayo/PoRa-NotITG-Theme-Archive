@@ -1,0 +1,3 @@
+<ActorFrame><children>
+	<Layer Font="_Meat" Text="Exit" Command="shadowlength,0;x,SCREEN_CENTER_X-140;y,SCREEN_CENTER_Y-10+18*2;zoom,.4;horizalign,left" />
+</children></ActorFrame>

@@ -1,0 +1,7 @@
+<ActorFrame><children>
+		<BitmapText
+			Text="Stage 6"
+			Font="_Meat"
+			OnCommand="@'horizalign,left;ShadowLength,0;diffuse,' .. TopBannerTextColor()"
+		/>
+</children></ActorFrame>

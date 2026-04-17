@@ -1,0 +1,5 @@
+<ActorFrame><children>
+	<Layer Type="Quad" Command="Stretchto,SCREEN_CENTER_X-310,SCREEN_CENTER_Y-230,SCREEN_CENTER_X+310,SCREEN_CENTER_Y+240;diffuse,0,0,0,1" />
+	<Layer Font="_Meat" Text="Help Menu" Command="shadowlength,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-220;zoom,.4" />
+	<Layer Font="_Meat" Text="Esc to exit" Command="shadowlength,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+225;zoom,.4" />
+</children></ActorFrame>

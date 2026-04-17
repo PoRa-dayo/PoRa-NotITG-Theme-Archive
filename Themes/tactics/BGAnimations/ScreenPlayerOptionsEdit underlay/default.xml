@@ -1,0 +1,41 @@
+<ActorFrame> <children>
+	<Layer Class="AutoActor" 
+		File="../Banner underlay" 
+		OnCommand="x,SCREEN_CENTER_X-385;y,SCREEN_CENTER_Y+174;zoomy,.7;faderight,.05" 
+	/>
+	<Layer
+		File="@THEME:GetPath( EC_GRAPHICS, '', 'banner frame' )"
+		OnCommand="x,SCREEN_CENTER_X-205;y,SCREEN_CENTER_Y+173;zoom,.7"
+	/>
+	<Layer
+		File="@GetBanner(GAMESTATE:GetCurrentSong())"
+		InitCommand="scaletoclipped,208,69;x,SCREEN_CENTER_X-206;y,SCREEN_CENTER_Y+172" 
+	/>
+	<Layer
+		File="Edit underlay"
+		InitCommand="x,SCREEN_CENTER_X+270;y,SCREEN_CENTER_Y"
+	/>
+	<Layer
+		File="Odin"
+		InitCommand="x,SCREEN_CENTER_X-280;y,SCREEN_CENTER_Y-60"
+	/>
+
+	<Layer
+		File="../_prompt background instant"
+	/>
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-4;zoom,0;linear,.2;zoom,1" OffCommand="linear,.1;zoom,0"> <children>
+		<Layer
+			File="underlay.png"
+		/>
+		<Layer Class="BitmapText" 
+			Font="_FFT2 white"
+			Text="Player Options"
+			InitCommand="x,-200;y,-73;shadowlength,0;zoomx,1.25"
+		/>
+		<Layer Class="BitmapText" 
+			Font="_FFT"
+			Text="Exit"
+			InitCommand="x,-245;y,53;shadowlength,0;zoomx,1.25"
+		/>
+	</children></Layer>
+</children> </ActorFrame>

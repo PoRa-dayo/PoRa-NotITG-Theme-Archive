@@ -1,0 +1,7 @@
+<ActorFrame><children>
+<!-- Obstacle 16: Spikes -->
+	<Layer File="spikesr.png" OnCommand="zoom,.3;y,5;x,27;ztest,1" />
+	<Layer File="spikesr.png" OnCommand="zoom,.3;y,5;x,9;ztest,1" />
+	<Layer File="spikesr.png" OnCommand="zoom,.3;y,5;x,-9;ztest,1" />
+	<Layer File="spikesr.png" OnCommand="zoom,.3;y,5;x,-27;ztest,1" />
+</children></ActorFrame>

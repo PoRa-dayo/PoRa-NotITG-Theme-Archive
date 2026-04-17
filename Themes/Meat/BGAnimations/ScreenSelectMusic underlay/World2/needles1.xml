@@ -1,0 +1,27 @@
+<ActorFrame><children>
+	<Layer Type="Quad" Command="diffuse,#242424;stretchto,-60,1,60,40" />
+	<Layer
+		File="needlesw.png"
+		Command="x,34;zoomx,.37;zoomy,.32;rotationz,-4;rotationy,180;diffuse,#242424"
+	/>
+	<Layer
+		File="needlesw.png"
+		Command="x,17;y,-2;zoomx,.37;zoomy,.32;rotationz,25;diffuse,#242424"
+	/>
+	<Layer
+		File="needlesw.png"
+		Command="x,3;y,1;zoomx,.4;zoomy,.3;rotationz,-2;diffuse,#242424"
+	/>
+	<Layer
+		File="needlesw.png"
+		Command="x,-14;zoomx,.4;zoomy,.3;rotationz,-3;rotationy,180;diffuse,#242424"
+	/>
+	<Layer
+		File="needlesw.png"
+		Command="x,-31;y,-1;zoomx,.37;zoomy,.32;rotationz,25;diffuse,#242424"
+	/>
+	<Layer
+		File="needlesw.png"
+		Command="x,-39;y,2;zoomx,.37;zoomy,.32;diffuse,#242424"
+	/>
+</children></ActorFrame>

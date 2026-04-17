@@ -1,0 +1,11 @@
+<ActorFrame><children>
+	<Layer
+		File="@GetClassShadow()"
+		InitCommand="x,SCREEN_CENTER_X+3;y,SCREEN_CENTER_Y+11"
+	/>
+	<Layer
+		File="@GetClass()"
+		InitCommand="@GetClassInit()"
+		OnCommand="addx,SCREEN_CENTER_X+3;addy,SCREEN_CENTER_Y+11"
+	/>
+</children></ActorFrame>

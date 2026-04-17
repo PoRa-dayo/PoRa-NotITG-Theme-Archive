@@ -1,0 +1,18 @@
+<ActorFrame> <children>
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Text="The secrets of the Service Menu are::uncovered on this screen."
+		InitCommand="x,SCREEN_CENTER_X-183;y,SCREEN_CENTER_Y-140;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+	/>
+	<Layer
+		File="background.png"
+		OnCommand="x,SCREEN_CENTER_X+160;y,SCREEN_CENTER_Y+210;zoom,0;sleep,.5;zoom,1" 
+		OffCommand="zoom,0"	
+	/>
+	<Layer
+		File="Options.png"
+		OnCommand="x,SCREEN_CENTER_X+205;y,SCREEN_CENTER_Y+180;zoom,0;sleep,.5;zoom,1" 
+		OffCommand="zoom,0"	
+	/>
+</children> </ActorFrame>

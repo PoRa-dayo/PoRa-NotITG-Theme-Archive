@@ -1,0 +1,26 @@
+<ActorFrame><children>
+	<Layer
+		File="splode1.sprite"
+		InitCommand="y,-20;zoom,0"
+		ResetCommand="stoptweening;zoom,0"
+		SplodeCommand="setstate,0;zoomx,.31;zoomy,.28;sleep,.6;zoom,0"
+	/>
+	<Layer
+		File="splode1.sprite"
+		InitCommand="rotationz,180;y,20;zoom,0"
+		ResetCommand="stoptweening;zoom,0"
+		SplodeCommand="setstate,0;zoomx,.31;zoomy,.28;sleep,.6;zoom,0"
+	/>
+	<Layer
+		File="splode2.sprite"
+		InitCommand="y,-20;zoom,0"
+		ResetCommand="stoptweening;zoom,0"
+		SplodeCommand="setstate,0;zoomx,.31;zoomy,.28;sleep,.6;zoom,0"
+	/>
+	<Layer
+		File="splode2.sprite"
+		InitCommand="rotationz,180;y,20;zoom,0"
+		ResetCommand="stoptweening;zoom,0"
+		SplodeCommand="setstate,0;zoomx,.31;zoomy,.28;sleep,.6;zoom,0"
+	/>
+</children></ActorFrame>

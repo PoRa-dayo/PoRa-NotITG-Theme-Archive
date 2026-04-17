@@ -1,0 +1,3 @@
+[Sprite]
+Texture=ScreenPlayerOptions under line 3x2.png
+InitCommand=%function(self) if not string.find(playerOptions.Flags,'toggle') then self:hidden(1) end end

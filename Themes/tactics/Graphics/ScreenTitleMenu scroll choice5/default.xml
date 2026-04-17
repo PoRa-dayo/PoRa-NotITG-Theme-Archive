@@ -1,0 +1,9 @@
+<ActorFrame> <children>
+			<AutoActor 
+				File="ClassInfo.png"
+				Offcommand=""
+				InitCommand="HorizAlign,left;ShadowLength,0;setstate,0;pause"
+				GainFocusCommand="Diffuse,1,1,1,1"
+				LoseFocusCommand="Diffuse,0.4,0.5,0.6,1"
+			/>
+</children> </ActorFrame>

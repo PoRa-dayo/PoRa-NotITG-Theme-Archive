@@ -1,0 +1,24 @@
+<ActorFrame><children>
+	<Layer
+		Type="Quad"
+		PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(1); self:queuecommand('Pulse') end"
+		InitCommand="hidden,1;playcommand,Pulse"
+	/>
+	<Layer
+		Type="Quad"
+		FloatCommand="%function(self) MESSAGEMAN:Broadcast('Float'); self:sleep(1.6); self:queuecommand('Float') end"
+		InitCommand="hidden,1;playcommand,Float"
+	/>
+	<ActorFrame 
+		FloatMessageCommand="%function(self) self:y(-8); self:sleep(.2); self:y(-6); self:sleep(.2); self:y(-4); self:sleep(.2); self:y(-2);self:sleep(.2); self:y(0); self:sleep(.2); self:y(-2); self:sleep(.2); self:y(-4); self:sleep(.2); self:y(-6); end"><children>
+		<Layer 
+			File="@GetClass()"
+			InitCommand="zoomy,1.2;Playcommand,Frame1"
+			PulseMessageCommand="finishtweening;playcommand,Frame1"
+			Frame1Command="x,141;y,186;cropleft,.19;cropright,.625;croptop,0;cropbottom,.775;sleep,.25;Playcommand,Frame2"
+			Frame2Command="x,21;y,186;cropleft,.375;cropright,.44;croptop,0;cropbottom,.775;sleep,.25;Playcommand,Frame3"
+			Frame3Command="x,141;y,186;cropleft,.19;cropright,.625;croptop,0;cropbottom,.775;sleep,.25;Playcommand,Frame4"
+			Frame4Command="x,261;y,186;cropleft,0;cropright,.81;croptop,0;cropbottom,.775;sleep,.25"
+		/>
+	</children></ActorFrame>
+</children></ActorFrame>

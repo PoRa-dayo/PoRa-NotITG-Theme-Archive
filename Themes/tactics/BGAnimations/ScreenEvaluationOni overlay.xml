@@ -1,0 +1,40 @@
+<ActorFrame><children>
+	<AutoActor File="ScreenEvaluation overlay" />
+	<ActorFrame 
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		OnCommand="x,SCREEN_CENTER_X-180;y,SCREEN_CENTER_Y-205;zoom,0;sleep,.5;zoom,1"
+		OffCommand="hidden,1"
+		><children>
+		<BitmapText
+			Font="_FFT2 white"
+			Text="Time"
+			OnCommand="zoom,1.5;x,6;y,80"
+
+		/>
+		<BitmapText
+			Font="_FFT2 white"
+			Text="????"
+			InitCommand="%function(self) local s=SecondsToMSSMsMs( STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_1):GetSurvivalSeconds() ); self:settext(s) end"
+			OnCommand="@'zoom,1.5;horizalign,left;x,40;y,80;diffuse,'..PlayerColor(PLAYER_1)"
+		/>
+	</children></ActorFrame>
+	<ActorFrame 
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		OnCommand="x,SCREEN_CENTER_X+40;y,SCREEN_CENTER_Y-205;zoom,0;sleep,.5;zoom,1"
+		OffCommand="hidden,1"
+	><children>
+		<BitmapText
+			Font="_FFT2 white"
+			Text="Time"
+			OnCommand="zoom,1.5;x,6;y,80"
+
+		/>
+		<BitmapText
+			Font="_FFT2 white"
+			Text="????"
+			InitCommand="%function(self) local s=SecondsToMSSMsMs( STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetSurvivalSeconds() ); self:settext(s) end"
+			OnCommand="@'zoom,1.5;horizalign,left;x,40;y,80;diffuse,'..PlayerColor(PLAYER_2)"
+		/>
+
+	</children></ActorFrame>
+</children></ActorFrame>

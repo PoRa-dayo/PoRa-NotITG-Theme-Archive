@@ -1,0 +1,21 @@
+<ActorFrame><children>
+	<Layer
+		Font="_Meat"
+		Text=""
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+170;shadowlength,0;zoom,0.5;PlayCommand,Refresh"
+		RefreshCommand="%
+			function(self)
+				if not GAMESTATE:IsEventMode() and GAMESTATE:GetCoinMode()==COIN_MODE_PAY then 
+				local credits=math.floor(GAMESTATE:GetCoins()/PREFSMAN:GetPreference('CoinsPerCredit'))
+				local remainder=math.mod(GAMESTATE:GetCoins(),PREFSMAN:GetPreference('CoinsPerCredit'))
+				local s='CREDITS: '
+				if credits>0 then s=s..credits..' ' end
+				s=s..remainder..'/'..PREFSMAN:GetPreference('CoinsPerCredit')
+				self:settext(s)
+				end
+			end"
+		CoinInsertedMessageCommand="PlayCommand,Refresh"		
+		CoinModeChangedMessageCommand="PlayCommand,Refresh"		
+		OffCommand="zoom,0"
+	/>
+</children></ActorFrame>

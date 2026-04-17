@@ -1,0 +1,28 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		InitCommand="x,SCREEN_CENTER_X-107;y,SCREEN_CENTER_Y+30;rotationz,90;queuecommand,Register" RegisterCommand="%function(self) Register(self,-10,-13,6,13,5) self:sleep(.1) self:queuecommand('Move1') end"
+		Move1Command="%function(self) self:rotationx(180) Move(self,0,.03,0,-G,'Dy','>',370,2) end" 
+		Move2Command="%function(self) self:rotationx(0) Move(self,0,-.03,0,-G,'Dy','<',250,1) end" 
+		MoveCommand="%function(self) Update(self) end"
+	><children>
+		<Layer
+			File="@'Crawler'..Pallette()..'.png'"
+			OnCommand="vertalign,bottom;zoomx,.35;zoomy,.27;y,11;queuecommand,Animate"
+			AnimateCommand="linear,.4;zoomx,.28;zoomy,.3;linear,.4;zoomx,.35;zoomy,.27;queuecommand,Animate"
+		/>
+	</children></Layer>
+	<Layer
+		Type="ActorFrame"
+		InitCommand="x,SCREEN_CENTER_X+107;y,SCREEN_CENTER_Y+76;rotationy,180;rotationz,90;queuecommand,Register" RegisterCommand="%function(self) Register(self,-6,-13,10,13,5) self:sleep(.1) self:queuecommand('Move2') end"
+		Move1Command="%function(self) self:rotationx(180) Move(self,0,.03,0,-G,'Dy','>',370,2) end" 
+		Move2Command="%function(self) self:rotationx(0) Move(self,0,-.03,0,-G,'Dy','<',250,1) end" 
+		MoveCommand="%function(self) Update(self) end"
+	><children>
+		<Layer
+			File="@'Crawler'..Pallette()..'.png'"
+			OnCommand="vertalign,bottom;zoomx,.35;zoomy,.27;y,11;queuecommand,Animate"
+			AnimateCommand="linear,.4;zoomx,.28;zoomy,.3;linear,.4;zoomx,.35;zoomy,.27;queuecommand,Animate"
+		/>
+	</children></Layer>
+</children></ActorFrame>

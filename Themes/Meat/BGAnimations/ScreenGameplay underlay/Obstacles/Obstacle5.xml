@@ -1,0 +1,15 @@
+<ActorFrame><children>
+<!-- Obstacle 5: Floating Thing -->
+	<Layer
+		Type="ActorFrame"
+		GoCommand="x,40;y,-60;linear,2.15;x,0;y,0;linear,2.15;x,-40;y,-60"
+		Fail3Command="x,40;y,-30;linear,1;x,10;y,0;linear,2.15;x,-20;y,-60"
+	><children>
+		<Layer
+			File="Floater.png"
+			OnCommand="zoomx,.27;zoomy,.18;y,2;queuecommand,Animate"
+			AnimateCommand="linear,1;zoomx,.2;zoomy,.24;linear,1;zoomx,.25;zoomy,.18;queuecommand,Animate"
+		/>
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.85;queuecommand,Jump3" />
+</children></ActorFrame>

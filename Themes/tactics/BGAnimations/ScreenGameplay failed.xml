@@ -1,0 +1,14 @@
+<ActorFrame><children>
+	<Layer
+		File="_fade out normal"
+	/>
+	<Layer Type="ActorFrame"  Condition="not GAMESTATE:PlayerUsingBothSides()" InitCommand="x,SCREEN_CENTER_X+6;y,SCREEN_CENTER_Y+105"><children>
+		<Layer
+			File="@GetClassShadow()"
+		/>
+		<Layer
+			File="@GetClass()"
+			InitCommand="@GetClassDead()"
+		 />
+	</children></Layer>
+</children></ActorFrame>

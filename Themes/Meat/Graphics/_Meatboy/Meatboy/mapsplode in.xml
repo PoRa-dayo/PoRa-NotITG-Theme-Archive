@@ -1,0 +1,43 @@
+<ActorFrame><children>
+	<Layer
+		File="blood.sprite"
+		InitCommand="zoom,0;animate,0;rotationz,60;x,29;y,-23"
+		OnCommand="sleep,.4;queuecommand,Go"
+		GoCommand="zoom,.4;Animate,1;sleep,.52;zoom,0"
+	/>
+	<Layer
+		File="blood.sprite"
+		InitCommand="zoom,0;animate,0;rotationz,165;x,30;y,23"
+		OnCommand="sleep,.4;queuecommand,Go"
+		GoCommand="zoom,.4;Animate,1;sleep,.52;zoom,0"
+	/>
+	<Layer
+		File="blood.sprite"
+		InitCommand="zoom,0;animate,0;rotationz,225;x,-14;y,29"
+		OnCommand="sleep,.4;queuecommand,Go"
+		GoCommand="zoom,.4;Animate,1;sleep,.52;zoom,0"
+	/>
+	<Layer
+		File="blood.sprite"
+		InitCommand="zoom,0;animate,0;rotationz,0;x,-21;y,-26"
+		OnCommand="sleep,.4;queuecommand,Go"
+		GoCommand="zoom,.4;Animate,1;sleep,.52;zoom,0"
+	/>
+	<Layer
+		File="shadow.png"
+		InitCommand="zoom,0;x,2;y,-1"
+		Command="sleep,.4;zoomx,.3;zoomy,1.15;diffusealpha,.8;sleep,.07;linear,.07;zoomx,.1;linear,.07;x,4;y,-2;zoomx,.2;zoomy,1.5;linear,.14;zoomx,.23;zoomy,1.7;sleep,0;x,3;y,0;zoomx,.28;zoomy,.9;linear,.34;diffusealpha,0;zoomx,.32;zoomy,.7"
+	/>
+	<Layer
+		File="_map 4x3.png"
+		InitCommand="zoom,0;animate,0;setstate,11"
+		OnCommand="sleep,.2;x,5;y,-12;zoom,.43;rotationz,-120;linear,.2;rotationz,0;zoom,.23;x,0;y,-1;linear,.07;zoomx,.56;zoomy,.2;x,-2;y,-2;linear,.07;zoomx,.15;zoomy,.44;x,2;y,-3;sleep,.07;linear,.07;zoom,.23;sleep,.14;queuecommand,Go"
+		GoCommand="setstate,2;zoomx,.31;zoomy,.15;x,3;y,-1;linear,.14;zoomx,.16;zoomy,.3;y,-13;linear,.14;zoom,.2;y,-7;sleep,.2;zoom,0"
+	/>
+	<Layer 
+		Type="Quad"
+		OnCommand="%function(self) self:zoom(0) self:sleep(.2) if musicload == 0 then self:queuecommand('Sound1') self:sleep(.6) self:queuecommand('Sound2') end end" 
+		Sound1Command="%function() Sound('WhooshSplat_fast') end" 
+		Sound2Command="%function() Sound('Whoosh_low3.l.ogg') end" 
+	/>
+</children></ActorFrame>

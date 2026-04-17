@@ -1,0 +1,46 @@
+<ActorFrame><children>
+	<Layer Type="ActorFrame" Command="x,135;y,68;rotationz,-2" ><children>
+		<Layer
+			File="building1.png"
+			Command="zoomx,.4;zoomy,.38;diffuse,#22272B"
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,104;y,21;rotationy,180;rotationz,1.5" ><children>
+		<Layer
+			File="building1.png"
+			Command="zoomx,.34;zoomy,.49;diffuse,#22272B"
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,49;y,4;rotationz,-3.5" ><children>
+		<Layer
+			File="building1.png"
+			Command="zoomx,.31;zoomy,.44;diffuse,#22272B"
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,5;y,65;rotationz,-2" ><children>
+		<Layer
+			File="building1.png"
+			Command="zoomx,.4;zoomy,.38;diffuse,#22272B"
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-45;y,18;rotationz,6" ><children>
+		<Layer
+			File="building1.png"
+			Command="zoomx,.4;zoomy,.5;diffuse,#22272B"
+		/>
+	</children></Layer>
+	<Layer
+		File="building2.png"
+		Command="x,-116;y,-13;zoomx,.44;zoomy,.6;diffuse,#22272B"
+	/>
+	<Layer Type="ActorFrame" Command="x,-179;y,68;rotationy,180;rotationz,-2" ><children>
+		<Layer
+			File="building1.png"
+			Command="zoomx,.4;zoomy,.4;diffuse,#22272B"
+		/>
+	</children></Layer>
+	<Layer
+		File="building1.png"
+		Command="x,-235;y,51;zoomx,.4;zoomy,.37;diffuse,#22272B"
+	/>
+</children></ActorFrame>

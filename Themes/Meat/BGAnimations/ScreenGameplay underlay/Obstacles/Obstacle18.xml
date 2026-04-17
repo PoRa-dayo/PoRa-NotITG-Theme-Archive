@@ -1,0 +1,5 @@
+<ActorFrame><children>
+<!-- Obstacle 18: Pit -->
+	<Layer Type="Quad" OnCommand="stretchto,-80,10,80,28;blend,noeffect;zwrite,1" Fail3Command="addx,48" />
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.85;queuecommand,Jump3" />
+</children></ActorFrame>

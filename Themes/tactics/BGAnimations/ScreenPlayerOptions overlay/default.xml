@@ -1,0 +1,35 @@
+<ActorFrame> <children>
+	<ActorFrame OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,2;linear,.3;zoom,1;sleep,.41;zoom,0" OffCommand="zoom,0"> <children>
+		<Layer 
+			File="background.png"
+			InitCommand="y,90"
+		 />
+	</children></ActorFrame>
+	<Layer
+		File="background2.png"
+		InitCommand="x,SCREEN_CENTER_X+180;y,SCREEN_CENTER_Y+220;zoom,0"
+		OnCommand="sleep,.3;zoom,1"
+		OffCommand="zoom,0"
+	/>
+	<Layer Type="ActorFrame" OnCommand="y,275;sleep,.2;linear,.5;addy,-275;sleep,.01;zoom,0" OffCommand="stoptweening;zoom,0"> <children>
+		<Layer 
+			File="ScreenOptions underlay"
+			InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+109"
+		 />
+		<Layer Type="ActorFrame" InitCommand="x,SCREEN_CENTER_X+6;y,SCREEN_CENTER_Y+74"><children>
+			<Layer
+				File="@GetClassShadow()"
+			/>
+			<Layer 
+				File="@GetClass()"
+				InitCommand="@GetClassInit()"		
+			 />
+		</children></Layer>
+	</children></Layer>
+	<Layer
+		File="start.png"
+		InitCommand="x,SCREEN_CENTER_X+5;y,SCREEN_CENTER_Y+217;zoom,0"
+		OnCommand="diffuse,0,0,0,1;sleep,.7;zoom,1;linear,.6;diffuse,1,1,1,1;sleep,.2;zoom,0"
+		OffCommand="finishtweening;zoom,0"
+	/>
+</children> </ActorFrame>

@@ -1,0 +1,30 @@
+<ActorFrame><children>
+	<ActorFrame
+		InitCommand="%function() GradeA = 0 end"
+		AnimateCommand="%function(self) if GradeA == 0 then GradeA = 1; self:queuecommand('Sound1') self:sleep(.2) self:queuecommand('Sound2') end end" 
+		Sound1Command="%function() Sound('Whoosh_high0.L.ogg') end" 
+		Sound2Command="%function() Sound('meat_death3.ogg') GradeA = 0 end"
+	/>
+	<Layer File="blood" InitCommand="zoom,0" AnimateCommand="zoom,.67;zoomy,.3;linear,.1;zoomy,.67" />
+	<Layer Type="Quad" InitCommand="stretchto,0,-7,0,11;diffuse,#990000" AnimateCommand="sleep,.2;linear,.14;stretchto,-120,-3,0,7;linear,.07;stretchto,-110,-7,0,11" />
+	<Layer Type="ActorFrame" Command="y,-2" AnimateCommand="queuecommand,Start" StartCommand="sleep,.2;linear,.15;y,0" ><children>
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.2;x,29;y,-2;zoom,.07;linear,.14;x,42" />
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.27;x,15;y,-17;zoom,.07;linear,.07;x,21;y,-25" />
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.3;x,11;y,17;zoom,.07;linear,.07;x,12;y,19" />
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.2;x,-16;y,15;zoom,.07;linear,.14;x,-28;y,22" />
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.3;x,-3;y,20;zoom,.07;linear,.07;x,-4.5;y,22" />
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.34;zoom,.07;x,-111;y,-1" />
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.27;x,-131;y,4;zoom,.07;linear,.07;x,-156;y,11" />
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.27;x,-124;y,1;zoom,.11;linear,.07;x,-146;y,-11" />
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.34;zoom,.11;x,-109;y,8" />
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.27;x,-5;y,20;zoom,.11;linear,.07;y,26" />
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.34;zoom,.11;x,-25;y,11" />
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.2;x,-10;y,-17;zoom,.11;linear,.14;x,-22;y,-29" />
+		<Layer File="blood" InitCommand="zoom,0" AnimateCommand="sleep,.2;x,10;y,22;zoom,.11;linear,.14;x,26;y,45;diffusealpha,0" />
+	</children></Layer>
+	<Layer Font="_Meat" Text="Grade" Command="zoom,0" AnimateCommand="shadowlength,0;diffuse,#000000;y,-2;x,-147;zoom,.74;zoomy,.39;linear,.1;zoomy,.64;zoomx,.5;x,-57;linear,.1;zoom,.58;x,-63" />
+	<Layer Type="ActorFrame" Command="zoom,0" AnimateCommand="sleep,.2;diffusealpha,.5;x,2;rotationz,-15;zoom,1.3;zoomx,1.7;linear,.1;zoomy,1;linear,.1;zoomx,1" ><children>
+		<Layer Font="_Meat" Text="A" Command="x,-4;y,-6;shadowlength,0;zoom,.68;diffuse,#00000080" AnimateCommand="sleep,.2;linear,.1;diffusealpha,1" />
+		<Layer Font="_Meat" Text="+" Command="x,11;y,-6;shadowlength,0;zoomx,.5;zoomy,.68;diffuse,#00000080" AnimateCommand="sleep,.2;linear,.1;diffusealpha,1" />
+	</children></Layer>
+</children></ActorFrame>

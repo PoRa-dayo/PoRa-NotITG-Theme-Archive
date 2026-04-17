@@ -1,0 +1,38 @@
+<ActorFrame><children>
+	<Layer 
+		Type="ActorFrame" 
+		OffCommand="queuecommand,Start"
+		StartCommand="zoom,1.15;linear,.07;zoomx,.8;zoomy,1.4;addy,-6;linear,.07;zoomx,1.5;zoomy,.65;addy,9;sleep,.06;zoomx,1.8;zoomy,.5;addy,3.3;sleep,.52;queuecommand,Done" 
+		DoneCommand="hidden,1"
+		><children>
+		<Layer
+			File="shadow.png"
+			OffCommand="x,0;y,11.1;zoom,.14;sleep,.2;queuecommand,Go"
+			GoCommand="sleep,.2;linear,.14;zoomx,.18;zoomy,.5;addy,2;linear,.14;zoomy,.1;addy,-2;linear,.2;zoomx,0"
+		/>
+		<Layer
+			File="map.sprite"
+			OnCommand="Animate,0"
+			OffCommand="zoom,.2;x,.4;y,-1.2;setstate,2;sleep,.2;queuecommand,Go"
+			GoCommand="rotationx,180;addy,2;addx,-1;sleep,.14;zoom,0;sleep,.38"
+		/>
+	</children></Layer>
+	<Layer
+		File="blood.sprite"
+		OffCommand="x,-35;y,-22;zoom,0;sleep,.2;zoom,.72;queuecommand,Go"
+		GoCommand="setstate,0;sleep,.52;queuecommand,Done"
+		DoneCommand="hidden,1"
+	/>
+	<Layer
+		File="blood.sprite"
+		OffCommand="rotationy,180;x,35;y,-22;zoom,0;sleep,.2;zoom,.72;queuecommand,Go"
+		GoCommand="setstate,0;sleep,.52;queuecommand,Done"
+		DoneCommand="hidden,1"
+	/>
+	<ActorFrame
+		InitCommand="%function() MapSplodeSound = 0 end"
+		OffCommand="%function(self) if MapSplodeSound == 0 and world == 7 then MapSplodeSound = 1; self:queuecommand('Sound1') self:sleep(.3) self:queuecommand('Sound2') self:sleep(.3) self:queuecommand('Sound1') self:sleep(.5) end end" 
+		Sound1Command="%function() Sound('meat_impacts_3') end" 
+		Sound2Command="%function() Sound('meat_death4') end"
+	/>
+</children></ActorFrame>

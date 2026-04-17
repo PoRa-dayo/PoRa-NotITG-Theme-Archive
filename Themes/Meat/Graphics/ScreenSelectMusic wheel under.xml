@@ -1,0 +1,45 @@
+<ActorFrame><children>
+	<ActorFrame Command="%MusicTransitionAspectScale" ><children>
+		<Layer
+			File="../BGAnimations/_saw activated fall"
+			Command="zoom,0;queuecommand,Pulse"
+			PulseCommand="%function(self) ModPulse(self,'shuffle') end"
+			ModCommand="%function(self)
+				self:queuecommand('Start')
+				banner = 0
+				self:zoom(1)
+				self:sleep(.6)
+				self:queuecommand('Out')
+			end"
+			OutCommand="%function() SCREENMAN:SetNewScreen('ScreenSelectWorld') end"
+		/>
+		<Layer
+			File="../BGAnimations/_fetus out"
+			Command="zoom,0;queuecommand,Pulse"
+			PulseCommand="%function(self) ModPulse(self,'dark') end"
+			ModCommand="%function(self) if not GAMESTATE:IsCourseMode() then
+				if dark == '' then dark = 'D' else dark = '' end
+				banner = world; musicload = 3; warp = 0
+				self:queuecommand('Start')
+				self:zoom(1)
+				self:sleep(.5)
+				self:queuecommand('Out')
+			end end"
+			OutCommand="%function() SCREENMAN:SetNewScreen('ScreenWorldChange') end"
+		/>
+		<Layer
+			File="_GlitchSounds.xml"
+			OnCommand="queuecommand,Pulse"
+			PulseCommand="%function(self) ModPulse(self,'randomvanish') end"
+			ModCommand="%function(self)
+					if world < 6 then warp = math.mod(warp + 1,4)
+				elseif world == 6 then warp = math.mod(warp + 1 + ((warp == 1 and 1) or 0),4);
+				else warp = 0 end
+					if warp == 1 then Sound('chapterend.ogg')
+				elseif warp == 2 then Sound('WarpZone.ogg')
+				elseif warp == 3 then self:queuecommand('Glitch')
+				else Sound('dundundun') end
+			end"
+		/> 
+	</children></ActorFrame>
+</children></ActorFrame>

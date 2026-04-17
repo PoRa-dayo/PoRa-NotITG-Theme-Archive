@@ -1,0 +1,17 @@
+<ActorFrame> <children>
+	<ActorFrame InitCommand="x,SCREEN_CENTER_X-145;y,SCREEN_CENTER_Y+63" OnCommand="zoom,0;sleep,.3;linear,.2;zoom,1"> <children>
+		<Layer
+			File="menu.png"
+		/>
+		<Layer Class="BitmapText" 
+			Font="_FFT2 white"
+			Text="Menu"
+			InitCommand="x,-115;y,-137;shadowlength,0;zoomx,1.25"
+		/>
+	</children></ActorFrame>
+	<Layer
+		File="status.png"
+		InitCommand="x,SCREEN_CENTER_X+180;y,SCREEN_CENTER_Y-33"
+		OnCommand="zoom,0;sleep,.3;linear,.2;zoom,1"
+	/>
+</children> </ActorFrame>

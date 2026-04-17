@@ -1,0 +1,6 @@
+<ActorFrame InitCommand="%function(self) if warp >= 12 then AspectScale(self) end end" ><children>
+	<Layer Condition="warp < 12" File="_meatboy in" />
+	<Layer Condition="warp == 12" File="ScreenStage overlay/Warp.xml" Command="sleep,.2;zoom,0" />
+	<Layer Condition="warp == 13" File="ScreenStage overlay/Glitch.xml" Command="sleep,.2;zoom,0" />
+	<Layer Condition="warp == 12 or warp == 13" Type="Quad" InitCommand="%function(self) if world == 2 and warp == 12 then self:diffuse(.22,.22,.16,0) else self:diffuse(0,0,0,0) end end" Command="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffusealpha,0;linear,.2;diffusealpha,1;linear,.2;diffusealpha,0" />
+</children></ActorFrame>

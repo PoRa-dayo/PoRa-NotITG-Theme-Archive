@@ -1,0 +1,14 @@
+<ActorFrame><children>
+<!-- Obstacle 2: Small Flying Saw -->
+	<Layer
+		Type="ActorFrame"
+		GoCommand="x,300;linear,4.5;x,-300"
+		Fail3Command="x,208;linear,2;x,-172"
+	><children>
+		<Layer
+			File="@'saw'..Pallette()..'.png'"
+			OnCommand="zoom,.11;y,2;spin;effectmagnitude,0,0,-360"
+		/>
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.95;queuecommand,Jump2" />
+</children></ActorFrame>

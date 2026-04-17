@@ -1,0 +1,12 @@
+<ActorFrame
+	Sound="cancel.ogg"
+> <children>
+	<Actor
+		Type="Quad"
+		StartTransitioningCommand="%function(self) SCREENMAN:GetTopScreen():playcommand('Off') end"
+	/>
+	<Actor
+		File="_fade out normal"
+	/>
+</children> </ActorFrame>
+

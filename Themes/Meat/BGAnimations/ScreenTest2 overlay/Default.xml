@@ -1,0 +1,22 @@
+<ActorFrame><children>
+	<Layer 
+		File="Evaluation Test" 
+	/>
+	<Layer Type="ActorFrame" Condition="" ><children>
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,1,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,2,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,3,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,4,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,5,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,6,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,7,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,8,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,9,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,10,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,11,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,12,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,13,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,14,4) end" />
+		<Layer Type="Quad" Command="%function(self) QuadFromRegister(self,15,4) end" />
+	</children></Layer>
+</children></ActorFrame>

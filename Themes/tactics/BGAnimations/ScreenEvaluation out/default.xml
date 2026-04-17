@@ -1,0 +1,126 @@
+<ActorFrame> <children>
+	<ActorFrame 
+		Condition="IsEventMode() or OnePassed() and not IsFinalStage()"
+		><children>
+		<Layer Class="AutoActor" 
+			File="../Banner underlay.png" 
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-166;zoomy,1;diffusealpha,1;linear,.2;zoomy,.5;diffusealpha,0" 
+		/>
+		<ActorFrame Condition="not GAMESTATE:IsCourseMode()"><children>
+			<Layer
+				File="BG2"
+				OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;hidden,0;draworder,2"
+				OffCommand="hidden,0"
+			/>
+			<Layer
+				File="BG1"
+				InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;draworder,2"
+				OnCommand="%function(self) if not OnePassed() then self:sleep(.4); end; self:sleep(.4); self:linear(.2); self:diffusealpha(0); end"
+				OffCommand="Hidden,1"
+			/>
+			<Layer Type="ActorFrame" 
+				InitCommand="draworder,2"
+				OnCommand="%function(self) self:x(SCREEN_CENTER_X+6); self:y(SCREEN_CENTER_Y+105); if not OnePassed() then self:zoom(0); self:sleep(.4); self:zoom(1); end; self:sleep(.4); self:linear(.2); self:x(SCREEN_CENTER_X+78); self:y(SCREEN_CENTER_Y+127); end"
+				><children>
+				<Layer
+					File="@GetClassShadow()"
+					OnCommand="draworder,2"
+					OffCommand="hidden,0"
+				/>
+				<Layer
+					File="@GetClass()"
+					InitCommand="@GetClassInit()"
+					OnCommand="draworder,2"
+					OffCommand="hidden,0"
+				/>
+			</children> </Layer>
+		</children> </ActorFrame>
+		<ActorFrame Condition="GAMESTATE:IsCourseMode()"><children>
+			<Layer
+				File="BG3"
+				OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;hidden,0;draworder,2"
+				OffCommand="hidden,0"
+			/>
+			<Layer
+				File="BG2"
+				InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;draworder,2"
+				OnCommand="%function(self) if not OnePassed() then self:sleep(.4); end; self:sleep(.4); self:sleep(.2); self:linear(.2); self:diffusealpha(0); end"
+				OffCommand="Hidden,1"
+			/>
+			<Layer
+				File="BG1"
+				InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;draworder,2"
+				OnCommand="%function(self) if not OnePassed() then self:sleep(.4); end; self:sleep(.4); self:linear(.2); self:diffusealpha(0); end"
+				OffCommand="Hidden,1"
+			/>
+			<Layer Type="ActorFrame" 
+				InitCommand="draworder,2"
+				OnCommand="%function(self) self:x(SCREEN_CENTER_X+6); self:y(SCREEN_CENTER_Y+105); if not OnePassed() then self:zoom(0); self:sleep(.4); self:zoom(1); end; self:sleep(.4); self:linear(.4); self:x(SCREEN_CENTER_X+148); self:y(SCREEN_CENTER_Y+167); end"
+				><children>
+				<Layer
+					File="@GetClassShadow()"
+					OnCommand="draworder,2"
+					OffCommand="hidden,0"
+				/>
+				<Layer
+					File="@GetClass()"
+					InitCommand="@GetClassInit()"
+					OnCommand="draworder,2"
+					OffCommand="hidden,0"
+				/>
+			</children> </Layer>
+		</children> </ActorFrame>
+	</children> </ActorFrame>
+	<Layer Type="ActorFrame" 
+		Condition="not OnePassed() and IsEventMode()"
+		OnCommand="x,SCREEN_CENTER_X+6;y,SCREEN_CENTER_Y+105;sleep,.4;zoom,0"
+		><children>
+		<Layer
+			File="@GetClassShadow()"
+		/>
+		<Layer 
+			File="@GetClass()"
+			InitCommand="@GetClassHurt()"		
+		 />
+	</children></Layer>
+	<ActorFrame Condition="not IsEventMode() and not OnePassed() or IsFinalStage()"
+		> <children>
+		<Layer
+			File="../_fade out normal"
+		/>
+		<Layer Type="ActorFrame"
+			InitCommand="x,SCREEN_CENTER_X+6;y,SCREEN_CENTER_Y+105" 
+			OnCommand="%function(self) self:sleep(.5) self:linear(.5)
+					if not GAMESTATE:IsPlayerEnabled(PLAYER_2) then 
+						self:x(SCREEN_CENTER_X+90); self:y(SCREEN_CENTER_Y-20)
+					end
+					if not GAMESTATE:IsPlayerEnabled(PLAYER_1) then 
+						self:x(SCREEN_CENTER_X-90); self:y(SCREEN_CENTER_Y-20)
+					end	
+					if GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsPlayerEnabled(PLAYER_2) then
+						self:x(SCREEN_CENTER_X); self:y(SCREEN_CENTER_Y-80)
+					end
+				end"
+			><children>
+			<Layer
+				File="@GetClassShadow()"
+			/>
+			<Layer 
+				Condition="not OnePassed()"
+				File="@GetClass()"
+				InitCommand="@GetClassDead()"	
+			 />
+			<Layer 
+				Condition="OnePassed() and STATSMAN:GetBestGrade() > GRADE_TIER08"
+				File="@GetClass()"
+				InitCommand="@GetClassHurt()"	
+			 />
+			<Layer 
+				Condition="OnePassed() and STATSMAN:GetBestGrade() <= GRADE_TIER08"
+				File="@GetClass()"
+				InitCommand="@GetClassInit()"	
+			 />
+			</children>
+		</Layer>
+	</children> </ActorFrame>
+</children> </ActorFrame>

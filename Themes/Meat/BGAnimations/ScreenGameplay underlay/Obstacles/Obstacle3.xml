@@ -1,0 +1,17 @@
+<ActorFrame><children>
+<!-- Obstacle 3: Needle Pile -->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="addx,48"
+	><children>
+		<Layer Type="Quad" OnCommand="stretchto,-70,27,70,55;diffuse,#000000;blend,noeffect;zwrite,1" />
+		<Layer File="@'needles'..Pallette()..'.png'" OnCommand="zoom,.25;x,39;y,20;rotationz,40;ztest,1" />
+		<Layer File="@'needles'..Pallette()..'.png'" OnCommand="zoom,.25;x,-41;y,25;rotationz,-50;ztest,1" />
+		<Layer File="@'needles'..Pallette()..'.png'" OnCommand="zoom,.25;x,-18;y,15;rotationz,-10;ztest,1" />
+		<Layer File="@'needles'..Pallette()..'.png'" OnCommand="zoom,.25;x,16;y,11;ztest,1" />
+		<Layer File="ground mask.png" OnCommand="zoom,.5;x,-32;y,18;blend,noeffect;zwrite,1" />
+		<Layer File="ground mask.png" OnCommand="zoom,.5;y,18;blend,noeffect;zwrite,1" />
+		<Layer File="ground mask.png" OnCommand="zoom,.5;x,32;y,18;blend,noeffect;zwrite,1" />
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.85;queuecommand,Jump3" />
+</children></ActorFrame>

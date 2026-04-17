@@ -1,0 +1,7 @@
+<ActorFrame> <children>
+	<Layer
+		File="ScreenSelectStyle underlay.png"
+		OnCommand="zoom,0;sleep,1.5;linear,.2;zoom,1;Draworder,1"
+		OffCommand="zoom,0"
+	/>
+</children> </ActorFrame>

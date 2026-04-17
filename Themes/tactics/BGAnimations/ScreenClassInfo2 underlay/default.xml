@@ -1,0 +1,39 @@
+<ActorFrame> <children>
+	<Layer 
+		File="../Professor.png"
+		InitCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y-151"
+		OffCommand=""
+	 />
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Text="World Maps codes can be entered here as well::to see their effects."
+		InitCommand="x,SCREEN_CENTER_X-183;y,SCREEN_CENTER_Y-140;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+		OnCommand="cropright,1;sleep,.1;linear,1;cropright,-.2"
+		OffCommand="stoptweening;zoom,0"
+	/>
+	<ActorFrame OnCommand="x,SCREEN_CENTER_X-180;y,SCREEN_CENTER_Y+68"> <children>
+		<Layer
+			File="menu.png"
+		/>
+		<Layer Class="BitmapText" 
+			Font="_FFT2 white"
+			Text="Menu"
+			InitCommand="x,-80;y,-142;shadowlength,0;zoomx,1.25"
+		/>
+	</children></ActorFrame>
+	<Layer 
+		File="platform.png"
+		InitCommand="x,SCREEN_CENTER_X+120;y,SCREEN_CENTER_Y+160"
+		OnCommand="zoom,0;sleep,0;zoom,1"
+		OffCommand="zoom,0"
+	 />
+	<Layer Type="ActorFrame" InitCommand="x,SCREEN_CENTER_X+123;y,SCREEN_CENTER_Y+120" OffCommand="zoom,0"><children>
+		<Layer
+			File="@GetClassShadow(1)"
+		/>
+		<Layer
+			File="@GetClassAnimation()"
+		/>
+	</children></Layer>
+</children> </ActorFrame>

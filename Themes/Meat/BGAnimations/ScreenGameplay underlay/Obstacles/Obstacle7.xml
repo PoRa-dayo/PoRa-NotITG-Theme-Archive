@@ -1,0 +1,5 @@
+<ActorFrame><children>
+<!-- Obstacle 7: Missile -->
+	<Layer File="@'Missile'..Pallette()..'.xml'" GoCommand="sleep,1.25;queuecommand,Animate" Fail3Command="queuecommand,Animate" />
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.95;queuecommand,Jump2" />
+</children></ActorFrame>

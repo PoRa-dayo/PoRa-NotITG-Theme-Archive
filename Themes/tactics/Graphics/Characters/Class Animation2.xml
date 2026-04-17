@@ -1,0 +1,46 @@
+<ActorFrame><children>
+	<Layer
+		Type="Quad"
+		PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(1); self:queuecommand('Pulse') end"
+		InitCommand="hidden,1;playcommand,Pulse"
+	/>
+	<Layer 
+		File="@GetClass()"
+		InitCommand="zoomy,1.2;Playcommand,Frame1"
+		PulseMessageCommand="finishtweening;playcommand,Frame1"
+		Frame1Command="x,-47;y,102;croptop,.28;cropbottom,.65;cropleft,.50;cropright,.40;sleep,.125;Playcommand,Frame2"
+		Frame2Command="x,-164;y,102;croptop,.28;cropbottom,.65;cropleft,.70;cropright,.20;sleep,.125;Playcommand,Frame3"
+		Frame3Command="x,-284;y,106;croptop,.28;cropbottom,.65;cropleft,.89;cropright,0;sleep,.125;Playcommand,Frame4"
+		Frame4Command="x,-164;y,102;croptop,.28;cropbottom,.65;cropleft,.70;cropright,.20;sleep,.125;Playcommand,Frame5"
+		Frame5Command="x,-47;y,102;croptop,.28;cropbottom,.65;cropleft,.50;cropright,.40;sleep,.125;Playcommand,Frame6"
+		Frame6Command="x,78;y,102;croptop,.28;cropbottom,.65;cropleft,.32;cropright,.60;sleep,.125;Playcommand,Frame7"
+		Frame7Command="x,203;y,106;croptop,.28;cropbottom,.65;cropleft,.12;cropright,.80;sleep,.125;Playcommand,Frame8"
+		Frame8Command="x,78;y,102;croptop,.28;cropbottom,.65;cropleft,.32;cropright,.60"
+	/>
+	<Layer 
+		File="@GetClass()"
+		InitCommand="zoomy,1.2;Playcommand,Frame1"
+		PulseMessageCommand="finishtweening;playcommand,Frame1"
+		Frame1Command="x,275;y,164;croptop,.14;cropbottom,.725;cropleft,0;cropright,.875;sleep,.125;Playcommand,Frame2"
+		Frame2Command="x,195;y,166;croptop,.14;cropbottom,.725;cropleft,.125;cropright,.75;sleep,.125;Playcommand,Frame3"
+		Frame3Command="x,115;y,168;croptop,.14;cropbottom,.725;cropleft,.25;cropright,.625;sleep,.125;Playcommand,Frame4"
+		Frame4Command="x,195;y,166;croptop,.14;cropbottom,.725;cropleft,.125;cropright,.75;sleep,.125;Playcommand,Frame5"
+		Frame5Command="x,275;y,164;croptop,.14;cropbottom,.725;cropleft,0;cropright,.875;sleep,.125;Playcommand,Frame6"
+		Frame6Command="x,-205;y,246;croptop,0;cropbottom,.86;cropleft,.76;cropright,.125;sleep,.125;Playcommand,Frame7"
+		Frame7Command="x,-125;y,248;croptop,0;cropbottom,.86;cropleft,.625;cropright,.25;sleep,.125;Playcommand,Frame8"
+		Frame8Command="x,-205;y,246;croptop,0;cropbottom,.86;cropleft,.76;cropright,.125"
+	/>
+	<Layer
+		File="@GetClass()"
+		InitCommand="zoomy,1.2;Playcommand,Frame1"
+		PulseMessageCommand="finishtweening;playcommand,Frame1"
+		Frame1Command="x,-77;y,108;croptop,.28;cropbottom,.65;cropleft,.60;cropright,.30;sleep,.125;Playcommand,Frame2"
+		Frame2Command="x,-202;y,108;croptop,.28;cropbottom,.65;cropleft,.80;cropright,.12;sleep,.125;Playcommand,Frame3"
+		Frame3Command="x,220;y,62;croptop,.35;cropbottom,.56;cropleft,.13;cropright,.76;sleep,.125;Playcommand,Frame4"
+		Frame4Command="x,-202;y,108;croptop,.28;cropbottom,.65;cropleft,.80;cropright,.12;sleep,.125;Playcommand,Frame5"
+		Frame5Command="x,-77;y,108;croptop,.28;cropbottom,.65;cropleft,.60;cropright,.30;sleep,.125;Playcommand,Frame6"
+		Frame6Command="x,38;y,110;croptop,.28;cropbottom,.65;cropleft,.40;cropright,.50;sleep,.125;Playcommand,Frame7"
+		Frame7Command="x,155;y,110;croptop,.28;cropbottom,.65;cropleft,.20;cropright,.71;sleep,.125;Playcommand,Frame8"
+		Frame8Command="x,38;y,110;croptop,.28;cropbottom,.65;cropleft,.40;cropright,.50"
+	/>
+</children></ActorFrame>

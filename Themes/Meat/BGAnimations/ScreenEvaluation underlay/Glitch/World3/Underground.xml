@@ -1,0 +1,45 @@
+	<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+		<Layer File="spikesr.png" Command="y,172;x,-52;zoom,.4" />
+		<Layer File="spikesr.png" Command="y,172;x,52;zoom,.4" />
+		<Layer File="spikesr.png" Command="y,172;x,-26;zoom,.4" />
+		<Layer File="spikesr.png" Command="y,172;x,26;zoom,.4" />
+		<Layer File="spikesr.png" Command="y,172;x,0;zoom,.4" />
+
+		<Layer File="spikesr.png" Command="y,68;x,-110;zoom,.4;rotationz,90" />
+		<Layer File="spikesr.png" Command="y,42;x,-110;zoom,.4;rotationz,90" />
+		<Layer File="spikesr.png" Command="y,68;x,110;zoom,.4;rotationz,90;rotationy,180" />
+		<Layer File="spikesr.png" Command="y,42;x,110;zoom,.4;rotationz,90;rotationy,180" />
+
+		<Layer File="spikesr.png" Command="y,140;x,20;zoom,.4;rotationz,90" />
+		<Layer File="spikesr.png" Command="y,140;x,-20;zoom,.4;rotationz,90;rotationy,180" />
+		<Layer File="spikesr.png" Command="y,114;x,20;zoom,.4;rotationz,90" />
+		<Layer File="spikesr.png" Command="y,114;x,-20;zoom,.4;rotationz,90;rotationy,180" />
+		<Layer File="spikesr.png" Command="y,88;x,20;zoom,.4;rotationz,90" />
+		<Layer File="spikesr.png" Command="y,88;x,-20;zoom,.4;rotationz,90;rotationy,180" />
+		<Layer File="spikesr.png" Command="y,62;x,20;zoom,.4;rotationz,90" />
+		<Layer File="spikesr.png" Command="y,62;x,-20;zoom,.4;rotationz,90;rotationy,180" />
+		<Layer File="spikesr.png" Command="y,36;x,20;zoom,.4;rotationz,90" />
+		<Layer File="spikesr.png" Command="y,36;x,-20;zoom,.4;rotationz,90;rotationy,180" />
+		<Layer File="spikesr.png" Command="y,10;x,20;zoom,.4;rotationz,90" />
+		<Layer File="spikesr.png" Command="y,10;x,-20;zoom,.4;rotationz,90;rotationy,180" />
+		<Layer File="spikesr.png" Command="y,-16;x,20;zoom,.4;rotationz,90" />
+		<Layer File="spikesr.png" Command="y,-16;x,-20;zoom,.4;rotationz,90;rotationy,180" />
+		
+		</children></Layer>
+	<ActorFrame
+		OnCommand="%function(self)
+		x = SCREEN_CENTER_X; y = SCREEN_CENTER_Y
+
+		Register(self,x-117,y+30,x-100,y+80,4)
+		Register(self,x+117,y+30,x+100,y+80,4)
+
+		Register(self,x-32,y-29,x+32,y+153,4)
+
+		Register(self,x-65,y+162,x+65,y+178,4)
+		end"
+	/>
+</children></ActorFrame>

@@ -1,0 +1,11 @@
+<ActorFrame> <children>
+	<Layer
+		File="@LevelType()..'/World'..world..'/Level' .. level .. '/ground.png'"
+		Command="y,27;zoomy,.5;vertalign,bottom;customtexturerect,0,0,2,1;texcoordvelocity,.25*lvlSpd,0;ztest,1"
+		FinishedCommand="texcoordvelocity,0,0"
+		NextCourseSongMessageCommand="sleep,1.5;queuecommand,Load"
+		LoadCommand="%function(self) self:Load(Path('BGAnimations','ScreenGameplay underlay/Tip/BG/'..LevelType()..'/World'..world..'/level' .. level .. '/ground.png')) end"
+	/>
+		<Layer Type="Quad" Command="Stretchto,-1000,-240,1000,-52;diffuse,#000000" />
+</children> </ActorFrame>
+

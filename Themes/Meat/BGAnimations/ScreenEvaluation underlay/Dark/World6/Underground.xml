@@ -1,0 +1,40 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+		<Layer File="Saw.sprite" OnCommand="setstate,1;zoom,.5;y,77;spin;effectmagnitude,0,0,270" />
+		<Layer File="rod.png" OnCommand="zoom,.18;y,51" />
+		<Layer File="rod.png" OnCommand="zoom,.18;y,6" />
+		<Layer File="cap.png" OnCommand="zoom,.2;Y,77;rotationz,180" />
+		<Layer File="Center.png" OnCommand="zoom,.4;y,-19" />
+		<Layer File="cap.png" OnCommand="zoom,.2;y,-6" />
+		<Layer File="rod.png" OnCommand="zoom,.18;y,-27;x,-30;rotationz,-75" />
+		<Layer File="rod.png" OnCommand="zoom,.18;y,-27;x,30;rotationz,75" />
+		<Layer File="cap.png" OnCommand="zoom,.2;y,-19;rotationz,-105" />
+		<Layer File="cap.png" OnCommand="zoom,.2;y,-19;rotationz,105" />
+
+
+		<Layer File="spikes.png" Command="y,169;x,-40;zoom,.5;rotationz,4" />
+		<Layer File="spikes.png" Command="y,169;x,40;zoom,.5;rotationz,8" />
+		<Layer File="spikes.png" Command="y,169;x,0;zoom,.5;rotationz,-2" />
+
+
+		<Layer File="Saw.sprite" Command="setstate,1;y,60;x,-130;zoom,.4;spin;effectmagnitude,0,0,-180" />
+		<Layer File="Saw.sprite" Command="setstate,1;y,60;x,130;zoom,.4;spin;effectmagnitude,0,0,-180" />
+	</children></Layer>
+
+	<ActorFrame
+		OnCommand="%function(self)
+		x = SCREEN_CENTER_X; y = SCREEN_CENTER_Y
+		Register(self,x-117,y+40,x-100,y+80,4)
+		Register(self,x-117,y+30,x-110,y+90,4)
+		Register(self,x+117,y+40,x+100,y+80,4)
+		Register(self,x+117,y+30,x+110,y+90,4)
+
+		Register(self,x-37,y+55,x+37,y+99,4)
+		Register(self,x-22,y+40,x+22,y+114,4)
+		Register(self,x-65,y+142,x+65,y+178,4)
+		end"
+	/>
+</children></ActorFrame>

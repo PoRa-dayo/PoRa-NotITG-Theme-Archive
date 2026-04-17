@@ -1,0 +1,7 @@
+<ActorFrame><children>
+	<Layer
+		File="_award models/Crystal"
+		InitCommand="playcommand,Animate"
+		AnimateCommand="x,134;cropleft,0;cropright,.875;sleep,.1;addx,-40;cropleft,.125;cropright,.75;sleep,.1;addx,-40;cropleft,.25;cropright,.625;sleep,.1;addx,-40;cropleft,.375;cropright,.5;sleep,.1;addx,-40;cropleft,.5;cropright,.37;sleep,.1;addx,-40;cropleft,.63;cropright,.25;sleep,.1;addx,-40;cropleft,.76;cropright,.11;sleep,.1;addx,-40;cropleft,.89;cropright,0;sleep,.1;queuecommand,Animate"
+	/>
+</children></ActorFrame>

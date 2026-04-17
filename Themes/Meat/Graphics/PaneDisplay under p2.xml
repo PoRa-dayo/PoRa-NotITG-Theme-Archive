@@ -1,0 +1,21 @@
+<ActorFrame><children>
+	<Layer
+		File="PaneDisplay under p1/meter frame.png"
+		Command="x,25;y,54;zoom,.2"
+		SetCommand="%function(self) self:diffuse(DifficultyColorRGB(Difficulty[2])) end" 
+		CurrentSongChangedMessageCommand="queuecommand,Set" 
+		CurrentStepsP2ChangedMessageCommand="queuecommand,Set" 
+	/>
+	<Layer
+		Font="_Meat"
+		Text="?"
+		Command="x,32;y,54;shadowlength,0;zoom,.75;diffuse,0,0,0,1;maxwidth,58"
+		SetCommand="%function(self) if GAMESTATE:GetCurrentSong() then self:settext(GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter()) else self:settext('?') end end" 
+		CurrentSongChangedMessageCommand="queuecommand,Set" 
+		CurrentStepsP2ChangedMessageCommand="queuecommand,Set" 
+	/>
+	<Layer
+		File="@'PaneDisplay under p1/Frame'..world..dark..'.png'"
+		Command="y,4;zoom,.38;zoomx,.6"
+	/>
+</children></ActorFrame>

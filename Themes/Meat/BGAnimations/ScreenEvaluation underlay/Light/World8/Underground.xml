@@ -1,0 +1,32 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+		<Layer File="lava fall.sprite" OnCommand="zoom,.55;y,-10" />
+		<Layer File="lava fall.sprite" OnCommand="zoom,.55;y,60;rotationx,180" />
+		<Layer File="lava fall.sprite" OnCommand="zoom,.55;y,130" />
+
+
+		<Layer File="needles.png" Command="x,-60;y,176;zoom,.24;rotationz,-10" />
+		<Layer File="needles.png" Command="x,62;y,175;zoom,.24;rotationz,-10" />
+		<Layer File="needles.png" Command="x,-30;y,173;zoom,.24;rotationz,0" />
+		<Layer File="needles.png" Command="x,30;y,179;zoom,.24;rotationz,0" />
+		<Layer File="needles.png" Command="x,0;y,176;zoom,.24;rotationz,10" />
+
+	</children></Layer>
+
+	<Layer File="key.png" InitCommand="x,SCREEN_CENTER_X-130;y,SCREEN_CENTER_Y-67;zoom,.3" OnCommand="%function(self) Register(self,-6,-10,6,10,6) end" HeroCommand="zoom,0" />
+	<Layer File="key.png" InitCommand="x,SCREEN_CENTER_X+130;y,SCREEN_CENTER_Y-67;zoom,.3" OnCommand="%function(self) Register(self,-6,-10,6,10,6) end" HeroCommand="zoom,0" />
+
+	<Layer File="Maggot.xml" />
+
+	<ActorFrame
+		OnCommand="%function(self)
+		x = SCREEN_CENTER_X; y = SCREEN_CENTER_Y
+		Register(self,x-16,y-30,x+16,y+160,4)
+		
+		Register(self,x-65,y+162,x+65,y+178,4)
+		end"
+	/>
+</children></ActorFrame>

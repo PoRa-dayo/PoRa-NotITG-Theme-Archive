@@ -1,0 +1,4 @@
+<ActorFrame><children>
+	<ActorFrame Command="queuecommand,Sound" SoundCommand="%function(self) Sound('retro boop') end" />
+	<ActorFrame Command="sleep,.1" />
+</children></ActorFrame>

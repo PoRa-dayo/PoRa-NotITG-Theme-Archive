@@ -1,0 +1,15 @@
+<ActorFrame><children>
+<!-- Obstacle 4: Crawling Thing -->
+	<Layer
+		Type="ActorFrame"
+		GoCommand="x,40;linear,4.5;x,-40"
+		Fail3Command="x,30;linear,4.5;x,-50"
+	><children>
+		<Layer
+			File="@'Crawler'..Pallette()..'.png'"
+			OnCommand="vertalign,bottom;zoomx,.25;zoomy,.18;y,11;queuecommand,Animate"
+			AnimateCommand="linear,.4;zoomx,.2;zoomy,.22;linear,.4;zoomx,.25;zoomy,.18;queuecommand,Animate"
+		/>
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.95;queuecommand,Jump2" />
+</children></ActorFrame>

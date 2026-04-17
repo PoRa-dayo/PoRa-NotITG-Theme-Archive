@@ -1,0 +1,20 @@
+[Sprite]
+Texture=_fetus 1x9.png
+Frame0000=0
+Delay0000=1.1
+Frame0001=1
+Delay0001=0.1
+Frame0002=2
+Delay0002=0.25
+Frame0003=3
+Delay0003=0.05
+Frame0004=4
+Delay0004=0.05
+Frame0005=5
+Delay0005=0.05
+Frame0006=6
+Delay0006=0.05
+Frame0007=7
+Delay0007=0.05
+Frame0008=8
+Delay0008=1

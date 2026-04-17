@@ -1,0 +1,19 @@
+<ActorFrame> <children>
+	<Layer
+		File="2.png"
+		OnCommand="diffuseblink;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0;effectperiod,.3"
+	/>
+	<ActorFrame OnCommand="diffuseblink;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0;effectperiod,.3"><children>
+		<Layer
+			File="1.png"
+			OnCommand="diffuseblink;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0;effectperiod,.6;effectoffset,.15"
+		/>
+	</children> </ActorFrame>
+		<ActorFrame OnCommand="diffuseblink;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0;effectperiod,.3"><children>
+		<Layer
+			File="3.png"
+			OnCommand="diffuseblink;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0;effectperiod,.6;effectoffset,.45"
+		/>
+	</children> </ActorFrame>
+</children> </ActorFrame>
+

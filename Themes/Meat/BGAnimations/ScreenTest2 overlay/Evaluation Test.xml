@@ -1,0 +1,14 @@
+<ActorFrame><children>
+	<ActorFrame InitCommand="%function(self) function AllFailed() return false end self:queuecommand('Ex') end" ExCommand="%function() function AllFailed() return not OnePassed() end end" />
+	<ActorFrame OnCommand="queuemessage,Cleared" />
+	<Layer File="../ScreenEvaluation underlay" />
+
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-200" ><children>
+		<Layer File="../../Graphics/Common Fallback Banner.png" OnCommand="ZoomToWidth,200;ZoomToHeight,80" />
+	</children></Layer>
+	
+	<Layer File="../ScreenEvaluation overlay" />
+	<Layer Type="Quad" Command="stretchto,SCREEN_LEFT,SCREEN_BOTTOM-30,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,0,0,0,1" />
+	<Layer Type="Quad" Command="stretchto,SCREEN_LEFT,SCREEN_BOTTOM-30,SCREEN_RIGHT,SCREEN_BOTTOM;blend,noeffect;zwrite,1" />
+
+</children></ActorFrame>

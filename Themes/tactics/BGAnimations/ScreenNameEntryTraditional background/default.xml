@@ -1,0 +1,11 @@
+<ActorFrame> <children>
+	<Layer
+		File="BG2.png"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	/>
+	<Layer
+		File="BG1.png"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+		OnCommand="fadebottom,0;cropbottom,0;sleep,12;fadebottom,.1;linear,3;cropbottom,1.2"
+	/>
+</children> </ActorFrame>

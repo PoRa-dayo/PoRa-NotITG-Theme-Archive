@@ -1,0 +1,16 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X+50;y,SCREEN_CENTER_Y-50"
+	><children>
+		<Layer File="Arrow.png" InitCommand="x,-11;y,3+21*0;rotationz,180;playcommand,Animate" AnimateCommand="zoom,.22;sleep,1.75;linear,.1;x,-8;sleep,0;linear,.05;zoomx,.18;zoomy,.26;addx,1;linear,.05;zoom,.22;addx,-1;sleep,.05;accelerate,.3;x,-11;queuecommand,Animate" />
+		<Layer File="Arrow.png" InitCommand="x,-11;y,3+21*1;rotationz,180;playcommand,Animate" AnimateCommand="zoom,.22;sleep,1.75;linear,.1;x,-8;sleep,0;linear,.05;zoomx,.18;zoomy,.26;addx,1;linear,.05;zoom,.22;addx,-1;sleep,.05;accelerate,.3;x,-11;queuecommand,Animate" />
+		<Layer File="Arrow.png" InitCommand="x,-11;y,3+21*2;rotationz,180;playcommand,Animate" AnimateCommand="zoom,.22;sleep,1.75;linear,.1;x,-8;sleep,0;linear,.05;zoomx,.18;zoomy,.26;addx,1;linear,.05;zoom,.22;addx,-1;sleep,.05;accelerate,.3;x,-11;queuecommand,Animate" />
+		<Layer File="Arrow.png" InitCommand="x,-11;y,3+21*3;rotationz,180;playcommand,Animate" AnimateCommand="zoom,.22;sleep,1.75;linear,.1;x,-8;sleep,0;linear,.05;zoomx,.18;zoomy,.26;addx,1;linear,.05;zoom,.22;addx,-1;sleep,.05;accelerate,.3;x,-11;queuecommand,Animate" />
+		<Layer File="Arrow.png" InitCommand="x,-11;y,3+21*4;rotationz,180;playcommand,Animate" AnimateCommand="zoom,.22;sleep,1.75;linear,.1;x,-8;sleep,0;linear,.05;zoomx,.18;zoomy,.26;addx,1;linear,.05;zoom,.22;addx,-1;sleep,.05;accelerate,.3;x,-11;queuecommand,Animate" />
+		<Layer File="Arrow.png" InitCommand="x,-11;y,3+21*5;rotationz,180;playcommand,Animate" AnimateCommand="zoom,.22;sleep,1.75;linear,.1;x,-8;sleep,0;linear,.05;zoomx,.18;zoomy,.26;addx,1;linear,.05;zoom,.22;addx,-1;sleep,.05;accelerate,.3;x,-11;queuecommand,Animate" />
+		<Layer File="Arrow.png" InitCommand="x,-11;y,3+21*6;rotationz,180;playcommand,Animate" AnimateCommand="zoom,.22;sleep,1.75;linear,.1;x,-8;sleep,0;linear,.05;zoomx,.18;zoomy,.26;addx,1;linear,.05;zoom,.22;addx,-1;sleep,.05;accelerate,.3;x,-11;queuecommand,Animate" />
+		<Layer File="Arrow.png" InitCommand="x,-11;y,3+21*7;rotationz,180;playcommand,Animate" AnimateCommand="zoom,.22;sleep,1.75;linear,.1;x,-8;sleep,0;linear,.05;zoomx,.18;zoomy,.26;addx,1;linear,.05;zoom,.22;addx,-1;sleep,.05;accelerate,.3;x,-11;queuecommand,Animate" />
+	</children></Layer>
+	<Layer Font="_Meat" Command="x,SCREEN_CENTER_X+58;y,SCREEN_CENTER_Y-50+21*7;HorizAlign,left;zoomx,.41;zoomy,.43" Text="Back" />
+</children></ActorFrame>

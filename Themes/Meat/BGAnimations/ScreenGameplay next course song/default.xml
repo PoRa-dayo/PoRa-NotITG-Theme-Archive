@@ -1,0 +1,29 @@
+<ActorFrame> <children>
+	<Layer
+		Type="Sprite"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+		NextCourseSongMessageCommand="%function(self) 
+				self:LoadFromSongBackground( GAMESTATE:Env().NextSong ) 
+				s = PREFSMAN:GetPreference('BGBrightness')
+				self:diffuse(s,s,s,0) 
+				self:stretchto(SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM) 
+				if GAMESTATE:Env().NextSong:GetBannerPath() then self:sleep(1) end 
+				self:linear(.5) 
+				self:diffusealpha(1) 
+			end"
+		FinishCommand="linear,0.5;diffusealpha,0"
+	/>
+	<Layer 
+		Type="ActorFrame"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-320"
+		NextCourseSongMessageCommand="%function(self) if GAMESTATE:Env().NextSong:GetBannerPath() then self:linear(.5) self:y(SCREEN_CENTER_Y-100) self:sleep(1) end end" 
+		FinishCommand="sleep,.5;linear,.5;y,SCREEN_CENTER_Y-320"
+	><children>
+		<Layer Type="ActorFrame" Command="x,-140;y,-100;rotationz,150"><children>	<Layer File="Rod.png" Command="zoomx,.6;zoomy,1.5" /> </children></Layer>
+		<Layer Type="ActorFrame" Command="x,143;y,-100;rotationz,-150"><children> <Layer File="Rod.png" Command="zoomx,.6;zoomy,1.5" /> </children></Layer>
+		<Layer Type="ActorFrame" Command="x,135;y,-100;rotationz,-140"><children>	<Layer File="Rod.png" Command="zoomx,.2;zoomy,1.5" /> </children></Layer>
+			
+		<Layer Type="Sprite" NextCourseSongMessageCommand="%function(self) self:LoadFromSongBanner( GAMESTATE:Env().NextSong ); self:zoomtowidth(251); self:zoomtoheight(99) end" />
+		<Layer File="@THEME:GetPath(EC_GRAPHICS,'ScreenSelectMusic Banner','frame')" InitCommand="zoom,.43"	/>
+	</children> </Layer>
+</children> </ActorFrame>

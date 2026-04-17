@@ -1,0 +1,6 @@
+<ActorFrame><children>
+	<Layer File="spikes.png" OnCommand="zoom,.4;x,36;rotationy,180;y,10.5;ztest,1" />
+	<Layer File="spikes.png" OnCommand="zoom,.4;x,-12;rotationz,5;y,10.5;ztest,1" />
+	<Layer File="spikes.png" OnCommand="zoom,.4;x,12;rotationz,-5;y,10.5;ztest,1" />
+	<Layer File="spikes.png" OnCommand="zoom,.4;x,-36;y,10.5;ztest,1" />
+</children></ActorFrame>

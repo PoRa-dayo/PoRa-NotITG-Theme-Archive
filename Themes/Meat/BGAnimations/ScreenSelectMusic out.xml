@@ -1,0 +1,5 @@
+<ActorFrame Command="%MusicTransitionAspectScale" ><children>
+	<Layer File="_Warp/WarpZone.xml" InitCommand="zoom,0;queuecommand,Check" CheckCommand="%function(self) if warp == 2 then self:zoom(1) self:queuecommand('Go') end end" />
+	<Layer File="_Warp/Glitch.xml" InitCommand="zoom,0;queuecommand,Check" CheckCommand="%function(self) if warp == 3 then self:zoom(1) self:queuecommand('Go') end end" />
+	<ActorFrame OnCommand="sleep,.1"/>
+</children></ActorFrame>

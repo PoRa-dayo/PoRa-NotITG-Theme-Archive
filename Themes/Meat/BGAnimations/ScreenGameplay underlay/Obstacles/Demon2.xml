@@ -1,0 +1,23 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		ResetCommand="zoom,0"
+		Splode1Command="zoom,.6;x,0;linear,.55;x,282;sleep,0;zoom,0"
+	><children>
+		<Layer File="dcloud.sprite" Command="zoom,.5;diffuse,#000000" />
+		<Layer Type="ActorFrame"
+			Command="y,-4;zoom,.5;queuecommand,Animate;rotationx,180" 
+			AnimateCommand="rotationz,0;linear,.2;rotationz,-75;x,20;linear,.1;x,0;rotationz,0;queuecommand,Animate" 
+			ResetCommand="finishtweening;queuecommand,Animate" 
+		><children>
+			<Layer File="demon2.png" Command="horizalign,left;zoomx,2" />
+		</children></Layer>
+		<Layer Type="ActorFrame"
+			Command="y,4;zoom,.5;queuecommand,Animate" 
+			AnimateCommand="rotationz,0;linear,.2;rotationz,-75;x,20;linear,.1;x,0;rotationz,0;queuecommand,Animate" 
+			ResetCommand="finishtweening;queuecommand,Animate" 
+		><children>
+			<Layer File="demon2.png" Command="horizalign,left;zoomx,2" />
+		</children></Layer>
+	</children></Layer>
+</children></ActorFrame>

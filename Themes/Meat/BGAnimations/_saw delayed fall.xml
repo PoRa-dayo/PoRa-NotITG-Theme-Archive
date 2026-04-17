@@ -1,0 +1,14 @@
+<ActorFrame><children>
+	<ActorFrame Command="sleep,1;queuecommand,Sound" SoundCommand="%function() Sound('SawDeath0') end" />
+	<Layer Type="Quad" Command="zoom,0;sleep,1;diffuse,#000000;diffusealpha,0;stretchto,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+240,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-240;linear,.6;diffusealpha,1" />
+	<Layer
+		File="_saw.png"
+		Command="zoom,0;sleep,1;zoom,1.5;diffuse,#000000;x,SCREEN_CENTER_X;y,-210;linear,.5;y,100;rotationz,120"
+	/>
+	<Layer
+		Type="ActorFrame"
+		Command="zoom,0;sleep,1;zoom,1;x,SCREEN_CENTER_X+268;y,SCREEN_CENTER_Y+108;rotationz,-8;linear,.25;x,SCREEN_CENTER_X+70;wag;effectperiod,.1;effectmagnitude,0,0,2,0;linear,.3;x,SCREEN_CENTER_X-100"
+	><children>
+		<Layer Type="Quad" Command="zoom,0;sleep,1;diffuse,#000000;Stretchto,0,0,80,80" />
+	</children></Layer>
+</children></ActorFrame>

@@ -1,0 +1,14 @@
+<ActorFrame> <children>
+	<Layer 
+		File="../ScreenBookkeeping background"
+		OnCommand="zoom,0"
+		OffCommand="zoom,1"
+	/>
+	<Layer 
+		File="Master.png"
+		InitCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y-151"
+		OnCommand="zoom,0"
+		OffCommand="zoom,1;linear,.1;zoom,0"
+	 />
+</children> </ActorFrame>
+

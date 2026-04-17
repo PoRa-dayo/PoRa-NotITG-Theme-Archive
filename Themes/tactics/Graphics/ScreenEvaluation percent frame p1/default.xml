@@ -1,0 +1,22 @@
+<ActorFrame> <children>
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+82;zoom,0;sleep,.5;linear,.2;zoom,1"> <children>
+		<Layer File="result frame" />
+		<Layer Type="BitmapText" Font="_FFT2 white" Text="Results"		OnCommand="y,-86;x,-58;zoomx,1.25;ShadowLength,0" />
+		<Layer Type="ActorFrame" OnCommand="x,4;y,-75;zoom,0;sleep,.7;zoom,1"> <children>
+			<Layer Type="BitmapText" Font="_FFT2 pane" Text="Fantastic_"	OnCommand="y,16*1;zoom,.8;zoomx,1;horizalign,right;ShadowLength,0" />
+			<Layer Type="BitmapText" Font="_FFT2 pane" Text="Excellent_"	OnCommand="y,16*2;zoom,.8;zoomx,1;horizalign,right;ShadowLength,0" />
+			<Layer Type="BitmapText" Font="_FFT2 pane" Text="Great_"		OnCommand="y,16*3;zoom,.8;zoomx,1;horizalign,right;ShadowLength,0" />
+			<Layer Type="BitmapText" Font="_FFT2 pane" Text="Decent_"		OnCommand="y,16*4;zoom,.8;zoomx,1;horizalign,right;ShadowLength,0" />
+			<Layer Type="BitmapText" Font="_FFT2 pane" Text="Way Off_"		OnCommand="y,16*5;zoom,.8;zoomx,1;horizalign,right;ShadowLength,0" />
+			<Layer Type="BitmapText" Font="_FFT2 pane" Text="Miss_"		OnCommand="y,16*6;zoom,.8;zoomx,1;horizalign,right;ShadowLength,0" />
+			<Layer Type="BitmapText" Font="_FFT2 pane" Text="Holds_"		OnCommand="y,16*7;zoom,.8;zoomx,1;horizalign,right;ShadowLength,0" />
+			<Layer Type="BitmapText" Font="_FFT2 pane" Text="Mines_"		OnCommand="y,16*8;zoom,.8;zoomx,1;horizalign,right;ShadowLength,0" />
+			<Layer Type="BitmapText" Font="_FFT2 pane" Text="Rolls_"		OnCommand="y,16*9;zoom,.8;zoomx,1;horizalign,right;ShadowLength,0" />
+		</children> </Layer>
+	</children> </Layer>
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+207;zoom,0;sleep,.5;linear,.2;zoom,1"> <children>
+		<Layer File="mod frame" />
+		<Layer Type="BitmapText" Font="_FFT2 white" Text="Mods"		OnCommand="y,-23;x,-73;zoomx,1.25;ShadowLength,0" />
+	</children> </Layer>
+</children> </ActorFrame>
+

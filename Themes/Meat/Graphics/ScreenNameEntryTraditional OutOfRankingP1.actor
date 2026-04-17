@@ -1,0 +1,4 @@
+[Actor]
+Font=_Meat
+Text=OUT OF::RANKING
+InitCommand=zoom,.8;diffuse,#000000;shadowlength,0;addx,-320;sleep,.25;linear,.1;addx,320

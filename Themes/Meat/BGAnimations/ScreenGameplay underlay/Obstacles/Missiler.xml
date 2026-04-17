@@ -1,0 +1,12 @@
+<ActorFrame><children>
+<!-- Obstacle 7: Missile -->
+	<Layer
+		Type="ActorFrame"
+		OnCommand="x,300;y,-150"
+		AnimateCommand="linear,1;x,0;y,0;queuecommand,Splode;sleep,1;x,300;y,-150"
+	><children>
+		<Layer File="_Missile 3x1.png" Command="y,-3;x,3;rotationz,-120;zoom,.35" SplodeCommand="zoom,0;sleep,2.15;zoom,.35" />
+		<Layer File="msploder.sprite" Command="y,10;zoom,.4;rotationz,180" SplodeCommand="setstate,0" />
+		<Layer File="msploder.sprite" Command="y,10;zoom,.4;rotationz,180;zwrite,1;blend,noeffect" SplodeCommand="setstate,0" />
+	</children></Layer>
+</children></ActorFrame>

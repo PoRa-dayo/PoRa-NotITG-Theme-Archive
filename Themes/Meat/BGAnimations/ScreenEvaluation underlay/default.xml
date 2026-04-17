@@ -1,0 +1,75 @@
+<ActorFrame><children>
+	<ActorFrame InitCommand="%function() SetEvalBlocks() Initialize(blockSizeEval,blockXOffsetEval,blockYOffsetEval) end" />
+	<Layer File="@LevelType()..'/World'..world..'/Level' .. level .. '/level map.xml'" />
+	<Layer File="@LevelType()..'/World'..world..'/Level' .. level .. '/wide map.xml'" />
+	<Layer File="@LevelType()..'/World'..world..'/Underground'" OnCommand="%ColorSilhouette" />
+	<Layer Condition="SCREEN_WIDTH > 640" File="Level Wide.xml" /> 
+	<Layer File="Level Ground.xml" />
+	<Layer File="@LevelType()..'/World'..world..'/Overground'" OnCommand="%ColorSilhouette" />
+	<Layer Type="Quad" OnCommand="Stretchto,SCREEN_LEFT,SCREEN_CENTER_Y+240,SCREEN_RIGHT,SCREEN_CENTER_Y+210;diffuse,#000000" />
+	<Layer Type="Quad" OnCommand="Stretchto,SCREEN_LEFT,SCREEN_CENTER_Y-240,SCREEN_RIGHT,SCREEN_CENTER_Y-160;diffuse,#000000" />
+	<Layer File="crumble.xml" OnCommand="%ColorSilhouette" />
+
+	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:PlayerUsingBothSides()" Font="_Meat" Text="Doubles" Command="x,SCREEN_CENTER_X-162;y,SCREEN_CENTER_Y-219;horizalign,right;zoom,.6;shadowlength,3" />
+	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:PlayerUsingBothSides()" Font="_Meat" Text="Doubles" Command="x,SCREEN_CENTER_X+162;y,SCREEN_CENTER_Y-219;horizalign,left;zoom,.6;shadowlength,3" />
+
+	<Layer
+		Type="ActorFrame"
+		InitCommand="sleep,5;queuecommand,Loop"
+		OnCommand="%ColorSilhouette"
+		LoopCommand="%function(self) 
+			self:stoptweening()
+			self:queuemessage('Reset') 
+			self:sleep(4.5)
+			self:queuecommand('Loop')
+			end"
+	><children>
+		<Layer
+			File="@Bandage()"
+			InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-73"
+			OnCommand="%function(self) RegisterGoal(self) end"
+			HeroCommand="stoptweening;queuecommand,Animate" 
+		/>
+	</children></Layer>
+
+	<Layer File="replay.xml" InitCommand="queuecommand,Register" OnCommand="%ColorSilhouette" ResetMessageCommand="queuecommand,Go" />
+
+	<Layer File="failed.png" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+130;zoom,.53" Condition="AllFailed()" />
+
+	<Layer Font="MusicWheel" Text="" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-150;zoomx,.6;zoomy,.7;shadowlength,2;maxwidth,750;diffuse,#FFFFFF;queuecommand,Set" SetCommand="%function(self) self:settext(GetSongName()) end" CurrentSongChangedMessageCommand="queuecommand,Set" />
+	<Layer Font="MusicWheel" Text="" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-128;zoom,0.5;ShadowLength,2;queuecommand,Set" SetCommand="%RateBPMlabel" />
+	<Layer
+		Type="BitmapText"
+		File="_meat"
+		Text="Time: "
+		OnCommand="x,SCREEN_CENTER_X+10;y,SCREEN_CENTER_Y+224;zoom,.45;horizalign,right;ShadowLength,2"
+	/>
+	<ActorFrame
+		OnCommand="%function(self)
+		x = SCREEN_CENTER_X; y = SCREEN_CENTER_Y
+		Register(self,x-320,y-240,x+320,y-160,3)
+		Register(self,x-320,y+240,x+320,y+220,3)
+		end"
+	/>
+	<ActorFrame 
+		Command="queuecommand,Color"
+		ColorCommand="%function(self) a = .3
+				for pn = 1, 2 do
+				if GAMESTATE:IsPlayerEnabled(pn-1) then
+					Screen():GetChild('MarvelousNumberP'..pn):diffuse(JudgmentColorLight(1,a))
+					Screen():GetChild('PerfectNumberP'..pn):diffuse(JudgmentColorLight(2,a))
+					Screen():GetChild('GreatNumberP'..pn):diffuse(JudgmentColorLight(3,a))
+					Screen():GetChild('GoodNumberP'..pn):diffuse(JudgmentColorLight(4,a))
+					Screen():GetChild('BooNumberP'..pn):diffuse(JudgmentColorLight(5,a))
+					Screen():GetChild('MissNumberP'..pn):diffuse(JudgmentColorLight(6,a))
+					Screen():GetChild('HoldsTextP'..pn):diffuse(.8,.8,.8,1)
+					Screen():GetChild('RollsTextP'..pn):diffuse(.8,.8,.8,1)
+					Screen():GetChild('MinesTextP'..pn):diffuse(.8,.8,.8,1)
+				end
+			end
+		end"
+	/>
+	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" File="Judgment Labels.xml" Command="x,SCREEN_CENTER_X-216-82;y,SCREEN_CENTER_Y+13" />
+	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" File="Judgment Labels.xml" Command="x,SCREEN_CENTER_X+219-82;y,SCREEN_CENTER_Y+13" />
+	<ActorFrame InitCommand="%EvaluationInit" FirstUpdateCommand="%Evaluation" />
+</children></ActorFrame>

@@ -1,0 +1,4 @@
+<ActorFrame Command="%MusicTransitionAspectScale" > <children>
+	<Layer File="_fade out normal" InitCommand="zoom,0;queuecommand,Check" CheckCommand="%function(self) if warp < 2 then self:zoom(1) end end" />
+	<ActorFrame OnCommand="queuecommand,Sleep;sleep,.1" SleepCommand="%function(self) if warp == 2 then self:sleep(1.5) elseif warp == 3 then self:sleep(6.5) end end"/>
+</children></ActorFrame>

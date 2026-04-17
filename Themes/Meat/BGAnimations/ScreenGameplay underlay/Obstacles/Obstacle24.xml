@@ -1,0 +1,55 @@
+<ActorFrame><children>
+<!-- Obstacle 24: Falling Floor -->
+	<Layer
+		Type="ActorFrame"
+		Command="y,-1000"
+		GoCommand="y,0;x,-776*lvlSpd;linear,4.5;x,376*lvlSpd"
+		FinishedCommand="stoptweening"
+	><children>
+		<Layer
+			Type="Quad"
+			OnCommand="stretchto,-40,27,40,50;blend,noeffect;zwrite,1"
+		/>
+		<Layer
+			Type="ActorFrame"
+			Command="zoom,.5;y,19;queuecommand,Pulse"
+			PulseCommand="x,400;linear,.125/lvlSpd;x,368;queuecommand,Pulse"
+			Fail1Command="%function(self) FinishMoving(self,400,368,.125/lvlSpd) self:queuecommand('PreFall') end"
+			PreFallCommand="x,400;linear,.125/lvlSpd;x,368;sleep,0;x,400;linear,.125/lvlSpd;x,368;sleep,0;x,400;linear,.125/lvlSpd;x,368;queuecommand,Fall"
+			FallCommand="zoom,0"
+			Pass1Command="%function(self) FinishMoving(self,400,368,.125/lvlSpd) self:sleep(0) self:zoom(0) end"
+		><children>
+			<Layer File="floor.sprite" Condition="SCREEN_WIDTH==640" />
+			<Layer File="floor2.sprite" Condition="SCREEN_WIDTH==768" />
+			<Layer File="floor3.sprite" Condition="SCREEN_WIDTH==854" />
+		</children></Layer>
+		<Layer
+			Type="ActorFrame"
+			Command="zoom,0;y,19;queuecommand,Pulse"
+			PulseCommand="x,400;linear,.125/lvlSpd;x,368;queuecommand,Pulse"
+			Fail1Command="%function(self) FinishMoving(self,400,368,.125/lvlSpd) self:queuecommand('PreFall') end"
+			PreFallCommand="sleep,.375/lvlSpd;zoom,.5;queuecommand,Fall"
+			FallCommand="addx,32;linear,.0625/lvlSpd;addx,-16;queuecommand,Fall"
+		><children>
+			<Layer File="floor fast.sprite" Condition="SCREEN_WIDTH==640" />
+			<Layer File="floor2 fast.sprite" Condition="SCREEN_WIDTH==768" />
+			<Layer File="floor3 fast.sprite" Condition="SCREEN_WIDTH==854" />
+		</children></Layer>
+		<Layer
+			Type="ActorFrame"
+			Command="zoom,0;y,19;queuecommand,Pulse"
+			PulseCommand="x,400;linear,.125/lvlSpd;x,368;queuecommand,Pulse"
+			Pass1Command="%function(self) FinishMoving(self,400,368,.125/lvlSpd) self:zoom(.5) self:setstate(0) self:queuecommand('Win') end"
+			WinCommand="addx,32;linear,.25/lvlSpd;addx,-64;queuecommand,Win"
+			FinishedCommand="stoptweening"
+		><children>
+			<Layer File="floor slow.sprite" Condition="SCREEN_WIDTH==640" />
+			<Layer File="floor2 slow.sprite" Condition="SCREEN_WIDTH==768" />
+			<Layer File="floor3 slow.sprite" Condition="SCREEN_WIDTH==854" />
+		</children></Layer>
+		<Layer
+			Type="Quad"
+			OnCommand="stretchto,-1024,10,1024,50;blend,noeffect;zwrite,1"
+		/>
+	</children></Layer>
+</children></ActorFrame>

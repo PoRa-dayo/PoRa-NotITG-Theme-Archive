@@ -1,0 +1,6 @@
+<ActorFrame><children>
+	<Layer
+	File="_shared background.png"
+	InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,1"
+	/>
+</children></ActorFrame>

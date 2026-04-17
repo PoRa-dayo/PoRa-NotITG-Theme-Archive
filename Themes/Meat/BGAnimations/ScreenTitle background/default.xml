@@ -1,0 +1,139 @@
+<ActorFrame InitCommand="%AspectScale" ><children>
+	<Layer Type="Quad" Command="diffuse,#BD0000;stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-200,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+200" />
+	<Layer
+		File="Curtains.png"
+		Command="x,SCREEN_CENTER_X+55;y,SCREEN_CENTER_Y+9;ZoomToWidth,660;ZoomToHeight,289;customtexturerect,0,0,6,1;diffusealpha,.5"
+	/>
+	<Layer
+		File="Side1.png"
+		Command="x,SCREEN_CENTER_X-178;y,SCREEN_CENTER_Y+13;zoomx,.62;zoomy,0.75"
+	/>
+	<Layer
+		File="Side2.png"
+		Command="x,SCREEN_CENTER_X-288;y,SCREEN_CENTER_Y+13;zoomx,.74;zoomy,0.75"
+	/>
+	<Layer
+		File="Side1.png"
+		Command="x,SCREEN_CENTER_X+179;y,SCREEN_CENTER_Y+13;zoomx,.62;zoomy,0.75;rotationy,180"
+	/>
+	<Layer
+		File="Side2.png"
+		Command="x,SCREEN_CENTER_X+290;y,SCREEN_CENTER_Y+13;zoomx,.74;zoomy,0.75;rotationy,180"
+	/>
+	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_CENTER_X-105,SCREEN_CENTER_Y+105,SCREEN_CENTER_X+101,SCREEN_CENTER_Y+146" />
+	<Layer
+		File="Rod.png"
+		Command="x,SCREEN_CENTER_X-92;y,SCREEN_CENTER_Y+154;zoomx,.56;zoomy,0.833"
+	/>
+	<Layer
+		File="Rod.png"
+		Command="x,SCREEN_CENTER_X+87;y,SCREEN_CENTER_Y+154;zoomx,.56;zoomy,0.833"
+	/>
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+		<Layer
+			File="Rod.png"
+			Command="x,-119;y,-56;zoomx,.56;zoomy,1.25"
+		/>
+		<Layer
+			File="Rod.png"
+			Command="x,119;y,-56;zoomx,.56;zoomy,1.25"
+		/>
+		<Layer
+			File="Saw.png"
+			Command="x,-119;y,-32;zoomx,.44;zoomy,.367;diffuse,#000000;spin;effectmagnitude,0,0,190"
+		/>
+		<Layer
+			File="Logo.png"
+			Command="x,-2;y,-13;zoomx,.48;zoomy,0.483"
+		/>
+	</children></Layer>
+	<Layer
+		Font="_Meat"
+		Text="???"
+		InitCommand="x,SCREEN_CENTER_X+3;y,SCREEN_CENTER_Y+123;shadowlength,0;zoomx,.41;zoomy,0.567;queuecommand,Refresh"
+		OnCommand="%function(self) self:diffuseblink() self:effectcolor1(1,1,1,1) self:effectcolor2(.8,.8,.8,1) self:effectperiod(.15) end"
+		CoinModeChangedMessageCommand="queuecommand,Refresh"
+		RefreshCommand="%function(self) 
+				if GAMESTATE:GetCoinMode()==COIN_MODE_HOME then self:queuecommand('PressStart')
+				elseif GAMESTATE:GetCoins() >= PREFSMAN:GetPreference('CoinsPerCredit') or GAMESTATE:GetCoinMode()==COIN_MODE_FREE then self:queuecommand('PressStart') 
+				else self:queuecommand('InsertCoin') end 
+			end"
+		InsertCoinCommand="%function(self) self:settext('INSERT COIN') end"
+		PressStartCommand="%function(self) self:settext('PRESS START') end"
+	/>
+	<Layer Type="Quad" InitCommand="hidden,1;queuecommand,Pulse" PulseCommand="queuemessage,Pulse;sleep,10.5;queuecommand,Pulse" />
+	<Layer
+		Type="ActorFrame"
+			InitCommand="queuecommand,Flash0"
+			PulseMessageCommand="finishtweening;queuecommand,Flash0"
+			Flash0Command="x,SCREEN_CENTER_X+138;y,SCREEN_CENTER_Y+128;zoom,1;zoomy,0.817;sleep,1;linear,.06;zoomy,0.708;zoomx,1.1;addy,5;linear,.06;zoomx,.9;zoomy,0.9;addy,-8;addx,-2;rotationz,1;linear,.06;addy,3;addx,1;rotationz,1;zoom,1;zoomy,0.817;sleep,2.82;queuecommand,Flash1"
+			Flash1Command="linear,.06;zoomy,0.708;zoomx,1.1;addy,4;linear,.06;zoomx,.87;zoomy,0.9;addy,-8;addx,2;rotationz,1;linear,.06;addy,3;addx,-1;rotationz,0;zoom,1;sleep,.52;queuecommand,Flash2"
+			Flash2Command="linear,.06;zoomy,0.808;zoomx,1.05;addy,1;linear,.06;zoom,1;addy,-1;linear,.06;zoomy,0.808;zoomx,1.02;sleep,2.82;queuecommand,Flash3"
+			Flash3Command="linear,.06;zoomy,0.75;zoomx,1.08;addy,3;linear,.06;zoomy,0.875;zoomx,.95;addy,-4;addx,-1;linear,.06;zoomy,0.808;zoomx,1.02;addy,2;sleep,2.32;queuecommand,Flash4"
+			Flash4Command="linear,.06;zoomy,0.733;zoomx,1.1;addy,3;linear,.06;zoomy,0.875;zoomx,.95;addx,1;addy,-6;sleep,.32;linear,.06;zoom,1;zoomy,0.817;addy,3"
+	><children>
+		<Layer
+			File="SMB.png"
+			Command="zoomx,.24;zoomy,.32"
+		/>
+		</children></Layer>
+	<Layer
+		Type="ActorFrame"
+		InitCommand="queuecommand,Flash0"
+		PulseMessageCommand="finishtweening;queuecommand,Flash0"
+		Flash0Command="x,SCREEN_CENTER_X+140;y,SCREEN_CENTER_Y+128;zoom,1;zoomy,0.817;sleep,1;linear,.06;zoomy,0.708;zoomx,1.1;addy,-2;addx,1;linear,.06;zoomx,1;zoomy,0.9;addy,-3;addx,-5;rotationz,10;linear,.06;addy,3;rotationz,1;zoom,1;zoomy,0.817;sleep,2.82;queuecommand,Flash1"
+		Flash1Command="linear,.06;zoomy,0.708;zoomx,1.1;addy,-2;linear,.06;zoomx,.87;zoomy,0.9;addy,-8;addx,2;rotationz,1;linear,.06;addy,4;rotationz,0;zoomx,1.05;zoomy,0.833;sleep,.52;queuecommand,Flash2"
+		Flash2Command="linear,.06;zoomy,0.808;zoomx,1.05;addy,1;linear,.06;zoomy,0.833;zoomx,1.05;addy,-2;linear,.06;zoomy,0.808;zoomx,1.07;addy,1;sleep,2.82;queuecommand,Flash3"
+		Flash3Command="linear,.06;zoomy,0.75;zoomx,1.08;addy,3;addx,-1;linear,.06;zoomy,0.875;zoomx,.95;addy,-2;addx,-2;linear,.06;zoomy,0.808;zoomx,1.02;addy,3;sleep,2.32;queuecommand,Flash4"
+		Flash4Command="linear,.06;zoomy,0.733;zoomx,1.1;addy,-2;linear,.06;zoomy,0.875;zoomx,.95;addx,6;addy,-1;sleep,.32;linear,.06;zoom,1;zoomy,0.817;addy,4"
+	><children>
+		<Layer
+			File="Mouth.png"
+			Command="rotationy,180;rotationz,10;skewx,.2;zoomx,.3;zoomy,.4"
+		/>
+	</children></Layer>
+	<Layer
+		Type="ActorFrame"
+			InitCommand="queuecommand,Flash0"
+			PulseMessageCommand="finishtweening;queuecommand,Flash0"
+			Flash0Command="x,SCREEN_CENTER_X+139;y,SCREEN_CENTER_Y+118;sleep,1;zoom,0;sleep,.12;zoom,1;zoomx,.9;addx,-6;addy,-6;linear,.06;zoom,1;zoomy,0.817;addx,1;addy,4;sleep,1.32;zoom,0;sleep,.12;zoom,1;sleep,1.38;queuecommand,Flash1"
+			Flash1Command="zoom,0;sleep,.12;zoom,1;zoomx,.87;zoomy,0.9;addx,4;addy,-8,linear,.06;zoom,1;zoomx,1.05;addx,-1;addy,4;sleep,.52;queuecommand,Flash2"
+			Flash2Command="zoom,0;sleep,.12;zoom,1;zoom,1.05;linear,.06;zoomy,0.808;zoomx,1.02;sleep,1;zoom,0;sleep,.12;zoom,1;sleep,.12;zoom,0;sleep,.12;zoom,1;sleep,1.52;queuecommand,Flash3"
+			Flash3Command="zoom,0;sleep,.12;zoomy,0.875;zoomx,.95;addx,-4;linear,.06;zoomy,0.808;zoomx,1.02;addy,3;sleep,.5;zoom,0;sleep,.12;zoom,1;sleep,1.7;queuecommand,Flash4"
+			Flash4Command="linear,.06;zoomy,0.733;zoomx,1.1;addy,-1;addx,-1;linear,.06;zoomy,0.875;zoomx,.95;addy,-3;addx,7;sleep,.32;linear,.06;zoom,1;zoomy,0.817;addx,1;addy,5"
+			><children>
+		<Layer
+			File="Eye.png"
+			Command="x,13;zoomx,.33;zoomy,.4"
+		/>
+		<Layer
+			File="Eye.png"
+			Command="x,-13;zoomx,.33;zoomy,.4"
+		/>
+	</children></Layer>
+	<Layer
+		File="Flash.png"
+		InitCommand="diffusealpha,0;zoomx,.3;zoomy,0.333;queuecommand,Flash0"
+		PulseMessageCommand="finishtweening;queuecommand,Flash0"
+		Flash0Command="x,105;y,350;rotationz,0;sleep,1;linear,.06;rotationz,22;diffusealpha,1;linear,.06;rotationz,45;diffusealpha,0;linear,.06;diffusealpha,0;sleep,2.88;queuecommand,Flash1"
+		Flash1Command="x,470;y,358;rotationz,0;linear,.06;rotationz,22;diffusealpha,1;linear,.06;rotationz,45;diffusealpha,0;sleep,.58;queuecommand,Flash2"
+		Flash2Command="x,620;y,342;rotationz,0;linear,.06;rotationz,22;diffusealpha,1;linear,.06;rotationz,45;diffusealpha,0;sleep,2.88;queuecommand,Flash3"
+		Flash3Command="x,300;y,367;rotationz,0;linear,.06;rotationz,22;diffusealpha,1;linear,.06;rotationz,45;diffusealpha,0;"
+	/>
+	<Layer 
+		Type="Quad" 
+		InitCommand="diffuse,#FFFFFF00;stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-200,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+200;queuecommand,Flash0"
+		PulseMessageCommand="finishtweening;sleep,1;queuecommand,Flash0"
+		FlashCommand="%function() local random = math.random(0,2) Sound('Bulb_Flash_' .. random ) end"
+		Flash0Command="Playcommand,Flash;linear,.06;diffusealpha,.5;linear,.06;diffusealpha,0;sleep,2.88;queuecommand,Flash1"
+		Flash1Command="Playcommand,Flash;linear,.06;diffusealpha,.5;linear,.06;diffusealpha,0;sleep,.58;queuecommand,Flash2"
+		Flash2Command="Playcommand,Flash;linear,.06;diffusealpha,.5;linear,.06;diffusealpha,0;sleep,2.88;queuecommand,Flash3"
+		Flash3Command="Playcommand,Flash;linear,.06;diffusealpha,.5;linear,.06;diffusealpha,0"
+	/>
+	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-200,SCREEN_CENTER_X+320,SCREEN_CENTER_Y-124" />
+	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y+153,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+200" />
+	<Layer Type="Quad" Command="stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y+200,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+240;blend,noeffect;zwrite,1" />
+</children></ActorFrame>

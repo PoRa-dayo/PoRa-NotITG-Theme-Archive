@@ -1,0 +1,33 @@
+<ActorFrame><children>
+	<ActorFrame OnCommand="queuemessage,Cleared" />
+	<Layer File="../ScreenEvaluation underlay" />
+
+	<Layer Font="_Meat" Text="Never Say Die" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-230;zoomx,.6;zoomy,.7;shadowlength,2;maxwidth,950;diffuse,#FFFFFF;queuecommand,Se" SetCommand="%function(self) self:settext(GetSongName()) end" CurrentSongChangedMessageCommand="queuecommand,Set" />
+
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-200" ><children>
+		<Layer File="../../Graphics/Common Fallback Banner.png" OnCommand="ZoomToWidth,200;ZoomToHeight,80" />
+	</children></Layer>
+	
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-200;zoom,1" ><children>
+		<Layer Font="_Numbers" Text="70.00%" Command="x,307;y,37;horizalign,right;zoom,1.1;shadowlength,3" />
+		<Layer Font="_Numbers" Text="15" Command="x,307;y,0;horizalign,right;zoom,.9;shadowlength,3;diffuse,#16AFF3" />
+		<Layer Font="_Numbers" Text="100.00%" Command="x,-303;y,37;horizalign,left;zoom,1.1;shadowlength,3" />
+		<Layer Font="_Numbers" Text="15" Command="x,-303;y,0;horizalign,left;zoom,.9;shadowlength,3;diffuse,#16AFF3" />
+	</children></Layer>
+
+
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X-216;y,SCREEN_CENTER_Y+13;zoom,1" ><children>
+		<Layer File="../../Graphics/ScreenEvaluation grade frame p1" OnCommand="x,-82" />
+		<Layer File="grades" OnCommand="x,82" />
+	<Layer Font="ScreenEvaluation stats" Text="C720, Overhead, mirror, no mines" OnCommand="x,-82;y,155;horizalign,left;vertalign,top;zoom,0.4;WrapWidthPixels,500;ShadowLength,2;queuecommand,Set" />
+	</children></Layer>
+
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X+219;y,SCREEN_CENTER_Y+13;zoom,1" ><children>
+		<Layer File="../../Graphics/ScreenEvaluation grade frame p1" OnCommand="x,-82" />
+		<Layer File="grades" OnCommand="x,82" />
+	<Layer Font="ScreenEvaluation stats" Text="4.5x, hallway, 65% mini" OnCommand="x,-82;y,155;horizalign,left;vertalign,top;zoom,0.4;WrapWidthPixels,500;ShadowLength,2;queuecommand,Set" />
+	</children></Layer>
+	<Layer File="../ScreenEvaluation overlay" />
+
+
+</children></ActorFrame>

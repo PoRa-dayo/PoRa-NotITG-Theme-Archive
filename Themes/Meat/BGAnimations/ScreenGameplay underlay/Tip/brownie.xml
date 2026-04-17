@@ -1,0 +1,71 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		InitCommand="y,1"
+		LandMessageCommand="finishtweening;queuecommand,Sprint"
+		JumpMessageCommand="%function(self) 
+			self:queuecommand('Jump1')
+			self:queuecommand('Up'..jump)
+			if jump == 1 then self:sleep(.2) self:queuecommand('Jump3') end
+			if jump == 2 then self:sleep(.25) self:queuecommand('Jump3') end
+			if jump == 3 then self:sleep(.3) self:queuecommand('Jump2') self:sleep(.2) self:queuecommand('Jump3') end
+			if jump == 4 then self:sleep(.4) self:queuecommand('Jump2') self:sleep(.2) self:queuecommand('Jump3') end
+			if jump == 5 then self:sleep(.3) self:queuecommand('Jump3') self:sleep(.2) self:queuecommand('Jump1') self:sleep(.2) self:queuecommand('Jump3') end
+		end"
+	><children>
+		<Layer
+			File="@Meatboy(9) .. '/Animate.xml'"
+			InitCommand="queuecommand,Sprint"
+			Up1Command="decelerate,.2;addy,-20;accelerate,.2;y,0"
+			Up2Command="decelerate,.3;addy,-25;accelerate,.3;y,0"
+			Up3Command="decelerate,.4;addy,-35;accelerate,.4;y,0"
+			Up4Command="decelerate,.5;addy,-45;accelerate,.5;y,0"
+			Up5Command="decelerate,.3;addy,-25;accelerate,.1;addy,5;decelerate,.1;addy,5;accelerate,.1;addy,-5;decelerate,.1;addy,-5;accelerate,.3;y,0"
+			Pass2Command="stoptweening"
+			FloatMessageCommand="queuecommand,Reset;y,-15;queuecommand,Jump1;accelerate,.28;y,-30;decelerate,.28;y,-45;queuecommand,Jump3;accelerate,.28;y,-30;decelerate,.285;y,-15;queuecommand,Float"
+		/>
+	</children></Layer>
+
+	<Layer File="@Meatboy() .. '/jump trail.sprite'" InitCommand="zoom,0" JumpMessageCommand="finishtweening;setstate,1;zoom,.35;x,-16;linear,.3;addx,-72*lvlSpd;sleep,0;zoom,0" />
+	<Layer File="@Meatboy() .. '/splash.sprite'" InitCommand="y,3;zoom,0" LandMessageCommand="finishtweening;setstate,1;x,8;zoom,.49;zoomy,.2;linear,.35;addx,-84*lvlSpd" FinishedCommand="stoptweening"/>
+	<Layer
+		File="bTrail.xml"
+		OnCommand="queuecommand,Start"
+		StartCommand="queuecommand,Go"
+		JumpMessageCommand="stoptweening;queuecommand,Stop"
+		LandMessageCommand="stoptweening;queuecommand,Start"
+		FloatMessageCommand="stoptweening"
+	/>
+	<Layer
+		File="bTrail.xml"
+		OnCommand="queuecommand,Start"
+		StartCommand="sleep,.15;queuecommand,Go"
+		JumpMessageCommand="stoptweening;queuecommand,Stop"
+		LandMessageCommand="stoptweening;queuecommand,Start"
+		FloatMessageCommand="stoptweening"
+	/>
+	<Layer
+		File="bTrail.xml"
+		OnCommand="queuecommand,Start"
+		StartCommand="sleep,.3;queuecommand,Go"
+		JumpMessageCommand="stoptweening;queuecommand,Stop"
+		LandMessageCommand="stoptweening;queuecommand,Start"
+		FloatMessageCommand="stoptweening"
+	/>
+	<Layer
+		File="bTrail.xml"
+		OnCommand="queuecommand,Start"
+		StartCommand="sleep,.45;queuecommand,Go"
+		JumpMessageCommand="stoptweening;queuecommand,Stop"
+		LandMessageCommand="stoptweening;queuecommand,Start"
+		FloatMessageCommand="stoptweening"
+	/>
+	<Layer
+		File="bTrail.xml"
+		OnCommand="queuecommand,Start"
+		StartCommand="sleep,.6;queuecommand,Go"
+		JumpMessageCommand="stoptweening;queuecommand,Stop"
+		LandMessageCommand="stoptweening;queuecommand,Start"
+		FloatMessageCommand="stoptweening"
+	/>
+</children></ActorFrame>

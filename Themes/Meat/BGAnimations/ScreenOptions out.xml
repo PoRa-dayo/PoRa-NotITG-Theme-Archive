@@ -1,0 +1,13 @@
+<ActorFrame><children>
+	<Layer Type="ActorFrame" Command="sleep,.25" />
+	<Layer 
+		Type="ActorFrame" 
+		Command="queuemessage,Finish;queuecommand,Screen" 
+		ScreenCommand="%function() 
+		s = SCREENMAN:GetTopScreen() 
+		s:addx(1000)
+		s:GetChild('Underlay'):addx(-1000*640/SCREEN_WIDTH)
+		s:GetChild('Overlay'):addx(-1000*640/SCREEN_WIDTH)
+		s:GetChild('Out'):addx(-1000*640/SCREEN_WIDTH)
+		end" />
+</children></ActorFrame>

@@ -1,0 +1,21 @@
+<ActorFrame><children>
+	<ActorFrame InitCommand="%function() EditOptions = true end" />
+	<ActorFrame Command="%ScreenEditInit" FirstUpdateCommand="%ScreenEdit" />
+	<Layer
+		File="@GetBanner(GAMESTATE:GetCurrentSong())"
+		InitCommand="scaletoclipped,175,70;x,SCREEN_LEFT+90;y,SCREEN_CENTER_Y-170" 
+	/>
+	<Layer
+		Font="MusicWheel"
+		Text=""
+		OnCommand="shadowlength,0;maxwidth,184;x,SCREEN_LEFT+90;y,SCREEN_CENTER_Y-127;zoom,.5;PlayCommand,Refresh"
+		RefreshCommand="%function(self) self:settext(GetEditStepsText()) self:sleep(0.5); self:queuecommand('Refresh') end" 
+	/>
+	<Layer
+		Text="Press [ESC]::for Edit Menu::::Press [F1]::for Help Menu::::Press [ENTER]::for Area Menu"
+		Font="MusicWheel"
+		InitCommand="ShadowLength,0;zoom,0.35;horizalign,left;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y"
+		OnCommand=""
+		OffCommand=""
+	/>
+</children></ActorFrame>

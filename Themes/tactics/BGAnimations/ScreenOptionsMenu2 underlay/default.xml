@@ -1,0 +1,29 @@
+<ActorFrame> <children>
+	<Layer 
+		File="../Alazlam.png"
+		InitCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y-151"
+		OnCommand=""
+		OffCommand="" 
+	 />
+	<ActorFrame OnCommand="x,SCREEN_CENTER_X-145;y,SCREEN_CENTER_Y+63"> <children>
+		<Layer
+			File="menu.png"
+		/>
+		<Layer Class="BitmapText" 
+			Font="_FFT2 white"
+			Text="Menu"
+			InitCommand="x,-115;y,-137;shadowlength,0;zoomx,1.25"
+		/>
+	</children></ActorFrame>
+	<Layer Class="BitmapText" 
+		Font="_FFT2 white"
+		Text="Time"
+		InitCommand="x,SCREEN_CENTER_X+145;y,SCREEN_CENTER_Y+180;shadowlength,0;zoomx,1.25"
+	/>
+	<Layer
+		File="status.png"
+		InitCommand="x,SCREEN_CENTER_X+180;y,SCREEN_CENTER_Y-33"
+		OnCommand=""
+		OffCommand="" 
+	/>
+</children> </ActorFrame>

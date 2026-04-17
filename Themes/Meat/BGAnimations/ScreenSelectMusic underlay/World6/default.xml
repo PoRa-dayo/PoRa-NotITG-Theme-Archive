@@ -1,0 +1,82 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+		<Layer Type="Quad" Command="diffuse,#FFFFFF;stretchto,-320,-240,320,240" />
+<!--Bottom Rocks-->
+		<Layer Type="Quad" Command="diffuse,#D9D9D9;stretchto,-320,-106,63,240" />
+		<Layer Type="Quad" Command="diffuse,#D9D9D9;stretchto,-320,-105,320,240" />
+		<Layer File="Lattice3.xml" Command="x,-290;y,-109;zoomx,.6;zoomy,.51;rotationy,180" />
+		<Layer File="Lattice3.xml" Command="x,-127;y,-109;zoomx,.6;zoomy,.51;rotationy,180" />
+		<Layer File="Lattice3.xml" Command="x,26;y,-107;zoomx,.52;zoomy,.51;rotationy,180" />
+		<Layer File="Lattice3.xml" Command="x,169;y,-108;zoomx,.52;zoomy,.51;rotationy,180" />
+		<Layer Type="ActorFrame" Command="x,318;y,-103;rotationz,-13" ><children>
+			<Layer
+				File="rock1.png"
+				Command="zoom,.23;zoomy,.16;diffuse,#D9D9D9"
+			/>
+		</children></Layer>
+<!--Middle Rocks-->
+		<Layer Type="Quad" Command="diffuse,#A7A7A7;stretchto,-320,-90,320,240" />
+		<Layer Type="Quad" Command="diffuse,#A7A7A7;stretchto,-100,-93,320,240" />
+		<Layer File="Lattice2.xml" Command="x,-136;y,-93;zoomx,.66;zoomy,.55" />
+		<Layer File="Lattice2.xml" Command="x,42;y,-93;zoomx,.66;zoomy,.55" />
+		<Layer File="Lattice2.xml" Command="x,100;y,-95;zoomx,.65;zoomy,.55" />
+		<Layer File="Lattice2.xml" Command="x,280;y,-95;zoomx,.66;zoomy,.53" />
+		<Layer Type="ActorFrame" Command="x,-323;y,-88;rotationy,180;rotationz,-13" ><children>
+			<Layer
+				File="rock1.png"
+				Command="zoom,.24;zoomy,.17;diffuse,#A7A7A7"
+			/>
+		</children></Layer>
+<!--Top Rocks-->
+		<Layer Type="Quad" Command="diffuse,#575757;stretchto,-320,-72,320,240" />
+		<Layer File="Lattice1.xml" Command="x,-28;y,-77" />
+		<Layer File="Lattice1.xml" Command="x,244;y,-76" />
+		<Layer Type="ActorFrame" Command="x,-310;y,-67;rotationy,180;rotationz,-13" ><children>
+			<Layer
+				File="rock1.png"
+				Command="zoom,.36;zoomy,.31;diffuse,#575757"
+			/>
+		</children></Layer>
+		<Layer Type="ActorFrame" Command="x,317;y,-67;rotationz,60" ><children>
+			<Layer
+				File="rock1.png"
+				Command="zoom,.17;zoomy,.28;diffuse,#575757"
+			/>
+		</children></Layer>
+<!--Lower Rocks-->
+		<Layer Type="Quad" Command="diffuse,#393939;stretchto,200,150,320,240" />
+		<Layer Type="ActorFrame" Command="x,-318;y,147" ><children>
+			<Layer
+				File="rock1.png"
+				Command="zoom,.7;diffuse,#393939"
+			/>
+		</children></Layer>
+		<Layer Type="ActorFrame" Command="x,-232;y,159;rotationy,180;rotationz,-14" ><children>
+			<Layer
+				File="rock1.png"
+				Command="zoom,.7;diffuse,#393939"
+			/>
+		</children></Layer>
+		<Layer Type="ActorFrame" Command="x,208;y,161;rotationy,180;rotationz,-14" ><children>
+			<Layer
+				File="rock1.png"
+				Command="zoom,.7;diffuse,#393939"
+			/>
+		</children></Layer>
+		<Layer Type="ActorFrame" Command="x,255;y,149;rotationy,180;rotationz,16" ><children>
+			<Layer
+				File="rock1.png"
+				Command="zoom,.26;diffuse,#393939"
+			/>
+		</children></Layer>
+		<Layer Type="ActorFrame" Command="x,308;y,150;rotationy,180;rotationz,-14" ><children>
+			<Layer
+				File="rock1.png"
+				Command="zoom,.7;diffuse,#393939"
+			/>
+		</children></Layer>
+	</children></Layer>
+</children></ActorFrame>

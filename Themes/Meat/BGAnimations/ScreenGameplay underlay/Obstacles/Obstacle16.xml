@@ -1,0 +1,11 @@
+<ActorFrame><children>
+<!-- Obstacle 16: Spikes -->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="addx,56"
+	><children>
+		<Layer Type="Quad" OnCommand="stretchto,-70,27,70,55;diffuse,#000000;blend,noeffect;zwrite,1" />
+		<Layer File="@'spikes'..Pallette()..'.xml'" />
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.85;queuecommand,Jump3" />
+</children></ActorFrame>

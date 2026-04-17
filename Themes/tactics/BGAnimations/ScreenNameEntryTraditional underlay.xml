@@ -1,0 +1,6 @@
+<ActorFrame><children>
+	<Layer
+		File="@THEME:GetPath( EC_GRAPHICS, '', 'Common fallback banner' )"
+		InitCommand="x,SCREEN_CENTER_X-1;y,SCREEN_CENTER_Y-196;scaletoclipped,230,77"
+	/>
+</children></ActorFrame>

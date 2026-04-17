@@ -1,0 +1,16 @@
+<ActorFrame><children>
+	<Layer
+		File="@'maggot'..Pallette()..'.sprite'"
+		InitCommand="zoom,.64;x,SCREEN_CENTER_X-105;y,SCREEN_CENTER_Y+30;rotationz,90;queuecommand,Register" RegisterCommand="%function(self) Register(self,-10,-13,6,13,5) self:sleep(.1) self:queuecommand('Move1') end"
+		Move1Command="%function(self) self:rotationx(180) Move(self,0,.03,0,-G,'Dy','>',370,2) end" 
+		Move2Command="%function(self) self:rotationx(0) Move(self,0,-.03,0,-G,'Dy','<',250,1) end" 
+		MoveCommand="%function(self) Update(self) end"
+	/>
+	<Layer
+		File="@'maggot'..Pallette()..'.sprite'" 
+		InitCommand="zoom,.64;x,SCREEN_CENTER_X+105;y,SCREEN_CENTER_Y+76;rotationy,180;rotationz,90;queuecommand,Register" RegisterCommand="%function(self) Register(self,-6,-13,10,13,5) self:sleep(.1) self:queuecommand('Move2') end"
+		Move1Command="%function(self) self:rotationx(180) Move(self,0,.03,0,-G,'Dy','>',370,2) end" 
+		Move2Command="%function(self) self:rotationx(0) Move(self,0,-.03,0,-G,'Dy','<',250,1) end" 
+		MoveCommand="%function(self) Update(self) end"
+	/>
+</children></ActorFrame>

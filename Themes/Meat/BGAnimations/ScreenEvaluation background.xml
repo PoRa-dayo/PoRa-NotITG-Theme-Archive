@@ -1,0 +1,8 @@
+<ActorFrame><children>
+	<Layer File="@'ScreenEvaluation underlay/'..LevelType()..'/World'..world..'/Level' .. level .. '/bg.png'" InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y" />
+	<Layer File="ScreenEvaluation underlay/Level Background.xml" />
+	<Layer File="ScreenEvaluation underlay/failed.png" Command="x,SCREEN_CENTER_X-185;y,SCREEN_CENTER_Y-75;zoom,.5;rotationz,10" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_1):GetGrade() == GRADE_FAILED and OnePassed()" />
+	<Layer File="ScreenEvaluation underlay/failed.png" Command="x,SCREEN_CENTER_X+185;y,SCREEN_CENTER_Y-75;zoom,.5;rotationz,-10" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetGrade() == GRADE_FAILED and OnePassed()" />
+	<Layer Type="Quad" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" InitCommand="Stretchto,SCREEN_CENTER_X-299,SCREEN_CENTER_Y-56,SCREEN_CENTER_X-117,SCREEN_CENTER_Y-4;diffuse,.7,0,0,.8;diffusebottomedge,0,0,0,.5" />
+	<Layer Type="Quad" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" InitCommand="Stretchto,SCREEN_CENTER_X+299,SCREEN_CENTER_Y-56,SCREEN_CENTER_X+117,SCREEN_CENTER_Y-4;diffuse,.7,0,0,.8;diffusebottomedge,0,0,0,.5" />
+</children></ActorFrame>

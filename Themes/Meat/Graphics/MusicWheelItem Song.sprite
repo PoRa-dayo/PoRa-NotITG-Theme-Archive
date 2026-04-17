@@ -1,0 +1,18 @@
+[Sprite]
+Texture=_MusicWheelItem Song 1x7
+Frame0000=0
+Delay0000=1.5
+Frame0001=1
+Delay0001=0.07
+Frame0002=2
+Delay0002=0.06
+Frame0003=3
+Delay0003=0.06
+Frame0004=4
+Delay0004=0.07
+Frame0005=5
+Delay0005=0.06
+Frame0006=6
+Delay0006=0.06
+Frame0006=0
+Delay0006=0.1

@@ -1,0 +1,15 @@
+<ActorFrame><children>
+<!-- Obstacle 12: Maggot -->
+	<Layer
+		Type="ActorFrame"
+		GoCommand="queuecommand,Move;x,60;linear,4.5;x,-40"
+		Fail3Command="queuecommand,Move;x,40;linear,4.5;x,-60"
+	><children>
+		<Layer
+			File="Maggot.sprite"
+			OnCommand="y,2.5;zoom,.46"
+
+		/>
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.95;queuecommand,Jump2" />
+</children></ActorFrame>

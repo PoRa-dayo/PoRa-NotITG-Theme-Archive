@@ -1,0 +1,3 @@
+<ActorFrame><children>
+	<Layer Condition="title==1" File="_fade in normal" Command="%function() title=0 end" />
+</children></ActorFrame>

@@ -1,0 +1,15 @@
+<ActorFrame><children>
+	<Layer Font="_sui generis" Text="OPTIONS MENU" OnCommand="%function(self) OptionsMenuHeader(self) end" />
+	<Layer Font="sg_backup" Text="Skin Selection" OnCommand="%function(self) OptionsMenuSubtitle(self) end" />
+
+	<Layer
+		Font="sg_backup"
+		Text="Skin will take effect when menu is exited"
+		OnCommand="%function(self)
+		self:x( SCREEN_CENTER_X )
+		self:y( SCREEN_CENTER_Y )
+		self:zoom(0.58);
+		self:shadowlength(2);
+		end"
+		/>
+</children></ActorFrame>

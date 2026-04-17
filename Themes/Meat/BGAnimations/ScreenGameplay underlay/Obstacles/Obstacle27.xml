@@ -1,0 +1,32 @@
+<ActorFrame><children>
+<!-- Obstacle 27: Repeller with Saw -->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="addx,24"
+	><children>
+		<Layer
+			File="Repeller outline.png"
+			Command="y,16;ztest,1;queuecommand,Pulse"
+			PulseCommand="zoom,0;diffusealpha,1;linear,.5;zoom,.7;diffusealpha,0;queuecommand,Pulse"
+			Fail3Command="stoptweening;zoom,0"
+		/>
+		<Layer
+			File="Repeller.png"
+			Command="zoom,.2;y,16;spin;effectmagnitude,0,0,360;ztest,1"
+			Fail3Command="zoom,0"
+		/>
+		<Layer Type="Quad" OnCommand="zoom,0" Fail3Command="stretchto,-35,27,40,60;diffuse,#000000;blend,noeffect;zwrite,1" />
+		<Layer
+			File="Saw.png"
+			OnCommand="zoom,.42;y,-63;x,3;spin;effectmagnitude,0,0,-360"
+			Fail3Command="addy,10"
+		/>
+		<Layer
+			File="saw.xml"
+			OnCommand="zoom,.0;y,22;x,3;spin;effectmagnitude,0,0,-360;ztest,1"
+			Fail3Command="zoom,.42;addy,-8"
+		/>
+		<Layer Type="Quad" OnCommand="stretchto,-32,10,32,28;blend,noeffect;zwrite,1" Fail3Command="zoom,0"/>
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.75;queuecommand,Jump5" />
+</children></ActorFrame>

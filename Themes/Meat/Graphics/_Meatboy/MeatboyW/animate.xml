@@ -1,0 +1,21 @@
+<ActorFrame><children>
+	<Layer
+		File="animate.sprite"
+		OnCommand="%function(self) self:zoom(blockSize/50) end"
+		ResetCommand="queuecommand,Stand"
+		SprintCommand="animate,1"
+		WalkCommand="queuecommand,Sprint"
+		StandCommand="animate,0;setstate,17"
+		WallCommand="%function(self) local state = math.random(0,3) + 13; self:animate(0); self:setstate(state); end"
+		Jump2Command="animate,0;setstate,5"
+		Jump1Command="%function(self) local state = math.random(0,3) + 5; self:animate(0); self:setstate(state); end"
+		Jump3Command="%function(self) local state = math.random(0,3) + 9; self:animate(0); self:setstate(state); end"
+		FetusCommand="animate,0;setstate,18"
+		SplodeCommand="animate,0;setstate,19"
+		GoneCommand="animate,0;setstate,19"
+	/>
+	<Layer
+		File="splode.xml"
+		OnCommand="%function(self) self:zoom(2.85*blockSize/50) end"
+	/>
+</children></ActorFrame>

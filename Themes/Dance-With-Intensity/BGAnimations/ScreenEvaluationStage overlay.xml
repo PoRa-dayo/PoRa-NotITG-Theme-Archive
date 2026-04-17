@@ -1,0 +1,282 @@
+<ActorFrame><children>
+	<Layer
+		Font="_sg stroke"
+		Text="0"
+		Condition="not GAMESTATE:IsCourseMode()"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-170;zoom,0.5;draworder,90;diffuse,1,1,0,1"
+		OnCommand="%function(self)
+        self:shadowlength(1)
+        self:settext( 'STAGE '.. GAMESTATE:StageIndex()+1 )
+		end"
+		/>
+
+        <!-- Text Information that will display if the song has NO banner. -->
+
+    <Layer
+        Font="_sg stroke"
+        Text="DWI Presents - Electro Mix 5 Something Something"
+        Condition="not GAMESTATE:IsCourseMode()"
+        OnCommand="%function(self)
+        self:x( SCREEN_CENTER_X )
+        self:y( SCREEN_CENTER_Y-140 )
+        self:maxwidth(450)
+        self:zoom(0.5)
+        if GAMESTATE:GetCurrentSong():GetBannerPath() == nil then
+            self:settext( GAMESTATE:GetCurrentSong():GetDisplayMainTitle() )
+        else
+            self:settext(' ')
+        end
+        end"
+        OffCommand="%function(self)
+        self:queuecommand('SaveProfileInformation')
+        end"
+        SaveProfileInformationCommand="%function(self)
+            SaveToProfile()
+        end"
+        />
+
+        <!-- Subtitle Display 
+
+        How it works: (Explained by HeySora.)
+
+        Get the length of the string returned by GetDisplayMainTitle
+        substring the string returned by the GetDisplayFullTitle
+        Like, the start index will be the length of GetDisplayMainTitle + 2 (to remove the space, and start right after)(editado)
+        
+        string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 2);
+
+        The code will look like that ^
+        
+        What string.sub does is that it returns a portion of the string. for example :
+        
+        string.sub('Hello', 3); -- Returns 'llo', because it starts reading at the 3rd letter
+        
+        GetDisplayFullTitle is returning the title, a space, and the subtitle.
+        
+        -->
+
+    <Layer
+        Font="_sg stroke"
+        Text="(Feat. Someone)"
+        Condition="not GAMESTATE:IsCourseMode()"
+        OnCommand="%function(self)
+        self:x( SCREEN_CENTER_X )
+        self:y( SCREEN_CENTER_Y-125 )
+        self:maxwidth(450)
+        self:zoom(0.4)
+        if GAMESTATE:GetCurrentSong():GetBannerPath() == nil then
+            self:settext( string.sub(GAMESTATE:GetCurrentSong():GetDisplayFullTitle(), string.len(GAMESTATE:GetCurrentSong():GetDisplayMainTitle()) + 2) )
+        else
+            self:settext(' ')
+        end
+        end"
+        />
+
+    <Layer
+        Font="_sg stroke"
+        Text="SomeGuyWhoMixes"
+        Condition="not GAMESTATE:IsCourseMode()"
+        OnCommand="%function(self)
+        self:x( SCREEN_CENTER_X )
+        self:y( SCREEN_CENTER_Y-110 )
+        self:maxwidth(450)
+        self:zoom(0.4)
+        if GAMESTATE:GetCurrentSong():GetBannerPath() == nil then
+            self:settext( GAMESTATE:GetCurrentSong():GetDisplayArtist() )
+        else
+            self:settext(' ')
+        end
+        end"
+        />
+
+	<Layer
+		Font="_sg stroke"
+		Text="0"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+115;zoom,0.5"
+		OnCommand="%function(self)
+			self:settext( 'TOTAL' )
+		end"
+		/>
+	<Layer
+		Font="_sg stroke"
+		Text="0"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+138;zoom,0.5"
+		OnCommand="%function(self)
+			self:settext( 'SCORE' )
+		end"
+		/>
+	<Layer
+		Font="_sg stroke"
+		Text="0"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+160;zoom,0.5"
+		OnCommand="%function(self)
+			self:settext( 'PERCENTAGE' )
+		end"
+		/>
+	<Layer
+		Font="_score"
+		Text="0"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		InitCommand="diffuse,68/255,187/255,238/255,1;x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y+138;zoom,0;horizalign,right;draworder,90;sleep,0.1;queuecommand,ShowScore"
+		ScoreChangedP1MessageCommand="%function(self)
+			self:settext( GetScore(PLAYER_1) )
+		end"
+		ShowScoreCommand="%function(self)
+			self:settext( GetScore(PLAYER_1) )
+			self:zoom(0)
+			self:sleep(0.125*7)
+			self:bounceend(0.4)
+			self:zoom(1)
+		end"
+		/>
+
+	<Layer
+		Font="_score"
+		Text="0"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		InitCommand="diffuse,68/255,187/255,238/255,1;x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y+115;zoom,0;horizalign,right;draworder,90;sleep,0.1;queuecommand,ShowScore"
+		ScoreChangedP1MessageCommand="%function(self)
+			self:settext( GetTotalScore(PLAYER_1) )
+		end"
+		ShowScoreCommand="%function(self)
+			self:settext( GetTotalScore(PLAYER_1) )
+			self:zoom(0)
+			self:sleep(0.125*7)
+			self:bounceend(0.4)
+			self:zoom(0.75)
+		end"
+		/>
+
+	<Layer
+        Font="_gpscore P1"
+        Text=" 0.00%"
+        InitCommand="x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y+160;zoom,1;horizalign,right;draworder,90;sleep,0.1;"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+        OnCommand="%function(self)
+        CalculatePercentage(self, PLAYER_1, 'Cur')
+        self:queuecommand('ShowScore')
+        end"
+            ShowScoreCommand="%function(self)
+            self:zoom(0)
+            self:sleep(0.125*7)
+            self:bounceend(0.4)
+            self:zoom(1)
+        end"
+        />
+
+	<Layer
+		Font="_score"
+		Text="0"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		InitCommand="diffuse,238/255,221/255,0,1;x,SCREEN_CENTER_X+60;y,SCREEN_CENTER_Y+138;zoom,0;horizalign,left;draworder,90;sleep,0.1;queuecommand,ShowScore"
+		ScoreChangedP1MessageCommand="%function(self)
+			self:settext( GetScore(PLAYER_2) )
+		end"
+		ShowScoreCommand="%function(self)
+			self:settext( GetScore(PLAYER_2) )
+			self:zoom(0)
+			self:sleep(0.125*7)
+			self:bounceend(0.4)
+			self:zoom(1)
+		end"
+		/>
+
+    <Layer
+        Font="_sg stroke"
+        Text="Winner!"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PlayModeName() == 'Rave'"
+        InitCommand="diffuse,238/255,221/255,0,1;queuecommand,ShowScore"
+        ShowScoreCommand="%function(self)
+        self:x( SCREEN_CENTER_X-226 )
+        self:y( SCREEN_CENTER_Y-140 )
+            WhoIsWinner(self, PLAYER_1)
+        end"
+        />
+
+    <Layer
+        Font="_sg stroke"
+        Text="Winner!"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PlayModeName() == 'Rave'"
+        InitCommand="diffuse,238/255,221/255,0,1;queuecommand,ShowScore"
+        ShowScoreCommand="%function(self)
+        self:x( SCREEN_CENTER_X+226 )
+        self:y( SCREEN_CENTER_Y-140 )
+            WhoIsWinner(self, PLAYER_2)
+        end"
+        />
+
+    <Layer
+        Font="_score"
+        Text="0"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+        InitCommand="diffuse,238/255,221/255,0,1;x,SCREEN_CENTER_X+60;y,SCREEN_CENTER_Y+115;zoom,0;horizalign,left;draworder,90;sleep,0.1;queuecommand,ShowScore"
+        ScoreChangedP1MessageCommand="%function(self)
+            self:settext( GetTotalScore(PLAYER_2) )
+        end"
+        ShowScoreCommand="%function(self)
+            self:settext( GetTotalScore(PLAYER_2) )
+            self:zoom(0)
+            self:sleep(0.125*7)
+            self:bounceend(0.4)
+            self:zoom(0.75)
+        end"
+        />
+
+	<Layer
+        Font="_gpscore P2"
+        Text=" 0.00%"
+        InitCommand="x,SCREEN_CENTER_X+60;y,SCREEN_CENTER_Y+160;zoom,1;horizalign,left;draworder,90;sleep,0.1"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+        OnCommand="%function(self)
+        CalculatePercentage(self, PLAYER_2, 'Cur')
+        self:queuecommand('ShowScore')
+        end"
+            ShowScoreCommand="%function(self)
+            self:zoom(0)
+            self:sleep(0.125*7)
+            self:bounceend(0.4)
+            self:zoom(1)
+        end"
+        />
+
+        <Layer File="ScoresEvaluationStage.xml" OnCommand="%function(self) ScoreType = 'Stage'; end" />
+
+		<!-- VOICE JUDGMENT STUFF -->
+
+
+
+		<Layer
+                Type="Quad"
+                OnCommand="queuecommand,PlaySound"
+                PlaySoundCommand="%function(self)
+                local Pr = PROFILEMAN:GetMachineProfile():GetSaved()
+                RandomNumber = math.random(1,7)
+                AudioClipToPlay = AnnouncerAudio()
+                AudioPlay( AudioClipToPlay )
+                end"
+        />
+
+        <!-- ""Profile"" Picture and ""Game Periferal"" for P1-->
+            <Layer  File="ProfileInfo.xml" />
+
+        <!-- player 1 max combo -->
+        <Layer
+            Font="_eval combo"
+            Text="Max Combo 1"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            InitCommand="x,SCREEN_CENTER_X-200;y,SCREEN_CENTER_Y+67;diffuse,1,1,0,1;zoom,0.8"
+            OnCommand="%function(self) MaxComboGlow(self, PLAYER_1) end" />
+
+        <!-- player 2 max combo -->
+        <Layer
+            Font="_eval combo"
+            Text="Max Combo 2"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            InitCommand="x,SCREEN_CENTER_X+260;y,SCREEN_CENTER_Y+67;diffuse,1,1,0,1;zoom,0.8"
+            OnCommand="%function(self) MaxComboGlow(self, PLAYER_2) end" />
+
+            <!-- Radar Values -->
+
+            <Layer File="OptionIcons.xml" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+205" />
+
+</children></ActorFrame>

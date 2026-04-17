@@ -1,0 +1,9 @@
+<ActorFrame><children>
+		<BitmapText
+			Text="Round 2"
+			File="_Meat"
+			OnCommand="zoom,.6;shadowlength,0;diffuse,#FFFFFF"
+			ClearedMessageCommand="zoom,0"
+			FailedMessageCommand="zoom,0"
+		/>
+</children></ActorFrame>

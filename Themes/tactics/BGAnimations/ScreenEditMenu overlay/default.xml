@@ -1,0 +1,17 @@
+<ActorFrame> <children>
+	<Layer 
+		File="background"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,.2;zoom,0"
+		OffCommand="zoom,1"
+	 />
+	<Layer Class="AutoActor" 
+		File="../Banner underlay" 
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-166;zoomy,.5;diffusealpha,0;linear,.2;zoomy,.9;sleep,0;zoom,0;diffusealpha,1" 
+		OffCommand="zoomy,.9;diffusealpha,1;linear,.2;zoomy,.5;diffusealpha,0"
+	/>
+	<Layer 
+		File="underlay"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+60;zoom,0;linear,.2;zoom,1;sleep,0;zoom,0"
+		OffCommand="zoom,1;linear,.1;zoom,0"
+	 />
+</children> </ActorFrame>

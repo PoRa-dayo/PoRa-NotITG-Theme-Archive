@@ -1,0 +1,3 @@
+<ActorFrame><children>
+	<ActorFrame Command="queuecommand,Sound" SoundCommand="%function() Sound('ScreenOptions change') end" />
+</children></ActorFrame>

@@ -1,0 +1,17 @@
+<ActorFrame><children>
+<!-- Obstacle 1b: Saw On Ground without Frame-->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="addx,24"
+	><children>
+		<Layer
+			Type="Quad"
+			OnCommand="stretchto,-29,27,35,55;diffuse,#000000;blend,noeffect;zwrite,1"
+		/>
+		<Layer
+			File="saw.xml"
+			OnCommand="zoom,.35;y,23;x,3;spin;effectmagnitude,0,0,-360;ztest,1"
+		/>
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.95;queuecommand,Jump2" />
+</children></ActorFrame>

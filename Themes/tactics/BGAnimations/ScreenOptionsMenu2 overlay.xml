@@ -1,0 +1,42 @@
+<ActorFrame> <children>
+	<Layer File="@THEME:GetPath(EC_BGANIMATIONS,'ScreenOptions','overlay')" />
+	<Layer
+		Type="Quad"
+		PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(1); self:queuecommand('Pulse') end"
+		InitCommand="hidden,1;playcommand,Pulse"
+	/>
+	<Layer
+		Type="BitmapText"
+		Font="_FFT2 white"
+		Condition="Platform() == 'arcade'"
+		SetCommand="%function(self) self:settext( string.format('%02i:%02i:%02i', Hour(), Minute(), Second()) ) end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="diffuse,.9,.9,1,1;x,SCREEN_CENTER_X+145;y,SCREEN_CENTER_Y+203;shadowlength,0;horizalign,left;zoom,1.8;zoomy,1.2;playcommand,Set"
+	/>
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Condition="Platform() == 'arcade'"
+		SetCommand="%function(self) self:settext( string.format('Date: %02i/%02i/%04i', MonthOfYear(), DayOfMonth(), Year()) ) end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X+90;y,SCREEN_CENTER_Y-20;shadowlength,0;horizalign,left;zoom,1;zoomy,.8;playcommand,Set"
+	/>
+
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Condition="Platform() == 'arcade'"
+		SetCommand="%function(self) if HubIsConnected() then self:settext('USB hub connected') else self:settext('USB hub disconnected') end end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X+90;y,SCREEN_CENTER_Y-50;shadowlength,0;horizalign,left;zoom,1;zoomy,.8;playcommand,Set"
+	/>
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Text="The secrets of the Service Menu are::uncovered on this screen."
+		InitCommand="x,SCREEN_CENTER_X-183;y,SCREEN_CENTER_Y-140;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+	/>
+</children> </ActorFrame>

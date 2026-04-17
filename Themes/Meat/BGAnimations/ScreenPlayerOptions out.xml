@@ -1,0 +1,6 @@
+<ActorFrame><children>
+	<ActorFrame Condition="not EditOptions" ><children>
+		<Layer Condition="warp ~= 2 and warp ~= 3" File="_Meatboy out" Command="playcommand,Start" />
+		<Layer Condition="warp == 2 or warp == 3" File="_fade out normal" Command="playcommand,Start" />
+	</children></ActorFrame>
+</children></ActorFrame>

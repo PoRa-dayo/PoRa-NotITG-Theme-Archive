@@ -1,0 +1,224 @@
+<ActorFrame><children>
+
+	<!-- Top: -->
+	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_CENTER_X-340,SCREEN_CENTER_Y-240,SCREEN_CENTER_X+340,SCREEN_CENTER_Y-143" />
+	<Layer
+		File="Saw.png"
+		Command="x,SCREEN_CENTER_X+186;y,SCREEN_CENTER_Y-133;diffuse,#000000;zoomx,.45;zoomy,0.375;spin;effectmagnitude,0,0,-135"
+	/>
+	<Layer
+		File="Saw.png"
+		Command="x,SCREEN_CENTER_X-192;y,SCREEN_CENTER_Y-118;diffuse,#000000;zoomx,.4;zoomy,0.333;spin;effectmagnitude,0,0,135"
+	/>
+
+	<!-- Top Left: -->
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X-285;y,SCREEN_CENTER_Y-137;Rotationz,90"><children>
+	<Layer 
+		File="Rod.png"
+		Command="zoomx,.55;zoomy,0.45"
+	/></children></Layer>
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X-206;y,SCREEN_CENTER_Y-136;Rotationz,90"><children>
+	<Layer 
+		File="Rod.png"
+		Command="zoomx,.375;zoomy,0.33"
+	/></children></Layer>
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X-296;y,SCREEN_CENTER_Y-127;Rotationz,90"><children>
+	<Layer 
+		File="Rod.png"
+		Command="zoomx,.375;zoomy,0.33"
+	/></children></Layer>
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X-231;y,SCREEN_CENTER_Y-123;Rotationz,97"><children>
+	<Layer 
+		File="Rod.png"
+		Command="zoomx,.375;zoomy,0.33"
+	/></children></Layer>
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X-170;y,SCREEN_CENTER_Y-158;Rotationz,-105"><children>
+	<Layer 
+		File="Rod.png"
+		Command="zoomx,.75;zoomy,0.66"
+	/></children></Layer>
+
+
+<!-- Top Right: -->
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X+283;y,SCREEN_CENTER_Y-137;Rotationz,-90"><children>
+	<Layer 
+		File="Rod.png"
+		Command="zoomx,.55;zoomy,0.43"
+	/></children></Layer>
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X+206;y,SCREEN_CENTER_Y-136;Rotationz,-90"><children>
+	<Layer 
+		File="Rod.png"
+		Command="zoomx,.375;zoomy,0.33"
+	/></children></Layer>
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X+296;y,SCREEN_CENTER_Y-127;Rotationz,-90"><children>
+	<Layer 
+		File="Rod.png"
+		Command="zoomx,.375;zoomy,0.33"
+	/></children></Layer>
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X+231;y,SCREEN_CENTER_Y-123;Rotationz,-97"><children>
+	<Layer 
+		File="Rod.png"
+		Command="zoomx,.375;zoomy,0.33"
+	/></children></Layer>
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X+170;y,SCREEN_CENTER_Y-158;Rotationz,105"><children>
+	<Layer 
+		File="Rod.png"
+		Command="zoomx,.75;zoomy,0.66"
+	/></children></Layer>
+
+	<!-- Bottom: -->
+
+	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_CENTER_X-340,SCREEN_CENTER_Y+159,SCREEN_CENTER_X+340,SCREEN_CENTER_Y+240" />
+	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_CENTER_X-264,SCREEN_CENTER_Y+144,SCREEN_CENTER_X-167,SCREEN_CENTER_Y+159" />
+	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_CENTER_X+264,SCREEN_CENTER_Y+144,SCREEN_CENTER_X+167,SCREEN_CENTER_Y+159" />
+	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_CENTER_X-173,SCREEN_CENTER_Y+151,SCREEN_CENTER_X-159,SCREEN_CENTER_Y+172;rotationz,40" />
+	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_CENTER_X-169,SCREEN_CENTER_Y+144,SCREEN_CENTER_X-165,SCREEN_CENTER_Y+148;rotationz,60;croptop,.1;cropleft,.1;cropright,.1" />
+	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_CENTER_X+300,SCREEN_CENTER_Y+174,SCREEN_CENTER_X+320+20,SCREEN_CENTER_Y+158;rotationz,40" />
+	
+	<Layer 
+		File="Rod.png"
+		Command="x,SCREEN_CENTER_X+295;y,SCREEN_CENTER_Y+155;Rotationz,97;zoomx,.33;zoomy,0.375"
+	/>
+	<Layer 
+		File="Rod.png"
+		Command="x,SCREEN_CENTER_X-295;y,SCREEN_CENTER_Y+154;Rotationz,-97;zoomx,.33;zoomy,0.375"
+	/>
+
+	<!-- Frames: -->
+	<Layer
+		File="Frame.png"
+		Command="x,SCREEN_CENTER_X-1;y,SCREEN_CENTER_Y-136;zoomx,.69;zoomy,0.542"
+	/>
+	<Layer
+		File="Frame End.png"
+		Command="x,SCREEN_CENTER_X+184;y,SCREEN_CENTER_Y-136;zoomx,.5;zoomy,0.542"
+	/>
+	<Layer
+		File="Frame End.png"
+		Command="x,SCREEN_CENTER_X-186;y,SCREEN_CENTER_Y-136;rotationy,180;zoomx,.5;zoomy,0.542"
+	/>
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X-17;y,SCREEN_CENTER_Y-116;Rotationz,0"><children>
+	<Layer 
+		File="Arrow.png"
+		Command="diffuse,#000000;Playcommand,Animate"
+		AnimateCommand="zoomx,.22;zoomy,.42;sleep,.18;linear,.1;x,-4;sleep,0;linear,.03;zoomx,.22;zoomy,.58;x,-5;linear,.03;zoomx,.22;zoomy,.42;x,-4;sleep,.18;linear,.2;x,0;queuecommand,Animate"
+	/></children></Layer>
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X+190;y,SCREEN_CENTER_Y-116;Rotationz,180"><children>
+	<Layer 
+		File="Arrow.png"
+		Command="diffuse,#000000;Playcommand,Animate"
+		AnimateCommand="zoomx,.22;zoomy,.42;sleep,.18;linear,.1;x,-4;sleep,0;linear,.03;zoomx,.22;zoomy,.58;x,-5;linear,.03;zoomx,.22;zoomy,.42;x,-4;sleep,.18;linear,.2;x,0;queuecommand,Animate"
+	/></children></Layer>
+	<Layer
+		File="Frame.png"
+		Command="x,SCREEN_CENTER_X+85;y,SCREEN_CENTER_Y-116;zoomx,.7;zoomy,0.417;cropleft,.25;cropright,.25"
+	/>
+	<Layer
+		File="Frame End.png"
+		Command="x,SCREEN_CENTER_X+171;y,SCREEN_CENTER_Y-116;zoomx,.7;zoomy,0.417"
+	/>
+	<Layer
+		File="Frame End.png"
+		Command="x,SCREEN_CENTER_X+2;y,SCREEN_CENTER_Y-116;rotationy,180;zoomx,.7;zoomy,0.417"
+	/>
+	<Layer Type="Quad" Command="diffuse,#999999;stretchto,SCREEN_CENTER_X+20,SCREEN_CENTER_Y-111,SCREEN_CENTER_X+131,SCREEN_CENTER_Y-109" />
+	<Layer
+		File="dash.png"
+		Command="x,SCREEN_CENTER_X+11;y,SCREEN_CENTER_Y-110;zoomtoheight,3;zoomx,.35"
+	/>
+	<Layer
+		File="dash.png"
+		Command="x,SCREEN_CENTER_X+140;y,SCREEN_CENTER_Y-110;zoomtoheight,3;zoomx,.35"
+	/>
+	<Layer
+		File="dash.png"
+		Command="x,SCREEN_CENTER_X+163;y,SCREEN_CENTER_Y-110;zoomtoheight,3;zoomx,.35"
+	/>
+	<Layer
+		File="Level 2.png"
+		Command="x,SCREEN_CENTER_X-1;y,SCREEN_CENTER_Y-110;zoomx,.37;zoomy,0.35"
+	/>
+	<Layer
+		File="Level 1.png"
+		Command="x,SCREEN_CENTER_X+23;y,SCREEN_CENTER_Y-109;zoomx,.32;zoomy,0.275"
+	/>
+	<Layer
+		File="Level 1.png"
+		Command="x,SCREEN_CENTER_X+49;y,SCREEN_CENTER_Y-109;zoomx,.32;zoomy,0.275"
+	/>
+	<Layer
+		File="Level 1.png"
+		Command="x,SCREEN_CENTER_X+75;y,SCREEN_CENTER_Y-109;zoomx,.32;zoomy,0.275"
+	/>
+	<Layer
+		File="Level 1.png"
+		Command="x,SCREEN_CENTER_X+101;y,SCREEN_CENTER_Y-109;zoomx,.32;zoomy,0.275"
+	/>
+	<Layer
+		File="Level 1.png"
+		Command="x,SCREEN_CENTER_X+127;y,SCREEN_CENTER_Y-109;zoomx,.32;zoomy,0.275"
+	/>
+	<Layer
+		File="Level 2.png"
+		Command="x,SCREEN_CENTER_X+152;y,SCREEN_CENTER_Y-110;zoomx,.37;zoomy,0.35"
+	/>
+	<Layer
+		File="Level 2.png"
+		Command="x,SCREEN_CENTER_X+174;y,SCREEN_CENTER_Y-110;zoomx,.37;zoomy,0.35"
+	/>
+	<Layer
+		File="Bar.png"
+		Command="x,SCREEN_CENTER_X-30;y,SCREEN_CENTER_Y-134;zoom,.62;diffuse,#000000"
+	/>
+
+	<!-- Bottom Buttons: -->
+	<Layer Type="Quad" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" Command="diffuse,#000000;stretchto,SCREEN_CENTER_X-284,SCREEN_CENTER_Y+144,SCREEN_CENTER_X-263,SCREEN_CENTER_Y+159" />
+	<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		Font="_Meat"
+		Text="&START;"
+		OnCommand="x,SCREEN_CENTER_X-268;y,SCREEN_CENTER_Y+153;shadowlength,0;zoom,.81"
+	/>
+	<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		Font="_Meat"
+		Text="Select"
+		OnCommand="x,SCREEN_CENTER_X-215;y,SCREEN_CENTER_Y+152;shadowlength,0;zoom,.43"
+	/>
+	
+	<Layer Type="Quad" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" Command="diffuse,#000000;stretchto,SCREEN_CENTER_X+168,SCREEN_CENTER_Y+144,SCREEN_CENTER_X+151,SCREEN_CENTER_Y+159" />
+	<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		Font="_Meat"
+		Text="&START;"
+		OnCommand="x,SCREEN_CENTER_X+167;y,SCREEN_CENTER_Y+153;shadowlength,0;zoom,.81"
+	/>
+	<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		Font="_Meat"
+		Text="Select"
+		OnCommand="x,SCREEN_CENTER_X+220;y,SCREEN_CENTER_Y+152;shadowlength,0;zoom,.43"
+	/>
+	<Layer
+		Font="_Meat"
+		Text="Time: "
+		OnCommand="x,SCREEN_CENTER_X-108;y,SCREEN_CENTER_Y-126;shadowlength,0;zoom,.33;diffuse,#666666"
+	/>
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+166" ><children>
+		<Layer
+			Font="_Meat"
+			Text="&MENULEFT;"
+			OnCommand="x,-90;y,2;shadowlength,0;zoom,.7"
+		/>
+		<Layer
+			Font="_Meat"
+			Text="&MENULEFT;"
+			OnCommand="x,85;y,2;shadowlength,0;zoom,.7;rotationy,180"
+		/>
+		<Layer
+			Font="_Meat"
+			Text="Change World"
+			OnCommand="x,0;shadowlength,0;zoom,.43"
+		/>
+	</children></Layer>
+</children></ActorFrame>

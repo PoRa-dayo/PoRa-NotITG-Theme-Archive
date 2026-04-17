@@ -1,0 +1,35 @@
+<ActorFrame><children>
+<!-- Obstacle 23: Repeller -->
+	<Layer Type="Quad" Command="zoom,0;blend,noeffect;zwrite,1" Pass1Command="sleep,.5;stretchto,192,0,324,50;linear,.3;addx,-96" />
+	<Layer File="Repeller rail.png" InitCommand="zoom,0" GoCommand="y,17;zoom,.5;zoomx,.5*lvlSpd;x,-512*lvlSpd;ztest,1" />
+	<Layer File="Repeller rail.png" InitCommand="zoom,0" GoCommand="y,17;zoom,.5;zoomx,.5*lvlSpd;x,512*lvlSpd;ztest,1" />
+	<Layer
+		Type="ActorFrame"
+		Command="zoom,0"
+		GoCommand="zoom,1;x,-576*lvlSpd;linear,4.5;x,576*lvlSpd"
+		Pass1Command="stoptweening;linear,.8;addx,192*lvlSpd"
+		Fail1Command="stoptweening;linear,.6;addx,128*lvlSpd"
+	><children>
+		<Layer
+			Type="Quad"
+			OnCommand="stretchto,-40,27,40,50;blend,noeffect;zwrite,1"
+		/>
+		<Layer
+			File="Repeller outline.png"
+			Command="y,16;ztest,1;queuecommand,Pulse"
+			PulseCommand="zoom,0;diffusealpha,1;linear,.5;zoom,.7;diffusealpha,0;queuecommand,Pulse"
+		/>
+		<Layer
+			File="Repeller.png"
+			Command="zoom,.2;y,16;spin;effectmagnitude,0,0,360;ztest,1"
+		/>
+		<Layer
+			Type="Quad"
+			OnCommand="stretchto,-1024,0,1024,50;blend,noeffect;zwrite,1"
+		/>
+		<Layer File="@'block'..world..'.png'" Command="x,64*lvlSpd;y,19;zoom,0" Pass1Command="sleep,.5;zoom,.5;addx,72;linear,.3;addx,-72" />
+		<Layer File="@'block'..world..'.png'" Command="x,64*lvlSpd+16;y,19;zoom,0" Pass1Command="sleep,.5;zoom,.5;addx,72;linear,.3;addx,-72" />
+		<Layer File="@'block'..world..'.png'" Command="x,64*lvlSpd+32;y,19;zoom,0" Pass1Command="sleep,.5;zoom,.5;addx,72;linear,.3;addx,-72" />
+	</children></Layer>
+	<Layer File="Broadcast.xml"OnCommand="queuecommand,Float" />
+</children></ActorFrame>

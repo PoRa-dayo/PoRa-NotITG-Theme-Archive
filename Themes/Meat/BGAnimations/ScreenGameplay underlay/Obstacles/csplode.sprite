@@ -1,0 +1,17 @@
+[Sprite]
+Texture=_csplode 1x7.png
+Frame0000=0
+Delay0000=0.05
+Frame0001=1
+Delay0001=0.05
+Frame0002=2
+Delay0002=0.05
+Frame0003=3
+Delay0003=0.05
+Frame0004=4
+Delay0004=0.05
+Frame0005=5
+Delay0005=0.05
+Frame0006=06
+Delay0006=100
+

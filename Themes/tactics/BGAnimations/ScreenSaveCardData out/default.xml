@@ -1,0 +1,28 @@
+<ActorFrame> <children>
+	<ActorFrame Condition="IsAnyPlayerUsingMemoryCard()" ><children>
+		<Layer
+			File="../_black"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT;diffuseleftedge,0,0,0,0;diffuserightedge,0,0,0,0;diffusetopedge,0,0,0,0;diffusebottomedge,0,0,0,0;linear,.5;diffuseleftedge,0,0,0,1;diffuserightedge,0,0,0,1;diffusetopedge,0,0,0,1;diffusebottomedge,0,0,0,1;diffuseleftedge,0,0,0,1;diffuserightedge,0,0,0,1;diffusetopedge,0,0,0,1;diffusebottomedge,0,0,0,1;linear,.5;diffuseleftedge,0,0,0,0;diffuserightedge,0,0,0,0;diffusetopedge,0,0,0,0;diffusebottomedge,0,0,0,0"
+		/>
+		<Layer
+			File="../_shared background.png"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,0;sleep,.5;zoom,2;linear,.3;zoom,1"
+		/>
+		<Layer
+			File="saving.png"
+			InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-50"
+			OnCommand="zoom,0;sleep,1;linear,.2;zoom,1"
+		/>
+		<Layer
+			Type="BitmapText"
+			Font="_FFT"
+			Text="Saving your memory card data.::Please wait."
+			InitCommand="x,SCREEN_CENTER_X-185;y,SCREEN_CENTER_Y-47;shadowlength,0;horizalign,left;zoomx,1.25"
+			OnCommand="cropright,1.2;sleep,1.1;linear,1;cropright,-.2"
+		/>
+	</children> </ActorFrame>
+	<Layer
+		File="../_fade out normal"
+		Condition="not IsAnyPlayerUsingMemoryCard()"
+	/>
+</children> </ActorFrame>

@@ -1,0 +1,9 @@
+<ActorFrame><children>
+	<ActorFrame OnCommand="%function() end" />
+	<Layer
+		File="../ScreenGameplay Underlay/Tip"
+		OnCommand="y,-188;x,-180;linear,10;x,180;queuemessage,Cleared"
+		ClearedMessageCommand="Queuecommand,Pass1;linear,.5;zoom,3;addy,223;sleep,.5;queuecommand,Pass2;queuecommand,Finished"
+		FailedMessageCommand="Queuecommand,Fail1;linear,.5;zoom,3;addy,223;sleep,.5;queuecommand,Fail2;queuecommand,Finished"
+	/>
+</children></ActorFrame>

@@ -1,0 +1,19 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		OnCommand="%function() done = 0 float = 0 end"
+		Pass2Command="queuecommand,Done"
+		Fail1Command="sleep,.6;queuecommand,Done"
+		DoneCommand="%function() done = 1 end"
+		><children>
+		<ActorFrame
+			Jump1Command="%function(self) if done ~= 1 and float ~= 1 then jump = 1 self:queuemessage('Jump') self:sleep(.4) self:queuemessage('Land') end end"
+			Jump2Command="%function(self) if done ~= 1 and float ~= 1 then jump = 2 self:queuemessage('Jump') self:sleep(.6) self:queuemessage('Land') end end"
+			Jump3Command="%function(self) if done ~= 1 and float ~= 1 then jump = 3 self:queuemessage('Jump') self:sleep(.8) self:queuemessage('Land') end end"
+			Jump4Command="%function(self) if done ~= 1 and float ~= 1 then jump = 4 self:queuemessage('Jump') self:sleep(1) self:queuemessage('Land') end end"
+			Jump5Command="%function(self) if done ~= 1 and float ~= 1 then jump = 5 self:queuemessage('Jump') self:sleep(1) self:queuemessage('Land') end end"
+			FloatCommand="%function(self) self:queuemessage('Float') float = 1 end"
+			FinishedCommand="stoptweening"
+		/>
+	</children></Layer>
+</children></ActorFrame>

@@ -1,0 +1,33 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+		<Layer File="Sawr.png" OnCommand="zoom,.45;y,77;spin;effectmagnitude,0,0,270" />
+		<Layer File="rod.png" OnCommand="zoom,.4;y,51;croptop,.3" />
+		<Layer File="rod.png" OnCommand="zoom,.4;y,6" />
+		<Layer File="rod.png" OnCommand="zoom,.4;y,-27;x,-30;rotationz,-75" />
+		<Layer File="rod.png" OnCommand="zoom,.4;y,-27;x,30;rotationz,75" />
+		<Layer File="Center.png" OnCommand="zoom,.4;y,-19" />
+
+		<Layer File="water pit.sprite" Command="y,176;zoom,.65" />
+
+		<Layer File="spikesr.png" Command="y,68;x,-110;zoom,.4;rotationz,90" />
+		<Layer File="spikesr.png" Command="y,42;x,-110;zoom,.4;rotationz,90" />
+		<Layer File="spikesr.png" Command="y,68;x,110;zoom,.4;rotationz,90;rotationy,180" />
+		<Layer File="spikesr.png" Command="y,42;x,110;zoom,.4;rotationz,90;rotationy,180" />
+
+	</children></Layer>
+
+	<ActorFrame
+		OnCommand="%function(self)
+		x = SCREEN_CENTER_X; y = SCREEN_CENTER_Y
+		Register(self,x-117,y+30,x-100,y+80,4)
+		Register(self,x+117,y+30,x+100,y+80,4)
+
+		Register(self,x-35,y+57,x+35,y+97,4)
+		Register(self,x-20,y+42,x+20,y+112,4)
+		Register(self,x-65,y+165,x+65,y+178,4)
+		end"
+	/>
+</children></ActorFrame>

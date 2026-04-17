@@ -1,0 +1,29 @@
+<ActorFrame><children>
+	<Layer
+		Font="_FFT2 white"
+		Text="Name:"
+		InitCommand="x,SCREEN_CENTER_X-90;y,SCREEN_CENTER_Y-194;shadowlength,0;horizalign,right;zoom,1.25;zoomy,1"
+		OffCommand="stoptweening"
+	/>
+	<Layer 
+		Font="_FFT2 white"
+		Text="Code:"
+		InitCommand="x,SCREEN_CENTER_X-90;y,SCREEN_CENTER_Y-166;shadowlength,0;horizalign,right;zoom,1.25;zoomy,1"
+		OffCommand="stoptweening"
+	/>
+	<Layer 
+		Font="_FFT2 white"
+		Text="Enter code during class selection"
+		InitCommand="x,SCREEN_CENTER_X-170;y,SCREEN_CENTER_Y-138;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		Font="_FFT2 white"
+		Text="Must choose Squire after entering code"
+		InitCommand="x,SCREEN_CENTER_X-170;y,SCREEN_CENTER_Y-110;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+		OffCommand="stoptweening;"
+	/>
+	<Layer
+		File="@THEME:GetPath( EC_BGANIMATIONS, '', '_boarder' )"
+	/>
+</children></ActorFrame>

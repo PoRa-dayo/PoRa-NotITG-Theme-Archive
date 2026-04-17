@@ -1,0 +1,17 @@
+<ActorFrame
+    ><children>
+	<ActorFrame OnCommand="queuecommand,Sound1;sleep,.2;queuecommand,Sound2" Sound1Command="%function() Sound('Whoosh_low3.l.ogg') end" Sound2Command="%function() Sound('Dundundun') end" />
+	<Layer
+		Condition="world == 6"
+		Type="Quad"
+		InitCommand="Stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-240,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+240"
+	/>
+	<Layer
+		File="@'ScreenSelectMusic In/World' .. world"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,.14;linear,.06;zoomx,1.2;zoomy,1.25;addy,3;addx,-1;linear,.07;zoomx,.9;zoomy,1.08;addy,-3;addx,1;linear,.06;zoom,1;sleep,3"
+	/>
+	<Layer
+		File="@SelectMusicFirstIn()"
+		OnCommand="zoomx,-1;linear,.4;addx,900"
+	/>
+</children></ActorFrame>

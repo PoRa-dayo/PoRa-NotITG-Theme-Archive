@@ -1,0 +1,38 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		InitCommand="x,SCREEN_CENTER_X-140;y,SCREEN_CENTER_Y-180;rotationz,155;queuecommand,Register" 
+		RegisterCommand="%function(self) Register(self,-5,30,5,40,5) end"
+		ResetMessageCommand="%function(self) self:x(SCREEN_CENTER_X-140); self:y(SCREEN_CENTER_Y-180); n = self:GetZ() Sy1[n] = 30; Sy2[n] = 40; self:sleep(1+math.random()) self:queuecommand('Move1') end"
+		Move1Command="%function(self) Move(self,.2,.5,0,-G,'Dy','>',120,2) end" 
+		Move2Command="%function(self) Move(self,.2,.5,0,-G) Sy1[n] = -5; Sy2[n] = 5; end" 
+		MoveCommand="%function(self) Update(self) end"
+		ObstacleCommand="%function(self) MeatboyObstacle(self) end"
+		GroundCommand="%function(self) MeatboyObstacle(self) end"
+		HeroCommand="%function(self) MeatboyObstacle(self) end"
+	><children>
+		<Layer File="_Missile 4x1.png" Command="y,40;zoom,.4" Move1Command="zoom,.4" SplodeCommand="zoom,0" />
+		<Layer Type="ActorFrame" Command="y,10;rotationz,60;zoom,0;sleep,3;zoom,.65" ><children>
+			<Layer File="msplode.sprite" Command="y,77;rotationz,180" SplodeCommand="setstate,0" />
+			<Layer File="msplode.sprite" Command="y,-77" SplodeCommand="setstate,0" />
+		</children></Layer>
+	</children></Layer>
+	<Layer
+		Type="ActorFrame"
+		InitCommand="x,SCREEN_CENTER_X+140;y,SCREEN_CENTER_Y-180;rotationz,-155;queuecommand,Register" 
+		RegisterCommand="%function(self) Register(self,-5,30,5,40,5) end"
+		ResetMessageCommand="%function(self) self:x(SCREEN_CENTER_X+140); self:y(SCREEN_CENTER_Y-180); n = self:GetZ() Sy1[n] = 30; Sy2[n] = 40; self:sleep(1+math.random()) self:queuecommand('Move1') end"
+		Move1Command="%function(self) Move(self,-.2,.5,0,-G,'Dy','>',120,2) end" 
+		Move2Command="%function(self) Move(self,-.2,.5,0,-G) Sy1[n] = -5; Sy2[n] = 5; end" 
+		MoveCommand="%function(self) Update(self) end"
+		ObstacleCommand="%function(self) MeatboyObstacle(self) end"
+		GroundCommand="%function(self) MeatboyObstacle(self) end"
+		HeroCommand="%function(self) MeatboyObstacle(self) end"
+	><children>
+		<Layer File="_Missile 4x1.png" Command="y,40;zoom,.4" Move1Command="zoom,.4" SplodeCommand="zoom,0" />
+		<Layer Type="ActorFrame" Command="y,10;rotationz,60;zoom,0;sleep,3;zoom,.65" ><children>
+			<Layer File="msplode.sprite" Command="y,77;rotationz,180" SplodeCommand="setstate,0" />
+			<Layer File="msplode.sprite" Command="y,-77" SplodeCommand="setstate,0" />
+		</children></Layer>
+	</children></Layer>
+</children></ActorFrame>

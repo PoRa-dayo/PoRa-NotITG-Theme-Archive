@@ -1,0 +1,7 @@
+<ActorFrame> <children>
+	<Layer 
+		File="Master.png"
+		InitCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y-151"
+		OnCommand="zoom,0;sleep,.8;linear,.2;zoom,1"
+	 />
+</children> </ActorFrame>

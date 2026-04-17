@@ -1,0 +1,11 @@
+<ActorFrame><children>
+	<Layer
+		File="@Meatboy() .. '/sprint trail.sprite'"
+		OnCommand="zoom,.38"
+		GoCommand="stoptweening;queuecommand,Loop"
+		LoopCommand="x,0;setstate,1;linear,.75;x,-180*lvlSpd;queuecommand,Go"
+		StopCommand="%function(self) FinishMoving(self,0,-180*lvlSpd,.75) end"
+		FinishedCommand="stoptweening"
+		FloatMessageCommand="stoptweening;setstate,0"
+	/>
+</children></ActorFrame>

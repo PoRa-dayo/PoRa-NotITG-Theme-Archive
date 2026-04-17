@@ -1,0 +1,167 @@
+<ActorFrame> <children>
+	<ActorFrame
+		ClearedMessageCommand="queuecommand,Under"
+		FailedMessageCommand="queuecommand,Under"
+		UnderCommand="%function() 
+			if Screen():GetChild('PlayerP1') then Screen():GetChild('PlayerP1'):zoom(0) end
+			if Screen():GetChild('PlayerP2') then Screen():GetChild('PlayerP2'):zoom(0) end
+			if Screen():GetChild('LifeP1') then Screen():GetChild('LifeP1'):zoom(0) end
+			if Screen():GetChild('LifeP2') then Screen():GetChild('LifeP2'):zoom(0) end
+			Screen():GetChild('SongForeground'):zoom(0)
+		end"
+	/> 
+<!-- BG stuff -->
+	<Layer
+		Type="SongMeterDisplay"
+		StreamWidth="360"
+		StreamPath="../_blank"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-194"
+		XMessageCommand="%function(self) self:linear(.5) self:addx(-xTip) end"
+	>
+		<Tip
+			File="Tip"
+			Command="queuecommand,Loop"
+			ClearedMessageCommand="%function(self) xTip = self:GetX() if warp < 12 and goal == 0 and not IsFinalStage() then _G['lvlCount'..dark][world] = _G['lvlCount'..dark][world] + 1 end if goal ~= 0 then warp = goal end self:queuemessage('X') self:queuecommand('Pass1') self:linear(.5) self:zoom(3) self:addy(223) self:sleep(.5) self:queuecommand('Pass2') self:queuecommand('Finished') end"
+			FailedMessageCommand="%function(self) xTip = self:GetX() self:queuemessage('X') self:queuecommand('Fail1') self:linear(.5) self:zoom(3) self:addy(223) self:sleep(.5) self:queuecommand('Fail2') self:queuecommand('Finished') end"
+		/>
+	</Layer>
+	<Layer Type="Quad" Command="zoom,0;clearzbuffer,1" />
+	<Layer 
+		File="Top" 
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-255;ZoomToWidth,SCREEN_WIDTH" 
+		ClearedMessageCommand="linear,.5;addy,140"
+	/>
+	<Layer 
+		File="Bottom" 
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+255;ZoomToWidth,SCREEN_WIDTH" 
+		ClearedMessageCommand="linear,.5;addy,-140"
+	/>
+<!-- Player 1 Score Frame -->
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X-261;y,SCREEN_CENTER_Y-195"><children>
+		<Layer Type="ActorFrame" Command="x,-50;y,-30;rotationz,150"><children>
+			<Layer
+				File="Rod.png"
+				Command="zoom,.3;zoomy,.5"
+		/>	</children></Layer>
+		<Layer Type="ActorFrame" Command="x,53;y,-30;rotationz,-150"><children>
+			<Layer
+				File="Rod.png"
+				Command="zoomx,.3;zoomy,.5"
+		/>	</children></Layer>
+		<Layer Type="ActorFrame" Command="x,45;y,-30;rotationz,-140"><children>
+			<Layer
+				File="Rod.png"
+				Command="zoomx,.1;zoomy,.5"
+		/>	</children></Layer>
+		<Layer
+			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+			File="meter frame.png"
+			OnCommand="y,-21;zoomx,.5;zoomy,.5;queuecommand,Update"
+			CurrentStepsP1ChangedMessageCommand="queuecommand,Update"
+			UpdateCommand="%function(self) self:diffuse(DifficultyColorRGB(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty())) end"
+		/>
+		<Layer
+			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+			Class="DifficultyMeter"
+			Type="ScreenGameplay DifficultyMeterP1"
+			OnCommand="x,2;y,-28;playcommand,Update"
+			CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1)) end"
+		/>
+		<Layer
+			File="score frame.png"
+			Command="zoomx,.5;zoomy,.5"
+		/>
+		<Layer
+			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+			Font="_Numbers"
+			Text=""
+			Command="x,54;y,-4;horizalign,right;shadowlength,0;zoomx,.72;zoomy,.9;diffuse,#9A0000;queuecommand,Score"
+			ScoreCommand="%function(self) local score = Screen():GetChild('ScoreP1'):GetChild('ScoreDisplayPercentage Percent'):GetChild('PercentP1'):GetText() score = string.gsub(score,'%%','') self:settext(score) self:sleep(.03) self:queuecommand('Score') end"
+		/>
+	</children></Layer>
+<!-- Player 2 Score Frame -->
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X+261;y,SCREEN_CENTER_Y-195;rotationy,180" ><children>
+		<Layer Type="ActorFrame" Command="x,-50;y,-30;rotationz,150"><children>
+			<Layer
+				File="Rod.png"
+				Command="zoom,.3;zoomy,.5"
+		/>	</children></Layer>
+		<Layer Type="ActorFrame" Command="x,53;y,-30;rotationz,-150"><children>
+			<Layer
+				File="Rod.png"
+				Command="zoomx,.3;zoomy,.5"
+		/>	</children></Layer>
+		<Layer Type="ActorFrame" Command="x,45;y,-30;rotationz,-140"><children>
+			<Layer
+				File="Rod.png"
+				Command="zoomx,.1;zoomy,.5"
+		/>	</children></Layer>
+		<Layer
+			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+			File="meter frame.png"
+			OnCommand="y,-21;zoomx,.5;zoomy,.5;queuecommand,Update"
+			CurrentStepsP2ChangedMessageCommand="queuecommand,Update"
+			UpdateCommand="%function(self) self:diffuse(DifficultyColorRGB(GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty())) end"
+		/>
+		<Layer
+			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+			Class="DifficultyMeter"
+			Type="ScreenGameplay DifficultyMeterP2"
+			OnCommand="x,-3;y,-28;rotationy,180;playcommand,Update"
+			CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2)) end"
+		/>
+		<Layer
+			File="score frame.png"
+			Command="zoomx,.5;zoomy,.5"
+		/>
+		<Layer
+			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+			Font="_Numbers"
+			Text=""
+			Command="rotationy,180;x,-54;y,-4;horizalign,right;shadowlength,0;zoomx,.72;zoomy,.9;diffuse,#9A0000;queuecommand,Score"
+			ScoreCommand="%function(self) local score = Screen():GetChild('ScoreP2'):GetChild('ScoreDisplayPercentage Percent'):GetChild('PercentP2'):GetText() score = string.gsub(score,'%%','') self:settext(score) self:sleep(.03) self:queuecommand('Score') end"
+		/>
+	</children></Layer>
+<!-- BPM display -->
+	<Layer
+		Type="ActorFrame"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+		OnCommand="%function(self) if GAMESTATE:PlayerUsingBothSides() then self:y(-45) if GAMESTATE:IsPlayerEnabled(PLAYER_2) then self:x(-275) else self:x(275) end; end; end"
+		ClearedMessageCommand="zoom,0"
+		FailedMessageCommand="zoom,0"
+		><children>
+		<Layer
+			File="score frame.png"
+			OnCommand="y,-155;zoomx,.25;zoomy,.5;diffuse,#AAAAAA"
+		/>
+		<Layer
+			Font="_Meat"
+			Text=""
+			InitCommand="x,2;y,-157;zoom,.5;Diffuse,#FFFFFF;shadowlength,0"
+			OnCommand="queuecommand,Update"
+			UpdateCommand="%GameplayBPM"
+		/>
+	</children></Layer>
+	<Layer
+		Font="MusicWheel"
+		Text=""
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-230;zoomx,.45;zoomy,.5;shadowlength,2;maxwidth,870;diffuse,#FFFFFF"
+		SetCommand="%SetFromSongTitleAndCourseTitle"
+		CurrentSongChangedMessageCommand="queuecommand,Set"
+		ClearedMessageCommand="zoom,0"
+		FailedMessageCommand="zoom,0"
+	/>
+	<ActorFrame
+		InitCommand="%function() lifeState = 0 end"
+		Command="queuecommand,Loop"
+		LoopCommand="%function(self)
+			lifeState = lifeState + 1; if lifeState > 5 then lifeState = 0 end
+			for i,v in ipairs(lifeNormal) do if ModCustom.LifeBar[i] ~= 2 then v:setstate(lifeState) end end
+			for i,v in ipairs(lifeHot) do if ModCustom.LifeBar[i] ~= 2 then v:setstate(lifeState) end end
+			self:sleep(.06)
+			self:queuecommand('Loop')
+		end"
+	/>	
+</children> </ActorFrame>

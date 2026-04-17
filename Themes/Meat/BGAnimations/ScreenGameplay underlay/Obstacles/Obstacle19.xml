@@ -1,0 +1,20 @@
+<ActorFrame><children>
+<!-- Obstacle 19: Fast Flying Saws -->
+	<Layer
+		Type="ActorFrame"
+		GoCommand="x,500;linear,4.5;x,-500"
+		Fail3Command="x,192;linear,2;x,-192"
+	><children>
+		<Layer
+			File="saw.png"
+			OnCommand="zoom,.11;x,-136;y,2;spin;effectmagnitude,0,0,-360"
+			Fail3Command="zoom,0"
+		/>
+		<Layer
+			File="saw.png"
+			OnCommand="zoom,.11;x,136*lvlSpd;y,2;spin;effectmagnitude,0,0,-360"
+			Fail3Command="x,0"
+		/>
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.75;queuecommand,Jump1;sleep,.5625;queuecommand,Jump1" />
+</children></ActorFrame>

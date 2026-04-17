@@ -1,0 +1,11 @@
+<ActorFrame><children>
+	<Layer
+		Type="Quad"
+		Command="queuecommand,Done;sleep,.01"
+		DoneCommand="%function(self) self:queuemessage('Failed') banner = 9; self:sleep(2) end"
+	/>
+	<Layer
+		Type="Quad"
+		Command="zoom,0;sleep,2;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y-240,SCREEN_RIGHT,SCREEN_CENTER_Y+240;diffuse,#000000"
+	/>
+</children></ActorFrame>

@@ -1,0 +1,19 @@
+<ActorFrame><children>
+	<Layer Type="Quad" InitCommand="%function(self) if world == 2 then self:diffuse(.22,.22,.16,1) else self:diffuse(0,0,0,1) end end" Command="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM" />
+	<Layer Type="ActorFrame" Command="%function(self) if world == 2 then self:diffuse(.91,.84,.61,1) end end" ><children>
+		<Layer Font="_Meat" Text="Meat" Command="shadowlength,0;x,SCREEN_CENTER_X-124;y,SCREEN_CENTER_Y-113;zoom,.6;zoomx,.53" />
+		<Layer Font="_Meat" Text="Boy" Command="shadowlength,0;x,SCREEN_CENTER_X-65;y,SCREEN_CENTER_Y-113;zoom,.6;zoomx,.53" />
+		<Layer Font="_Meat" Text="Score:" Command="shadowlength,0;x,SCREEN_CENTER_X+43;y,SCREEN_CENTER_Y-113;zoom,.6;zoomx,.53" />
+		<Layer Font="_Meat" Text="50,000" Command="shadowlength,0;x,SCREEN_CENTER_X+127;y,SCREEN_CENTER_Y-113;zoom,.6;zoomx,.53" />
+		<Layer Font="_Meat" Text="Level" Command="shadowlength,0;x,SCREEN_CENTER_X-49;y,SCREEN_CENTER_Y+9;zoom,.68;zoomx,.6" />
+		<Layer Font="_Meat" Text="1" Command="shadowlength,0;x,SCREEN_CENTER_X+35;y,SCREEN_CENTER_Y+9;zoom,.68;zoomx,.6" />
+		<Layer Font="_Meat" Text="-" Command="shadowlength,0;x,SCREEN_CENTER_X+53;y,SCREEN_CENTER_Y+7;zoom,.68;zoomx,.53" />
+		<Layer Font="_Meat" Text="1" Command="shadowlength,0;x,SCREEN_CENTER_X+71;y,SCREEN_CENTER_Y+9;zoom,.68;zoomx,.6" />
+		<Layer Font="_Meat" Text="x" Command="shadowlength,0;x,SCREEN_CENTER_X+3;y,SCREEN_CENTER_Y+68;zoom,.62;zoomx,.55" />
+		<Layer Font="_Meat" Text="" Command="shadowlength,0;x,SCREEN_CENTER_X+44;y,SCREEN_CENTER_Y+63;zoom,.88;zoomx,.78" InitCommand="%function(self) s = NumStagesLeft() if GAMESTATE:IsEventMode() then s = '3' end self:settext(s) end" />
+		<Layer Type="Quad" InitCommand="stretchto,SCREEN_CENTER_X-76,SCREEN_CENTER_Y+40,SCREEN_CENTER_X-28,SCREEN_CENTER_Y+84;diffuse,0,0,0,0" />
+	</children></Layer>
+	<Layer File="@Meatboy()..'/../MeatboyR/animate.sprite'" Command="animate,0;setstate,17;x,SCREEN_CENTER_X-54;y,SCREEN_CENTER_Y+55;zoom,.78;zoomx,.68" Condition="world ~= 2 and world ~= 3" />
+	<Layer File="@Meatboy()..'/../MeatboyG/animate.sprite'" Command="animate,0;setstate,17;x,SCREEN_CENTER_X-54;y,SCREEN_CENTER_Y+55;zoom,.78;zoomx,.68" Condition="world == 2" />
+	<Layer File="@Meatboy()..'/../Meatboy4/animate.sprite'" Command="animate,0;setstate,17;x,SCREEN_CENTER_X-54;y,SCREEN_CENTER_Y+55;zoom,.78;zoomx,.68" Condition="world == 3" />
+</children></ActorFrame>

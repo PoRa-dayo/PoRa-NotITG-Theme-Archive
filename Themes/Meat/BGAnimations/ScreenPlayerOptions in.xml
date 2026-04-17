@@ -1,0 +1,4 @@
+<ActorFrame><children>
+	<Layer File="_fade in normal" Condition="MeatOut==0 and selectMusic" />
+	<Layer File="_Meatboy in" Condition="MeatOut==1 or (not selectMusic and optionIndex ~= 'Edit')" />
+</children></ActorFrame>

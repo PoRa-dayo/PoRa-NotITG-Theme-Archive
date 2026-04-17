@@ -1,0 +1,74 @@
+<ActorFrame ><children>
+  <ActorFrame
+		InitCommand="%function(self) update = 1; level = 0; dark = ''; warp = 0; self:queuemessage('Update') end"
+		MenuLeftP1MessageCommand="%function() if update == 1 and GAMESTATE:IsPlayerEnabled(PLAYER_1) then Decrease() end; end"
+		MenuLeftP2MessageCommand="%function() if update == 1 and GAMESTATE:IsPlayerEnabled(PLAYER_2) then Decrease() end; end"
+		MenuRightP1MessageCommand="%function() if update == 1 and GAMESTATE:IsPlayerEnabled(PLAYER_1) then Increase() end; end"
+		MenuRightP2MessageCommand="%function() if update == 1 and GAMESTATE:IsPlayerEnabled(PLAYER_2) then Increase() end; end"
+		OffCommand="%function() banner = world; musicload = 1 end"
+  />
+  <ActorFrame
+		UpdateMessageCommand="sleep,.6;queuecommand,Set"
+		SetCommand="%function() update = 1 end"
+	/>
+	<Layer File="World1" InitCommand="playcommand,Check" UpdateMessageCommand="sleep,.3;queuecommand,Check" CheckCommand="%function(self) if world == 1 then self:zoom(1) else self:zoom(0) end; end" />
+	<Layer File="World2" InitCommand="playcommand,Check" UpdateMessageCommand="sleep,.3;queuecommand,Check" CheckCommand="%function(self) if world == 2 then self:zoom(1) else self:zoom(0) end; end" />
+	<Layer File="World3" InitCommand="playcommand,Check" UpdateMessageCommand="sleep,.3;queuecommand,Check" CheckCommand="%function(self) if world == 3 then self:zoom(1) else self:zoom(0) end; end" />
+	<Layer File="World4" InitCommand="playcommand,Check" UpdateMessageCommand="sleep,.3;queuecommand,Check" CheckCommand="%function(self) if world == 4 then self:zoom(1) else self:zoom(0) end; end" />
+	<Layer File="World5" InitCommand="playcommand,Check" UpdateMessageCommand="sleep,.3;queuecommand,Check" CheckCommand="%function(self) if world == 5 then self:zoom(1) else self:zoom(0) end; end" />
+	<Layer File="World6" InitCommand="playcommand,Check" UpdateMessageCommand="sleep,.3;queuecommand,Check" CheckCommand="%function(self) if world == 6 then self:zoom(1) else self:zoom(0) end; end" />
+	<Layer File="World7" InitCommand="playcommand,Check" UpdateMessageCommand="sleep,.3;queuecommand,Check" CheckCommand="%function(self) if world == 7 then self:zoom(1) else self:zoom(0) end; end" />
+	<Layer File="World8" InitCommand="playcommand,Check" UpdateMessageCommand="sleep,.3;queuecommand,Check" CheckCommand="%function(self) if world == 8 then self:zoom(1) else self:zoom(0) end; end" />
+	<Layer File="Banner" />
+	<Layer
+		Type="ActorFrame"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+		<Layer
+			File="minimeat.sprite"
+			InitCommand="%function(self) self:y(-117) self:zoom(.22) self:playcommand(world) end"
+			UpdateMessageCommand="%function(self) self:sleep(.3) self:queuecommand(world) end"
+			1Command="x,23"
+			2Command="x,49"
+			3Command="x,75"
+			4Command="x,101"
+			5Command="x,127"
+			6Command="x,152"
+			7Command="x,174"
+			8Command="x,-1"
+		/>
+		<Layer
+			Type="BitmapText"
+			File="_meat"
+			Text=""
+			InitCommand="shadowlength,0;diffuse,#000000;zoom,.6;x,5;y,-148;playcommand,Set"
+			UpdateMessageCommand="sleep,.3;queuecommand,Set"
+			SetCommand="%function(self) self:settext(GetWorldTitle(world)) end"
+		/>
+		<Layer
+			Type="ActorFrame"
+			InitCommand="x,2;y,66;Playcommand,Check"
+			UpdateMessageCommand="sleep,.3;queuecommand,Check"
+			CheckCommand="%function(self) if world == 7 then self:zoom(1) else self:zoom(0) end end"
+		><children>
+			<Layer File="@Meatboy(7) .. '/Map.xml'" Command="zoom,1" OffCommand="zoom,0" />
+			<Layer File="@Meatboy(7) .. '/Mapsplode out.xml'" Command="zoom,0" OffCommand="zoom,1" />
+		</children></Layer>
+		<Layer
+			Type="ActorFrame"
+			InitCommand="%function(self) self:playcommand(world) end"
+			UpdateMessageCommand="%function(self) self:sleep(.3) self:queuecommand(world) end"
+			1Command="x,0;y,81"
+			2Command="x,3;y,69"
+			3Command="x,-1;y,72"
+			4Command="x,2;y,73"
+			5Command="x,2;y,70"
+			6Command="x,2;y,65"
+			7Command="x,1000"
+			8Command="x,5;y,69"
+		><children>
+			<Layer File="@Meatboy(1) .. '/Map.xml'" Command="zoom,1" OffCommand="zoom,0" />
+			<Layer File="@Meatboy(1) .. '/Mapsplode out.xml'" Command="zoom,0" OffCommand="zoom,1" />
+		</children></Layer>
+	</children></Layer>
+</children></ActorFrame>

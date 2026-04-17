@@ -1,0 +1,99 @@
+<ActorFrame
+	><children>
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-10;zoom,1.4"
+	><children>
+	<Layer Type="ActorFrame" Command="x,343;y,-86"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#330000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,180;sleep,.06;x,-28;sleep,.06;rotationz,0;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,186;y,-86"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#330000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,180;sleep,.06;x,-28;sleep,.06;rotationz,0;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,29;y,-86"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#330000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,180;sleep,.06;x,-28;sleep,.06;rotationz,0;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-128;y,-86"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#330000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,180;sleep,.06;x,-28;sleep,.06;rotationz,0;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-285;y,-86"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#330000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,180;sleep,.06;x,-28;sleep,.06;rotationz,0;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>	
+	<Layer Type="ActorFrame" Command="x,-343;y,11"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#4C0000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,0;sleep,.06;x,28;sleep,.06;rotationz,180;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-186;y,11"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#4C0000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,0;sleep,.06;x,28;sleep,.06;rotationz,180;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-29;y,11"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#4C0000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,0;sleep,.06;x,28;sleep,.06;rotationz,180;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,128;y,11"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#4C0000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,0;sleep,.06;x,28;sleep,.06;rotationz,180;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,285;y,11"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#4C0000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,0;sleep,.06;x,28;sleep,.06;rotationz,180;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,343;y,108"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#400000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,180;sleep,.06;x,-28;sleep,.06;rotationz,0;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,186;y,108"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#400000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,180;sleep,.06;x,-28;sleep,.06;rotationz,0;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,29;y,108"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#400000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,180;sleep,.06;x,-28;sleep,.06;rotationz,0;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-128;y,108"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#400000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,180;sleep,.06;x,-28;sleep,.06;rotationz,0;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-285;y,108"><children>
+		<Layer 
+			File="background.png"
+			Command="diffuse,#400000;zoomx,.57;zoomy,.56;playcommand,Animate"
+			AnimateCommand="x,0;rotationz,180;sleep,.06;x,-28;sleep,.06;rotationz,0;sleep,.1;x,0;sleep,.06;rotationz,0;sleep,.06;queuecommand,Animate"
+	/>	</children></Layer>
+	<!--Bottom Layer-->
+	</children></Layer>
+</children></ActorFrame>

@@ -1,0 +1,25 @@
+<ActorFrame ><children>
+	<ActorFrame GoCommand="%function() SOUND:DimMusic(0,3) end" />
+	<ActorFrame Command="%ReverseAspectScale" ><children>
+		<Layer Type="Quad" InitCommand="zoom,0" GoCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,0,0,0,0;sleep,.1;linear,.4;diffuse,0,0,0,1;sleep,.4" />
+		<Layer Type="ActorFrame" InitCommand="zoom,0" GoCommand="fov,120;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,1" ><children>
+			<Layer Type="ActorFrame" GoCommand="rotationx,17;rotationy,17;rotationz,-5;zoom,0;linear,.3;zoomx,1.3;zoomy,.15;linear,.3;zoom,1" ><children>
+				<Layer Type="ActorFrame" Command="rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0"><children> <Layer Type="Quad" Command="stretchto,-160,-140,160,140;diffuse,0,0,0,1" /> <Layer Type="Quad" Command="stretchto,-140,-160,140,160;diffuse,0,0,0,1" /> </children></Layer>
+				<Layer File="Warp.png" Command="z,10;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0;diffuse,0,0,0,1" />
+				<Layer File="Warp.png" Command="z,20;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0;diffuse,0,0,0,1" />
+				<Layer File="Warp.png" Command="z,40;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0;diffuse,0,0,0,1" />
+				<Layer File="Warp.png" Command="z,-740;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0;diffuse,1,1,1,.5" />
+				<Layer File="Warp.png" Command="z,-340;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,-220,0;diffuse,1,1,1,.6" />
+				<Layer File="Warp.png" Command="z,-150;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0;diffuse,1,1,1,.7" />
+				<Layer File="Warp.png" Command="z,-30;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,-220,0;diffuse,1,1,1,.85" />
+				<Layer File="Warp.png" Command="z,30;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0;diffuse,1,1,1,1" />
+			</children></Layer>
+			<Layer File="MeatWarp1.png" GoCommand="zoom,0;z,-400;zoom,.5;linear,.3;y,-50;x,70;z,-100;rotationz,270;linear,.3;x,140;y,210;z,20;rotationz,540;sleep,.0;zoom,0;sleep,.55;rotationz,0;zoom,.5;y,195;x,130;linear,.9;y,-150;x,150;z,-400;rotationz,360*3" />
+			<Layer Type="ActorFrame" GoCommand="zoom,0;x,150;y,230;z,20;sleep,.6;zoom,.7;zoomy,.3;linear,.1;zoom,.5;linear,.05;zoomy,.45;linear,.05;zoom,.5;linear,.05;zoomx,.45;zoomy,.55;zoom,.5;linear,.05;zoomx,.45;zoomy,.55;zoom,.5;linear,.05;zoomx,.45;zoomy,.55;linear,.05;zoomx,.45;zoomy,.5;linear,.05;zoomx,.45;zoomy,.55;linear,.1;zoomx,.4;zoomy,.75;sleep,0;zoom,0"><children>
+				<Layer File="MeatWarp2.png" GoCommand="vertalign,bottom;sleep,.6;linear,.45;skewx,.2;linear,.1;skewx,.3" />
+			</children></Layer>
+		</children></Layer>
+		<Layer Type="Quad" InitCommand="zoom,0" GoCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,0,0,0,0;sleep,1.65;linear,.3;diffuse,0,0,0,1" />
+		<ActorFrame GoCommand="queuecommand,Sound1;sleep,1;queuecommand,Sound2" Sound1Command="%function() Sound('retro Explosion') Sound('WarpZone') end" Sound2Command="%function() Sound('Portal_enter') end" />
+	</children></ActorFrame>
+</children></ActorFrame>

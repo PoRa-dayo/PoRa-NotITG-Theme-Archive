@@ -1,0 +1,53 @@
+<ActorFrame><children>
+<!-- Obstacle 11: Exploding Demon -->
+	<Layer
+		Type="ActorFrame"
+		Command="zoom,.5"
+		GoCommand="queuecommand,Reset;x,150;sleep,0.1;linear,1;x,0;queuecommand,Move;linear,1;x,-150;queuecommand,Splode1;sleep,.15;queuecommand,Splode2"
+		Fail3Command="queuecommand,Reset;x,150;queuecommand,Move;linear,1;x,0;queuecommand,Splode1;sleep,.15;queuecommand,Splode2"
+	><children>
+
+		<Layer File="Demon1.xml" Command="rotationz,165" ResetCommand="rotationz,165;y,-100" MoveCommand="sleep,.5;accelerate,.5;y,00;rotationz,105" />
+		<Layer File="Demon2.xml" Command="rotationz,0" />
+		<Layer File="Demon2.xml" Command="rotationz,-36" />
+		<Layer File="Demon2.xml" Command="rotationz,-72" />
+		<Layer File="Demon2.xml" Command="rotationz,-108" />
+		<Layer File="Demon2.xml" Command="rotationz,-144" />
+		<Layer File="Demon2.xml" Command="rotationz,-180" />
+
+
+		<Layer Type="ActorFrame" Command="rotationz,-30" ><children>
+			<Layer File="dsplode.sprite" Command="diffuse,#151515;y,-39;x,23" Splode2Command="setstate,1" />
+			<Layer File="dsplode.sprite" Command="diffuse,#151515;y,39;x,23;rotationx,180" Splode2Command="setstate,1" />
+			<Layer File="dsplode.sprite" Command="diffuse,#151515;y,-39;x,-23;rotationy,180" Splode2Command="setstate,1" />
+			<Layer File="dsplode.sprite" Command="diffuse,#151515;y,39;x,-23;rotationx,180;rotationy,180" Splode2Command="setstate,1" />
+		</children></Layer>
+
+		<Layer File="dsplode.sprite" Command="diffuse,#000000;y,-39;x,23" Splode1Command="setstate,1" />
+		<Layer File="dsplode.sprite" Command="diffuse,#000000;y,39;x,23;rotationx,180" Splode1Command="setstate,1" />
+		<Layer File="dsplode.sprite" Command="diffuse,#000000;y,-39;x,-23;rotationy,180" Splode1Command="setstate,1" />
+		<Layer File="dsplode.sprite" Command="diffuse,#000000;y,39;x,-23;rotationx,180;rotationy,180" Splode1Command="setstate,1" />
+	</children></Layer>
+	<Layer File="@'block'..world..'.png'" Command="x,8.4;y,3;zoom,.5" Fail3Command="zoom,0"/>
+	
+<!-- Masking Layer -->
+	<Layer 
+		Type="ActorFrame" 
+		Command="zoom,.5"
+		GoCommand="queuecommand,Reset;x,0;sleep,1.1;queuecommand,Move;linear,1;x,-150;queuecommand,Splode1;sleep,.15;queuecommand,Splode2"
+		Fail3Command="queuecommand,Reset;x,150;queuecommand,Move;linear,1;x,0;queuecommand,Splode1;sleep,.15;queuecommand,Splode2"
+	><children>
+		<Layer File="Demon1a.xml" Command="rotationz,165" ResetCommand="rotationz,165;y,-100" MoveCommand="sleep,.5;accelerate,.5;y,00;rotationz,105" />
+		<Layer Type="ActorFrame" Command="rotationz,-30"><children>
+			<Layer File="dsplode.sprite" Command="zwrite,1;blend,noeffect;diffuse,#151515;y,-39;x,23" Splode2Command="setstate,1" />
+			<Layer File="dsplode.sprite" Command="zwrite,1;blend,noeffect;diffuse,#151515;y,39;x,23;rotationx,180" Splode2Command="setstate,1" />
+			<Layer File="dsplode.sprite" Command="zwrite,1;blend,noeffect;diffuse,#151515;y,-39;x,-23;rotationy,180" Splode2Command="setstate,1" />
+			<Layer File="dsplode.sprite" Command="zwrite,1;blend,noeffect;diffuse,#151515;y,39;x,-23;rotationx,180;rotationy,180" Splode2Command="setstate,1" />
+		</children></Layer>
+		<Layer File="dsplode.sprite" Command="zwrite,1;blend,noeffect;diffuse,#000000;y,-39;x,23" Splode1Command="setstate,1" />
+		<Layer File="dsplode.sprite" Command="zwrite,1;blend,noeffect;diffuse,#000000;y,39;x,23;rotationx,180" Splode1Command="setstate,1" />
+		<Layer File="dsplode.sprite" Command="zwrite,1;blend,noeffect;diffuse,#000000;y,-39;x,-23;rotationy,180" Splode1Command="setstate,1" />
+		<Layer File="dsplode.sprite" Command="zwrite,1;blend,noeffect;diffuse,#000000;y,39;x,-23;rotationx,180;rotationy,180" Splode1Command="setstate,1" />
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.95;queuecommand,Jump2" />
+</children></ActorFrame>

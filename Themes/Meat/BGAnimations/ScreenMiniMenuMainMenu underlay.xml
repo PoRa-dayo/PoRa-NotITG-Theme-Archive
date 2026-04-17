@@ -1,0 +1,4 @@
+<ActorFrame><children>
+	<Layer Type="Quad" Command="Stretchto,SCREEN_CENTER_X-200,SCREEN_CENTER_Y-160,SCREEN_CENTER_X+200,SCREEN_CENTER_Y+220;diffuse,0,0,0,1" />
+	<Layer Font="_Meat" Text="Main Menu" Command="shadowlength,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-150;zoom,.4" />
+</children></ActorFrame>

@@ -1,0 +1,7 @@
+<ActorFrame><children>
+	<ActorFrame Command="%SetLevel" />
+	<Layer Condition="warp < 2" File="../_Meatboy stage" />
+	<Layer Condition="warp == 2" File="Warp.xml" />
+	<Layer Condition="warp == 3" File="Glitch.xml" />
+	<Layer Condition="warp == 2 or warp == 3" Type="Quad" InitCommand="%function(self) if world == 2 then self:diffuse(.22,.22,.16,1) else self:diffuse(0,0,0,1) end end" Command="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;linear,.2;diffusealpha,0;sleep,1.6" />
+</children></ActorFrame>

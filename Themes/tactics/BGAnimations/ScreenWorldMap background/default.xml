@@ -1,0 +1,67 @@
+<ActorFrame> <children>
+		<Layer
+			File="background.png" 
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+		/>
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-30;y,SCREEN_CENTER_Y+7"><children>
+		<Layer
+			File="City.png" 
+			OnCommand="DiffuseShift;EffectPeriod,2;EffectColor1,0.5,0.5,0.5,1;EffectColor2,1,1,1,1"
+		/>
+		<Layer
+			File="shadow.png" 
+			InitCommand="x,-2;y,5"
+		/>
+		<Layer
+			File="shadow.png" 
+			InitCommand="x,-2;y,5"
+			OnCommand="zoom,2;DiffuseShift;EffectPeriod,2;EffectColor1,1,1,1,.5;EffectColor2,1,1,1,.2"
+		/>
+	</children> </Layer>
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-204;y,SCREEN_CENTER_Y-61"><children>
+		<Layer
+			File="battle.png" 
+			OnCommand="DiffuseShift;EffectPeriod,2;EffectColor1,1,1,1,1;EffectColor2,0.5,0.5,0.5,1"
+		/>
+		<Layer
+			File="shadow.png" 
+			InitCommand="x,-2;y,5"
+		/>
+		<Layer
+			File="shadow.png" 
+			InitCommand="x,-2;y,5"
+			OnCommand="zoom,2;zoomx,1.5;DiffuseShift;EffectPeriod,2;EffectColor1,1,1,1,.2;EffectColor2,1,1,1,.5"
+		/>
+	</children> </Layer>
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X+38;y,SCREEN_CENTER_Y+177"><children>
+		<Layer
+			File="battle.png" 
+			OnCommand="DiffuseShift;EffectPeriod,2;EffectColor1,1,1,1,1;EffectColor2,0.5,0.5,0.5,1"
+		/>
+		<Layer
+			File="shadow.png" 
+			InitCommand="x,-2;y,5"
+		/>
+		<Layer
+			File="shadow.png" 
+			InitCommand="x,-2;y,5"
+			OnCommand="zoom,2;zoomx,1.5;DiffuseShift;EffectPeriod,2;EffectColor1,1,1,1,.2;EffectColor2,1,1,1,.5"
+		/>
+	</children> </Layer>
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X+220;y,SCREEN_CENTER_Y-5"><children>
+		<Layer
+			File="battle.png" 
+			OnCommand="DiffuseShift;EffectPeriod,2;EffectColor1,1,1,1,1;EffectColor2,0.5,0.5,0.5,1"
+		/>
+		<Layer
+			File="shadow.png" 
+			InitCommand="x,-2;y,5"
+		/>
+		<Layer
+			File="shadow.png" 
+			InitCommand="x,-2;y,5"
+			OnCommand="zoom,2;zoomx,1.5;DiffuseShift;EffectPeriod,2;EffectColor1,1,1,1,.2;EffectColor2,1,1,1,.5"
+		/>
+	</children> </Layer>
+</children> </ActorFrame>
+

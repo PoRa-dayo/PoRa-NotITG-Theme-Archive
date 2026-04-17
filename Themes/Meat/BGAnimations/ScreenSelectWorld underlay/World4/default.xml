@@ -1,0 +1,227 @@
+<ActorFrame
+	><children>
+	<Layer
+		File="Background.png"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,640;ZoomToHeight,340"
+	/>
+	<Layer Type="Quad" Command="diffuse,#E60000;stretchto,SCREEN_CENTER_X-186,SCREEN_CENTER_Y-152,SCREEN_CENTER_X+192,SCREEN_CENTER_Y-110" />
+	<Layer Type="Quad" Command="diffuse,#E60000;stretchto,SCREEN_CENTER_X-7,SCREEN_CENTER_Y-152,SCREEN_CENTER_X+185,SCREEN_CENTER_Y-96" />
+	<Layer Type="Quad" Command="diffuse,#E60000;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y-240,SCREEN_RIGHT,SCREEN_CENTER_Y-138" />
+	<Layer Type="Quad" Command="diffuse,#C80000;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y+116,SCREEN_RIGHT,SCREEN_CENTER_Y+128" />
+	<Layer Type="Quad" Command="diffuse,#BC0000;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y+128,SCREEN_RIGHT,SCREEN_CENTER_Y+141" />
+	<Layer Type="Quad" Command="diffuse,#D20000;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y+141,SCREEN_RIGHT,SCREEN_CENTER_Y+159" />
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+<!--Bottom Layer-->
+	<Layer Type="ActorFrame" Command="x,159;y,107;rotationz,-55;rotationy,180"><children>
+		<Layer 
+			File="rock1.png"
+			Command="zoomx,.5;zoomy,.5;diffuse,#C80000"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,25;y,72;rotationz,130"><children>
+		<Layer 
+			File="rock1.png"
+			Command="zoom,1;skewx,-.3;diffuse,#C80000"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-55;y,74;rotationz,141;rotationy,180"><children>
+		<Layer 
+			File="rock1.png"
+			Command="zoom,1;skewx,-.3;diffuse,#C80000"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-66;y,68;rotationz,-43"><children>
+		<Layer 
+			File="rock1.png"
+			Command="zoom,1;skewx,-.3;diffuse,#C80000"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-140;y,88;rotationz,-170"><children>
+		<Layer 
+			File="rock1.png"
+			Command="zoom,.6;skewx,-.33;diffuse,#C80000"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-183;y,133;rotationz,-160"><children>
+		<Layer 
+			File="rock1.png"
+			Command="zoom,.3;skewx,-.33;diffuse,#C80000"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,183;y,128;rotationz,20"><children>
+		<Layer 
+			File="rock1.png"
+			Command="zoom,.3;skewx,-.33;diffuse,#C80000"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-179;y,126;rotationz,58;rotationy,180"><children>
+		<Layer 
+			File="rock4w.png"
+			Command="zoom,.4;zoomy,.42;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-94;y,54;rotationz,13;rotationy,180"><children>
+		<Layer 
+			File="rock4w.png"
+			Command="zoomx,.5;zoomy,.55;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,25;y,20;rotationz,-12"><children>
+		<Layer 
+			File="rock4w.png"
+			Command="zoomx,.32;zoomy,.48;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,113;y,66;rotationz,-32;rotationy,180"><children>
+		<Layer 
+			File="rock4w.png"
+			Command="zoom,.42;zoomy,.62;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,9;y,62;rotationz,188"><children>
+		<Layer 
+			File="rock5w.png"
+			Command="zoomx,.69;zoomy,.82;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,126;y,81;rotationz,-58"><children>
+		<Layer 
+			File="rock5w.png"
+			Command="zoomx,.42;zoomy,.53;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,168;y,131;rotationz,155;rotationy,180"><children>
+		<Layer 
+			File="rock5w.png"
+			Command="zoomx,.4;zoomy,.45;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,144;y,99;rotationz,152;rotationy,180"><children>
+		<Layer 
+			File="rock5w.png"
+			Command="zoom,.28;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,144;y,99;rotationz,152;rotationy,180"><children>
+		<Layer 
+			File="rock5w.png"
+			Command="zoom,.28;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,102;y,62;rotationz,70;rotationy,180"><children>
+		<Layer 
+			File="rock4w.png"
+			Command="zoom,.44;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-47;y,36;rotationz,-5"><children>
+		<Layer 
+			File="rock3w.png"
+			Command="zoomx,.5;zoomy,.45;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-125;y,85;rotationz,-8"><children>
+		<Layer 
+			File="rock3w.png"
+			Command="zoomx,.43;zoomy,.38;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-78;y,74;rotationz,-51"><children>
+		<Layer 
+			File="rock1.png"
+			Command="zoom,.62;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-155;y,117;rotationz,-118"><children>
+		<Layer 
+			File="rock3w.png"
+			Command="zoom,.62;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,55;y,56;rotationz,30"><children>
+		<Layer 
+			File="rock2.png"
+			Command="zoom,.62;diffuse,#872323"
+	/>	</children></Layer>
+	<Layer 
+		File="lava2.png"
+		InitCommand="playcommand,Pulse"
+		PulseCommand="diffusealpha,.8;StretchTo,-322,138,-73,145;linear,1.5;StretchTo,-322,133,-73,140;linear,1.5;diffusealpha,0;queuecommand,Pulse"
+	/>
+	<Layer 
+		File="lava1.png"
+		InitCommand="playcommand,Pulse"
+		PulseCommand="StretchTo,-322,138,-73,162;linear,1.5;StretchTo,-322,136,-73,162;linear,1.5;StretchTo,-322,138,-73,162;queuecommand,Pulse"
+	/>
+	<Layer 
+		File="lava2.png"
+		InitCommand="playcommand,Pulse"
+		PulseCommand="diffusealpha,.8;StretchTo,322,138,73,145;linear,1.5;StretchTo,322,133,73,140;linear,1.5;diffusealpha,0;queuecommand,Pulse"
+	/>
+	<Layer 
+		File="lava1.png"
+		InitCommand="playcommand,Pulse"
+		PulseCommand="StretchTo,322,138,73,162;linear,1.5;StretchTo,322,136,73,162;linear,1.5;StretchTo,322,138,73,162;queuecommand,Pulse"
+	/>
+	<Layer Type="Quad" Command="diffuse,#E60000;stretchto,140,90,-140,200" />
+	<Layer 
+		File="lava2.png"
+		InitCommand="playcommand,Pulse"
+		PulseCommand="diffusealpha,.8;StretchTo,115,139,-125,145;linear,1.5;StretchTo,115,135,-125,140;linear,1.5;diffusealpha,0;queuecommand,Pulse"
+	/>
+	<Layer 
+		File="lava1.png"
+		InitCommand="playcommand,Pulse"
+		PulseCommand="StretchTo,115,139,-125,153;linear,1.5;StretchTo,115,137,-125,153;linear,1.5;StretchTo,115,139,-125,153;queuecommand,Pulse"
+	/>
+	</children></Layer>
+	<!--Middle Layer-->
+	<Layer
+		File="World.png"
+		Command="x,SCREEN_CENTER_X+1;y,SCREEN_CENTER_Y+105;zoomx,.512;zoomy,.51"
+	/>
+
+<!--Top Layer-->
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+	<Layer Type="ActorFrame" Command="x,-170;y,104;rotationz,-38"><children>
+		<Layer 
+			File="rock3.png"
+			Command="zoomx,.62;zoomy,.39;skewx,-.02"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-7;y,46;rotationz,-2"><children>
+		<Layer 
+			File="rock3.png"
+			Command="zoomx,.7;zoomy,.37"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,62;y,46;rotationz,-6;rotationy,180"><children>
+		<Layer 
+			File="rock3.png"
+			Command="zoomx,.57;zoomy,.5"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-116;y,68;rotationz,-23"><children>
+		<Layer 
+			File="rock4.png"
+			Command="zoomx,.62;zoomy,.32"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,98;y,48;rotationz,14"><children>
+		<Layer 
+			File="rock4.png"
+			Command="zoomx,.61;zoomy,.63"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-39;y,28;rotationz,-1;rotationy,180"><children>
+		<Layer 
+			File="rock4.png"
+			Command="zoomx,.5;zoomy,.73"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-136;y,89;rotationz,7;rotationy,180"><children>
+		<Layer 
+			File="rock5.png"
+			Command="zoomx,.2;zoomy,.19"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,68;y,72;rotationz,-53;rotationy,180"><children>
+		<Layer 
+			File="rock5.png"
+			Command="zoomx,.25;zoomy,.25"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,144;y,98;rotationz,6"><children>
+		<Layer 
+			File="rock5.png"
+			Command="zoomx,.25;zoomy,.25"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-92;y,69;rotationz,-30"><children>
+		<Layer 
+			File="rock5.png"
+			Command="zoomx,.25;zoomy,.25"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,2;y,86"><children>
+		<Layer 
+			File="hole.png"
+			Command="zoomx,.56;zoomy,.34"
+	/>	</children></Layer>
+	</children></Layer>
+</children></ActorFrame>

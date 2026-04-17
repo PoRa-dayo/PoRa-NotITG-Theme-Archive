@@ -1,0 +1,7 @@
+<ActorFrame> <children>
+	<Layer
+		File="down"
+		OnCommand="x,SCREEN_CENTER_X-30;y,SCREEN_CENTER_Y-4"
+	/>
+</children> </ActorFrame>
+

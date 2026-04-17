@@ -1,0 +1,5 @@
+<ActorFrame><children>
+	<ActorFrame Command="queuecommand,Go" GoCommand="%function() Screen():zoom(0) end" />
+	<ActorFrame Command="sleep,.3" />
+</children></ActorFrame>
+

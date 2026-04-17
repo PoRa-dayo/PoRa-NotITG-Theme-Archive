@@ -1,0 +1,3 @@
+<ActorFrame><children>
+	<Layer File="@'block'..Pallette()..'.sprite'" Command="%function(self) self:zoomtowidth(blockSize) self:zoomtoheight(blockSize*3) self:addy(26) end" RemoveCommand="setstate,1" />
+</children></ActorFrame>

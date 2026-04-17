@@ -1,0 +1,7 @@
+<ActorFrame> <children>
+	<Layer 
+		File="Professor.png"
+		InitCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y-151"
+		OnCommand="linear,.2;zoom,0"
+	 />
+</children> </ActorFrame>

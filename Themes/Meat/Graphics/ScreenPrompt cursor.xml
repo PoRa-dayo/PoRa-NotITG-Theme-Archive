@@ -1,0 +1,4 @@
+<ActorFrame><children>
+	<Layer Type="Quad" InitCommand="zoomtowidth,79-4;zoomtoheight,17;y,1.5;x,-2;diffuse,.8,0,0,1" />
+	<Layer Type="Quad" InitCommand="zoomtowidth,79-8;zoomtoheight,13;y,1.5;x,-2;diffuse,1,0,0,1" />
+</children></ActorFrame>

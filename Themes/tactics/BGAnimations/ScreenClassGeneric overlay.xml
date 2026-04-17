@@ -1,0 +1,62 @@
+<ActorFrame><children>
+	<Layer
+		Font="_FFT2 white"
+		Text="Class:"
+		InitCommand="x,SCREEN_CENTER_X-90;y,SCREEN_CENTER_Y-194;shadowlength,0;horizalign,right;zoom,1.25;zoomy,1"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		Font="_FFT2 white"
+		Text="Gender:"
+		InitCommand="x,SCREEN_CENTER_X-90;y,SCREEN_CENTER_Y-166;shadowlength,0;horizalign,right;zoom,1.25;zoomy,1"
+		OffCommand="stoptweening"
+	/>
+	<Layer
+		Font="_FFT2 white"
+		Text="Colors:"
+		InitCommand="x,SCREEN_CENTER_X-90;y,SCREEN_CENTER_Y-138;shadowlength,0;horizalign,right;zoom,1.25;zoomy,1"
+		OffCommand="stoptweening"
+	/>
+	<Layer 
+		Font="_FFT2 white"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y-166;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+		OffCommand="stoptweening"
+		OnCommand="%function(self)
+			self:settext('Male')
+			if GAMESTATE:GetEnv('gender') == 'F' then 
+				self:settext('Female')
+			 end
+		 end"
+	/>
+	<Layer 
+		Font="_FFT2 white"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y-138;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+		OffCommand="stoptweening"
+		OnCommand="%function(self)
+			self:settext('Party & Guests');
+			if GAMESTATE:GetEnv('pallet') == '2' then 
+				self:settext('Hokuten Knights')
+			end
+			if GAMESTATE:GetEnv('pallet') == '3' then 
+				self:settext('Nanten Knights')
+			end
+			if GAMESTATE:GetEnv('pallet') == '4' then 
+				self:settext('Rogues & Neutrals')
+			end
+			if GAMESTATE:GetEnv('pallet') == '5' then 
+				self:settext('Glabados & Riovanes')
+			end
+		end"
+	/>
+	<Layer
+		Font="_FFT2 white"
+		Text="Choose gender and colors on World Map."
+		InitCommand="x,SCREEN_CENTER_X-170;y,SCREEN_CENTER_Y-110;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+		OffCommand="stoptweening;"
+	/>
+	<Layer
+		File="@THEME:GetPath( EC_BGANIMATIONS, '', '_boarder' )"
+	/>
+</children></ActorFrame>

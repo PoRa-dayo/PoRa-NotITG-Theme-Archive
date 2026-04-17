@@ -1,0 +1,35 @@
+<ActorFrame> <children>
+	<Layer 
+		File="../Professor.png"
+		InitCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y-151"
+	 />
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Text="Only Humanoids can ride Chocobos. Enter::Chocobo codes on the World Maps screens."
+		InitCommand="x,SCREEN_CENTER_X-183;y,SCREEN_CENTER_Y-140;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+		OnCommand="cropright,1;sleep,.4;linear,1;cropright,-.2"
+		OffCommand="stoptweening;zoom,0"
+	/>
+	<ActorFrame OnCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y+68" OffCommand="linear,.2;zoom,0"> <children>
+		<Layer
+			File="codes.png"
+		/>
+	</children></ActorFrame>
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Text=":: Chocobo:: Black Chocobo:: Red Chocobo:: No Chocobo:: If you enter a Chocobo code and pick a non humanoid:: special class you will not be able to ride your Chocobo.:: :: If you enter a special class code during class selection:: you can still pick Squire with the code L R L L L L."
+		InitCommand="x,SCREEN_CENTER_X-292;y,SCREEN_CENTER_Y-102;shadowlength,0;horizalign,left;vertalign,top;zoom,1.25;zoomy,1"
+		OnCommand="cropleft,1;sleep,.5;cropleft,0"
+		OffCommand="stoptweening;zoom,0"
+	/>
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Text="::U D L L L L::U D U U U U::U D R R R R::U D D D D D"
+		InitCommand="x,SCREEN_CENTER_X+120;y,SCREEN_CENTER_Y-102;shadowlength,0;horizalign,left;vertalign,top;zoom,1.25;zoomy,1"
+		OnCommand="cropleft,1;sleep,.5;cropleft,0"
+		OffCommand="stoptweening;zoom,0"
+	/>
+</children> </ActorFrame>

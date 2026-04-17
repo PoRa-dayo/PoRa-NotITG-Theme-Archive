@@ -1,0 +1,23 @@
+<ActorFrame> <children>
+	<Layer
+		Type="Quad"
+		OnCommand="stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-240,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+240;diffuse,#D20000FF"
+	/>
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X-3;y,SCREEN_CENTER_Y+18;zoomx,.53;zoomy,.58;addy,-2"
+		><children>
+		<Layer
+			File="saw.png"
+			OnCommand="rotationz,22.5;spin;diffusealpha,.47"
+		/>
+		<Layer
+			File="saw.png"
+			OnCommand="spin"
+		/>
+		<Layer
+			File="Face.png"
+			OnCommand="diffusealpha,1"
+		/>
+	</children></Layer>
+</children></ActorFrame>

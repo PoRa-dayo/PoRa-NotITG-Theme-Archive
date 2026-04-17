@@ -1,0 +1,8 @@
+<ActorFrame> <children>
+	<Layer Type="Quad" StartCommand="stretchto,SCREEN_LEFT,SCREEN_CENTER_Y-240,SCREEN_RIGHT,SCREEN_CENTER_Y+210;diffuse,#D2000000;linear,.2;diffuse,#D20000FF" />
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X+10;y,SCREEN_CENTER_Y+54;zoom,0;rotationz,-360;linear,.1;zoom,1.15;rotationz,0;linear,0.1;zoomy,1.3;zoomx,1.8" ><children>
+		<Layer File="saw" Command="x,-11;spin;rotationz,-22.5;zoom,.52" />
+		<Layer File="saw" Command="x,-11;spin;diffuse,#E10000;zoom,.52" />
+		<Layer File="Meatboy" Command="zoom,.305" />
+	</children></Layer>
+</children></ActorFrame>

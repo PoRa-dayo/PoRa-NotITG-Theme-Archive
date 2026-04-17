@@ -1,0 +1,33 @@
+*****OPENITG/NOTITG ONLY*****
+*****SM5 IS NOT COMPATIBLE*****
+*****READ BELOW*****
+Screenshots: 
+https://imgur.com/a/iYxiQvM
+
+The goal of this theme is to port the functionality of Simply Love to the default In The Groove 2 theme we all know and love. I originally made it for my cabinet which runs an original computer and CRT so it might have some display issues at very high resolutions and aspect ratios. Let me know what kind of issues you run into and I will consider fixing them if I have the ability to!
+
+Credits to Mad Matt and hurtpiggypig for Simply Love and creating the tools that I took from this theme.  
+Gabrimax98 for color switcher implementations and tweaks/fixes to the look of the theme.
+iund for lots of functionality help and seemingly having answers to everything. 
+Adam Kirby for lots of testing and being a true ITG diehard. 
+
+Features 3.95 SL doesn't have:
+
+If you hold the start button during a song you can restart it!
+
+(OITG) M-Mods and they work with the rate adjust feature!
+
+Centered mod lets you move your receptors up/down in real time!
+
+Theme reads noteskins from the folder you don't have to update the row in mods.lua anymore
+
+notes: 
+
+for the session timer set the game to event mode, play mode type to timer and play length 0:00 and you will have a nice session timer at the bottom of the screen, holding tab to speed up the menus/screen transitions will make it inaccurate
+
+ASPECT RATIO NOTES
+
+ if you're going to play on an aspect ratio larger than 4:3 you will have a couple easy changes to make.  go to the operator menu, screen/display adjustments  and change life bar to -50 and replace the lifep1x and lifep2x values in metrics.ini with the following:
+ 
+ LifeP1X=@"SCREEN_LEFT+71+" .. GetLifebarAdjustment()
+ LifeP2X=@"SCREEN_RIGHT-20-" .. GetLifebarAdjustment()

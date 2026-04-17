@@ -1,0 +1,29 @@
+<ActorFrame> <children>
+	<Layer Class="AutoActor" 
+		File="../Banner underlay" 
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-196;zoomy,0.7;diffusealpha,1" 
+	/>
+	<Layer Class="AutoActor" 
+		Condition="not GAMESTATE:PlayerUsingBothSides()"
+		File="platform" 
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+173" 
+	/>
+    <Layer Type="ActorFrame" Condition="not GAMESTATE:PlayerUsingBothSides()" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-130"> <children>
+        <Layer
+            File="bpm frame.png"
+        />
+        <Layer Class="BitmapText" 
+            Font="_FFT2 white"
+            Text="BPM"
+            InitCommand="x,-19;y,-19;shadowlength,0;zoomx,1.25"
+        />
+    </children></Layer>
+    <Layer
+		Font="_ScreenEvaluation numbers"
+		Text=""
+		InitCommand="%function(self) self:x(SCREEN_CENTER_X); self:y(SCREEN_TOP+113); self:zoom(1.2); self:zoomx(1.5); self:shadowlength(0) end"
+		OnCommand="queuecommand,Update"
+		UpdateCommand="%GameplayBPM"
+	/>
+    <ActorFrame Command="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
+</children> </ActorFrame>

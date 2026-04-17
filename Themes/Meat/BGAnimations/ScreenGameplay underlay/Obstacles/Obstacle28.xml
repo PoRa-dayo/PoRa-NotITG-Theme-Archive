@@ -1,0 +1,30 @@
+<ActorFrame><children>
+<!-- Obstacle 28: Floating Thing with Needle Pile-->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="addx,48"
+	><children>
+		<Layer Type="Quad" OnCommand="stretchto,-70,27,70,55;diffuse,#000000;blend,noeffect;zwrite,1" />
+
+		<Layer File="needles.png" OnCommand="zoom,.25;x,39;y,20;rotationz,40;ztest,1" />
+		<Layer File="needles.png" OnCommand="zoom,.25;x,-41;y,25;rotationz,-50;ztest,1" />
+		<Layer File="needles.png" OnCommand="zoom,.25;x,-18;y,15;rotationz,-10;ztest,1" />
+		<Layer File="needles.png" OnCommand="zoom,.25;x,16;y,11;ztest,1" />
+
+		<Layer File="ground mask.png" OnCommand="zoom,.5;x,-32;y,18;blend,noeffect;zwrite,1" />
+		<Layer File="ground mask.png" OnCommand="zoom,.5;y,18;blend,noeffect;zwrite,1" />
+		<Layer File="ground mask.png" OnCommand="zoom,.5;x,32;y,18;blend,noeffect;zwrite,1" />
+	</children></Layer>
+	<Layer
+		Type="ActorFrame"
+		GoCommand="x,40;y,-60;linear,2.15;x,0;y,0;linear,2.15;x,-40;y,-60"
+		Fail3Command="x,40;y,-30;linear,1;x,10;y,0;linear,2.15;x,-20;y,-60"
+	><children>
+		<Layer
+			File="Floater.png"
+			OnCommand="zoomx,.27;zoomy,.18;y,2;queuecommand,Animate"
+			AnimateCommand="linear,1;zoomx,.2;zoomy,.24;linear,1;zoomx,.25;zoomy,.18;queuecommand,Animate"
+		/>
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.85;queuecommand,Jump3" />
+</children></ActorFrame>

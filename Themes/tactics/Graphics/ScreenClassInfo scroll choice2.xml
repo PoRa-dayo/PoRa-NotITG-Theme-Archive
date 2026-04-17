@@ -1,0 +1,14 @@
+<ActorFrame><children>
+	<Layer
+		Font="_FFT"
+		Text="Party Members"
+		InitCommand="horizalign,left;shadowlength,0;zoomx,1.25"
+	/>
+	<Layer
+		File="ScreenSelect curspr.png"
+		InitCommand="x,-5;horizalign,right;ShadowLength,3;"
+		OnCommand="hidden,0;bounce;effectmagnitude,-8,0,0;effectperiod,0.8"
+		GainFocusCommand="hidden,0;finishtweening"
+		LoseFocusCommand="hidden,1"
+	/>
+</children></ActorFrame>

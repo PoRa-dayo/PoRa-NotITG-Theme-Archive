@@ -1,0 +1,8 @@
+<ActorFrame InitCommand="%AspectScale" ><children>
+	<ActorFrame Command="%function() timerSound = '_silent' end" />
+	<Layer Type="Quad" Command="stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y+200,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+240;blend,noeffect;zwrite,1" />
+	<Layer
+		File="Intro"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-30;zoomtowidth,640;zoomtoheight,480;sleep,49;diffusealpha,0"
+	/>
+</children></ActorFrame>

@@ -1,0 +1,11 @@
+<ActorFrame><children>
+	<Layer
+		Text="Oracle"
+		Font="_FFT"
+		OnCommand="diffusealpha,0;sleep,.8;diffusealpha,1"
+		InitCommand="horizalign,center;ShadowLength,0;Zoomx,1.25"
+		GainFocusCommand="hidden,0;finishtweening"
+		LoseFocusCommand="hidden,1"
+		OffCommand="diffusealpha,0"
+	/>
+</children></ActorFrame>

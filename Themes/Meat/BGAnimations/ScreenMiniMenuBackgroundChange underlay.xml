@@ -1,0 +1,3 @@
+<ActorFrame><children>
+	<Layer Type="Quad" Command="Stretchto,SCREEN_CENTER_X-305,SCREEN_CENTER_Y-190,SCREEN_CENTER_X+305,SCREEN_CENTER_Y+200;diffuse,0,0,0,1" />
+</children></ActorFrame>

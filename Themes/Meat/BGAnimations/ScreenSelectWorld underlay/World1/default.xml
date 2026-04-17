@@ -1,0 +1,479 @@
+<ActorFrame
+	><children>
+	<Layer
+		File="Background.png"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,760;ZoomToHeight,467;diffuse,#DCF9F9"
+	/>
+	<Layer Type="Quad" Command="diffuse,#6BA062;stretchto,SCREEN_CENTER_X-190,SCREEN_CENTER_Y-150,SCREEN_CENTER_X+188,SCREEN_CENTER_Y-108" />
+	<Layer Type="Quad" Command="diffuse,#6BA062;stretchto,SCREEN_CENTER_X-11,SCREEN_CENTER_Y-150,SCREEN_CENTER_X+181,SCREEN_CENTER_Y-94" />
+	<Layer Type="Quad" Command="diffuse,#B1D3C9;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y+124,SCREEN_RIGHT,SCREEN_CENTER_Y+136" />
+	<Layer Type="Quad" Command="diffuse,#A7CCB9;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y+136,SCREEN_RIGHT,SCREEN_CENTER_Y+149" />
+	<Layer Type="Quad" Command="diffuse,#9BC4AC;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y+149,SCREEN_RIGHT,SCREEN_CENTER_Y+159" />
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+<!--Bottom Layer-->
+	<Layer Type="ActorFrame" Command="x,-130;y,39;rotationz,27;rotationy,180"><children>
+		<Layer
+			File="Cloud1.png"
+			Command="zoom,.31;diffuse,#B3D4CB"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,15;y,-10;rotationz,0"><children>
+		<Layer
+			File="Cloud2.png"
+			Command="zoom,.18;diffuse,#B3D4CB"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,125;y,44;rotationz,-30;rotationy,180"><children>
+		<Layer
+			File="Cloud2.png"
+			Command="zoom,.18;diffuse,#B3D4CB"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-27;y,0;rotationz,15;rotationy,180"><children>
+		<Layer
+			File="Cloud2.png"
+			Command="zoomx,.33;zoomy,.33;diffuse,#B3D4CB"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-70;y,19;rotationz,-15"><children>
+		<Layer
+			File="Cloud3.png"
+			Command="zoom,.32;diffuse,#B3D4CB"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,80;y,14;rotationz,-24;rotationy,180"><children>
+		<Layer
+			File="Cloud3.png"
+			Command="zoom,.44;diffuse,#B3D4CB"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-183;y,82;rotationz,-45"><children>
+		<Layer
+			File="Cloud4.png"
+			Command="zoom,.2;diffuse,#B3D4CB"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,149;y,55;rotationz,-35;rotationy,180"><children>
+		<Layer
+			File="Cloud4.png"
+			Command="zoom,.2;diffuse,#B3D4CB"
+	/>	</children></Layer>
+<!--Middle Layer-->
+	<Layer Type="ActorFrame" Command="x,-40;y,-10;rotationz,0"><children>
+		<Layer
+			File="Tree1.png"
+			Command="zoom,.5;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-27;y,6;rotationz,0;rotationy,180"><children>
+		<Layer
+			File="Tree1.png"
+			Command="zoom,.34;zoomx,.4;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,139;y,56;rotationz,-16;rotationy,180"><children>
+		<Layer
+			File="Tree1.png"
+			Command="zoom,.36;zoomx,.42;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,114;y,69;rotationz,14"><children>
+		<Layer
+			File="Tree2.png"
+			Command="zoom,.34;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-155;y,78;rotationz,-30"><children>
+		<Layer
+			File="Tree2.png"
+			Command="zoom,.46;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,8;y,3;rotationz,0"><children>
+		<Layer
+			File="Tree3.png"
+			Command="zoom,.54;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-198;y,117;rotationz,-45"><children>
+		<Layer
+			File="Tree4.png"
+			Command="zoom,.52;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-188;y,111;rotationz,-45"><children>
+		<Layer
+			File="Tree4.png"
+			Command="zoom,.34;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-101;y,67;rotationz,-15"><children>
+		<Layer
+			File="Tree4.png"
+			Command="zoom,.34;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-92;y,63;rotationz,-15"><children>
+		<Layer
+			File="Tree4.png"
+			Command="zoom,.4;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-4;y,12;rotationz,0"><children>
+		<Layer
+			File="Tree4.png"
+			Command="zoom,.54;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,74;y,62;rotationz,-5"><children>
+		<Layer
+			File="Tree4.png"
+			Command="zoom,.4;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-16;y,27;rotationz,0;rotationy,180"><children>
+		<Layer
+			File="Tree4.png"
+			Command="zoom,.32;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,102;y,52;rotationz,15"><children>
+		<Layer
+			File="Tree4.png"
+			Command="zoomx,.5;zoomy,.55;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,93;y,43;rotationz,12"><children>
+		<Layer
+			File="Tree5.png"
+			Command="zoom,.6;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-75;y,41;rotationz,-5"><children>
+		<Layer
+			File="Tree6.png"
+			Command="zoom,.56;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-127;y,79"><children>
+		<Layer
+			File="saww.png"
+			Command="zoom,.36;diffuse,#9EC7AF;spin;effectmagnitude,0,0,145"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-126;y,39"><children>
+		<Layer
+			File="saww.png"
+			Command="zoom,.66;diffuse,#9EC7AF;spin;effectmagnitude,0,0,145"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-59;y,23"><children>
+		<Layer
+			File="saww.png"
+			Command="zoom,.32;diffuse,#9EC7AF;spin;effectmagnitude,0,0,145"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,55;y,54"><children>
+		<Layer
+			File="saww.png"
+			Command="zoom,.32;diffuse,#9EC7AF;spin;effectmagnitude,0,0,145"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,167;y,121"><children>
+		<Layer
+			File="saww.png"
+			Command="zoom,.32;diffuse,#9EC7AF;spin;effectmagnitude,0,0,145"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,180;y,132"><children>
+		<Layer
+			File="saww.png"
+			Command="zoom,.7;diffuse,#9EC7AF;spin;effectmagnitude,0,0,145"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-125;y,60;rotationz,0"><children>
+		<Layer
+			File="rodw.png"
+			Command="zoomx,.1;zoomy,.25;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-117;y,49;rotationz,-45"><children>
+		<Layer
+			File="rodw.png"
+			Command="zoom,.25;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,150;y,89;rotationz,-150"><children>
+		<Layer
+			File="rodw.png"
+			Command="zoom,.22;zoomy,.18;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,163;y,100;rotationz,-90"><children>
+		<Layer
+			File="rodw.png"
+			Command="zoom,.1;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,169;y,109;rotationz,8"><children>
+		<Layer
+			File="rodw.png"
+			Command="zoom,.1;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-30;y,30;rotationz,105"><children>
+		<Layer
+			File="rodw.png"
+			Command="zoom,.15;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-65;y,49;rotationz,-2"><children>
+		<Layer
+			File="rodw.png"
+			Command="zoom,.1;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-5;y,46;rotationz,-30"><children>
+		<Layer
+			File="rock1.png"
+			Command="zoom,.4;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,32;y,67;rotationz,-30"><children>
+		<Layer
+			File="rock1.png"
+			Command="zoom,.3;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,133;y,84;rotationz,35"><children>
+		<Layer
+			File="rock2.png"
+			Command="zoom,.25;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,137;y,86;rotationz,-60"><children>
+		<Layer
+			File="rock3.png"
+			Command="zoom,.28;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,110;y,83;rotationz,-60"><children>
+		<Layer
+			File="rock3.png"
+			Command="zoom,.28;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,45;y,41;rotationz,30"><children>
+		<Layer
+			File="grass1.png"
+			Command="zoom,.26;diffuse,#9EC7AF"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-100;y,70"><children>
+		<Layer
+			File="saw.png"
+			Command="zoom,.31;spin;effectmagnitude,0,0,145"
+	/>	</children></Layer>
+	</children></Layer>
+	<Layer
+		File="World.png"
+		Command="x,SCREEN_CENTER_X-3;y,SCREEN_CENTER_Y+108;zoomx,.72;zoomy,0.7"
+	/>
+<!--Top Layer-->
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+	<Layer Type="ActorFrame" Command="x,-14;y,56;rotationz,-1"><children>
+		<Layer
+			File="rod2g.png"
+			Command="zoom,.12"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,3;y,5"><children>
+		<Layer
+			File="saw.png"
+			Command="zoom,.33;spin;effectmagnitude,0,0,145"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-14;y,41"><children>
+		<Layer
+			File="saw.png"
+			Command="zoom,.25;spin;effectmagnitude,0,0,145"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,9.5;y,16;rotationz,-31"><children>
+		<Layer
+			File="rod2.png"
+			Command="zoom,.21"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-19.5;y,50.5;rotationz,30"><children>
+		<Layer
+			File="rod2.png"
+			Command="zoom,.18"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,44;y,46;rotationz,-60"><children>
+		<Layer
+			File="rod2.png"
+			Command="zoom,.2"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,120;y,85;rotationz,-60"><children>
+		<Layer
+			File="rod2.png"
+			Command="zoom,.2"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,35;y,100;rotationz,-1;rotationy,180"><children>
+		<Layer 
+			File="grass5.sprite"
+			Command="zoom,.3;skewx,-.2"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-40;y,59;rotationz,-12"><children>
+		<Layer
+			File="rock6.png"
+			Command="zoom,.23"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,85;y,71;rotationz,20"><children>
+		<Layer
+			File="grass2.png"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,25;y,34;rotationz,-3"><children>
+		<Layer
+			File="Tree7.png"
+			Command="zoom,.31"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-175;y,95;rotationz,-45"><children>
+		<Layer
+			File="Tree7.png"
+			Command="zoom,.26;skewx,-.09"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,92;y,38;rotationz,-16;rotationy,180"><children>
+		<Layer
+			File="Tree8.png"
+			Command="zoom,.31"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-54;y,30;rotationz,-3"><children>
+		<Layer
+			File="Tree8.png"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-136;y,95;rotationz,18;rotationy,180"><children>
+		<Layer
+			File="rock4.png"
+			Command="zoom,.2;zoomy,.15"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-178;y,126;rotationz,-42"><children>
+		<Layer
+			File="grass2.png"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-38;y,93;rotationz,-3"><children>
+		<Layer
+			File="grass2.png"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,45;y,61;rotationz,3"><children>
+		<Layer
+			File="grass2.png"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,96;y,110;rotationz,28"><children>
+		<Layer
+			File="grass2.png"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,125;y,90;rotationz,20"><children>
+		<Layer
+			File="grass3.png"
+			Command="zoom,.27"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-107;y,79;rotationz,-15"><children>
+		<Layer
+			File="grass3.png"
+			Command="zoom,.27"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-144;y,139;rotationz,-35"><children>
+		<Layer
+			File="grass3.png"
+			Command="zoom,.27"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,115;y,68;rotationz,-30;rotationy,180"><children>
+		<Layer
+			File="grass4.png"
+			Command="zoom,.29"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,12;y,58;rotationz,15;rotationy,180"><children>
+		<Layer
+			File="grass4.png"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-149;y,100;rotationz,-38"><children>
+		<Layer
+			File="Bush1.png"
+			Command="zoomx,.31;zoomy,.27"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-115;y,115;rotationz,-28"><children>
+		<Layer
+			File="Bush1.png"
+			Command="zoomx,.31;zoomy,.27"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,64;y,61;rotationz,10"><children>
+		<Layer
+			File="Bush1.png"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-79;y,64;rotationz,0"><children>
+		<Layer
+			File="Bush2.png"
+			Command="zoomx,.3;zoomy,.29"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,150;y,103;rotationz,51"><children>
+		<Layer
+			File="Bush2.png"
+			Command="zoomx,.25;zoomy,.24"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,54;y,102;rotationz,-18;rotationy,180"><children>
+		<Layer
+			File="rock6.png"
+			Command="zoom,.22;skewx,.1"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,105;y,78;rotationz,32"><children>
+		<Layer
+			File="rock5.png"
+			Command="zoomx,.3;zoomy,.28"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,30;y,66;rotationz,0"><children>
+		<Layer
+			File="rock7.png"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-101;y,83;rotationz,-28"><children>
+		<Layer
+			File="rock8.png"
+			Command="zoomx,.3;zoomy,.28"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-62;y,102;rotationz,-18"><children>
+		<Layer
+			File="rock8.png"
+			Command="zoomx,.3;zoomy,.27"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-25;y,60;rotationz,0"><children>
+		<Layer 
+		File="grass5.sprite"
+		InitCommand="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-90;y,110;rotationz,-20"><children>
+		<Layer 
+		File="grass5.sprite"
+		InitCommand="zoom,.25"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,171;y,124;rotationz,45"><children>
+		<Layer 
+		File="grass5.sprite"
+		InitCommand="zoom,.25"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-178;y,127;rotationz,10;rotationy,180"><children>
+		<Layer
+			File="flower1.png"
+			Command="zoom,.28"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,92;y,111;rotationz,24"><children>
+		<Layer
+			File="flower1.png"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,44;y,62;rotationz,0"><children>
+		<Layer
+			File="flower1.png"
+			Command="zoom,.28"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-12;y,65;rotationz,0"><children>
+		<Layer 
+			File="flower2.sprite"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-112;y,80;rotationy,180"><children>
+		<Layer 
+			File="flower2.sprite"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-72;y,97;rotationz,-10;rotationy,180"><children>
+		<Layer 
+			File="flower2.sprite"
+			Command="zoom,.3"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,-147;y,141;rotationz,20;rotationy,180"><children>
+		<Layer 
+			File="flower2.sprite"
+			Command="zoom,.25"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,122;y,89;rotationz,-40;rotationy,180"><children>
+		<Layer 
+			File="flower2.sprite"
+			Command="zoom,.25"
+	/>	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,0;y,94"><children>
+		<Layer 
+			File="hole.png"
+			Command="zoomx,.7;zoomy,.4"
+	/>	</children></Layer>
+	</children></Layer>
+</children></ActorFrame>

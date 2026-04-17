@@ -1,0 +1,12 @@
+[Sprite]
+Texture=_grass5 2x1.png
+Frame0000=0
+Delay0000=1
+Frame0001=1
+Delay0001=0.5
+Frame0002=0
+Delay0002=0.6
+Frame0003=1
+Delay0003=0.5
+Frame0004=0
+Delay0004=0.1

@@ -1,0 +1,31 @@
+<ActorFrame><children>
+<!-- Obstacle 17: Two Saws -->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="addx,24"
+	><children>
+		<Layer
+			Type="Quad"
+			OnCommand="stretchto,-35,27,40,60;diffuse,#000000;blend,noeffect;zwrite,1"
+		/>
+		<Layer
+			File="Saw frame.png"
+			OnCommand="zoom,.5;y,19;x,3;zwrite,1;blend,noeffect"
+		/>
+		<Layer
+			File="Saw frame.png"
+			OnCommand="zoom,.5;y,19;x,3"
+		/>
+		<Layer
+			File="Saw.png"
+			OnCommand="zoom,.42;y,-69;x,3;spin;effectmagnitude,0,0,-360"
+			Fail3Command="addy,16"
+		/>
+		<Layer
+			File="saw.xml"
+			OnCommand="zoom,.42;y,22;x,3;spin;effectmagnitude,0,0,-360;ztest,1"
+			Fail3Command="addy,-8"
+		/>
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.95;queuecommand,Jump2" />
+</children></ActorFrame>

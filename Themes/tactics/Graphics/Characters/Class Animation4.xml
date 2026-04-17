@@ -1,0 +1,16 @@
+<ActorFrame><children>
+	<Layer
+		Type="Quad"
+		PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(1); self:queuecommand('Pulse') end"
+		InitCommand="hidden,1;playcommand,Pulse"
+	/>
+	<Layer 
+		File="@GetClass()"
+		InitCommand="zoomy,1.2;Playcommand,Frame1"
+		PulseMessageCommand="finishtweening;playcommand,Frame1"
+		Frame1Command="x,136;y,237;cropleft,.19;cropright,.625;croptop,0;cropbottom,.83;sleep,.25;Playcommand,Frame2"
+		Frame2Command="x,136;y,141;cropleft,.19;cropright,.625;croptop,.17;cropbottom,.67;sleep,.25;Playcommand,Frame3"
+		Frame3Command="x,136;y,237;cropleft,.19;cropright,.625;croptop,0;cropbottom,.83;sleep,.25;Playcommand,Frame4"
+		Frame4Command="x,256;y,141;cropleft,0;cropright,.81;croptop,.17;cropbottom,.67;sleep,.25"
+	/>	
+</children></ActorFrame>

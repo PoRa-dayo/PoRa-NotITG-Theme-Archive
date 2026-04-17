@@ -1,0 +1,6 @@
+<ActorFrame><children>
+	<Layer Type="ActorFrame" RemoveCommand="sleep,.5; queuecommand,Animate;linear,.04;zoom,1.05;linear,.08;zoomx,.9;zoomy,1.2;linear,.04;zoomx,1.2;zoomy,.9;linear,.12;zoomx,2.5;zoomy,0" ><children>
+		<Layer File="@'lock'..Pallette()..'.png'" Command="%function(self) self:zoomtowidth(blockSize) self:zoomtoheight(blockSize) end" AnimateCommand="sleep,.12;linear,.04;diffusealpha,0" />
+		<Layer File="lockw.png" Command="%function(self) self:zoomtowidth(blockSize) self:zoomtoheight(blockSize) self:diffusealpha(0) end" AnimateCommand="sleep,.12;linear,.04;diffusealpha,1;linear,.12;diffusealpha,0" />
+	</children></Layer>
+</children></ActorFrame>

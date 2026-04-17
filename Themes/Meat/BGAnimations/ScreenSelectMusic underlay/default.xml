@@ -1,0 +1,165 @@
+<ActorFrame><children>
+	<Layer File="@'World'..world..dark" Command="queuecommand,Aspect" AspectCommand="%function(self) TransitionAspectScale(self) self:zoomy(1) self:y(0) end" />
+<!--Black Quads-->
+	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y-240,SCREEN_RIGHT,SCREEN_CENTER_Y-180" />
+	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y+154,SCREEN_RIGHT,SCREEN_CENTER_Y+240" />
+<!--Top Left Rods-->
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-140;queuecommand,Check"
+		CheckCommand="%function(self) if world == 8 then self:diffuse(.62,0,0,1) end end"
+	><children>
+		<Layer Type="ActorFrame" Command="x,-249;y,-13;Rotationz,80"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,-294;y,-9;Rotationz,-90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.17;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,-344;y,-9;Rotationz,-90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.17;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,-270;y,-2;Rotationz,-90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.25;zoomy,.24;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,-345;y,-2.7;Rotationz,-90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.25;zoomy,.24;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,-309;y,-2.7;Rotationz,90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.25;zoomy,.24;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,-234;y,-3;Rotationz,90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.18;zoomy,.21;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,-236;y,4;Rotationz,107"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.25;zoomy,.24;diffuse,#000000"
+		/></children></Layer>
+<!--Top Right Rods-->
+		<Layer Type="ActorFrame" Command="x,294;y,-9;Rotationz,-90;Rotationy,180"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.17;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,344;y,-9;Rotationz,-90;Rotationy,180"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.17;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,270;y,-2;Rotationz,-90;Rotationy,180"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.25;zoomy,.24;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,345;y,-2.7;Rotationz,-90;Rotationy,180"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.25;zoomy,.24;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,309;y,-2.7;Rotationz,90;Rotationy,180"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.25;zoomy,.24;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,234;y,-3;Rotationz,90;Rotationy,180"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.18;zoomy,.21;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,236;y,4;Rotationz,107;Rotationy,180"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.25;zoomy,.24;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,249;y,-13;Rotationz,80;Rotationy,180"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+	</children></Layer>
+<!--Bottom Left Rods-->
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+155;queuecommand,Check"
+		CheckCommand="%function(self) if world == 8 then self:diffuse(.62,0,0,1) end end"
+	><children>
+		<Layer Type="ActorFrame" Command="x,-268;y,-4;Rotationz,-99"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,-224;y,-8;Rotationz,90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,-321;y,.5;Rotationz,-90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,-361;y,.5;Rotationz,-90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,-247;Rotationz,-90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.2;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,-273;y,.5;Rotationz,90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.2;diffuse,#000000"
+		/></children></Layer>
+
+
+<!--Bottom Right Rods-->
+		<Layer Type="ActorFrame" Command="x,268;y,-4;Rotationz,99"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,224;y,-8;Rotationz,-90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,321;y,.5;Rotationz,90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,361;y,.5;Rotationz,90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.32;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,247;Rotationz,90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.2;diffuse,#000000"
+		/></children></Layer>
+		<Layer Type="ActorFrame" Command="x,273;y,.5;Rotationz,-90"><children>
+		<Layer 
+			File="Rodw.png"
+			Command="zoomx,.16;zoomy,.2;diffuse,#000000"
+		/></children></Layer>
+	</children></Layer>
+	<ActorFrame InitCommand="%SelectMusicInit" FirstUpdateCommand="%SelectMusic" CaptureCommand="%SongInfo" CurrentSongChangedMessageCommand="queuecommand,Capture" CurrentStepsP1ChangedMessageCommand="queuecommand,Capture" CurrentStepsP2ChangedMessageCommand="queuecommand,Capture" />
+</children></ActorFrame>

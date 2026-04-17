@@ -1,0 +1,210 @@
+<ActorFrame><children>
+<!--Top Banner-->
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-140"
+	><children>
+		<Layer
+			File="@'World'..world..dark"
+		/>
+		<Layer
+			File="@'Frame'..world..dark..'.png'"
+			Command="zoomx,.44;zoomy,.41"
+		/>
+		<Layer
+			File="Bar.png"
+			Command="@'y,4;zoomx,.72;zoomy,.45;diffuse,' .. BarColor()"
+		/>
+		<Layer
+			Type="BitmapText"
+			File="_Meat"
+			Text="@GetWorldTitle()"
+			Command="shadowlength,0;zoom,.6;x,5;y,-11;diffuse,#000000"
+		/>
+		<Layer
+			Type="BitmapText"
+			File="_meat"
+			Text="Time: "
+			OnCommand="@'x,168;y,12;zoom,.33;horizalign,right;ShadowLength,0;diffuse,' .. TopBannerTextColor()"
+		/>
+	</children></Layer>
+<!--Artist Banner-->
+	<Layer
+		Type="ActorFrame"
+		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+155"
+	><children>
+		<Layer
+			File="@'Frame'..world..dark..'.png'"
+			Command="zoomx,.45;zoomy,.47"
+		/>
+		<Layer
+			File="Bar.png"
+			Command="@'x,-50;y,8;zoomx,.67;zoomy,.45;diffuse,' .. BarColor()"
+		/>
+		<Layer
+			File="Bar.png"
+			Command="@'rotationz,90;x,130;y,0;zoomx,.45;zoomy,.07;diffuse,' .. BarColor()"
+		/>
+		<Layer
+			Font="_Meat"
+			Text=""
+			OnCommand="x,-50;y,-11;zoomx,.45;zoomy,.6;shadowlength,0;maxwidth,750;diffuse,#000000"
+			SetCommand="%function(self) self:settext(GetSongName()) if GetSongSubTitle() ~= '' then self:y(-16) else self:y(-11) end end"
+			CurrentSongChangedMessageCommand="queuecommand,Set"
+		/>
+		<Layer
+			Font="_Meat"
+			Text=""
+			OnCommand="x,-50;zoomx,.27;zoomy,.36;shadowlength,0;maxwidth,750;diffuse,#000000"
+			SetCommand="%function(self) self:settext(GetSongSubTitle()) end"
+			CurrentSongChangedMessageCommand="queuecommand,Set"
+		/>
+		<Layer
+			Type="BitmapText"
+			File="_meat"
+			Text="BPM:"
+			OnCommand="x,169;y,-11;zoomx,.25;zoomy,.3;horizalign,right;ShadowLength,0;diffuse,#000000"
+		/>
+		<Layer
+			File="clock.png"
+			OnCommand="x,162;y,10;zoomx,.21;zoomy,.2;horizalign,right;ShadowLength,0"
+		/>
+		<Layer
+			Type="BitmapText"
+			File="_meat"
+			Text=":"
+			OnCommand="x,169;y,9;zoomx,.25;zoomy,.3;horizalign,right;ShadowLength,0;diffuse,#000000"
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X-188;y,SCREEN_CENTER_Y+188" ><children>
+		<Layer
+			Font="_Meat"
+			Text="&DOWN;"
+			OnCommand="y,3;shadowlength,0;zoom,.5;rotationz,90"
+		/>
+		<Layer
+			Font="_Meat"
+			Text="&DOWN;"
+			OnCommand="x,17;y,3;shadowlength,0;zoom,.5;rotationz,90"
+		/>
+		<Layer
+	 		Font="_Meat"
+			Text="&UP;&DOWN;"
+			OnCommand="x,41;y,1;shadowlength,0;zoom,.5"
+		/>
+		<Layer
+			Font="_Meat"
+			Text="World Select"
+			OnCommand="x,63;shadowlength,0;zoom,.33;horizalign,left"
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" Condition="not GAMESTATE:IsCourseMode()" Command="x,SCREEN_CENTER_X+45;y,SCREEN_CENTER_Y+188" ><children>
+		<Layer
+			Font="_Meat"
+			Text="&RIGHT;&RIGHT;"
+			OnCommand="y,1;shadowlength,0;zoom,.5"
+		/>
+		<Layer
+			Font="_Meat"
+			Text="&LEFT;"
+			OnCommand="x,28;y,3;shadowlength,0;zoom,.5;rotationz,90"
+		/>
+		<Layer
+			Font="_Meat"
+			Text="&RIGHT;"
+			OnCommand="x,45;y,2;shadowlength,0;zoom,.5;rotationz,90"
+		/>
+		<Layer
+			Font="_Meat"
+			Text=""
+			InitCommand="%function(self) if dark == '' then s = 'Dark World' else s = 'Light World' end; self:settext(s) end"
+			OnCommand="x,57;shadowlength,0;zoom,.33;horizalign,left"
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"	InitCommand="@'x,'..GetPaneX(PLAYER_2)..';y,SCREEN_CENTER_Y+116;zoom,1.1'" ><children>
+		<Layer
+			Font="PaneDisplay text"
+			Text="Card"
+			OnCommand="x,6;y,-24+13*4;horizalign,left;zoomx,.25;zoomy,.3;shadowlength,0;diffuse,#000000"
+		/>
+		<Layer
+			Font="PaneDisplay text"
+			Text=""
+			OnCommand="@'x,77;y,-24+13*4;horizalign,right;zoomx,.25;zoomy,.3;shadowlength,0;diffuse,' .. BannerTextColor()"
+			SetCommand="%function(self) if world == 8 then self:settext(CourseProfileHighScoreText[2]) else self:settext(ProfileHighScoreText[2]) end end"
+			SongInfoMessageCommand="queuecommand,Set" 
+		/>
+		<Layer
+			Font="PaneDisplay text"
+			Text=""
+			OnCommand="x,6;y,-24+13*3;horizalign,left;zoomx,.25;zoomy,.3;shadowlength,0;maxwidth,110;diffuse,#000000"
+			SetCommand="%function(self) if world == 8 then self:settext(CourseMachineHighNameText[2]) else self:settext(MachineHighNameText[2]) end end"
+			SongInfoMessageCommand="queuecommand,Set" 
+		/>
+		<Layer
+			Font="PaneDisplay text"
+			Text=""
+			OnCommand="@'x,77;y,-24+13*3;horizalign,right;zoomx,.25;zoomy,.3;shadowlength,0;diffuse,' .. BannerTextColor()"
+			SetCommand="%function(self) if world == 8 then self:settext(CourseMachineHighScoreText[2]) else self:settext(MachineHighScoreText[2]) end end"
+			SongInfoMessageCommand="queuecommand,Set" 
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"	InitCommand="@'x,'..GetPaneX(PLAYER_1)..';y,SCREEN_CENTER_Y+116;zoom,1.1'" ><children>
+		<Layer
+			Font="PaneDisplay text"
+			Text=""
+			OnCommand="@'x,-5;y,-24+13*4;horizalign,right;zoomx,.25;zoomy,.3;shadowlength,0;diffuse,' .. BannerTextColor()"
+			SetCommand="%function(self) if world == 8 then self:settext(CourseProfileHighScoreText[1]) else self:settext(ProfileHighScoreText[1]) end end"
+			SongInfoMessageCommand="queuecommand,Set" 
+		/>
+		<Layer
+			Font="PaneDisplay text"
+			Text=""
+			OnCommand="@'x,-5;y,-24+13*3;horizalign,right;zoomx,.25;zoomy,.3;shadowlength,0;diffuse,' .. BannerTextColor()"
+			SetCommand="%function(self) if world == 8 then self:settext(CourseMachineHighScoreText[1]) else self:settext(MachineHighScoreText[1]) end end"
+			SongInfoMessageCommand="queuecommand,Set" 
+		/>
+	</children></Layer>
+	<Layer
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X-33;y,SCREEN_CENTER_Y+8"
+	><children>
+		<Layer
+			File="@Meatboy() .. '/Mapsplode in.xml'"
+			OnCommand="x,-3;y,-8;sleep,1.3;zoom,0"
+			OffCommand="finishtweening;zoom,0"
+		/>
+		<Layer
+			File="@Meatboy() .. '/Mapsplode out.xml'"
+			OnCommand="y,-14;zoom,0"
+			OffCommand="zoom,1"
+		/>
+		<Layer
+			File="@Meatboy() .. '/Map.xml'"
+			OnCommand="zoom,0;sleep,1.3;zoom,1;playcommand,set"
+			OffCommand="finishtweening;zoom,0"
+			SetCommand="%function(self) self:x(-7); self:y(-14); if GAMESTATE:GetCurrentSong() or world == 8 then self:x(0) end end"
+			CurrentSongChangedMessageCommand="queuecommand,Set"
+		/>
+		<Layer
+			Condition="world~=8"
+			File="Path.png"
+			OnCommand="zoomy,.25;zoomx,40/32*18*.25;customtexturerect,0,0,18,1;y,13.5;x,-10*20/2-30"
+		/>
+		<Layer
+			Condition="world~=8"
+			File="Path.png"
+			OnCommand="rotationz,90;zoomx,.25;zoomy,40/32*1.6*.25;customtexturerect,0,0,2,1;y,4;x,-10*2/2-33.5"
+		/>
+		<Layer
+			Condition="world~=8"
+			File="Path.png"
+			OnCommand="zoomy,.25;zoomx,40/32*3*.25;customtexturerect,0,0,3,1;y,-3;x,-10*3/2-10"
+			SetCommand="%function(self) if GAMESTATE:GetCurrentSong() then self:cropright(0) else self:cropright(1/20) end end"
+			CurrentSongChangedMessageCommand="queuecommand,Set"
+		/>
+	</children></Layer>
+	<Layer Condition="not GAMESTATE:IsCourseMode()" File="DifficultyList.xml" Command="x,SCREEN_CENTER_X-263;y,SCREEN_CENTER_Y+16.5" SongInfoMessageCommand="queuecommand,Update" />
+    <ActorFrame	OnCommand="queuecommand,Set" SetCommand="%CaptureBPM"	CurrentSongChangedMessageCommand="queuecommand,Set" />
+	<ActorFrame OnCommand="queuecommand,Stuff" StuffCommand="%function() if warp >= 10 then warp = 0 end selectMusic = true end" />
+</children></ActorFrame>

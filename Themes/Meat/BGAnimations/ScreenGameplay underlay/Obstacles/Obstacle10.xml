@@ -1,0 +1,13 @@
+<ActorFrame><children>
+<!-- Obstacle 10: Lava Ball -->
+	<Layer
+		Type="ActorFrame"
+		GoCommand="queuecommand,Move;y,-90;sleep,1;accelerate,.6;y,0;decelerate,.25;y,-15;accelerate,.25;y,0;decelerate,.2;y,-5;accelerate,.2;y,0"
+		Fail3Command="queuecommand,Move;y,-90;x,-55;accelerate,.6;y,0;decelerate,.25;y,-15;accelerate,.25;y,0;decelerate,.2;y,-5;accelerate,.2;y,0"
+	><children>
+		<Layer Type="ActorFrame" MoveCommand="x,110;linear,4.5;x,-90" ><children>
+			<Layer File="@'lava ball'..Pallette()..'.png'" OnCommand="zoom,.4;y,-1;spin;effectmagnitude,0,0,-360" />
+		</children></Layer>
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.85;queuecommand,Jump3" />
+</children></ActorFrame>

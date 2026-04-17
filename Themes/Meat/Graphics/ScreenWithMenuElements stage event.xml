@@ -1,0 +1,7 @@
+<ActorFrame><children>
+		<BitmapText
+			Text="Event Mode"
+			Font="_Meat"
+			OnCommand="@'horizalign,left;ShadowLength,0;diffuse,' .. TopBannerTextColor()"
+		/>
+</children></ActorFrame>

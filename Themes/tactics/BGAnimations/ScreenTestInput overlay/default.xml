@@ -1,0 +1,21 @@
+<ActorFrame> <children>
+	<Layer 
+		File="banner"
+		InitCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y-161"
+	/>
+	<Layer 
+		File="bar owner.png"
+		InitCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y-151"
+		OnCommand="zoom,0;sleep,.8;linear,.2;zoom,1"
+		OffCommand="zoom,1;linear,.1;zoom,0"
+	 />
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Text="Welcome. Come in and test inputs."
+		InitCommand="x,SCREEN_CENTER_X-183;y,SCREEN_CENTER_Y-156;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+		OnCommand="cropright,1.2;sleep,1;linear,.5;cropright,-.2"
+		OffCommand="finishtweening;zoom,0"
+	/>
+</children> </ActorFrame>
+

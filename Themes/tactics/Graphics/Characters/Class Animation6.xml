@@ -1,0 +1,62 @@
+<ActorFrame><children>
+	<Layer
+		Type="Quad"
+		PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(1); self:queuecommand('Pulse') end"
+		InitCommand="hidden,1;playcommand,Pulse"
+	/>
+	<Layer 
+		File="@GetChocobo()"
+		InitCommand="zoomy,1.2;Playcommand,Frame1"
+		PulseMessageCommand="finishtweening;playcommand,Frame1"
+		Frame1Command="x,136;y,237;cropleft,.19;cropright,.625;croptop,0;cropbottom,.83;sleep,.125;Playcommand,Frame2"
+		Frame2Command="x,136;y,141;cropleft,.19;cropright,.625;croptop,.17;cropbottom,.67;sleep,.125;Playcommand,Frame3"
+		Frame3Command="x,16;y,237;croptop,0;cropbottom,.83;cropleft,.375;cropright,.43;sleep,.125;Playcommand,Frame4"
+		Frame4Command="x,136;y,141;cropleft,.19;cropright,.625;croptop,.17;cropbottom,.67;sleep,.125;Playcommand,Frame5"
+		Frame5Command="x,136;y,237;cropleft,.19;cropright,.625;croptop,0;cropbottom,.83;sleep,.125;Playcommand,Frame6"
+		Frame6Command="x,256;y,141;cropleft,0;cropright,.81;croptop,.17;cropbottom,.67;sleep,.125;Playcommand,Frame7"
+		Frame7Command="x,256;y,237;cropleft,0;cropright,.81;croptop,0;cropbottom,.83;sleep,.125;Playcommand,Frame8"
+		Frame8Command="x,256;y,141;cropleft,0;cropright,.81;croptop,.17;cropbottom,.67"
+	/>			
+	<Layer Type="ActorFrame" InitCommand="x,4;y,-17"><children>
+		<Layer 
+			File="@GetClassPath()"
+			InitCommand="zoomy,1.2;Playcommand,Frame1"
+			PulseMessageCommand="finishtweening;playcommand,Frame1"
+			Frame1Command="x,275;y,164;croptop,.14;cropbottom,.77;cropleft,0;cropright,.895;sleep,.125;Playcommand,Frame2"
+			Frame2Command="x,195;y,166;croptop,.14;cropbottom,.77;cropleft,.125;cropright,.77;sleep,.125;Playcommand,Frame3"
+			Frame3Command="x,115;y,168;croptop,.14;cropbottom,.77;cropleft,.25;cropright,.645;sleep,.125;Playcommand,Frame4"
+			Frame4Command="x,195;y,166;croptop,.14;cropbottom,.77;cropleft,.125;cropright,.77;sleep,.125;Playcommand,Frame5"
+			Frame5Command="x,275;y,164;croptop,.14;cropbottom,.77;cropleft,0;cropright,.895;sleep,.125;Playcommand,Frame6"
+			Frame6Command="x,-205;y,246;croptop,0;cropbottom,.9;cropleft,.76;cropright,.145;sleep,.125;Playcommand,Frame7"
+			Frame7Command="x,-125;y,248;croptop,0;cropbottom,.9;cropleft,.625;cropright,.27;sleep,.125;Playcommand,Frame8"
+			Frame8Command="x,-205;y,246;croptop,0;cropbottom,.9;cropleft,.76;cropright,.145"
+		/>
+		<Layer
+			Condition="GetClassAnimationNum() == '1'"
+			File="@GetClassPath()"
+			InitCommand="zoomy,1.2;x,155;y,108;croptop,.28;cropbottom,.65;cropleft,.20;cropright,.71"
+			SetCommand="y,108;sleep,.125;addy,2;sleep,.125;addy,2;sleep,.125;addy,-2;sleep,.125;addy,-2;sleep,.125;addy,2;sleep,.125;addy,2;sleep,.125;addy,-2"
+			PulseMessageCommand="finishtweening;playcommand,Set"
+		/>
+		<Layer
+			Condition="GetClassAnimationNum() == '2'"
+			File="@GetClassPath()"
+			InitCommand="zoomy,1.2;x,155;y,106;croptop,.28;cropbottom,.65;cropleft,.20;cropright,.71"
+			SetCommand="y,106;sleep,.125;addy,2;sleep,.125;addy,2;sleep,.125;addy,-2;sleep,.125;addy,-2;sleep,.125;addy,2;sleep,.125;addy,2;sleep,.125;addy,-2"
+			PulseMessageCommand="finishtweening;playcommand,Set"
+		/>
+	</children></Layer>
+	<Layer 
+		File="@GetChocoboOverlay()"
+		InitCommand="zoomy,1.2;Playcommand,Frame1"
+		PulseMessageCommand="finishtweening;playcommand,Frame1"
+		Frame1Command="x,136;y,237;cropleft,.19;cropright,.625;croptop,0;cropbottom,.83;sleep,.125;Playcommand,Frame2"
+		Frame2Command="x,136;y,141;cropleft,.19;cropright,.625;croptop,.17;cropbottom,.67;sleep,.125;Playcommand,Frame3"
+		Frame3Command="x,16;y,237;croptop,0;cropbottom,.83;cropleft,.375;cropright,.43;sleep,.125;Playcommand,Frame4"
+		Frame4Command="x,136;y,141;cropleft,.19;cropright,.625;croptop,.17;cropbottom,.67;sleep,.125;Playcommand,Frame5"
+		Frame5Command="x,136;y,237;cropleft,.19;cropright,.625;croptop,0;cropbottom,.83;sleep,.125;Playcommand,Frame6"
+		Frame6Command="x,256;y,141;cropleft,0;cropright,.81;croptop,.17;cropbottom,.67;sleep,.125;Playcommand,Frame7"
+		Frame7Command="x,256;y,237;cropleft,0;cropright,.81;croptop,0;cropbottom,.83;sleep,.125;Playcommand,Frame8"
+		Frame8Command="x,256;y,141;cropleft,0;cropright,.81;croptop,.17;cropbottom,.67"
+	/>	
+</children></ActorFrame>

@@ -1,0 +1,17 @@
+[Sprite]
+Texture=_sprint trail 1x7.png
+Frame0000=6
+Delay0000=1000000
+Frame0001=0
+Delay0001=0.1
+Frame0002=1
+Delay0002=0.1
+Frame0003=2
+Delay0003=0.1
+Frame0004=3
+Delay0004=0.1
+Frame0005=4
+Delay0005=0.1
+Frame0006=5
+Delay0006=0.1
+

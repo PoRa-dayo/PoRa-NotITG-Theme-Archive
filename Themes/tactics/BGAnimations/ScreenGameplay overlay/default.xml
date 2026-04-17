@@ -1,0 +1,106 @@
+<ActorFrame> <children>
+	<Layer Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-185;queuecommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		TweenOnCommand="hidden,0"
+		TweenOffCommand="hidden,0"
+		> <children>
+
+		<Layer File="meter frame" />
+
+		<Layer
+			Type="SongMeterDisplay"
+			StreamWidth="172"
+			StreamPath="meter stream"
+			OnCommand="x,24;y,4"
+		>
+			<Tip
+				File="tip"
+				OnCommand="hidden,1"
+			/>
+		</Layer>
+
+		<Layer
+			Type="BitmapText"
+			Font="_FFT"
+			OnCommand="y,-34;zoomx,1.25;shadowlength,0;maxwidth,235;hidden,1"
+			InitCommand="animate,0;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%SetFromSongTitleAndCourseTitle"
+		/>
+	</children> </Layer>
+
+	<!-- Difficulty: -->
+	<Layer Type="ActorFrame"
+		OnCommand="sleep,0.5;queuecommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		> <children>
+		
+		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="x,SCREEN_CENTER_X-290;y,SCREEN_CENTER_Y-219" TweenOnCommand="hidden,0" TweenOffCommand="hidden,0"><children>
+			<Actor
+				File="Lv.png"
+				OnCommand="animate,0;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_1) end"
+			/>
+			<Actor
+				File="exp.png"
+				OnCommand="x,120;y,2;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_1) end"
+			/>
+			<Actor
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP1"
+				OnCommand="zoom,1.5;zoomx,1.8;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1)) end"
+			/>
+		</children></ActorFrame>
+		
+		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="x,SCREEN_CENTER_X+51;y,SCREEN_CENTER_Y-219" TweenOnCommand="hidden,0" TweenOffCommand="hidden,0"><children>
+			<Actor
+				File="Lv.png"
+				OnCommand="animate,0;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_2) end"
+			/>
+			<Actor
+				File="exp.png"
+				OnCommand="x,120;y,2;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_2) end"
+			/>
+			<Actor
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP2"
+				OnCommand="zoom,1.5;zoomx,1.8;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2)) end"
+			/>
+		</children></ActorFrame>
+	</children> </Layer>
+    <Layer Type="ActorFrame" Condition="not GAMESTATE:PlayerUsingBothSides()" InitCommand="x,SCREEN_CENTER_X+6;y,SCREEN_CENTER_Y+105"><children>
+        <Layer
+            File="@GetClassShadow(1)"
+        />
+        <Layer
+            File="@GetClassAnimation()"
+            OffCommand="zoom,0"
+        />
+    </children></Layer>
+	<Layer
+		File="@THEME:GetPath( EC_BGANIMATIONS, '', '_boarder' )"
+	/>
+</children> </ActorFrame>
+

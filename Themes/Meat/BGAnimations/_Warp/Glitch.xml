@@ -1,0 +1,49 @@
+<ActorFrame><children>
+	<ActorFrame GoCommand="%function() SOUND:DimMusic(0,8) end" />
+	<Layer Type="ActorFrame" Command="zoom,0" GoCommand="sleep,1;zoom,1" ><children>
+		<Layer Type="Quad" Command="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,0,0,.67,1" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-93;y,SCREEN_CENTER_Y-144;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-93;y,SCREEN_CENTER_Y-110;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X+50;y,SCREEN_CENTER_Y-120;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-233;y,SCREEN_CENTER_Y-166;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-233;y,SCREEN_CENTER_Y-134;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-233;y,SCREEN_CENTER_Y-94;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-233;y,SCREEN_CENTER_Y-62;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-233;y,SCREEN_CENTER_Y-29;rotationy,180;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-233;y,SCREEN_CENTER_Y+3;rotationy,180;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-233;y,SCREEN_CENTER_Y-62;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-233;y,SCREEN_CENTER_Y+51;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-233;y,SCREEN_CENTER_Y+83;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-233;y,SCREEN_CENTER_Y+129;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-233;y,SCREEN_CENTER_Y+161;zoom,.19;zoomx,.23" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-93;y,SCREEN_CENTER_Y+149;zoom,.19;zoomx,.23" />
+		<Layer Type="Quad" Command="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,0,0,.67,.8" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-4;y,SCREEN_CENTER_Y-52;rotationy,180;rotationz,180;zoom,.382" />
+		<Layer File="words" Command="x,SCREEN_CENTER_X-2;y,SCREEN_CENTER_Y+15;rotationy,180;zoom,.382" />
+		<Layer File="GlitchMeat" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+88;zoom,.38" />
+		<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y-290,SCREEN_RIGHT,SCREEN_CENTER_Y-184" />
+		<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y+290,SCREEN_RIGHT,SCREEN_CENTER_Y+176" />
+	</children></Layer>
+	<Layer Type="ActorFrame" Command="%ReverseAspectScale" ><children>
+		<Layer Type="Quad" InitCommand="zoom,0" GoCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,0,.39,.78,0;sleep,.1;linear,.2;diffuse,0,.39,.78,1;sleep,1.45;linear,.2;diffuse,0,0,0,1;sleep,.65;diffuse,0,.39,.78,1;sleep,.1;diffuse,0,0,0,1;sleep,.7;diffuse,1,1,1,1;sleep,.1;diffuse,0,0,0,0;sleep,4;linear,.2;diffuse,0,0,0,1" />
+		<Layer Type="ActorFrame" InitCommand="zoom,0"  GoCommand="fov,120;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,1" ><children>
+			<Layer Type="ActorFrame" GoCommand="rotationx,17;rotationy,17;rotationz,-5;sleep,1.75;zoom,0" ><children>
+				<Layer File="Warp.png" Command="z,-740;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0;diffuse,0,0,0,.1" />
+				<Layer File="Warp.png" Command="z,-410;x,120;y,-120;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0;diffuse,0,0,0,.1" />
+				<Layer File="Warp.png" Command="z,-340;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,-220,0;diffuse,0,0,0,.1" />
+				<Layer File="Warp.png" Command="z,-210;x,70;y,-70;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0;diffuse,0,0,0,.1" />
+				<Layer File="Warp.png" Command="z,-150;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0;diffuse,0,0,0,.1" />
+				<Layer File="Warp.png" Command="z,-50;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,-220,0;diffuse,0,0,0,.1" />
+				<Layer File="Warp.png" Command="z,0;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,-220,0;diffuse,0,0,0,.1" />
+				<Layer File="Warp.png" Command="z,10;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0;diffuse,0,0,0,.1" />
+				<Layer File="Warp.png" Command="z,50;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,-220,0;diffuse,0,0,0,.1" />
+				<Layer File="Warp.png" Command="z,60;rotationx,-17;rotationy,-17;spin;effectmagnitude,0,0,220,0;diffuse,0,0,0,.1" />
+			</children></Layer>
+			<Layer File="MeatWarp1.png" GoCommand="zoom,0;z,-400;zoom,.5;linear,.6;z,110;rotationz,540;sleep,.0;zoom,0" />
+			<Layer File="Glitch.sprite" GoCommand="zoom,0;z,110;sleep,.6;zoom,.22;sleep,1.1;linear,.05;glow,1,1,1,.3;zoomx,.2;zoomy,.25;linear,.05;glow,1,1,1,1;zoomx,.6;zoomy,.03;sleep,.05;zoom,0" />
+			<Layer File="Dot.png" GoCommand="zoom,0;z,110;sleep,1.85;zoom,.2;x,-1;linear,.05;zoomx,.18;zoomy,.21;y,-1;linear,.05;zoomx,.19;x,0;y,0;linear,.05,x,-1;zoom,.2;x,-1;linear,.05;zoomx,.18;zoomy,.21;y,-1;linear,.05;zoomx,.19;x,0;y,0;linear,.05,x,-1;zoom,.2;x,-1;linear,.05;zoomx,.18;zoomy,.21;y,-1;linear,.05;zoomx,.19;x,0;y,0;linear,.05,x,-1;zoom,.2;linear,.05;zoomx,.18;zoomy,.21;y,-1;linear,.05;zoomx,.19;x,0;y,0;linear,.05,x,-1;zoom,.2;x,-1;linear,.05;zoomx,.18;zoomy,.21;y,-1;linear,.05;zoomx,.19;x,0;y,0;linear,.05,x,-1;zoom,.2;x,-1;sleep,0;zoom,0" />
+		</children></Layer>
+	</children></Layer>
+	<ActorFrame GoCommand="queuecommand,Sound1;sleep,.1;queuecommand,Sound2;sleep,1.5;queuecommand,Sound3;sleep,1;queuecommand,Sound4;sleep,.5;queuecommand,Sound5" Sound1Command="%function() Sound('retro Explosion') end" Sound2Command="%function() Sound('retro powerup') end" Sound3Command="%function() Sound('retro Explosion') end" Sound4Command="%function() Sound('retro error') end" Sound5Command="%function() Sound('glitch3') end" />
+	<Layer File="@Path('graphics','_GlitchSounds')" GoCommand="sleep,.3;queuecommand,Glitch" />
+</children></ActorFrame>

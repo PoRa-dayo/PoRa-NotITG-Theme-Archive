@@ -1,0 +1,3 @@
+<ActorFrame><children>
+	<Layer Type="Quad" OnCommand="blend,noeffect;zwrite,1;stretchto,-75*lvlSpd,-5,75*lvlSpd,17" />
+</children></ActorFrame>

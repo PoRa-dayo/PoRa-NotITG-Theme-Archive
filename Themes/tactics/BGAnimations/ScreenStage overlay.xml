@@ -1,0 +1,22 @@
+<ActorFrame>
+	<children>
+		<Actor
+			File="_black"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT;diffusealpha,.5"
+		/>
+			<BitmapText
+				Condition="not GAMESTATE:IsCourseMode()"
+				Font="_FFT2 white"
+				Text="@GetCreditsText()"
+				InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;shadowlength,0;zoom,1.2;zoomx,1.5"
+				OnCommand="cropright,1;faderight,.3;linear,1;cropright,-.3;linear,.1;faderight,0;sleep,.4"
+			/>
+			<BitmapText
+				Condition="GAMESTATE:IsCourseMode()"
+				Font="_FFT2 white"
+				Text="@GetSongName()"
+				InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;shadowlength,0;zoom,1.2;zoomx,1.5"
+				OnCommand="cropright,1;faderight,.3;linear,1;cropright,-.3;linear,.1;faderight,0;sleep,.4"
+			/>
+	</children>
+</ActorFrame>

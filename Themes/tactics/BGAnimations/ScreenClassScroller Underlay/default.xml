@@ -1,0 +1,29 @@
+<ActorFrame> <children>
+	<Layer Class="AutoActor" 
+		File="../Banner underlay" 
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-154;zoomy,.5;diffusealpha,0;linear,.2;zoomy,1;diffusealpha,1" 
+	/>
+	<Layer 
+		File="Frame.png"
+		InitCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y+176"
+	 />
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-194;y,SCREEN_CENTER_Y-101"><children>
+		<Layer 
+			File="../ScreenPlayerOptions underlay/class banner frame.png"
+			OnCommand="horizalign,right;vertalign,bottom"
+		/>
+	</children> </Layer>
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+10" ><children>
+		<Layer 
+			File="@GetClassShadow(1)"
+			OnCommand="x,-180"
+		/>
+		<Layer 
+			File="@GetClassShadow(1)"
+		/>
+		<Layer 
+			File="@GetClassShadow(1)"
+			OnCommand="x,180"
+		/>
+	</children> </Layer>
+</children> </ActorFrame>

@@ -1,0 +1,12 @@
+<ActorFrame> <children>
+	<Layer Type="BitmapText" Font="ScreenEvaluation stats" Text="21234"		OnCommand="y,16*0;zoom,0.4;horizalign,right;ShadowLength,2" />
+	<Layer Type="BitmapText" Font="ScreenEvaluation stats" Text="567"		OnCommand="y,16*1;zoom,0.4;horizalign,right;ShadowLength,2" />
+	<Layer Type="BitmapText" Font="ScreenEvaluation stats" Text="89"		OnCommand="y,16*2;zoom,0.4;horizalign,right;ShadowLength,2" />
+	<Layer Type="BitmapText" Font="ScreenEvaluation stats" Text="10"		OnCommand="y,16*3;zoom,0.4;horizalign,right;ShadowLength,2" />
+	<Layer Type="BitmapText" Font="ScreenEvaluation stats" Text="9"			OnCommand="y,16*4;zoom,0.4;horizalign,right;ShadowLength,2" />
+	<Layer Type="BitmapText" Font="ScreenEvaluation stats" Text="8"			OnCommand="y,16*5;zoom,0.4;horizalign,right;ShadowLength,2" />
+	<Layer Type="BitmapText" Font="ScreenEvaluation stats" Text="76/543"	OnCommand="y,16*6.5;zoom,0.4;horizalign,right;ShadowLength,2" />
+	<Layer Type="BitmapText" Font="ScreenEvaluation stats" Text="2/10"		OnCommand="y,16*7.5;zoom,0.4;horizalign,right;ShadowLength,2" />
+	<Layer Type="BitmapText" Font="ScreenEvaluation stats" Text="123/456"	OnCommand="y,16*8.5;zoom,0.4;horizalign,right;ShadowLength,2" />
+</children> </ActorFrame>
+

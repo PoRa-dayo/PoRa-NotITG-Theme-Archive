@@ -1,0 +1,35 @@
+<ActorFrame> <children>
+	<ActorFrame InitCommand="%function(self) warp = warp + 10 end" />
+	<ActorFrame InitCommand="%function() SetGameplayBlocks() Initialize(blockSizeGameplay,blockXOffsetGameplay,blockYOffsetGameplay,-8,0) end" />
+	<Layer File="BG/bg.xml" />
+	<Layer
+		File="../Obstacles"
+		InitCommand="%ColorSilhouette"
+	/>
+	<Layer File="BG/ground.xml"	/>
+	<Layer File="../Obstacles/Mask" />
+	<Layer
+		Condition="warp == 10 and GAMESTATE:GetNumPlayersEnabled() == 2"
+		File="Brownie.xml"
+		InitCommand="%ColorSilhouette"
+		OnCommand="bob;effectmagnitude,20,0,0"
+		Pass1Command="stopeffect;linear,.6;addx,-300*lvlSpd"
+		Fail1Command="stopeffect,;linear,.1;addx,-50;sleep,.8;linear,1;addx,450*lvlSpd"
+	/>
+	<Layer
+		File="Meatboy.xml"
+		InitCommand="%ColorSilhouette"
+		Fail1Command="sleep,.7;queuecommand,Fail4"
+	/>
+	<Layer
+		Type="ActorFrame"
+		InitCommand="x,576*lvlSpd"
+		Command="%ColorSilhouette"
+		Pass1Command="sleep,.5;x,16;addx,128*lvlSpd;linear,.5;x,16;queuecommand,Animate;queuecommand,Sound"
+	><children>
+		<Layer Condition="goal==0" File="@Bandage()" />
+		<Layer Condition="goal==2" File="@Bandage()..'/warp.xml'" />
+		<Layer Condition="goal==3" File="@Bandage()..'/glitch.xml'" Pass1Command="queuecommand,Glitch" />
+	</children> </Layer>
+</children> </ActorFrame>
+

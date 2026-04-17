@@ -1,0 +1,4 @@
+<ActorFrame><children>
+	<Layer File="ScreenEdit background/default.xml" />
+	<Layer Type="Quad" Command="stretchto,SCREEN_LEFT,SCREEN_BOTTOM,SCREEN_RIGHT,SCREEN_BOTTOM-40;blend,noeffect;zwrite,1" />
+</children></ActorFrame>

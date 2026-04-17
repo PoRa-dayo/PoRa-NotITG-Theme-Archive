@@ -1,0 +1,10 @@
+<ActorFrame><children>
+	<Layer
+		File="Transition.xml"
+		InitCommand="zoomx,0"
+		LeftMessageCommand="finishtweening;queuecommand,Sound;zoomx,1;x,960;linear,.3;x,0;queuecommand,Sound;linear,.3;x,-960;sleep,0;zoomx,0"
+		RightMessageCommand="finishtweening;queuecommand,Sound;zoomx,-1;x,-320;linear,.3;x,640;queuecommand,Sound;linear,.3;x,1600;sleep,0;zoomx,0"
+		SoundCommand="%function() Sound('Whoosh_low3.L.ogg') end"
+	/>	
+	<Layer Type="Quad" OffCommand="sleep,1.3;queuecommand,Sound" SoundCommand="%function() Sound('meat_death4') end" />
+</children></ActorFrame>

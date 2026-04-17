@@ -1,0 +1,15 @@
+<ActorFrame
+    ><children>
+	<Layer
+		File="Title.png"
+		OnCommand="x,-4;y,-37;zoom,.37"
+	/>
+	<Layer
+		File="Meatboy.png"
+		OnCommand="x,-30;y,42;zoom,.37"
+	/>
+	<Layer
+		File="Doctor.png"
+		OnCommand="x,27;y,40;zoom,.37"
+	/>
+	</children></ActorFrame>

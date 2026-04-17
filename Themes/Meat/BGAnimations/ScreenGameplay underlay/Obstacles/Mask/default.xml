@@ -1,0 +1,6 @@
+<ActorFrame><children>
+	<Layer File="@'Obstacle'..obstacle(4)..'.xml'" OnCommand="x,576*lvlSpd;sleep,3.375;queuecommand,Loop" LoopCommand="%function(self) ObstacleLoop(self) end" ClearedMessageCommand="%function(self) ObstacleFinished(self) end" FailedMessageCommand="%function(self) ObstacleFinished(self) end" />
+	<Layer File="@'Obstacle'..obstacle(3)..'.xml'" OnCommand="x,576*lvlSpd;sleep,2.250;queuecommand,Loop" LoopCommand="%function(self) ObstacleLoop(self) end" ClearedMessageCommand="%function(self) ObstacleFinished(self) end" FailedMessageCommand="%function(self) ObstacleFinished(self) end" />
+	<Layer File="@'Obstacle'..obstacle(2)..'.xml'" OnCommand="x,576*lvlSpd;sleep,1.125;queuecommand,Loop" LoopCommand="%function(self) ObstacleLoop(self) end" ClearedMessageCommand="%function(self) ObstacleFinished(self) end" FailedMessageCommand="%function(self) ObstacleFinished(self) end" />
+	<Layer File="@'Obstacle'..obstacle(1)..'.xml'" OnCommand="x,576*lvlSpd;sleep,0.000;queuecommand,Loop" LoopCommand="%function(self) ObstacleLoop(self) end" ClearedMessageCommand="%function(self) ObstacleFinished(self,1) end" FailedMessageCommand="%function(self) ObstacleFinished(self,1) end" />
+</children></ActorFrame>

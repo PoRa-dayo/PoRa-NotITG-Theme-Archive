@@ -1,0 +1,39 @@
+<ActorFrame><children>
+<!-- Obstacle 9: Laser Eye -->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="x,96;sleep,1;queuecommand,Kill"
+	><children>
+		<Layer Type="ActorFrame" InitCommand="x,-43;rotationz,18" ><children>
+			<Layer Type="Quad" OnCommand="stretchto,-150,-8,9,8;zwrite,1;blend,noeffect" />
+		</children></Layer>
+		<Layer Type="ActorFrame" InitCommand="x,43;rotationz,-18" ><children>
+			<Layer Type="Quad" OnCommand="stretchto,-9,-8,150,8;zwrite,1;blend,noeffect" />
+		</children></Layer>
+		<Layer Type="Quad" OnCommand="stretchto,-180,-5,-32,7;zwrite,1;blend,noeffect" />
+		<Layer Type="Quad" OnCommand="stretchto,-180,-20,-80,7;zwrite,1;blend,noeffect" />
+		<Layer Type="Quad" OnCommand="stretchto,-180,-35,-130,7;zwrite,1;blend,noeffect" />
+		<Layer Type="Quad" OnCommand="stretchto,180,-5,32,7;zwrite,1;blend,noeffect" />
+		<Layer Type="Quad" OnCommand="stretchto,180,-20,80,7;zwrite,1;blend,noeffect" />
+		<Layer Type="Quad" OnCommand="stretchto,180,-35,130,7;zwrite,1;blend,noeffect" />
+		<Layer Type="Quad" OnCommand="stretchto,-200,-52,200,-200;zwrite,1;blend,noeffect" />
+		<Layer File="@'block'..world..'.png'" Command="x,40;y,3;zoom,.5" />
+		<Layer File="@'block'..world..'.png'" Command="x,-40;y,3;zoom,.5" KillCommand="zoom,0"/>
+		<Layer
+			Type="ActorFrame"
+			InitCommand="rotationz,-180;y,4"
+			GoCommand="rotationz,-180;sleep,2.2;linear,.5;rotationz,0;sleep,1"
+		><children>
+			<Layer
+				File="Laser.sprite"
+				OnCommand="x,96;zoomx,.65;zoomy,.5;ztest,1"
+				KillCommand="ztest,0;zoomx,1"
+			/>
+			<Layer
+				File="Eye.sprite"
+				OnCommand="zoom,.4"
+			/>
+		</children></Layer>
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.85;queuecommand,Jump3" />
+</children></ActorFrame>

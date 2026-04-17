@@ -1,0 +1,17 @@
+<ActorFrame><children>
+<!-- Obstacle 30: Water Pit - Retro -->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="addx,48"
+	><children>
+		<Layer Type="Quad" OnCommand="stretchto,-90,27,90,55;diffuse,#000000;blend,noeffect;zwrite,1" />
+		<Layer
+			File="Water.sprite"
+			OnCommand="zoom,.5;y,25;ztest,1"
+		/>
+		<Layer File="ground mask.png" OnCommand="zoom,.5;x,-32;y,19;blend,noeffect;zwrite,1" />
+		<Layer File="ground mask.png" OnCommand="zoom,.5;y,19;blend,noeffect;zwrite,1" />
+		<Layer File="ground mask.png" OnCommand="zoom,.5;x,32;y,19;blend,noeffect;zwrite,1" />
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.85;queuecommand,Jump3" />
+</children></ActorFrame>

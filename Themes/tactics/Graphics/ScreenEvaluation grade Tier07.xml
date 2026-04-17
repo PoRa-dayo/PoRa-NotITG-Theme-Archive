@@ -1,0 +1,116 @@
+<ActorFrame><children>
+	<ActorFrame
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		InitCommand="x,500"
+		><children>
+		<ActorFrame Condition="not GAMESTATE:IsCourseMode()"><children>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() >= 17"
+				File="@GetClassPath('052')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 16"
+				File="@GetClassPath('022')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 15"
+				File="@GetClassPath('060')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 14"
+				File="@GetClassPath('059')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 13"
+				File="@GetClassPath('120')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 12"
+				File="@GetClassPath('108')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 11"
+				File="@GetClassPath('093')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 10"
+				File="@GetClassPath('077')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() <= 9"
+				File="@GetClassPath('107')"
+				InitCommand="@GetClassBanner()"
+			/>
+		</children></ActorFrame>
+		<Layer
+			Condition="GAMESTATE:IsCourseMode()"
+			File="@GetClassPath('099')"
+			InitCommand="@GetClassBanner()"
+		/>
+	</children></ActorFrame>
+	<ActorFrame
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		InitCommand="x,-500"
+		><children>
+		<ActorFrame Condition="not GAMESTATE:IsCourseMode()"><children>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() >= 17"
+				File="@GetClassPath('052')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 16"
+				File="@GetClassPath('022')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 15"
+				File="@GetClassPath('060')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 14"
+				File="@GetClassPath('059')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 13"
+				File="@GetClassPath('120')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 12"
+				File="@GetClassPath('108')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 11"
+				File="@GetClassPath('093')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 10"
+				File="@GetClassPath('077')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() <= 9"
+				File="@GetClassPath('107')"
+				InitCommand="@GetClassBanner()"
+			/>
+		</children></ActorFrame>
+		<Layer
+			Condition="GAMESTATE:IsCourseMode()"
+			File="@GetClassPath('099')"
+			InitCommand="@GetClassBanner()"
+		/>
+	</children></ActorFrame>
+</children></ActorFrame>

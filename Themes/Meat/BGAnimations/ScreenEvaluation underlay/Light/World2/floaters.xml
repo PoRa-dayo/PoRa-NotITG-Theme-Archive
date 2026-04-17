@@ -1,0 +1,18 @@
+<ActorFrame><children>
+	<Layer 
+		Type="ActorFrame"
+		InitCommand="x,SCREEN_CENTER_X-190;y,SCREEN_CENTER_Y-30;queuecommand,Register" RegisterCommand="%function(self) Register(self,-18,-13,18,17,5) bounce[n] = 1 self:sleep(3) self:queuecommand('Move1') end"
+		Move1Command="%function(self) i = math.random()/30-.015 Move(self,(.05-i)*(math.random(0,1)*2-1),(.05+i)*(math.random(0,1)*2-1),0,-G) end" 
+		MoveCommand="%function(self) Update(self) end"
+	><children>
+		<Layer File="Floater.png" OnCommand="zoomx,.30;zoomy,.22;y,2;queuecommand,Animate" AnimateCommand="linear,1;zoomx,.24;zoomy,.29;linear,1;zoomx,.3;zoomy,.22;queuecommand,Animate" />
+	</children></Layer>
+	<Layer 
+		Type="ActorFrame"
+		InitCommand="x,SCREEN_CENTER_X+190;y,SCREEN_CENTER_Y-30;queuecommand,Register" RegisterCommand="%function(self) Register(self,-18,-13,18,17,5) bounce[n] = 1 self:sleep(3) self:queuecommand('Move1') end"
+		Move1Command="%function(self) i = math.random()/30-.015 Move(self,(.05-i)*(math.random(0,1)*2-1),(.05+i)*(math.random(0,1)*2-1),0,-G) end" 
+		MoveCommand="%function(self) Update(self) end"
+	><children>
+		<Layer File="Floater.png" OnCommand="zoomx,.30;zoomy,.22;y,2;queuecommand,Animate" AnimateCommand="linear,1;zoomx,.24;zoomy,.29;linear,1;zoomx,.3;zoomy,.22;queuecommand,Animate" />
+	</children></Layer>
+</children></ActorFrame>

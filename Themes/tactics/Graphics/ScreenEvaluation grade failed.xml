@@ -1,0 +1,126 @@
+<ActorFrame><children>
+	<ActorFrame
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		InitCommand="x,500"
+		><children>
+		<Layer Type="BitmapText"
+			Font="_FFT2 white"
+			Text="Failed..."
+			InitCommand="horizalign,left;shadowlength,0;zoomx,1.25;y,48;x,-90"
+		/>
+		<ActorFrame Condition="not GAMESTATE:IsCourseMode()"><children>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() >= 17"
+				File="@GetClassPath('042')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 16"
+				File="@GetClassPath('056')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 15"
+				File="@GetClassPath('056')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 14"
+				File="@GetClassPath('053')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 13"
+				File="@GetClassPath('053')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 12"
+				File="@GetClassPath('063')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 11"
+				File="@GetClassPath('063')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() == 10"
+				File="@GetClassPath('055')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() <= 9"
+				File="@GetClassPath('055')"
+				InitCommand="@GetClassBanner()"
+			/>
+		</children></ActorFrame>
+		<Layer
+			Condition="GAMESTATE:IsCourseMode()"
+			File="@GetClassPath('046')"
+			InitCommand="@GetClassBanner()"
+		/>
+	</children></ActorFrame>
+	<ActorFrame
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		InitCommand="x,-500"
+		><children>
+		<Layer Type="BitmapText"
+			Font="_FFT2 white"
+			Text="Failed..."
+			InitCommand="horizalign,left;shadowlength,0;zoomx,1.25;y,48;x,-280"
+		/>
+		<ActorFrame Condition="not GAMESTATE:IsCourseMode()"><children>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() >= 17"
+				File="@GetClassPath('042')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 16"
+				File="@GetClassPath('056')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 15"
+				File="@GetClassPath('056')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 14"
+				File="@GetClassPath('053')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 13"
+				File="@GetClassPath('053')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 12"
+				File="@GetClassPath('063')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 11"
+				File="@GetClassPath('063')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() == 10"
+				File="@GetClassPath('055')"
+				InitCommand="@GetClassBanner()"
+			/>
+			<Layer
+				Condition="GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() <= 9"
+				File="@GetClassPath('055')"
+				InitCommand="@GetClassBanner()"
+			/>
+		</children></ActorFrame>
+		<Layer
+			Condition="GAMESTATE:IsCourseMode()"
+			File="@GetClassPath('046')"
+			InitCommand="@GetClassBanner()"
+		/>
+	</children></ActorFrame>
+</children></ActorFrame>

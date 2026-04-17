@@ -1,0 +1,154 @@
+<ActorFrame OnCommand="%function(self)
+	DWI_slwalk = 1;
+	TestMode = false;
+
+	if not Profile().DWISongs then
+		InitializeProfile()
+	end
+
+	function UpdateTime()  return 0.01 + ( math.random(60,300) / ( table.getn( SONGMAN:GetAllSongs() ) * 8) ) end
+
+end"><children>
+	
+	<Layer
+		File="@ThemeFile('dwi2-credits')"
+		OnCommand="%function(self)
+		self:x(SCREEN_RIGHT-150)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(1);
+		self:fadetop(0.2)
+		self:fadebottom(0.2)
+		end"
+		/>
+
+		<Layer Font="Common Normal" Text="" OnCommand="x,20;y,120;zoom,0.55;shadowlength,0;diffuse,#efef9f;horizalign,left;queuecommand,Hardware"
+			HardwareCommand="%function(self) self:settext('(starting)'); self:sleep(0.8); self:queuecommand('UpdateSongs') end"
+			UpdateSongsCommand="%function(self)
+			local DWI_songlist = SONGMAN:GetAllSongs()
+				if DWI_slwalk >= table.getn(DWI_songlist) then
+					self:settext('(done)');
+					if table.getn( DWI_songlist ) > Profile().DWISongs then
+						self:sleep(0.25)
+						self:queuecommand('NewSongWarning')
+					else
+						self:sleep(0.25)
+						self:queuecommand('SendToTitleScreen')
+					end
+				else					
+					self:settext('' ..DWI_GroupName(DWI_songlist[DWI_slwalk]).. '/' ..DWI_songlist[DWI_slwalk]:GetDisplayMainTitle() );
+					DWI_slwalk = DWI_slwalk + 6;
+					self:sleep( UpdateTime() );
+					self:queuecommand('UpdateSongs');
+				end
+			end"
+			NewSongWarningCommand="%function(self)
+			if not TestMode then
+				SCREENMAN:SetNewScreen('ScreenNewSongs')
+			end
+			end"
+			SendToTitleScreenCommand="%function(self)
+			if not TestMode then
+				SCREENMAN:SetNewScreen('ScreenTitleMenu')
+			end
+			end"
+			/>
+
+		<Layer Font="Common Normal" Text="Please wait - Searching for files..." OnCommand="x,20;y,40;zoom,0.8;shadowlength,0;horizalign,left;" />
+		<Layer Type="Quad" OnCommand="x,20;y,95;horizalign,left;zoomtowidth,SCREEN_WIDTH*0.95;zoomy,16;diffuse,0,0,0,1" 
+			/>
+		<Layer Type="Quad" OnCommand="x,20;y,95;horizalign,left;zoomtowidth,SCREEN_WIDTH*0.95;zoomy,16;diffusetopedge,#0808ff;diffusebottomedge,#7878ff;cropright,1;queuecommand,Start" 
+			StartCommand="%function(self)
+			self:sleep(0.4);
+			self:queuecommand('UpdateBar')
+			end"
+			UpdateBarCommand="%function(self)
+			local DWI_songlist = SONGMAN:GetAllSongs()
+			if DWI_slwalk >= table.getn(DWI_songlist) then
+				self:cropright(0)
+			else
+				self:cropright( ( table.getn(DWI_songlist) - (DWI_slwalk) ) / table.getn(DWI_songlist) )
+			end
+			self:sleep( UpdateTime() );
+			self:queuecommand('UpdateBar')
+			end"
+			/>
+		<Layer File="@ThemeFile('LoadingSongBar')" OnCommand="x,20;y,95;shadowlength,0;horizalign,left;zoomtowidth,SCREEN_WIDTH*0.95" />
+		<Layer Font="Common Normal" Text="Examining song folders..." OnCommand="x,20;y,70;zoom,0.6;diffuse,0.5,0.5,0.5,1;shadowlength,0;horizalign,left;" />
+
+		<Layer Font="Common Normal" Text="" OnCommand="x,SCREEN_RIGHT-20;y,73;zoom,0.4;shadowlength,0;horizalign,right;diffuse,0.5,0.5,0.5,1;queuecommand,Hardware"
+			HardwareCommand="%function(self) self:settext('Analizing folders and song contents'); self:sleep(0.8); self:queuecommand('UpdateSongs') end"
+			UpdateSongsCommand="%function(self)
+			local DWI_songlist = SONGMAN:GetAllSongs()
+				if DWI_slwalk >= table.getn(DWI_songlist) then
+					self:settext( table.getn(DWI_songlist) ..' / '.. table.getn(DWI_songlist) );
+					if table.getn( DWI_songlist ) > Profile().DWISongs then
+						self:sleep(0.25)
+						self:queuecommand('NewSongWarning')
+					else
+						self:sleep(0.25)
+						self:queuecommand('SendToTitleScreen')
+					end
+				else					
+					self:settext( DWI_slwalk ..' / '.. table.getn(DWI_songlist) );
+					DWI_slwalk = DWI_slwalk + 6;
+					self:sleep( UpdateTime() );
+					self:queuecommand('UpdateSongs');
+				end
+			end"
+			NewSongWarningCommand="%function(self)
+			if not TestMode then
+				SCREENMAN:SetNewScreen('ScreenNewSongs')
+			end
+			end"
+			SendToTitleScreenCommand="%function(self)
+			if not TestMode then
+				SCREENMAN:SetNewScreen('ScreenTitleMenu')
+			end
+			end"
+			/>
+
+			<Layer
+        Font="_sui generis"
+        Text="Version text"
+        OnCommand="%function(self)
+        self:x(SCREEN_LEFT+15)
+        self:y(SCREEN_BOTTOM-15)
+        self:horizalign('left')
+        self:vertalign('bottom')
+        self:zoom(0.4);
+        self:diffuse(0.5,0.5,0.5,1)
+        if FUCK_EXE then
+        	self:settext( 'DWI - NotITG Version\nV'.. DWIVersion() ..' - '.. DWIVerDate() )
+        	self:diffuse(0.5,0.75,0.5,1)
+        elseif OPENITG then
+        	self:settext( 'DWI - OpenITG Version\nV'.. DWIVersion() ..' - '.. DWIVerDate() )
+        	self:diffuse(0.75,0.5,0.5,1)
+        else
+        	self:settext( 'DWI - SM (UNSTABLE) Version\nV'.. DWIVersion() ..' - '.. DWIVerDate() )
+        	self:diffuse(0.5,0.5,0.5,1)
+        end
+
+        if TestMode then
+        	self:addy(-30)
+        end
+        end"
+        />
+
+        <Layer
+        Font="_sui generis"
+        Text="Version text"
+        OnCommand="%function(self)
+        self:x(SCREEN_LEFT+15)
+        self:y(SCREEN_BOTTOM-15)
+        self:horizalign('left')
+        self:vertalign('bottom')
+        self:zoom(0.4);
+        self:diffuse(0,0,0,0)
+        if TestMode then
+			self:diffuse(1,0.5,0.5,1)
+        	self:settext( 'TEST MODE ENABLED\nScreen Will NOT Change until Test Mode is disabled.' )
+        end
+        end"
+        />
+
+	</children></ActorFrame>

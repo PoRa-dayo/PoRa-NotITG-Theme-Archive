@@ -1,0 +1,7 @@
+<ActorFrame> <children>
+	<ActorFrame> <children>
+		<Layer
+			File="underlay.png"
+		/>
+	</children></ActorFrame>
+</children> </ActorFrame>

@@ -1,0 +1,14 @@
+	<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+
+		</children></Layer>
+	<ActorFrame
+		OnCommand="%function(self)
+		x = SCREEN_CENTER_X; y = SCREEN_CENTER_Y
+		Register(self,x-65,y+209,x+65,y+228,4)
+		end"
+	/>
+</children></ActorFrame>

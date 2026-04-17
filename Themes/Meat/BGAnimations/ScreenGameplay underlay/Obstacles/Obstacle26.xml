@@ -1,0 +1,21 @@
+<ActorFrame><children>
+<!-- Obstacle 26: Repeller with Pit -->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="x,48"
+	><children>
+		<Layer
+			File="Repeller outline.png"
+			Command="y,-1000;ztest,1;queuecommand,Pulse"
+			GoCommand="y,16"
+			PulseCommand="zoom,0;diffusealpha,1;linear,.5;zoom,.7;diffusealpha,0;queuecommand,Pulse"
+		/>
+		<Layer
+			File="Repeller.png"
+			Command="zoom,.2;y,-1000;spin;effectmagnitude,0,0,360;ztest,1"
+			GoCommand="y,16"
+		/>
+		<Layer Type="Quad" OnCommand="stretchto,-80,10,80,28;blend,noeffect;zwrite,1" />
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.75;queuecommand,Jump5" />
+</children></ActorFrame>

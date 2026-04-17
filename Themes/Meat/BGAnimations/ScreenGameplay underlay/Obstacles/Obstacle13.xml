@@ -1,0 +1,19 @@
+<ActorFrame><children>
+<!-- Obstacle 13: Maggots -->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="addx,56"
+	><children>
+		<Layer Type="Quad" OnCommand="stretchto,-70,27,70,55;diffuse,#000000;blend,noeffect;zwrite,1" />
+
+		<Layer File="Maggots.sprite" OnCommand="zoom,.3;x,-38;y,23;rotationz,-30;ztest,1" />
+		<Layer File="Maggots.sprite" OnCommand="zoom,.3;x,36;y,23;rotationy,180;rotationz,-30;ztest,1" />
+		<Layer File="Maggots.sprite" OnCommand="zoom,.3;x,-13;y,20;rotationz,5;ztest,1" />
+		<Layer File="Maggots.sprite" OnCommand="zoom,.3;x,13;y,18;rotationz,-5;ztest,1" />
+		
+		<Layer File="ground mask.png" OnCommand="zoom,.5;x,-32;y,18;blend,noeffect;zwrite,1" />
+		<Layer File="ground mask.png" OnCommand="zoom,.5;y,18;blend,noeffect;zwrite,1" />
+		<Layer File="ground mask.png" OnCommand="zoom,.5;x,32;y,18;blend,noeffect;zwrite,1" />
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.85;queuecommand,Jump3" />
+</children></ActorFrame>

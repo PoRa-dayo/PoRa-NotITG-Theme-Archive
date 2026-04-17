@@ -1,0 +1,7 @@
+<ActorFrame><children>
+	<Layer
+		File="_award models/100G"
+		InitCommand="playcommand,Animate"
+		AnimateCommand="x,40;cropleft,0;cropright,.69;sleep,.15;x,0;cropleft,.33;cropright,.33;sleep,.15;x,40;cropleft,.0;cropright,.69;sleep,.15;x,-40;cropleft,.66;cropright,0;sleep,.15;queuecommand,Animate"
+	/>
+</children></ActorFrame>

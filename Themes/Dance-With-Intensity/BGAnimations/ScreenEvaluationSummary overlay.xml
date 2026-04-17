@@ -1,0 +1,117 @@
+<ActorFrame><children>
+    <Layer
+        File="@ThemeFile('Common fallback banner')"
+        OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X)
+        self:y(SCREEN_CENTER_Y-140)
+        end"
+        />
+	<Layer
+        Font="_sg stroke"
+        Text="0"
+        Condition="not GAMESTATE:IsCourseMode()"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-170;zoom,0.5;draworder,90;diffusetopedge,0,0.5,1,1"
+        OnCommand="%function(self)
+        if GAMESTATE:StageIndex() == 1 then
+            self:settext( GAMESTATE:StageIndex().. ' Stage Total' )
+        elseif GAMESTATE:StageIndex() > 1 then
+            self:settext( GAMESTATE:StageIndex().. ' Stages Total' )
+        else
+            self:settext('No Data Found')
+        end
+        end"
+        />
+
+	<Layer
+		Font="_sg stroke"
+		Text="0"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+140;zoom,0.5"
+		OnCommand="%function(self)
+			self:settext( 'TOTAL' )
+		end"
+		/>
+	<Layer
+		Font="_sg stroke"
+		Text="0"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+160;zoom,0.5"
+		OnCommand="%function(self)
+			self:settext( 'PERCENTAGE' )
+		end"
+		/>
+
+        <!-- Scores -->
+        <Layer File="ScoresEvaluationStage.xml" OnCommand="%function(self) ScoreType = 'Total'; end" />
+
+	<Layer
+		Font="_score"
+		Text="0"
+		InitCommand="diffuse,68/255,187/255,238/255,1;x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y+140;zoom,1;horizalign,right;draworder,90;sleep,0.1;queuecommand,ShowScore"
+		ScoreChangedP1MessageCommand="%function(self)
+			self:settext( GetTotalScore(PLAYER_1) )
+		end"
+		ShowScoreCommand="%function(self)
+        if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
+			self:settext( GetTotalScore(PLAYER_1) )
+			self:zoom(0)
+			self:sleep(0.2*7)
+			self:bounceend(0.4)
+			self:zoom(1)
+        else
+            self:settext('        ')
+        end
+		end"
+		/>
+
+	<Layer
+		Font="_gpscore P1"
+		Text=" 0.00%"
+		InitCommand="x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y+160;zoom,1;horizalign,right;draworder,90;sleep,0.1;"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		OnCommand="%function(self)
+			CalculatePercentage(self, PLAYER_1, 'Accum')
+		self:queuecommand('ShowScore')
+		end"
+			ShowScoreCommand="%function(self)
+			self:zoom(0)
+			self:sleep(0.2*7)
+			self:bounceend(0.4)
+			self:zoom(1)
+		end"
+		/>
+
+	<Layer
+		Font="_score"
+		Text="0"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		InitCommand="diffuse,238/255,221/255,0,1;x,SCREEN_CENTER_X+60;y,SCREEN_CENTER_Y+140;zoom,1;horizalign,left;draworder,90;sleep,0.1;queuecommand,ShowScore"
+		ScoreChangedP1MessageCommand="%function(self)
+			self:settext( GetTotalScore(PLAYER_2) )
+		end"
+		ShowScoreCommand="%function(self)
+			self:settext( GetTotalScore(PLAYER_2) )
+			self:zoom(0)
+			self:sleep(0.2*7)
+			self:bounceend(0.4)
+			self:zoom(1)
+		end"
+		/>
+	<Layer
+		Font="_gpscore P2"
+		Text=" 0.00%"
+		InitCommand="x,SCREEN_CENTER_X+60;y,SCREEN_CENTER_Y+160;zoom,1;horizalign,left;draworder,90;sleep,0.1"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		OnCommand="%function(self)
+			CalculatePercentage(self, PLAYER_2, 'Accum')
+		self:queuecommand('ShowScore')
+		end"
+			ShowScoreCommand="%function(self)
+			self:zoom(0)
+			self:sleep(0.2*7)
+			self:bounceend(0.4)
+			self:zoom(1)
+		end"
+		/>
+
+        <!-- ""Profile"" Picture and ""Game Periferal"" for players-->
+            <Layer  File="ProfileInfo.xml" />
+</children></ActorFrame>

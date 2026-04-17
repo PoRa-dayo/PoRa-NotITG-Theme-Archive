@@ -1,0 +1,41 @@
+<ActorFrame><children>
+<!-- Obstacle 20: Two Salt Piles with Missile -->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="addx,136"
+	><children>
+		<Layer Type="Quad" OnCommand="stretchto,-160*lvlSpd,27,100*lvlSpd,55;blend,noeffect;zwrite,1" />
+		<Layer
+			File="Salt1.png"
+			OnCommand="zoom,.3;x,-128*lvlSpd;y,29;ztest,1"
+		/>
+		<Layer
+			File="Salt1.png"
+			OnCommand="zoom,.3;x,-128*lvlSpd+16;y,27;ztest,1"
+		/>
+		<Layer
+			File="Salt2.png"
+			OnCommand="zoom,.3;x,-24;y,16;rotationz,20;ztest,1"
+		/>
+		<Layer
+			File="Salt1.png"
+			OnCommand="zoom,.3;x,0;y,20;rotationz,-5;ztest,1"
+		/>
+		<Layer
+			File="Salt1.png"
+			OnCommand="zoom,.3;x,24;y,20;rotationz,5;ztest,1"
+		/>
+		<Layer
+			File="Salt1.png"
+			OnCommand="zoom,.3;x,38;y,24;rotationz,15;ztest,1"
+		/>
+		<Layer
+			File="Salt2.png"
+			OnCommand="zoom,.3;x,56;y,17;rotationy,180;rotationz,20;ztest,1"
+		/>
+		<Layer File="Missile.xml" GoCommand="sleep,1.25;queuecommand,Animate" />
+		<Layer Type="Quad" OnCommand="stretchto,-128*lvlSpd-16,10,-128*lvlSpd+32,28;blend,noeffect;zwrite,1" />
+		<Layer Type="Quad" OnCommand="stretchto,-32,10,64,28;blend,noeffect;zwrite,1" />
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.55;queuecommand,Jump1;sleep,.48;queuecommand,Jump2" />
+</children></ActorFrame>

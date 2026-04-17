@@ -1,0 +1,24 @@
+<ActorFrame> <children>
+	<ActorFrame NextCourseSongMessageCommand="%function() lvlCount[8] = lvlCount[8]+1 SetLevel() end" />
+	<Layer 
+		Type="Quad" 
+		Command="zoom,0" 
+		Pass1Command="Stretchto,-SCREEN_CENTER_X,-240,SCREEN_CENTER_X,240;diffuse,#000000"
+		Fail1Command="Stretchto,-SCREEN_CENTER_X,-240,SCREEN_CENTER_X,240;diffuse,#000000"
+	/>
+	<Layer
+		File="@LevelType()..'/World'..world..'/level' .. level .. '/bg1.png'"
+		Command="y,27;zoomx,2;vertalign,bottom;customtexturerect,0,0,2,1;texcoordvelocity,.2*lvlSpd,0"
+		FinishedCommand="texcoordvelocity,0,0"
+		NextCourseSongMessageCommand="sleep,1.5;queuecommand,Load"
+		LoadCommand="%function(self) self:Load(Path('BGAnimations','ScreenGameplay underlay/Tip/BG/'..LevelType()..'/World'..world..'/level' .. level .. '/bg1.png')) end"
+	/>
+	<Layer
+		File="@LevelType()..'/World'..world..'/level' .. level .. '/bg2.png'"
+		Command="y,27;zoomy,.5;vertalign,bottom;customtexturerect,0,0,2,1;texcoordvelocity,.25*lvlSpd,0"
+		FinishedCommand="texcoordvelocity,0,0"
+		NextCourseSongMessageCommand="sleep,1.5;queuecommand,Load"
+		LoadCommand="%function(self) self:Load(Path('BGAnimations','ScreenGameplay underlay/Tip/BG/'..LevelType()..'/World'..world..'/level' .. level .. '/bg2.png')) end"
+	/>
+</children> </ActorFrame>
+

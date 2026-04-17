@@ -1,0 +1,22 @@
+<ActorFrame><children>
+	<Layer File="lava balls.xml" />
+	<Layer
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+		<Layer File="lava fall.sprite" OnCommand="zoom,.55;y,27" />
+		<Layer File="lava fall.sprite" OnCommand="zoom,.55;y,107" />
+
+		<Layer File="lava pit.sprite" Command="y,172;zoom,.65" />
+
+	</children></Layer>
+
+	<ActorFrame
+		OnCommand="%function(self)
+		x = SCREEN_CENTER_X; y = SCREEN_CENTER_Y
+
+		Register(self,x-16,y-30,x+16,y+160,4)
+		Register(self,x-65,y+160,x+65,y+178,4)
+		end"
+	/>
+</children></ActorFrame>

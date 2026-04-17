@@ -1,0 +1,18 @@
+<ActorFrame><children>
+<!-- Obstacle 21: Saw with Missile -->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="addx,24"
+	><children>
+		<Layer
+			Type="Quad"
+			OnCommand="stretchto,-29,27,35,55;diffuse,#000000;blend,noeffect;zwrite,1"
+		/>
+		<Layer
+			File="saw.xml"
+			OnCommand="zoom,.38;y,23;x,3;spin;effectmagnitude,0,0,-360;ztest,1"
+		/>
+		<Layer File="Missile.xml" GoCommand="sleep,1.25;queuecommand,Animate" />
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.95;queuecommand,Jump2" />
+</children></ActorFrame>

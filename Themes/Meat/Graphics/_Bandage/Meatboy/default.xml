@@ -1,0 +1,39 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		Command="%function(self) self:zoom(1.7*blockSize/50) end"
+	><children>
+		<Layer
+			File="fetus.sprite"
+			InitCommand="x,1;y,-21;zoom,0;Animate,0"
+			AnimateCommand="finishtweening;Setstate,0;Animate,1;y,-21;sleep,1;zoomx,.55;zoomy,.35;linear,.05;zoomx,.4;zoomy,.5;linear,.05;zoom,.47;linear,.1;y,-1;sleep,0.6;zoom,0;sleep,2"
+		/>
+		<ActorFrame
+			SoundCommand="%function(self) self:sleep(1) self:queuecommand('Sound1') self:sleep(.2) self:queuecommand('Sound2') self:sleep(.4) self:queuecommand('Sound3') end" 
+			Sound1Command="%function() Sound('Whoosh_high1.L.ogg') end" 
+			Sound2Command="%function() Sound('Whoosh_low1.L.ogg') end"
+			Sound3Command="%function() Sound('Fetus_poof_no synth.ogg') end"
+		/>
+		<Layer
+			File="Bandage"
+			InitCommand="zoom,.28"
+			ResetMessageCommand="stoptweening;zoom,.28"
+			AnimateCommand="sleep,1.8;zoom,0"
+		/>
+		<Layer
+			File="cloak.sprite"
+			InitCommand="x,1;y,-1;zoom,0;Animate,0"
+			AnimateCommand="finishtweening;Setstate,0;Animate,1;sleep,1.6;zoom,.47;sleep,.3;zoom,0;sleep,2"
+		/>
+		<Layer
+			File="smoke.sprite"
+			InitCommand="x,2;y,-12;zoom,0;Animate,0;diffuse,#000000"
+			AnimateCommand="finishtweening;Setstate,0;Animate,1;sleep,1.75;zoom,.47;sleep,0.8;zoom,0;sleep,2"
+		/>
+		<Layer
+			File="smoke.sprite"
+			InitCommand="x,2;y,-12;zoom,0;Animate,0;diffuse,#222222;rotationy,180"
+			AnimateCommand="finishtweening;Setstate,0;Animate,1;sleep,1.75;zoom,.36;sleep,0.8;zoom,0;sleep,2"
+		/>
+	</children></Layer>
+</children></ActorFrame>

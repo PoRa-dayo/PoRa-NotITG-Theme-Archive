@@ -1,0 +1,11 @@
+<ActorFrame><children>
+	<Layer Type="Quad" InitCommand="diffuse,0,0,0,1" Command="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM" />
+	<Layer File="Text1" Command="x,SCREEN_CENTER_X-102;y,SCREEN_CENTER_Y-110;zoom,.3;zoomx,.27" />
+	<Layer File="Text2" Command="x,SCREEN_CENTER_X+82;y,SCREEN_CENTER_Y-110;zoom,.3;zoomx,.27" />
+	<Layer File="Text3" Command="x,SCREEN_CENTER_X-53;y,SCREEN_CENTER_Y+12;zoom,.29;zoomx,.27" />
+	<Layer Font="_Meat" Text="-" Command="shadowlength,0;x,SCREEN_CENTER_X+53;y,SCREEN_CENTER_Y+7;zoom,.68;zoomx,.53" />
+	<Layer Font="_Meat" Text="1" Command="shadowlength,0;x,SCREEN_CENTER_X+71;y,SCREEN_CENTER_Y+9;zoom,.68;zoomx,.6" />
+	<Layer File="x" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+71;zoom,.32" />
+	<Layer Font="_Meat" Text="" Command="shadowlength,0;x,SCREEN_CENTER_X+44;y,SCREEN_CENTER_Y+63;zoom,.88;zoomx,.78" InitCommand="%function(self) s = NumStagesLeft() if GAMESTATE:IsEventMode() then s = '3' end self:settext(s) end" />
+	<Layer File="glitchmeat.png" Command="x,SCREEN_CENTER_X-50;y,SCREEN_CENTER_Y+62;zoom,.3" />
+</children></ActorFrame>

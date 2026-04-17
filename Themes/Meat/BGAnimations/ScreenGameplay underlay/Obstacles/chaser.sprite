@@ -1,0 +1,19 @@
+[Sprite]
+Texture=_Chaser 7x1.png
+Frame0000=0
+Delay0000=100
+Frame0001=1
+Delay0001=100
+Frame0002=2
+Delay0002=100
+Frame0003=3
+Delay0003=.05
+Frame0004=4
+Delay0004=.05
+Frame0005=5
+Delay0005=.05
+Frame0006=6
+Delay0006=.05
+Frame0007=1
+Delay0007=100
+

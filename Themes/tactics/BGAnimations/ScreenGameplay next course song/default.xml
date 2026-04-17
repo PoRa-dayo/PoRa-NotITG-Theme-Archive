@@ -1,0 +1,10 @@
+<ActorFrame> <children>
+	<Layer
+		Font="_FFT2 white"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;shadowlength,0;zoom,1.2;zoomx,1.5"
+		NextCourseSongMessageCommand="%function(self) self:settext( GAMESTATE:Env().NextSong:GetDisplayFullTitle() ) end"
+		StartCommand="cropleft,0;fadeleft,0;cropright,1;faderight,.3;linear,.4;cropright,-.3;linear,.1;faderight,0"
+		FinishCommand="sleep,.4;fadeleft,.2;cropleft,-.3;linear,.4;cropleft,1"
+	/>
+</children> </ActorFrame>

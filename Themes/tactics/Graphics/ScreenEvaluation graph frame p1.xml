@@ -1,0 +1,7 @@
+<ActorFrame> <children>
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-55;zoom,0;sleep,.5;linear,.2;zoom,1"> <children>
+		<Layer File="graph frame.png" />
+		<Layer Type="BitmapText" Font="_FFT2 white" Text="Player 1"		OnCommand="y,-36;x,-93;zoomx,1.25;ShadowLength,0" />
+	</children> </Layer>
+</children> </ActorFrame>
+

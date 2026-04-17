@@ -1,0 +1,69 @@
+<ActorFrame> <children>
+	<ActorFrame Condition="not GAMESTATE:IsCourseMode()"><children>	
+		<Layer
+			File="BG4"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;hidden,0"
+			OffCommand="hidden,0"
+		/>
+		<Layer
+			File="BG3"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;sleep,.3;linear,.1;diffusealpha,0;"
+			OffCommand="Hidden,1"
+		/>
+		<Layer
+			File="BG2"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;sleep,.2;linear,.1;diffusealpha,0;"
+			OffCommand="Hidden,1"
+		/>
+		<Layer
+			File="BG1"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;sleep,.1;linear,.1;diffusealpha,0;"
+			OffCommand="Hidden,1"
+		/>
+		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X+3;y,SCREEN_CENTER_Y+11;linear,.4;x,SCREEN_CENTER_X+78;y,SCREEN_CENTER_Y+127"><children>
+			<Layer
+				File="@GetClassShadow()"
+			/>
+			<Layer 
+				File="@GetClass()"
+				InitCommand="@GetClassInit()"		
+			 />
+		</children></Layer>
+	</children> </ActorFrame>
+	<ActorFrame Condition="GAMESTATE:IsCourseMode()"><children>
+		<Layer
+			File="BG5"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;hidden,0"
+			OffCommand="hidden,0"
+		/>
+		<Layer
+			File="BG4"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;sleep,.4;linear,.1;diffusealpha,0;"
+			OffCommand="Hidden,1"
+		/>
+		<Layer
+			File="BG3"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;sleep,.3;linear,.1;diffusealpha,0;"
+			OffCommand="Hidden,1"
+		/>
+		<Layer
+			File="BG2"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;sleep,.2;linear,.1;diffusealpha,0;"
+			OffCommand="Hidden,1"
+		/>
+		<Layer
+			File="BG1"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;sleep,.1;linear,.1;diffusealpha,0;"
+			OffCommand="Hidden,1"
+		/>
+		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X+3;y,SCREEN_CENTER_Y+11;linear,.5;x,SCREEN_CENTER_X+148;y,SCREEN_CENTER_Y+167"><children>
+			<Layer
+				File="@GetClassShadow()"
+			/>
+			<Layer 
+				File="@GetClass()"
+				InitCommand="@GetClassInit()"		
+			 />
+		</children></Layer>
+	</children> </ActorFrame>
+</children> </ActorFrame>

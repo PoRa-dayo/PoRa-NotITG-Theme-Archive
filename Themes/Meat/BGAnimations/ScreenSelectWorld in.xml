@@ -1,0 +1,8 @@
+<ActorFrame
+    ><children>
+    <Layer Type="Quad" Command="diffusealpha,1;Diffuse,#000000;Stretchto,SCREEN_CENTER_X+320,SCREEN_CENTER_Y+240,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-240;linear,.4;diffusealpha,0" />
+	<Layer
+		File="_blob fall.xml"
+		OnCommand="y,-200;linear,.4;y,500"
+	/>
+</children></ActorFrame>

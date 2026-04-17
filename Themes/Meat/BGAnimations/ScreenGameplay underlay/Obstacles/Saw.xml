@@ -1,0 +1,4 @@
+<ActorFrame><children>
+	<Layer File="@'Saw'..Pallette()..'.png'" />
+	<Layer File="BSaw.png" Condition="Pallette() == ''" Command="zoom,0" Fail3Command="sleep,1;zoom,1" />
+</children></ActorFrame>

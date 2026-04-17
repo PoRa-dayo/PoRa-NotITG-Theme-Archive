@@ -1,0 +1,9 @@
+<ActorFrame><children>
+	<ActorFrame Pass1Command="%function() Sound('WarpZone.ogg') end" />
+	<Layer
+		Type="ActorFrame"
+		Command="%function(self) self:zoom(1.7*blockSize/50) end"
+	><children>
+		<Layer File="Portal.png" Command="x,10;zoom,.32;spin;effectmagnitude,0,0,400" />
+	</children></Layer>
+</children></ActorFrame>

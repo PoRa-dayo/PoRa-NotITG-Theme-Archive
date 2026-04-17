@@ -1,0 +1,42 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+		<Layer File="@'Saw'..Pallette()..'.png'" OnCommand="zoom,.45;y,77;spin;effectmagnitude,0,0,270" />
+		<Layer File="@'rod'..Pallette()..'.png'" OnCommand="zoom,.18;y,51" />
+		<Layer File="@'rod'..Pallette()..'.png'" OnCommand="zoom,.18;y,6" />
+		<Layer File="@'cap'..Pallette()..'.png'" OnCommand="zoom,.2;Y,77;rotationz,180" />
+		<Layer File="@'Center'..Pallette()..'.png'" OnCommand="zoom,.4;y,-19" />
+		<Layer File="@'cap'..Pallette()..'.png'" OnCommand="zoom,.2;y,-6" />
+		<Layer File="@'rod'..Pallette()..'.png'" OnCommand="zoom,.18;y,-27;x,-30;rotationz,-75" />
+		<Layer File="@'rod'..Pallette()..'.png'" OnCommand="zoom,.18;y,-27;x,30;rotationz,75" />
+		<Layer File="@'cap'..Pallette()..'.png'" OnCommand="zoom,.2;y,-19;rotationz,-105" />
+		<Layer File="@'cap'..Pallette()..'.png'" OnCommand="zoom,.2;y,-19;rotationz,105" />
+		
+		<Layer File="@'Maggots'..Pallette()..'.sprite'" OnCommand="zoom,.3;x,-48;y,176;rotationz,-20;ztest,1" />
+		<Layer File="@'Maggots'..Pallette()..'.sprite'" OnCommand="zoom,.3;x,48;y,176;rotationy,180;rotationz,-20;ztest,1" />
+		<Layer File="@'Maggots'..Pallette()..'.sprite'" OnCommand="zoom,.3;x,-18;y,173;rotationz,5;ztest,1" />
+		<Layer File="@'Maggots'..Pallette()..'.sprite'" OnCommand="zoom,.3;x,18;y,171;rotationz,-5;ztest,1" />
+	</children></Layer>
+
+	<Layer
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+
+	</children></Layer>
+
+	<Layer File="Maggot.xml" />
+
+	<ActorFrame
+		OnCommand="%function(self)
+		x = SCREEN_CENTER_X; y = SCREEN_CENTER_Y
+
+		Register(self,x-35,y+57,x+35,y+97,4)
+		Register(self,x-20,y+42,x+20,y+112,4)
+		Register(self,x-65,y+160,x+65,y+178,4)
+
+		end"
+	/>
+</children></ActorFrame>

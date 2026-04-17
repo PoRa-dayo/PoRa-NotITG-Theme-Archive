@@ -1,0 +1,15 @@
+<ActorFrame><children>
+	<Layer
+		File="light.png"
+		OnCommand="x,-60;y,-30"
+		GainFocusCommand="diffuseshift;effectcolor1,.7,.7,.7,1;effectcolor2,1,1,1,1;effectperiod,1.5"
+		LoseFocusCommand="diffuse,.7,.7,.7,1;effectcolor2,.7,.7,.7,1"
+	/>
+	<Layer
+		File="@GetClassShadow(1)"
+	/>
+	<Layer
+		File="@GetClassPath('075')"
+		InitCommand="@GetClassInit('075')"
+	/>
+</children></ActorFrame>

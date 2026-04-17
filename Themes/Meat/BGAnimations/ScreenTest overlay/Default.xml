@@ -1,0 +1,7 @@
+<ActorFrame><children>
+	<ActorFrame InitCommand="%function() modlist = {} end" Command="%function() SM(table.getn(modlist)) end" />
+	<ActorFrame InitCommand="%function() local t = modlist table.insert(t,1) end" />
+	<ActorFrame InitCommand="%function() world = 1; level = 2; warp = 0; dark = '' end" />
+	<Layer File="Gameplay Tip Test" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y" /> 
+	<Layer Type="Quad" Command="stretchto,SCREEN_LEFT,SCREEN_BOTTOM-30,SCREEN_RIGHT,SCREEN_BOTTOM;blend,noeffect;zwrite,1" />
+</children></ActorFrame>

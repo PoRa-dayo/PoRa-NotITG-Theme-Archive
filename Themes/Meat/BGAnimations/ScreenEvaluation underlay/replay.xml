@@ -1,0 +1,128 @@
+<ActorFrame><children>
+<!-- P1 Passed -->
+	<Layer Type="ActorFrame" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_1):GetGrade() ~= GRADE_FAILED" ><children>
+		<Layer Type="ActorFrame" RegisterCommand="%function(self) RegisterHero(self) self:playcommand('Set') end" ><children>
+			<Layer File="@Meatboy() .. '/Animate splash.xml'" />
+			<Layer 
+				File="@Meatboy() .. '/Animate.xml'"
+				InitCommand="x,SCREEN_CENTER_X-285;y,SCREEN_CENTER_Y-126;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:sleep(.1) self:queuecommand('Move4') end" GoCommand="%function(self) MeatboyGo(self,0,.1) end"
+				Move1Command="%function(self) Move(self,-.2,-.3,-.01,0,'Vy','>',.1,2) end" 
+				Move2Command="%function(self) Move(self,.3,-.55,-.04,0,'Vy','>',.1,3) end" 
+				Move3Command="%function(self) Move(self,.2,-.5,.02,0) end" 
+
+				Move4Command="%function(self) Move(self,0,0,0,0,'state','<',4,5) end" 
+				Move5Command="%function(self) Move(self,.2,0,.025,0,'Dx','>',SCREEN_CENTER_X-150,6) end" 
+				Move6Command="%function(self) Move(self,'',-.2,0,0) end" 
+
+				MoveCommand="%function(self) Update(self) end"
+				GoalCommand="%function(self) MeatboyGoal(self) end"
+				ObstacleCommand="%function(self) MeatboyObstacle(self) end"
+			/>
+		</children></Layer>
+	</children></Layer>
+<!-- P1 Failed -->
+	<Layer Type="ActorFrame" Condition="(GAMESTATE:IsPlayerEnabled(PLAYER_1) and STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_1):GetGrade() == GRADE_FAILED) or not GAMESTATE:IsPlayerEnabled(PLAYER_1)" ><children>
+		<Layer Type="ActorFrame" RegisterCommand="%function(self) RegisterHero(self) self:playcommand('Set') end" ><children>
+			<Layer File="@Meatboy() .. '/Animate splash.xml'" />
+			<Layer 
+				File="@Meatboy() .. '/Animate.xml'"
+				InitCommand="x,SCREEN_CENTER_X-285;y,SCREEN_CENTER_Y-126;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:sleep(.1) self:queuecommand('Move4') end" GoCommand="%function(self) MeatboyGo(self,.5,2) end"
+				Move1Command="%function(self) Move(self,0,0,.02,0) end" 
+
+				Move4Command="%function(self) Move(self,0,0,0,0,'state','<',4,5) end" 
+				Move5Command="%function(self) Move(self,.2,0,.025,0) end" 
+
+				MoveCommand="%function(self) Update(self) end"
+				GoalCommand="%function(self) MeatboyGoal(self) end"
+				ObstacleCommand="%function(self) MeatboyObstacle(self) end"
+			/>
+		</children></Layer>
+	</children></Layer>
+<!-- P2 Passed -->
+	<Layer Type="ActorFrame" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetGrade() ~= GRADE_FAILED" ><children>
+		<Layer Type="ActorFrame" RegisterCommand="%function(self) RegisterHero(self) self:playcommand('Set') end" ><children>
+			<Layer File="@Meatboy() .. '/Animate splash.xml'" />
+			<Layer 
+				File="@Meatboy() .. '/Animate.xml'"
+				InitCommand="x,SCREEN_CENTER_X+285;y,SCREEN_CENTER_Y-126;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:sleep(.1) self:queuecommand('Move4') end" GoCommand="%function(self) MeatboyGo(self,0,.1) end"
+				Move1Command="%function(self) Move(self,.2,-.3,.01,0,'Vy','>',.1,2) end" 
+				Move2Command="%function(self) Move(self,-.3,-.55,.04,0,'Vy','>',.1,3) end" 
+				Move3Command="%function(self) Move(self,-.2,-.5,-.02,0) end" 
+
+
+				Move4Command="%function(self) Move(self,0,0,-.0001,0,'state','<',4,5) end" 
+				Move5Command="%function(self) Move(self,-.2,0,-.025,0,'Dx','<',SCREEN_CENTER_X+150,6) end" 
+				Move6Command="%function(self) Move(self,'',-.2,0,0) end" 
+
+				MoveCommand="%function(self) Update(self) end"
+				GoalCommand="%function(self) MeatboyGoal(self) end"
+				ObstacleCommand="%function(self) MeatboyObstacle(self) end"
+			/>
+		</children></Layer>
+	</children></Layer>
+<!-- P2 Failed -->
+	<Layer Type="ActorFrame" Condition="(GAMESTATE:IsPlayerEnabled(PLAYER_2) and STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetGrade() == GRADE_FAILED) or not GAMESTATE:IsPlayerEnabled(PLAYER_2)" ><children>
+		<Layer Type="ActorFrame" RegisterCommand="%function(self) RegisterHero(self) self:playcommand('Set') end" ><children>
+			<Layer File="@Meatboy() .. '/Animate splash.xml'" />
+			<Layer 
+				File="@Meatboy() .. '/Animate.xml'"
+				InitCommand="x,SCREEN_CENTER_X+285;y,SCREEN_CENTER_Y-126;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:sleep(.1) self:queuecommand('Move4') end" GoCommand="%function(self) MeatboyGo(self,.5,2) end"
+				Move1Command="%function(self) Move(self,0,0,-.02,0) end" 
+
+				Move4Command="%function(self) Move(self,0,0,-.0001,0,'state','<',4,5) end" 
+				Move5Command="%function(self) Move(self,-.2,0,-.025,0) end" 
+				
+				MoveCommand="%function(self) Update(self) end"
+				GoalCommand="%function(self) MeatboyGoal(self) end"
+				ObstacleCommand="%function(self) MeatboyObstacle(self) end"
+			/>
+		</children></Layer>
+	</children></Layer>
+	<Layer Type="ActorFrame" RegisterCommand="%function(self) RegisterHero(self) self:playcommand('Set') end" ><children>
+		<Layer File="@Meatboy() .. '/Animate splash.xml'" />
+		<Layer 
+			File="@Meatboy() .. '/Animate.xml'"
+			InitCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:queuecommand('Gone') end" GoCommand="%function(self)  MeatboyGo(self,2,.5) end"
+			Move1Command="%function(self) Move(self,-.2,-.3,-.01,0,'Vy','>',0,2) end" 
+			Move2Command="%function(self) i = math.random()/10 Move(self,.4,-.5-i,-0.03,0,'Dy','>',SCREEN_CENTER_Y+100,2) end" 
+			MoveCommand="%function(self) Update(self) end"
+			ObstacleCommand="%function(self) MeatboyObstacle(self) end"
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" RegisterCommand="%function(self) RegisterHero(self) self:playcommand('Set') end" ><children>
+		<Layer File="@Meatboy() .. '/Animate splash.xml'" />
+		<Layer 
+			File="@Meatboy() .. '/Animate.xml'"
+			InitCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:queuecommand('Gone') end" GoCommand="%function(self) MeatboyGo(self,2,.5) end"
+			Move1Command="%function(self) Move(self,0,-.55,.01,0) end" 
+			MoveCommand="%function(self) Update(self) end"
+			ObstacleCommand="%function(self) MeatboyObstacle(self) end"
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" RegisterCommand="%function(self) RegisterHero(self) self:playcommand('Set') end" ><children>
+		<Layer File="@Meatboy() .. '/Animate splash.xml'" />
+		<Layer 
+			File="@Meatboy() .. '/Animate.xml'"
+			InitCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:queuecommand('Gone') end" GoCommand="%function(self) MeatboyGo(self,2,.5) end"
+			Move1Command="%function(self) Move(self,0.01,0,.02,0,'Vx','=',0,2) end" 
+			Move2Command="%function(self) i = math.random()/10 Move(self,0,-.35+i,0,0,'Vy','>',.04,3) end" 
+			Move3Command="%function(self) Move(self,-.4,-.2,0,0) end" 
+			MoveCommand="%function(self) Update(self) end"
+			ObstacleCommand="%function(self) MeatboyObstacle(self) end"
+		/>
+	</children></Layer>
+	<Layer Type="ActorFrame" RegisterCommand="%function(self) RegisterHero(self) self:playcommand('Set') end" ><children>
+		<Layer File="@Meatboy() .. '/Animate splash.xml'" />
+		<Layer 
+			File="@Meatboy() .. '/Animate.xml'"
+			InitCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:queuecommand('Gone') end" GoCommand="%function(self) MeatboyGo(self,2,.5) end"
+				Move1Command="%function(self) Move(self,.2,-.3,.01,0,'Vy','>',.1,2) end" 
+				Move2Command="%function(self) i = math.random()/20  Move(self,-.3,-.55-i,.04,0,'Vy','>',.1,3) end" 
+				Move3Command="%function(self) Move(self,-.5,-.2,.015,0,'Vx','>',0,4) end" 
+				Move4Command="%function(self) Move(self,'','','',0,'Dx','>',SCREEN_CENTER_X+30,5) end" 
+				Move5Command="%function(self) Move(self,'','','',0,'state','<',4,1) end" 
+			MoveCommand="%function(self) Update(self) end"
+			ObstacleCommand="%function(self) MeatboyObstacle(self) end"
+		/>
+	</children></Layer>
+</children></ActorFrame>

@@ -1,0 +1,7 @@
+<ActorFrame> <children>
+	<ActorFrame OnCommand="x,SCREEN_CENTER_X-140;y,SCREEN_CENTER_Y+38;zoom,0;linear,.2;zoom,1" OffCommand="linear,.1;zoom,0"> <children>
+		<Layer
+			File="underlay.png"
+		/>
+	</children></ActorFrame>
+</children> </ActorFrame>

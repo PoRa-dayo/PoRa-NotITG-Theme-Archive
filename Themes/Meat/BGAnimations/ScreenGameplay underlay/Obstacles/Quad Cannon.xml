@@ -1,0 +1,54 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame" 
+		Command="zoom,.5" 
+		AnimateCommand="queuecommand,Shoot;queuecommand,Check;sleep,.3;queuecommand,Cannon;sleep,.8;queuecommand,Reset;queuecommand,Rotate" 
+		AnimateLCommand="queuecommand,Shoot;queuecommand,CheckL;sleep,.3;queuecommand,Cannon;sleep,.8;queuecommand,Reset;queuecommand,Rotate" 
+	><children>
+		<Layer
+			Type="ActorFrame"
+			PreRotateCommand="rotationz,-45;z,45"
+			CheckCommand="%function(self) r = self:GetZ(); if r == 45 then self:sleep(.35);self:queuecommand('Splode1') else self:sleep(.25) self:queuecommand('Splode2') end end"
+			CheckLCommand="%function(self) r = self:GetZ(); if r == 45 then self:sleep(.26);self:queuecommand('Splode1') else self:sleep(.16) self:queuecommand('Splode2') end end"
+			RotateCommand="%function(self) r = self:GetZ(); if r == 45 then r = -45 self:rotationz(45) end r = r+45 self:z(r) self:rotationz(-r) end"
+		><children>
+		<!--Fire-->
+			<Layer Type="ActorFrame" Command="rotationz,000"><children> <Layer File="cannon ball 4x1.png" Command="y,-20" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,1" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,090"><children> <Layer File="cannon ball 4x1.png" Command="y,-20" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,1" Splode2Command="finishtweening;zoom,0" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,180"><children> <Layer File="cannon ball 4x1.png" Command="y,-20" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,1" Splode1Command="finishtweening;zoom,0" Splode2Command="finishtweening;zoom,0" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,270"><children> <Layer File="cannon ball 4x1.png" Command="y,-20" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,1" Splode1Command="finishtweening;zoom,0" /> </children></Layer>
+		<!--Fire Mask-->
+			<Layer Type="ActorFrame" Command="rotationz,000"><children> <Layer File="cannon ball 4x1.png" Command="y,-20;blend,noeffect;zwrite,1" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,1" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,090"><children> <Layer File="cannon ball 4x1.png" Command="y,-20;blend,noeffect;zwrite,1" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,1" Splode2Command="finishtweening;zoom,0" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,180"><children> <Layer File="cannon ball 4x1.png" Command="y,-20;blend,noeffect;zwrite,1" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,1" Splode1Command="finishtweening;zoom,0" Splode2Command="finishtweening;zoom,0" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,270"><children> <Layer File="cannon ball 4x1.png" Command="y,-20;blend,noeffect;zwrite,1" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,1" Splode1Command="finishtweening;zoom,0" /> </children></Layer>
+		<!--Splode-->
+			<Layer Type="ActorFrame" Command="rotationz,090"><children> <Layer File="csplode.sprite" Command="zoom,0;y,-40" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,0" Splode2Command="stoptweening;rotationz,-090;zoom,1;setstate,0;sleep,.35;zoom,0" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,180"><children> <Layer File="csplode.sprite" Command="zoom,0;y,-40" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,0" Splode1Command="stoptweening;rotationz,-135;zoom,1;setstate,0;sleep,.35;zoom,0" Splode2Command="stoptweening;rotationz,-180;zoom,1;setstate,0;sleep,.35;zoom,0" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,270"><children> <Layer File="csplode.sprite" Command="zoom,0;y,-40" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,0" Splode1Command="stoptweening;rotationz,-225;zoom,1;setstate,0;sleep,.35;zoom,0" /> </children></Layer>
+		<!--Splode Mask-->
+			<Layer Type="ActorFrame" Command="rotationz,090"><children> <Layer File="csplode.sprite" Command="rotationz,-045;zoom,0;y,-40;blend,noeffect;zwrite,1" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,0" Splode2Command="stoptweening;rotationz,-090;zoom,1;setstate,0;sleep,.35;zoom,0" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,180"><children> <Layer File="csplode.sprite" Command="rotationz,-135;zoom,0;y,-40;blend,noeffect;zwrite,1" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,0" Splode1Command="stoptweening;rotationz,-135;zoom,1;setstate,0;sleep,.35;zoom,0" Splode2Command="stoptweening;rotationz,-180;zoom,1;setstate,0;sleep,.35;zoom,0" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,270"><children> <Layer File="csplode.sprite" Command="rotationz,-225;zoom,0;y,-40;blend,noeffect;zwrite,1" ShootCommand="linear,.1;addy,4;linear,1;addy,-512" ResetCommand="y,-20;zoom,0" Splode1Command="stoptweening;rotationz,-225;zoom,1;setstate,0;sleep,.35;zoom,0" /> </children></Layer>
+		</children></Layer>
+		<Layer
+			Type="ActorFrame" 
+			PreRotateCommand="rotationz,45;z,-45"
+			CannonCommand="%function(self) r = self:GetZ()+45; if r == 360 then r = 0 self:rotationz(45) end self:z(r) self:linear(.5) self:rotationz(-r) end"
+		><children>
+		<!--Reload-->
+			<Layer Type="ActorFrame" Command="rotationz,000"><children> <Layer File="cannon ball 4x1.png" Command="y,0" ShootCommand="sleep,.5;linear,.3;y,-20" ResetCommand="y,0" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,090"><children> <Layer File="cannon ball 4x1.png" Command="y,0" ShootCommand="sleep,.5;linear,.3;y,-20" ResetCommand="y,0" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,180"><children> <Layer File="cannon ball 4x1.png" Command="y,0" ShootCommand="sleep,.5;linear,.3;y,-20" ResetCommand="y,0" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,270"><children> <Layer File="cannon ball 4x1.png" Command="y,0" ShootCommand="sleep,.5;linear,.3;y,-20" ResetCommand="y,0" /> </children></Layer>
+
+			<Layer File="cannon under.png" />
+			<Layer Type="ActorFrame" Command="rotationz,000"><children> <Layer File="cannon.png" Command="y,-20" ShootCommand="linear,.1;zoomy,.7;linear,.1;zoomy,1.5;linear,.1;zoomy,.3;linear,.1;zoomy,1" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,090"><children> <Layer File="cannon.png" Command="y,-20" ShootCommand="linear,.1;zoomy,.7;linear,.1;zoomy,1.5;linear,.1;zoomy,.3;linear,.1;zoomy,1" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,180"><children> <Layer File="cannon.png" Command="y,-20" ShootCommand="linear,.1;zoomy,.7;linear,.1;zoomy,1.5;linear,.1;zoomy,.3;linear,.1;zoomy,1" /> </children></Layer>
+			<Layer Type="ActorFrame" Command="rotationz,270"><children> <Layer File="cannon.png" Command="y,-20" ShootCommand="linear,.1;zoomy,.7;linear,.1;zoomy,1.5;linear,.1;zoomy,.3;linear,.1;zoomy,1" /> </children></Layer>
+			<Layer File="cannon over.png" />
+		</children></Layer>
+	<Layer File="@'blocks'..world..'.png'" Command="x,128" />
+	</children></Layer>
+</children></ActorFrame>

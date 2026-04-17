@@ -1,0 +1,15 @@
+<ActorFrame><children>
+	<ActorFrame 
+		OnCommand="zoom,.3;rotationz,150;sleep,.2;linear,.3;zoom,.5;rotationz,75;linear,.3;rotationz,0;zoom,1"
+		><children>
+		<Layer
+			File="@GetClassShadow(1)"
+			OnCommand="zoomy,2;zbuffer,1"
+		/>
+		<Layer
+			File="@GetClassPath('008')"
+			InitCommand="@GetClassInit('008')"
+			OnCommand="@GetClassScroller('008')"
+	/>
+	</children></ActorFrame>
+</children></ActorFrame>

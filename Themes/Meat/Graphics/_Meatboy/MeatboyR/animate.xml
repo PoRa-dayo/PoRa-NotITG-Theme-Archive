@@ -1,0 +1,20 @@
+<ActorFrame><children>
+	<Layer
+		File="animate.sprite"
+		OnCommand="%function(self) self:zoom(blockSize/50) end"
+		ResetCommand="queuecommand,Stand"
+		SprintCommand="animate,1"
+		WalkCommand="queuecommand,Sprint"
+		StandCommand="animate,0;setstate,17"
+		WallCommand="animate,0;setstate,13"
+		Jump1Command="animate,0;setstate,5"
+		Jump3Command="animate,0;setstate,9"
+		SplodeCommand="animate,0;setstate,19"
+		FetusCommand="animate,0;setstate,18"
+		GoneCommand="animate,0;setstate,19"
+	/>
+	<Layer
+		File="splode.xml"
+		OnCommand="%function(self) self:zoom(2.85*blockSize/50) end"
+	/>
+</children></ActorFrame>

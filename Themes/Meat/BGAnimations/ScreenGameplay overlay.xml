@@ -1,0 +1,3 @@
+<ActorFrame><children>
+	<ActorFrame Command="%GameplayInit" FirstUpdateCommand="%Gameplay" UpdateCommand="%GameplayUpdate" />
+</children><ActorFrame>

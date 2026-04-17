@@ -1,0 +1,3 @@
+[Actor]
+Type=Quad
+InitCommand=diffuse,0.22,0.22,0.22,1;zoomtowidth,384;zoomtoheight,24

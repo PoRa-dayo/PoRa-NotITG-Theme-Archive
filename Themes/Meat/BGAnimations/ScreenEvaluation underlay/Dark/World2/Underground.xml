@@ -1,0 +1,36 @@
+<ActorFrame><children>
+	<Layer
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	><children>
+		<Layer File="@'needles'..Pallette()..'.png'" Command="x,-60;y,176;zoom,.24;rotationz,-10" />
+		<Layer File="@'needles'..Pallette()..'.png'" Command="x,62;y,175;zoom,.24;rotationz,-10" />
+		<Layer File="@'needles'..Pallette()..'.png'" Command="x,-30;y,173;zoom,.24;rotationz,0" />
+		<Layer File="@'needles'..Pallette()..'.png'" Command="x,30;y,179;zoom,.24;rotationz,0" />
+		<Layer File="@'needles'..Pallette()..'.png'" Command="x,0;y,176;zoom,.24;rotationz,10" />
+		
+		<Layer File="@'needles'..Pallette()..'.sprite'" OnCommand="zoom,.3;y,17" />
+		<Layer File="@'needles'..Pallette()..'.sprite'" OnCommand="zoom,.3;y,87;cropbottom,.4" />
+		<Layer File="@'cap'..Pallette()..'.png'" OnCommand="zoom,.8;y,-23" />
+		<Layer File="@'cap'..Pallette()..'.png'" OnCommand="zoom,.8;rotationz,180;y,107" />
+	</children></Layer>
+	
+	<Layer File="floaters.xml" />
+	<Layer File="crawlers.xml" />
+
+	<Layer File="key.png" InitCommand="x,SCREEN_CENTER_X-130;y,SCREEN_CENTER_Y-67;zoom,.3" OnCommand="%function(self) Register(self,-6,-10,6,10,6) end" HeroCommand="zoom,0" />
+	<Layer File="key.png" InitCommand="x,SCREEN_CENTER_X+130;y,SCREEN_CENTER_Y-67;zoom,.3" OnCommand="%function(self) Register(self,-6,-10,6,10,6) end" HeroCommand="zoom,0" />
+
+	<ActorFrame
+		OnCommand="%function(self)
+		x = SCREEN_CENTER_X; y = SCREEN_CENTER_Y
+		Register(self,x-20,y-2,x+20,y-30,3)
+		Register(self,x-20,y+86,x+20,y+128,3)
+
+
+		Register(self,x-18,y-2,x+18,y+86,4)
+		Register(self,x-65,y+162,x+65,y+178,4)
+		end"
+	/>
+
+</children></ActorFrame>

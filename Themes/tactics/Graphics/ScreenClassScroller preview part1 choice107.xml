@@ -1,0 +1,62 @@
+<ActorFrame><children>
+	<ActorFrame 
+		GainFocusCommand="sleep,.15;zoom,1"
+		LoseFocusCommand="sleep,.15;zoom,0"
+		><children>
+		<Layer 
+			File="@GetClassPath('107')"
+			OnCommand="addx,-194;addy,-111"
+			InitCommand="@GetClassBanner('107')"
+		/>
+		<Layer Type="BitmapText"
+			Font="_FFT2 white"
+			Text=""
+			InitCommand="y,-204;x,-80;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+			OnCommand="%function(self) self:settext(GetClassName('107')) end"
+			/>
+		<Layer Type="BitmapText"
+			Font="_FFT2 white"
+			Text=""
+			InitCommand="y,-176;x,-80;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+			OnCommand="%function(self) self:settext(GetClassCode('107')) end"
+		/>
+		<Layer 
+			File="@GetClassPath('107')"
+			OnCommand="addx,180"
+			InitCommand="@GetClassDead('107')"
+		/>
+		<Layer 
+			File="@GetClassPath('107')"
+			InitCommand="@GetClassHurt('107')"
+		/>
+		<Layer Type="ActorFrame" 
+			Condition="GetClassType('107') == '1'"
+			OnCommand="addx,-180"
+			><children>
+			<Layer
+				File="@GetChocobo()"
+				InitCommand="@GetChocoboInit()"
+			/>
+			<Layer Type="ActorFrame" InitCommand="x,5;y,-19"><children>
+				<Layer
+					File="@GetClassPath('107')"
+					InitCommand="@GetClassRiding1('107')"
+				/>
+				<Layer
+					File="@GetClassPath('107')"
+					InitCommand="@GetClassRiding2('107')"
+				/>
+			</children></Layer>
+			<Layer
+				File="@GetChocoboOverlay()"
+				InitCommand="@GetChocoboInit()"
+			/>		
+		</children></Layer>
+		<Layer
+			Condition="GetClassType('107') ~= '1'"
+			File="@GetClassPath('107')"
+			OnCommand="addx,-180"
+			InitCommand="@GetClassInit('107')"
+		/>		
+	</children></ActorFrame>
+</children></ActorFrame>

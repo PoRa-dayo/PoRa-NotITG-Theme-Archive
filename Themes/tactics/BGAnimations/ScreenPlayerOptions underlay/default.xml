@@ -1,0 +1,37 @@
+<ActorFrame> <children>
+	<ActorFrame OnCommand="y,275;sleep,.2;linear,.5;addy,-275" OffCommand="finishtweening;linear,2;addy,653"> <children>
+		<Layer 
+			File="ScreenOptions underlay"
+			InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+109"
+		 />
+		<Layer Type="ActorFrame" InitCommand="x,SCREEN_CENTER_X+6;y,SCREEN_CENTER_Y+74"><children>
+			<Layer
+				File="@GetClassShadow()"
+			/>
+			<Layer 
+				File="@GetClass()"
+				InitCommand="@GetClassInit()"		
+			 />
+		</children></Layer>
+	</children></ActorFrame>
+	<Layer
+		File="start.png"
+		InitCommand="x,SCREEN_CENTER_X+5;y,SCREEN_CENTER_Y+217"
+		OffCommand="hidden,1" 
+	/>
+	<ActorFrame OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-357;sleep,.2;linear,.5;y,SCREEN_CENTER_Y-102" OffCommand="finishtweening;zoom,0"> <children>
+		<Layer
+			File="frame.png"
+			OnCommand="x,140"
+		/>
+		<Layer
+			File="@GetClassPath()"
+			InitCommand="@GetClassBanner()"
+			OnCommand="addx,-218;addy,54"
+		/>
+		<Layer
+			File="class banner frame.png"
+			OnCommand="x,-218;y,54;horizalign,right;vertalign,bottom"
+		/>
+	</children></ActorFrame>
+</children> </ActorFrame>

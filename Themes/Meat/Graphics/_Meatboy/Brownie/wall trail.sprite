@@ -1,0 +1,18 @@
+[Sprite]
+Texture=_wall trail 8x1.png
+Frame0000=7
+Delay0000=100000
+Frame0001=0
+Delay0001=0.04
+Frame0002=1
+Delay0002=0.04
+Frame0003=2
+Delay0003=0.04
+Frame0004=3
+Delay0004=0.04
+Frame0005=4
+Delay0005=0.04
+Frame0006=5
+Delay0006=0.04
+Frame0007=6
+Delay0007=0.04

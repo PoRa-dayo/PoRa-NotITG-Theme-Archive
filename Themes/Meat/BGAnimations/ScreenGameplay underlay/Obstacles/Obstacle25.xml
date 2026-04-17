@@ -1,0 +1,23 @@
+<ActorFrame><children>
+<!-- Obstacle 25: Saw On Ground -->
+	<Layer
+		Type="ActorFrame"
+		Fail3Command="addx,24"
+	><children>
+		<Layer
+			Type="Quad"
+			OnCommand="stretchto,-29,27,35,55;diffuse,#000000;blend,noeffect;zwrite,1"
+		/>
+		<Layer
+			File="saw.xml"
+			OnCommand="zoom,.35;y,0;x,3;spin;effectmagnitude,0,0,-360;ztest,1"
+			Fail3Command="addy,-16"
+		/>
+		<Layer
+			File="saw.xml"
+			OnCommand="zoom,.35;y,20;x,3;spin;effectmagnitude,0,0,-360;ztest,1"
+			Fail3Command="addy,-8"
+		/>
+	</children></Layer>
+	<Layer File="Broadcast.xml" GoCommand="sleep,1.75;queuecommand,Jump4" />
+</children></ActorFrame>

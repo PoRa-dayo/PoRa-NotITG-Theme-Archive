@@ -1,0 +1,83 @@
+<ActorFrame> <children>
+	<Layer Type="ActorFrame"
+		Condition="not GAMESTATE:IsCourseMode()"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-125;zoom,0;sleep,.5;zoom,1"
+		OffCommand="hidden,1"
+		> <children>
+
+		<Layer
+			Type="BitmapText"
+			Font="_FFT2 white"
+			OnCommand="%function(self)
+						if not GAMESTATE:IsPlayerEnabled(PLAYER_2) then 
+							self:x(160); self:y(30); self:maxwidth(200)
+						end
+						if not GAMESTATE:IsPlayerEnabled(PLAYER_1) then 
+							self:x(-160); self:y(30); self:maxwidth(200)
+						end	
+				end"
+			InitCommand="maxwidth,270;zoom,1.2;zoomx,1.5;shadowlength,0;animate,0;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%SetFromSongTitleAndCourseTitle"
+		/>
+	</children> </Layer>
+
+<ActorFrame>
+	<children>
+		<ActorFrame
+			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+			OnCommand="x,SCREEN_CENTER_X-180;y,SCREEN_CENTER_Y-205;zoom,0;sleep,.5;zoom,1"
+			OffCommand="hidden,1"
+		> <children>
+			<Actor
+				File="Lv.png"
+			/>
+			<Actor
+				File="exp.png"
+				OnCommand="x,6;y,40"
+			/>
+			<Actor
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP1"
+				OnCommand="zoom,1.5;zoomx,1.8;playcommand,Update"
+				UpdateCommand="%function(self) 
+						if GAMESTATE:GetCurrentTrail(PLAYER_1) then 
+							self:SetFromTrail(GAMESTATE:GetCurrentTrail(PLAYER_1)) 
+						else
+							self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1))
+						end
+					end"
+			/>
+		</children> </ActorFrame>
+
+		<ActorFrame
+			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+			OnCommand="x,SCREEN_CENTER_X+40;y,SCREEN_CENTER_Y-205;zoom,0;sleep,.5;zoom,1"
+			OffCommand="hidden,1"
+		> <children>
+			<Actor
+				File="Lv.png"
+			/>
+			<Actor
+				File="exp.png"
+				OnCommand="x,6;y,40"
+			/>
+			<Actor
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP2"
+				OnCommand="zoom,1.5;zoomx,1.8;playcommand,Update"
+				UpdateCommand="%function(self) 
+						if GAMESTATE:GetCurrentTrail(PLAYER_2) then 
+							self:SetFromTrail(GAMESTATE:GetCurrentTrail(PLAYER_2)) 
+						else
+							self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2))
+						end
+					end"
+			/>
+		</children> </ActorFrame>
+		<Layer
+			File="@THEME:GetPath( EC_BGANIMATIONS, '', '_boarder' )"
+		/>
+	</children>
+</ActorFrame>
+

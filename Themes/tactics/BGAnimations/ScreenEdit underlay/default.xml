@@ -1,0 +1,26 @@
+<ActorFrame>
+	<children>
+		<Layer Class="AutoActor" 
+			File="../Banner underlay" 
+			OnCommand="x,SCREEN_CENTER_X-385;y,SCREEN_CENTER_Y+174;zoomy,0;linear,.2;zoomy,.7;faderight,.05" 
+		/>
+		<Layer
+			File="@THEME:GetPath( EC_GRAPHICS, '', 'banner frame' )"
+			OffCommand="zoom,0"
+			OnCommand="x,SCREEN_CENTER_X-205;y,SCREEN_CENTER_Y+173;zoom,0;linear,.2;zoom,.7"
+		/>
+		<Layer
+			File="@GetBanner(GAMESTATE:GetCurrentSong())"
+			InitCommand="scaletoclipped,208,69;x,SCREEN_CENTER_X-206;y,SCREEN_CENTER_Y+172;zoom,0;sleep,.2;zoom,1" 
+		/>
+		<Layer
+			File="Edit underlay"
+			OnCommand="zoom,0;linear,.2;zoom,1"
+			InitCommand="x,SCREEN_CENTER_X+270;y,SCREEN_CENTER_Y"
+		/>
+		<Layer
+			File="Odin"
+			InitCommand="x,SCREEN_CENTER_X-280;y,SCREEN_CENTER_Y-60"
+		/>
+	</children>
+</ActorFrame>

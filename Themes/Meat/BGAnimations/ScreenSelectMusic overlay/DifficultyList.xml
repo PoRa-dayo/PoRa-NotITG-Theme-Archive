@@ -1,0 +1,23 @@
+<ActorFrame><children>
+	<ActorFrame UpdateCommand="%DifficultyList" />
+	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" Type="ActorFrame" UpdateCommand="x,(listPointerY[1]-1)*40" ><children>
+		<Layer File="path.png" Command="rotationz,90;zoomx,.25;zoomy,40/32*3*.25*.75;customtexturerect,0,0,3,1;y,-12" />
+		<Layer File="Portal 3x1.png" Command="animate,0;setstate,0;y,-27;zoom,.17;spin;effectmagnitude,0,0,-400" />
+		<Layer File="Portal 3x1.png" Command="animate,0;setstate,1;y,-27;zoom,.14;spin;effectmagnitude,0,0,400" />
+	</children></Layer>
+	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" Type="ActorFrame" UpdateCommand="x,(listPointerY[2]-1)*40" ><children>
+		<Layer File="path.png" Command="rotationz,90;zoomx,.25;zoomy,40/32*3*.25*.75;customtexturerect,0,0,3,1;y,18" />
+		<Layer File="Portal 3x1.png" Command="animate,0;setstate,0;y,33;zoom,.17;spin;effectmagnitude,0,0,-400" />
+		<Layer File="Portal 3x1.png" Command="animate,0;setstate,2;y,33;zoom,.14;spin;effectmagnitude,0,0,400" />
+	</children></Layer>
+	<Layer File="DifficultyList 1x8.png" InitCommand="aux,1" UpdateCommand="%function(self) DifficultyListCommand(self,'feet') end" />
+	<Layer File="DifficultyList 1x8.png" InitCommand="aux,2" UpdateCommand="%function(self) DifficultyListCommand(self,'feet') end" />
+	<Layer File="DifficultyList 1x8.png" InitCommand="aux,3" UpdateCommand="%function(self) DifficultyListCommand(self,'feet') end" />
+	<Layer File="DifficultyList 1x8.png" InitCommand="aux,4" UpdateCommand="%function(self) DifficultyListCommand(self,'feet') end" />
+	<Layer File="DifficultyList 1x8.png" InitCommand="aux,5" UpdateCommand="%function(self) DifficultyListCommand(self,'feet') end" />
+	<Layer Font="_Meat" Text="" InitCommand="aux,1" UpdateCommand="%function(self) DifficultyListCommand(self,'meter') end" />
+	<Layer Font="_Meat" Text="" InitCommand="aux,2" UpdateCommand="%function(self) DifficultyListCommand(self,'meter') end" />
+	<Layer Font="_Meat" Text="" InitCommand="aux,3" UpdateCommand="%function(self) DifficultyListCommand(self,'meter') end" />
+	<Layer Font="_Meat" Text="" InitCommand="aux,4" UpdateCommand="%function(self) DifficultyListCommand(self,'meter') end" />
+	<Layer Font="_Meat" Text="" InitCommand="aux,5" UpdateCommand="%function(self) DifficultyListCommand(self,'meter') end" />
+</children></ActorFrame>

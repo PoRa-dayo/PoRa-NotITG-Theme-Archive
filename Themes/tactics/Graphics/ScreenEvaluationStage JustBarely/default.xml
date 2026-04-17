@@ -1,0 +1,3 @@
+<ActorFrame><children>
+	<AutoActor File="arrow" OnCommand="y,-10" />
+</children></ActorFrame>

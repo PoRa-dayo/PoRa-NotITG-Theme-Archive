@@ -1,0 +1,10 @@
+<ActorFrame><children>
+	<Layer File="../ScreenSelectMusic underlay" />
+	<Layer File="../ScreenSelectMusic overlay" />
+
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-190;y,SCREEN_CENTER_Y-107" ><children>
+		<Layer File="../../Graphics/Common Fallback Banner.png" OnCommand="ZoomToWidth,251;ZoomToHeight,99" />
+		<Layer File="../../Graphics/ScreenSelectMusic banner frame" Command="zoom,.43"/>
+	</children></Layer>
+
+</children></ActorFrame>

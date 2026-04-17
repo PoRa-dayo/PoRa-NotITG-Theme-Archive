@@ -1,0 +1,27 @@
+<ActorFrame> <children>
+	<ActorFrame OnCommand="Draworder,110"> <children>
+		<Layer
+			File="_shared background.png"
+			InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,1"
+			OnCommand="diffusealpha,1;sleep,1.1;diffusealpha,0"
+		/>
+		<Layer
+			File="_black"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT;diffusealpha,.5;sleep,.9;linear,.2;diffusealpha,1;linear,.3;diffusealpha,0"
+		/>
+		<Layer Type="BitmapText"
+			Condition="not GAMESTATE:IsCourseMode()"
+			Font="_FFT2 white"
+			Text="@GetCreditsText()"
+			InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;shadowlength,0;zoom,1.2;zoomx,1.5"
+			OnCommand="fadeleft,.2;cropleft,-.3;linear,1;cropleft,1"
+		/>
+		<Layer Type="BitmapText"
+			Condition="GAMESTATE:IsCourseMode()"
+			Font="_FFT2 white"
+			Text="@GetSongName()"
+			InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;shadowlength,0;zoom,1.2;zoomx,1.5"
+			OnCommand="fadeleft,.2;cropleft,-.3;linear,1;cropleft,1"
+		/>
+	</children> </ActorFrame>
+</children> </ActorFrame>

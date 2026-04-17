@@ -1,0 +1,4 @@
+<ActorFrame><children>
+	<ActorFrame OnCommand="sleep,0.01" StartTransitioningCommand="%function(self) if scoreIndex > table.getn(AllScores) then BG:playcommand('Out') self:sleep(0.25) end end" />
+	<ActorFrame Command="queuecommand,Out;sleep,.25" OutCommand="%function() s = SCREENMAN:GetTopScreen() s:linear(.05) s:skewx(.7) s:addx(100) s:linear(.2) s:addx(SCREEN_WIDTH) end" />
+</children></ActorFrame>

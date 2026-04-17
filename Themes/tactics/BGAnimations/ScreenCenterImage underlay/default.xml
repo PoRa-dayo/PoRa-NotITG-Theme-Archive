@@ -1,0 +1,16 @@
+<ActorFrame> <children>
+	<Layer 
+		File="shopkeeper.png"
+		InitCommand="x,SCREEN_CENTER_X-6;y,SCREEN_CENTER_Y-151"
+		OnCommand="zoom,0;sleep,.8;linear,.2;zoom,1"
+		OffCommand="linear,.1;zoom,0"
+	 />
+	<Layer
+		Type="BitmapText"
+		Font="_FFT"
+		Text="Welcome.::Can I help you center the screen?"
+		InitCommand="x,SCREEN_CENTER_X-183;y,SCREEN_CENTER_Y-140;shadowlength,0;horizalign,left;zoom,1.25;zoomy,1"
+		OnCommand="cropright,1.2;sleep,1;linear,.8;cropright,-.2"
+		OffCommand="stoptweening;zoom,0"
+	/>
+</children> </ActorFrame>
