@@ -37,6 +37,14 @@ Pretty insane how functional this theme still is even on NotITG current version
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Since the detailed scores it uses is already similar to the 17-tier one, I also changed the score threshold in metrics.ini to a 17-tier one for consistency across themes.
 
+<img width="200" height="150" alt="NotITG-v4 9 1_53Shs8O6uq" src="https://github.com/user-attachments/assets/e0c22c18-cec8-420a-b25d-c2a7d8831838" />
+<img width="200" height="150" alt="NotITG-v4 9 1_ydQ8VCPOex" src="https://github.com/user-attachments/assets/0f8bc8c2-9e2a-4ae8-aabc-0c3b48679eea" />
+<img width="200" height="150" alt="NotITG-v4 9 1_13CBcIFn30" src="https://github.com/user-attachments/assets/7767509a-61a6-48d3-a398-cc5428121afe" />
+<img width="200" height="150" alt="NotITG-v4 9 1_3LoP7zfpwd" src="https://github.com/user-attachments/assets/d8575bbb-d00c-4c00-af22-ed18defb8526" />
+<img width="200" height="150" alt="NotITG-v4 9 1_IV6PgA7Zjo" src="https://github.com/user-attachments/assets/7b6fd3a0-f78b-448d-acda-8401e8c622c3" />
+<img width="200" height="150" alt="NotITG-v4 9 1_5IrQY1r7ci" src="https://github.com/user-attachments/assets/a41efbde-30bb-485b-91d0-395f90f3eb4e" />
+
+
 # SIMPLY ITG
 The default In The Groove 2 theme, with certain features from NotITG Simply Love ported over.
 ## Credits:
@@ -55,6 +63,13 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Changed the values of the Lifebar Adjustment option, so you don't need to go to metrics.ini to change the lifebars for widescreen anymore. Lifebar Adjustment is now set to 0 by default.\
 -Changed the help text in Edit Mode to reflect NotITG edit mode functions.\
 -Removed Reset Menu button in Options as it screws up the game real badly. (not so surprising isn't it)
+
+<img width="200" height="150" alt="NotITG-v4 9 1_aSZEkP7Qqw" src="https://github.com/user-attachments/assets/cafa07e5-a603-408a-b327-56bc7472d54b" />
+<img width="200" height="150" alt="NotITG-v4 9 1_WEXP4fVbKx" src="https://github.com/user-attachments/assets/be3345b4-037c-4ee0-9865-b69f5daab26f" />
+<img width="200" height="150" alt="NotITG-v4 9 1_jUI7JOitBB" src="https://github.com/user-attachments/assets/6f34b1b8-bf6c-40a4-8e95-53eee088e152" />
+<img width="200" height="150" alt="NotITG-v4 9 1_5kZQj0vMFM" src="https://github.com/user-attachments/assets/4ee8515c-2a99-404c-947f-3cb2488c7b9a" />
+<img width="200" height="150" alt="NotITG-v4 9 1_TO6OPIpG9X" src="https://github.com/user-attachments/assets/3e73d16f-4af4-4da7-8acf-810da2296895" />
+
 
 # DANCE WITH INTENSITY
 A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHorse.
@@ -79,6 +94,12 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Added the ability to set the resolution alongside the ratio. All ratios except for 4:3, 16:10, 16:9, 3:2 and 5:4 are removed.\
 -Added the song title in the evaluation screen to account for charts with no banners. 
 
+<img width="200" height="150" alt="NotITG-v4 9 1_yNGDFvPqYA" src="https://github.com/user-attachments/assets/a0337299-a99f-4f32-8a6e-25090ab40973" />
+<img width="200" height="150" alt="NotITG-v4 9 1_Odd72sXTZe" src="https://github.com/user-attachments/assets/6b90feff-2ba1-4053-b787-ab8c8ec3daad" />
+<img width="200" height="150" alt="NotITG-v4 9 1_emRLmGJCsw" src="https://github.com/user-attachments/assets/509b91eb-c5d7-401d-ad51-5069370aafef" />
+<img width="200" height="150" alt="NotITG-v4 9 1_bAowKTo4vO" src="https://github.com/user-attachments/assets/17a476b3-c412-4ee8-af3c-48c3a36014f7" />
+<img width="200" height="150" alt="NotITG-v4 9 1_FgkErb8ypD" src="https://github.com/user-attachments/assets/38283b56-7547-4437-8b7c-a4a8180158f0" />
+
 
 # IN THE GROOVE: TACTICS
 A minimal theme based on the game Final Fantasy Tactics by Square, featuring a whole... class system?
@@ -95,6 +116,13 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Fixed some of the UI in Marathon Mode, fixed the bug where the course title is updated one course late when switching courses.\
 -NOTE: I did NOT change this one to the 17-tier scoring threshold, so the saved grades will be messed up when you check out other themes. (Will automatically fix itself when it's fixed in the next NotITG release)
+
+<img width="200" height="150" alt="NotITG-v4 9 1_1tjK7gDr5J" src="https://github.com/user-attachments/assets/89a4413f-d6ae-452e-9efa-250af917df0b" />
+<img width="200" height="150" alt="NotITG-v4 9 1_PBIx9s7E0H" src="https://github.com/user-attachments/assets/0b08f8a2-4aeb-4368-a9be-4432b97c23c3" />
+<img width="200" height="150" alt="NotITG-v4 9 1_o7xHbsTTF9" src="https://github.com/user-attachments/assets/2aca4eec-f10f-4ab1-9918-51dae84817b2" />
+<img width="200" height="150" alt="NotITG-v4 9 1_YxcHjR6XMb" src="https://github.com/user-attachments/assets/c7283f67-ff9a-4792-922c-086425357e29" />
+<img width="200" height="150" alt="NotITG-v4 9 1_HvAg8y7O6n" src="https://github.com/user-attachments/assets/33ebe694-cac4-4099-a76c-b90dffdc861e" />
+<img width="200" height="150" alt="NotITG-v4 9 1_gNbsq0hjzg" src="https://github.com/user-attachments/assets/39bbd930-a767-47ae-a2f8-ef09cf88ae4d" />
 
 
 # A.O.I.
@@ -126,6 +154,13 @@ The accelerated operational interface for Stepmania 3.95 ported to NotITG!
 -Added the song title in the evaluation screen to account for charts with no banners. Also fixed the timer bar sprite in the evaluation screen.\
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that) and Profile Options (NotITG's built-in profile system is broken). Removed Show Caution, Show Song Options and Show Instructions options as it doesn't really affect anything in A.O.I., it just causes other themes to break.\
 -Finished the UI in Edit Mode.
+
+<img width="200" height="150" alt="NotITG-v4 9 1_fI2Rc4ccEX" src="https://github.com/user-attachments/assets/42d665a7-7956-4a56-b381-5b2600e8456e" />
+<img width="200" height="150" alt="NotITG-v4 9 1_rAmhAt1GeF" src="https://github.com/user-attachments/assets/7e4efa9c-987e-486a-ba07-4e89dbb3dff8" />
+<img width="200" height="150" alt="NotITG-v4 9 1_sYwGA8m7HN" src="https://github.com/user-attachments/assets/63642c71-c162-430a-8544-bdf0890b3eee" />
+<img width="200" height="150" alt="NotITG-v4 9 1_tyAxM6TUiZ" src="https://github.com/user-attachments/assets/51bc282b-0001-4d66-a774-3fa211f9cf4e" />
+<img width="200" height="150" alt="NotITG-v4 9 1_nV1CXnBpCu" src="https://github.com/user-attachments/assets/96dd0d70-1574-4480-b898-58e9e1306d97" />
+
 
 
 
