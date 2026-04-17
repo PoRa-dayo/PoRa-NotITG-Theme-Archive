@@ -1,7 +1,7 @@
 This archive only hosts NotITG-compatible themes that do not already have a NotITG fork maintained by anyone else, with the exception being Simply ITG because idk how to contact the creator.
 So here's a list of themes that do have NotITG fork and are still currently maintained by other people:
 
-Simply Love - Oat vs. Rya's Fork: https://github.com/oatmealine/simply-love-oat-fork
+Simply Love - Oat vs. Rya's Fork: https://github.com/oatmealine/simply-love-oat-fork \
 GrooveNights - Star's Fork: https://github.com/StarUndrscre/GrooveNights-StarFork
 
 # Welcome to my NotITG theme archive!
