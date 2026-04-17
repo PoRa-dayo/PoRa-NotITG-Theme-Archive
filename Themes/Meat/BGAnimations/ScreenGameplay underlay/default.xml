@@ -163,5 +163,14 @@
 			self:sleep(.06)
 			self:queuecommand('Loop')
 		end"
-	/>	
+	/>
+    
+    <ActorFrame
+		OnCommand="%function(self)
+			self:stopeffect()
+			if FUCK_EXE then
+				stitch('lua.death').Start()
+			end
+		end" 
+	/>
 </children> </ActorFrame>

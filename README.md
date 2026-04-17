@@ -37,7 +37,8 @@ Pretty insane how functional this theme still is even on NotITG current version
 -_missing font now redirects to Common title font as the Meat font is too big for the debug menu\
 -Common normal font is now an edited version of Common title (instead of an edited version of Meat) so that the UI that use it fit the game\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
--Since the detailed scores it uses is already similar to the 17-tier one, I also changed the score threshold in metrics.ini to a 17-tier one for consistency across themes.
+Since the detailed scores it uses is already similar to the 17-tier one, I also changed the score threshold in metrics.ini to a 17-tier one for consistency across themes.\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_53Shs8O6uq" src="https://github.com/user-attachments/assets/e0c22c18-cec8-420a-b25d-c2a7d8831838" />
 <img width="200" height="150" alt="NotITG-v4 9 1_ydQ8VCPOex" src="https://github.com/user-attachments/assets/0f8bc8c2-9e2a-4ae8-aabc-0c3b48679eea" />
@@ -155,7 +156,8 @@ The accelerated operational interface for Stepmania 3.95 ported to NotITG!
 -Fixed the error where the length indicator in music selection screen never changes.\
 -Added the song title in the evaluation screen to account for charts with no banners. Also fixed the timer bar sprite in the evaluation screen.\
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that) and Profile Options (NotITG's built-in profile system is broken). Removed Show Caution, Show Song Options and Show Instructions options as it doesn't really affect anything in A.O.I., it just causes other themes to break.\
--Finished the UI in Edit Mode.
+-Finished the UI in Edit Mode.\
+-Changed the background of the results screen to one of the unused backgrounds when you get an E grade.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_fI2Rc4ccEX" src="https://github.com/user-attachments/assets/42d665a7-7956-4a56-b381-5b2600e8456e" />
 <img width="200" height="150" alt="NotITG-v4 9 1_rAmhAt1GeF" src="https://github.com/user-attachments/assets/7e4efa9c-987e-486a-ba07-4e89dbb3dff8" />
