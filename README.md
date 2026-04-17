@@ -1,3 +1,13 @@
+This archive only hosts NotITG-compatible themes that do not already have a NotITG fork maintained by anyone else, with the exception being Simply ITG because idk how to contact the creator.
+So here's a list of themes that do have NotITG fork and are still currently maintained by other people:
+
+Simply Love - Oat vs. Rya's Fork: https://github.com/oatmealine/simply-love-oat-fork
+GrooveNights - Star's Fork: https://github.com/StarUndrscre/GrooveNights-StarFork
+
+# Welcome to my NotITG theme archive!
+
+**NOTE: The game might give errors if you try to play files immediately after switching themes. Restarting the game fixes the problem.**
+
 An archive by PoRa that hosts old NotITG-compatible themes, slightly edited to ensure a smooth experience on NotITG v4.9.1. Hopefully this will allow for more long-term usage with these themes.
 
 These were only tested on NotITG v4.9.1 Coin Mode Home + Event Mode.
