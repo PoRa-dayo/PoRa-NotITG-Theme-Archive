@@ -282,7 +282,4 @@
 		<Layer Type="Quad" InitCommand="faderight,0.8;diffuse,0,0,0,0" DeadCommand="hidden,0;diffuse,1,0,0,0;linear,0.3;diffuse,1,0,0,1;linear,0.3;diffuse,1,0,0,0.2" AliveCommand="hidden,1;diffuse,0,0,0,0" />
 		<Layer Type="Quad" InitCommand="faderight,0.8;diffuse,0,0,0,0" AliveCommand="hidden,0;diffuse,0,1,0,0;linear,0.3;diffuse,0,0.8,0,0.5;linear,0.3;diffuse,0,0,0,0" DeadCommand="hidden,1" />
 	</children></Layer>
-	
-
-
 </children></ActorFrame>

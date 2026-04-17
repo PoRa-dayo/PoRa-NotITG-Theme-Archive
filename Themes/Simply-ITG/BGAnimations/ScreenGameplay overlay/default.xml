@@ -125,5 +125,13 @@
 	<Layer Font="modText" Text=" " InitCommand="aux,1;queuecommand,Go" GoCommand="%MeasureText" />
 	<Layer Font="modText" Text=" " InitCommand="aux,2;queuecommand,Go" GoCommand="%MeasureText" />
 </children></ActorFrame>
+    <ActorFrame
+		OnCommand="%function(self)
+			self:stopeffect()
+			if FUCK_EXE then
+				stitch('lua.death').Start()
+			end
+		end" 
+	/>
 </children> </ActorFrame>
 

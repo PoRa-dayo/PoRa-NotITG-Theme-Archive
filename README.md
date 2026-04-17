@@ -65,7 +65,8 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Moved the Clean Screen options to Arcade Option.\
 -Changed the values of the Lifebar Adjustment option, so you don't need to go to metrics.ini to change the lifebars for widescreen anymore. Lifebar Adjustment is now set to 0 by default.\
 -Changed the help text in Edit Mode to reflect NotITG edit mode functions.\
--Removed Reset Menu button in Options as it screws up the game real badly. (not so surprising isn't it)
+-Removed Reset Menu button in Options as it screws up the game real badly. (not so surprising isn't it)\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_aSZEkP7Qqw" src="https://github.com/user-attachments/assets/cafa07e5-a603-408a-b327-56bc7472d54b" />
 <img width="200" height="150" alt="NotITG-v4 9 1_WEXP4fVbKx" src="https://github.com/user-attachments/assets/be3345b4-037c-4ee0-9865-b69f5daab26f" />
@@ -157,7 +158,8 @@ The accelerated operational interface for Stepmania 3.95 ported to NotITG!
 -Added the song title in the evaluation screen to account for charts with no banners. Also fixed the timer bar sprite in the evaluation screen.\
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that) and Profile Options (NotITG's built-in profile system is broken). Removed Show Caution, Show Song Options and Show Instructions options as it doesn't really affect anything in A.O.I., it just causes other themes to break.\
 -Finished the UI in Edit Mode.\
--Changed the background of the results screen to one of the unused backgrounds when you get an E grade.
+-Changed the background of the results screen to one of the unused backgrounds when you get an E grade.\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_fI2Rc4ccEX" src="https://github.com/user-attachments/assets/42d665a7-7956-4a56-b381-5b2600e8456e" />
 <img width="200" height="150" alt="NotITG-v4 9 1_rAmhAt1GeF" src="https://github.com/user-attachments/assets/7e4efa9c-987e-486a-ba07-4e89dbb3dff8" />
