@@ -76,7 +76,8 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Fixed some more stupid errors in profile-related functions\
 -Fixed the softlock that occurs when discarding offset changes\
 -Fixed the tween overflow error that occurs when scrolling through songs too quickly\
--Added the ability to set the resolution alongside the ratio. All ratios except for 4:3, 16:10, 16:9, 3:2 and 5:4 are removed.
+-Added the ability to set the resolution alongside the ratio. All ratios except for 4:3, 16:10, 16:9, 3:2 and 5:4 are removed.\
+-Added the song title in the evaluation screen to account for charts with no banners. 
 
 
 # IN THE GROOVE: TACTICS

@@ -1211,3 +1211,18 @@ function EditorHelpText()
 
 	return text
 end
+
+function SongTitle(self)
+    self:settext(' ')
+    if GAMESTATE:IsCourseMode() then
+        local course = GAMESTATE:GetCurrentCourse()
+        if course then
+            self:settext( course:GetDisplayFullTitle() )
+        end
+    else
+        local songg = GAMESTATE:GetCurrentSong()
+        if songg then
+            self:settext( songg:GetDisplayMainTitle() )
+        end
+    end
+end
