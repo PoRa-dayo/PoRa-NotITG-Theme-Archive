@@ -597,6 +597,16 @@ function SongSelectionScreen()
 	return s
 end
 function GetStartScreen() PREFSMAN:SetPreference("DelayedScreenLoad",false) if PREFSMAN:GetPreference('BreakComboToGetItem') and GetInputType and GetInputType() == "" then return "ScreenArcadeStart" end return THEME:GetMetric('Common','FirstAttractScreen') end
+function GetStepsDescriptionText(n)
+	local steps = GAMESTATE:GetCurrentSteps(n)
+	if not steps then
+		text = ''
+	else
+		text = steps:GetDescription()
+	end
+	if string.lower(text) == 'blank' then text = '' end
+	return text
+end
 
 function StarCheck()
     local title
@@ -614,7 +624,7 @@ function StarCheck()
     if not title then
         return false
     end
-    local wordList = {"atmosphere","atomosphere","andromeda","mars","uranus","earth","moon","space","planet","galaxy","star","cosmos","cosmic","gravity","orbit","nebula","comet","constellation","quasar","quaoar","mars","wormhole","zenith"}
+    local wordList = {"atmosphere","atomosphere","andromeda","astro","mars","uranus","earth","moon","space","planet","galaxy","star","cosmos","cosmic","gravity","orbit","nebula","comet","constellation","quasar","quaoar","mars","wormhole","zenith"}
     title = string.lower(title)
     for _,word in ipairs(wordList) do
         if string.find(title,word,1) then

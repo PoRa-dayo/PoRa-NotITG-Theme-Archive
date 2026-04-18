@@ -148,6 +148,21 @@
 			SetCommand="%function(self) if world == 8 then self:settext(CourseMachineHighScoreText[2]) else self:settext(MachineHighScoreText[2]) end end"
 			SongInfoMessageCommand="queuecommand,Set" 
 		/>
+        <Layer
+			Font="PaneDisplay text"
+			Text="Desc"
+            Condition="world ~= 8"
+			OnCommand="x,-75;y,-24-13;horizalign,left;zoomx,.25;zoomy,.3;shadowlength,0;diffuse,#000000"
+		/>
+        <Layer
+			Font="PaneDisplay text"
+			Text=""
+            Condition="world ~= 8"
+			OnCommand="@'x,-30;y,-24-13;horizalign,left;zoomx,.25;zoomy,.3;shadowlength,0;maxwidth,410;diffuse,' .. BannerTextColor()"
+			SetCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" 
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
+		/>
 	</children></Layer>
 	<Layer Type="ActorFrame" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"	InitCommand="@'x,'..GetPaneX(PLAYER_1)..';y,SCREEN_CENTER_Y+116;zoom,1.1'" ><children>
 		<Layer
@@ -163,6 +178,21 @@
 			OnCommand="@'x,-5;y,-24+13*3;horizalign,right;zoomx,.25;zoomy,.3;shadowlength,0;diffuse,' .. BannerTextColor()"
 			SetCommand="%function(self) if world == 8 then self:settext(CourseMachineHighScoreText[1]) else self:settext(MachineHighScoreText[1]) end end"
 			SongInfoMessageCommand="queuecommand,Set" 
+		/>
+        <Layer
+			Font="PaneDisplay text"
+			Text="Desc"
+            Condition="world ~= 8"
+			OnCommand="x,-75;y,-24-13;horizalign,left;zoomx,.25;zoomy,.3;shadowlength,0;diffuse,#000000"
+		/>
+        <Layer
+			Font="PaneDisplay text"
+			Text=""
+            Condition="world ~= 8"
+			OnCommand="@'x,-30;y,-24-13;horizalign,left;zoomx,.25;zoomy,.3;shadowlength,0;maxwidth,410;diffuse,' .. BannerTextColor()"
+			SetCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_1)) end" 
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
 		/>
 	</children></Layer>
 	<Layer

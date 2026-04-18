@@ -1673,3 +1673,14 @@ function SaveProfile(self)
 		self:queuecommand("SaveProfile")
 	end
 end
+
+function GetStepsDescriptionText(n)
+	local steps = GAMESTATE:GetCurrentSteps(n)
+	if not steps then
+		text = ''
+	else
+		text = steps:GetDescription()
+	end
+	if string.lower(text) == 'blank' then text = '' end
+	return text
+end

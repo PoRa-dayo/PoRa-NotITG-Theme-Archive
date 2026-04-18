@@ -36,6 +36,14 @@
             OnCommand="x,SCREEN_CENTER_X-290;y,SCREEN_CENTER_Y+180;zoom,0.5;horizalign,left"
             UpdateMessageCommand="%function(self) LevelMeterTicks(self, PLAYER_1, -300) end"
             />
+        <Layer
+            Type="BitmapText"
+            Font="_sg stroke"
+            Text=""
+            Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="x,SCREEN_CENTER_X-305;y,SCREEN_CENTER_Y+165;zoom,0.4;horizalign,left;maxwidth,300;"
+            SetCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_1)) end" 
+			UpdateMessageCommand="playcommand,Set" />
 
         <Layer
             File="@ThemeFile('Ticks')"
@@ -54,6 +62,15 @@
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
             OnCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y+180;zoom,0.5;horizalign,left"
             UpdateMessageCommand="%function(self) LevelMeterTicks(self, PLAYER_2, -135) end" />
+            
+        <Layer
+            Type="BitmapText"
+            Font="_sg stroke"
+            Text=""
+            Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            OnCommand="x,SCREEN_CENTER_X-30;y,SCREEN_CENTER_Y+165;zoom,0.4;horizalign,right;maxwidth,300;"
+            SetCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" 
+			UpdateMessageCommand="playcommand,Set" />
 
         <Layer
             File="@ThemeFile('Ticks')"

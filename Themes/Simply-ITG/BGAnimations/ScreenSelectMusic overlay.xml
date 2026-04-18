@@ -1,0 +1,46 @@
+<ActorFrame> <children>
+    <Layer 
+        File="../Graphics/ScreenSelectMusic options glow"
+        OnCommand="animate,0;x,SCREEN_CENTER_X;y,240;hidden,1"
+        SongChosenMessageCommand="stoptweening;queuecommand,B"
+        BCommand="@'hidden,0;'..THEME:GetMetric('ScreenSelectMusic','OptionsMessageOnCommand')"
+        EnterModsMenuMessageCommand="@'setstate,1;'..THEME:GetMetric('ScreenSelectMusic','OptionsMessageOffCommand')"
+    />
+    <Layer 
+        Type="BitmapText"
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+        Font="_eurostile normal"
+        Text="Desc"
+        OnCommand="x,GetPaneX(PLAYER_1)-108;y,SCREEN_BOTTOM-95-14*2;shadowlength,0;zoom,0.5"
+    />
+    <Layer 
+        Type="BitmapText"
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+        Font="_eurostile normal"
+        Text=" " 
+        OnCommand="x,GetPaneX(PLAYER_1)-77;y,SCREEN_BOTTOM-95-14*2;shadowlength,0;zoom,0.5;horizalign,left;maxwidth,275" 
+        SetCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_1)) end" 
+        CurrentSongChangedMessageCommand="playcommand,Set" 
+        CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+    />
+    
+    
+    <Layer 
+        Type="BitmapText"
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+        Font="_eurostile normal"
+        Text="Desc"
+        OnCommand="x,GetPaneX(PLAYER_2)-45;y,SCREEN_BOTTOM-95-14*2;shadowlength,0;zoom,0.5"
+    />
+    <Layer 
+        Type="BitmapText"
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+        Font="_eurostile normal"
+        Text=" " 
+        OnCommand="x,GetPaneX(PLAYER_2)-15;y,SCREEN_BOTTOM-95-14*2;shadowlength,0;zoom,0.5;horizalign,left;maxwidth,275" 
+        SetCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" 
+        CurrentSongChangedMessageCommand="playcommand,Set" 
+        CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
+    />
+</children> </ActorFrame>
+

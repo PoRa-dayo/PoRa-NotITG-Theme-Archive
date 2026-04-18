@@ -36,6 +36,11 @@
 				InitCommand="x,-22;y,-80;shadowlength,0;zoomx,1.25"
 			/>
 		</children></Layer>
+        <Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X+195;y,SCREEN_CENTER_Y+210;zoom,0;linear,.2;zoom,1" OffCommand="zoom,0"> <children>
+			<Layer
+				File="StepArtist.png"
+			/>
+		</children></Layer>
 	</children></Layer>
 	<Layer Type="ActorFrame" Condition="GAMESTATE:IsCourseMode()" > <children>
 		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-148;y,SCREEN_CENTER_Y-12;zoom,0;linear,.2;zoom,1" OffCommand="zoom,0"> <children>

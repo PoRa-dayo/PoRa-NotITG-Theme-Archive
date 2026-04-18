@@ -16,6 +16,6 @@
 	/>
 	<Layer
 		File="@'PaneDisplay under p1/Frame'..world..dark..'.png'"
-		Command="y,4;zoom,.38;zoomx,.6"
+		Command="y,-2;zoom,.46;zoomx,.6"
 	/>
 </children></ActorFrame>

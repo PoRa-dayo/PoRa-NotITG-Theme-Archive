@@ -438,7 +438,16 @@ function GameplayBPM(self)
 end
 
 function GetStartScreen() PREFSMAN:SetPreference("DelayedScreenLoad",false) if PREFSMAN:GetPreference('BreakComboToGetItem') and GetInputType and GetInputType() == "" then return "ScreenArcadeStart" end return THEME:GetMetric('Common','FirstAttractScreen') end
-
+function GetStepsDescriptionText(n)
+	local steps = GAMESTATE:GetCurrentSteps(n)
+	if not steps then
+		text = ''
+	else
+		text = steps:GetDescription()
+	end
+	if string.lower(text) == 'blank' then text = '' end
+	return text
+end
 
 modJudgmentFont = {1,1}
 

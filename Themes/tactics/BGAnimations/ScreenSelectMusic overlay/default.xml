@@ -53,6 +53,22 @@
 				CurrentSongChangedMessageCommand="playcommand,Set"
 			/>
 		</children></ActorFrame>
+        <Layer 
+		   Font="_FFT2 pane"
+			Text=" " 
+			OnCommand="diffusealpha,0;x,SCREEN_CENTER_X+100;y,SCREEN_CENTER_Y+200;shadowlength,0;horizalign,left;maxwidth,160;sleep,.2;diffusealpha,1" 
+			SetCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_1)) end" 
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+		/>
+        <Layer 
+		   Font="_FFT2 pane"
+			Text=" " 
+			OnCommand="diffusealpha,0;x,SCREEN_CENTER_X+280;y,SCREEN_CENTER_Y+217;shadowlength,0;horizalign,right;maxwidth,160;sleep,.2;diffusealpha,1" 
+			SetCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" 
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
+		/>
 	</children></ActorFrame>
 	<Layer Type="ActorFrame" Condition="GAMESTATE:IsCourseMode()"> <children>
 		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="x,GetPaneX(PLAYER_2)+15;y,SCREEN_CENTER_Y-56;zoom,0;linear,0.2;zoom,1" OffCommand="zoom,0"><children>

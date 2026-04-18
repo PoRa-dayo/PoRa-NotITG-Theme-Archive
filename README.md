@@ -39,7 +39,8 @@ Pretty insane how functional this theme still is even on NotITG current version
 -Common normal font is now an edited version of Common title (instead of an edited version of Meat) so that the UI that use it fit the game\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 Since the detailed scores it uses is already similar to the 17-tier one, I also changed the score threshold in metrics.ini to a 17-tier one for consistency across themes.\
--Stitch.lua is implemented, alongside FailOverlays and the in-game console.
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
+-Added step artist display in song selection screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_53Shs8O6uq" src="https://github.com/user-attachments/assets/e0c22c18-cec8-420a-b25d-c2a7d8831838" />
 <img width="200" height="150" alt="NotITG-v4 9 1_ydQ8VCPOex" src="https://github.com/user-attachments/assets/0f8bc8c2-9e2a-4ae8-aabc-0c3b48679eea" />
@@ -67,7 +68,10 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Changed the values of the Lifebar Adjustment option, so you don't need to go to metrics.ini to change the lifebars for widescreen anymore. Lifebar Adjustment is now set to 0 by default.\
 -Changed the help text in Edit Mode to reflect NotITG edit mode functions.\
 -Removed Reset Menu button in Options as it screws up the game real badly. (not so surprising isn't it)\
--Stitch.lua is implemented, alongside FailOverlays and the in-game console.
+-Replay Song? screen now takes you to evaluation screen if No is selected.\
+-Removed Marathon Mode and Battle Mode buttons on title screen, select those inside Dance Mode instead.\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
+-Added step artist display in song selection screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_aSZEkP7Qqw" src="https://github.com/user-attachments/assets/cafa07e5-a603-408a-b327-56bc7472d54b" />
 <img width="200" height="150" alt="NotITG-v4 9 1_WEXP4fVbKx" src="https://github.com/user-attachments/assets/be3345b4-037c-4ee0-9865-b69f5daab26f" />
@@ -98,7 +102,8 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Fixed the tween overflow error that occurs when scrolling through songs too quickly\
 -Added the ability to set the resolution alongside the ratio. All ratios except for 4:3, 16:10, 16:9, 3:2 and 5:4 are removed.\
 -Added the song title in the evaluation screen to account for charts with no banners.\
--Stitch.lua is implemented, alongside FailOverlays and the in-game console.
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
+-Added step artist display in song selection screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_yNGDFvPqYA" src="https://github.com/user-attachments/assets/a0337299-a99f-4f32-8a6e-25090ab40973" />
 <img width="200" height="150" alt="NotITG-v4 9 1_Odd72sXTZe" src="https://github.com/user-attachments/assets/6b90feff-2ba1-4053-b787-ab8c8ec3daad" />
@@ -123,7 +128,8 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 -Fixed some of the UI in Marathon Mode, fixed the bug where the course title is updated one course late when switching courses.\
 -NOTE: I did NOT change this one to the 17-tier scoring threshold, so the saved grades will be messed up when you check out other themes. (Will automatically fix itself when it's fixed in the next NotITG release)\
 -Fixed the oversight that made system messages stay hidden after showing up for the first time.\
--Stitch.lua is implemented, alongside FailOverlays and the in-game console.
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
+-Added step artist display in song selection screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_1tjK7gDr5J" src="https://github.com/user-attachments/assets/89a4413f-d6ae-452e-9efa-250af917df0b" />
 <img width="200" height="150" alt="NotITG-v4 9 1_PBIx9s7E0H" src="https://github.com/user-attachments/assets/0b08f8a2-4aeb-4368-a9be-4432b97c23c3" />
@@ -163,7 +169,8 @@ The accelerated operational interface for Stepmania 3.95 ported to NotITG!
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that) and Profile Options (NotITG's built-in profile system is broken). Removed Show Caution, Show Song Options and Show Instructions options as it doesn't really affect anything in A.O.I., it just causes other themes to break.\
 -Finished the UI in Edit Mode.\
 -Changed the background of the results screen to one of the unused backgrounds when you get an E grade.\
--Stitch.lua is implemented, alongside FailOverlays and the in-game console.
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
+-Added step artist display in song selection screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_fI2Rc4ccEX" src="https://github.com/user-attachments/assets/42d665a7-7956-4a56-b381-5b2600e8456e" />
 <img width="200" height="150" alt="NotITG-v4 9 1_rAmhAt1GeF" src="https://github.com/user-attachments/assets/7e4efa9c-987e-486a-ba07-4e89dbb3dff8" />
