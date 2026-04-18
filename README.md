@@ -97,7 +97,8 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Fixed the softlock that occurs when discarding offset changes\
 -Fixed the tween overflow error that occurs when scrolling through songs too quickly\
 -Added the ability to set the resolution alongside the ratio. All ratios except for 4:3, 16:10, 16:9, 3:2 and 5:4 are removed.\
--Added the song title in the evaluation screen to account for charts with no banners. 
+-Added the song title in the evaluation screen to account for charts with no banners.\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_yNGDFvPqYA" src="https://github.com/user-attachments/assets/a0337299-a99f-4f32-8a6e-25090ab40973" />
 <img width="200" height="150" alt="NotITG-v4 9 1_Odd72sXTZe" src="https://github.com/user-attachments/assets/6b90feff-2ba1-4053-b787-ab8c8ec3daad" />
@@ -120,7 +121,9 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 -Changed the layering of the BPM number so that it stays hidden during modfiles.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Fixed some of the UI in Marathon Mode, fixed the bug where the course title is updated one course late when switching courses.\
--NOTE: I did NOT change this one to the 17-tier scoring threshold, so the saved grades will be messed up when you check out other themes. (Will automatically fix itself when it's fixed in the next NotITG release)
+-NOTE: I did NOT change this one to the 17-tier scoring threshold, so the saved grades will be messed up when you check out other themes. (Will automatically fix itself when it's fixed in the next NotITG release)\
+-Fixed the oversight that made system messages stay hidden after showing up for the first time.\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_1tjK7gDr5J" src="https://github.com/user-attachments/assets/89a4413f-d6ae-452e-9efa-250af917df0b" />
 <img width="200" height="150" alt="NotITG-v4 9 1_PBIx9s7E0H" src="https://github.com/user-attachments/assets/0b08f8a2-4aeb-4368-a9be-4432b97c23c3" />

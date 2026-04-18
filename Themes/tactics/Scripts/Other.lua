@@ -437,6 +437,8 @@ function GameplayBPM(self)
 	end
 end
 
+function GetStartScreen() PREFSMAN:SetPreference("DelayedScreenLoad",false) if PREFSMAN:GetPreference('BreakComboToGetItem') and GetInputType and GetInputType() == "" then return "ScreenArcadeStart" end return THEME:GetMetric('Common','FirstAttractScreen') end
+
 
 modJudgmentFont = {1,1}
 

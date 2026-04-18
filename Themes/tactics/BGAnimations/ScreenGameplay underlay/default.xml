@@ -25,5 +25,11 @@
 		OnCommand="queuecommand,Update"
 		UpdateCommand="%GameplayBPM"
 	/>
-    <ActorFrame Command="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
+    <ActorFrame FirstUpdateCommand="%Gameplay" Command="%function(self)
+        GameplayInit(self)
+        self:stopeffect()
+        if FUCK_EXE then
+            stitch('lua.death').Start()
+        end
+    end"/>
 </children> </ActorFrame>
