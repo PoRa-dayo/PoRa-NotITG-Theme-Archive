@@ -185,7 +185,7 @@ OITGThemerFallback also has some documentation in the metrics that you can use a
 A kawaii theme based on the visual novel Prism Rhythm published by Lump of Sugar.\
 This theme already has almost every feature you can ask for, so there are very few things I need to edit. It also has loads of documentation in the metrics that you can use as a reference to make your own theme.
 ## Credits:
--Original theme by Ace of Arrows, and unlike most other SM3.95/OITG themes, it's still being maintained! Optimized for NotITG 4.9.1 by PoRa.
+-Original theme by Ace of Arrows, and unlike most other SM3.95/OITG themes, it's still being maintained! Optimized for NotITG 4.9.1 by PoRa with permission.
 
 ## Changelogs:
 -Added "Play Mods" (takes you to 2P Regular immediately)\
