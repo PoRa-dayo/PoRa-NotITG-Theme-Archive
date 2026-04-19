@@ -1,0 +1,89 @@
+<ActorFrame> <children>
+
+		<Layer Type="BitmapText"
+			Text="PrismRhythm 19 [ScreenStage]"
+			File="_eurostile blue glow"
+			InitCommand="X,SCREEN_LEFT+17;Y,SCREEN_TOP+20;shadowlength,0"
+			OnCommand="horizalign,left;Zoom,.3"
+			OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+		/>
+
+<Layer
+   File="Stage Banner Frame"
+   InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_TOP+110"
+/>
+
+<Layer
+   Condition="not GAMESTATE:IsCourseMode()"
+   File="songbanner"
+   InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_TOP+110;ScaleToClipped,208,82"
+/>
+
+<Layer
+   Condition="GAMESTATE:IsCourseMode()"
+   File="coursebanner"
+   InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_TOP+110;ScaleToClipped,208,82"
+/>
+
+<Layer
+   File="Song Name Pane"
+   InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_TOP+40"
+/>
+
+	<Layer Type="ActorFrame"
+		InitCommand="X,SCREEN_CENTER_X+1;Y,SCREEN_TOP+35;shadowlength,2"
+		> <children>
+
+		<Layer
+			Condition="not GAMESTATE:IsCourseMode()"
+			Type="BitmapText"
+			Font="_v profile"
+			InitCommand="animate,0;playcommand,Update"
+			OnCommand="Y,1;zoom,.55;shadowlength,0"
+			OffCommand="linear,0.3;diffusealpha,0"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentSong():GetDisplayFullTitle()) end"
+		/>
+
+		<Layer
+			Condition="GAMESTATE:IsCourseMode()"
+			Type="BitmapText"
+			Font="_v profile"
+			InitCommand="animate,0;playcommand,Update"
+			OnCommand="Y,1;zoom,.7;shadowlength,0"
+			OffCommand="linear,0.3;diffusealpha,0"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%SetFromSongTitleAndCourseTitle"
+		/>
+	</children> </Layer>
+
+	<Layer Type="ActorFrame"
+		InitCommand="X,SCREEN_CENTER_X+1;Y,SCREEN_TOP+47;shadowlength,2"
+		> <children>
+
+		<Layer
+			Condition="not GAMESTATE:IsCourseMode()"
+			Type="BitmapText"
+			Font="_v profile"
+			InitCommand="animate,0;playcommand,Update"
+			OnCommand="Y,0;zoom,.4;shadowlength,0"
+			OffCommand="linear,0.3;diffusealpha,0"
+			UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentSong():GetDisplayArtist()) end"
+		/>
+
+</children> </Layer>
+
+<Layer
+   Condition="not GAMESTATE:IsCourseMode()"
+   File="Stage Background Frame"
+   InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_BOTTOM-90"
+/>
+
+<Layer
+   Condition="not GAMESTATE:IsCourseMode()"
+   File="songbackground"
+   InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_BOTTOM-90;ScaleToClipped,160,120"
+/>
+
+</children>
+</ActorFrame>

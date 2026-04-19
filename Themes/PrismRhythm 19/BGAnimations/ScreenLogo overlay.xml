@@ -1,0 +1,30 @@
+<ActorFrame> <children>
+
+<Layer Type="File"
+   File="Header Pane"
+   InitCommand="diffusealpha,1"
+   OnCommand="HorizAlign,Left;VertAlign,Top;X,SCREEN_LEFT+11;Y,SCREEN_TOP+22"
+/>
+
+		<Layer Type="BitmapText"
+			Text="PrismRhythm 19 [ScreenLogo] (Demo Loop 3/8)"
+			File="_eurostile blue glow"
+			InitCommand="X,SCREEN_LEFT+17;Y,SCREEN_TOP+20;shadowlength,0"
+			OnCommand="horizalign,left;Zoom,.4"
+		/>
+
+		<Layer Type="BitmapText"
+			Text="Title Screen"
+			File="_eurostile blue glow"
+			InitCommand="X,SCREEN_LEFT+16;Y,SCREEN_TOP+32;shadowlength,2"
+			OnCommand="horizalign,left;Zoom,.5"
+		/>
+
+		<Layer Type="BitmapText"
+			Text="The game and theme's title card, essentially."
+			File="_v profile"
+			InitCommand="X,SCREEN_LEFT+17;Y,SCREEN_TOP+44;shadowlength,0"
+			OnCommand="horizalign,left;Zoom,.4"
+		/>
+
+</children> </ActorFrame>

@@ -1,0 +1,4 @@
+<ActorFrame Condition="FUCK_EXE" OverlayReadyMessageCommand="%function(self) stitch('lua.death').Ready(self) end" ><children>
+	<Layer File="YouDied" OnCommand="diffusealpha,0" />
+	<Layer File="Wasted" OnCommand="diffusealpha,0" />
+</children></ActorFrame>

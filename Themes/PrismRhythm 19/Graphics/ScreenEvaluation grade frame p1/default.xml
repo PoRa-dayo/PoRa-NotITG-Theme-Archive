@@ -1,0 +1,28 @@
+<ActorFrame> <children>
+	<Layer File="Base Frame" />
+	<Layer Type="ActorFrame" OnCommand="x,-91;y,31"> <children>
+		<Layer Type="BitmapText" Font="_eurostile normal" Text="Awesome"	OnCommand="y,16*0;zoom,0.4;horizalign,center;Diffuse,#66FFFF;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_eurostile normal" Text="Sweet"		OnCommand="y,16*1;zoom,0.4;horizalign,center;Diffuse,#FFFF33;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_eurostile normal" Text="Nice"		OnCommand="y,16*2;zoom,0.4;horizalign,center;Diffuse,#33FF33;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_eurostile normal" Text="Shaky"		OnCommand="y,16*3;zoom,0.4;horizalign,center;Diffuse,#EE66FF;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_eurostile normal" Text="Awful"		OnCommand="y,16*4;zoom,0.4;horizalign,center;Diffuse,#FF8833;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_eurostile normal" Text="Miss"		OnCommand="y,16*5;zoom,0.4;horizalign,center;Diffuse,#FF5533;ShadowLength,1" />
+	</children> </Layer>
+	<Layer Type="ActorFrame" OnCommand="x,44;y,31"> <children>
+		<Layer Type="BitmapText" Font="_eurostile normal" Text="Jumps"		OnCommand="y,16*0;zoom,0.4;horizalign,center;Diffuse,#66BBFF;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_eurostile normal" Text="Hands"		OnCommand="y,16*1;zoom,0.4;horizalign,center;Diffuse,#EEFF00;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_eurostile normal" Text="Holds"		OnCommand="y,16*2;zoom,0.4;horizalign,center;Diffuse,#0077FF;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_eurostile normal" Text="Rolls"		OnCommand="y,16*3;zoom,0.4;horizalign,center;Diffuse,#FF44AA;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_eurostile normal" Text="Mines"		OnCommand="y,16*4;zoom,0.4;horizalign,center;Diffuse,#CC0000;ShadowLength,1" />
+		<Layer Type="BitmapText" Font="_eurostile normal" Text="Max Combo"	OnCommand="x,9;y,16*5;zoom,0.4;horizalign,center;Diffuse,#FF99FF;ShadowLength,1;maxwidth,130" />
+	</children> </Layer>
+	<Layer Type="ActorFrame" OnCommand="x,6;y,30"> <children>
+		<Layer File="Icon Jumps"		OnCommand="y,16*0;zoom,0.2;horizalign,center" />
+		<Layer File="Icon Hands"		OnCommand="y,16*1;zoom,0.2;horizalign,center" />
+		<Layer File="Icon Holds"		OnCommand="y,16*2;zoom,0.2;horizalign,center" />
+		<Layer File="Icon Rolls"		OnCommand="y,16*3;zoom,0.2;horizalign,center" />
+		<Layer File="Icon Mines"		OnCommand="y,16*4;zoom,0.2;horizalign,center" />
+		<Layer File="Icon Max Combo"	OnCommand="y,16*5;zoom,0.2;horizalign,center" />
+	</children> </Layer>
+</children> </ActorFrame>
+

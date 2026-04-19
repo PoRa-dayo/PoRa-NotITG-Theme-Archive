@@ -1,0 +1,83 @@
+<ActorFrame>
+	<children>
+		<ActorFrame OnCommand="hibernate,3;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="Ace_pic" OnCommand="ztest,1;zoom,1.0;linear,5;zoom,1.1;queuecommand,h" hCommand="hidden,1" />
+				<AutoActor File="streak" />
+				<AutoActor File="Ace_name" OnCommand="hibernate,1;horizalign,left;addx,-10;addx,-SCREEN_WIDTH;addy,130;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.0;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,7;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="PrismRhythm_pic" OnCommand="ztest,1;zoom,1.0;linear,5;zoom,1.1;queuecommand,h" hCommand="hidden,1" />
+				<AutoActor File="streak" />
+				<AutoActor File="PrismRhythm_name" OnCommand="hibernate,1;horizalign,left;addx,-10;addx,-SCREEN_WIDTH;addy,130;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.0;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,11;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="Elisa_pic" OnCommand="ztest,1;zoom,1.0;linear,5;zoom,1.1;queuecommand,h" hCommand="hidden,1" />
+				<AutoActor File="streak" />
+				<AutoActor File="Elisa_name" OnCommand="hibernate,1;horizalign,left;addx,-10;addx,-SCREEN_WIDTH;addy,130;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.0;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,15;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="Lia_pic" OnCommand="ztest,1;zoom,1.0;linear,5;zoom,1.1;queuecommand,h" hCommand="hidden,1" />
+				<AutoActor File="streak" />
+				<AutoActor File="Lia_name" OnCommand="hibernate,1;horizalign,left;addx,-10;addx,-SCREEN_WIDTH;addy,130;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.0;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,19;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="Kasumi_pic" OnCommand="ztest,1;zoom,1.0;linear,5;zoom,1.1;queuecommand,h" hCommand="hidden,1" />
+				<AutoActor File="streak" />
+				<AutoActor File="Kasumi_name" OnCommand="hibernate,1;horizalign,left;addx,-10;addx,-SCREEN_WIDTH;addy,130;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.0;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,23;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="Gin_pic" OnCommand="ztest,1;zoom,1.0;linear,5;zoom,1.1;queuecommand,h" hCommand="hidden,1" />
+				<AutoActor File="streak" />
+				<AutoActor File="Gin_name" OnCommand="hibernate,1;horizalign,left;addx,-10;addx,-SCREEN_WIDTH;addy,130;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.0;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,27;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="Caroline_pic" OnCommand="ztest,1;zoom,1.0;linear,5;zoom,1.1;queuecommand,h" hCommand="hidden,1" />
+				<AutoActor File="streak" />
+				<AutoActor File="Caroline_name" OnCommand="hibernate,1;horizalign,left;addx,-10;addx,-SCREEN_WIDTH;addy,130;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.0;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,31;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="Stitch_pic" OnCommand="ztest,1;zoom,1.0;linear,5;zoom,1.1;queuecommand,h" hCommand="hidden,1" />
+				<AutoActor File="streak" />
+				<AutoActor File="Stitch_name" OnCommand="hibernate,1;horizalign,left;addx,-10;addx,-SCREEN_WIDTH;addy,130;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.0;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+			</children>
+		</ActorFrame>
+		<ActorFrame OnCommand="hibernate,35;sleep,5;queuecommand,h" hCommand="hidden,1">
+			<children>
+				<AutoActor File="mask" />
+				<AutoActor File="LumpOfSugar_pic" OnCommand="ztest,1;zoom,1.0;linear,5;zoom,1.1;queuecommand,h" hCommand="hidden,1" />
+				<AutoActor File="streak" />
+				<AutoActor File="LumpOfSugar_name" OnCommand="hibernate,1;horizalign,left;addx,-10;addx,-SCREEN_WIDTH;addy,130;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.0;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+                  </children>
+            </ActorFrame>
+		<ActorFrame OnCommand="hibernate,39;sleep,5;queuecommand,h" hCommand="hidden,1">
+                  <children>
+				<AutoActor File="mask" />
+				<AutoActor File="Sleepover_Pic" OnCommand="ztest,1;zoom,1.0;linear,5;zoom,1.1;queuecommand,h" hCommand="hidden,1" />
+				<AutoActor File="streak" />
+				<AutoActor File="Sleepover_name" OnCommand="hibernate,1;horizalign,left;addx,-10;addx,-SCREEN_WIDTH;addy,130;decelerate,0.5;addx,SCREEN_WIDTH;linear,2.0;addx,-12;linear,0.5;addx,-3;addx,-5;diffusealpha,0" />
+                  </children>
+<AutoActor File="mask" />
+			

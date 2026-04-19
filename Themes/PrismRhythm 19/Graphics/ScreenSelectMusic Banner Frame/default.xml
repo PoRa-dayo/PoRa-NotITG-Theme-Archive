@@ -1,0 +1,66 @@
+<ActorFrame>
+	<children>
+		<ActorFrame 
+			FOV="58"
+			OnCommand="x,-10;y,2;zoomy,0.985;rotationy,-20;addx,450;decelerate,0.75;addx,-450"
+			OffCommand="accelerate,0.75;addx,450" 
+		>
+			<children>
+			</children>
+		</ActorFrame>
+
+		<ActorFrame 
+			OnCommand="y,1;addx,500;decelerate,0.75;addx,-500" 
+			OffCommand="accelerate,0.75;addx,500" 
+		>
+			<children>
+				<Layer
+					File="Info Pane"
+					OnCommand="x,15;y,-23;ZoomX,1.22;ZoomY,0.9"
+					OffCommand="accelerate,0.75;addx,440"
+				/>
+				<Layer
+					Type="BitmapText"
+					Text="Artist"
+					Font="_eurostile normal"
+					OnCommand="ShadowLength,2;zoom,0.5;x,-137;y,-32;DiffuseAlpha,0.5;DrawOrder,200"
+				/>
+				<Layer
+					Type="BitmapText"
+					Text="BPM"
+					File="_eurostile normal"
+					OnCommand="ShadowLength,2;zoom,0.5;x,85;y,-32;DiffuseAlpha,0.5;DrawOrder,200"
+				/>
+				<Layer
+					Type="BitmapText"
+					Text=""
+					File="_eurostile normal"
+					OnCommand="HorizAlign,Right;ShadowLength,2;zoom,0.5;x,180;y,-32;DiffuseAlpha,0.5;DrawOrder,200"
+				/>
+		</children>
+		</ActorFrame>
+		<AutoActor
+			File="Banner Frame"
+			OnCommand="x,1;y,-30"
+			OffCommand="accelerate,0.75;addx,440"
+		/>
+		<Layer
+			File="ScreenSelectMusic balloon short"
+			OnCommand="x,106;y,-37;ShadowLength,2;HorizAlign,Left;zoom,0.5;addx,500;decelerate,0.75;addx,-500"
+			OffCommand="accelerate,0.75;addx,500"
+		/>
+		<AutoActor
+			File="Difficulty Pane"
+			OnCommand="x,14;y,+58"
+			OffCommand="accelerate,0.75;addx,440"
+		/>
+		<AutoActor
+			File="Stamp"
+			InitCommand="x,-171;y,-22;diffusealpha,0"
+			OnCommand="diffusealpha,0;sleep,0.50;linear,0.15;diffusealpha,1"
+			OffCommand="accelerate,0.33;addx,-440"
+			CurrentSongChangedMessageCommand="stoptweening;linear,0.15;diffusealpha,0;sleep,0.35;linear,0.15;diffusealpha,1"
+
+		/>
+	</children>
+</ActorFrame>

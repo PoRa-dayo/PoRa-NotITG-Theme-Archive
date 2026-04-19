@@ -1,0 +1,4 @@
+<Layer
+   File="Hallway"
+   InitCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM"
+   OnCommand="diffusealpha,1"/>

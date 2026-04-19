@@ -1,0 +1,6 @@
+1) Put whatever judgment fonts you want into the theme's Graphics/_Judgments folder.
+* They must be 2x6 or 1x6 and do require the "2x6" or "1x6" suffix.
+
+2) (YOU DO NOT NEED TO DO THIS WITH THE NOTITG PORT) Go into the theme's Scripts/Other.lua file and alter the list.
+* You have to LEAVE OUT the "2x6" or "1x6" designation, but the names must otherwise
+  match those in the _Judgments folder.

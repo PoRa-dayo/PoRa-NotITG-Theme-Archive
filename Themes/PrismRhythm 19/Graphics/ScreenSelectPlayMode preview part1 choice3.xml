@@ -1,0 +1,10 @@
+<ActorFrame><children>
+	<BitampText
+		Text="-Marathon Mode-::Casual course programs with pre-set songs that follow::particular themes.  Some come with some pre-set mods,::others let you pick some or all of the mods."
+		File="_eurostile normal"
+		InitCommand="zoomtowidth,220;zoomtoheight,66;X,+8;Y,+2;horizalign,left;skewx,-0.14"
+		GainFocusCommand="hidden,0;finishtweening;cropright,1;linear,0.5;cropright,0"
+		LoseFocusCommand="hidden,1"
+		OffCommand="linear,0.3;diffusealpha,0"
+	/>
+</children></ActorFrame>

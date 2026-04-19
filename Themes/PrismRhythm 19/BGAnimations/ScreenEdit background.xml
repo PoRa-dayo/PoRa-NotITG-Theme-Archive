@@ -1,0 +1,13 @@
+<ActorFrame><children>
+<Layer
+   File="978_JumpBack"
+   InitCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM"
+   OnCommand="diffusealpha,0.7;blend,add"
+/>
+<Layer
+   File="songbackground"
+   InitCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM"
+   OnCommand="diffusealpha,0.3;blend,add"
+/>
+	</children>
+</ActorFrame>

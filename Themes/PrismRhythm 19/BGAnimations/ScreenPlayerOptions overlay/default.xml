@@ -1,0 +1,88 @@
+<ActorFrame> <children>
+	<Layer File="../ScreenOptions overlay" />
+
+	<Layer 
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		OnCommand="x,372;y,81;addx,SCREEN_WIDTH*3/4;sleep,0.1;decelerate,0.3;addx,-SCREEN_WIDTH*3/4"
+		OffCommand="accelerate,0.3;addx,SCREEN_WIDTH"
+		File="@THEME:GetPath(EC_GRAPHICS,'','_name p1')"
+	/>
+
+	<Layer
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		OnCommand="x,540;y,81;addx,SCREEN_WIDTH*3/4;sleep,0.2;decelerate,0.3;addx,-SCREEN_WIDTH*3/4"
+		OffCommand="accelerate,0.3;addx,SCREEN_WIDTH"
+		File="@THEME:GetPath(EC_GRAPHICS,'','_name p2')"
+	/>
+
+<!-- Title/Artist Display -->
+<Layer
+   Type="BitmapText"
+   Font="_eurostile blue glow"
+   Text="You Are About to Play"
+   InitCommand="DiffuseAlpha,1"
+   OnCommand="X,SCREEN_CENTER_X+81;Y,SCREEN_TOP+16;Zoom,0.35;shadowlength,1;horizalign,center;AddY,-100;decelerate,0.3;addy,+100"
+   OffCommand="accelerate,0.3;addy,-100"
+/>
+
+<Layer
+   File="Song Name Pane"
+   InitCommand="DiffuseAlpha,1"
+   OnCommand="X,SCREEN_CENTER_X+80;Y,SCREEN_TOP+37;AddY,-100;decelerate,0.3;addy,+100"
+   OffCommand="accelerate,0.3;addy,-100"
+/>
+
+	<Layer Type="ActorFrame"
+		OnCommand="X,SCREEN_CENTER_X+81;Y,SCREEN_TOP+32;shadowlength,2;AddY,-100;decelerate,0.3;addy,+100"
+		OffCommand="accelerate,0.3;addy,-100"
+		> <children>
+
+		<Layer
+			Condition="not GAMESTATE:IsCourseMode()"
+			Type="BitmapText"
+			Font="_v profile"
+			InitCommand="animate,0;playcommand,Update"
+			OnCommand="Y,1;zoom,.55;shadowlength,0;maxwidth,340"
+			OffCommand=""
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentSong():GetDisplayFullTitle()) end"
+		/>
+
+		<Layer
+			Condition="GAMESTATE:IsCourseMode()"
+			Type="BitmapText"
+			Font="_v profile"
+			InitCommand="animate,0;playcommand,Update"
+			OnCommand="Y,1;zoom,.7;shadowlength,0;maxwidth,340"
+			OffCommand=""
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentCourse():GetDisplayFullTitle()) end"
+		/>
+	</children> </Layer>
+
+	<Layer Type="ActorFrame"
+		OnCommand="X,SCREEN_CENTER_X+81;Y,SCREEN_TOP+44;shadowlength,2;AddY,-100;decelerate,0.3;addy,+100"
+		OffCommand="accelerate,0.3;addy,-100"
+		> <children>
+
+		<Layer
+			Condition="not GAMESTATE:IsCourseMode()"
+			Type="BitmapText"
+			Font="_v profile"
+			InitCommand="animate,0;playcommand,Update"
+			OnCommand="Y,-1;zoom,.4;shadowlength,0;maxwidth,580"
+			OffCommand=""
+			UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentSong():GetDisplayArtist()) end"
+		/>
+
+		<Layer
+			Condition="GAMESTATE:IsCourseMode()"
+			Type="BitmapText"
+			Font="_v profile"
+			OnCommand="Y,1;zoom,.4;shadowlength,0;maxwidth,580;DiffuseShift;EffectColor1,#FFFF55;EffectColor2,#FFFF55"
+			OffCommand=""
+			Text="(Marathon Course)"
+		/>
+
+</children> </Layer>
+</children> </ActorFrame>

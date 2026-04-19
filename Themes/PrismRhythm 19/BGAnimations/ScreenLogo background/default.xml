@@ -1,0 +1,79 @@
+<ActorFrame><children>
+<Layer
+   File="Academy"
+   InitCommand="StretchTo,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM"
+   OnCOmmand="diffusealpha,1"
+/>
+<Layer
+   File="Watercolors"
+   InitCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM"
+   OnCommand="diffusealpha,0.40;blend,add"
+/>
+<Layer
+   File="overlay"
+   InitCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+0"
+   OnCommand="diffusealpha,0;sleep,.7;diffusealpha,1;ZoomX,1.5;ZoomY,4;BounceEnd,.14;Zoom,1;glowshift;EffectColor1,1,1,1,0.2;EffectColor2,1,1,1,0"
+/>
+<Layer
+   File="andamiro"
+   OnCommand="x,SCREEN_LEFT+60;y,SCREEN_TOP+30;diffusealpha,0;sleep,0.5;linear,0.5;diffusealpha,1"
+/>
+<Layer
+   File="roxor"
+   OnCommand="x,SCREEN_LEFT+200;y,SCREEN_TOP+30;diffusealpha,0;sleep,0.5;linear,0.5;diffusealpha,1"
+/>
+<Layer
+   Type="BitmapText"
+   Font="_eurostile normal"
+   Text="@'r'..GetRevision()"
+   OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_BOTTOM-17;zoom,0.5;shadowlength,2;horizalign,left;diffusealpha,0.8"
+/>
+<Layer
+   Type="BitmapText"
+   Font="_v profile"
+   Text="Theme Version 19"
+   OnCommand="X,SCREEN_RIGHT-5;Y,SCREEN_TOP+10;zoom,0.5;shadowlength,2;horizalign,right;diffusealpha,1;DiffuseShift;EffectColor1,#33FFFF;EffectColor2,#33FFFF"
+/>
+<Layer
+   Type="BitmapText"
+   Font="_v profile"
+   Text="(August 2024.  New grade, some changed grade thresholds, new judgment fonts, new song wheel item containers.)"
+   OnCommand="X,SCREEN_RIGHT-5;Y,SCREEN_TOP+19;zoom,0.3;shadowlength,2;horizalign,right;diffusealpha,1"
+/>
+<Layer
+   Type="BitmapText"
+   Font="_v profile"
+   Text="Standard Build"
+   OnCommand="X,SCREEN_RIGHT-5;Y,SCREEN_TOP+30;zoom,0.5;shadowlength,2;horizalign,right;diffusealpha,1;diffuse,#5555CC"
+/>
+<Layer
+   Type="BitmapText"
+   Font="_v profile"
+   Text="(This theme uses the standard timing judgment levels.)"
+   OnCommand="X,SCREEN_RIGHT-5;Y,SCREEN_TOP+39;zoom,0.3;shadowlength,2;horizalign,right;diffusealpha,1"
+/>
+<Layer
+   Type="BitmapText"
+   Font="_v profile"
+   Text="PrismRhythm Timing & Scoring"
+   OnCommand="X,SCREEN_RIGHT-5;Y,SCREEN_TOP+50;zoom,0.5;shadowlength,2;horizalign,right;diffusealpha,1;diffuse,#00CCFF"
+/>
+<Layer
+   Type="BitmapText"
+   Font="_v profile"
+   Text="(More lenient Awfuls and Misses, but punishes Shakies and dropped tails where ITG doesn't. Scores will agree with ITG for good performances.)"
+   OnCommand="X,SCREEN_RIGHT-5;Y,SCREEN_TOP+59;zoom,0.3;shadowlength,2;horizalign,right;diffusealpha,1"
+/>
+<Layer
+   Type="BitmapText"
+   Font="_v profile"
+   Text="Survival Treatment"
+   OnCommand="X,SCREEN_RIGHT-5;Y,SCREEN_BOTTOM-62;zoom,0.5;shadowlength,2;horizalign,right;diffusealpha,1;DiffuseShift;EffectColor1,#3333FF;EffectColor2,#3333FF"
+/>
+<Layer
+   Type="BitmapText"
+   Font="_v profile"
+   Text="This theme gives some credit for Sweets, in exchange for harsher missteps and mine hits.  Awe +0.2s / Swt +0.1s / Nice -1s / Shky -2s / Awf -3s / Miss -4s / Mine -3s."
+   OnCommand="X,SCREEN_RIGHT-5;Y,SCREEN_BOTTOM-53;zoom,0.3;shadowlength,2;horizalign,right;diffusealpha,1"
+/>
+</children></ActorFrame>

@@ -15,7 +15,7 @@ An archive by PoRa that hosts old NotITG-compatible themes, slightly edited to e
 
 These were only tested on NotITG v4.9.1 Coin Mode Home + Event Mode.
 
-All themes here are ensured to have: modern noteskin customization, modern judgment font customization, proper difficulty number, song length indicator and result indicator (can be grades or percentage score) on song selection screen, a "Play Mods" button (takes you to 2P Regular immediately), Course (Marathon) Mode being accessible, a Select Theme option, and a Display Resolution option.\
+All themes here are ensured to have: modern noteskin customization, modern judgment font customization, proper difficulty number, step artist, song length indicator and result indicator (can be grades or percentage score) on song selection screen, Stitch.lua stuff (FailOverlay, in-game console, whatever extra overlays you want, etc.), a "Play Mods" button (takes you to 2P Regular immediately), Course (Marathon) Mode being accessible, a Select Theme option, and a Display Resolution option.\
 Other modern features are not necessarily added, mainly for either the sake of keeping it true to the original, or because of UI issues.
 
 I'm still new to theming so I actually don't know for sure how this all works, I just copy pasted stuff from other themes until I figure out what works haha. I just want there to be a bunch of working themes to make theming easier in the future. Maybe I'll try making my own theme some day? But until then, back to noteskin hole I go.
@@ -142,7 +142,8 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 # A.O.I.
 ***NOTE: This theme requires you to have the theme OITGThemerFallback for it to work!!! And just like any other fallback theme, do not actually use OITGThemerFallback.***
 
-The accelerated operational interface for Stepmania 3.95 ported to NotITG!
+The accelerated operational interface for Stepmania 3.95 ported to NotITG!\
+OITGThemerFallback also has some documentation in the metrics that you can use as a reference to make your own theme.
 ## Credits:
 -Original theme by k//eternal. Original NotITG port by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 by Nhan and PoRa.
 
@@ -179,6 +180,21 @@ The accelerated operational interface for Stepmania 3.95 ported to NotITG!
 <img width="200" height="150" alt="NotITG-v4 9 1_nV1CXnBpCu" src="https://github.com/user-attachments/assets/96dd0d70-1574-4480-b898-58e9e1306d97" />
 
 
+# PRISMRHYTHM 19
 
+A kawaii theme based on the visual novel Prism Rhythm published by Lump of Sugar.\
+This theme already has almost every feature you can ask for, so there are very few things I need to edit. It also has loads of documentation in the metrics that you can use as a reference to make your own theme.
+## Credits:
+-Original theme by Ace of Arrows, and unlike most other SM3.95/OITG themes, it's still being maintained! Optimized for NotITG 4.9.1 by PoRa.
+
+## Changelogs:
+-Added "Play Mods" (takes you to 2P Regular immediately)\
+-Placed Dance Mode, Battle Mode and Fitness Mode inside Arcade Modes option.\
+-Changed the layering of the BPM number and the player icons during gameplay so they stay hidden in modfiles.\
+-Moved the help text in the Config Keys screen to the top.\
+-Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Profile Options (broken in NotITG). Removed Show Caution and Show Instructions options, they don't do anything in this theme and break other themes.\
+-Noteskins now affect players 1-8.\
+-Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 

@@ -1,0 +1,8 @@
+[Actor]
+File=_screenTitleMenu choices
+Text=Dance Mode
+InitCommand=HorizAlign,left;Zoom,0.9;ShadowLength,2;setstate,0;pause;StopTweening;DiffuseShift;EffectColor1,#00DD00;EffectColor2,#00DD00
+GainFocusCommand=StopTweening;Linear,0;ZoomX,1;ZoomY,1.1;DiffuseShift;EffectPeriod,0.5;EffectColor1,#00DD00;EffectColor2,#BBFFBB;Linear,0.2;ZoomX,0.8;ZoomY,0.9
+LoseFocusCommand=StopTweening;StopEffect;DiffuseShift;EffectColor1,#00DD00;EffectColor2,#00DD00;Linear,0;ZoomX,0.7;ZoomY,0.8
+EnabledCommand=
+DisabledCommand=Diffuse,0.5,0.5,0.5,1

@@ -1,0 +1,76 @@
+<ActorFrame> <children>
+
+	<!-- SYSTEM TIME -->
+	<!-- The "pulse" quad command is necessary to get a live-updating time
+	     to appear on the screen; it broadcasts its command every second
+	     so we can update the time every second.  The time itself is
+	     fully-customizable, but if you reorganize the order the format items
+	     appear in for the string, you have to change their order in the format
+	     as well, or the game will crash when it tries to get the data. -->
+	<!-- Just a note: Yes, the month has a -1 tacked onto it.  Evidently,
+	     whomever first coded SM 3.95 got the month assignment wrong somehow,
+	     or perhaps did it on purpose to prevent date hacking.  Regardless,
+	     the -1 is necessary, or it will display *next* month, not *this* month. -->
+	<Layer
+		Type="Quad"
+		PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(1); self:queuecommand('Pulse') end"
+		InitCommand="hidden,1;playcommand,Pulse"
+	/>
+
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+SetCommand="%function(self)
+theDay = ' '
+if Weekday() == 0 then theDay = 'Sunday'
+elseif Weekday() == 1 then theDay = 'Monday'
+elseif Weekday() == 2 then theDay = 'Tuesday'
+elseif Weekday() == 3 then theDay = 'Wednesday'
+elseif Weekday() == 4 then theDay = 'Thursday'
+elseif Weekday() == 5 then theDay = 'Friday'
+elseif Weekday() == 6 then theDay = 'Saturday'
+end
+fixedHour = Hour() - math.floor(Hour()/12)*12
+if fixedHour == 0 then fixedHour = 12 end
+tod = 'AM'
+if Hour() >= 12 then tod = 'PM' end
+if OPENITG then
+self:settext( string.format('System Time: %s, %s %i, %04i, %i:%02i:%02i %s', theDay, MonthToString(MonthOfYear()), DayOfMonth(), Year(), fixedHour, Minute(), Second(), tod) )
+else
+self:settext( string.format('System Time: %s, %s %i, %04i, %i:%02i:%02i %s', theDay, MonthToString(MonthOfYear()-1), DayOfMonth(), Year(), fixedHour, Minute(), Second(), tod) )
+end
+end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_LEFT+14;y,SCREEN_CENTER_Y-182;shadowlength,0;horizalign,left;zoom,0.5;playcommand,Set"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+
+	<!-- SERIAL NUMBER -->
+	<Layer File="@THEME:GetPath(EC_BGANIMATIONS,'ScreenOptions','overlay')" />
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		Text="@'Serial Number: ' .. GetSerialNumber()"
+		InitCommand="x,SCREEN_LEFT+14;y,SCREEN_CENTER_Y-170;shadowlength,0;horizalign,left;wrapwidthpixels,1000;zoom,0.5"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+
+
+	<!-- IS USB CARD HUB CONNECTED? -->
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		SetCommand="%function(self) if HubIsConnected() then self:settext('USB Card Hub Status: Connected Properly') else self:settext('USB Card Hub Status: Not Present or Not Connected Properly') end end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_LEFT+14;y,SCREEN_CENTER_Y-158;shadowlength,0;horizalign,left;zoom,0.5"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+
+	/>
+</children> </ActorFrame>

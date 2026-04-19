@@ -1,0 +1,33 @@
+<ActorFrame> <children>
+
+<Layer Type="File"
+   File="Header Pane"
+   InitCommand="diffusealpha,1"
+   OnCommand="HorizAlign,Left;VertAlign,Top;X,SCREEN_LEFT-5;Y,SCREEN_TOP+2"
+   OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+/>
+
+		<Layer Type="BitmapText"
+			Text="PrismRhythm 19 [ScreenRecordsMenu]"
+			File="_eurostile blue glow"
+			InitCommand="X,SCREEN_LEFT+1;Y,SCREEN_TOP;shadowlength,0"
+			OnCommand="horizalign,left;Zoom,.4"
+			OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+		/>
+
+		<Layer Type="BitmapText"
+			Text="Records"
+			File="_eurostile blue glow"
+			InitCommand="X,SCREEN_LEFT;Y,SCREEN_TOP+12;shadowlength,2"
+			OnCommand="horizalign,left;Zoom,.5"
+			OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+		/>
+
+		<Layer Type="BitmapText"
+			Text="View machine play records."
+			File="_v profile"
+			InitCommand="X,SCREEN_LEFT+1;Y,SCREEN_TOP+24;shadowlength,0"
+			OnCommand="horizalign,left;Zoom,.4"
+			OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+		/>
+</children> </ActorFrame>

@@ -1,0 +1,17 @@
+<ActorFrame><children>
+<Layer
+   Condition="not GAMESTATE:IsCourseMode()"
+   File="songbackground"
+   InitCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM"
+   OnCommand="diffusealpha,0.53"/>
+<Layer
+   Condition="not GAMESTATE:IsCourseMode()"
+   File="ParticleParty"
+   InitCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM"
+   OnCommand="diffusealpha,0.4;blend,add"/>
+<Layer
+   Condition="GAMESTATE:IsCourseMode()"
+   File="ParticleParty"
+   InitCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM"
+   OnCommand="diffusealpha,1"/>
+</children></ActorFrame>

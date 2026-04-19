@@ -1,0 +1,276 @@
+<ActorFrame><children>
+	<Layer
+		File="../ScreenGameplay overlay/demonstration gradient"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0.8"
+	/>
+
+<!-- SONG NAME & PACK -->
+<!-- Since it isn't displayed, tell possible viewers which song they're looking at,
+     and where to find it in case they'd like to play it.  ITG3 does this, and it's
+     really something that *should* be in a theme. -->
+
+	<Layer
+		Type="BitmapText"
+		Font="_eurostile blue glow"
+		InitCommand="animate,0;playcommand,Update"
+		OnCommand="X,SCREEN_LEFT+120;Y,SCREEN_TOP+62;HorizAlign,Left;Zoom,.5;shadowlength,0;maxwidth,600"
+		CurrentSongChangedMessageCommand="playcommand,Update"
+		UpdateCommand="%function(self) self:settext(GetGroup(GAMESTATE:GetCurrentSong():GetSongDir())) end"
+	/>
+
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		InitCommand="animate,0;playcommand,Update"
+		OnCommand="X,SCREEN_LEFT+119;Y,SCREEN_TOP+75;HorizAlign,Left;Zoom,.5;shadowlength,0;maxwidth,600"
+		CurrentSongChangedMessageCommand="playcommand,Update"
+		UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentSong():GetDisplayFullTitle()) end"
+	/>
+
+			<!-- DIFFICULTY ICON -->
+			<ActorFrame
+				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+				OnCommand="X,SCREEN_LEFT+60;y,SCREEN_TOP+67"
+				OffCommand="diffusealpha,0">
+			<children>
+			<Actor
+				File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+				OnCommand="animate,0;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_1) end"
+			/>
+			<Actor
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP1"
+				OnCommand="playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1)) end"
+			/>
+			</children>
+			</ActorFrame>
+
+<!-- TUTORIAL TEXT -->
+	<Layer
+		Type="AutoActor"
+		File="Hold Example"
+		OnCommand="x,SCREEN_CENTER_X+60;y,SCREEN_CENTER_Y-124;zoomx,0.4;zoomy,0.4"
+	/>
+	<Layer Type="BitmapText"
+		Text="Holds are smooth."
+		Font="_eurostile blue glow"
+		OnCommand="X,SCREEN_CENTER_X+74;Y,SCREEN_CENTER_Y-124;horizalign,left;Zoom,.4"
+		/>
+	<Layer Type="BitmapText"
+		Text="Press and hold them."
+		Font="_v profile"
+		OnCommand="X,SCREEN_CENTER_X+74;Y,SCREEN_CENTER_Y-114;horizalign,left;Zoom,.4"
+		/>
+	<Layer
+		Type="AutoActor"
+		File="Roll Example"
+		OnCommand="x,SCREEN_CENTER_X+190;y,SCREEN_CENTER_Y-124;zoomx,0.4;zoomy,0.4"
+	/>
+	<Layer Type="BitmapText"
+		Text="Rolls are spiky."
+		Font="_eurostile purple glow"
+		OnCommand="X,SCREEN_CENTER_X+204;Y,SCREEN_CENTER_Y-124;horizalign,left;Zoom,.4"
+		/>
+	<Layer Type="BitmapText"
+		Text="Tap them repeatedly."
+		Font="_v profile"
+		OnCommand="X,SCREEN_CENTER_X+204;Y,SCREEN_CENTER_Y-114;horizalign,left;Zoom,.4"
+		/>
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		Text="Colored arrows will::scroll from the bottom::of the screen toward::the gray target arrows::at the top."
+		OnCommand="x,SCREEN_CENTER_X+SCREEN_WIDTH/4+10;y,SCREEN_CENTER_Y;addx,SCREEN_WIDTH/2;zoom,0.8;sleep,5;decelerate,0.5;addx,-SCREEN_WIDTH/2;sleep,5;linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+
+		Type="AutoActor"
+		File="focus square"
+		OnCommand="x,SCREEN_CENTER_X-SCREEN_WIDTH/4;y,SCREEN_CENTER_Y+60;zoomx,1.0;zoomy,1.05;diffuseblink;EffectPeriod,0.5;diffusealpha,0;sleep,6;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		Text="When a colored arrow::overlaps the gray target::arrows, step on the::matching panel."
+		OnCommand="x,SCREEN_CENTER_X+SCREEN_WIDTH/4+10;y,SCREEN_CENTER_Y;addx,SCREEN_WIDTH/2;zoom,0.8;sleep,11;decelerate,0.5;addx,-SCREEN_WIDTH/2;sleep,5;linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+		Type="AutoActor"
+		File="focus rect"
+		OnCommand="x,SCREEN_CENTER_X-SCREEN_WIDTH/4;y,SCREEN_CENTER_Y-124;zoomx,1.0;zoomy,0.8;diffuseblink;EffectPeriod,0.5;diffusealpha,0;sleep,12;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		Text="The traffic light::can help you::to understand::the timing."
+		OnCommand="x,SCREEN_CENTER_X+SCREEN_WIDTH/4+10;y,SCREEN_CENTER_Y;addx,SCREEN_WIDTH/2;zoom,0.8;sleep,17;decelerate,0.5;addx,-SCREEN_WIDTH/2;sleep,5;linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+		Type="AutoActor"
+		File="focus rect"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-30;zoomx,1.0;zoomy,1;rotationz,90;diffuseblink;EffectPeriod,0.5;diffusealpha,0;sleep,18;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		Text="The direction the arrow::points indicates which::arrow panel you need::to step on."
+		OnCommand="x,SCREEN_CENTER_X+SCREEN_WIDTH/4+10;y,SCREEN_CENTER_Y;addx,SCREEN_WIDTH/2;zoom,0.8;sleep,23;decelerate,0.5;addx,-SCREEN_WIDTH/2;sleep,5;linear,0.3;diffusealpha,0"
+	/>
+
+<!-- LEFT -->
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		Text="For arrows pointing Left,::step on the Left panel.::::::::"
+		OnCommand="x,SCREEN_CENTER_X+SCREEN_WIDTH/4+10;y,SCREEN_CENTER_Y;addx,SCREEN_WIDTH/2;zoom,0.8;sleep,29;decelerate,0.5;addx,-SCREEN_WIDTH/2;sleep,5;linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+		Type="AutoActor"
+		File="arrow"
+		OnCommand="x,SCREEN_CENTER_X+SCREEN_WIDTH/4-60;y,SCREEN_CENTER_Y+80;rotationz,0;glowblink;EffectPeriod,0.5;diffusealpha,0;sleep,30;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+	/>
+	<ActorFrame
+		OnCommand="x,SCREEN_CENTER_X+210;y,SCREEN_CENTER_Y+80;zoom,0.8;rotationx,-20"
+		FOV="45"
+		VanishX="SCREEN_CENTER_X+210"
+		VanishY="SCREEN_CENTER_Y+80"
+	><children>
+		<AutoActor
+			File="../ScreenGameplay underlay/platform"
+			OnCommand="y,7;diffuse,0.6,0.6,0.6,0.8;diffusealpha,0;sleep,30;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+		/>
+		<AutoActor
+			File="../ScreenGameplay underlay/panelglow"
+			OnCommand="x,-45;blend,add;diffuseblink;EffectPeriod,0.5;diffusealpha,0;sleep,30;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+		/>
+	</children></ActorFrame>
+
+<!-- UP -->
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		Text="For arrows pointing Up,::step on the Up panel.::::::::"
+		OnCommand="x,SCREEN_CENTER_X+SCREEN_WIDTH/4+10;y,SCREEN_CENTER_Y;addx,SCREEN_WIDTH/2;zoom,0.8;sleep,35;decelerate,0.5;addx,-SCREEN_WIDTH/2;sleep,5;linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+		Type="AutoActor"
+		File="arrow"
+		OnCommand="x,SCREEN_CENTER_X+SCREEN_WIDTH/4-60;y,SCREEN_CENTER_Y+80;rotationz,90;glowblink;EffectPeriod,0.5;diffusealpha,0;sleep,36;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+	/>
+	<ActorFrame
+		OnCommand="x,SCREEN_CENTER_X+210;y,SCREEN_CENTER_Y+80;zoom,0.8;rotationx,-20"
+		FOV="45"
+		VanishX="SCREEN_CENTER_X+210"
+		VanishY="SCREEN_CENTER_Y+80"
+	><children>
+		<AutoActor
+			File="../ScreenGameplay underlay/platform"
+			OnCommand="y,7;diffuse,0.6,0.6,0.6,0.8;diffusealpha,0;sleep,36;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+		/>
+		<AutoActor
+			File="../ScreenGameplay underlay/panelglow"
+			OnCommand="y,-45;blend,add;diffuseblink;EffectPeriod,0.5;diffusealpha,0;sleep,36;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+		/>
+	</children></ActorFrame>
+
+<!-- RIGHT -->
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		Text="For arrows pointing Right,::step on the Right panel.::::::::"
+		OnCommand="x,SCREEN_CENTER_X+SCREEN_WIDTH/4+10;y,SCREEN_CENTER_Y;addx,SCREEN_WIDTH/2;zoom,0.8;sleep,41;decelerate,0.5;addx,-SCREEN_WIDTH/2;sleep,5;linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+		Type="AutoActor"
+		File="arrow"
+		OnCommand="x,SCREEN_CENTER_X+SCREEN_WIDTH/4-60;y,SCREEN_CENTER_Y+80;rotationz,180;glowblink;EffectPeriod,0.5;diffusealpha,0;sleep,42;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+	/>
+	<ActorFrame
+		OnCommand="x,SCREEN_CENTER_X+210;y,SCREEN_CENTER_Y+80;zoom,0.8;rotationx,-20"
+		FOV="45"
+		VanishX="SCREEN_CENTER_X+210"
+		VanishY="SCREEN_CENTER_Y+80"
+	><children>
+		<AutoActor
+			File="../ScreenGameplay underlay/platform"
+			OnCommand="y,7;diffuse,0.6,0.6,0.6,0.8;diffusealpha,0;sleep,42;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+		/>
+		<AutoActor
+			File="../ScreenGameplay underlay/panelglow"
+			OnCommand="x,+45;blend,add;diffuseblink;EffectPeriod,0.5;diffusealpha,0;sleep,42;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+		/>
+	</children></ActorFrame>
+
+<!-- DOWN -->
+
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		Text="For arrows pointing Down,::step on the Down panel.::::::::"
+		OnCommand="x,SCREEN_CENTER_X+SCREEN_WIDTH/4+10;y,SCREEN_CENTER_Y;addx,SCREEN_WIDTH/2;zoom,0.8;sleep,47;decelerate,0.5;addx,-SCREEN_WIDTH/2;sleep,5;linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+		Type="AutoActor"
+		File="arrow"
+		OnCommand="x,SCREEN_CENTER_X+SCREEN_WIDTH/4-60;y,SCREEN_CENTER_Y+80;rotationz,-90;glowblink;EffectPeriod,0.5;diffusealpha,0;sleep,48;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+	/>
+	<ActorFrame
+		OnCommand="x,SCREEN_CENTER_X+210;y,SCREEN_CENTER_Y+80;zoom,0.8;rotationx,-20"
+		FOV="45"
+		VanishX="SCREEN_CENTER_X+210"
+		VanishY="SCREEN_CENTER_Y+80"
+	><children>
+		<AutoActor
+			File="../ScreenGameplay underlay/platform"
+			OnCommand="y,7;diffuse,0.6,0.6,0.6,0.8;diffusealpha,0;sleep,48;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+		/>
+		<AutoActor
+			File="../ScreenGameplay underlay/panelglow"
+			OnCommand="y,+45;blend,add;diffuseblink;EffectPeriod,0.5;diffusealpha,0;sleep,48;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
+		/>
+	</children></ActorFrame>
+
+<!-- OTHER STUFF -->
+	<Layer
+		Type="Quad"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffuse,0,0,0,1;sleep,3.5;linear,0.5;diffusealpha,0"
+	/>
+
+	<Layer
+		Type="AutoActor"
+		File="../ScreenAttract overlay"
+	/>
+
+<Layer Type="File"
+   File="Header Pane"
+   InitCommand="diffusealpha,1"
+   OnCommand="HorizAlign,Left;VertAlign,Top;X,SCREEN_LEFT+11;Y,SCREEN_TOP+22"
+/>
+
+		<Layer Type="BitmapText"
+			Text="PrismRhythm 19 [ScreenDemonstration2] (Demo Loop 5/8)"
+			File="_eurostile blue glow"
+			InitCommand="X,SCREEN_LEFT+16;Y,SCREEN_TOP+20;shadowlength,0"
+			OnCommand="horizalign,left;Zoom,.4"
+			OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+		/>
+
+		<Layer Type="BitmapText"
+			Text="How to Play"
+			File="_eurostile blue glow"
+			InitCommand="X,SCREEN_LEFT+16;Y,SCREEN_TOP+31;shadowlength,2"
+			OnCommand="horizalign,left;Zoom,.5"
+		/>
+
+		<Layer Type="BitmapText"
+			Text="How 4-arrow dance games are played."
+			File="_v profile"
+			InitCommand="X,SCREEN_LEFT+17;Y,SCREEN_TOP+44;shadowlength,0"
+			OnCommand="horizalign,left;Zoom,.4"
+		/>
+
+</children></ActorFrame>

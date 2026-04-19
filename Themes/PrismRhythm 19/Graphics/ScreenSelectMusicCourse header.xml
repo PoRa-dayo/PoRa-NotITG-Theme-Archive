@@ -1,0 +1,53 @@
+<ActorFrame> <children>
+
+<Layer Type="File"
+   File="Header Pane"
+   InitCommand="diffusealpha,1"
+   OnCommand="HorizAlign,Left;VertAlign,Top;X,SCREEN_LEFT-5;Y,SCREEN_TOP+2"
+   OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+/>
+
+		<Layer Type="BitmapText"
+			Text="PrismRhythm 19 [ScreenSelectMusicCourse]"
+			File="_eurostile blue glow"
+			InitCommand="X,SCREEN_LEFT+1;Y,SCREEN_TOP;shadowlength,0"
+			OnCommand="horizalign,left;Zoom,.4"
+			OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+		/>
+
+		<Layer Type="BitmapText"
+			Condition="GAMESTATE:GetPlayMode()==PLAY_MODE_NONSTOP"
+			Text="Marathon Select"
+			File="_eurostile blue glow"
+			InitCommand="X,SCREEN_LEFT;Y,SCREEN_TOP+12;shadowlength,2"
+			OnCommand="horizalign,left;Zoom,.5"
+			OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+		/>
+
+		<Layer Type="BitmapText"
+			Condition="GAMESTATE:GetPlayMode()==PLAY_MODE_NONSTOP"
+			Text="Which program will you be performing for the audience?"
+			File="_v profile"
+			InitCommand="X,SCREEN_LEFT+1;Y,SCREEN_TOP+24;shadowlength,0"
+			OnCommand="horizalign,left;Zoom,.4"
+			OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+		/>
+
+		<Layer Type="BitmapText"
+			Condition="GAMESTATE:GetPlayMode()==PLAY_MODE_ONI"
+			Text="Survival Select"
+			File="_eurostile blue glow"
+			InitCommand="X,SCREEN_LEFT;Y,SCREEN_TOP+12;shadowlength,2"
+			OnCommand="horizalign,left;Zoom,.5"
+			OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+		/>
+
+		<Layer Type="BitmapText"
+			Condition="GAMESTATE:GetPlayMode()==PLAY_MODE_ONI"
+			Text="Poor performance won't be tolerated."
+			File="_v profile"
+			InitCommand="X,SCREEN_LEFT+1;Y,SCREEN_TOP+24;shadowlength,0"
+			OnCommand="horizalign,left;Zoom,.4"
+			OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+		/>
+</children> </ActorFrame>

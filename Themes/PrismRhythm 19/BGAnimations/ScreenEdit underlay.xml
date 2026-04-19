@@ -1,0 +1,96 @@
+<ActorFrame>
+	<children>
+
+		<!-- HEADER -->
+		<Layer Type="File"
+   File="Header Pane"
+   InitCommand="diffusealpha,1;ZoomX,0.77"
+   OnCommand="HorizAlign,Left;VertAlign,Top;X,SCREEN_LEFT+11;Y,SCREEN_TOP+22"
+/>
+
+		<Layer Type="BitmapText"
+			Text="PrismRhythm 18 [ScreenEdit]"
+			File="_eurostile blue glow"
+			InitCommand="X,SCREEN_LEFT+17;Y,SCREEN_TOP+20;shadowlength,0"
+			OnCommand="horizalign,left;Zoom,.3"
+		/>
+
+		<Layer Type="BitmapText"
+			Text="Stepchart Editor"
+			File="_eurostile blue glow"
+			InitCommand="X,SCREEN_LEFT+16;Y,SCREEN_TOP+32;shadowlength,2"
+			OnCommand="horizalign,left;Zoom,.5"
+		/>
+
+		<Layer Type="BitmapText"
+			Text="Choreograph a stepchart."
+			File="_v profile"
+			InitCommand="X,SCREEN_LEFT+17;Y,SCREEN_TOP+44;shadowlength,0"
+			OnCommand="horizalign,left;Zoom,.4"
+		/>
+
+<!-- SONG NAME PANE -->
+<Layer
+   File="Song Name Pane"
+   InitCommand="X,SCREEN_LEFT+110;Y,SCREEN_TOP+130"
+/>
+
+	<Layer Type="ActorFrame"
+		InitCommand="X,SCREEN_LEFT+111;Y,SCREEN_TOP+125;shadowlength,2"
+		> <children>
+
+		<Layer
+			Type="BitmapText"
+			Font="_v profile"
+			InitCommand="animate,0;playcommand,Update"
+			OnCommand="Y,1;zoom,.55;shadowlength,0;maxwidth,300"
+			OffCommand="linear,0.3;diffusealpha,0"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentSong():GetDisplayFullTitle()) end"
+		/>
+	</children> </Layer>
+
+	<Layer Type="ActorFrame"
+		InitCommand="X,SCREEN_LEFT+111;Y,SCREEN_TOP+137;shadowlength,2"
+		> <children>
+
+		<Layer
+			Type="BitmapText"
+			Font="_v profile"
+			InitCommand="animate,0;playcommand,Update"
+			OnCommand="Y,-1;zoom,.4;shadowlength,0;maxwidth,520"
+			OffCommand="linear,0.3;diffusealpha,0"
+			UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentSong():GetDisplayArtist()) end"
+		/>
+
+</children> </Layer>
+
+<!-- BANNER -->
+<Layer
+   File="Stage Banner Frame"
+   InitCommand="X,SCREEN_LEFT+110;Y,SCREEN_TOP+190;Zoom,0.9"
+/>
+
+		<Layer
+   File="songbanner"
+   InitCommand="X,SCREEN_LEFT+110;Y,SCREEN_TOP+190;ScaleToClipped,208,82;Zoom,0.9"
+/>
+
+<!-- DIFFICULTY -->
+		<BitmapText 
+			Font="_v profile"
+			OnCommand="DiffuseAlpha,1;maxwidth,300;x,SCREEN_LEFT+111;y,SCREEN_TOP+244;Zoom,0.7;ShadowLength,1;PlayCommand,Refresh"
+			RefreshCommand="%function(self) self:settext(GetEditStepsText()) self:sleep(0.5); self:queuecommand('Refresh') end"
+		/>
+
+<!-- ASSISTANCE TEXT --->
+		<BitmapText
+			Text="Press [Esc]::for the Edit Menu.::::Press [Enter]::for the Area Menu.::::Press [F1]::for command help."
+			Font="_eurostile normal"
+			InitCommand="ShadowLength,2;zoom,0.6;horizalign,left;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-90"
+			OnCommand=""
+			OffCommand=""
+		/>
+
+	</children>
+</ActorFrame>

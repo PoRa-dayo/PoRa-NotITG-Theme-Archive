@@ -1,0 +1,321 @@
+<ActorFrame> <children>
+
+	<!-- DIFFICULTY ICONS -->
+	<Layer Type="ActorFrame"
+		OnCommand="QueueCommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		> <children>
+				<!-- FOR PLAYER 1-->
+				<!-- "Player 1" Pane-->
+				<Layer
+					Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+					File="Navy Box"
+					OnCommand="x,SCREEN_CENTER_X-240;y,SCREEN_CENTER_Y+116;ZoomX,0.3;ZoomY,0.6;DrawOrder,1"
+					TweenOnCommand="DiffuseAlpha,0;zoomy,0;sleep,0.25;DiffuseAlpha,1;linear,.3;zoomy,0.6"
+					TweenOffCommand="accelerate,.6;zoomy,0"
+				/>
+				<Layer
+					Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+					Type="BitmapText"
+					Text="Player 1"
+					Font="_eurostile normal"
+					OnCommand="ShadowLength,2;zoom,0.5;x,SCREEN_CENTER_X-240;y,SCREEN_CENTER_Y+116;DrawOrder,200"
+					TweenOnCommand="DiffuseAlpha,0;zoomy,0;sleep,0.25;DiffuseAlpha,1;linear,.3;zoomy,0.5"
+					TweenOffCommand="accelerate,.6;zoomy,0"
+				/>
+				<Layer
+					Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+					Type="BitmapText"
+					Text="is your best. Record is"
+					Font="_eurostile normal"
+					OnCommand="ShadowLength,2;zoom,0.5;x,SCREEN_CENTER_X-170;y,SCREEN_CENTER_Y+175;DrawOrder,200"
+					TweenOnCommand="DiffuseAlpha,0;zoomy,0;sleep,0.25;DiffuseAlpha,1;linear,.3;zoomy,0.4;zoomx,0.4"
+					TweenOffCommand="accelerate,.6;zoomy,0"
+				/>
+		
+		<ActorFrame
+				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+				OnCommand="X,SCREEN_CENTER_X+80;Y,SCREEN_CENTER_Y+112;addx,-200"
+				TweenOnCommand="DiffuseAlpha,0;zoomy,0;sleep,0.25;DiffuseAlpha,1;linear,.3;zoomy,1"
+				TweenOffCommand="accelerate,.6;zoomy,0"><children>
+			<Actor
+				File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+				OnCommand="animate,0;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				CurrentTrailP1ChangedMessageCommand="playcommand,Update"
+				CurrentTrailP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromGameState(self, PLAYER_1) end"
+			/>
+			<Actor
+				Condition="not GAMESTATE:IsCourseMode()"
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP1"
+				OnCommand="playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1)) end"
+			/>
+			<Actor
+				Condition="GAMESTATE:IsCourseMode()"
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP1"
+				OnCommand="playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				CurrentTrailP1ChangedMessageCommand="playcommand,Update"
+				CurrentTrailP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self) 
+						if GAMESTATE:GetCurrentTrail(PLAYER_1) then 
+							self:SetFromTrail(GAMESTATE:GetCurrentTrail(PLAYER_1)) 
+						else
+							self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1))
+						end
+					end"
+			/>
+		</children></ActorFrame>
+				<!-- FOR PLAYER 2-->
+				<!-- "Player 2" Pane-->
+				<Layer
+					Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+					File="Navy Box"
+					OnCommand="x,SCREEN_CENTER_X+63;y,SCREEN_CENTER_Y+116;ZoomX,0.3;ZoomY,0.6"
+					TweenOnCommand="DiffuseAlpha,0;zoomy,0;sleep,0.25;DiffuseAlpha,1;linear,.3;zoomy,0.6"
+					TweenOffCommand="accelerate,.6;zoomy,0"
+				/>
+				<Layer
+					Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+					Type="BitmapText"
+					Text="Player 2"
+					Font="_eurostile normal"
+					OnCommand="ShadowLength,2;zoom,0.5;x,SCREEN_CENTER_X+63;y,SCREEN_CENTER_Y+116;DrawOrder,200"
+					TweenOnCommand="DiffuseAlpha,0;zoomy,0;sleep,0.25;DiffuseAlpha,1;linear,.3;zoomy,0.5"
+					TweenOffCommand="accelerate,.6;zoomy,0"
+				/>
+				<Layer
+					Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+					Type="BitmapText"
+					Text="is your best. Record is"
+					Font="_eurostile normal"
+					OnCommand="ShadowLength,2;zoom,0.5;x,SCREEN_CENTER_X+134;y,SCREEN_CENTER_Y+175;DrawOrder,200"
+					TweenOnCommand="DiffuseAlpha,0;zoomy,0;sleep,0.25;DiffuseAlpha,1;linear,.3;zoomy,0.4;zoomx,0.4"
+					TweenOffCommand="accelerate,.6;zoomy,0"
+				/>
+		
+		<ActorFrame
+				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+				OnCommand="X,SCREEN_CENTER_X-14;Y,SCREEN_CENTER_Y+112;addx,+200"
+				TweenOnCommand="DiffuseAlpha,0;zoomy,0;sleep,0.25;DiffuseAlpha,1;linear,.3;zoomy,1"
+				TweenOffCommand="accelerate,.6;zoomy,0"><children>
+			<Actor
+				File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+				OnCommand="animate,0;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				CurrentTrailP1ChangedMessageCommand="playcommand,Update"
+				CurrentTrailP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromGameState(self, PLAYER_2) end"
+			/>
+			<Actor
+				Condition="not GAMESTATE:IsCourseMode()"
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP2"
+				OnCommand="playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2)) end"
+			/>
+			<Actor
+				Condition="GAMESTATE:IsCourseMode()"
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP2"
+				OnCommand="playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				CurrentTrailP1ChangedMessageCommand="playcommand,Update"
+				CurrentTrailP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self) 
+						if GAMESTATE:GetCurrentTrail(PLAYER_2) then 
+							self:SetFromTrail(GAMESTATE:GetCurrentTrail(PLAYER_2)) 
+						else
+							self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2))
+						end
+					end"
+			/>
+		</children></ActorFrame>
+		
+	</children> </Layer>
+
+
+
+	<!-- SORT/EASIER/HARDER HELP TEXT -->
+	<ActorFrame OnCommand="y,SCREEN_BOTTOM-17-18"> <children>
+		<Layer
+			Type="BitmapText"
+			Font="_eurostile normal"
+			Text="&START; Change Sort"
+			Condition="ModeMenuAvailable()"
+			OnCommand="x,SCREEN_CENTER_X;zoomx,0.5;zoomy,0.7;diffusealpha,0"
+			EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,1;zoomx,0.7"
+			SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.5"
+		/>
+
+		<ActorFrame
+			OnCommand="%function(self) if ModeMenuAvailable() then self:x(SCREEN_CENTER_X-225) else self:x(SCREEN_CENTER_X-125) end end"
+		> <children>
+			<Layer
+				Type="BitmapText"
+
+				Font="_eurostile normal"
+				Text="&MENUUP;"
+				OnCommand="x,-5;horizalign,right;zoomx,0.5;zoomy,0.7;diffusealpha,0"
+				EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,1;zoomx,0.7"
+				SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.5"
+			/>
+			<Layer
+				Type="BitmapText"
+				Font="_eurostile normal"
+				Text="Easier"
+				OnCommand="x,0;horizalign,left;zoomx,0.5;zoomy,0.7;diffusealpha,0;diffuseramp;effectperiod,1;effectoffset,0.20;effectclock,bgm;EffectColor1,#FFFFFF;EffectColor2,#20D020"
+				EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,1;zoomx,0.7"
+				SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.5"
+			/>
+
+		</children> </ActorFrame>
+
+		<ActorFrame
+			OnCommand="%function(self) if ModeMenuAvailable() then self:x(SCREEN_CENTER_X+225) else self:x(SCREEN_CENTER_X+125) end end"
+		> <children>
+			<Layer
+				Type="BitmapText"
+				Font="_eurostile normal"
+				Text="Harder"
+				OnCommand="x,0;horizalign,right;zoomx,0.5;zoomy,0.7;diffusealpha,0;diffuseramp;effectperiod,1;effectoffset,0.20;effectclock,bgm;EffectColor1,#FFFFFF;EffectColor2,#E06060"
+
+				EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,1;zoomx,0.7"
+				SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.5"
+			/>
+			<Layer
+
+				Type="BitmapText"
+
+				Font="_eurostile normal"
+				Text="&MENUDOWN;"
+				OnCommand="x,+15;horizalign,center;zoomx,0.5;zoomy,0.7;diffusealpha,0"
+				EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,1;zoomx,0.7"
+				SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.5"
+			/>
+		</children> </ActorFrame>
+	</children> </ActorFrame>
+
+	<Layer
+		Type="Quad"
+		PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(1); self:queuecommand('Pulse') end"
+		InitCommand="hidden,1;playcommand,Pulse"
+	/>
+
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		SetCommand="%function(self)
+theDay = ' '
+if Weekday() == 0 then theDay = 'Sunday'
+elseif Weekday() == 1 then theDay = 'Monday'
+elseif Weekday() == 2 then theDay = 'Tuesday'
+elseif Weekday() == 3 then theDay = 'Wednesday'
+elseif Weekday() == 4 then theDay = 'Thursday'
+elseif Weekday() == 5 then theDay = 'Friday'
+elseif Weekday() == 6 then theDay = 'Saturday'
+end
+fixedHour = Hour() - math.floor(Hour()/12)*12
+if fixedHour == 0 then fixedHour = 12 end
+tod = 'AM'
+if Hour() >= 12 then tod = 'PM' end
+if OPENITG then
+self:settext( string.format('%s, %s %i, %04i', theDay, MonthToString(MonthOfYear()), DayOfMonth(), Year()) )
+else
+self:settext( string.format('%s, %s %i, %04i', theDay, MonthToString(MonthOfYear()-1), DayOfMonth(), Year()) )
+end end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_LEFT+286;y,SCREEN_TOP+18;shadowlength,0;horizalign,left;zoom,0.5;playcommand,Set"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		SetCommand="%function(self)
+fixedHour = Hour() - math.floor(Hour()/12)*12
+if fixedHour == 0 then fixedHour = 12 end
+tod = 'AM'
+if Hour() >= 12 then tod = 'PM' end
+if OPENITG then
+self:settext( string.format('%i:%02i:%02i %s', fixedHour, Minute(), Second(), tod) )
+else
+self:settext( string.format('%i:%02i:%02i %s', fixedHour, Minute(), Second(), tod) )
+end end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_LEFT+286;y,SCREEN_TOP+30;shadowlength,0;horizalign,left;zoom,0.5;playcommand,Set"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+
+		<!-- STEPARTIST (DESCRIPTION) FIELD (PLAYER 1) -->
+		<!-- Label -->
+		<Layer
+			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+			Type="BitmapText"
+			Font="_v profile"
+			Text="Stepartist:"
+			InitCommand="animate,0"
+			OnCommand="X,SCREEN_CENTER_X-267;Y,SCREEN_CENTER_Y+186;zoom,.4;shadowlength,0;horizalign,left"
+			OffCommand="linear,0.3;diffusealpha,0"
+		/>
+		<!-- Text -->
+		<Layer
+			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+			Type="BitmapText"
+			Font="_v profile"
+			Text="???"
+			InitCommand="animate,0;playcommand,Set"
+			OnCommand="X,SCREEN_CENTER_X-216;Y,SCREEN_CENTER_Y+186;zoom,.4;shadowlength,0;horizalign,left"
+			SetCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_1)) end"
+			OffCommand="linear,0.3;diffusealpha,0"
+			CurrentSongChangedMessageCommand="playcommand,Set"
+			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+		/>
+
+		<!-- STEPARTIST (DESCRIPTION) FIELD (PLAYER 2) -->
+		<!-- Label -->
+		<Layer
+			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+			Type="BitmapText"
+			Font="_v profile"
+			Text="Stepartist:"
+			InitCommand="animate,0"
+			OnCommand="X,SCREEN_CENTER_X+37;Y,SCREEN_CENTER_Y+186;zoom,.4;shadowlength,0;horizalign,left"
+			OffCommand="linear,0.3;diffusealpha,0"
+		/>
+		<!-- Text -->
+		<Layer
+			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+			Type="BitmapText"
+			Font="_v profile"
+			Text="???"
+			InitCommand="animate,0;playcommand,Set"
+			OnCommand="X,SCREEN_CENTER_X+88;Y,SCREEN_CENTER_Y+186;zoom,.4;shadowlength,0;horizalign,left"
+			SetCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end"
+			OffCommand="linear,0.3;diffusealpha,0"
+			CurrentSongChangedMessageCommand="playcommand,Set"
+			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
+		/>
+
+</children> </ActorFrame>
+

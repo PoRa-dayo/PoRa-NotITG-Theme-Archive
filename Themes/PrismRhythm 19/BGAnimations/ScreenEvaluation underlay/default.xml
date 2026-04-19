@@ -1,0 +1,298 @@
+<ActorFrame><children>
+
+	<!-- TIMING DATA -->
+	<!-- So timing type will be seen on the Eval screen.  You are a very, VERY bad person if you edit this. -->
+
+	<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Timing & Scoring:"
+		OnCommand="X,SCREEN_CENTER_X-34;Y,SCREEN_TOP+18;Zoom,0.4;HorizAlign,Left;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+	<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Standard (Ver. 15 Revision)"
+		OnCommand="X,SCREEN_CENTER_X+46;Y,SCREEN_TOP+18;Zoom,0.4;HorizAlign,Left;ShadowLength,0;DiffuseShift;EffectColor1,#87CEFA;EffectColor2,#87CEFA"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Judgement"
+		OnCommand="X,SCREEN_CENTER_X-34;Y,SCREEN_TOP+28;Zoom,0.35;HorizAlign,Left;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Awe"
+		OnCommand="X,SCREEN_CENTER_X+25;Y,SCREEN_TOP+28;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#87CEFA;EffectColor2,#87CEFA"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Swt"
+		OnCommand="X,SCREEN_CENTER_X+50;Y,SCREEN_TOP+28;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FFFF00;EffectColor2,#FFFF00"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Nice"
+		OnCommand="X,SCREEN_CENTER_X+75;Y,SCREEN_TOP+28;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#32CD32;EffectColor2,#32CD32"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Shky"
+		OnCommand="X,SCREEN_CENTER_X+100;Y,SCREEN_TOP+28;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#9400D3;EffectColor2,#9400D3"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Awf"
+		OnCommand="X,SCREEN_CENTER_X+125;Y,SCREEN_TOP+28;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#A0522D;EffectColor2,#A0522D"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Miss"
+		OnCommand="X,SCREEN_CENTER_X+150;Y,SCREEN_TOP+28;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FF0000;EffectColor2,#FF0000"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Mine"
+		OnCommand="X,SCREEN_CENTER_X+175;Y,SCREEN_TOP+28;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#800000;EffectColor2,#80000"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Tails"
+		OnCommand="X,SCREEN_CENTER_X+200;Y,SCREEN_TOP+28;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Accuracy"
+		OnCommand="X,SCREEN_CENTER_X-34;Y,SCREEN_TOP+36;Zoom,0.35;HorizAlign,Left;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Awesome Accuracy-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text=".020"
+		OnCommand="X,SCREEN_CENTER_X+25;Y,SCREEN_TOP+36;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Sweet Accuracy-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text=".040"
+		OnCommand="X,SCREEN_CENTER_X+50;Y,SCREEN_TOP+36;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Nice Accuracy-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text=".080"
+		OnCommand="X,SCREEN_CENTER_X+75;Y,SCREEN_TOP+36;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Shaky Accuracy-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text=".120"
+		OnCommand="X,SCREEN_CENTER_X+100;Y,SCREEN_TOP+36;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Awful Accuracy-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text=".160"
+		OnCommand="X,SCREEN_CENTER_X+125;Y,SCREEN_TOP+36;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Miss Accuracy-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="N/A"
+		OnCommand="X,SCREEN_CENTER_X+150;Y,SCREEN_TOP+36;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Mine Accuracy-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text=".040"
+		OnCommand="X,SCREEN_CENTER_X+175;Y,SCREEN_TOP+36;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Tail Accuracy-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Y/N"
+		OnCommand="X,SCREEN_CENTER_X+200;Y,SCREEN_TOP+36;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="DP Score"
+		OnCommand="X,SCREEN_CENTER_X-34;Y,SCREEN_TOP+44;Zoom,0.35;HorizAlign,Left;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Awesome DP-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="+5"
+		OnCommand="X,SCREEN_CENTER_X+25;Y,SCREEN_TOP+44;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#00FF00;EffectColor2,#00FF00"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Sweet DP-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="+4"
+		OnCommand="X,SCREEN_CENTER_X+50;Y,SCREEN_TOP+44;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#00FF00;EffectColor2,#00FF00"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Nice DP-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="+2"
+		OnCommand="X,SCREEN_CENTER_X+75;Y,SCREEN_TOP+44;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#00FF00;EffectColor2,#00FF00"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Shaky DP-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="-2"
+		OnCommand="X,SCREEN_CENTER_X+100;Y,SCREEN_TOP+44;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FF0000;EffectColor2,#FF0000"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Awful DP-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="-4"
+		OnCommand="X,SCREEN_CENTER_X+125;Y,SCREEN_TOP+44;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FF0000;EffectColor2,#FF0000"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Miss DP-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="-5"
+		OnCommand="X,SCREEN_CENTER_X+150;Y,SCREEN_TOP+44;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FF0000;EffectColor2,#FF0000"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Mine DP-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="-5"
+		OnCommand="X,SCREEN_CENTER_X+175;Y,SCREEN_TOP+44;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FF0000;EffectColor2,#FF0000"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Tail DP Slash-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="/"
+		OnCommand="X,SCREEN_CENTER_X+200;Y,SCREEN_TOP+44;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Tail DP Success-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="+5"
+		OnCommand="X,SCREEN_CENTER_X+194;Y,SCREEN_TOP+44;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#00FF00;EffectColor2,#00FF00"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Tail DP Drop-->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="-5"
+		OnCommand="X,SCREEN_CENTER_X+205;Y,SCREEN_TOP+44;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FF0000;EffectColor2,#FF0000"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+<!-- Grading Text -->
+<Layer Type="BitmapText"
+		Font="_v profile"
+		Text="Grade Requirements (Since PR 19): D: 72% // C: 78% // B: 84% // A: 90% // S: 96%, Honor Pins at 97% and 98% // M: 99% // V: 100%"
+		OnCommand="X,SCREEN_CENTER_X-1;Y,SCREEN_BOTTOM-52;Zoom,0.35;HorizAlign,Center;ShadowLength,0;DiffuseShift;EffectColor1,#FFFFFF;EffectColor2,#FFFFFF"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+
+
+	<!-- TIMESTAMP -->
+	<!-- The "pulse" quad command is necessary to get a live-updating time
+	     to appear on the screen; it broadcasts its command every second
+	     so we can update the time every second.  The time itself is
+	     fully-customizable, but if you reorganize the order the format items
+	     appear in for the string, you have to change their order in the format
+	     as well, or the game will crash when it tries to get the data. -->
+	<!-- I've added the time to the eval screen so all score screenshots
+	     will effectively receive timestamps, which I'm sure players will
+	     appreciate as proof of *when* they got their scores. -->
+	<Layer
+		Type="Quad"
+		PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(1); self:queuecommand('Pulse') end"
+		InitCommand="hidden,1;playcommand,Pulse"
+	/>
+
+	<Layer
+		Type="BitmapText"
+		Font="_v profile"
+		SetCommand="%function(self)
+theDay = ' '
+if Weekday() == 0 then theDay = 'Sunday'
+elseif Weekday() == 1 then theDay = 'Monday'
+elseif Weekday() == 2 then theDay = 'Tuesday'
+elseif Weekday() == 3 then theDay = 'Wednesday'
+elseif Weekday() == 4 then theDay = 'Thursday'
+elseif Weekday() == 5 then theDay = 'Friday'
+elseif Weekday() == 6 then theDay = 'Saturday'
+end
+fixedHour = Hour() - math.floor(Hour()/12)*12
+if fixedHour == 0 then fixedHour = 12 end
+tod = 'AM'
+if Hour() >= 12 then tod = 'PM' end
+if OPENITG then
+self:settext( string.format('%s, %s %i, %04i, %i:%02i:%02i %s', theDay, MonthToString(MonthOfYear()), DayOfMonth(), Year(), fixedHour, Minute(), Second(), tod) )
+else
+self:settext( string.format('%s, %s %i, %04i, %i:%02i:%02i %s', theDay, MonthToString(MonthOfYear()-1), DayOfMonth(), Year(), fixedHour, Minute(), Second(), tod) )
+end end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X;Y,SCREEN_BOTTOM-16;shadowlength,0;horizalign,center;zoom,0.5;playcommand,Set"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
+	/>
+
+
+<Layer File="vocalize.xml" />
+</children></ActorFrame>
