@@ -143,7 +143,7 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 ***NOTE: This theme requires you to have the theme OITGThemerFallback for it to work!!! And just like any other fallback theme, do not actually use OITGThemerFallback.***
 
 The accelerated operational interface for Stepmania 3.95 ported to NotITG!\
-OITGThemerFallback also has some documentation in the metrics that you can use as a reference to make your own theme.
+OITGThemerFallback is a fallback theme that's made to be closer to the base SM3.95 theme. It also has some documentation in the metrics that you can use as a reference to make your own theme.
 ## Credits:
 -Original theme by k//eternal. Original NotITG port by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 by Nhan and PoRa.
 
