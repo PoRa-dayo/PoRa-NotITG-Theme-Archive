@@ -197,4 +197,11 @@ This theme already has almost every feature you can ask for, so there are very f
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
+<img width="200" height="150" alt="NotITG-v4 9 1_fYdoivIhTT" src="https://github.com/user-attachments/assets/4eb11608-3b2b-4e31-8a99-8fa6aaaaa1a6" />
+<img width="200" height="150" alt="NotITG-v4 9 1_oXfyWZ7KUg" src="https://github.com/user-attachments/assets/9957c377-345c-4fcb-8e87-a04bf5488d72" />
+<img width="200" height="150" alt="NotITG-v4 9 1_g9UbaofFZq" src="https://github.com/user-attachments/assets/74586bce-9d40-4946-b980-ce41527bc132" />
+<img width="200" height="150" alt="NotITG-v4 9 1_W6ivwVRoeT" src="https://github.com/user-attachments/assets/9fcada5c-edc2-4c9d-b406-a7dc334d24e6" />
+<img width="200" height="150" alt="NotITG-v4 9 1_AnneehDTt7" src="https://github.com/user-attachments/assets/b8037208-3117-4324-941b-0229eee88d94" />
+
+
 
