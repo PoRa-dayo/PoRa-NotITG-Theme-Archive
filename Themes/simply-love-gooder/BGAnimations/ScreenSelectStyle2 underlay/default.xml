@@ -1,0 +1,192 @@
+<ActorFrame><children>
+	<Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(SCREEN_WIDTH)
+                self:zoomy(150)
+                self:x(SCREEN_CENTER_X)
+                self:y(SCREEN_CENTER_Y+150)
+                self:draworder(-1)
+                self:diffuse(0,0,0,0)
+                self:fadebottom(1)
+                self:diffusealpha(1)
+                end"
+        />
+                <Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(SCREEN_WIDTH)
+                self:zoomy(150)
+                self:x(SCREEN_CENTER_X)
+                self:y(SCREEN_CENTER_Y-150)
+                self:draworder(-1)
+                self:diffuse(0,0,0,0)
+                self:fadetop(1)
+                self:diffusealpha(1)
+                end"
+        />
+                <Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(SCREEN_WIDTH)
+                self:zoomy(150)
+                self:x(SCREEN_CENTER_X)
+                self:y(SCREEN_CENTER_Y)
+                self:draworder(-1)
+                self:diffuse(0,0,0,0)
+                self:linear(0.5)
+                if Weekday() == 1 then
+                self:diffuse(0.2,0.2,0.2,0.8)
+                end
+                if Weekday() == 2 then
+                self:diffuse(0.2,0.4,0.2,0.8)
+                end
+                if Weekday() == 3 then
+                self:diffuse(0.1,0.1,0.4,0.8)
+                end
+                if Weekday() == 4 then
+                self:diffuse(0.1,0.1,0.1,0.8)
+                end
+                if Weekday() == 5 then
+                self:diffuse(0.2,0.2,0.2,0.8)
+                end
+                if Weekday() == 6 then
+                self:diffuse(0.8,0,0.9,0.8)
+                end
+                if Weekday() == 0 then
+                self:diffuse(0.1,0.1,0.1,0.8)
+                end
+                end"
+        />
+
+                <Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(SCREEN_WIDTH)
+                self:zoomy(150)
+                self:x(SCREEN_CENTER_X)
+                self:y(SCREEN_CENTER_Y)
+                self:draworder(-1)
+                if Weekday() == 1 then
+                self:diffuse(0.2,0.2,0.2,0.6)
+                end
+                if Weekday() == 2 then
+                self:diffuse(0.2,0.4,0.2,0.6)
+                end
+                if Weekday() == 3 then
+                self:diffuse(0.1,0.1,0.4,0.6)
+                end
+                if Weekday() == 4 then
+                self:diffuse(0.1,0.1,0.1,0.6)
+                end
+                if Weekday() == 5 then
+                self:diffuse(0.2,0.2,0.2,0.6)
+                end
+                if Weekday() == 6 then
+                self:diffuse(0.8,0,0.9,0.6)
+                end
+                if Weekday() == 0 then
+                self:diffuse(0.1,0.1,0.1,0.3)
+                end     end"
+        />
+                <Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(2)
+                if Weekday() == 1 then
+                        self:glowshift()
+                        self:effectcolor1(1,1,1,1)
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                end
+                self:zoomx(10000)
+                self:zoomy(2)
+                self:rotationz(90)
+                self:x(SCREEN_CENTER_X)
+                self:y(SCREEN_CENTER_Y+75)
+                if Weekday() == 2 then
+                        self:glowshift()
+                        self:effectcolor1(0.5,1,0.5,1)
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 3 then
+                        self:glowshift()
+                        self:effectcolor1(0.5,0.5,1,1)
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 4 then
+                        self:glowshift()
+                        self:effectcolor1(0.2,0.2,0.2,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                if Weekday() == 5 then
+                        self:glowshift()
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                if Weekday() == 6 then
+                        self:glowshift()
+                        self:effectcolor1(0.8,0,0.9,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                if Weekday() == 0 then
+                        self:glowshift()
+                        self:effectcolor1(0.4,0.4,0.4,1)
+                        self:effectcolor2(0,0,0,1)
+                end  end"
+        />
+                <Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(10000)
+                self:zoomy(2)
+                self:rotationz(90)
+                self:x(SCREEN_CENTER_X)
+                self:y(SCREEN_CENTER_Y-75)
+                if Weekday() == 1 then
+                        self:glowshift()
+                        self:effectcolor1(1,1,1,1)
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 2 then
+                        self:glowshift()
+                        self:effectcolor1(0.5,1,0.5,1)
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 3 then
+                        self:glowshift()
+                        self:effectcolor1(0.5,0.5,1,1)
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 4 then
+                        self:glowshift()
+                        self:effectcolor1(0.2,0.2,0.2,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                if Weekday() == 5 then
+                        self:glowshift()
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                if Weekday() == 6 then
+                        self:glowshift()
+                        self:effectcolor1(0.8,0,0.9,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                if Weekday() == 0 then
+                        self:glowshift()
+                        self:effectcolor1(0.4,0.4,0.4,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                end"
+        />
+        <AutoActor
+        Font="Common Normal"
+        Text="Select using &MENULEFT; &MENURIGHT; . Press &START; to confirm."
+                InitCommand="y,SCREEN_CENTER_Y-95;X,SCREEN_RIGHT-50;zoom,0.5;horizalign,right;diffusealpha,0"
+                OnCommand="linear,1;diffusealpha,1"
+                FinalMessageCommand="bouncebegin,2;fadebottom,1"
+                LoadCommand="y,SCREEN_WIDTH/2;decelerate,.5;y,SCREEN_CENTER_Y+150;"
+        />
+        <Layer
+                File="../ScreenWithMenuElements overlay" />
+</children></ActorFrame>

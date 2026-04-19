@@ -1,0 +1,17 @@
+<ActorFrame><children>
+        <Layer
+            File="DailyBG.xml"
+            OnCommand="%function(self)
+            local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == true or not JUVMProfile.JUVMDailyBG then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+            end"
+            />
+        <Layer
+            File="StaticBG.xml"
+            />
+
+</children></ActorFrame>

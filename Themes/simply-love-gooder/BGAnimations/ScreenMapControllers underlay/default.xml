@@ -1,0 +1,6 @@
+<ActorFrame> <children>
+	
+	<Layer File="keymapstuff.png" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+25"
+		OffCommand="decelerate,0.75;addx,-1000"
+	/>
+	</children></ActorFrame> 

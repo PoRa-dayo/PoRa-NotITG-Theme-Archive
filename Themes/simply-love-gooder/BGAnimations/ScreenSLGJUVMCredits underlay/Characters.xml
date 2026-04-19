@@ -1,0 +1,216 @@
+<ActorFrame><children>
+
+	<!-- Comienza los Characters.
+	CharacterValue dara un valor al azar que terminara con un numero relacionado a uno de los personajes de esta lista.
+	Cuando ese valor sea determinado, ese personaje será el unico en aparecer.
+	-->
+	<AutoActor
+        File="../ScreenTitleMenu underlay/Pat.sprite"
+		InitCommand="%function(self)
+		if CharacterValue == 1 then
+				self:x(SCREEN_CENTER_X)
+				self:y(SCREEN_CENTER_Y+500)
+				self:draworder(9)
+				self:zoom(0.8)
+				self:diffusealpha(0)
+				self:sleep(10.6)
+				self:decelerate(1)
+				self:diffusealpha(1)
+				self:fadebottom(0.3)
+				self:y(SCREEN_CENTER_Y+90)
+				self:sleep(5.5)
+				self:accelerate(1)
+				self:y(SCREEN_CENTER_Y+500)
+				else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<AutoActor
+        File="../ScreenTitleMenu underlay/Nick.sprite"
+		InitCommand="%function(self)
+		if CharacterValue == 2 then
+				self:x(SCREEN_CENTER_X)
+				self:y(SCREEN_CENTER_Y+500)
+				self:draworder(9)
+				self:zoom(0.8)
+				self:diffusealpha(0)
+				self:sleep(10.6)
+				self:decelerate(1)
+				self:diffusealpha(1)
+				self:fadebottom(0.3)
+				self:y(SCREEN_CENTER_Y+90)
+				self:sleep(5.5)
+				self:accelerate(1)
+				self:y(SCREEN_CENTER_Y+500)
+				else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<AutoActor
+        File="../ScreenTitleMenu underlay/Tetaes"
+		InitCommand="%function(self)
+		if CharacterValue == 3 then
+				self:x(SCREEN_CENTER_X)
+				self:y(SCREEN_CENTER_Y+500)
+				self:draworder(9)
+				self:zoom(0.5)
+				self:bob()
+				self:effectmagnitude(0,10,0)
+				self:diffusealpha(0)
+				self:sleep(10.6)
+				self:decelerate(1)
+				self:diffusealpha(1)
+				self:fadebottom(0.3)
+				self:y(SCREEN_CENTER_Y+90)
+				self:sleep(5.5)
+				self:accelerate(1)
+				self:y(SCREEN_CENTER_Y+500)
+				else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<AutoActor
+        File="../ScreenTitleMenu underlay/Kun"
+		InitCommand="%function(self)
+		if CharacterValue == 4 then
+				self:x(SCREEN_CENTER_X)
+				self:y(SCREEN_CENTER_Y+500)
+				self:draworder(9)
+				self:zoom(0.3)
+				self:bob()
+				self:effectmagnitude(0,10,0)
+				self:diffusealpha(0)
+				self:sleep(10.6)
+				self:decelerate(1)
+				self:diffusealpha(1)
+				self:fadebottom(0.3)
+				self:y(SCREEN_CENTER_Y+130)
+				self:sleep(5.5)
+				self:accelerate(1)
+				self:y(SCREEN_CENTER_Y+500)
+				else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<AutoActor
+        File="../ScreenTitleMenu underlay/Gezoda"
+		InitCommand="%function(self)
+		if CharacterValue == 5 then
+				self:x(SCREEN_CENTER_X)
+				self:y(SCREEN_CENTER_Y+500)
+				self:draworder(9)
+				self:zoom(0.3)
+				self:fadeleft(0.1)
+				self:faderight(0.1)
+				self:diffusealpha(0)
+				self:sleep(10.6)
+				self:decelerate(1)
+				self:diffusealpha(1)
+				self:y(SCREEN_CENTER_Y+130)
+				self:sleep(5.5)
+				self:accelerate(1)
+				self:y(SCREEN_CENTER_Y+500)
+				else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<AutoActor
+        File="../ScreenTitleMenu underlay/MrKid"
+		InitCommand="%function(self)
+		if CharacterValue == 6 then
+				self:x(SCREEN_CENTER_X)
+				self:y(SCREEN_CENTER_Y+500)
+				self:draworder(9)
+				self:zoom(2)
+				self:diffusealpha(0)
+				self:sleep(10.6)
+				self:decelerate(1)
+				self:diffusealpha(1)
+				self:fadebottom(0.3)
+				self:y(SCREEN_CENTER_Y+130)
+				self:sleep(5.5)
+				self:accelerate(1)
+				self:y(SCREEN_CENTER_Y+500)
+				else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<AutoActor
+        File="../ScreenTitleMenu underlay/Zarile"
+		InitCommand="%function(self)
+		if CharacterValue == 7 then
+				self:x(SCREEN_CENTER_X)
+				self:y(SCREEN_CENTER_Y+500)
+				self:draworder(9)
+				self:zoom(0.5)
+				self:diffusealpha(0)
+				self:sleep(10.6)
+				self:decelerate(1)
+				self:diffusealpha(1)
+				self:fadebottom(0.3)
+				self:y(SCREEN_CENTER_Y+130)
+				self:sleep(5.5)
+				self:accelerate(1)
+				self:y(SCREEN_CENTER_Y+500)
+				else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<AutoActor
+        File="../ScreenTitleMenu underlay/CosmicLaer"
+		InitCommand="%function(self)
+		if CharacterValue == 8 then
+				self:x(SCREEN_CENTER_X)
+				self:y(SCREEN_CENTER_Y+500)
+				self:draworder(9)
+				self:zoom(0.5)
+				self:diffusealpha(0)
+				self:sleep(10.6)
+				self:bob()
+				self:effectmagnitude(0,10,0)
+				self:decelerate(1)
+				self:diffusealpha(1)
+				self:fadebottom(0.3)
+				self:y(SCREEN_CENTER_Y+190)
+				self:sleep(5.5)
+				self:accelerate(1)
+				self:y(SCREEN_CENTER_Y+500)
+				else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<AutoActor
+        File="../ScreenTitleMenu underlay/Sora"
+		InitCommand="%function(self)
+		if CharacterValue == 9 then
+				self:x(SCREEN_CENTER_X)
+				self:y(SCREEN_CENTER_Y+500)
+				self:draworder(9)
+				self:zoom(0.2)
+				self:diffusealpha(0)
+				self:sleep(10.6)
+				self:bob()
+				self:effectmagnitude(0,10,0)
+				self:decelerate(1)
+				self:diffusealpha(1)
+				self:fadebottom(0.3)
+				self:y(SCREEN_CENTER_Y+190)
+				self:sleep(5.5)
+				self:accelerate(1)
+				self:y(SCREEN_CENTER_Y+500)
+				else
+				self:hidden(1)
+			end
+		end"
+	/>
+	<!-- End Of Characters -->
+
+</children></ActorFrame>

@@ -1,0 +1,227 @@
+<ActorFrame><children>
+	<Actor
+		File="../_black"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT;diffusealpha,0;accelerate,0.5;diffusealpha,1"
+	/>
+    
+	<Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomtowidth(SCREEN_WIDTH)
+                self:zoomtoheight(SCREEN_HEIGHT)
+                self:x(SCREEN_CENTER_X)
+                self:fadetop(1)
+                self:y(SCREEN_CENTER_Y+200)
+                if Weekday() == 1 then
+                self:diffuse(0.2,0.2,0.2,0.6)
+                end
+                if Weekday() == 2 then
+                self:diffuse(0.2,0.4,0.2,0.6)
+                end
+                if Weekday() == 3 then
+                self:diffuse(0.1,0.1,0.4,0.6)
+                end
+                if Weekday() == 4 then
+                self:diffuse(0.1,0.1,0.1,0.6)
+                end
+                if Weekday() == 5 then
+                self:diffuse(0.5,0.5,0.5,0.6)
+                end
+                if Weekday() == 6 then
+                self:diffuse(0.8,0,0.9,0.6)
+                end
+                if Weekday() == 0 then
+                self:diffuse(0.1,0.1,0.1,0.3)
+                end
+                self:diffusealpha(0)
+                self:sleep(.85)
+                self:diffusealpha(1)
+                self:linear(0.8)
+                self:diffusealpha(0)    end"
+        />
+    <Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomtowidth(SCREEN_WIDTH)
+                self:zoomtoheight(SCREEN_HEIGHT)
+                self:x(SCREEN_CENTER_X)
+                self:fadebottom(1)
+                self:y(SCREEN_CENTER_Y-200)
+                if Weekday() == 1 then
+                self:diffuse(0.2,0.2,0.2,0.6)
+                end
+                if Weekday() == 2 then
+                self:diffuse(0.2,0.4,0.2,0.6)
+                end
+                if Weekday() == 3 then
+                self:diffuse(0.1,0.1,0.4,0.6)
+                end
+                if Weekday() == 4 then
+                self:diffuse(0.1,0.1,0.1,0.6)
+                end
+                if Weekday() == 5 then
+                self:diffuse(0.5,0.5,0.5,0.6)
+                end
+                if Weekday() == 6 then
+                self:diffuse(0.8,0,0.9,0.6)
+                end
+                if Weekday() == 0 then
+                self:diffuse(0.1,0.1,0.1,0.3)
+                end
+                self:diffusealpha(0)
+                self:sleep(.85)
+                self:diffusealpha(1)
+                self:linear(0.8)
+                self:diffusealpha(0)     end"
+        />
+	<Actor
+		File="heartsplode"
+		InitCommand="diffusealpha,0"
+		OnCommand="@'sleep,.85;diffuse,'..DifficultyColor(3)..';x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;rotationz,10;diffusealpha,0;zoom,0;diffusealpha,0.9;linear,0.6;rotationz,0;zoom,2.2;diffusealpha,0'"
+	/>
+	<Actor
+		File="heartsplode"
+		InitCommand="diffusealpha,0"
+		OnCommand="@'sleep,.85;diffuse,'..DifficultyColor(3)..';x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;rotationy,180;rotationz,-10;diffusealpha,0;zoom,0.2;diffusealpha,0.8;decelerate,0.6;rotationz,0;zoom,2.6;diffusealpha,0'"
+	/>		
+	<Actor
+		File="minisplode"
+		InitCommand="diffusealpha,0"
+		OnCommand="@'sleep,.85;diffuse,'..DifficultyColor(3)..';x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;rotationz,10;diffusealpha,0;zoom,0;diffusealpha,1;decelerate,0.8;rotationz,0;zoom,1.8;diffusealpha,0'"
+	/>
+	<Actor
+		Condition="not GAMESTATE:IsCourseMode()"
+		File="@'../../Graphics/ScreenGameplay stage '..GetStageText()"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+50;diffusealpha,0;bounceend,0.8;diffusealpha,1;y,SCREEN_CENTER_Y;sleep,0.01;zoom,1.5;decelerate,1;zoom,1;playcommand,FadeIn"
+	/>
+	<Actor
+		Condition="GAMESTATE:IsCourseMode()"
+		File="../../Graphics/ScreenGameplay course song 1"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;accelerate,0.3;diffusealpha,1"
+	/>
+	<BitmapText
+		Condition="IsTimedSet()"
+		Text="timer" 
+        Font="_wendy small" 
+        OnCommand="%function(self) 
+			self:shadowlength(0); 
+			self:zoom(0.4); 
+			self:horizalign('center'); 
+			self:x(SCREEN_CENTER_X)
+			self:y(SCREEN_TOP-600)
+			self:decelerate(2)
+			self:y(SCREEN_TOP+70)
+			if GAMESTATE:GetEnv('Mods') then self:playcommand('Timer') else self:queuecommand('Timer') end 
+		end"
+		TimerCommand="%TimedSet.Timer"
+	/>
+    <Layer
+                Font="Common Normal"
+                Text=" "
+                OnCommand="%function(self)
+                self:xy(SCREEN_CENTER_X,SCREEN_BOTTOM+45)
+                self:zoom(0.5)
+                self:horizalign('center')
+                self:maxwidth(SCREEN_WIDTH*1.9)
+                self:decelerate(0.5)
+                self:y(SCREEN_BOTTOM-45)
+                self:sleep(2)
+                self:accelerate(0.5)
+                self:diffusealpha(0)
+
+                local songs = {
+
+    --UKSRT 8
+   	{'tang pong',						'BPM is bloody broken, try to get the rhythm right.'},
+   	{'get fucked',						'One of the parts of this song will force you to remember the rhythm as the song fades out.\nRemember and keep stepping the rhythm.'},
+   	{'kioku',							'Contains ActorFrameTextures.'},
+   	{'Matoi',							'This file contains a lot of Proof Of Concept Stuff. So be amazed!'},
+   	{'Sort Game',						'Sort the Medicines!'},
+   	{'Flyin to your Heart',				'Work toghether to stop Shame!\nThis file really requires two players.'},
+   	{'10',								'ARE YOU READY FOR A CRAZY RIDE?'},
+
+    -- Files by Jose_Varela
+   	{'Memory Lane',						'There are splines on this file.'},
+   	{'photograph',						'There\'s a lot of clones involved in this one.\nSo better pay attention!'},
+   	{'POLE POSITION',					'This file contains a lot of blur and stuff, try to hit the notes!'},
+   	{'This Deal Won\'t Last Forever', 	'You\'re in a fight against Zero.\nTry to learn his attacks.'},
+   	{'Gems',							'Some mods are tricky if you don\'t know the rhythm!'},
+
+   	-- Files from the UKSRT Discord
+   	{'Charles Manson vs Marilyn Milian','Um... I guess try to match your rhythm with the dialog?'},
+                
+
+                }
+
+                    for i = 1,table.getn(songs) do
+                        local CurrentSong = GAMESTATE:GetCurrentSong()
+                            if CurrentSong and string.find( CurrentSong:GetDisplayFullTitle(), songs[i][1] ) then
+                            self:settext(songs[i][2])
+                        end
+                    end
+
+                end"
+                />
+
+
+
+
+
+                <!-- DISTRACTION FREE WARNING -->
+
+                <Layer
+            Type="Quad"
+            Condition="GAMESTATE:GetCurrentSong():IsMarathon()"
+            OnCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,80;y,SCREEN_TOP-90;playcommand,Update"
+            UpdateCommand="%function(self)
+            ColorRGBCommand(self, 1)
+            self:diffusealpha(0)
+            self:fadebottom(0.1)
+            self:diffusealpha(1)
+            self:decelerate(1)
+            self:y(SCREEN_TOP+5)
+            self:sleep(3)
+            self:accelerate(1)
+            self:y(SCREEN_TOP-90)
+            end"
+        />
+
+        <Layer
+            Type="BitmapText"
+            Font="_misobold small"
+            Text="Not HalfWay"
+            Condition="GAMESTATE:GetCurrentSong():IsMarathon()"
+            OnCommand="y,SCREEN_TOP-90;x,SCREEN_CENTER_X;zoom,0.5;playcommand,Update"
+            UpdateCommand="%function(self)
+            self:diffusealpha(0)
+            self:shadowlength(1)
+            self:settext('This song is a marathon. Distraction Free mode was activated.')
+            self:diffusealpha(1)
+            self:decelerate(1)
+            self:y(SCREEN_TOP+16)
+            self:sleep(3)
+            self:accelerate(1)
+            self:y(SCREEN_TOP-90)
+            end"
+        />
+        <Layer
+            Type="BitmapText"
+            Font="_misobold small"
+            Text="Not HalfWay"
+            Condition="GAMESTATE:GetCurrentSong():IsMarathon()"
+            OnCommand="y,SCREEN_TOP-90;x,SCREEN_CENTER_X;zoom,0.5;playcommand,Update"
+            UpdateCommand="%function(self)
+            self:diffusealpha(0)
+            self:shadowlength(1)
+            self:zoom(0.4)
+            self:settext('(Judgment, Combo and Hold Tweens back to SL style)')
+            self:diffusealpha(1)
+            self:decelerate(1)
+            self:y(SCREEN_TOP+30)
+            self:sleep(3)
+            self:accelerate(1)
+            self:y(SCREEN_TOP-90)
+            end"
+        />
+
+</children></ActorFrame>

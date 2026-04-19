@@ -1,0 +1,197 @@
+<ActorFrame> <children>
+	<ActorFrame Command="%function() love = 0 end" />
+	<ActorFrame
+		InitCommand="%function() Voice = 'Jayce'; score = '99.00';  end"
+		OnCommand="sleep,0.01;queuecommand,Vocalize111"
+		Vocalize1Command="%function(self) VocalizeTest(self,1) self:queuecommand('Vocalize2') end"
+		Vocalize2Command="%function(self) VocalizeTest(self,2) self:queuecommand('Vocalize3') end"
+		Vocalize3Command="%function(self) VocalizeTest(self,3) self:queuecommand('Vocalize4') end"
+		Vocalize4Command="%function(self) VocalizeTest(self,4) self:queuecommand('Vocalize5') end"
+		Vocalize5Command="%function(self) VocalizeTest(self,5) end"
+	/>	
+	<ActorFrame
+		InitCommand="%function()
+
+	Jayce = { z0 = .6,
+			z1 = .5,
+			z2 = .6,
+			z3 = .6,
+			z4 = .6,
+			z5 = .6,
+			z6 = .6,
+			z7 = .6,
+			z8 = .6,
+			z9 = .6,
+			z10 = .6,
+			z11 = .6,
+			z12 = .7,
+			z13 = .7,
+			z14 = .7,
+			z15 = .7,
+			z16 = .7,
+			z17 = .7,
+			z18 = .7,
+			z19 = .7,
+			z20 = .6,
+			z30 = .6,
+			z40 = .6,
+			z50 = .6,
+			z60 = .6,
+			z70 = .6,
+			z80 = .6,
+			z90 = .6,
+			z100percent1 = 1,
+			zpoint = .5,
+			quads = 1 }
+			
+		end"
+	/>
+
+	<!-- This Updates The Clock -->
+                <Layer
+                Type="Quad"
+                PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(0.1); self:queuecommand('Pulse') end"
+                InitCommand="hidden,1;playcommand,Pulse"
+        />
+                <!-- The Clock -->
+                <Layer
+                Type="BitmapText"
+                Font="_wendy score"
+                SetCommand="%function(self) self:settext( string.format('%02i:%02i', Hour(), Minute()) ) end"
+                PulseMessageCommand="playcommand,Set"
+                Text=""
+                InitCommand="x,SCREEN_CENTER_X-40;y,SCREEN_BOTTOM-80;shadowlength,0;horizalign,center;zoom,0.2;diffusealpha,0;linear,0.3;diffusealpha,1;playcommand,Set"
+                OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+                OffCommand="accelerate,0.4;diffusealpha,0"
+        />
+                <!-- The date -->
+                <Layer
+                Type="BitmapText"
+                Font="_misoreg small"
+                SetCommand="%function(self) self:settext( string.format('%s %02i %04i', MonthToString(MonthOfYear()), DayOfMonth(), Year()) ) end"
+                PulseMessageCommand="playcommand,Set"
+                Text=""
+                InitCommand="x,SCREEN_CENTER_X-10;y,SCREEN_BOTTOM-86;shadowlength,0;horizalign,left;zoom,0.5;diffusealpha,0;linear,0.3;diffusealpha,1;playcommand,Set"
+                OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+                OffCommand="accelerate,0.4;diffusealpha,0"
+        />
+
+
+        <Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:hibernate(1)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomtowidth(SCREEN_WIDTH*2)
+		self:zoomtoheight(0)
+		ColorRGBCommand(self, 3)
+
+		self:diffusealpha(0)
+		self:sleep(1.5)
+		self:bounceend(0.5)
+		self:diffusealpha(0.1)
+
+		self:zoomtoheight(120*2)
+		self:fadetop(0.1)
+		self:fadebottom(0.1)
+
+		self:pulse()
+		self:effectperiod(15)
+		end"
+		/>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:hibernate(0.5)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomtowidth(SCREEN_WIDTH*2)
+		self:zoomtoheight(0)
+		ColorRGBCommand(self, 2)
+
+		self:diffusealpha(0)
+		self:sleep(1.5)
+		self:bounceend(0.5)
+		self:diffusealpha(0.3)
+
+		self:zoomtoheight(120*1.5)
+		self:fadetop(0.1)
+		self:fadebottom(0.1)
+
+		self:pulse()
+		self:effectperiod(15)
+		end"
+		/>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomtowidth(SCREEN_WIDTH*2)
+		self:zoomtoheight(0)
+		ColorRGBCommand(self, 1)
+
+		self:diffusealpha(0)
+		self:sleep(1.5)
+		self:bounceend(0.5)
+		self:diffusealpha(0.5)
+
+		self:zoomtoheight(120)
+		self:fadetop(0.1)
+		self:fadebottom(0.1)
+		end"
+		/>
+
+	<Layer
+		File="../ScreenSLGJUVMCredits underlay/moddedtheme"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(0.5)
+		self:diffusealpha(0)
+		self:linear(1)
+		self:diffusealpha(1)
+		self:sleep(0.5)
+		self:bounceend(0.5)
+		self:y(SCREEN_CENTER_Y+30)
+		end"
+		/>
+
+	<Layer
+		File="../ScreenSLGJUVMCredits underlay/note"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(0.9)
+		self:diffusealpha(0)
+		self:sleep(1.5)
+		self:bounceend(0.5)
+		self:diffusealpha(1)
+		self:y(SCREEN_CENTER_Y-5)
+		end"
+		/>
+
+	<Layer
+		Font="Common Normal"
+		Text="Press &START; to begin."
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_BOTTOM-50)
+		self:zoom(0.6)
+		self:diffusealpha(0)
+		self:sleep(4)
+		self:linear(1)
+		self:diffusealpha(1)
+		end"
+		/>
+
+
+
+
+
+
+       
+</children></ActorFrame>

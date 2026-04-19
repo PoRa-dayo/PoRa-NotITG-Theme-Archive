@@ -1,0 +1,28 @@
+<ActorFrame><children>
+	<Layer
+		File="failshadow"
+		InitCommand="addx,150;cropleft,0.4;cropright,0.3;fadeleft,0.2;faderight,0.2;shadowlength,0;diffusealpha,0;sleep,0.2;accelerate,0.2;diffusealpha,0;zoomx,5"
+		GainFocusCommand="@'diffuse,'..DifficultyColor(1)..'finishtweening;accelerate,0.2;diffusealpha,1;zoomx,5;zoomy,0.5'"
+		LoseFocusCommand="finishtweening;accelerate,0.2;diffusealpha,0;zoomx,0;zoomy,0"
+		DisabledCommand="Diffuse,0.5,0.5,0.5,1"
+		OffCommand="%TitleMenuOut"
+	/>
+	<Layer
+		Font="_wendy small"
+		Text="Change Log"
+		InitCommand="addx,250;zoom,0.8;horizalign,center;shadowlength,0;diffusealpha,0;sleep,0.4;accelerate,0.6;diffusealpha,1"
+		GainFocusCommand="@'diffuse,'..DifficultyColor(1)..';finishtweening;bounceend,0.2;zoom,2'"
+		LoseFocusCommand="finishtweening;bounceend,0.2;y,0;zoom,0.4;diffusealpha,0.3"
+		DisabledCommand="Diffuse,0.5,0.5,0.5,1"
+		OffCommand="%TitleMenuOut"
+	/>
+	<Layer
+		Font="Common Normal"
+		Text="Check out what's new in SLG(JUVM)."
+		InitCommand="addy,90;addx,250;zoom,2;horizalign,center;shadowlength,0;diffusealpha,0;"
+		GainFocusCommand="@'diffuse,'..DifficultyColor(1)..';finishtweening;zoom,1.85;bounceend,0.2;zoom,1.8;y,60'"
+		LoseFocusCommand="decelerate,0.3;zoom,1.8;diffuse,#111111;y,0;diffusealpha,0"
+		DisabledCommand="Diffuse,0.5,0.5,0.5,1"
+		OffCommand="%TitleMenuOut"
+	/>
+</children></ActorFrame>

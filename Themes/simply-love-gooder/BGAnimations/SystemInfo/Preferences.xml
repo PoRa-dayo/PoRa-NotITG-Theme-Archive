@@ -1,0 +1,74 @@
+<ActorFrame> <children>
+
+	<!-- PREFERENCES INFO -->
+
+	<Layer
+		Type="BitmapText"
+		Font="_misoreg small"
+		SetCommand="%function(self)
+		if string.find(string.lower(PREFSMAN:GetPreference('DisplayAspectRatio')), '1.7777') then
+			self:settext('Screen Aspect Ratio:\n'..PREFSMAN:GetPreference('DisplayAspectRatio')..' (16:9)') 
+		elseif string.find(string.lower(PREFSMAN:GetPreference('DisplayAspectRatio')), '1.3333') then
+			self:settext('Screen Aspect Ratio:\n'..PREFSMAN:GetPreference('DisplayAspectRatio')..' (4:3)')
+		else
+			self:settext('Screen Aspect Ratio:\n'..PREFSMAN:GetPreference('DisplayAspectRatio'))
+			end 
+		end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_RIGHT-40;y,SCREEN_CENTER_Y-90;shadowlength,0;horizalign,right;zoom,0.6;playcommand,Set"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+	<Layer
+		Type="BitmapText"
+		Font="_misoreg small"
+		SetCommand="%function(self)
+			self:settext('Video Renderer:\n'..PREFSMAN:GetPreference('VideoRenderers'))
+		end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_RIGHT-40;y,SCREEN_CENTER_Y-40;shadowlength,0;horizalign,right;zoom,0.6;playcommand,Set"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+		Type="BitmapText"
+		Font="_misoreg small"
+		SetCommand="%function(self)
+		if string.find(string.lower(PREFSMAN:GetPreference('VideoRenderers')), 'd3d') then
+			self:settext('Direct3D can make most NotITG files completely unplayable.\nPlease change the Video Renderer to OpenGL.')
+		elseif string.find(string.lower(PREFSMAN:GetPreference('VideoRenderers')), 'd3d, opengl') then
+			self:settext('Direct3D can make most NotITG files completely unplayable.\nPlease change the Video Renderer to OpenGL as primary.')
+		else
+			self:settext('')
+		end
+		end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_RIGHT-40;y,SCREEN_CENTER_Y-5;shadowlength,0;horizalign,right;zoom,0.4;diffusebottomedge,1,0,0,1;playcommand,Set"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+
+	<Layer
+		Type="BitmapText"
+		Font="_misoreg small"
+		SetCommand="%function(self)
+		self:settext('Current Screen Resolution:\n'..PREFSMAN:GetPreference('DisplayWidth')..'x'..PREFSMAN:GetPreference('DisplayHeight')) 
+		if string.find(string.lower(PREFSMAN:GetPreference('VideoRenderers')), 'd3d') or string.find(string.lower(PREFSMAN:GetPreference('VideoRenderers')), 'd3d, opengl') then
+			self:y(SCREEN_CENTER_Y+30)
+		else
+			self:y(SCREEN_CENTER_Y+5)
+		end
+		end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_RIGHT-40;y,SCREEN_CENTER_Y+30;shadowlength,0;horizalign,right;zoom,0.6;playcommand,Set"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+</children></ActorFrame>

@@ -1,0 +1,8 @@
+<ActorFrame	OnCommand=""><children>
+	<ActorFrame Command="queuecommand,Set" SetCommand="%function() crazy = 0 end" />
+	<ActorFrame OnCommand="bob;EffectMagnitude,0,0,0;EffectPeriod,12"><children>
+		<ActorFrame FOV="0"><children>
+			<Layer File="../_shared background normal/default.xml"/>
+		</children></ActorFrame>
+	</children></ActorFrame>
+</children></ActorFrame>

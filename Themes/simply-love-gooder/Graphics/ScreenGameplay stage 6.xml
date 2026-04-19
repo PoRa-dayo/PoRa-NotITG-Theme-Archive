@@ -1,0 +1,13 @@
+<ActorFrame> <children>
+	<BitmapText
+		Text="round 6" 
+        Font="_wendy white" 
+		InitCommand="%function(self) 
+			self:shadowlength(0);
+			self:zoom(1);
+			end"
+        OnCommand=""
+		ShowCommand="y,-80"
+		FadeInCommand="diffusealpha,0;accelerate,0.3;diffusealpha,1"
+    />
+</children> </ActorFrame>

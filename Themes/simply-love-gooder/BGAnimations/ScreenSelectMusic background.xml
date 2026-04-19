@@ -1,0 +1,33 @@
+<ActorFrame> <children>
+			
+			<Layer
+            File="DailyBGSM.xml"
+            OnCommand="%function(self)
+            local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == true or not JUVMProfile.JUVMDailyBG then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+            end"
+            />
+        <Layer
+            File="StaticBGSM.xml"
+            />
+
+        <Zctor
+        File="SongBackground"
+        Condition="PROFILEMAN:GetMachineProfile():GetSaved().JUVMShowSongBackgroundSM"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT;diffusealpha,0.6"
+        CurrentSongChangedMessageCommand="finishtweening;decelerate,0.5;diffusealpha,0;sleep,0.02;queuecommand,ChangeBackground"
+        ChangeBackgroundCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMShowSongBackgroundSM then
+                SongBGLoad(self)
+            else
+                self:hidden(1)
+            end
+        end"
+        OffCommand="decelerate,0.5;diffusealpha,0"
+    />
+</children> </ActorFrame>

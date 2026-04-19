@@ -1,0 +1,19 @@
+<ActorFrame> <children>
+
+	<!-- CLOCK -->
+
+	<Layer
+		Type="BitmapText"
+		Font="_misoreg small"
+		Condition="Platform() == 'arcade'"
+		SetCommand="%function(self) if OPENITG then self:settext( string.format('%02i:%02i:%02i %s %02i %04i', Hour(), Minute(), Second(), MonthToString(MonthOfYear()), DayOfMonth(), Year()) )
+					else self:settext( string.format('%02i:%02i:%02i %s %02i %04i', Hour(), Minute(), Second(), MonthToString(MonthOfYear()-1), DayOfMonth(), Year()) ) end end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_RIGHT-40;y,SCREEN_CENTER_Y-205;shadowlength,0;horizalign,right;zoom,0.7;playcommand,Set"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+
+</children></ActorFrame>

@@ -1,0 +1,59 @@
+<ActorFrame> <children>
+	<Layer
+		Type="BitmapText"
+		Text="One player uses the entire platform."
+		File="Common Normal"
+		InitCommand="diffuse,#FFFFFF00;y,50;zoom,2;"
+		OnCommand="linear,.5;diffusealpha,0"
+		GainFocusCommand="finishtweening;decelerate,0.2;diffuse,1,1,1,1"
+		LoseFocusCommand="finishtweening;decelerate,0.2;diffuse,0.5,0.5,0.5,1"
+		OffCommand="accelerate,0.5;diffusealpha,0"
+	/>
+	<Layer 
+		Type="ActorFrame"
+		Command="x,-30"
+		GainFocusCommand="%function(self)
+		self:finishtweening()
+		self:decelerate(0.2)
+		ColorRGBCommand(self, 1)
+		end"
+		LoseFocusCommand="finishtweening;decelerate,0.2;diffuse,0.5,0.5,0.5,1"
+	><children>
+		<Layer 
+			Condition="game ~= 'techno'"
+			Type="ActorFrame"
+			Command="x,110"
+		><children>
+			<Layer
+				File="../4panels"
+				EnabledCommand="%function(self) self:zoom(0.8) if game == 'dance' then self:x(-350) self:y(-50) ColorRGBCommand(self, -2) else self:y(-50) self:diffuse(.16,.24,.27,1) end end"
+				DisabledCommand="%function(self) self:zoom(0.8) if game == 'dance' then self:diffuse(.24,.31,.35,1) else self:diffuse(.12,.2,.23,1) end end"
+				OnCommand="%FadeIn"
+				OffCommand="%OutCommand"
+			/>
+
+		</children></Layer>
+		<Layer 
+			Condition="game ~= 'techno'"
+			Type="ActorFrame"
+			Command="x,-110"
+		><children>
+			<Layer
+				File="../4panels"
+				EnabledCommand="%function(self) self:zoom(0.8) if game == 'dance' then self:x(400) self:y(-50) ColorRGBCommand(self, -2) else self:y(-50) self:diffuse(.16,.24,.27,1) end end"
+				DisabledCommand="%function(self) self:zoom(0.8) if game == 'dance' then self:diffuse(.24,.31,.35,1) self:y(-50) else self:y(-50) self:diffuse(.12,.2,.23,1) end end"
+				OnCommand="%FadeIn"
+				OffCommand="%OutCommand"
+			/>
+
+		</children></Layer>
+	</children></Layer>
+	<Layer
+			File="double"
+			InitCommand="y,-40;zoom,2"
+			EnabledCommand="%function(self) self:diffuse(1,1,1,1) end"
+			DisabledCommand="diffuse,.24,.31,.35,1"
+			OnCommand="%FadeIn"
+			OffCommand="%OutCommand"
+		/>
+</children> </ActorFrame>

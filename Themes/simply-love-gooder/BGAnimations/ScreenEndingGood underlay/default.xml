@@ -1,0 +1,65 @@
+<ActorFrame> <children>
+	<ActorFrame Command="sleep,43;queuecommand,Out" 
+		OutCommand="%function(self) SCREENMAN:GetTopScreen():diffusealpha(0) end" />
+
+	<ActorFrame Type="Quad" 
+		OnCommand="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X;diffuse,0,0,0,0;diffusealpha,1;zoomx,SCREEN_WIDTH*2;zoomy,0;sleep,5;bounceend,1;zoomy,SCREEN_HEIGHT/1.15;fadetop,.1;fadebottom,0.1" 
+		OutCommand="diffuse,#00000000;linear,.5;diffuse,#00000000" />
+
+	<Layer File="gameover" 
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-20;diffusealpha,0;sleep,1;decelerate,2;diffusealpha,1;sleep,3.5;decelerate,0.5;zoom,0.2;addy,-150;addx,120" />
+
+
+	<AutoActor
+        Font="Common Normal"
+        Text="Thanks for playing!"
+		InitCommand="glow,1,1,0,1;glowshift;diffusealpha,0;sleep,6.5;y,SCREEN_CENTER_Y+500;X,SCREEN_CENTER_X-70;zoom,0.7;decelerate,0.5;diffusealpha,1;y,SCREEN_CENTER_Y-120"
+	FinalMessageCommand="bouncebegin,2;fadebottom,1"
+	/>
+
+	<AutoActor
+        File="moddedtheme"
+		InitCommand="diffusealpha,0;sleep,6.7;y,SCREEN_CENTER_Y+500;X,SCREEN_CENTER_X-70;zoom,0.5;decelerate,0.5;diffusealpha,1;y,SCREEN_CENTER_Y-55"
+	/>
+
+	<AutoActor
+        Font="Common Normal"
+        Text="is based on SIMPLY LOVE GOODER by TaroNuke, :: which was based on SIMPLY LOVE by hurtpiggypig."
+		InitCommand="diffusealpha,0;sleep,6.9;y,SCREEN_CENTER_Y+500;X,SCREEN_CENTER_X-70;zoom,0.7;decelerate,0.5;diffusealpha,1;y,SCREEN_CENTER_Y-30"
+	/>
+
+	<AutoActor
+        Font="Common Normal"
+        Text="Special Thanks::TaroNuke - Troubleshooting, Suggestions, Background Ideas::CosmicLAER - Suggestions / Aesthetics / Background Ideas::MaaeyCraft - Suggestions::Gezoda - Poll Idea / Background Ideas::Sora - Providing the NOTITG Mod List / Menu Ideas::Akita - Color Suggestions::PCBoy - Help with the Birthday Feature, Microsoft Sam Vocalization, Menu Ideas::BrightXeno - Voltex Judgment Font::"
+		InitCommand="horizalign,left;diffusealpha,0;sleep,6.9;y,SCREEN_CENTER_Y+500;X,SCREEN_CENTER_X-250;zoom,0.5;decelerate,0.5;diffusealpha,1;y,SCREEN_CENTER_Y+80"
+	/>
+
+
+
+
+
+	<Layer Type="Quad" 
+		OnCommand="diffuse,0,0,0,0;diffusealpha,0;zoom,1000000;sleep,23.2;diffusealpha,1" 
+		OutCommand="diffuse,#00000000;linear,.5;diffuse,#00000000" />
+	
+	<AutoActor
+        File="EndImage"
+		InitCommand="zoom,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+80;draworder,10;diffusealpha,0;sleep,23.2;diffusealpha,0.5;sleep,3;accelerate,5;diffusealpha,0"
+	/>
+	<Layer
+				InitCommand="draworder,10000;"
+        File="jose"
+		InitCommand="zoom,0.6;x,SCREEN_CENTER_X-100;y,SCREEN_CENTER_Y;draworder,10;diffusealpha,0;sleep,23.2;diffusealpha,1;sleep,3;accelerate,5;diffusealpha,0"
+	/>
+	<Layer
+				InitCommand="draworder,10000;"
+        Font="_wendy white"
+        Text="2016-2017"
+		InitCommand="zoom,0.2;draworder,10;horizalign,center;y,SCREEN_CENTER_Y+20;x,SCREEN_CENTER_X-50;diffusealpha,0;zoom,0.2;sleep,23.2;diffusealpha,1;sleep,3;accelerate,5;diffusealpha,0"
+	/>
+
+	<Layer Type="Quad" 
+		InitCommand="draworder,10000;"
+		OnCommand="diffuse,0,0,0,0;diffusealpha,0;zoom,1000000;sleep,25.2;linear,1;diffusealpha,1" 
+		OutCommand="diffuse,#00000000;linear,.5;diffuse,#00000000" />
+</children> </ActorFrame>

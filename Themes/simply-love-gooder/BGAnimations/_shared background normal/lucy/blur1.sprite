@@ -1,0 +1,10 @@
+[Sprite]
+Texture=blurtarg1 1x4.png
+Frame0000=0
+Delay0000=1
+Frame0001=1
+Delay0001=1
+Frame0002=2
+Delay0002=1
+Frame0003=3
+Delay0003=1

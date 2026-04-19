@@ -1,0 +1,8 @@
+<ActorFrame> <children>
+	<Layer
+		File="ScreenSelectColor Heart"
+		OnCommand="%function(self)
+		self:diffuse(0,0,0,0.5)
+		end"
+	/>
+</children> </ActorFrame>

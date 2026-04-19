@@ -1,0 +1,21 @@
+<ActorFrame><children>
+	<!-- This Updates The Clock -->
+                <!-- The Clock -->
+                <Layer
+                Type="BitmapText"
+                Font="_wendy score"
+                SetCommand="%function(self)
+                self:finishtweening()
+                local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+                    if not JUVMProfile.JUVMDisplayClock then
+                		self:settext(' ')
+                	else
+                		self:settext( string.format('%02i:%02i', Hour(), Minute()) )
+                	end
+                end"
+                PulseMessageCommand="playcommand,Set"
+                Text=""
+                InitCommand="x,SCREEN_RIGHT-5;y,SCREEN_TOP+5;shadowlength,0;horizalign,right;vertalign,top;zoom,0.2;playcommand,Set"
+        />
+
+</children></ActorFrame>

@@ -1,0 +1,227 @@
+<ActorFrame><children>
+	
+
+
+
+		<ActorFrame FOV="45" 
+			InitCommand="%function(self) end" 
+		OnCommand="%function(self) self:x(SCREEN_CENTER_X); self:y(SCREEN_CENTER_Y); self:z(300); self:hidden(0); end" 
+		ShowCommand="hidden,0" 
+		HideCommand="hidden,1" 
+		RotationCommand="linear,240/150*4;rotationy,360*1;linear,240/150*4;rotationy,360*2.25;linear,240/150*4;rotationy,360*3.75;linear,240/150/8*15;rotationy,360*4.5;decelerate,240/150/8*3;rotationy,360*4.75" ><children>
+		<ActorFrame 
+			OnCommand="%function(self) self:hidden(0); self:x(0); self:z(((512+(2*512/math.sqrt(2)))/2)); self:rotationy(45*0); end" ><children>
+		<Layer Type="Quad" OnCommand="diffuse,#000000;zoomto,512,2048" /> 
+		
+		<Layer File="stars"
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,2,8;texcoordvelocity,0,-1;blend,add" 
+		/> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,3,12;texcoordvelocity,0,-3;blend,add" 
+		/> 
+
+		<Layer File="_green aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/> 
+
+		<Layer File="_pink aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,-1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/>
+	</children></ActorFrame>
+		<ActorFrame 
+			OnCommand="%function(self) self:hidden(0); self:x(-((512+512/math.sqrt(2))/2)); self:z(((512+512/math.sqrt(2))/2)); self:rotationy(45*1); end "><children>		<Layer Type="Quad" 
+		OnCommand="diffuse,#000000;zoomto,512,2048" /> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,2,8;texcoordvelocity,0,-1;blend,add" 
+		/> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,3,12;texcoordvelocity,0,-3;blend,add" 
+		/> 
+
+		<Layer File="_green aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/> 
+
+		<Layer File="_pink aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,-1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/> </children></ActorFrame>
+		<ActorFrame 
+			OnCommand="%function(self) self:hidden(0); self:x(-((512+(2*512/math.sqrt(2)))/2)); self:z(0); self:rotationy(45*2); end"><children>							<Layer Type="Quad" 
+		OnCommand="diffuse,#000000;zoomto,512,2048" /> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,2,8;texcoordvelocity,0,-1;blend,add" 
+		/> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,3,12;texcoordvelocity,0,-3;blend,add" 
+		/> 
+
+		<Layer File="_green aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/> 
+
+		<Layer File="_pink aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,-1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/> </children></ActorFrame>
+		<ActorFrame 
+			OnCommand="%function(self) self:hidden(0); self:x(-((512+512/math.sqrt(2))/2)); self:z(-((512+512/math.sqrt(2))/2)); self:rotationy(45*3); end"><children>		<Layer Type="Quad" 
+		OnCommand="diffuse,#000000;zoomto,512,2048" /> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,2,8;texcoordvelocity,0,-1;blend,add" 
+		/> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,3,12;texcoordvelocity,0,-3;blend,add" 
+		/> 
+
+		<Layer File="_green aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/> 
+
+		<Layer File="_pink aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,-1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/>
+	</children></ActorFrame>
+		<ActorFrame 
+			OnCommand="%function(self) self:hidden(0); self:x(0); self:z(-((512+(2*512/math.sqrt(2)))/2)); self:rotationy(45*4); end"><children>							<Layer Type="Quad" 
+		OnCommand="diffuse,#000000;zoomto,512,2048" /> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,2,8;texcoordvelocity,0,-1;blend,add" 
+		/> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,3,12;texcoordvelocity,0,-3;blend,add" 
+		/> 
+
+		<Layer File="_green aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/> 
+
+		<Layer File="_pink aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,-1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/> </children></ActorFrame>
+		<ActorFrame 
+			OnCommand="%function(self) self:hidden(0); self:x(((512+512/math.sqrt(2))/2)); self:z(-((512+512/math.sqrt(2))/2)); self:rotationy(45*5); end"><children>		<Layer Type="Quad" 
+		OnCommand="diffuse,#000000;zoomto,512,2048" /> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,2,8;texcoordvelocity,0,-1;blend,add" 
+		/> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,3,12;texcoordvelocity,0,-3;blend,add" 
+		/> 
+
+		<Layer File="_green aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/> 
+
+		<Layer File="_pink aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,-1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/>
+	</children></ActorFrame>
+		<ActorFrame 
+			OnCommand="%function(self) self:hidden(0); self:x(((512+(2*512/math.sqrt(2)))/2)); self:z(0); self:rotationy(45*6); end"><children>								<Layer Type="Quad" 
+		OnCommand="diffuse,#000000;zoomto,512,2048" /> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,2,8;texcoordvelocity,0,-1;blend,add" 
+		/> 
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,3,12;texcoordvelocity,0,-3;blend,add" 
+		/> 
+
+		<Layer File="_green aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/> 
+
+		<Layer File="_pink aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,-1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/>
+	</children></ActorFrame>
+		<ActorFrame 
+			OnCommand="%function(self) self:hidden(0); self:x(((512+512/math.sqrt(2))/2)); self:z(((512+512/math.sqrt(2))/2)); self:rotationy(45*7); end"><children>
+			<Layer Type="Quad" 
+		OnCommand="diffuse,#000000;zoomto,512,2048" /> 
+		
+
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,2,8;texcoordvelocity,0,-1;blend,add" 
+		/>
+		<Layer File="stars" 
+		OnCommand="zoomx,4;zoomy,16;customtexturerect,0,0,3,12;texcoordvelocity,0,-3;blend,add" 
+		/>
+		<Layer File="_green aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/> 
+		<Layer File="_pink aurora" 
+		OnCommand="zoomx,2;zoomy,8;customtexturerect,0,0,1,1;texcoordvelocity,-1,0;fadebottom,0.5;blend,add;diffusealpha,0.5;queuecommand,Play"
+		PlayCommand="%function(self) ColorRGBCommand(self, 1) end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) end" 
+		/>
+	</children></ActorFrame>
+	</children></ActorFrame>
+
+
+<Layer 
+		Type="Quad"
+		OnCommand="sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(self)
+		self:zoomto(SCREEN_WIDTH*2,SCREEN_HEIGHT,0,0)
+		self:diffuse(0,0,0,0.5)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		end"
+	/>
+
+
+	<Layer File="idle.sprite"
+		
+		OnCommand="sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(self)
+		self:horizalign('right')
+		self:x(SCREEN_RIGHT-100)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(0.5)
+		self:bob()
+		self:effectmagnitude(0,5,0)
+		end"
+	/>
+</children> </ActorFrame>

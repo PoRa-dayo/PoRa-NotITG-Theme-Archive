@@ -1,0 +1,28 @@
+<ActorFrame> <children>
+	<Layer
+		Text="DETAIL+"
+		File="_wendy white"
+		InitCommand="y,0;x,200;zoom,0.4" 
+		OffCommand="%OutCommand" 
+		GainFocusCommand="stoptweening;bounceend,0.2;diffuse,1,1,1,1"
+		LoseFocusCommand="stoptweening;decelerate,0.2;diffuse,0.3,0.3,0.3,1"
+		/>
+	<BitampText
+		Text="Dance, but with more info"
+		File="_misoreg small"
+		OnCommand="x,260;horizalign,right;zoom,.4;y,20;"
+		GainFocusCommand="stoptweening;bounceend,0.2;diffuse,1,1,1,1"
+		LoseFocusCommand="stoptweening;bounceend,0.2;diffuse,0.3,0.3,0.3,1"
+		OffCommand="bounceend,0.3;diffusealpha,0"
+	/>
+
+	<BitampText
+		Text="Caution: Only 1 player can use the interface.::If both players join, the normal interface will be shown."
+		File="_misoreg small"
+		OnCommand="x,260;horizalign,right;zoom,.4;y,-35;shadowlength,1;diffusealpha,0"
+		GainFocusCommand="stoptweening;bounceend,0.2;diffuse,1,0.3,0.3,1"
+		LoseFocusCommand="stoptweening;bounceend,0.2;diffuse,0.3,0.3,0.3,0"
+		OffCommand="bounceend,0.3;diffusealpha,0"
+	/>
+
+</children> </ActorFrame>

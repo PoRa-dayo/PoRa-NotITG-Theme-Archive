@@ -1,0 +1,63 @@
+<ActorFrame> <children>
+	<Layer
+		Type="BitmapText"
+		Text="One player uses half the platform."
+		File="Common Normal"
+		InitCommand="diffuse,#FFFFFF00;zoom,2;y,50;x,0"
+		OnCommand="linear,.5;diffusealpha,0"
+		GainFocusCommand="finishtweening;decelerate,0.2;diffuse,1,1,1,1"
+		LoseFocusCommand="finishtweening;decelerate,0.2;diffuse,0.5,0.5,0.5,1"
+		OffCommand="accelerate,0.5;diffusealpha,0"
+	/>
+	<Layer 
+		Type="ActorFrame"
+		GainFocusCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.8)
+		self:decelerate(0.2)
+		ColorRGBCommand(self, 2)
+		end"
+		LoseFocusCommand="finishtweening;decelerate,0.2;diffuse,0.5,0.5,0.5,1"
+	><children>
+		<Layer 
+			Condition="game ~= 'techno'"
+			OnCommand="x,-0"
+			Type="ActorFrame"
+		><children>
+			<Layer
+				File="../4panels"
+				EnabledCommand="%function(self) if game == 'dance' then self:x(-280) self:y(-50) ColorRGBCommand(self, 0) else self:x(-280) self:y(-50) self:diffuse(.16,.24,.27,1) end end"
+				DisabledCommand="%function(self) if game == 'dance' then self:x(-280) self:y(-50) self:diffuse(.24,.31,.35,1) else self:x(-280) self:y(-50) self:diffuse(.12,.2,.23,1) end end"
+				OnCommand="%FadeIn"
+				OffCommand="%OutCommand"
+			/>
+		</children></Layer>
+		<Layer 
+			Condition="game == 'techno'"
+			Type="ActorFrame"
+		><children>
+			<Layer
+				File="../8panels"
+				EnabledCommand="%function(self) ColorRGBCommand(self, 0) end"
+				DisabledCommand="diffuse,.24,.31,.35,1"
+				OnCommand="%FadeIn"
+				OffCommand="%OutCommand"
+			/>
+			<Layer
+				File="../1panel"
+				EnabledCommand="%function(self) self:diffuse(.16,.24,.27,1) end"
+				DisabledCommand="diffuse,.12,.2,.23,1"
+				OnCommand="%FadeIn"
+				OffCommand="%OutCommand"
+			/>
+		</children></Layer>
+	</children></Layer>
+	<Layer
+			File="1Player"
+			InitCommand="y,-40;x,120;zoom,2"
+			EnabledCommand="%function(self) self:diffuse(1,1,1,1) end"
+			DisabledCommand="diffuse,.24,.31,.35,1"
+			OnCommand="%FadeIn"
+			OffCommand="%OutCommand"
+		/>
+</children> </ActorFrame>

@@ -1,0 +1,19 @@
+<ActorFrame> <children>
+	<BitmapText
+		Text="event mode" 
+        Font="_wendy white" 
+		InitCommand="%function(self) 
+			self:shadowlength(2);
+			self:zoom(1);
+			if not GetPref('EventMode') then 
+				self:settext('SONG ' .. table.getn(AllScores)+1) 
+				-- self:y(-20);
+			elseif IsTimedSet() then 
+				self:settext('event mode') end 
+				-- self:y(-20);	
+			end"
+        OnCommand=""
+		ShowCommand="sleep,1;accelerate,20;y,90000"
+		FadeInCommand="diffusealpha,0;accelerate,0.3;diffusealpha,1;"
+    />
+</children> </ActorFrame>

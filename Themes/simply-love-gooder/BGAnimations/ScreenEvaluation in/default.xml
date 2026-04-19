@@ -1,0 +1,84 @@
+<ActorFrame>
+	<children>
+		<AutoActor File="../_fade in" />
+			<ActorFrame Condition="OnePassed()">
+				<children>
+					<ActorFrame> <children>
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:stretchto(SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM)
+		self:diffuse(0,0,0,1)
+		self:diffusealpha(0.5)
+		self:sleep(1)
+		self:linear(0.5)
+		self:diffusealpha(0)
+		end"
+	/>
+	
+	<Layer
+		File="failshadow"
+		OnCommand="zoom,1.5;zoomx,((SCREEN_WIDTH/SCREEN_HEIGHT)/(4/3));x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;fadeleft,0.3;faderight,0.3;cropleft,1.3;cropright,-0.3;linear,0.2;cropleft,-0.3;linear,2;linear,0.7;cropright,1.3"
+	/>
+	
+	<Layer
+		File="under"
+		OnCommand="@'diffuse,'..DifficultyColor(3)..'zoom,1.5;zoomx,((SCREEN_WIDTH/SCREEN_HEIGHT)/(4/3));x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;fadeleft,0.3;faderight,0.3;cropleft,1.3;cropright,-0.3;linear,0.2;cropleft,-0.3;zoomy,1.5;linear,2;linear,0.7;cropright,1.3'"
+	/>
+	<Layer File="cleared text" Command="zoom,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,0.5;bounceend,0.4;diffusealpha,1;zoom,0.6;sleep,1.3;bouncebegin,0.5;zoom,0;rotationz,360" />
+
+</children> </ActorFrame>
+
+				</children> 
+		</ActorFrame>
+		<ActorFrame Condition="not OnePassed()">
+			<children>
+				<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:stretchto(SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM)
+		self:diffuse(0,0,0,1)
+		self:diffusealpha(1)
+		self:sleep(2)
+		self:linear(1.5)
+		self:diffusealpha(0)
+		end"
+	/>
+	
+	<Layer
+		File="failshadow"
+		OnCommand="zoom,1.5;zoomx,((SCREEN_WIDTH/SCREEN_HEIGHT)/(4/3));x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;fadeleft,0.3;faderight,0.3;cropleft,1.3;cropright,-0.3;linear,0.2;cropleft,-0.3;linear,2;linear,0.7;cropright,1.3"
+	/>
+	
+	<Layer
+		File="under"
+		OnCommand="@'diffuse,'..DifficultyColor(5)..'zoom,1.5;zoomx,((SCREEN_WIDTH/SCREEN_HEIGHT)/(4/3));x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;fadeleft,0.3;faderight,0.3;cropleft,1.3;cropright,-0.3;linear,0.2;cropleft,-0.3;linear,2;linear,0.7;cropright,1.3'"
+	/>
+	<!--
+	<Layer
+		File="stagefail"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,0.2;accelerate,0.5;diffusealpha,1;"
+	/>
+-->
+	<Layer
+		Text="Stage Failed" 
+        Font="_wendy white" 
+        OnCommand="%function(self) 
+			self:shadowlength(0); 
+			self:diffuse(0,0,0,0)
+			self:zoom(.7); 
+			self:x(SCREEN_CENTER_X)
+			self:y(SCREEN_CENTER_Y)
+			self:diffusealpha(0)
+			self:sleep(0.2)
+			self:accelerate(0.5)
+			self:diffusealpha(1)
+			self:sleep(0.9)
+			self:accelerate(0.5)
+			self:diffusealpha(0)
+		end"
+	/>
+				</children>
+		</ActorFrame>
+	</children>
+</ActorFrame>

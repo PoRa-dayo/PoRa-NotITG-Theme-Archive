@@ -1,0 +1,14 @@
+<ActorFrame><children>
+	<Layer
+		File="Player1.xml"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		/>
+	<Layer
+		File="Player2.xml"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		/>
+	<Layer
+		File="../ScreenGameplay underlay"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		/>
+</children></ActorFrame>

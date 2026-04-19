@@ -1,0 +1,14 @@
+<ActorFrame> <children>
+
+	<!-- DISK SPACE -->
+
+	<Layer
+		Type="BitmapText"
+		Font="_misoreg small"
+		SetCommand="%function(self) self:settext('Hard Disk\n Free Space: '..GetDiskSpaceFree()..'\n'..' Total Size: '..GetDiskSpaceTotal()) end"
+		Text=""
+		InitCommand="x,40;y,SCREEN_CENTER_Y-90;shadowlength,0;horizalign,left;zoom,0.6;playcommand,Set"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="linear,0.3;diffusealpha,0"
+	/>
+</children></ActorFrame>

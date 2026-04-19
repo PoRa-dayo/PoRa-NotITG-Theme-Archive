@@ -1,0 +1,98 @@
+<ActorFrame> <children>
+
+	<Layer 
+		Type="Quad"
+		OnCommand="diffuse,#1E282FCC;stretchto,SCREEN_CENTER_X-310,438,SCREEN_CENTER_X+310,388;y,SCREEN_CENTER_Y-182"
+		OffCommand="linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+		Type="BitmapText"
+		Text=""
+		Condition="not GAMESTATE:IsCourseMode()"
+		File="_misobold small"
+		InitCommand="%function(self)
+		self:zoom(.7)
+		self:shadowlength(1)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y-180)
+		self:maxwidth(500)
+		end"
+		OnCommand="queuecommand,Update"
+		OffCommand="linear,0.3;diffusealpha,0"
+			UpdateCommand="%function(self)
+				if not GAMESTATE:IsCourseMode() then
+					self:settext(GAMESTATE:GetCurrentSong():GetDisplayMainTitle())
+				end
+			end"
+	/>
+	<Layer
+		Type="BitmapText"
+		Text=""
+		Condition="not GAMESTATE:IsCourseMode()"
+		File="_misobold small"
+		InitCommand="%function(self)
+		self:zoom(.8)
+		self:shadowlength(1)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y-205)
+		self:maxwidth(500)
+		end"
+		OnCommand="queuecommand,Update"
+		OffCommand="linear,0.3;diffusealpha,0"
+			UpdateCommand="%function(self)
+				if not GAMESTATE:IsCourseMode() then
+					self:settext(GAMESTATE:GetCurrentSong():GetDisplayArtist())
+				end
+			end"
+	/>
+	<Layer
+		Type="BitmapText"
+		Text=""
+		Condition="not GAMESTATE:IsCourseMode()"
+		File="_misobold small"
+		InitCommand="%function(self)
+		self:zoom(.4)
+		self:shadowlength(1)
+		self:horizalign('right')
+		self:x(SCREEN_CENTER_X+300)
+		self:y(SCREEN_CENTER_Y-175)
+		end"
+		OnCommand="queuecommand,Update"
+		OffCommand="linear,0.3;diffusealpha,0"
+			UpdateCommand="%function(self)
+				if not GAMESTATE:IsCourseMode() then
+					self:settext('Total Time: '..SecondsToMMSS(GAMESTATE:GetCurrentSong():MusicLengthSeconds()))
+				end
+			end"
+	/>
+	<Layer
+			Type="BitmapText"
+			Font="_misobold small"
+			Condition="not GAMESTATE:IsCourseMode()"
+			OnCommand="queuecommand,Update"
+			InitCommand="%function(self)
+			self:zoom(.4)
+			self:shadowlength(1)
+			self:horizalign('left')
+			self:x(SCREEN_CENTER_X-300)
+			self:y(SCREEN_CENTER_Y-175)
+			end"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			OffCommand="linear,0.3;diffusealpha,0"
+			UpdateCommand="%function(self)
+			local timeintimer = self:GetSecsIntoEffect();
+				self:finishtweening()
+				self:hidden(0)
+				self:effectclock('music')
+				if not GAMESTATE:IsCourseMode() then
+					self:settext('Preview: '..SecondsToMMSSMsMs(timeintimer))
+				end
+				self:sleep(0.02)
+			self:sleep(1/60)
+			self:queuecommand('Update')
+			end"
+		/>
+
+		<Layer File="../ScreenWithMenuElements overlay" />
+
+</children> </ActorFrame>

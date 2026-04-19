@@ -1,0 +1,268 @@
+<ActorFrame> <children>
+	<ActorFrame Command="sleep,53;queuecommand,Out" 
+		OutCommand="%function(self) SCREENMAN:GetTopScreen():diffusealpha(0) end" />
+
+		<Layer Type="Quad" 
+		OnCommand="draworder,10;diffuse,0,0,0,0;diffusealpha,0;zoom,1000000;diffusealpha,1" />
+
+	<AutoActor
+        Font="Common Normal"
+        Text="Thanks for playing!"
+		InitCommand="draworder,10;glow,1,1,0,1;glowshift;diffusealpha,0;sleep,4.5;y,SCREEN_CENTER_Y+500;X,SCREEN_CENTER_X;zoom,2;decelerate,0.5;diffusealpha,1;y,SCREEN_CENTER_Y-30;sleep,2;decelerate,0.5;y,SCREEN_CENTER_Y+300"
+	/>
+
+	<AutoActor
+        File="moddedtheme"
+		InitCommand="draworder,10;diffusealpha,0;sleep,7.5;y,SCREEN_CENTER_Y+500;X,SCREEN_CENTER_X;zoom,1 ;decelerate,0.5;diffusealpha,1;y,SCREEN_CENTER_Y;sleep,3;accelerate,1;x,SCREEN_CENTER_X-800;diffusealpha,0"
+	/>
+
+	<AutoActor
+        Font="Common Normal"
+        Text="is based on SIMPLY LOVE GOODER by TaroNuke, ::which is a modification of SIMPLY LOVE by hurtpiggypig and Mad Matt."
+		InitCommand="draworder,10;diffusealpha,0;sleep,7.6;y,SCREEN_CENTER_Y+500;X,SCREEN_CENTER_X;zoom,0.7;decelerate,0.5;diffusealpha,1;y,SCREEN_CENTER_Y+45;sleep,3;accelerate,1;x,SCREEN_CENTER_X+800;diffusealpha,0"
+	/>
+
+	<AutoActor
+        Font="Common Normal"
+        Text="Thanks to these people for being on the Birthday Feature."
+		InitCommand="diffuse,0,1,1,1;horizalign,right;draworder,10;diffusealpha,0;sleep,10.6;y,SCREEN_CENTER_Y-100;X,SCREEN_CENTER_X+900;zoom,0.6;decelerate,1.5;diffusealpha,1;x,SCREEN_CENTER_X+300;sleep,5.5;accelerate,1;x,SCREEN_CENTER_X-800;diffusealpha,0"
+	/>
+	<AutoActor
+        Font="Common Normal"
+        Text="Nick (WinDEU)::Ky_Dash::TaroNuke::Sora::Kun::Ducky::Akita::PCBoy::Vinyl::Alfa::Mr. ThatKid:: _dubl::Gezoda::Daikyi::Tetaes::Yumei::Zarile"
+		InitCommand="draworder,10;y,SCREEN_CENTER_Y;diffusealpha,0;zoom,0.7;sleep,11;x,SCREEN_CENTER_X-800;decelerate,1;diffusealpha,1;x,SCREEN_CENTER_X-170;sleep,5.5;accelerate,1;x,SCREEN_CENTER_X+900"
+	/>
+	<AutoActor
+        Font="Common Normal"
+        Text="Music"
+		InitCommand="diffuse,0,1,1,0.7;horizalign,right;draworder,10;diffusealpha,0;sleep,17;y,SCREEN_CENTER_Y-100;X,SCREEN_CENTER_X+900;zoom,2;decelerate,1.5;diffusealpha,1;x,SCREEN_CENTER_X+200;sleep,3;accelerate,1;x,SCREEN_CENTER_X-00;diffusealpha,0"
+	/>
+	<AutoActor
+        Font="Common Normal"
+        Text="whyetc - Style Select Music (Bad Dreams)::           Ending Music (Happy Families)::HOME - Credits Music (Before The Night)"
+		InitCommand="draworder,10;y,SCREEN_CENTER_Y;diffusealpha,0;zoom,1;sleep,17.3;x,SCREEN_CENTER_X-800;decelerate,1;diffusealpha,1;x,SCREEN_CENTER_X-20;sleep,3;accelerate,1;x,SCREEN_CENTER_X+900"
+	/>
+
+	<AutoActor
+        Font="Common Normal"
+        Text="Special Thanks"
+		InitCommand="diffuse,0,1,1,.7;horizalign,right;draworder,10;diffusealpha,0;sleep,21.4;y,SCREEN_CENTER_Y-100;X,SCREEN_CENTER_X+900;zoom,2;decelerate,1.5;diffusealpha,1;x,SCREEN_CENTER_X+230;sleep,10;accelerate,1;x,SCREEN_CENTER_X+800;diffusealpha,0"
+	/>
+	<AutoActor
+        Font="Common Normal"
+        Text="TaroNuke - Help with troubleshooting, Suggestions::CosmicLAER - Suggestions and Aesthetics::MaaeyCraft - Suggestions::Gezoda - Poll Idea::Sora - Providing the NOTITG Mod List::Akita - Color Suggestions::PCBoy - Help with the Birthday Feature and Microsoft Sam Vocalization"
+		InitCommand="draworder,10;horizalign,left;y,SCREEN_CENTER_Y+30;diffusealpha,0;zoom,0.7;sleep,21.6;x,SCREEN_CENTER_X-800;decelerate,1;diffusealpha,1;x,SCREEN_CENTER_X-260;sleep,6;accelerate,1;x,SCREEN_CENTER_X+900"
+	/>
+	<AutoActor
+        Font="Common Normal"
+        Text="UKSRT Fans And Fun Discord Group"
+		InitCommand="draworder,10;horizalign,left;y,SCREEN_CENTER_Y+30;diffusealpha,0;zoom,1;sleep,28.6;x,SCREEN_CENTER_X-800;decelerate,1;diffusealpha,1;x,SCREEN_CENTER_X-160;sleep,3;accelerate,1;x,SCREEN_CENTER_X+900"
+	/>
+	<AutoActor
+        File="jose"
+		InitCommand="zoom,0.6;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;draworder,10;diffusealpha,0;sleep,33;decelerate,2;diffusealpha,1;sleep,3;accelerate,5;diffusealpha,0"
+	/>
+	<AutoActor
+        Font="_wendy white"
+        Text="2016-2017"
+		InitCommand="zoom,0.2;draworder,10;horizalign,center;y,SCREEN_CENTER_Y+20;x,SCREEN_CENTER_X+50;diffusealpha,0;zoom,0.2;sleep,33;decelerate,2;diffusealpha,1;sleep,3;accelerate,5;diffusealpha,0"
+	/>
+			<Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                    <Layer
+                    Type="Quad"
+                    OnCommand="hibernate,4;draworder,11;diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+700;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+
+<Layer Type="Quad" 
+		OnCommand="hibernate,40;draworder,14;diffuse,0,0,0,0;diffusealpha,0;zoom,1000000;linear,2;diffusealpha,1" />
+</children> </ActorFrame>

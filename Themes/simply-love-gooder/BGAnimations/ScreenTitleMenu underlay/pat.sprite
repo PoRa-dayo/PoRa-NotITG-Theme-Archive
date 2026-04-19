@@ -1,0 +1,8 @@
+[Sprite]
+Texture=_dance 6x3.png
+Frame0000=7
+Delay0000=0.4
+Frame0001=6
+Delay0001=0.5
+Frame0002=7
+Delay0002=0.1

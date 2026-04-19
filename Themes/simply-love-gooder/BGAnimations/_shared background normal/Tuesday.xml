@@ -1,0 +1,118 @@
+<!-- Tuesday - SHAME -->
+<ActorFrame><children>
+        <Layer
+            File="shame/Background"
+            Condition="Weekday() == 2"
+            ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end" 
+            OnCommand="%function(self) ColorRGBCommand(self, 1) self:x(SCREEN_CENTER_X) self:y(SCREEN_CENTER_Y) self:zoomtowidth(SCREEN_WIDTH) end"
+            />
+
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+
+            <Layer
+            File="shame/shame.sprite"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5"
+            />
+
+        <Layer
+            Type="Quad"
+            Condition="Weekday() == 2"
+            OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffuse,0,0,0,1;fadetop,0.8"
+            />
+</children></ActorFrame>

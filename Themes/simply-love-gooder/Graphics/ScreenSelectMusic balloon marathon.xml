@@ -1,0 +1,22 @@
+<ActorFrame> <children>
+	<Layer
+		File="longverbubble.png"
+		OnCommand="%function(self) ColorRGBCommand(self, -1) self:zoom(0.5) self:bounce() self:effectmagnitude(0,4,0) self:effectperiod(1) self:effectclock('bgm') self:rotationy(180) self:shadowlength(4) end" 
+	/>
+	<Layer
+		Type="BitmapText"
+		Text="COUNTS AS 3 ROUNDS"
+		File="_misobold small"
+		InitCommand="zoom,.5;shadowlength,0;addy,-2;bounce;effectmagnitude,0,4,0;effectperiod,1;effectclock,bgm"
+		OnCommand="%function(self) self:diffuse(TextOnColor(-1)) end"
+		OffCommand="linear,0.2;diffusealpha,0"
+	/>
+	<Layer
+		Type="BitmapText"
+		Text="Marathons are considered 5 minutes or more."
+		File="_misobold small"
+		InitCommand="zoom,.5;shadowlength,0;addy,20;"
+		OnCommand="%function(self) self:diffuse(1,1,1,1) end"
+		OffCommand="linear,0.2;diffusealpha,0"
+	/>
+</children> </ActorFrame>

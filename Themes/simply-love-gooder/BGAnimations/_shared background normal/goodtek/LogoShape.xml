@@ -1,0 +1,69 @@
+<ActorFrame OnCommand="%function(self)
+sw = SCREEN_WIDTH
+    sh = SCREEN_HEIGHT --shortcuts
+end"><children>
+<ActorFrame OnCommand="fov,0;rotationx,0;z,-300;linear,60;fov,110;z,400"> <children>
+
+	<ActorFrame OnCommand="%function(self)
+	self:x(SCREEN_CENTER_X)
+	self:y(SCREEN_CENTER_Y)
+	self:zoom(0.5)
+	end">
+	<children>
+
+	
+	<Layer File="Shape2.xml" OnCommand="spin;effectmagnitude,0,0,-9;"/>
+	<Layer File="Shape2.xml" OnCommand="spin;effectmagnitude,0,0,-8.9;z,500"/>
+	<Layer File="Shape2.xml" OnCommand="spin;effectmagnitude,0,0,-8.85;z,-500"/>
+	<Layer File="Shape2.xml" OnCommand="spin;effectmagnitude,0,0,-8.85;z,-1000"/>
+
+
+
+	</children></ActorFrame>
+	
+</children> </ActorFrame>
+	<Quad
+		InitCommand="%function(self) ColorRGBCommand(self, 1) self:diffusealpha(1) end" 
+        ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end" 
+		OnCommand="%function(self)
+		ColorRGBCommand(self, 1)
+		self:diffusealpha(1)
+		self:zoomto(SCREEN_WIDTH*200,SCREEN_HEIGHT*200)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y+500)
+		self:skewx(2)
+		self:blend('WeightedMultiply')
+		end"
+		/>
+
+<Layer Type="Quad" 
+		OnCommand="%function(self)
+		self:draworder(10)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomto(SCREEN_WIDTH*2,SCREEN_HEIGHT,0,0)
+		self:diffuse(0,0,0,0.5)
+		self:fadebottom(1)
+		end" />
+
+<Layer Type="Quad" 
+		OnCommand="%function(self)
+		self:draworder(10)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomto(SCREEN_WIDTH*2,SCREEN_HEIGHT,0,0)
+		self:diffuse(0,0,0,1)
+		self:fadetop(1)
+		end" />
+
+
+<Layer Type="Quad" 
+		OnCommand="%function(self)
+		self:draworder(10)
+		self:zoom(1000000)
+		self:diffuse(0,0,0,1)
+		self:linear(2)
+		self:diffuse(0,0,0,0)
+		end" />
+
+</children> </ActorFrame>

@@ -1,0 +1,11 @@
+<ActorFrame> <children>
+		<Layer
+		Type="BitmapText"
+		Text="???"
+		File="_wendy small"
+		OnCommand="zoom,0.5;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;bounceend,0.8;diffusealpha,1;y,SCREEN_CENTER_Y;shadowlength,4"
+		InitCommand="animate,0;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%SetFromSongTitleAndCourseTitle"
+	/>
+</children> </ActorFrame>

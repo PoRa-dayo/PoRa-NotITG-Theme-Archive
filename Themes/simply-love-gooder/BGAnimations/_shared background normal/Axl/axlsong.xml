@@ -1,0 +1,69 @@
+<ActorFrame><children>
+	
+	<Layer
+		File="Background"
+		OnCommand="%function(self)
+		local Tiel = 2;
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomy(Tiel)
+		self:zoomx(Tiel*Tiel)
+		self:diffusealpha(0.8)
+		self:SetTextureFiltering(false)
+		self:customtexturerect(0,0,Tiel,1);
+        self:texcoordvelocity(0.01,0);
+		end"
+		/>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT)
+		self:diffusealpha(0.3)
+		self:diffusebottomedge(0,0,0,1)
+		end"
+		/>
+
+	<Layer
+		File="Floor"
+		OnCommand="%function(self)
+		local Tiel = 2;
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_BOTTOM)
+		self:zoomy(Tiel)
+		self:zoomx(Tiel*Tiel)
+		self:diffusealpha(1)
+		self:vertalign('bottom')
+		self:SetTextureFiltering(false)
+		self:customtexturerect(0,0,Tiel,1);
+        self:texcoordvelocity(0.03,0);
+		end"
+		/>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT)
+		self:diffusealpha(0.3)
+		end"
+		/>
+
+	<Layer
+		File="Snow"
+		OnCommand="%function(self)
+		local Tiel = 4;
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(10)
+		self:diffusealpha(0.3)
+		self:SetTextureFiltering(false)
+		self:customtexturerect(0,0,Tiel,Tiel);
+        self:texcoordvelocity(1.2,-0.2);
+		end"
+		/>
+	
+</children></ActorFrame>

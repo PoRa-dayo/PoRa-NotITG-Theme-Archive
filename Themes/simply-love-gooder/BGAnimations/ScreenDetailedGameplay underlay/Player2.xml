@@ -1,0 +1,824 @@
+<ActorFrame OnCommand="%function(self)
+	TimingNote = {{0,0,0,0,0,0},{0,0,0,0,0,0}}
+	ReceptorStep = {0,0,0,0}
+	end"> <children>
+
+	<ActorFrame 
+		Condition="GAMESTATE:GetPlayMode()==PLAY_MODE_REGULAR and GAMESTATE:GetEasiestStepsDifficulty()==DIFFICULTY_BEGINNER and PREFSMAN:GetPreference('MercifulBeginner')"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-30" 
+	><children>
+		<Layer
+			Class="AutoActor"
+			File="light_frame"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_green"
+			OnCommand="y,-94;diffusealpha,0;rotationz,0;blend,add"
+			NoteCrossedMessageCommand="finishtweening;diffusealpha,1;zoom,1.2;linear,0.2;zoom,1;diffusealpha,0"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_yellow"
+			OnCommand="y,-31;diffusealpha,0;rotationz,45;blend,add"
+			NoteWillCrossIn500MsMessageCommand="finishtweening;diffusealpha,1;zoom,1.2;linear,0.2;zoom,1;diffusealpha,0"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_yellow"
+			OnCommand="y,32;diffusealpha,0;rotationz,90;blend,add"
+			NoteWillCrossIn1000MsMessageCommand="finishtweening;diffusealpha,1;zoom,1.2;linear,0.2;zoom,1;diffusealpha,0"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_red"
+			OnCommand="y,95;diffusealpha,0;rotationz,135;blend,add"
+			NoteWillCrossIn1500MsMessageCommand="finishtweening;diffusealpha,1;zoom,1.2;linear,0.2;zoom,1;diffusealpha,0"
+		/>
+		<Layer
+			Class="BitmapText"
+			Font="_misobold small"
+			Text="left!"
+			OnCommand="shadowlength,0;y,-106;diffusealpha,0;maxwidth,70"
+			NoteCrossedLeftMessageCommand="finishtweening;diffusealpha,1;zoom,1.4;linear,0.2;zoom,1;sleep,0.4;diffusealpha,0"
+			NoteCrossedJumpMessageCommand="finishtweening;diffusealpha,0"
+		/>
+		<Layer
+			Class="BitmapText"
+			Font="_misobold small"
+			Text="right!"
+			OnCommand="shadowlength,0;y,-106;diffusealpha,0;maxwidth,70"
+			NoteCrossedRightMessageCommand="finishtweening;diffusealpha,1;zoom,1.4;linear,0.2;zoom,1;sleep,0.4;diffusealpha,0"
+			NoteCrossedJumpMessageCommand="finishtweening;diffusealpha,0"
+		/>
+		<Layer
+			Class="BitmapText"
+			Font="_misobold small"
+			Text="up!"
+			OnCommand="shadowlength,0;y,-106;diffusealpha,0;maxwidth,70"
+			NoteCrossedUpMessageCommand="finishtweening;diffusealpha,1;zoom,1.4;linear,0.2;zoom,1;sleep,0.4;diffusealpha,0"
+			NoteCrossedJumpMessageCommand="finishtweening;diffusealpha,0"
+		/>
+		<Layer
+			Class="BitmapText"
+			Font="_misobold small"
+			Text="down!"
+			OnCommand="shadowlength,0;y,-106;diffusealpha,0;maxwidth,70"
+			NoteCrossedDownMessageCommand="finishtweening;diffusealpha,1;zoom,1.4;linear,0.2;zoom,1;sleep,0.4;diffusealpha,0"
+			NoteCrossedJumpMessageCommand="finishtweening;diffusealpha,0"
+		/>
+		<Layer
+			Class="BitmapText"
+			Font="_misobold small"
+			Text="Jump!"
+			OnCommand="shadowlength,0;y,-106;diffusealpha,0;maxwidth,70"
+			NoteCrossedJumpMessageCommand="finishtweening;diffusealpha,1;zoom,1.4;linear,0.2;zoom,1;sleep,0.4;diffusealpha,0"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_dot"
+			OnCommand="diffusealpha,0"
+			NoteWillCrossIn500MsMessageCommand="finishtweening;y,-32;diffusealpha,0.5;linear,0.5;addy,-64;sleep,0.01;diffusealpha,0"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_dot"
+			OnCommand="diffusealpha,0"
+			NoteWillCrossIn1000MsMessageCommand="finishtweening;y,32;diffusealpha,0.5;linear,0.5;addy,-64;sleep,0.01;diffusealpha,0"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_dot"
+			OnCommand="diffusealpha,0"
+			NoteWillCrossIn1500MsMessageCommand="finishtweening;y,96;diffusealpha,0.5;linear,0.5;addy,-64;sleep,0.01;diffusealpha,0"
+		/>
+	</children></ActorFrame>
+	
+	<ActorFrame
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and GAMESTATE:GetPlayMode()==PLAY_MODE_REGULAR and GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()==DIFFICULTY_BEGINNER  and PREFSMAN:GetPreference('MercifulBeginner')"
+		OnCommand="x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640);y,SCREEN_CENTER_Y+40;rotationx,-20"
+		FOV="45"
+		VanishX="SCREEN_CENTER_X-160"
+		VanishY="SCREEN_CENTER_Y+40"
+	><children>
+		<AutoActor
+			File="platform"
+			OnCommand="diffuse,0.6,0.6,0.6,0.8"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="x,-53;blend,add;diffusealpha,0"
+			NoteCrossedLeftMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="x,+53;blend,add;diffusealpha,0"
+			NoteCrossedRightMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="y,-53;blend,add;diffusealpha,0"
+			NoteCrossedUpMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="y,+53;blend,add;diffusealpha,0"
+			NoteCrossedDownMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+	</children></ActorFrame>
+
+	<ActorFrame
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and GAMESTATE:GetPlayMode()==PLAY_MODE_REGULAR and GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()==DIFFICULTY_BEGINNER and PREFSMAN:GetPreference('MercifulBeginner')"
+		OnCommand="x,SCREEN_CENTER_X+(SCREEN_WIDTH*160/640);y,SCREEN_CENTER_Y+40;rotationx,-20"
+		FOV="45"
+		VanishX="SCREEN_CENTER_X+160"
+		VanishY="SCREEN_CENTER_Y+40"
+	><children>
+		<AutoActor
+			File="platform"
+			OnCommand="diffuse,0.6,0.6,0.6,0.8"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="x,-53;blend,add;diffusealpha,0"
+			NoteCrossedLeftMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="x,+53;blend,add;diffusealpha,0"
+			NoteCrossedRightMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="y,-53;blend,add;diffusealpha,0"
+			NoteCrossedUpMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="y,+53;blend,add;diffusealpha,0"
+			NoteCrossedDownMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+	</children></ActorFrame>
+	
+	<ActorFrame Command="%function() loadMusic = 1 end" />
+	<ActorFrame Command="%GameplayInit" FirstUpdateCommand="%Gameplay" UpdateCommand="%GameplayUpdate"/>
+
+
+
+	<Layer
+		Type="Quad"
+		OnCommand="queuecommand,Update"
+		UpdateCommand="%function(self) 
+		self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT,0,0)
+		self:horizalign('right')
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		ColorRGBCommand(self, 1)
+		end"
+	/>
+	<Layer
+		Type="Quad"
+		OnCommand="queuecommand,Update"
+		UpdateCommand="%function(self) 
+		self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT,0,0)
+		self:horizalign('right')
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:diffuse(0,0,0,1)
+		end"
+	/>
+
+
+
+	<Layer Type="ActorFrame"
+		OnCommand="horizalign,left;x,SCREEN_CENTER_X-180;y,SCREEN_TOP+165;"
+		> <children>
+
+		<Layer 
+			Type="SongMeterDisplay" 
+			StreamWidth="250" 
+			StreamPath="meter stream" 
+			Command="%function(self) 
+					if Color() == 8 then ColorRGBCommand(self, 0) 
+				elseif Color() == 9 then ColorRGBCommand(self, -1) 
+				elseif Color() == 10 then ColorRGBCommand(self, 3) 
+				elseif Color() == 11 then ColorRGBCommand(self, 2) 
+				else ColorRGBCommand(self, 1) 
+				end
+			end" 
+		>
+			<Tip File="tip" OnCommand="hidden,0;diffuse,1,1,1,1" />
+		</Layer>
+
+		<Layer File="meter frame" OnCommand="zoomx,0.84;addx,-2" />
+	</children> </Layer>
+
+
+
+
+
+
+
+
+	<!-- Difficulty: -->
+	<Layer Type="ActorFrame"
+		OnCommand="sleep,0.5;queuecommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		> <children>
+		
+		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="x,SCREEN_CENTER_X+28;y,SCREEN_TOP+150;zoom,1.5;shadowlength,3"><children>
+			<Actor
+				File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+				InitCommand="%function(self) self:y(IconY()) IconCrop(self) end"
+				OnCommand="animate,0;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_1) end"
+			/>
+			<Actor
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP1"
+				OnCommand="playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1)) end"
+			/>
+		</children></ActorFrame>
+		
+		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="x,SCREEN_CENTER_X-28;y,SCREEN_TOP+150;zoom,1.5;shadowlength,3"><children>
+			<Actor
+				File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+				InitCommand="%function(self) self:y(IconY()) IconCrop(self) end"
+				OnCommand="animate,0;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_2) end"
+			/>
+			<Actor
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP2"
+				OnCommand="playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2)) end"
+			/>
+		</children></ActorFrame>
+		
+	</children> </Layer>
+
+
+	<!-- Draw on top of the rest -->	
+	
+	<Layer
+		Type="Quad"
+		OnCommand="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffusealpha,1;linear,0.3;diffusealpha,0"
+	/>
+
+	<ActorFrame
+		OnCommand="queuecommand,Set"
+		SetCommand="%function(self) 
+			local p1 = SCREENMAN:GetTopScreen():GetChild('ScoreP1')
+			local p2 = SCREENMAN:GetTopScreen():GetChild('ScoreP2')
+			if p1 then p1 = p1:GetChild('ScoreDisplayPercentage Percent'):GetChild('PercentP1'); score1 = string.gsub(p1:GetText(),'%%','') end
+			if p2 then p2 = p2:GetChild('ScoreDisplayPercentage Percent'):GetChild('PercentP2'); score2 = string.gsub(p2:GetText(),'%%','') end
+			if p1 then p1:diffuse(1,1,1,1) end
+			if p2 then p2:diffuse(1,1,1,1) end
+			if p1 and p2 and tonumber(score1) < tonumber(score2) then p1:diffuse(1,1,1,0.7) end
+			if p1 and p2 and tonumber(score2) < tonumber(score1) then p2:diffuse(1,1,1,0.7) end
+			self:sleep(.05)
+			self:queuecommand('Set')
+			end" 
+	/>
+	<Layer
+		Font="_misobold white"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X-295;horizalign,left;y,SCREEN_TOP+80;zoom,.4;shadowlength,0;"
+		OnCommand="queuecommand,Update"
+		UpdateCommand="%GameplayBPM"
+	/>
+	<Layer
+		Font="_misobold white"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X-295;horizalign,left;y,SCREEN_TOP+65;zoom,.3;shadowlength,0"
+		OnCommand="queuecommand,Update"
+		UpdateCommand="%function(self) 
+		s = modRate .. 'x Rate'
+		if modRate == 1 then s = '1x Rate' end
+		self:settext(s)
+		if modRate ~= 1 then
+			self:diffuse(1,0.5,0.5,1)
+		else
+			self:diffuse(1,1,1,1)
+		end
+		end"
+	/>
+
+
+
+
+
+
+
+
+	<!-- CUSTOM STUFF STARTS HERE -->
+
+	<Layer
+		Font="_misobold white"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X-5;y,SCREEN_TOP+80;zoom,.6;shadowlength,0;maxwidth,400;horizalign,right"
+		OnCommand="queuecommand,Update"
+		UpdateCommand="%function(self) 
+		self:settext(GAMESTATE:GetCurrentSong():GetDisplayMainTitle())
+		end"
+	/>
+
+	<Layer
+		Font="_misobold white"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X-5;y,SCREEN_TOP+105;zoom,.4;shadowlength,0;horizalign,right"
+		OnCommand="queuecommand,Update"
+		UpdateCommand="%function(self) 
+		self:settext('By: '.. GAMESTATE:GetCurrentSong():GetDisplayArtist())
+		end"
+	/>
+
+	<Layer
+		Font="_misobold white"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X-55;y,SCREEN_TOP+135;zoom,.4;shadowlength,0;horizalign,right"
+		OnCommand="queuecommand,Update"
+		UpdateCommand="%function(self)
+		self:settext('Steps By: '.. GetStepsDescriptionText(PLAYER_1))
+		if GetStepsDescriptionText(PLAYER_1) == '' then
+			self:settext('Steps By: Not Specified!')
+			self:diffuse(0.5,0.5,0.5,1)
+		end
+		end"
+	/>
+
+	<Layer
+		Font="_misobold white"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X-15;y,SCREEN_TOP+190;zoom,.6;shadowlength,0;horizalign,right"
+		OnCommand="queuecommand,Update"
+		UpdateCommand="%function(self)
+		if FUCK_EXE and STATSMAN:GetCurStageStats() then
+						for pn = 1,2 do
+							if GAMESTATE:IsPlayerEnabled(pn-1) then
+								local poss = STATSMAN:GetCurStageStats():GetPlayerStageStats(pn-1):GetPossibleDancePoints()
+								local act = STATSMAN:GetCurStageStats():GetPlayerStageStats(pn-1):GetActualDancePoints()
+								self:settext(FormatPercentScore(act/poss))
+								if act <= poss/2 then
+									self:diffuse(0.5,0.5,0.5,1)
+								else
+									self:diffuse(1,1,1,1)
+								end
+							end
+						end
+					end
+
+
+
+
+		self:sleep(1/60)
+		self:queuecommand('Update')
+		end"
+	/>
+
+
+
+
+
+
+	<!-- JUDGMENT STUFF -->
+
+
+
+	<Code
+		Type="Quad"
+		OnCommand="hidden,1"
+		Fk_P2_W1MessageCommand="%function(self) TimingNote[1][1] = TimingNote[1][1]+1; MESSAGEMAN:Broadcast('UpdateScoresP2') end"
+		Fk_P2_W2MessageCommand="%function(self) TimingNote[1][2] = TimingNote[1][2]+1; MESSAGEMAN:Broadcast('UpdateScoresP2') end"
+		Fk_P2_W3MessageCommand="%function(self) TimingNote[1][3] = TimingNote[1][3]+1; MESSAGEMAN:Broadcast('UpdateScoresP2') end"
+		Fk_P2_W4MessageCommand="%function(self) TimingNote[1][4] = TimingNote[1][4]+1; MESSAGEMAN:Broadcast('UpdateScoresP2') end"
+		Fk_P2_W5MessageCommand="%function(self) TimingNote[1][5] = TimingNote[1][5]+1; MESSAGEMAN:Broadcast('UpdateScoresP2') end"
+		Fk_P2_W6MessageCommand="%function(self) TimingNote[1][6] = TimingNote[1][6]+1; MESSAGEMAN:Broadcast('UpdateScoresP2') end"
+
+
+
+		StepP2LeftPressMessageCommand="%function(self) ReceptorStep[1] = ReceptorStep[1]+1; MESSAGEMAN:Broadcast('P2LeftUpdate') end"
+		StepP2DownPressMessageCommand="%function(self) ReceptorStep[2] = ReceptorStep[2]+1; MESSAGEMAN:Broadcast('P2DownUpdate') end"
+		StepP2UpPressMessageCommand="%function(self) ReceptorStep[3] = ReceptorStep[3]+1; MESSAGEMAN:Broadcast('P2UpUpdate') end"
+		StepP2RightPressMessageCommand="%function(self) ReceptorStep[4] = ReceptorStep[4]+1; MESSAGEMAN:Broadcast('P2RightUpdate') end"
+	/>
+	
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-10;y,SCREEN_HEIGHT*0.5;hidden,0;horizalign,right"
+	Condition="GAMESTATE:IsPlayerEnabled(1)"><children>
+	
+		<Layer Type="Quad"
+		OnCommand="%function(self)
+		self:diffuse(0,0,0,1)
+		self:y(-12+(18*0))
+		self:addx(10)
+		self:zoomto(100,20)
+		self:shadowlength(0)
+		self:horizalign('right')
+		end"
+		Fk_P2_W1MessageCommand="%function(self)
+		self:finishtweening()
+		self:diffuseleftedge(0,1,1,1)
+		self:linear(0.3)
+		self:diffuseleftedge(0,0,0,1)
+		end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,0;" 
+		/>
+		<Layer File="Common Normal" Text="Fa: 0"
+		OnCommand="diffuse,0.5,1,1,1;y,-22+(18*0);zoom,0.8;shadowlength,0;horizalign,right"
+		UpdateScoresP2MessageCommand="%function(self) self:settext('Fa: '.. TimingNote[1][1]) end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,0;" 
+		/>
+		<Layer Type="Quad"
+		OnCommand="%function(self)
+		self:diffuse(0,0,0,1)
+		self:y(-12+(18*1.1))
+		self:addx(10)
+		self:zoomto(100,20)
+		self:shadowlength(0)
+		self:horizalign('right')
+		end"
+		Fk_P2_W2MessageCommand="%function(self)
+		self:finishtweening()
+		self:diffuseleftedge(1,0.8,0,1)
+		self:linear(0.3)
+		self:diffuseleftedge(0,0,0,1)
+		end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,0;" 
+		/>
+		<Layer File="Common Normal" Text="Ex: 0"
+		OnCommand="diffuse,1,.8,0,1;y,-22+(20*1);zoom,0.8;shadowlength,0;horizalign,right"
+		UpdateScoresP2MessageCommand="%function(self) self:settext('Ex: '.. TimingNote[1][2]) end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,-.5;" 
+		/>
+		<Layer Type="Quad"
+		OnCommand="%function(self)
+		self:diffuse(0,0,0,1)
+		self:y(-12+(18*2.3))
+		self:addx(10)
+		self:zoomto(100,20)
+		self:shadowlength(0)
+		self:horizalign('right')
+		end"
+		Fk_P2_W3MessageCommand="%function(self)
+		self:finishtweening()
+		self:diffuseleftedge(0,1,0,1)
+		self:linear(0.3)
+		self:diffuseleftedge(0,0,0,1)
+		end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,0;" 
+		/>
+		<Layer File="Common Normal" Text="Gr: 0"
+		OnCommand="diffuse,0,1,0,1;y,-22+(20*2);zoom,0.8;shadowlength,0;horizalign,right"
+		UpdateScoresP2MessageCommand="%function(self) self:settext('Gr: '.. TimingNote[1][3]) end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,-.5;" 
+		/>
+		<Layer Type="Quad"
+		OnCommand="%function(self)
+		self:diffuse(0,0,0,1)
+		self:y(-12+(18*3.3))
+		self:addx(10)
+		self:zoomto(100,20)
+		self:shadowlength(0)
+		self:horizalign('right')
+		end"
+		Fk_P2_W4MessageCommand="%function(self)
+		self:finishtweening()
+		self:diffuseleftedge(0.5,0,1,1)
+		self:linear(0.3)
+		self:diffuseleftedge(0,0,0,1)
+		end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,0;" 
+		/>
+		<Layer File="Common Normal" Text="De: 0"
+		OnCommand="diffuse,0.5,0,1,1;y,-22+(20*3);zoom,0.8;shadowlength,0;horizalign,right"
+		UpdateScoresP2MessageCommand="%function(self) self:settext('De: '..TimingNote[1][4]) end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,-.5;" 
+		/>
+		<Layer File="Common Normal" Text="Wa: 0"
+		OnCommand="diffuse,1,0.5,0,1;y,-22+(20*4);zoom,0.8;shadowlength,0;horizalign,right"
+		UpdateScoresP2MessageCommand="%function(self) self:settext('WO: '.. TimingNote[1][5]) end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,-.5;" 
+		/>
+		<Layer File="Common Normal" Text="Mi: 0"
+		OnCommand="diffuse,1,0,0,1;y,-22+(20*5);zoom,0.8;shadowlength,0;horizalign,right"
+		UpdateScoresP2MessageCommand="%function(self) self:settext('Mi: '.. TimingNote[1][6]) end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,-.5;" 
+		/>
+
+
+
+
+		<Layer File="Common Normal" Text="0"
+		OnCommand="addx,-95;y,-50;zoom,0.8;shadowlength,0;horizalign,right;queuecommand,Update"
+		UpdateMessageCommand="%function(self) self:settext('Times Stepped: '.. ReceptorStep[1]+ReceptorStep[2]+ReceptorStep[3]+ReceptorStep[4]) self:sleep(0.02) self:queuecommand('Update') end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,-.5;" 
+		/>
+
+		<Layer File="Common Normal" Text="0"
+		OnCommand="addx,-300;y,-22+(20*8);zoom,0.8;shadowlength,0;horizalign,left;queuecommand,Update"
+		UpdateMessageCommand="%function(self)
+		if GAMESTATE:GetSongTime() <= 0 then
+			self:settext('Current Time: 00:00')
+		else
+			self:settext('Current Time: '.. SecondsToMMSS(GAMESTATE:GetSongTime()))
+		end
+		self:sleep(0.02)
+		self:queuecommand('Update')
+		end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,-.5;" 
+		/>
+
+
+		<ActorFrame OnCommand="addx,-270;addy,-100"><children>
+
+		<Layer File="Common Normal" Text="0"
+		OnCommand="y,-22+(20*8);zoom,0.8;shadowlength,0;"
+		P2LeftUpdateMessageCommand="%function(self) self:finishtweening() self:settext(ReceptorStep[1]) self:zoom(0.9) self:decelerate(0.2) self:zoom(0.8) end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,-.5;" 
+		/>
+
+		<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','GameNote')"
+		OnCommand="%function(self)
+		self:zoom(0.5)
+		self:y(-50+(20*8))
+		end"
+		P2LeftUpdateMessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:decelerate(0.2)
+		self:zoom(0.5)
+		end"
+		Fk_P2_0_W1MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(0,1,1,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_0_W2MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(1,.8,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_0_W3MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(0,1,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_0_W4MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(1,0,1,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_0_W5MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(0.5,1,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_0_W6MessageCommand="%function(self)
+		self:finishtweening()
+		self:diffuse(1,0,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		end"
+		/>
+
+
+		<Layer File="Common Normal" Text="0"
+		OnCommand="y,-22+(20*8);addx,50;zoom,0.8;shadowlength,0;"
+		P2DownUpdateMessageCommand="%function(self) self:finishtweening() self:settext(ReceptorStep[2]) self:zoom(0.9) self:decelerate(0.2) self:zoom(0.8) end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,-.5;" 
+		/>
+
+
+		<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','GameNote')"
+		OnCommand="%function(self)
+		self:zoom(0.5)
+		self:y(-50+(20*8))
+		self:addx(50)
+		self:rotationz(-90)
+		end"
+		P2DownUpdateMessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:decelerate(0.2)
+		self:zoom(0.5)
+		end"
+		Fk_P2_1_W1MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(0,1,1,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_1_W2MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(1,.8,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_1_W3MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(0,1,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_1_W4MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(1,0,1,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_1_W5MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(0.5,1,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_1_W6MessageCommand="%function(self)
+		self:finishtweening()
+		self:diffuse(1,0,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		end"
+		/>
+
+
+
+		<Layer File="Common Normal" Text="0"
+		OnCommand="y,-22+(20*8);addx,100;zoom,0.8;shadowlength,0;"
+		P2UpUpdateMessageCommand="%function(self) self:finishtweening() self:settext(ReceptorStep[3]) self:zoom(0.9) self:decelerate(0.2) self:zoom(0.8) end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,-.5;" 
+		/>
+
+		<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','GameNote')"
+		OnCommand="%function(self)
+		self:zoom(0.5)
+		self:y(-50+(20*8))
+		self:addx(100)
+		self:rotationz(90)
+		end"
+		P2UpUpdateMessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:decelerate(0.2)
+		self:zoom(0.5)
+		end"
+		Fk_P2_2_W1MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(0,1,1,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_2_W2MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(1,.8,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_2_W3MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(0,1,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_2_W4MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(1,0,1,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_2_W5MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(0.5,1,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_2_W6MessageCommand="%function(self)
+		self:finishtweening()
+		self:diffuse(1,0,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		end"
+		/>
+
+
+		<Layer File="Common Normal" Text="0"
+		OnCommand="y,-22+(20*8);addx,150;zoom,0.8;shadowlength,0;"
+		P2RightUpdateMessageCommand="%function(self) self:finishtweening() self:settext(ReceptorStep[4]) self:zoom(0.9) self:decelerate(0.2) self:zoom(0.8) end"
+		HideScoresMessageCommand="linear,0.3;diffusealpha,-.5;" 
+		/>
+
+		<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','GameNote')"
+		OnCommand="%function(self)
+		self:zoom(0.5)
+		self:y(-50+(20*8))
+		self:addx(150)
+		self:rotationz(-180)
+		end"
+		P2RightUpdateMessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:decelerate(0.2)
+		self:zoom(0.5)
+		end"
+		Fk_P2_3_W1MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(0,1,1,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_3_W2MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(1,.8,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_3_W3MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(0,1,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_3_W4MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(1,0,1,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_3_W5MessageCommand="%function(self)
+		self:finishtweening()
+		self:zoom(0.4)
+		self:diffuse(0.5,1,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.5)
+		end"
+		Fk_P2_3_W6MessageCommand="%function(self)
+		self:finishtweening()
+		self:diffuse(1,0,0,1)
+		self:decelerate(0.2)
+		self:diffuse(1,1,1,1)
+		end"
+		/>
+		</children></ActorFrame>
+	</children></Layer>
+
+
+</children> </ActorFrame>
+

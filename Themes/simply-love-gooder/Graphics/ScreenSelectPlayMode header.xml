@@ -1,0 +1,9 @@
+<ActorFrame> <children>
+	<Layer
+		Type="BitmapText"
+		Text="SELECT PLAY MODE"
+		File="_wendy white"
+		InitCommand="diffuse,#FFFFFF00;zoom,.4;shadowlength,2;x,30;y,SCREEN_CENTER_Y-95;horizalign,left"
+		OnCommand="linear,.5;diffusealpha,1"
+	/>
+</children> </ActorFrame>

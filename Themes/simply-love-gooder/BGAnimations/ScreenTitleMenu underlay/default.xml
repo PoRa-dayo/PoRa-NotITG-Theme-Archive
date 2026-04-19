@@ -1,0 +1,878 @@
+<ActorFrame><children>
+	<ActorFrame InitCommand="%function() Profile(0).Love.Dir = ThemeName() end" />
+	<Layer File="@VocalizePath()..'Vocalize.xml'" />
+	<ActorFrame InitCommand="%function() if file then file() end end" />
+	<ActorFrame OffCommand="queuecommand,Out" OutCommand="%function() s = SCREENMAN:GetTopScreen():GetChild('Logo') TitleMenuOut(s) end" />
+		<ActorFrame Command="queuecommand,Game" GameCommand="%DetectGame" />
+
+		-- Menu
+
+                <Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(250)
+                self:zoomy(10000)
+                self:x(SCREEN_LEFT+200)
+                self:draworder(-1)
+                if Weekday() == 1 then
+                self:diffuse(0.2,0.2,0.2,0.6)
+                end
+                if Weekday() == 2 then
+                self:diffuse(0.2,0.4,0.2,0.6)
+                end
+                if Weekday() == 3 then
+                self:diffuse(0.1,0.1,0.4,0.6)
+                end
+                if Weekday() == 4 then
+                self:diffuse(0.1,0.1,0.1,0.6)
+                end
+                if Weekday() == 5 then
+                self:diffuse(0.2,0.2,0.2,0.6)
+                end
+                if Weekday() == 6 then
+                self:diffuse(0.8,0,0.9,0.6)
+                end
+                if Weekday() == 0 then
+                self:diffuse(0.1,0.1,0.1,0.3)
+                end    end"
+                OffCommand="decelerate,0.5;zoomx,0"
+        />
+                <Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(2)
+                if Weekday() == 1 then
+                        self:glowshift()
+                        self:effectcolor1(1,1,1,1)
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                end
+                self:zoomy(10000)
+                self:x(SCREEN_LEFT+76)
+                if Weekday() == 2 then
+                        self:glowshift()
+                        self:effectcolor1(0.5,1,0.5,1)
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 3 then
+                        self:glowshift()
+                        self:effectcolor1(0.5,0.5,1,1)
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 4 then
+                        self:glowshift()
+                        self:effectcolor1(0.2,0.2,0.2,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                if Weekday() == 5 then
+                        self:glowshift()
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                if Weekday() == 6 then
+                        self:glowshift()
+                        self:effectcolor1(0.8,0,0.9,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                if Weekday() == 0 then
+                        self:glowshift()
+                        self:effectcolor1(0.4,0.4,0.4,1)
+                        self:effectcolor2(0,0,0,1)
+                end  end"
+                OffCommand="decelerate,0.5;zoomx,0"
+        />
+                <Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(2)
+                if Weekday() == 1 then
+                        self:glowshift()
+                        self:effectcolor1(1,1,1,1)
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 2 then
+                        self:glowshift()
+                        self:effectcolor1(0.5,1,0.5,1)
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 3 then
+                        self:glowshift()
+                        self:effectcolor1(0.5,0.5,1,1)
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 4 then
+                        self:glowshift()
+                        self:effectcolor1(0.2,0.2,0.2,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                if Weekday() == 5 then
+                        self:glowshift()
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                if Weekday() == 6 then
+                        self:glowshift()
+                        self:effectcolor1(0.8,0,0.9,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                if Weekday() == 0 then
+                        self:glowshift()
+                        self:effectcolor1(0.4,0.4,0.4,1)
+                        self:effectcolor2(0,0,0,1)
+                end
+                self:zoomy(10000)
+                self:x(SCREEN_LEFT+324) end"
+                OffCommand="decelerate,0.5;zoomx,0"
+        />      
+
+                <!-- This Updates The Clock -->
+                <Layer
+                Type="Quad"
+                PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(0.1); self:queuecommand('Pulse') end"
+                InitCommand="hidden,1;playcommand,Pulse"
+        />
+                <!-- The Clock -->
+                <Layer
+                Type="BitmapText"
+                Font="_wendy white"
+                SetCommand="%function(self) self:settext( string.format('%02i:%02i', Hour(), Minute()) ) end"
+                PulseMessageCommand="playcommand,Set"
+                Text=""
+                InitCommand="x,SCREEN_LEFT+90;y,SCREEN_CENTER_Y-185;shadowlength,0;horizalign,left;zoom,0.5;diffusealpha,0;linear,0.3;diffusealpha,1;playcommand,Set"
+                OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+                OffCommand="accelerate,0.4;diffusealpha,0"
+        />
+                <!-- The date -->
+                <Layer
+                Type="BitmapText"
+                Font="_misoreg small"
+                SetCommand="%function(self) self:settext( string.format('%s', MonthToString(MonthOfYear())) ) end"
+                PulseMessageCommand="playcommand,Set"
+                Text=""
+                InitCommand="x,SCREEN_LEFT+180;y,SCREEN_CENTER_Y-203;shadowlength,0;horizalign,left;zoom,0.8;diffusealpha,0;linear,0.3;diffusealpha,1;playcommand,Set"
+                OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+                OffCommand="accelerate,0.4;diffusealpha,0"
+        />
+                <Layer
+                Type="BitmapText"
+                Font="_misoreg small"
+                SetCommand="%function(self) self:settext( string.format('%02i %04i', DayOfMonth(), Year()) ) end"
+                PulseMessageCommand="playcommand,Set"
+                Text=""
+                InitCommand="x,SCREEN_LEFT+180;y,SCREEN_CENTER_Y-183;shadowlength,0;horizalign,left;zoom,0.5;diffusealpha,0;linear,0.3;diffusealpha,1;playcommand,Set"
+                OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+                OffCommand="accelerate,0.4;diffusealpha,0"
+        />
+
+		<Layer 
+			File="SimplyLove" 
+			InitCommand="draworder,101;x,SCREEN_LEFT+200;y,SCREEN_TOP+130;zoom,0.4" 
+			OnCommand="diffusealpha,0;zoom,0;sleep,0.76;bounceend,0.4;diffusealpha,1;zoom,0.5"
+			OffCommand="accelerate,0.4;diffusealpha,0"
+		/>
+		<Layer Font="_misoreg small" Text="" Command="x,SCREEN_CENTER_X+1221222;y,SCREEN_CENTER_Y-126;zoom,0.45;shadowlength,0;diffusealpha,0;sleep,.3;queuecommand,Set" SetCommand="%function(self) s = SCREENMAN:GetTopScreen():GetChild('Songs'):GetText() self:settext(s) self:linear(.5) self:diffusealpha(1) Command = {} function file() if children then File=children[math.mod(table.getn(Command),table.getn(children))+1] end end end" OffCommand="%TitleMenuOut" />
+		<Layer Font="_misobold white" Text="" Command="x,SCREEN_RIGHT;y,SCREEN_BOTTOM-45;zoom,0.3;shadowlength,4;diffusealpha,0;sleep,.3;horizalign,right;queuecommand,Set" SetCommand="%function(self) s = SCREENMAN:GetTopScreen():GetChild('LifeDifficulty'):GetText() self:settext(s) self:linear(.5) self:diffusealpha(0) _G['mo'..'dL'..'ist']='ran'..'do'..'mva'..'ni'..'sh' end" OffCommand="%TitleMenuOut" />
+
+		<Layer
+                Type="BitmapText"
+                Text="thing"
+                Font="_wendy white"
+		InitCommand="horizalign,center;y,SCREEN_TOP+20;x,SCREEN_LEFT+200;diffusealpha,0;zoom,0;sleep,0.76;bounceend,0.4;diffusealpha,1;zoom,0.2"
+                OnCommand="%function(self)
+                self:settext('Version '..SLGJUVMInfo['Version']..' - '..SLGJUVMInfo['VersionName'])
+                end"
+		OffCommand="accelerate,0.4;diffusealpha,0"
+	/>
+        <Layer
+                Type="Quad"
+                OnCommand="%function(self)
+                local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+                if JUVMProfile.JUVMDisplayTips then
+                        self:x(SCREEN_CENTER_X)
+                        self:y(SCREEN_BOTTOM-10)
+                        self:zoomtowidth(SCREEN_WIDTH*1.5)
+                        self:zoomtoheight(60)
+                        self:diffuse(0,0,0,1)
+                        self:fadetop(0.2)
+                else
+                        self:hidden(1)
+                end
+                end"
+                OffCommand="%function(self)
+                self:accelerate(1)
+                self:y(SCREEN_BOTTOM+50)
+                end"
+                />
+
+        <Layer
+                Font="Common Normal"
+                Text="@'' .. RandomTip()"
+                OnCommand="%function(self)
+                local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+                if JUVMProfile.JUVMDisplayTips then
+                        self:hidden(0)
+                        self:x(SCREEN_LEFT+10)
+                        self:y(SCREEN_BOTTOM-25)
+                        self:zoom(0.5)
+                        self:horizalign('left')
+                        self:settext(RandomTip())
+                        self:maxwidth(SCREEN_WIDTH*1.9)
+                else
+                        self:hidden(1)
+                end
+
+                if not FUCK_EXE then
+                        SCREENMAN:SetNewScreen('ScreenLoveOITG')
+                end
+                end"
+                OffCommand="%function(self)
+                self:accelerate(1)
+                self:y(SCREEN_BOTTOM+50)
+                end"
+                />
+	
+
+	<!-- Birthdays!!! -->
+<ActorFrame OnCommand="addx,90"><children>
+	<Layer
+File="Jose/Idle.sprite"
+Condition="DayOfMonth() == 30 and MonthOfYear() == 6"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-110)
+self:x(SCREEN_LEFT+190)
+self:zoom(0.3)
+self:bob()
+self:fadebottom(0.3)
+self:effectmagnitude(0,10,0)
+self:effectperiod(3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.9;addy,100;diffusealpha,0"
+/>
+
+<Layer
+File="Nick.sprite"
+Condition="DayOfMonth() == 30 and MonthOfYear() == 6"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-130)
+self:x(SCREEN_LEFT+40)
+self:zoom(1)
+self:bob()
+self:fadebottom(0.3)
+self:effectmagnitude(0,10,0)
+self:effectperiod(3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+
+<Layer
+File="Pat.sprite"
+Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-130)
+self:x(SCREEN_LEFT+90)
+self:zoom(1)
+self:bob()
+self:fadebottom(0.3)
+self:effectmagnitude(0,10,0)
+self:effectperiod(3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+
+<Layer
+File="PCBoy"
+Condition="DayOfMonth() == 26 and MonthOfYear() == 7"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-130)
+self:x(SCREEN_LEFT+100)
+self:zoom(0.3)
+self:bob()
+self:fadebottom(0.3)
+self:effectmagnitude(0,10,0)
+self:effectperiod(3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+
+<Layer
+File="Vinyl"
+Condition="DayOfMonth() == 4 and MonthOfYear() == 3"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-130)
+self:x(SCREEN_LEFT+110)
+self:zoom(0.2)
+self:bob()
+self:fadebottom(0.3)
+self:effectmagnitude(0,10,0)
+self:effectperiod(3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+
+<Layer
+File="Taro"
+Condition="DayOfMonth() == 29 and MonthOfYear() == 3"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-130)
+self:x(SCREEN_LEFT+110)
+self:zoom(0.3)
+self:bob()
+self:fadebottom(0.3)
+self:effectmagnitude(0,10,0)
+self:effectperiod(3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+
+<Layer
+File="dubl"
+Condition="DayOfMonth() == 25 and MonthOfYear() == 6"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-130)
+self:x(SCREEN_LEFT+130)
+self:zoom(0.3)
+self:bob()
+self:fadebottom(0.6)
+self:effectmagnitude(0,10,0)
+self:effectperiod(3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+
+<Layer
+File="Kun"
+Condition="DayOfMonth() == 1 and MonthOfYear() == 11"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM+50)
+self:x(SCREEN_LEFT+140)
+self:zoom(0.6)
+self:bob()
+self:fadebottom(0.9)
+self:effectmagnitude(0,10,0)
+self:effectperiod(3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+
+<!--  -->
+<Layer
+File="Gezoda"
+Condition="DayOfMonth() == 27 and MonthOfYear() == 1"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-60)
+self:x(SCREEN_LEFT+120)
+self:zoom(0.3)
+self:cropright(0.085)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+
+<Layer
+File="Daikyi"
+Condition="DayOfMonth() == 22 and MonthOfYear() == 8"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-90)
+self:x(SCREEN_LEFT+140)
+self:zoom(0.6)
+self:bob()
+self:fadebottom(0.9)
+self:effectmagnitude(0,10,0)
+self:effectperiod(3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+
+<Layer
+File="Tetaes"
+Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-90)
+self:x(SCREEN_LEFT+140)
+self:zoom(0.6)
+self:bob()
+self:fadebottom(0.9)
+self:effectmagnitude(0,10,0)
+self:effectperiod(3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+
+<Layer
+File="Akita"
+Condition="DayOfMonth() == 8 and MonthOfYear() == 7"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-100)
+self:x(SCREEN_LEFT+110)
+self:zoom(0.3)
+self:bob()
+self:fadebottom(0.3)
+self:effectmagnitude(0,10,0)
+self:effectperiod(3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+
+<Layer
+File="CosmicLaer"
+Condition="DayOfMonth() == 24 and MonthOfYear() == 10"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-70)
+self:x(SCREEN_LEFT+110)
+self:zoom(0.3)
+self:bob()
+self:fadebottom(0.3)
+self:effectmagnitude(0,10,0)
+self:effectperiod(3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+<Layer
+File="Yumei"
+Condition="DayOfMonth() == 6 and MonthOfYear() == 6"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-50)
+self:x(SCREEN_LEFT+110)
+self:zoom(0.4)
+self:fadeleft(0.3)
+self:faderight(0.3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+<Layer
+File="Zarile"
+Condition="DayOfMonth() == 29 and MonthOfYear() == 1"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-50)
+self:x(SCREEN_LEFT+140)
+self:zoom(0.4)
+self:fadeleft(0.3)
+self:faderight(0.3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+<Layer
+File="Hanako"
+Condition="DayOfMonth() == 29 and MonthOfYear() == 2"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-70)
+self:x(SCREEN_LEFT+110)
+self:zoom(0.7)
+self:fadeleft(0.3)
+self:faderight(0.3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+<Layer
+File="Sora"
+Condition="DayOfMonth() == 10 and MonthOfYear() == 6"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-70)
+self:x(SCREEN_LEFT+110)
+self:zoom(0.10)
+self:fadeleft(0.3)
+self:faderight(0.3)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+<Layer
+File="BrightXeno"
+Condition="DayOfMonth() == 22 and MonthOfYear() == 6"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-10)
+self:x(SCREEN_LEFT+110)
+self:zoom(01)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+<Layer
+File="Nhan"
+Condition="DayOfMonth() == 22 and MonthOfYear() == 6"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-60)
+self:x(SCREEN_LEFT+110)
+self:zoom(0.4)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+<Layer
+File="ouchys"
+Condition="DayOfMonth() == 20 and MonthOfYear() == 3"
+OnCommand="%function(self)
+self:y(SCREEN_BOTTOM-90)
+self:x(SCREEN_LEFT+110)
+self:zoom(0.2)
+self:diffusealpha(1)
+self:draworder(1000000)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/>
+</children></ActorFrame>
+
+	<ActorFrame OnCommand="y,-30;x,170">
+					<children>
+		<!-- Me and Nick -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Nick and Jose!!"
+        Condition="DayOfMonth() == 30 and MonthOfYear() == 6"
+        Font="_wendy white"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-20;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Ky -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Ky_Dash!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 29 and MonthOfYear() == 8"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-20;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Taronuke -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday TaroNuke!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 29 and MonthOfYear() == 3"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-20;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Sora -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Sora!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 10 and MonthOfYear() == 6"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+130;y,SCREEN_BOTTOM-20;rainbow;shadowlength,2"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Kun -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Kun!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 1 and MonthOfYear() == 11"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+260;y,SCREEN_BOTTOM-20;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Ducky -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Ducky!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 31 and MonthOfYear() == 5"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-20;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Akita -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Akita!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 8 and MonthOfYear() == 7"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-20;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- PcBoy -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday PCBoy!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 26 and MonthOfYear() == 7"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+110;y,SCREEN_BOTTOM-20;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Vinyl -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Vinyl!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 4 and MonthOfYear() == 3"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-20;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Alfa -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Alfa!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 15 and MonthOfYear() == 6"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-20;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Mr. ThatKid -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Mr. Kid!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 8 and MonthOfYear() == 8"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-20;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- _dubl -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday _dubl!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 25 and MonthOfYear() == 6"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-20;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Gezoda -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Gezoda!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 27 and MonthOfYear() == 1"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+260;y,SCREEN_BOTTOM-70;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Daikyi -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Daikyi!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 22 and MonthOfYear() == 8"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+220;y,SCREEN_BOTTOM-70;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Tetaes -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Tetaes!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 20 and MonthOfYear() == 8"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+50;y,SCREEN_BOTTOM-20;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Yumei -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Yumei!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 6 and MonthOfYear() == 6"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+110;y,SCREEN_BOTTOM-140;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+		<!-- Zarile -->
+		<AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Zarile!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 29 and MonthOfYear() == 1"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+80;y,SCREEN_BOTTOM-40;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+	/>
+                <!-- CosmicLAER -->
+                <AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Laer!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 24 and MonthOfYear() == 10"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+150;y,SCREEN_BOTTOM-70;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+        />
+                <!-- BrightXeno -->
+                <AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday BrightXeno!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 22 and MonthOfYear() == 6"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+220;y,SCREEN_BOTTOM-70;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+        />
+                <!-- Maaey -->
+                <AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Maaey!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 3 and MonthOfYear() == 1"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+220;y,SCREEN_BOTTOM-70;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+        />
+                <!-- Hanako -->
+                <AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Hanako!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 29 and MonthOfYear() == 2"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+110;y,SCREEN_BOTTOM-130;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+        />
+                <!-- Nhan -->
+                <AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday Nhan!!"
+        Condition="DayOfMonth() == 15 and MonthOfYear() == 1"
+        Font="_wendy white"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-40;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+        />
+
+                <!-- ouchys -->
+                <AutoActor
+        Type="BitmapText"
+        Text="Happy Birthday ouchys!!"
+        Condition="DayOfMonth() == 20 and MonthOfYear() == 3"
+        Font="_wendy white"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-40;rainbow"
+        OffCommand="bouncebegin,0.4;diffusealpha,0;zoom,0"
+        />
+	</children>
+				</ActorFrame>
+
+
+                                <!-- Celebrations -->
+        <AutoActor
+        Type="BitmapText"
+        Text="Happy New Year!!"
+        Font="_wendy white"
+        Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
+        OnCommand="draworder,1010;horizalign,right;zoom,0.4;x,SCREEN_RIGHT-50;y,SCREEN_CENTER_Y-130;rainbow"
+        OffCommand="accelerate,1;diffusealpha,0;y,SCREEN_TOP-20"
+        />
+
+                <AutoActor
+                File="CelebImage"
+                Condition="DayOfMonth() == 17 and MonthOfYear() == 11"
+                OnCommand="%function(self)
+                self:y(SCREEN_BOTTOM-180)
+                self:x(SCREEN_RIGHT-200)
+                self:zoom(0.5)
+                end"
+                OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+                />
+
+        <AutoActor
+        Type="BitmapText"
+        Text=" "        
+        Font="_wendy white"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.2;x,SCREEN_RIGHT-150;y,SCREEN_CENTER_Y+50;queuecommand,Year"
+        YearCommand="%function(self)
+        if Year() == 2017 and DayOfMonth() == 17 and MonthOfYear() == 11 then
+                self:settext('1 Year of SLG [JUVM]!')
+        elseif Year() >= 2018 and DayOfMonth() == 17 and MonthOfYear() == 11 then
+                self:settext(2017 - Year()..' Years of SLG [JUVM]')
+        else
+                self:settext(' ')
+        end
+        end"
+        OffCommand="accelerate,1;diffusealpha,0;y,SCREEN_TOP-20"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="@''..SLGBuildVersion()"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.5;y,SCREEN_CENTER_Y-57;x,SCREEN_LEFT+200;"
+        OffCommand="accelerate,0.7;diffusealpha,0;"
+        />
+
+	<Layer
+			Type="ActorFrame"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;" 
+		>
+			<children>
+				<ActorFrame OnCommand="">
+					<children>
+						
+					</children>
+				</ActorFrame>
+			</children>
+		</Layer>
+
+        <Layer
+                File="../ScreenWithMenuElements overlay" />
+
+
+
+                <Layer
+                Type="BitmapText"
+                Text="thing"
+                Font="Common Normal"
+                InitCommand="horizalign,right;y,SCREEN_TOP+40;shadowlength,1;x,SCREEN_RIGHT-10;diffusealpha,0;zoom,0.5;bounceend,0.4;diffusealpha,1;"
+                OnCommand="%function(self)
+                local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+                        if not JUVMProfile.JUVMDisplayFailText and not JUVMProfile.JUVMDisplayTips and not JUVMProfile.JUVMDisplayClock and not JUVMProfile.JUVMDisplayHalfway and not JUVMProfile.JUVMShowSongBackgroundSM and not JUVMProfile.JUVMAnimatedEditorBG then
+                        self:settext('Hey! you\'ll likely want to check the SLG(JUVM) Options!\nSince it has been detected that all options are disabled\nand it\'s likely that this is your first time using this\nnew version.')
+                else   
+                        self:settext(' ')
+                end
+                end"
+                OffCommand="accelerate,0.4;diffusealpha,0"
+        />
+
+
+
+		<!--DECEMBER-->
+		<!--<Layer
+File="Medic"
+Condition="DayOfMonth() == 1 and MonthOfYear() == 12"
+OnCommand="%function(self)
+self:y(SCREEN_CENTER_Y)
+self:x(SCREEN_CENTER_X)
+self:zoom(0.6)
+self:vibrate()
+self:diffusealpha(0)
+self:sleep(10)
+self:diffusealpha(1)
+self:sleep(1.6)
+self:diffusealpha(0)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/> -->
+
+	<!--JANUARY--> <!--
+<Layer
+File="Medic"
+Condition="DayOfMonth() == 1 and MonthOfYear() == 1"
+OnCommand="%function(self)
+self:y(SCREEN_CENTER_Y)
+self:x(SCREEN_CENTER_X)
+self:zoom(0.6)
+self:vibrate()
+self:diffusealpha(0)
+self:sleep(7.2)
+self:diffusealpha(1)
+self:sleep(2.7)
+self:diffusealpha(0)
+end"
+OffCommand="accelerate,0.8;addy,100;diffusealpha,0"
+/> -->
+</children></ActorFrame>

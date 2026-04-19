@@ -1,0 +1,320 @@
+<ActorFrame><children>
+	<ActorFrame InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;bob;EffectMagnitude,0,0,0;EffectPeriod,12"><children>
+		<ActorFrame FOV="90"><children>            
+        </children></ActorFrame>
+    </children></ActorFrame>
+        <!-- Monday - Lucy In The Sky With Arrows -->
+
+        <ActorFrame InitCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Lucy' then self:hidden(0) else self:hidden(1) end
+        end">
+        <children>
+        <Layer File="lucy/lucy"
+                        
+                        OnCommand="zoom,1;draworder,10000;x,SCREEN_RIGHT-170;y,SCREEN_BOTTOM-180"/>
+
+     <LAER File="lucy/sky5"
+        
+        OnCommand="%function(self) ColorRGBCommand(self, 1) self:x(SCREEN_CENTER_X) self:y(SCREEN_CENTER_Y) self:zoomtowidth(SCREEN_WIDTH*1.5) self:zoomtoheight(SCREEN_HEIGHT*1.5) end"
+        ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end"
+        HideCommand="hidden,1;"
+        />
+
+        <LAER
+        File="lucy/blur1"
+        
+        OnCommand="queuecommand,NowDo"
+        NowDoCommand="x,SCREEN_CENTER_X+math.random(-300,
+        300);y,SCREEN_TOP-80;rotationz,0;zoom,0.7;linear,3;rotationz,math.random(0,360);y,SCREEN_BOTTOM+80;queuecommand,NowDo"
+        />
+        <LAER
+        File="lucy/blur1"
+        
+        OnCommand="queuecommand,NowDo"
+        NowDoCommand="hibernate,0.3;x,SCREEN_CENTER_X+math.random(-300,
+        300);y,SCREEN_TOP-80;rotationz,0;zoom,0.7;linear,3;rotationz,math.random(0,360);y,SCREEN_BOTTOM+80;queuecommand,NowDo"
+        />
+        <LAER
+        File="lucy/blur1"
+        
+        OnCommand="queuecommand,NowDo"
+        NowDoCommand="hibernate,0.6;x,SCREEN_CENTER_X+math.random(-300,
+        300);y,SCREEN_TOP-80;rotationz,0;zoom,0.7;linear,3;rotationz,math.random(0,360);y,SCREEN_BOTTOM+80;queuecommand,NowDo"
+        />
+        <LAER
+        File="lucy/blur1"
+        
+        OnCommand="queuecommand,NowDo"
+        NowDoCommand="hibernate,0.9;x,SCREEN_CENTER_X+math.random(-300,
+        300);y,SCREEN_TOP-80;rotationz,0;zoom,0.7;linear,3;rotationz,math.random(0,360);y,SCREEN_BOTTOM+80;queuecommand,NowDo"
+        />
+
+        <LAER
+            File="lucy/clouds"
+            
+            OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,.2;
+            ZoomToWidth,1024*1.5;ZoomToHeight,1024*1.5;spin;effectmagnitude,0,0,10;
+            customtexturerect,0,0,2,2;texcoordvelocity,0.3,0.1;"
+        />
+        <LAER
+            File="lucy/clouds"
+            
+            OnCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+40;blend,add;diffusealpha,.2;
+            ZoomToWidth,1024*1.5;ZoomToHeight,1024*1.5;spin;effectmagnitude,0,0,-13;
+            customtexturerect,0,0,2,2;texcoordvelocity,-0.4,-0.2;"
+            DayTime5MessageCommand="linear,5;diffusealpha,0;"
+        />
+
+    <LAER Type="ActorFrame"  OnCommand="x,SCREEN_WIDTH*0.2;y,SCREEN_HEIGHT*0.2;rotationz,20;
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="lucy/beama" InitCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame"  OnCommand="x,SCREEN_WIDTH*0.4;y,SCREEN_HEIGHT*0.6;rotationz,45;
+        wag;effectmagnitude,0,0,math.random(70,150)/5;effectperiod,math.random(50,200)/10;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="lucy/beama" InitCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame"  OnCommand="x,SCREEN_WIDTH*0.8;y,SCREEN_HEIGHT*0.7;rotationz,110;
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="lucy/beama" InitCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame"  OnCommand="x,SCREEN_WIDTH*0.3;y,SCREEN_HEIGHT*0.5;rotationz,-45;
+        wag;effectmagnitude,0,0,math.random(70,150)/5;effectperiod,math.random(50,200)/10;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="lucy/beama" InitCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame"  OnCommand="x,SCREEN_WIDTH*0.6;y,SCREEN_HEIGHT*0.1;rotationz,120;
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="lucy/beama" InitCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        
+        <LAER Type="ActorFrame"  OnCommand="x,SCREEN_WIDTH*0.7;y,SCREEN_HEIGHT*0.1;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="lucy/beamb" InitCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame"  OnCommand="x,SCREEN_WIDTH*0.4;y,SCREEN_HEIGHT*0.3;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/5;effectperiod,math.random(50,200)/10;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="lucy/beamb" InitCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame"  OnCommand="x,SCREEN_WIDTH*0.2;y,SCREEN_HEIGHT*0.9;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="lucy/beamb" InitCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame"  OnCommand="x,SCREEN_WIDTH*0.5;y,SCREEN_HEIGHT*0.4;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/5;effectperiod,math.random(50,200)/10;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="lucy/beamb" InitCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame"  OnCommand="x,SCREEN_WIDTH*0.6;y,SCREEN_HEIGHT*0.7;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="lucy/beamb" InitCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+    </children></ActorFrame>
+
+        <!-- Tuesday - SHAME -->
+
+        <ActorFrame OnCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Shame' then self:hidden(0) else self:hidden(1) end
+        end">
+        <children>
+        <Layer
+            File="shame/Background"
+            
+            ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end" 
+            OnCommand="%function(self) ColorRGBCommand(self, 1) self:x(SCREEN_CENTER_X) self:y(SCREEN_CENTER_Y) self:zoomtowidth(SCREEN_WIDTH) end"
+            />
+
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="shame/head"
+            
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+
+            <Layer
+            File="shame/shame.sprite"
+            
+            OnCommand="x,SCREEN_RIGHT-170;y,SCREEN_CENTER_Y+90;fadebottom,0.5"
+            />
+
+        <Layer
+            Type="Quad"
+            
+            OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffuse,0,0,0,1;fadetop,0.8"
+            />
+        </children></ActorFrame>
+
+        <!-- Wendsday - MEGA -->
+
+
+        <ActorFrame InitCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Banshee' then self:hidden(0) else self:hidden(1) end
+        end">
+        <children>
+
+            <Layer
+            
+            File="MEGA"
+            />
+
+        </children></ActorFrame>
+
+        <!-- Thursday - Hexagons -->
+
+        <ActorFrame InitCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Hexagons' then self:hidden(0) else self:hidden(1) end
+        end">
+        <children>
+
+        <Layer
+            
+            File="hexagon/hexagon"
+            />
+
+        </children></ActorFrame>
+
+        <!-- Friday - GOODTEK -->
+
+        <ActorFrame InitCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'GOODTEK' then self:hidden(0) else self:hidden(1) end
+        end">
+        <children>
+
+        <Layer
+            
+            File="goodtek"
+            />
+
+        </children></ActorFrame>
+
+            <!-- Saturday - Neko-->
+
+            <ActorFrame InitCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Maze' then self:hidden(0) else self:hidden(1) end
+        end">
+        <children>
+
+        <Layer
+            
+            File="placeholder"
+            />
+
+        </children></ActorFrame>
+            <!-- Sunday - Axl-->
+
+            <ActorFrame InitCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Zero' then self:hidden(0) else self:hidden(1) end
+        end">
+        <children>
+
+        <Layer
+            
+            File="axl/axl.xml"
+            />
+
+        </children></ActorFrame>
+</children></ActorFrame>

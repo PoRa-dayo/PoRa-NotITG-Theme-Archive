@@ -1,0 +1,124 @@
+<ActorFrame><children>
+	<Layer File="Cube.txt"
+		OnCommand="sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(borderinnerer)
+			local Zoomy = 0.5
+			borderinnerer:diffusealpha(2)
+			borderinnerer:x(SCREEN_CENTER_X+150)
+			borderinnerer:y(SCREEN_CENTER_Y)
+			borderinnerer:zoomto(Zoomy * SCREEN_WIDTH / 20, Zoomy * SCREEN_WIDTH / 20)
+			borderinnerer:decelerate(60/195 * 0.75)
+			borderinnerer:spin()
+			borderinnerer:effectmagnitude(0,10,10)
+			borderinnerer:diffusealpha(0.25)
+		end"
+        ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end" 
+	/>
+<ActorFrame OnCommand="fov,90;rotationx,45"> <children>
+
+	<Actor
+		Type="Quad"
+		OnCommand="%function(self)
+		self:diffuse(0,0,0,1)
+		self:zoomto(SCREEN_WIDTH*20,SCREEN_HEIGHT*2)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_TOP)
+		end"
+		/>
+	<ActorFrame OnCommand="%function(self)
+	self:x(SCREEN_CENTER_X+150)
+	self:y(SCREEN_CENTER_Y)
+	self:zoom(0.5)
+	end">
+	<children>
+	
+	<Layer File="Shape.xml" />
+
+
+
+
+	</children></ActorFrame>
+<!--
+	<Layer File="thumb"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,0.25;diffusealpha,1;rotationz,-30;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(thumb)
+			thumb:rotationx(-45)
+			thumb:rotationy(55)
+			thumb:y(SCREEN_CENTER_Y - math.random(-100,100))
+			thumb:zoom(0.5)
+			thumb:diffusealpha(2)
+			thumb:rotationz(30)
+			thumb:x(SCREEN_CENTER_X + SCREEN_WIDTH + 50)
+			
+			thumb:decelerate(60/195 * 0.5)
+			thumb:x(SCREEN_CENTER_X + 20)
+			thumb:rotationz(2)
+			
+			thumb:linear(60/195 * 1)
+			thumb:x(SCREEN_CENTER_X - 20)
+			thumb:rotationz(-2)
+			
+			thumb:decelerate(60/195 * 0.5)
+			thumb:rotationz(-30)
+			thumb:x(SCREEN_CENTER_X - SCREEN_WIDTH - 50)
+			thumb:queuecommand('SetMe2')
+			end"
+			SetMe2Command="%function(thumb)
+			thumb:zoom(0.35)
+			thumb:y(SCREEN_CENTER_Y - math.random(-100,100))
+			thumb:diffusealpha(0.4)
+			thumb:rotationz(30)
+			thumb:x(SCREEN_CENTER_X + SCREEN_WIDTH + 50)
+			
+			thumb:decelerate(60/195 * 0.5)
+			thumb:x(SCREEN_CENTER_X + 20)
+			thumb:rotationz(2)
+			
+			thumb:linear(60/195 * 1)
+			thumb:x(SCREEN_CENTER_X - 20)
+			thumb:rotationz(-2)
+			
+			thumb:decelerate(60/195 * 0.5)
+			thumb:rotationz(-30)
+			thumb:x(SCREEN_CENTER_X - SCREEN_WIDTH - 50)
+			thumb:queuecommand('SetMe')
+			end"
+	/>
+	-->
+	
+	<Layer File="goodtek2"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,0.3;diffusealpha,0;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(self) goodsmall = self end"
+	/>
+	
+	<Layer File="goodtek2"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,2;diffusealpha,0;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(self) goodbig = self end"
+	/>
+
+	
+</children> </ActorFrame>
+	<Quad
+        ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end" 
+		OnCommand="%function(self)
+		ColorRGBCommand(self, 1)
+		self:diffusealpha(1)
+		self:zoomto(SCREEN_WIDTH*200,SCREEN_HEIGHT*200)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y+500)
+		self:skewx(2)
+		self:blend('WeightedMultiply')
+		end"
+		/>
+
+	<Quad
+        ColorSelectedMessageCommand="%function(self) self:linear(.5) self:diffuserightedge(ColorRGB(1)) self:diffuseleftedge(0,0,0,0) end" 
+		OnCommand="%function(self)
+		self:diffuserightedge(ColorRGB(1))
+		self:diffuseleftedge(0,0,0,0)
+		self:zoomto(SCREEN_WIDTH*1.1,SCREEN_HEIGHT*2)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_TOP)
+		end"
+		/>
+</children> </ActorFrame>

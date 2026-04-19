@@ -1,0 +1,4 @@
+<ActorFrame> <children>
+	<Layer File="_shared background normal" />
+	<Layer Type="Quad" Command="diffuse,#1E282F;stretchto,SCREEN_LEFT,SCREEN_TOP+50,SCREEN_RIGHT,SCREEN_BOTTOM-50;x,SCREEN_CENTER_X;diffusealpha,0.5"/>
+</children> </ActorFrame>

@@ -1,0 +1,26 @@
+<ActorFrame> <children>
+
+	<!-- REVISION -->
+
+	<Layer
+		Type="BitmapText"
+		Font="_misoreg small"
+		SetCommand="%function(self) self:settext('Revision:\n'..GetRevision()) end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_RIGHT-40;y,SCREEN_CENTER_Y-150;shadowlength,0;horizalign,right;zoom,0.6;playcommand,Set"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="linear,0.3;diffusealpha,0"
+	/>
+	<Layer
+		Type="BitmapText"
+		Font="_misoreg small"
+		SetCommand="%function(self) self:settext('Revision means the patch installed on this build.') end"
+		PulseMessageCommand="playcommand,Set"
+		Text=""
+		InitCommand="x,SCREEN_RIGHT-40;y,SCREEN_CENTER_Y-120;shadowlength,0;horizalign,right;zoom,0.4;playcommand,Set"
+		OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+</children></ActorFrame>

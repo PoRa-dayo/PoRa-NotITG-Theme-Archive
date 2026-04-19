@@ -1,0 +1,134 @@
+<ActorFrame><children>
+<Layer File="border"
+		OnCommand="ZoomToWidth,SCREEN_WIDTH/4;ZoomToHeight,SCREEN_WIDTH/4;diffusealpha,0;rotationz,45;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(borderinnerer)
+			local Zoomy = 5
+			borderinnerer:diffusealpha(2)
+			borderinnerer:zoomto(Zoomy * SCREEN_WIDTH / 5, Zoomy * SCREEN_WIDTH / 5)
+			borderinnerer:decelerate(60/195 * 0.75)
+			borderinnerer:spin()
+			borderinnerer:effectmagnitude(0,0,10)
+			borderinnerer:diffusealpha(0.25)
+		end"
+	/>
+
+	<Layer File="border"
+		OnCommand="ZoomToWidth,SCREEN_WIDTH/4;ZoomToHeight,SCREEN_WIDTH/4;diffusealpha,0;rotationz,45;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(borderinnerer)
+			local Zoomy = 5
+			borderinnerer:diffusealpha(2)
+			borderinnerer:z(50)
+			borderinnerer:zoomto(Zoomy * SCREEN_WIDTH / 5, Zoomy * SCREEN_WIDTH / 5)
+			borderinnerer:decelerate(60/195 * 0.75)
+			borderinnerer:spin()
+			borderinnerer:effectmagnitude(0,0,10)
+			borderinnerer:diffusealpha(0.25)
+		end"
+	/>
+
+	<Layer File="border"
+		OnCommand="ZoomToWidth,SCREEN_WIDTH/4;ZoomToHeight,SCREEN_WIDTH/4;diffusealpha,0;rotationz,45;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(borderinnerer)
+			local Zoomy = 5
+			borderinnerer:diffusealpha(2)
+			borderinnerer:z(50*2)
+			borderinnerer:zoomto(Zoomy * SCREEN_WIDTH / 5, Zoomy * SCREEN_WIDTH / 5)
+			borderinnerer:decelerate(60/195 * 0.75)
+			borderinnerer:spin()
+			borderinnerer:effectmagnitude(0,0,10)
+			borderinnerer:diffusealpha(0.25)
+		end"
+	/>
+
+	<Layer File="border"
+		OnCommand="ZoomToWidth,SCREEN_WIDTH/4;ZoomToHeight,SCREEN_WIDTH/4;diffusealpha,0;rotationz,45;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(borderinnerer)
+			local Zoomy = 5
+			borderinnerer:diffusealpha(2)
+			borderinnerer:z(50*3)
+			borderinnerer:zoomto(Zoomy * SCREEN_WIDTH / 5, Zoomy * SCREEN_WIDTH / 5)
+			borderinnerer:decelerate(60/195 * 0.75)
+			borderinnerer:spin()
+			borderinnerer:effectmagnitude(0,0,10)
+			borderinnerer:diffusealpha(0.25)
+		end"
+	/>
+	<Layer File="border"
+		OnCommand="ZoomToWidth,SCREEN_WIDTH/4;ZoomToHeight,SCREEN_WIDTH/4;diffusealpha,0;rotationz,45;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(borderinnerer)
+			local Zoomy = 5
+			borderinnerer:diffusealpha(2)
+			borderinnerer:z(50*4)
+			borderinnerer:zoomto(Zoomy * SCREEN_WIDTH / 5, Zoomy * SCREEN_WIDTH / 5)
+			borderinnerer:decelerate(60/195 * 0.75)
+			borderinnerer:spin()
+			borderinnerer:effectmagnitude(0,0,10)
+			borderinnerer:diffusealpha(0.25)
+		end"
+	/>
+	<Layer File="border"
+		OnCommand="ZoomToWidth,SCREEN_WIDTH/4;ZoomToHeight,SCREEN_WIDTH/4;diffusealpha,0;rotationz,45;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(borderinnerer)
+			local Zoomy = 5
+			borderinnerer:diffusealpha(2)
+			borderinnerer:z(50*5)
+			borderinnerer:zoomto(Zoomy * SCREEN_WIDTH / 5, Zoomy * SCREEN_WIDTH / 5)
+			borderinnerer:decelerate(60/195 * 0.75)
+			borderinnerer:spin()
+			borderinnerer:effectmagnitude(0,0,10)
+			borderinnerer:diffusealpha(0.25)
+		end"
+	/>
+	<Layer File="border"
+		OnCommand="ZoomToWidth,SCREEN_WIDTH/4;ZoomToHeight,SCREEN_WIDTH/4;diffusealpha,0;rotationz,45;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(borderinnerer)
+			local Zoomy = 5
+			borderinnerer:diffusealpha(2)
+			borderinnerer:z(50*6)
+			borderinnerer:zoomto(Zoomy * SCREEN_WIDTH / 5, Zoomy * SCREEN_WIDTH / 5)
+			borderinnerer:decelerate(60/195 * 0.75)
+			borderinnerer:spin()
+			borderinnerer:effectmagnitude(0,0,10)
+			borderinnerer:diffusealpha(0.25)
+		end"
+	/>
+	<Layer File="border"
+		OnCommand="ZoomToWidth,SCREEN_WIDTH/4;ZoomToHeight,SCREEN_WIDTH/4;diffusealpha,0;rotationz,45;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(borderinnerer)
+			local Zoomy = 5
+			borderinnerer:diffusealpha(2)
+			borderinnerer:z(50*7)
+			borderinnerer:zoomto(Zoomy * SCREEN_WIDTH / 5, Zoomy * SCREEN_WIDTH / 5)
+			borderinnerer:decelerate(60/195 * 0.75)
+			borderinnerer:spin()
+			borderinnerer:effectmagnitude(0,0,10)
+			borderinnerer:diffusealpha(0.25)
+		end"
+	/>
+	<Layer File="border"
+		OnCommand="ZoomToWidth,SCREEN_WIDTH/4;ZoomToHeight,SCREEN_WIDTH/4;diffusealpha,0;rotationz,45;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(borderinnerer)
+			local Zoomy = 5
+			borderinnerer:diffusealpha(2)
+			borderinnerer:z(50*8)
+			borderinnerer:zoomto(Zoomy * SCREEN_WIDTH / 5, Zoomy * SCREEN_WIDTH / 5)
+			borderinnerer:decelerate(60/195 * 0.75)
+			borderinnerer:spin()
+			borderinnerer:effectmagnitude(0,0,10)
+			borderinnerer:diffusealpha(0.25)
+		end"
+	/>
+	<Layer File="border"
+		OnCommand="ZoomToWidth,SCREEN_WIDTH/4;ZoomToHeight,SCREEN_WIDTH/4;diffusealpha,0;rotationz,45;sleep,0.02;queuecommand,SetMe"
+		SetMeCommand="%function(borderinnerer)
+			local Zoomy = 5
+			borderinnerer:diffusealpha(2)
+			borderinnerer:z(50*9)
+			borderinnerer:zoomto(Zoomy * SCREEN_WIDTH / 5, Zoomy * SCREEN_WIDTH / 5)
+			borderinnerer:decelerate(60/195 * 0.75)
+			borderinnerer:spin()
+			borderinnerer:effectmagnitude(0,0,10)
+			borderinnerer:diffusealpha(0.25)
+		end"
+	/>
+	</children></ActorFrame>

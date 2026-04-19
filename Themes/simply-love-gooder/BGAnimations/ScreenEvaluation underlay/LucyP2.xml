@@ -1,0 +1,121 @@
+<ActorFrame> <children>
+<LAER File="../_shared background normal/lucy/sky5"
+        Condition="Weekday() == 1"
+        OnCommand="%function(self) ColorRGBCommand(self, 1) self:x(SCREEN_CENTER_X) self:y(SCREEN_CENTER_Y) self:zoomtowidth(SCREEN_WIDTH*1.5) self:zoomtoheight(SCREEN_HEIGHT*1.5) end"
+        ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end"
+        HideCommand="hidden,1;"
+        />
+
+        <LAER
+        File="../_shared background normal/lucy/blur1"
+        Condition="Weekday() == 1"
+        OnCommand="queuecommand,Ono"
+        OnoCommand="x,SCREEN_CENTER_X+math.random(-300,
+        300);y,SCREEN_TOP-80;rotationz,0;zoom,0.7;linear,3;rotationz,math.random(0,360);y,SCREEN_BOTTOM+80;queuecommand,Ono"
+        />
+        <LAER
+        File="../_shared background normal/lucy/blur1"
+        Condition="Weekday() == 1"
+        OnCommand="queuecommand,Ono"
+        OnoCommand="hibernate,0.3;x,SCREEN_CENTER_X+math.random(-300,
+        300);y,SCREEN_TOP-80;rotationz,0;zoom,0.7;linear,3;rotationz,math.random(0,360);y,SCREEN_BOTTOM+80;queuecommand,Ono"
+        />
+        <LAER
+        File="../_shared background normal/lucy/blur1"
+        Condition="Weekday() == 1"
+        OnCommand="queuecommand,Ono"
+        OnoCommand="hibernate,0.6;x,SCREEN_CENTER_X+math.random(-300,
+        300);y,SCREEN_TOP-80;rotationz,0;zoom,0.7;linear,3;rotationz,math.random(0,360);y,SCREEN_BOTTOM+80;queuecommand,Ono"
+        />
+        <LAER
+        File="../_shared background normal/lucy/blur1"
+        Condition="Weekday() == 1"
+        OnCommand="queuecommand,Ono"
+        OnoCommand="hibernate,0.9;x,SCREEN_CENTER_X+math.random(-300,
+        300);y,SCREEN_TOP-80;rotationz,0;zoom,0.7;linear,3;rotationz,math.random(0,360);y,SCREEN_BOTTOM+80;queuecommand,Ono"
+        />
+
+        <LAER
+            File="../_shared background normal/lucy/clouds"
+            Condition="Weekday() == 1"
+            OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,.2;
+            ZoomToWidth,1024*1.5;ZoomToHeight,1024*1.5;spin;effectmagnitude,0,0,10;
+            customtexturerect,0,0,2,2;texcoordvelocity,0.3,0.1;"
+        />
+        <LAER
+            File="../_shared background normal/lucy/clouds"
+            Condition="Weekday() == 1"
+            OnCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+40;blend,add;diffusealpha,.2;
+            ZoomToWidth,1024*1.5;ZoomToHeight,1024*1.5;spin;effectmagnitude,0,0,-13;
+            customtexturerect,0,0,2,2;texcoordvelocity,-0.4,-0.2;"
+            DayTime5MessageCommand="linear,5;diffusealpha,0;"
+        />
+
+    <LAER Type="ActorFrame" Condition="Weekday() == 1" OnCommand="x,SCREEN_WIDTH*0.2;y,SCREEN_HEIGHT*0.2;rotationz,20;
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="../_shared background normal/lucy/beama" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" Condition="Weekday() == 1" OnCommand="x,SCREEN_WIDTH*0.4;y,SCREEN_HEIGHT*0.6;rotationz,45;
+        wag;effectmagnitude,0,0,math.random(70,150)/5;effectperiod,math.random(50,200)/10;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="../_shared background normal/lucy/beama" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" Condition="Weekday() == 1" OnCommand="x,SCREEN_WIDTH*0.8;y,SCREEN_HEIGHT*0.7;rotationz,110;
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="../_shared background normal/lucy/beama" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" Condition="Weekday() == 1" OnCommand="x,SCREEN_WIDTH*0.3;y,SCREEN_HEIGHT*0.5;rotationz,-45;
+        wag;effectmagnitude,0,0,math.random(70,150)/5;effectperiod,math.random(50,200)/10;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="../_shared background normal/lucy/beama" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" Condition="Weekday() == 1" OnCommand="x,SCREEN_WIDTH*0.6;y,SCREEN_HEIGHT*0.1;rotationz,120;
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="../_shared background normal/lucy/beama" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        
+        <LAER Type="ActorFrame" Condition="Weekday() == 1" OnCommand="x,SCREEN_WIDTH*0.7;y,SCREEN_HEIGHT*0.1;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="../_shared background normal/lucy/beamb" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" Condition="Weekday() == 1" OnCommand="x,SCREEN_WIDTH*0.4;y,SCREEN_HEIGHT*0.3;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/5;effectperiod,math.random(50,200)/10;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="../_shared background normal/lucy/beamb" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" Condition="Weekday() == 1" OnCommand="x,SCREEN_WIDTH*0.2;y,SCREEN_HEIGHT*0.9;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="../_shared background normal/lucy/beamb" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" Condition="Weekday() == 1" OnCommand="x,SCREEN_WIDTH*0.5;y,SCREEN_HEIGHT*0.4;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/5;effectperiod,math.random(50,200)/10;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="../_shared background normal/lucy/beamb" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" Condition="Weekday() == 1" OnCommand="x,SCREEN_WIDTH*0.6;y,SCREEN_HEIGHT*0.7;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="../_shared background normal/lucy/beamb" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+	<Layer
+		File="../ScreenSLGJUVMCredits underlay/lucy/lucy.xml" 
+		OnCommand="%function(self)
+		self:y(SCREEN_BOTTOM-60)
+		if GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsPlayerEnabled(PLAYER_2) then
+		self:x(SCREEN_RIGHT-160)
+		end
+		if GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsPlayerEnabled(PLAYER_1) then
+		self:x(SCREEN_LEFT+160)
+		end
+		if GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsPlayerEnabled(PLAYER_1) then
+		self:x(SCREEN_CENTER_X)
+		end
+		end"
+		/>
+	<!-- And it ends -->
+</children></ActorFrame>

@@ -1,0 +1,57 @@
+<ActorFrame> <children>
+
+	<!-- UPDATER -->
+
+	<Layer File="SystemInfo/Updater.xml" />
+
+	<!-- CLOCK -->
+
+	<Layer File="SystemInfo/Clock.xml" />
+
+	<!-- PLATFORM AND USB HUB -->
+
+	<Layer File="SystemInfo/UsbHub.xml" />
+
+	<!-- TIMES GAME CRASHED -->
+
+	<Layer File="SystemInfo/Crashes.xml" />
+
+	<!-- REVISION -->
+
+	<Layer File="SystemInfo/Revision.xml" />
+
+	<!-- UP TIME -->
+
+	<Layer File="SystemInfo/Uptime.xml" />
+
+	<!-- MEMORY CARD TEST -->
+
+	<Layer File="SystemInfo/MemoryCard.xml" />
+
+	<!-- DISK SPACE -->
+
+	<Layer File="SystemInfo/DiskSpace.xml" />
+
+	<!-- VIDEO DRIVER -->
+
+	<Layer File="SystemInfo/VideoDriver.xml" />
+
+	<!-- PREFERENCES -->
+
+	<Layer File="SystemInfo/Preferences.xml" />
+
+	<!-- DECORATION -->
+	
+	<AutoActor
+	Type="Quad"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-43;zoomtowidth,SCREEN_WIDTH*2;zoomtoheight,30;diffuse,0,0,0,1"
+	OffCommand="linear,0.3;diffusealpha,0"
+	/>
+	<AutoActor
+        Type="BitmapText"
+        Text="Press &START; to send a summary to the Log.              Press [Esc] to exit."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.5;x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-50;shadowlength,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+</children> </ActorFrame>

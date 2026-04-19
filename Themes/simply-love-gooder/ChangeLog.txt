@@ -1,0 +1,37 @@
+ChangeLog (Version 7 - "Fixes and Fixes")
+
+- Fixed ColorRGB Issue
+	This took a long time to figure out.
+	Now the theme can function corretly while switching via the theme switcher!
+
+- Foreign character support
+	This feature is a recreation of dbk2's jfonts workaround.
+	Now the theme can display many japanese and korean characters without any issues.
+
+- Fixed issues with Wineskin
+	Wineskin had some problems trying to run the theme. The theme should now be stable with the game running with new scripts.
+	HOWEVER, If you're using Wineskin, don't use 'Song Backgrounds on Select Music' as it creates bad sectors!
+
+- Could not restore Marathon mode
+	I'm sorry... But marathon mode is more broken that i initially thought it was. I don't think that many people use Course Mode anymore in NITG V2.
+	I know that there are people who still want to use it. But please hang on until the future of SLGJUVM.
+
+
+his is the last update of SLGJUVM. I want to start over this project and create something new.
+The code currently in the theme has been there since 2016, when I just barely started doing themes for StepMania.
+It's 2018, and looking back at it, it makes me dizzy, because of how inefficient and messy it is.
+That's why I'm going to restart this project. Maybe with a new name, maybe, I'm not sure.
+I can say that i'll stil be using scripts from SL to workaround with this.
+
+Thanks for almost 2 years of SLGJUVM. It's been fun while it lasted.
+I just want to create something new that everyone can use, just like how Simply Love did to the entire ITG community.
+I know it will be hard, since Simply Love already satifies all the needs for a ITG player, so it will be hard to get some attention to the theme anyway,
+being the fact that i'm planning to make the theme use NITG features as one of it's main points. But we'll see what happens.
+If you want to keep up as to what it *could* be, please, go to #themeshare on the UKSRT discord.
+I constantly update there on all the themes I work on.
+
+Thank you for using SLGJUVM, and thanks for making me keep going as a OITG Themer, because initially, when I started creating SLGJUVM,
+I thought that nobody would use it, yet, here we are. I can definetly say, that I learned a lot with this theme, but it's not the only place where I learned stuff.
+Being technically ( i think ) the only OITG/NITG Themer by this point, want to thank you. And I hope that you look forward for my future OITG/NITG::Theme projects.
+
+- Jose_Varela

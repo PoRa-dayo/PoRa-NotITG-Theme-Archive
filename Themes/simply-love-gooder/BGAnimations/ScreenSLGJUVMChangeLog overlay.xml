@@ -1,0 +1,242 @@
+<ActorFrame OnCommand="%function(self)
+        self:zoom(0.7)
+end"> <children>
+
+
+	<AutoActor
+	Type="Quad"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-43;zoomtowidth,SCREEN_WIDTH*2;zoomtoheight,SCREEN_HEIGHT*2;diffuse,0,0,0,1;diffusealpha,0;linear,1;diffusealpha,0.7"
+	OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+
+	<AutoActor
+        File="ScreenSLGJUVMCredits underlay/moddedtheme"
+        OnCommand="draworder,1010;horizalign,right;zoom,0.5;x,SCREEN_RIGHT*1.4-30;y,SCREEN_TOP+50;shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+	<AutoActor
+                Type="BitmapText"
+                Text="thing"
+                Font="_wendy white"
+				InitCommand="horizalign,right;y,SCREEN_TOP+70;x,SCREEN_RIGHT*1.4-60;zoom,0.2"
+                OnCommand="%function(self)
+                self:settext('Version '..SLGJUVMInfo['Version']..' - '..SLGJUVMInfo['VersionName'])
+                self:diffusealpha(0)
+                self:linear(1)
+                self:diffusealpha(1)
+                end"
+				OffCommand="accelerate,0.4;diffusealpha,0"
+	/>
+
+
+
+
+	<AutoActor
+        Type="BitmapText"
+        Text="- Fixed ColorRGB Issue"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.7;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-180;shadowlength,1;diffuse,#ff8400;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+	<AutoActor
+        Type="BitmapText"
+        Text="This took a long time to figure out."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-155;shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+	<AutoActor
+        Type="BitmapText"
+        Text="Now the theme can function corretly while switching via the theme switcher!"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-140;shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+        <AutoActor
+        Type="BitmapText"
+        Text="- Foreign character support"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.7;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-180+(60*1);shadowlength,1;diffuse,#9cd21d;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="This feature is a recreation of dbk2's jfonts workaround."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-155+(60*1);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="Now the theme can display many japanese and korean characters without any issues."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-140+(60*1);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="- Fixed issues with Wineskin"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.7;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-180+(60*2);shadowlength,1;diffuse,#ff8400;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="Wineskin had some problems trying to run the theme. The theme should now be stable with the game running with new scripts."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-155+(60*2);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="HOWEVER, If you're using Wineskin, don't use 'Song Backgrounds on Select Music!' as it creates bad sectors!"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-140+(60*2);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+         <AutoActor
+        Type="BitmapText"
+        Text="- Could not restore Marathon mode"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.7;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-180+(60*3);shadowlength,1;diffuse,#ff0000;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="I'm sorry... But marathon mode is more broken that i initially thought it was. I don't think that many people use Course Mode anymore in NITG V2."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-155+(60*3);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="I know that there are people who still want to use it. But please hang on until the future of SLGJUVM."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-140+(60*3);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="This is the last update of SLGJUVM. I want to start over this project and create something new.::The code currently in the theme has been there since 2016, when I just barely started doing themes for StepMania.::It's 2018, and looking back at it, it makes me dizzy, because of how inefficient and messy it is.::That's why I'm going to restart this project. Maybe with a new name, maybe, I'm not sure.::I can say that i'll stil be using scripts from SL to workaround with this.::::Thanks for almost 2 years of SLGJUVM. It's been fun while it lasted.::I just want to create something new that everyone can use, just like how Simply Love did to the entire ITG community.::I know it will be hard, since Simply Love already satifies all the needs for a ITG player, so it will be hard to get some attention to the theme anyway,::being the fact that i'm planning to make the theme use NITG features as one of it's main points. But we'll see what happens.::If you want to keep up as to what it *could* be, please, go to #themeshare on the UKSRT discord.::I constantly update there on all the themes I work on.::::Thank you for using SLGJUVM, and thanks for making me keep going as a OITG Themer, because initially, when I started creating SLGJUVM,::I thought that nobody would use it, yet, here we are. I can definetly say, that I learned a lot with this theme, but it's not the only place where I learned stuff.::::Being technically ( i think ) the only OITG/NITG Themer by this point, want to thank you. And I hope that you look forward for my future OITG/NITG::Theme projects.::::- Jose_Varela"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-140+(60*6);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+
+
+
+<!--
+
+	<AutoActor
+        Type="BitmapText"
+        Text="- Distraction Free Mode"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.7;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-120;shadowlength,1;diffuse,#9cd21d;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+	<AutoActor
+        Type="BitmapText"
+        Text="If you're playing a marathon long song, this mode will activate."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-95;shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+	<AutoActor
+        Type="BitmapText"
+        Text="What it does is that it reverses the Judgment, Combo, BPM and Hold tweens to the original SL tweens, so it doesn't get distracting in the hard segments."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-85;shadowlength,1;wrapwidthpixels,SCREEN_WIDTH*2;vertalign,top;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+-->
+
+
+
+
+	
+        <AutoActor
+        Type="BitmapText"
+        Text="New Feature::::Change/Fix"
+        Font="Common Normal"
+        OnCommand="%function(self)
+        self:x(SCREEN_WIDTH*1.4)
+        self:horizalign('right')
+        self:y(SCREEN_CENTER_Y+100)
+        self:zoom(0.5)
+        end"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="Quad"
+        OnCommand="%function(self)
+        self:x(SCREEN_WIDTH*1.28)
+        self:horizalign('right')
+        self:y(SCREEN_CENTER_Y+90)
+        self:zoom(10)
+        self:diffuse(0,1,0,0)
+        self:linear(1)
+        self:diffusealpha(1)
+        self:diffuse(0,1,0,1)
+        end"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="Quad"
+        OnCommand="%function(self)
+        self:x(SCREEN_WIDTH*1.28)
+        self:horizalign('right')
+        self:y(SCREEN_CENTER_Y+125)
+        self:zoom(10)
+        self:diffuse(1,0.5,0,0)
+        self:linear(1)
+        self:diffusealpha(1)
+        self:diffuse(1,0.5,0,1)
+        end"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+
+        <AutoActor
+        Type="BitmapText"
+        Text="And more..."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,right;zoom,0.5;x,SCREEN_RIGHT*1.40;y,SCREEN_CENTER_Y+205+40+40+40+40;shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+
+
+	<!-- DECORATION -->
+	
+	<AutoActor
+	Type="Quad"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM*1.4-23;zoomtowidth,SCREEN_WIDTH*2;zoomtoheight,30;diffuse,0,0,0,1;diffusealpha,0;linear,1;diffusealpha,1"
+	OffCommand="linear,0.3;diffusealpha,0"
+	/>
+	<AutoActor
+        Type="BitmapText"
+        Text="Press [Esc] to exit."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.5;x,SCREEN_CENTER_X*1.45;y,SCREEN_BOTTOM*1.4-30;shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+</children> </ActorFrame>

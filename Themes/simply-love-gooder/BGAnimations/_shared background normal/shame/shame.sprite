@@ -1,0 +1,6 @@
+[Sprite]
+Texture=shame 2x1.png
+Frame0000=0
+Delay0000=0.1
+Frame0001=1
+Delay0001=0.1

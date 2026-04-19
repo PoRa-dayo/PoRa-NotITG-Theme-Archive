@@ -1,0 +1,113 @@
+<ActorFrame><children>
+	
+	<!--
+	<Layer
+		File="thing.mpg"
+		OnCommand="%function(self)
+		ColorRGBCommand(self, 1)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(1)
+		end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end"
+		/>
+	-->
+	<Layer
+		File="Background"
+		OnCommand="%function(self)
+		local Tiel = 2;
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomy(Tiel)
+		self:zoomx(Tiel*Tiel)
+		self:diffusealpha(0.8)
+		self:SetTextureFiltering(false)
+		self:customtexturerect(0,0,Tiel,1);
+        self:texcoordvelocity(0.01,0);
+		end"
+		/>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT)
+		self:diffusealpha(0.3)
+		self:diffusebottomedge(0,0,0,1)
+		end"
+		/>
+
+	<Layer
+		File="Floor"
+		OnCommand="%function(self)
+		local Tiel = 2;
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_BOTTOM)
+		self:zoomy(Tiel)
+		self:zoomx(Tiel*Tiel)
+		self:diffusealpha(1)
+		self:vertalign('bottom')
+		self:SetTextureFiltering(false)
+		self:customtexturerect(0,0,Tiel,1);
+        self:texcoordvelocity(0.03,0);
+		end"
+		/>
+
+	<Layer
+		File="WalkBody 16x1"
+		OnCommand="%function(self)
+		local Tiel = 2;
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_BOTTOM-50)
+		self:zoom(Tiel)
+		self:vertalign('bottom')
+		self:SetTextureFiltering(false)
+		self:bob()
+		self:effectmagnitude(150,0,0)
+		self:effectperiod(50)
+		end"
+		/>
+
+	<Layer
+		File="WalkArmor 16x1"
+		OnCommand="%function(self)
+		local Tiel = 2;
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_BOTTOM-50)
+		self:zoom(Tiel)
+		self:vertalign('bottom')
+		self:SetTextureFiltering(false)
+		ColorRGBCommand(self, 1)
+		self:bob()
+		self:effectmagnitude(150,0,0)
+		self:effectperiod(50)
+		end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end"
+		/>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT)
+		self:diffusealpha(0.3)
+		end"
+		/>
+
+	<Layer
+		File="Snow"
+		OnCommand="%function(self)
+		local Tiel = 4;
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(10)
+		self:diffusealpha(0.3)
+		self:SetTextureFiltering(false)
+		self:customtexturerect(0,0,Tiel,Tiel);
+        self:texcoordvelocity(1.2,-0.2);
+		end"
+		/>
+	
+</children></ActorFrame>

@@ -1,0 +1,288 @@
+<ActorFrame> <children>
+	
+	<!-- Music Wheel Quads -->
+	<Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(500)
+                self:zoomy(10000)
+                if string.find(string.lower(PREFSMAN:GetPreference('DisplayAspectRatio')), '1.7777') then
+                self:x(SCREEN_RIGHT-165)
+                end
+                if string.find(string.lower(PREFSMAN:GetPreference('DisplayAspectRatio')), '1.3333')  then
+                self:x(SCREEN_RIGHT-54)
+                end
+                self:draworder(-1)
+                if Weekday() == 1 then
+                self:diffuse(0.2,0.2,0.2,0.6)
+                end
+                if Weekday() == 2 then
+                self:diffuse(0.2,0.4,0.2,0.6)
+                end
+                if Weekday() == 3 then
+                self:diffuse(0.1,0.1,0.4,0.6)
+                end
+                if Weekday() == 4 then
+                self:diffuse(0.1,0.1,0.1,0.6)
+                end
+                if Weekday() == 5 then
+                self:diffuse(0.2,0.2,0.2,0.6)
+                end
+                if Weekday() == 6 then
+                self:diffuse(0.8,0,0.9,0.6)
+                end
+                if Weekday() == 0 then
+                self:diffuse(0.1,0.1,0.1,0.3)
+                end   end"
+        />
+        <Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(2)
+                self:effectclock('bgm')
+                self:effectperiod(1)
+                if Weekday() == 1 then
+                        self:diffuseramp()
+                        self:effectcolor2(1,1,1,1)
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                end
+                self:zoomy(10000)
+                if string.find(string.lower(PREFSMAN:GetPreference('DisplayAspectRatio')), '1.7777') then
+                self:x(SCREEN_RIGHT-415)
+                end
+                if string.find(string.lower(PREFSMAN:GetPreference('DisplayAspectRatio')), '1.3333')  then
+                self:x(SCREEN_RIGHT-304.7)
+                end
+                if Weekday() == 2 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.5,1,0.5,1)
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 3 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.5,0.5,1,1)
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 4 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.2,0.2,0.2,1)
+                        self:effectcolor1(0,0,0,1)
+                end
+                if Weekday() == 5 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                        self:effectcolor1(0,0,0,1)
+                end
+                if Weekday() == 6 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.8,0,0.9,1)
+                        self:effectcolor1(0,0,0,1)
+                end
+                if Weekday() == 0 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.4,0.4,0.4,1)
+                        self:effectcolor1(0,0,0,1)
+                end  end"
+        />
+
+        <!-- Song Info Quads -->
+	<Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(250)
+                self:zoomy(10000)
+                self:x(SCREEN_LEFT+160)
+                self:draworder(-1)
+                if Weekday() == 1 then
+                self:diffuse(0.2,0.2,0.2,0.6)
+                end
+                if Weekday() == 2 then
+                self:diffuse(0.2,0.4,0.2,0.6)
+                end
+                if Weekday() == 3 then
+                self:diffuse(0.1,0.1,0.4,0.6)
+                end
+                if Weekday() == 4 then
+                self:diffuse(0.1,0.1,0.1,0.6)
+                end
+                if Weekday() == 5 then
+                self:diffuse(0.2,0.2,0.2,0.6)
+                end
+                if Weekday() == 6 then
+                self:diffuse(0.8,0,0.9,0.6)
+                end
+                if Weekday() == 0 then
+                self:diffuse(0.1,0.1,0.1,0.3)
+                end    end"
+        />
+                <Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(2)
+                self:effectclock('bgm')
+                self:effectperiod(1)
+                if Weekday() == 1 then
+                        self:diffuseramp()
+                        self:effectcolor2(1,1,1,1)
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                end
+                self:zoomy(10000)
+                self:x(SCREEN_LEFT+76-40)
+                if Weekday() == 2 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.5,1,0.5,1)
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 3 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.5,0.5,1,1)
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 4 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.2,0.2,0.2,1)
+                        self:effectcolor1(0,0,0,1)
+                end
+                if Weekday() == 5 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                        self:effectcolor1(0,0,0,1)
+                end
+                if Weekday() == 6 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.8,0,0.9,1)
+                        self:effectcolor1(0,0,0,1)
+                end
+                if Weekday() == 0 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.4,0.4,0.4,1)
+                        self:effectcolor1(0,0,0,1)
+                end  end"
+        />
+                <Layer
+                Type="Quad"
+                InitCommand="%function(self) 
+                self:zoomx(2)
+                self:effectclock('bgm')
+                self:effectperiod(1)
+                if Weekday() == 1 then
+                        self:diffuseramp()
+                        self:effectcolor2(1,1,1,1)
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 2 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.5,1,0.5,1)
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                end
+                self:zoomy(10000)
+                self:x(SCREEN_LEFT+324-40) 
+                if Weekday() == 3 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.5,0.5,1,1)
+                        self:effectcolor1(0.5,0.5,0.5,1)
+                end
+                if Weekday() == 4 then
+                        self:glowshift()
+                        self:effectcolor2(0.2,0.2,0.2,1)
+                        self:effectcolor1(0,0,0,1)
+                end
+                if Weekday() == 5 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.5,0.5,0.5,1)
+                        self:effectcolor1(0,0,0,1)
+                end
+                if Weekday() == 6 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.8,0,0.9,1)
+                        self:effectcolor1(0,0,0,1)
+                end
+                if Weekday() == 0 then
+                        self:diffuseramp()
+                        self:effectcolor2(0.4,0.4,0.4,1)
+                        self:effectcolor1(0,0,0,1)
+                end end"
+        />      
+	<ActorFrame Command="queuecommand,Icon" IconCommand="%function() StyleIcon() end" />
+	<ActorFrame Command="%function() if GAMESTATE:GetCoinMode() == 1 and not GetPref('EventMode') then rateMods = rateModsPay else rateMods = rateModsFree end end" />
+		-- Lucy Fallback
+		<Layer 
+		Condition="Weekday() == 1"
+		File="LucyFallback.png"
+		OnCommand="x,SCREEN_LEFT+200-40;y,SCREEN_CENTER_Y-138;ZoomToWidth,245;ZoomToHeight,105"
+		OffCommand=""
+	/>
+		-- Shame Fallback
+		<Layer 
+		Condition="Weekday() == 2"
+		File="ShameFallback.png"
+		OnCommand="x,SCREEN_LEFT+200-40;y,SCREEN_CENTER_Y-138;ZoomToWidth,245;ZoomToHeight,105"
+		OffCommand=""
+	/>
+                -- Grid Fallback
+                <Layer 
+                Condition="Weekday() == 3"
+                File="GridFallback.png"
+                InitCommand="%function(self) ColorRGBCommand(self, 1) end"
+                OnCommand="x,SCREEN_LEFT+200-40;y,SCREEN_CENTER_Y-138;ZoomToWidth,245;ZoomToHeight,105"
+                OffCommand=""
+        />
+                -- Hexagon Fallback
+                <Layer 
+                Condition="Weekday() == 4"
+                File="HexagonFallback.png"
+                InitCommand="%function(self) ColorRGBCommand(self, 1) end"
+                OnCommand="x,SCREEN_LEFT+200-40;y,SCREEN_CENTER_Y-138;ZoomToWidth,245;ZoomToHeight,105"
+                OffCommand=""
+        />
+                -- Goodtek Fallback
+                <Layer 
+                Condition="Weekday() == 5"
+                File="GoodFallback.png"
+                OnCommand="x,SCREEN_LEFT+200-40;y,SCREEN_CENTER_Y-138;ZoomToWidth,245;ZoomToHeight,105"
+                OffCommand=""
+        />
+                -- Neko Fallback
+                <Layer 
+                Condition="Weekday() == 6"
+                File="NekoFallback.png"
+                OnCommand="x,SCREEN_LEFT+200-40;y,SCREEN_CENTER_Y-138;ZoomToWidth,245;ZoomToHeight,105"
+                OffCommand=""
+        />
+                -- Zero Fallback
+                <Layer 
+                Condition="Weekday() == 0"
+                File="ZeroFallback.png"
+                OnCommand="x,SCREEN_LEFT+200-40;y,SCREEN_CENTER_Y-138;ZoomToWidth,245;ZoomToHeight,105"
+                OffCommand=""
+        />
+	
+	<Layer 
+		Type="BitmapText"
+		Font="_misoreg whitealt"
+		Text="Artist"
+		OnCommand="horizalign,right;ShadowLength,0;diffuse,#FFFFFF66;zoom,0.5;x,SCREEN_LEFT+110-40;y,180"
+	/>
+	<Layer 
+		Type="BitmapText"
+		Font="_misoreg whitealt"
+		Text="BPM"
+		OnCommand="horizalign,right;ShadowLength,0;diffuse,#FFFFFF66;zoom,0.5;x,SCREEN_LEFT+110-40;y,200"
+	/>
+	<Layer 
+		Type="BitmapText"
+		Font="_misoreg whitealt"
+		Text="Length"
+		OnCommand="ShadowLength,0;diffuse,#FFFFFF66;zoom,0.5;x,SCREEN_LEFT+220-40;y,200"
+	/>
+	<ActorFrame InitCommand="%SelectMusicInit" FirstUpdateCommand="%SelectMusic" CaptureCommand="%SongInfo" CurrentSongChangedMessageCommand="queuecommand,Capture" CurrentStepsP1ChangedMessageCommand="queuecommand,Capture" CurrentStepsP2ChangedMessageCommand="queuecommand,Capture" />
+
+        <AutoActor
+        Font="Common Normal"
+        Text="Select a song using &MENULEFT; &MENURIGHT; . Press &START; to confirm."
+                InitCommand="horizalign,center;y,SCREEN_WIDTH/2;y,SCREEN_CENTER_Y+167;x,SCREEN_LEFT+160;zoom,0.3;"
+                FinalMessageCommand="bouncebegin,2;fadebottom,1"
+                LoadCommand="y,SCREEN_WIDTH/2;decelerate,.5;y,SCREEN_CENTER_Y+130;bounce;effectmagnitude,-8,0,0;effectperiod,1.0;effectoffset,0.2;effectclock,bgm"
+        />
+       
+</children> </ActorFrame>

@@ -187,8 +187,8 @@ function MusicClock() return Screen():GetSecsIntoEffect() end
 function SelectMusicInit(self) TimedSet.Class = 0; InitializeMods() optionIndex = 0; GhostDataCache = { }; for pn=1,2 do GhostData(pn,"Cache") end; self:queuecommand('FirstUpdate') end
 function SelectMusic(self) self:queuecommand('Capture') end
 
-function GameplayInit(self) TimedSet.Class = 1; Combo = {} lifeNormal = {} lifeHot = {} holdJudgments = {} self:queuecommand('FirstUpdate') end
-function Gameplay(self) ApplyRateAdjust() JudgmentInit() SurroundLife() Danger.Time = {0,0} Danger.State = { false, false} Dead.Time = {0,0} Dead.State = { false, false } Screen():effectclock('music') self:luaeffect('Update') end
+function GameplayInit(self) TimedSet.Class = 1; Combo = {} lifeNormal = {} lifeHot = {} holdJudgments = {} ApplyRateAdjust() self:queuecommand('FirstUpdate') end
+function Gameplay(self) EditMode = false; JudgmentInit() SurroundLife() Danger.Time = {0,0} Danger.State = { false, false} Dead.Time = {0,0} Dead.State = { false, false } Screen():effectclock('music') self:luaeffect('Update') end
 
 function EvaluationInit(self) TimedSet.Class = 2; RevertHideBG() RevertRateAdjust() self:queuecommand('FirstUpdate') end
 function Evaluation() CaptureJudgment() AddScoreToListFromEval() ApplyHideBG() SaveToProfile() end

@@ -1,0 +1,658 @@
+<ActorFrame> 
+	<children>
+		<Layer
+			File="Snow.xml"
+			Condition="MonthOfYear() == 12"
+			/>
+
+		<Layer
+Type="Sprite"
+Texture="Ky/playfield.png"
+Condition="DayOfMonth() == 29 and MonthOfYear() == 8"
+OnCommand="%function(self)
+self:customtexturerect(0,0,2,1)
+self:zoomx(2)
+self:x(SCREEN_CENTER_X)
+self:y(SCREEN_TOP-220)
+self:rotationz(0)
+self:fadeleft(1)
+self:faderight(1)
+self:diffusealpha(0.1)
+self:texcoordvelocity(0.11,0)
+self:diffusealpha(1)
+end"
+/>
+
+
+
+	<Layer Type="Quad" InitCommand="
+		diffuse,#00000080;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,80;y,SCREEN_TOP-5;"	 Command="%function(self) 
+					if Color() == 8 then ColorRGBCommand(self, 0) self:diffusealpha(0.5) 
+				elseif Color() == 9 then ColorRGBCommand(self, -1) self:diffusealpha(0.5) 
+				elseif Color() == 10 then ColorRGBCommand(self, 3) self:diffusealpha(0.5) 
+				elseif Color() == 11 then ColorRGBCommand(self, 2) self:diffusealpha(0.5) 
+				else ColorRGBCommand(self, 1) self:diffusealpha(0.5) 
+				end
+			end"/>
+
+	<ActorFrame 
+		Condition="GAMESTATE:GetPlayMode()==PLAY_MODE_REGULAR and GAMESTATE:GetEasiestStepsDifficulty()==DIFFICULTY_BEGINNER and PREFSMAN:GetPreference('MercifulBeginner')"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-30" 
+	><children>
+		<Layer
+			Class="AutoActor"
+			File="light_frame"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_green"
+			OnCommand="y,-94;diffusealpha,0;rotationz,0;blend,add"
+			NoteCrossedMessageCommand="finishtweening;diffusealpha,1;zoom,1.2;linear,0.2;zoom,1;diffusealpha,0"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_yellow"
+			OnCommand="y,-31;diffusealpha,0;rotationz,45;blend,add"
+			NoteWillCrossIn500MsMessageCommand="finishtweening;diffusealpha,1;zoom,1.2;linear,0.2;zoom,1;diffusealpha,0"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_yellow"
+			OnCommand="y,32;diffusealpha,0;rotationz,90;blend,add"
+			NoteWillCrossIn1000MsMessageCommand="finishtweening;diffusealpha,1;zoom,1.2;linear,0.2;zoom,1;diffusealpha,0"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_red"
+			OnCommand="y,95;diffusealpha,0;rotationz,135;blend,add"
+			NoteWillCrossIn1500MsMessageCommand="finishtweening;diffusealpha,1;zoom,1.2;linear,0.2;zoom,1;diffusealpha,0"
+		/>
+		<Layer
+			Class="BitmapText"
+			Font="_misobold small"
+			Text="left!"
+			OnCommand="shadowlength,0;y,-106;diffusealpha,0;maxwidth,70"
+			NoteCrossedLeftMessageCommand="finishtweening;diffusealpha,1;zoom,1.4;linear,0.2;zoom,1;sleep,0.4;diffusealpha,0"
+			NoteCrossedJumpMessageCommand="finishtweening;diffusealpha,0"
+		/>
+		<Layer
+			Class="BitmapText"
+			Font="_misobold small"
+			Text="right!"
+			OnCommand="shadowlength,0;y,-106;diffusealpha,0;maxwidth,70"
+			NoteCrossedRightMessageCommand="finishtweening;diffusealpha,1;zoom,1.4;linear,0.2;zoom,1;sleep,0.4;diffusealpha,0"
+			NoteCrossedJumpMessageCommand="finishtweening;diffusealpha,0"
+		/>
+		<Layer
+			Class="BitmapText"
+			Font="_misobold small"
+			Text="up!"
+			OnCommand="shadowlength,0;y,-106;diffusealpha,0;maxwidth,70"
+			NoteCrossedUpMessageCommand="finishtweening;diffusealpha,1;zoom,1.4;linear,0.2;zoom,1;sleep,0.4;diffusealpha,0"
+			NoteCrossedJumpMessageCommand="finishtweening;diffusealpha,0"
+		/>
+		<Layer
+			Class="BitmapText"
+			Font="_misobold small"
+			Text="down!"
+			OnCommand="shadowlength,0;y,-106;diffusealpha,0;maxwidth,70"
+			NoteCrossedDownMessageCommand="finishtweening;diffusealpha,1;zoom,1.4;linear,0.2;zoom,1;sleep,0.4;diffusealpha,0"
+			NoteCrossedJumpMessageCommand="finishtweening;diffusealpha,0"
+		/>
+		<Layer
+			Class="BitmapText"
+			Font="_misobold small"
+			Text="Jump!"
+			OnCommand="shadowlength,0;y,-106;diffusealpha,0;maxwidth,70"
+			NoteCrossedJumpMessageCommand="finishtweening;diffusealpha,1;zoom,1.4;linear,0.2;zoom,1;sleep,0.4;diffusealpha,0"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_dot"
+			OnCommand="diffusealpha,0"
+			NoteWillCrossIn500MsMessageCommand="finishtweening;y,-32;diffusealpha,0.5;linear,0.5;addy,-64;sleep,0.01;diffusealpha,0"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_dot"
+			OnCommand="diffusealpha,0"
+			NoteWillCrossIn1000MsMessageCommand="finishtweening;y,32;diffusealpha,0.5;linear,0.5;addy,-64;sleep,0.01;diffusealpha,0"
+		/>
+		<Layer
+			Class="AutoActor"
+			File="light_dot"
+			OnCommand="diffusealpha,0"
+			NoteWillCrossIn1500MsMessageCommand="finishtweening;y,96;diffusealpha,0.5;linear,0.5;addy,-64;sleep,0.01;diffusealpha,0"
+		/>
+	</children></ActorFrame>
+	
+	<ActorFrame
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and GAMESTATE:GetPlayMode()==PLAY_MODE_REGULAR and GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()==DIFFICULTY_BEGINNER  and PREFSMAN:GetPreference('MercifulBeginner')"
+		OnCommand="x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640);y,SCREEN_CENTER_Y+40;rotationx,-20"
+		FOV="45"
+		VanishX="SCREEN_CENTER_X-160"
+		VanishY="SCREEN_CENTER_Y+40"
+	><children>
+		<AutoActor
+			File="platform"
+			OnCommand="diffuse,0.6,0.6,0.6,0.8"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="x,-53;blend,add;diffusealpha,0"
+			NoteCrossedLeftMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="x,+53;blend,add;diffusealpha,0"
+			NoteCrossedRightMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="y,-53;blend,add;diffusealpha,0"
+			NoteCrossedUpMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="y,+53;blend,add;diffusealpha,0"
+			NoteCrossedDownMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+	</children></ActorFrame>
+
+	<ActorFrame
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and GAMESTATE:GetPlayMode()==PLAY_MODE_REGULAR and GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()==DIFFICULTY_BEGINNER and PREFSMAN:GetPreference('MercifulBeginner')"
+		OnCommand="x,SCREEN_CENTER_X+(SCREEN_WIDTH*160/640);y,SCREEN_CENTER_Y+40;rotationx,-20"
+		FOV="45"
+		VanishX="SCREEN_CENTER_X+160"
+		VanishY="SCREEN_CENTER_Y+40"
+	><children>
+		<AutoActor
+			File="platform"
+			OnCommand="diffuse,0.6,0.6,0.6,0.8"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="x,-53;blend,add;diffusealpha,0"
+			NoteCrossedLeftMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="x,+53;blend,add;diffusealpha,0"
+			NoteCrossedRightMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="y,-53;blend,add;diffusealpha,0"
+			NoteCrossedUpMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<AutoActor
+			File="panelglow"
+			OnCommand="y,+53;blend,add;diffusealpha,0"
+			NoteCrossedDownMessageCommand="finishtweening;diffusealpha,1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+	</children></ActorFrame>
+	
+	<ActorFrame Command="%function() loadMusic = 1 end" />
+	<ActorFrame Command="%GameplayInit" FirstUpdateCommand="%Gameplay" UpdateCommand="%GameplayUpdate"/>
+	<Layer Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+20;zoomx,((SCREEN_WIDTH/SCREEN_HEIGHT)/(4/3))"
+		> <children>
+
+		<Layer 
+			Type="SongMeterDisplay" 
+			StreamWidth="300" 
+			StreamPath="meter stream" 
+			Command="%function(self) 
+				 if Color() == 8 then ColorRGBCommand(self, 0) self:diffusealpha(0.5) 
+				elseif Color() == 9 then ColorRGBCommand(self, -1) self:diffusealpha(0.5) 
+				elseif Color() == 10 then ColorRGBCommand(self, 3) self:diffusealpha(0.5) 
+				elseif Color() == 11 then ColorRGBCommand(self, 2) self:diffusealpha(0.5) 
+				else ColorRGBCommand(self, 1) self:diffusealpha(0.7) 
+				end
+			end" 
+		>
+			<Tip File="tip" OnCommand="%function(self) 
+				 self:hidden(1)
+			end" />
+		</Layer>
+
+		<Layer File="meter frame" />
+	</children> </Layer>
+
+	<Layer
+			Type="BitmapText"
+			Font="_misobold white"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+20-5;zoom,0.35;shadowlength,0;maxwidth,SCREEN_WIDTH/1.2;"
+			InitCommand="animate,0;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%SetFromSongTitleAndCourseTitle"
+		/>
+
+	<Layer
+			Type="BitmapText"
+			Font="_misobold white"
+			OnCommand="y,SCREEN_TOP+16;x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640-35);zoom,0.25;shadowlength,0;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+			local timeintimer = self:GetSecsIntoEffect();
+
+			self:effectclock('music')
+			self:settext(SecondsToMMSS(timeintimer))
+			self:sleep(1)
+			self:queuecommand('Update')
+			end"
+		/>
+	<Layer
+			Type="BitmapText"
+			Font="_misobold white"
+			OnCommand="y,SCREEN_TOP+16;x,SCREEN_CENTER_X+(SCREEN_WIDTH*160/640-35);zoom,0.25;shadowlength,0;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+			local totaltimer = GAMESTATE:GetCurrentSong():MusicLengthSeconds()
+
+			self:settext(SecondsToMMSS(totaltimer))
+			end"
+		/>
+<!--
+		-- HALFWAY POINT
+		<Layer
+			Type="Quad"
+			OnCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,80;y,SCREEN_TOP-90;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+			local timeintimer = self:GetSecsIntoEffect();
+			local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved();
+			HalfwayCheck = 0;
+			self:effectclock('music')
+			ColorRGBCommand(self, 1)
+			self:diffusealpha(0)
+			if timeintimer >= GAMESTATE:GetCurrentSong():MusicLengthSeconds()/2 and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
+				if HalfwayCheck == 0 then
+					self:diffusealpha(1)
+					self:decelerate(1)
+					self:y(SCREEN_TOP-5)
+					self:sleep(3)
+					self:accelerate(1)
+					self:y(SCREEN_TOP-90)
+					self:sleep(100*99*99*99*99)
+				else
+					self:hidden(1)
+				end
+			end
+			self:sleep(0.02)
+			self:queuecommand('Update')
+			end"
+		/>
+
+		<Layer
+			Type="BitmapText"
+			Font="_misobold white"
+			Text="Not HalfWay"
+			OnCommand="y,SCREEN_TOP-90;x,SCREEN_CENTER_X;zoom,0.4;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+			local timeintimer = self:GetSecsIntoEffect();
+			local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved();
+			HalfwayCheck = 0;
+			self:effectclock('music')
+			self:diffusealpha(0)
+			self:shadowlength(1)
+			if timeintimer >= GAMESTATE:GetCurrentSong():MusicLengthSeconds()/2 and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
+				if HalfwayCheck == 0 then
+					self:settext('Half-Way!')
+					self:diffusealpha(1)
+					self:fadebottom(0.32)
+					self:decelerate(1)
+					self:y(SCREEN_TOP+16)
+					self:sleep(3)
+					self:accelerate(1)
+					self:y(SCREEN_TOP-90)
+					self:sleep(100*99*99*99*99)
+				else
+					self:hidden(1)
+				end
+			end
+			self:sleep(0.02)
+			self:queuecommand('Update')
+			end"
+		/>
+
+		-- MARATHON MOTVATOR
+
+		<Layer
+			Type="Quad"
+			OnCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,80;y,SCREEN_TOP-90;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+			local timeintimer = self:GetSecsIntoEffect();
+			local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved();
+			HalfwayCheck = 0;
+			self:effectclock('music')
+			ColorRGBCommand(self, 1)
+			self:diffusealpha(0)
+			if timeintimer >= GAMESTATE:GetCurrentSong():MusicLengthSeconds()*.90 and GAMESTATE:GetCurrentSong():IsMarathon() and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
+				if HalfwayCheck == 0 then
+					self:diffusealpha(1)
+					self:decelerate(1)
+					self:y(SCREEN_TOP-5)
+					self:sleep(3)
+					self:accelerate(1)
+					self:y(SCREEN_TOP-90)
+					self:sleep(100*99*99*99*99)
+				else
+					self:hidden(1)
+				end
+			end
+			self:sleep(0.02)
+			self:queuecommand('Update')
+			end"
+		/>
+
+		<Layer
+			Type="BitmapText"
+			Font="_misobold white"
+			Text="Not HalfWay"
+			OnCommand="y,SCREEN_TOP-90;x,SCREEN_CENTER_X;zoom,0.4;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+			local timeintimer = self:GetSecsIntoEffect();
+			local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved();
+			HalfwayCheck = 0;
+			self:effectclock('music')
+			self:diffusealpha(0)
+			self:shadowlength(1)
+			if timeintimer >= GAMESTATE:GetCurrentSong():MusicLengthSeconds()*.90 and GAMESTATE:GetCurrentSong():IsMarathon() and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
+				if HalfwayCheck == 0 then
+					self:settext('You almost have it! Keep going!')
+					self:diffusealpha(1)
+					self:fadebottom(0.32)
+					self:decelerate(1)
+					self:y(SCREEN_TOP+16)
+					self:sleep(3)
+					self:accelerate(1)
+					self:y(SCREEN_TOP-90)
+					self:sleep(100*99*99*99*99)
+				else
+					self:hidden(1)
+				end
+			end
+			self:sleep(0.02)
+			self:queuecommand('Update')
+			end"
+		/>
+-->
+	<!-- Difficulty: -->
+	<Layer Type="ActorFrame"
+		OnCommand="sleep,0.01;queuecommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		> <children>
+		
+		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640+123);y,SCREEN_TOP+20;zoom,0.8"><children>
+			<Actor
+				File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+				InitCommand="%function(self) self:y(IconY()) IconCrop(self) end"
+				OnCommand="animate,0;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_1) end"
+			/>
+			<Actor
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP1"
+				OnCommand="playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1)) end"
+			/>
+		</children></ActorFrame>
+		
+		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="x,SCREEN_CENTER_X+(SCREEN_WIDTH*160/640+123);y,SCREEN_TOP+20;zoom,0.8"><children>
+			<Actor
+				File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+				InitCommand="%function(self) self:y(IconY()) IconCrop(self) end"
+				OnCommand="animate,0;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_2) end"
+			/>
+			<Actor
+				Class="DifficultyMeter"
+				Type="ScreenGameplay DifficultyMeterP2"
+				OnCommand="playcommand,Update;"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2)) end"
+			/>
+		</children></ActorFrame>
+		
+	</children> </Layer>
+
+
+	<!-- Draw on top of the rest -->	
+	
+	<Layer
+		Type="Quad"
+		OnCommand="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;zoom,10000;diffusealpha,1;linear,0.3;diffusealpha,0"
+	/>
+
+	<ActorFrame
+		OnCommand="queuecommand,Set"
+		SetCommand="%function(self) 
+			local p1 = SCREENMAN:GetTopScreen():GetChild('ScoreP1')
+			local p2 = SCREENMAN:GetTopScreen():GetChild('ScoreP2')
+			if p1 then p1 = p1:GetChild('ScoreDisplayPercentage Percent'):GetChild('PercentP1'); score1 = string.gsub(p1:GetText(),'%%','') end
+			if p2 then p2 = p2:GetChild('ScoreDisplayPercentage Percent'):GetChild('PercentP2'); score2 = string.gsub(p2:GetText(),'%%','') end
+			if p1 then p1:diffuse(1,1,1,1) end
+			if p2 then p2:diffuse(1,1,1,1) end
+			if p1 and p2 and tonumber(score1) < tonumber(score2) then p1:diffuse(1,1,1,0.5) end
+			if p1 and p2 and tonumber(score2) < tonumber(score1) then p2:diffuse(1,1,1,0.5) end
+			self:sleep(.05)
+			self:queuecommand('Set')
+			end" 
+	/>
+	<Layer
+		Font="_misobold white"
+		Text=""
+		InitCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_TOP+45)
+		self:zoom(0.5)
+		self:shadowlength(2)
+		if not GAMESTATE:GetCurrentSong():IsMarathon() then
+			self:pulse()
+			self:vertalign('bottom')
+			self:effectclock('bgm')
+			self:effectmagnitude(0.9,1,0)
+			self:effectperiod(1)
+		else
+			self:hidden(0)
+		end
+		if modRate == 1 then
+			self:x(SCREEN_CENTER_X)
+		else
+			self:x(SCREEN_CENTER_X-20)
+		end
+		end"
+		OnCommand="queuecommand,Update"
+		UpdateCommand="%GameplayBPM"
+	/>
+	<Layer
+		Font="_misobold white"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+66;zoom,.3;shadowlength,0"
+		OnCommand="queuecommand,Update"
+		UpdateCommand="%function(self) 
+		s = modRate .. 'x'
+		if modRate == 1 then s = '' end
+		self:settext(s)
+		self:zoom(0.5)
+		self:diffuse(1,0.5,0.5,1)
+		if IsTimedSet() then
+			self:y(SCREEN_TOP+86)
+		else
+			self:y(SCREEN_TOP+56)
+		end
+		if modRate == 1 then
+			self:hidden(0)
+		else
+			self:x(SCREEN_CENTER_X+20)
+			self:y(SCREEN_TOP+40)
+		end
+		end"
+	/>
+
+	<Layer 
+		   File="failshadow"
+		   	Condition="(GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsCourseMode())"
+			OnCommand="" 
+			SetCommand="%function(self)
+			if GetStepsDescriptionText(PLAYER_1) == '' then 
+					self:hidden(1)
+				else 
+					self:fadeleft(0.2) 
+					self:faderight(0.2) 
+					self:fadetop(0.2) 
+					self:fadebottom(0.2) 
+					self:y(SCREEN_CENTER_Y) 
+					self:x(SCREEN_CENTER_X-(SCREEN_WIDTH*160/640-5))
+					self:zoom(0) 		
+					self:bounceend(0.4) 
+					self:zoom(0.4) 
+					self:sleep(2.5) 
+					self:accelerate(0.4) 
+					self:diffusealpha(0)
+				end 
+			end" 
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+		/>
+		<Layer 
+		   Font="_misobold small"
+		   	Condition="(GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsCourseMode())"
+			Text="???" 
+			OnCommand="" 
+			SetCommand="%function(self)
+			if GetStepsDescriptionText(PLAYER_1) == '' then 
+					self:hidden(1)
+				else
+					self:settext(GetStepsDescriptionText(PLAYER_1)) 
+					self:y(SCREEN_CENTER_Y) 
+					self:x(SCREEN_CENTER_X-(SCREEN_WIDTH*160/640-5))
+					self:zoom(0) 
+					self:bounceend(0.4) 
+					self:zoom(0.9) 
+					self:sleep(2.5) 
+					self:accelerate(0.4) 
+					self:diffusealpha(0)
+				end
+			end" 
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+		/>
+		<Layer 
+		   Font="_misobold small"
+		   	Condition="(GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsCourseMode())"
+			Text="Steps By" 
+			OnCommand="%function(self)
+			if GetStepsDescriptionText(PLAYER_1) == '' then 
+					self:hidden(1)
+				else
+					self:diffuse(0.5,0.5,1,1) 
+					self:y(SCREEN_CENTER_Y-20) 
+					self:x(SCREEN_CENTER_X-(SCREEN_WIDTH*160/640-5))
+					self:zoom(0) 
+					self:bounceend(0.4) 
+					self:zoom(0.5) 
+					self:sleep(2.5) 
+					self:accelerate(0.4) 
+					self:diffusealpha(0)
+				end
+			end" 
+		/>
+
+		<!-- Player 2 -->
+		<Layer 
+		   File="failshadow"
+		   	Condition="(GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsCourseMode())"
+			OnCommand="" 
+			SetCommand="%function(self) 
+			if GetStepsDescriptionText(PLAYER_2) == '' then 
+					self:hidden(1)
+				else 
+					self:fadeleft(0.2) 
+					self:faderight(0.2) 
+					self:fadetop(0.2) 
+					self:fadebottom(0.2) 
+					self:y(SCREEN_CENTER_Y) 
+					self:x(SCREEN_CENTER_X+(SCREEN_WIDTH*160/640-5))
+					self:zoom(0) 
+					self:bounceend(0.4) 
+					self:zoom(0.4) 
+					self:sleep(2.5) 
+					self:accelerate(0.4) 
+					self:diffusealpha(0) 
+				end 
+			end" 
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+		/>
+		<Layer 
+		   Font="_misobold small"
+		   	Condition="(GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsCourseMode())"
+			Text="???" 
+			OnCommand="" 
+			SetCommand="%function(self) 
+			if GetStepsDescriptionText(PLAYER_2) == '' then 
+					self:hidden(1)
+				else 
+					self:settext(GetStepsDescriptionText(PLAYER_2)) 
+					self:y(SCREEN_CENTER_Y) 
+					self:x(SCREEN_CENTER_X+(SCREEN_WIDTH*160/640-5))
+					self:zoom(0) 
+					self:bounceend(0.4) 
+					self:zoom(0.9) 
+					self:sleep(2.5) 
+					self:accelerate(0.4) 
+					self:diffusealpha(0)
+				end
+			end" 
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+		/>
+		<Layer 
+		   Font="_misobold small"
+		   	Condition="(GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsCourseMode())"
+			Text="Steps By" 
+			OnCommand="%function(self) 
+			if GetStepsDescriptionText(PLAYER_2) == '' then 
+					self:hidden(1) 
+				else
+					self:diffuse(1,0.5,0.5,1) 
+					self:y(SCREEN_CENTER_Y-20) 
+					self:x(SCREEN_CENTER_X+(SCREEN_WIDTH*160/640-5))
+					self:zoom(0) 
+					self:bounceend(0.4) 
+					self:zoom(0.5) 
+					self:sleep(2.5) 
+					self:accelerate(0.4) 
+					self:diffusealpha(0)
+				end
+			end" 
+		/>
+		<BitmapText
+		Condition="IsTimedSet()"
+		Text="timer" 
+        Font="_wendy small" 
+        OnCommand="%function(self) 
+			self:shadowlength(0);
+			self:zoom(0.4); 
+			self:horizalign('center'); 
+			self:x(SCREEN_CENTER_X)
+			self:y(SCREEN_TOP+70)
+			if GAMESTATE:GetEnv('Mods') then self:playcommand('Timer') else self:queuecommand('Timer') end 
+		end"
+		TimerCommand="%TimedSet.Timer"
+	/>
+</children> </ActorFrame>

@@ -1,0 +1,11 @@
+<ActorFrame> <children>
+	<Layer
+		Type="BitmapText"
+		Text="DETAILED SYSTEM INFO"
+		File="_wendy white"
+		InitCommand="diffuse,#FFFFFF00;zoom,.4;horizalign,left;shadowlength,2;x,40;y,SCREEN_CENTER_Y-200"
+		OnCommand="linear,.5;diffusealpha,1"
+		OffCommand="linear,.5;diffusealpha,0"
+	/>
+
+</children> </ActorFrame>

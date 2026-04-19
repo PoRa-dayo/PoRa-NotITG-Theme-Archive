@@ -1,0 +1,149 @@
+<ActorFrame><children>
+	
+	<LAER Type="ActorFrame" OnCommand="bob;effectmagnitude,0,6,0;effectperiod,5;" ><children>
+		
+		<LAER Type="ActorFrame" OnCommand="bob;effectmagnitude,0,3,0;effectperiod,2.4;" ><children>
+		
+			<LAER Type="ActorFrame" OnCommand="bob;effectmagnitude,0,2,0;effectperiod,2;effectoffset,0.35;"><children>
+			<LAER Type="ActorFrame" OnCommand="bob;effectmagnitude,2,0,0;effectperiod,2;effectoffset,0.95;"><children>
+				<LAER Type="ActorFrame" OnCommand="rotationz,-1;x,-14;y,-94;wag;effectmagnitude,0,0,2;effectperiod,2;effectoffset,0.95;"><children>
+					<LAER File="hairtail" OnCommand="x,-96;y,103"/>
+				</children></LAER>
+				<LAER Type="ActorFrame" OnCommand="rotationz,-1;x,14;y,-94;zoomx,-1;wag;effectmagnitude,0,0,2;effectperiod,2;effectoffset,0.95;"><children>
+					<LAER File="hairtail" OnCommand="x,-96;y,103"/>
+				</children></LAER>
+				<LAER File="hairbottom" OnCommand="x,3;y,-76"/>
+			</children></LAER>
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="x,-54;y,47;rotationz,10;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.2;"><children>
+				<LAER File="arm2" OnCommand="x,-11;y,33" />
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="x,54;y,47;zoomx,-1;rotationz,10;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.2;"><children>
+				<LAER File="arm2" OnCommand="x,-11;y,33" />
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="x,-33;y,70;rotationz,10;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.4;"><children>
+				<LAER File="arm2" OnCommand="x,-11;y,33" />
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="x,33;y,70;zoomx,-1;rotationz,10;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.4;"><children>
+				<LAER File="arm2" OnCommand="x,-11;y,33" />
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="x,-70;y,28;wag,effectperiod,1.8;effectmagnitude,0,0,3"><children>
+				<LAER File="arm2" OnCommand="x,-11;y,33" />
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="x,73;y,28;zoomx,-1;wag,effectperiod,1.8;effectmagnitude,0,0,3"><children>
+				<LAER File="arm2" OnCommand="x,-11;y,33" />
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="bob;effectmagnitude,0,2,0;effectperiod,2.4;effectoffset,0.1;"><children>
+				<LAER File="booty"
+				OnCommand="x,1;y,195;pulse;effectoffset,0.2;effectperiod,2.4;effectmagnitude,1,1,1;effectcolor1,0.99,1.02,1,1;effectcolor2,1.02,0.99,1,1" />
+			</children></LAER>
+			<LAER Type="ActorFrame" OnCommand="bob;effectmagnitude,0,2,0;effectperiod,2.4;effectoffset,0.2;"><children>
+				<LAER File="torso"
+				OnCommand="x,0;y,103;pulse;effectoffset,0.4;effectperiod,2.4;effectmagnitude,1,1,1;effectcolor1,0.99,1.02,1,1;effectcolor2,1.02,0.99,1,1" />
+			</children></LAER>
+			<LAER Type="ActorFrame" OnCommand="bob;effectmagnitude,0,2,0;effectperiod,2.4;effectoffset,0.3;"><children>
+				<LAER File="chest" InitCommand="cropbottom,.02"
+				OnCommand="pulse;effectoffset,0.6;effectperiod,2.4;effectmagnitude,1,1,1;effectcolor1,0.99,1.02,1,1;effectcolor2,1.02,0.99,1,1" />
+				<LAER File="core" OnCommand="x,2;y,42;pulse;effectperiod,0.7;effectmagnitude,1,1,1;effectcolor1,0.96,1.04,1,1;effectcolor2,1.04,0.96,1,1" />
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="bob;effectmagnitude,0,3,0;effectperiod,2;effectoffset,0.35;"><children>
+			<LAER Type="ActorFrame" OnCommand="bob;effectmagnitude,3,0,0;effectperiod,2;effectoffset,0.95;"><children>
+				<LAER Type="ActorFrame" OnCommand="bob;effectmagnitude,0,-1,0;effectperiod,2;effectoffset,0.45;"><children>
+				<LAER Type="ActorFrame" OnCommand="bob;effectmagnitude,-1,0,0;effectperiod,2;effectoffset,1.05;"><children>
+					<LAER File="hairmid" OnCommand="x,2;y,-116"/>
+					<LAER File="hairtop" OnCommand="x,3;y,-177"/>
+					<LAER Type="ActorFrame" OnCommand="rotationz,-10;x,-34;y,-120;wag;effectmagnitude,0,0,2;effectperiod,2;effectoffset,0.95;"><children>
+						<LAER File="hairside" OnCommand="x,-23;y,33"/>
+					</children></LAER>
+					<LAER Type="ActorFrame" OnCommand="rotationz,-10;x,34;y,-120;zoomx,-1;wag;effectmagnitude,0,0,-2;effectperiod,2;effectoffset,0.95;"><children>
+						<LAER File="hairside" OnCommand="x,-23;y,33"/>
+					</children></LAER>
+				</children></LAER>
+				</children></LAER>
+				<LAER File="head" OnCommand="x,0;y,-125;" />
+				<LAER Type="ActorFrame" OnCommand="y,2;"><children>
+					<LAER Type="ActorFrame"
+					OnCommand="y,-133;zoomy,1;queuecommand,Blink"
+					BlinkCommand="sleep,2;linear,0.1;zoomy,0;decelerate,0.4;zoomy,1;sleep,0.4;queuecommand,Blink;"><children>
+						<LAER File="eyes" OnCommand="x,-19;y,-2;animate,0;setstate,0;" />
+						<LAER File="eyes" OnCommand="x,19;y,-2;zoomx,-1;animate,0;setstate,0;" />
+					</children></LAER>
+					<LAER Type="ActorFrame"
+					OnCommand="y,-116;zoomy,1;queuecommand,Blink"
+					BlinkCommand="sleep,2.1;linear,0.1;zoomy,0;decelerate,0.4;zoomy,1;sleep,0.3;queuecommand,Blink;"><children>
+						<LAER File="eyes" OnCommand="x,-21;y,-2;animate,0;setstate,1;" />
+						<LAER File="eyes" OnCommand="x,21;y,-2;zoomx,-1;animate,0;setstate,1;" />
+					</children></LAER>
+					<LAER Type="ActorFrame"
+					OnCommand="y,-102;zoomy,1;queuecommand,Blink"
+					BlinkCommand="sleep,2.2;linear,0.1;zoomy,0;decelerate,0.4;zoomy,1;sleep,0.2;queuecommand,Blink;"><children>
+						<LAER File="eyes" OnCommand="x,-20;y,-2;animate,0;setstate,2;" />
+						<LAER File="eyes" OnCommand="x,20;y,-2;zoomx,-1;animate,0;setstate,2;" />
+					</children></LAER>
+				</children></LAER>
+				<LAER File="fringe" OnCommand="x,1;y,-159;skewx,.08;sleep,.1;queuecommand,DoSkew"
+				DoSkewCommand="accelerate,0.5;skewx,0;decelerate,0.5;skewx,-0.08;accelerate,0.5;skewx,0;decelerate,0.5;skewx,0.08;queuecommand,DoSkew" />
+			</children></LAER>
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="x,-54;y,47;rotationz,10;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.2;"><children>
+				<LAER Type="ActorFrame" OnCommand="x,-23;y,69;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.4"><children>
+					<LAER File="arm3" OnCommand="x,-37;y,26;zoomy,-.95;rotationz,100" />
+					<LAER Type="ActorFrame" OnCommand="x,-80;y,44;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.6"><children>
+						<LAER File="hand2" OnCommand="x,-25;y,-7" />
+					</children></LAER>
+				</children></LAER>
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="x,54;y,47;zoomx,-1;rotationz,10;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.2;"><children>
+				<LAER Type="ActorFrame" OnCommand="x,-23;y,69;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.4"><children>
+					<LAER File="arm3" OnCommand="x,-37;y,26;zoomy,-.95;rotationz,100" />
+					<LAER Type="ActorFrame" OnCommand="x,-80;y,44;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.6"><children>
+						<LAER File="hand2" OnCommand="x,-25;y,-7" />
+					</children></LAER>
+				</children></LAER>
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="x,-33;y,70;rotationz,10;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.4;"><children>
+				<LAER Type="ActorFrame" OnCommand="x,-15;y,65;rotationz,-10;wag,effectperiod,1.8;effectmagnitude,0,0,-7;effectoffset,-0.4"><children>
+					<LAER File="arm3" OnCommand="x,18;y,37;rotationz,-50" />
+				</children></LAER>
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="x,33;y,70;zoomx,-1;rotationz,10;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.4;"><children>
+				<LAER Type="ActorFrame" OnCommand="x,-15;y,65;rotationz,-10;wag,effectperiod,1.8;effectmagnitude,0,0,-7;effectoffset,-0.4"><children>
+					<LAER File="arm3" OnCommand="x,18;y,37;rotationz,-50" />
+				</children></LAER>
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="x,-70;y,28;wag,effectperiod,1.8;effectmagnitude,0,0,3"><children>
+				<LAER Type="ActorFrame" OnCommand="x,-19;y,76;wag,effectperiod,1.8;effectmagnitude,0,0,7;effectoffset,-0.2"><children>
+					<LAER File="arm1" OnCommand="x,-10;y,-43" />
+					<LAER Type="ActorFrame" OnCommand="x,-21;y,-92;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.4"><children>
+						<LAER File="hand1" OnCommand="x,17;y,-22" />
+					</children></LAER>
+				</children></LAER>
+			</children></LAER>
+			
+			<LAER Type="ActorFrame" OnCommand="x,73;y,28;zoomx,-1;wag,effectperiod,1.8;effectmagnitude,0,0,3"><children>
+				<LAER Type="ActorFrame" OnCommand="x,-19;y,76;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.2"><children>
+					<LAER File="arm1" OnCommand="x,-10;y,-43" />
+					<LAER Type="ActorFrame" OnCommand="x,-21;y,-92;wag,effectperiod,1.8;effectmagnitude,0,0,3;effectoffset,-0.4"><children>
+						<LAER File="hand1" OnCommand="x,17;y,-22" />
+					</children></LAER>
+				</children></LAER>
+			</children></LAER>
+			
+		</children></LAER>
+		
+	</children></LAER>
+	
+</children></ActorFrame>

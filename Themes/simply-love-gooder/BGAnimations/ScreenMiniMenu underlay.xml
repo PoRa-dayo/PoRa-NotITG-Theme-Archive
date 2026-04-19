@@ -1,0 +1,9 @@
+<ActorFrame> <children>
+	<Actor Type="Quad" Command="diffuse,#1E282F;stretchto,150,SCREEN_TOP,510,SCREEN_BOTTOM;x,SCREEN_CENTER_X"/>	
+			
+			<BitmapText
+			Font="Common Normal"
+			Text="Edit Song Info"
+			OnCommand="zoom,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+10;ShadowLength,1"
+		/>
+</children> </ActorFrame>

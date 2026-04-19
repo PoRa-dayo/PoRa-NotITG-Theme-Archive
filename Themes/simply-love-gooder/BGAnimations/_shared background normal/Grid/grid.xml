@@ -1,0 +1,231 @@
+<ActorFrame><children>
+			<Layer File="Gird.sprite"
+                ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end" 
+                    OnCommand="%function(self)
+                    ColorRGBCommand(self, 1)
+                    self:diffusealpha(1)
+                    self:zoom(2)
+                    self:y(SCREEN_CENTER_Y-400)
+                    self:blend(add)
+                    self:faderight(1)
+                    self:fadeleft(1)
+                    self:fadetop(0.1)
+                    end" />
+
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                <Layer
+                    Type="Quad"
+                    Condition="Weekday() == 3"
+                    OnCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    LoopCommand="diffuse,math.random(0.0,1.0),math.random(0.0,1.0),math.random(0.0,1.0),1;zoom,30;zoomx,100;zoomy,3;faderight,0.7;y,SCREEN_CENTER_Y+math.random(-600,100);x,SCREEN_CENTER_X+100;linear,math.random(5,10);x,-500;queuecommand,Loop"
+                    />
+                </children></ActorFrame>

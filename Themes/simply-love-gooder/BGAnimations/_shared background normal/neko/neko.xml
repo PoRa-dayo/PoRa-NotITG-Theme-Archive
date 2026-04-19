@@ -1,0 +1,39 @@
+<ActorFrame><children>
+	
+	<Layer
+		File="grid"
+		OnCommand="%function(self)
+		ColorRGBCommand(self, 1)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(2)
+		end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end"
+		/>
+	<Layer
+		File="nya"
+		OnCommand="shadowlength,30;x,SCREEN_RIGHT+110;y,SCREEN_BOTTOM+160;diffusealpha,1;zoom,0.4;bounce;effectmagnitude,0,-180,0;effectperiod,1;queuecommand,Loop"
+        LoopCommand="x,SCREEN_RIGHT+110;linear,5;x,SCREEN_LEFT-110;queuecommand,Loop"
+		/>
+	<Layer
+		File="nya"
+		OnCommand="shadowlength,30;x,SCREEN_RIGHT+110;y,SCREEN_BOTTOM+160;diffusealpha,1;zoom,0.4;bounce;effectmagnitude,0,-180,0;effectperiod,1;sleep,1;effectoffset,1.5;queuecommand,Loop"
+        LoopCommand="x,SCREEN_RIGHT+110;linear,5;x,SCREEN_LEFT-110;queuecommand,Loop"
+		/>
+	<Layer
+		File="nya"
+		OnCommand="shadowlength,30;x,SCREEN_RIGHT+110;y,SCREEN_BOTTOM+160;diffusealpha,1;zoom,0.4;bounce;effectmagnitude,0,-180,0;effectperiod,1;sleep,2;effectoffset,2;queuecommand,Loop"
+        LoopCommand="x,SCREEN_RIGHT+110;linear,5;x,SCREEN_LEFT-110;queuecommand,Loop"
+		/>
+	<Layer
+		File="nya"
+		OnCommand="shadowlength,30;x,SCREEN_RIGHT+110;y,SCREEN_BOTTOM+160;diffusealpha,1;zoom,0.4;bounce;effectmagnitude,0,-180,0;effectperiod,1;sleep,3;effectoffset,2.5;queuecommand,Loop"
+        LoopCommand="x,SCREEN_RIGHT+110;linear,5;x,SCREEN_LEFT-110;queuecommand,Loop"
+		/>
+	<Layer
+		File="nya"
+		OnCommand="shadowlength,30;x,SCREEN_RIGHT+110;y,SCREEN_BOTTOM+160;diffusealpha,1;zoom,0.4;bounce;effectmagnitude,0,-180,0;effectperiod,1;sleep,4;effectoffset,3;queuecommand,Loop"
+        LoopCommand="x,SCREEN_RIGHT+110;linear,5;x,SCREEN_LEFT-110;queuecommand,Loop"
+		/>
+	
+</children></ActorFrame>

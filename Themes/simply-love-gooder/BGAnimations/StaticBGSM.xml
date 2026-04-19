@@ -1,0 +1,378 @@
+<ActorFrame> <children>
+			
+			<ActorFrame OnCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Lucy' then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+        end">
+        <children>
+
+     <LAER File="_shared background normal/lucy/sky5"
+       
+        OnCommand="%function(self) ColorRGBCommand(self, 1) self:x(SCREEN_CENTER_X) self:y(SCREEN_CENTER_Y) self:zoomtowidth(SCREEN_WIDTH*1.5) self:zoomtoheight(SCREEN_HEIGHT*1.5) end"
+        ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end"
+        HideCommand="hidden,1;"
+        />
+
+        <LAER
+            File="_shared background normal/lucy/clouds"
+           
+            OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,.2;
+            ZoomToWidth,1024*1.5;ZoomToHeight,1024*1.5;spin;effectmagnitude,0,0,10;
+            customtexturerect,0,0,2,2;texcoordvelocity,0.3,0.1;"
+        />
+        <LAER
+            File="_shared background normal/lucy/clouds"
+           
+            OnCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+40;blend,add;diffusealpha,.2;
+            ZoomToWidth,1024*1.5;ZoomToHeight,1024*1.5;spin;effectmagnitude,0,0,-13;
+            customtexturerect,0,0,2,2;texcoordvelocity,-0.4,-0.2;"
+            DayTime5MessageCommand="linear,5;diffusealpha,0;"
+        />
+
+    <LAER Type="ActorFrame" OnCommand="x,SCREEN_WIDTH*0.2;y,SCREEN_HEIGHT*0.2;rotationz,20;
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="_shared background normal/lucy/beama" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" OnCommand="x,SCREEN_WIDTH*0.4;y,SCREEN_HEIGHT*0.6;rotationz,45;
+        wag;effectmagnitude,0,0,math.random(70,150)/5;effectperiod,math.random(50,200)/10;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="_shared background normal/lucy/beama" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" OnCommand="x,SCREEN_WIDTH*0.8;y,SCREEN_HEIGHT*0.7;rotationz,110;
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="_shared background normal/lucy/beama" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" OnCommand="x,SCREEN_WIDTH*0.3;y,SCREEN_HEIGHT*0.5;rotationz,-45;
+        wag;effectmagnitude,0,0,math.random(70,150)/5;effectperiod,math.random(50,200)/10;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="_shared background normal/lucy/beama" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" OnCommand="x,SCREEN_WIDTH*0.6;y,SCREEN_HEIGHT*0.1;rotationz,120;
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="_shared background normal/lucy/beama" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        
+        <LAER Type="ActorFrame" OnCommand="x,SCREEN_WIDTH*0.7;y,SCREEN_HEIGHT*0.1;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="_shared background normal/lucy/beamb" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" OnCommand="x,SCREEN_WIDTH*0.4;y,SCREEN_HEIGHT*0.3;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/5;effectperiod,math.random(50,200)/10;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="_shared background normal/lucy/beamb" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" OnCommand="x,SCREEN_WIDTH*0.2;y,SCREEN_HEIGHT*0.9;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="_shared background normal/lucy/beamb" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" OnCommand="x,SCREEN_WIDTH*0.5;y,SCREEN_HEIGHT*0.4;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/5;effectperiod,math.random(50,200)/10;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="_shared background normal/lucy/beamb" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+        <LAER Type="ActorFrame" OnCommand="x,SCREEN_WIDTH*0.6;y,SCREEN_HEIGHT*0.7;rotationz,math.random(360);
+        wag;effectmagnitude,0,0,math.random(70,150)/10;effectperiod,math.random(50,200)/5;effectoffset,math.random(25,100)/10">
+        <children> <Layer File="_shared background normal/lucy/beamb" OnCommand="zoomtoheight,1500;blend,add;diffusealpha,0.4;queuecommand,Do"
+        DoCommand="diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,0.05;diffusealpha,1;linear,1;diffusealpha,0;queuecommand,Dont"
+        DontCommand="sleep,math.random(50,200)/100;queuecommand,Do"/> </children></LAER>
+
+        </children></ActorFrame>
+
+        <ActorFrame OnCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Shame' then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+        end">
+        <children>
+
+        <Layer
+            File="_shared background normal/shame/Background"
+           
+            ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end" 
+            OnCommand="%function(self) ColorRGBCommand(self, 1) self:x(SCREEN_CENTER_X) self:y(SCREEN_CENTER_Y) self:zoomtowidth(SCREEN_WIDTH) end"
+            />
+
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+        <Layer
+            File="_shared background normal/shame/head"
+           
+            OnCommand="x,SCREEN_RIGHT-280;y,SCREEN_CENTER_Y+90;fadebottom,0.5;zoom,0.2;queuecommand,Loop"
+            LoopCommand="x,math.random(SCREEN_LEFT,SCREEN_RIGHT);diffusealpha,1;y,SCREEN_BOTTOM+180;linear,math.random(4,6);y,SCREEN_TOP-80;diffusealpha,0;queuecommand,Loop"
+            />
+            
+        </children></ActorFrame>
+
+        <ActorFrame OnCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Banshee' then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+        end">
+        <children>
+
+            <Layer
+            File="_shared background normal/MEGA"
+            />
+
+
+
+
+                </children></ActorFrame>
+
+
+
+
+
+
+                <ActorFrame OnCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Hexagons' then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+        end">
+        <children>
+                
+                <Layer
+           
+            File="_shared background normal/ayaze/ayaze"
+            />
+
+
+
+        </children></ActorFrame>
+
+
+
+
+
+
+
+
+
+
+
+
+        <ActorFrame OnCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'GOODTEK' then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+        end">
+        <children>
+            	<Layer
+           
+            File="_shared background normal/goodtek"
+            />
+
+
+        </children></ActorFrame>
+
+
+
+
+        <ActorFrame OnCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Maze' then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+        end">
+        <children>
+
+
+                <Layer
+           
+            File="_shared background normal/placeholder"
+        OnCommand="%function(self)
+        ColorRGBCommand(self, 1)
+        self:x(SCREEN_CENTER_X)
+        self:y(SCREEN_CENTER_Y)
+        self:zoom(2)
+        end"
+        ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end" />
+
+    </children></ActorFrame>
+
+
+
+
+
+
+
+
+
+
+
+    <ActorFrame OnCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Zero' then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+        end">
+        <children>
+
+
+
+            <Layer
+               
+        File="_shared background normal/Axl/axlsong.xml"
+        />
+
+
+    </children></ActorFrame>
+
+
+</children></ActorFrame>
+    <!--<Layer
+        Type="Quad"
+        OnCommand="%function(self)
+        if GAMESTATE:GetCurrentSong() then
+        self:LoadBackground('');
+        end
+        self:y(SCREEN_CENTER_Y)
+        self:x(SCREEN_CENTER_X)
+        end"
+        />-->
+
+        <Zctor
+        File="SongBackground"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT;diffusealpha,0.6"
+        CurrentSongChangedMessageCommand="finishtweening;decelerate,0.5;diffusealpha,0;sleep,0.02;queuecommand,ChangeBackground"
+        ChangeBackgroundCommand="%function(self)
+        self:finishtweening()
+        self:hidden(1)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMShowSongBackgroundSM then
+                if GAMESTATE:GetCurrentSong() then
+                    if GAMESTATE:GetCurrentSong():GetBackgroundPath() then
+                        self:scaletocover(0,SCREEN_TOP,SCREEN_WIDTH,SCREEN_BOTTOM);
+                        self:hidden(0)
+                        self:LoadBackground(GAMESTATE:GetCurrentSong():GetBackgroundPath());
+                        self:sleep(0.25)
+                        self:zoom(1.2)
+                        self:decelerate(0.5)
+                        self:scaletocover(0,SCREEN_TOP,SCREEN_WIDTH,SCREEN_BOTTOM);
+                        self:diffusealpha(0.8)
+                    else
+                        self:hidden(1)
+                    end
+                else
+                    self:hidden(1)
+                end
+            else
+                self:hidden(1)
+            end
+        end"
+        OffCommand="decelerate,0.5;diffusealpha,0"
+    />
+</children> </ActorFrame>

@@ -1,0 +1,246 @@
+<ActorFrame> <children>
+<!-- Player One Step Artist -->
+	<Layer
+		Type="ActorFrame"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		InitCommand="x,SCREEN_LEFT+102.2-40.2;y,258;zoomy,1"
+		OnCommand=""
+	><children>
+		<Layer
+			Type="Quad"
+			InitCommand="zoomx,246.2;zoomy,20;x,SCREEN_LEFT+98.2;y,118;fadebottom,0.2;playcommand,Set"
+			SetCommand="%function(self) self:diffuse(BubbleColorRGB(PLAYER_1)) end" 
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+		/>
+		<Layer 
+			Type="BitmapText"
+			Condition="not GAMESTATE:IsCourseMode()"
+			Font="_misoreg small"
+			Text="STEPS"
+			OnCommand="x,SCREEN_LEFT+20;y,110;ShadowLength,0;diffuse,#000000;horizalign,right;zoom,0.5;queuecommand,Set"
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+			SetCommand="%function(self)
+			if GAMESTATE:GetCurrentSong() then
+				self:settext('STEPS')
+			else
+				self:settext(' ')
+			end
+			end"
+		/>
+		<Layer 
+		   Font="_misobold small"
+			Text="???" 
+			OnCommand="y,110;x,SCREEN_LEFT+25;zoom,0.5;shadowlength,0;horizalign,left;maxwidth,390" 
+			SetCommand="%function(self) 
+			if GAMESTATE:GetCurrentSong() then
+				self:hidden(0)
+				if GetStepsDescriptionText(PLAYER_1) == '' then
+					self:finishtweening()
+					self:settext('No Artist Available.')
+					self:diffuse(0,0,0,1) 
+				else
+					self:finishtweening()
+					self:stopeffect()
+					self:settext(GetStepsDescriptionText(PLAYER_1))
+					self:diffuse(1,1,1,1)
+					
+				local names = {
+
+   					{'Puuro', {0,1,1} },
+   					{'TaroNuke', {240/255,154/255,95/255} },
+   					{'CondorTalon', {156/255,177/255,202/255} },
+   					{'BrightXeno', {108/255,177/255,113/255} },
+   					{'NAYOTO.', {1,0,0.1} },
+   					{'SHAME', {0,1,0} },
+   					{'Gangetsha', {1,33/255,0} },
+   					{'Andru(Zero', {1,1,0.5} },
+   					{'Jose_Varela', {1,1,0} },
+
+   					}
+                    for i = 1,table.getn(names) do
+                            if string.find( GetStepsDescriptionText(PLAYER_1), names[i][1] ) then
+                            self:diffuse(names[i][2][1],names[i][2][2],names[i][2][3],1)
+                        end
+                    end
+				end
+			else
+				self:hidden(1)
+			end
+			end" 
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+		/>
+	</children></Layer>
+
+	<!-- Player Two Step Artist -->
+	<Layer
+		Type="ActorFrame"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		InitCommand="x,SCREEN_LEFT+102.2-40.2;y,258;zoomy,1"
+		OnCommand=""
+	><children>
+		<Layer
+			Type="Quad"
+			InitCommand="zoomx,246.2;zoomy,20;x,SCREEN_LEFT+98.2;y,135;fadetop,0.2;playcommand,Set"
+			SetCommand="%function(self) self:diffuse(BubbleColorRGB(PLAYER_2)) end" 
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
+		/>
+		<Layer 
+			Font="_misobold small"
+			Text="???" 
+			OnCommand="x,SCREEN_LEFT+175;y,130;ShadowLength,0;diffuse,#000000;horizalign,right;zoom,0.5;maxwidth,390" 
+			SetCommand="%function(self)
+			if GAMESTATE:GetCurrentSong() then
+				self:hidden(0)
+				if GetStepsDescriptionText(PLAYER_2) == '' then
+					self:finishtweening()
+					self:settext('No Artist Available.')
+					self:diffuse(0,0,0,1) 
+				else
+					self:finishtweening()
+					self:settext(GetStepsDescriptionText(PLAYER_2))
+					if GetStepsDescriptionText(PLAYER_2) == 'Puuro' then
+						self:diffuse(0,0.5,1,1)
+							else
+						self:diffuse(BubbleColorText(PLAYER_2))
+					end
+				end
+			else
+				self:hidden(1)
+			end
+			end" 
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
+		/>
+		<Layer 
+			Type="BitmapText"
+			Condition="not GAMESTATE:IsCourseMode()"
+			Font="_misoreg small"
+			Text="STEPS"
+			OnCommand="x,SCREEN_LEFT+180;y,130;ShadowLength,0;diffuse,#000000;horizalign,left;zoom,0.5;queuecommand,Set"
+			CurrentSongChangedMessageCommand="playcommand,Set" 
+			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+			SetCommand="%function(self)
+			if GAMESTATE:GetCurrentSong() then
+				self:finishtweening()
+				self:settext('STEPS')
+			else
+				self:finishtweening()
+				self:settext(' ')
+			end
+			end"
+		/>
+	</children></Layer>
+	<Layer
+		Type="ActorFrame"
+		Condition="IsTimedSet() and not GetPref('EventMode')"
+		OnCommand="x,SCREEN_CENTER_X-(SCREEN_WIDTH*160/640-92);y,SCREEN_CENTER_Y-14;queuecommand,Loop"
+		CurrentSongChangedMessageCommand="stoptweening;queuecommand,Loop"
+		LoopCommand="%function(self)
+			if GAMESTATE:GetCurrentSong() and -Clock( TimedSet.CutOff ) < MSSMsMsToSeconds(Screen():GetChild('TotalTime'):GetText()) then
+				self:finishtweening()
+				self:hidden(0)
+			else
+				self:finishtweening()
+				self:hidden(1)
+			end
+			self:sleep(1)
+			self:queuecommand('Loop')
+		end"
+	><children>
+		<Layer
+			File="@Path('Graphics','longverbubble.png')"
+			OnCommand="%function(self) ColorRGBCommand(self, -1) end" 
+		/>
+		<Layer
+			Type="BitmapText"
+			Text="INSUFFICIENT TIME"
+			File="_misobold small"
+			InitCommand="zoom,.5;shadowlength,0;addx,2;addy,-2"
+			OnCommand="%function(self) self:diffuse(TextOnColor(-1)) end"
+			OffCommand="linear,0.2;diffusealpha,0"
+		/>
+	</children></Layer>
+	<BitmapText
+		Condition="IsTimedSet()"
+		Text="timer" 
+        Font="_wendy small" 
+        OnCommand="%function(self) 
+			self:shadowlength(1); 
+			self:zoom(0.3); 
+			self:horizalign('left'); 
+			self:x(SCREEN_LEFT+125)
+			self:y(SCREEN_CENTER_Y-73)
+			if GAMESTATE:GetEnv('Mods') then self:playcommand('Timer') else self:queuecommand('Timer') end 
+		end"
+		TimerCommand="%TimedSet.Timer"
+	/>
+	<BitmapText
+		Condition="IsTimedSet()"
+		Text="Time Spent:" 
+        Font="_wendy small" 
+        OnCommand="%function(self) 
+			self:shadowlength(1); 
+			self:zoom(0.3); 
+			self:horizalign('left'); 
+			self:x(SCREEN_LEFT+40)
+			self:y(SCREEN_CENTER_Y-73)
+		end"
+	/>
+	<Layer
+		Type="BitmapText"
+		Text="SELECT MUSIC"
+		Condition="not GAMESTATE:IsCourseMode()"
+		File="_wendy white"
+		InitCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,0;horizalign,left;x,SCREEN_LEFT+100-45;y,25;shadowlength,2"
+		OnCommand="linear,.5;diffusealpha,1;"
+		PressStartCommand="linear,.5;diffusealpha,0"
+		CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+			if GAMESTATE:GetCurrentSong() then
+				self:finishtweening()
+				self:zoom(0.3)
+				self:y(15)
+				self:x(SCREEN_LEFT+100-23)
+			else
+				self:finishtweening()
+				self:zoom(0.4)
+				self:y(25)
+				self:x(SCREEN_LEFT+100-45)
+			end
+			end"
+	/>
+	<Layer
+		Type="BitmapText"
+		Text=""
+		Condition="not GAMESTATE:IsCourseMode()"
+		File="_misobold small"
+		InitCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,0;x,SCREEN_LEFT+100-45;y,25;shadowlength,2"
+		OnCommand="linear,.5;diffusealpha,1;"
+		PressStartCommand="linear,.5;diffusealpha,0"
+		CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+			if GAMESTATE:GetCurrentSong() then
+				self:finishtweening()
+				self:zoom(0.6)
+				self:settext(GAMESTATE:GetCurrentSong():GetGroupName())
+				self:y(28)
+				self:x(SCREEN_LEFT+155)
+				self:maxwidth(300)
+			else
+				self:finishtweening()
+				self:settext('')
+			end
+			end"
+	/>
+
+	<Quad Command="stretchto,SCREEN_RIGHT,SCREEN_BOTTOM,SCREEN_LEFT,SCREEN_TOP;diffuse,0,0,0,0;" OptionsShowMessageCommand="linear,0.4;diffusealpha,1" />
+	<Layer Condition="not GAMESTATE:IsCourseMode()" File="DifficultyList.xml" Command="x,SCREEN_LEFT+90-40;y,SCREEN_CENTER_Y+33" OffCommand="linear,.3;diffusealpha,0" SongInfoMessageCommand="queuecommand,Update" />
+	<Quad Command="draworder,100;x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-20;zoomtowidth,SCREEN_WIDTH;zoomy,10;diffusealpha,0" OptionsShowMessageCommand="diffusealpha,1;linear,1.5;zoomx,0;" />
+	<Layer
+                File="../ScreenWithMenuElements overlay" />
+</children> </ActorFrame>
+

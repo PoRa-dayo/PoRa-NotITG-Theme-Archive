@@ -1,0 +1,75 @@
+<ActorFrame> <children>
+
+	<ActorFrame Command="%function() love = 1 end" />
+        <ActorFrame Command="%function(self) self:y(SCREEN_CENTER_Y-150) love = 1 end">
+                <children>
+        <Layer
+                Type="Quad"
+                PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(0.1); self:queuecommand('Pulse') end"
+                InitCommand="hidden,1;playcommand,Pulse"
+        />
+        
+	<Layer
+		File="SimplyLove" 
+		OnCommand="draworder,301;x,SCREEN_LEFT+220;y,SCREEN_CENTER_Y;diffusealpha,0;zoom,0.7;linear,0.4;diffusealpha,1;" 
+	/>
+                <Layer
+                Type="BitmapText"
+                Font="_wendy white"
+                SetCommand="%function(self) self:settext( string.format('%02i:%02i', Hour(), Minute()) ) end"
+                PulseMessageCommand="playcommand,Set"
+                Text=""
+                InitCommand="x,SCREEN_LEFT+75;y,SCREEN_CENTER_Y-185;shadowlength,2;horizalign,left;zoom,0.5;diffusealpha,0;linear,0.3;diffusealpha,1;playcommand,Set"
+                OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+                OffCommand="accelerate,0.4;diffusealpha,0"
+        />
+
+                <Layer
+                Type="BitmapText"
+                Font="_misoreg small"
+                SetCommand="%function(self) self:settext( string.format('%s', MonthToString(MonthOfYear())) ) end"
+                PulseMessageCommand="playcommand,Set"
+                Text=""
+                InitCommand="x,SCREEN_LEFT+170;y,SCREEN_CENTER_Y-203;shadowlength,2;horizalign,left;zoom,0.8;diffusealpha,0;linear,0.3;diffusealpha,1;playcommand,Set"
+                OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+                OffCommand="accelerate,0.4;diffusealpha,0"
+        />
+                <Layer
+                Type="BitmapText"
+                Font="_misoreg small"
+                SetCommand="%function(self) self:settext( string.format('%02i %04i', DayOfMonth(), Year()) ) end"
+                PulseMessageCommand="playcommand,Set"
+                Text=""
+                InitCommand="x,SCREEN_LEFT+170;y,SCREEN_CENTER_Y-183;shadowlength,2;horizalign,left;zoom,0.5;diffusealpha,0;linear,0.3;diffusealpha,1;playcommand,Set"
+                OnCommand="diffusealpha,0;linear,0.3;diffusealpha,1"
+                OffCommand="accelerate,0.4;diffusealpha,0"
+        />
+</children></ActorFrame>
+<Layer
+                Font="Common Normal"
+                Text=""
+                OnCommand="%function(self)
+                self:x(SCREEN_LEFT+10)
+                self:y(SCREEN_BOTTOM-25)
+                self:zoom(0.5)
+                self:horizalign('left')
+                self:maxwidth(SCREEN_WIDTH*1.9)
+
+                if not FUCK_EXE then
+                        SCREENMAN:SetNewScreen('ScreenLoveOITG')
+                end
+                self:queuecommand('CHECK')
+                end"
+                OffCommand="%function(self)
+                self:accelerate(1)
+                self:y(SCREEN_BOTTOM+50)
+                end"
+                CHECKCommand="%function(self)
+                if not FUCK_EXE then
+                        SCREENMAN:SetNewScreen('ScreenLoveOITG')
+                end
+                self:sleep(0.2)
+                self:queuecommand('CHECK')
+                end"
+                />
+</children></ActorFrame>

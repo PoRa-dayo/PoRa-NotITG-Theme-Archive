@@ -1,0 +1,8 @@
+<ActorFrame	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;bob;EffectMagnitude,0,0,0;EffectPeriod,8"><children>
+	<ActorFrame Command="queuecommand,Set" SetCommand="%function() crazy = 0 end" />
+	<ActorFrame OnCommand="bob;EffectMagnitude,0,0,0;EffectPeriod,12"><children>
+		<ActorFrame FOV="90"><children>
+			<Layer File="Vhs.sprite" InitCommand="%function(self) ColorRGBCommand(self, 1) end" ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end" OnCommand="diffusealpha,1;zoom,2;y,SCREEN_CENTER_Y-300;blend,add 	;faderight,1;fadeleft,1;fadetop,0.1" />
+		</children></ActorFrame>
+	</children></ActorFrame>
+</children></ActorFrame>

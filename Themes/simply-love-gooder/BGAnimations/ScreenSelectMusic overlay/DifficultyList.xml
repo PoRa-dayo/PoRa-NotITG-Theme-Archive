@@ -1,0 +1,65 @@
+<ActorFrame><children>
+	<ActorFrame UpdateCommand="%DifficultyList" />
+	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" File="cursor p1" UpdateCommand="%function(self)
+	self:finishtweening()
+	self:decelerate(0.2)
+	self:y((listPointerY[1]-1)*19.3)
+	self:diffuse(BubbleColorRGB(PLAYER_1))
+	end"  
+	Command="x,-24;zoom,.8;bounce;effectmagnitude,-8,0,0;effectperiod,1.0;effectoffset,0.2;effectclock,bgm;shadowlength,4" />
+	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" Type="Quad"
+	UpdateCommand="%function(self)
+	self:finishtweening()
+	self:decelerate(0.2)
+	self:y((listPointerY[1]-1)*19.3)
+	self:diffuse(BubbleColorRGB(PLAYER_1))
+	end" 
+	Command="%function(self)
+	self:x(116)
+	self:zoomto(258,20,0,0)
+	self:shadowlength(0)
+	self:diffuse(BubbleColorRGB(PLAYER_1))
+	self:fadetop(1)
+	self:cropright(0.045)
+	end" />
+
+	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" File="cursor p2" UpdateCommand="%function(self)
+	self:finishtweening()
+	self:decelerate(0.2)
+	self:y((listPointerY[2]-1)*19.3)
+	self:diffuse(BubbleColorRGB(PLAYER_2))
+	end"  
+	Command="x,240;zoom,.8;bounce;effectmagnitude,8,0,0;effectperiod,1.0;effectoffset,0.2;effectclock,bgm;shadowlength,4" />
+	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" Type="Quad"
+	UpdateCommand="%function(self)
+	self:finishtweening()
+	self:decelerate(0.2)
+	self:y((listPointerY[2]-1)*19.3)
+	self:diffuse(BubbleColorRGB(PLAYER_2))
+	end" 
+	Command="%function(self)
+	self:x(104)
+	self:zoomto(258,20,0,0)
+	self:shadowlength(0)
+	self:diffuse(BubbleColorRGB(PLAYER_2))
+	self:fadebottom(1)
+	self:cropleft(0.045)
+	end" />
+<!--
+	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" File="cursor p2" UpdateCommand="y,(listPointerY[2]-1)*19.3" Command="x,240;zoom,.8;bounce;effectmagnitude,8,0,0;effectperiod,1.0;effectoffset,0.2;effectclock,bgm;shadowlength,4" />
+-->
+	<Layer Type="ActorFrame" Command="zoomx,.6;" ><children>
+
+		
+		<Layer File="@'DifficultyList'..Color()..' 1x8.png'" InitCommand="aux,1" UpdateCommand="%function(self) DifficultyListCommand(self,'feet') self:x(20) self:shadowlength(1) end" />
+		<Layer File="@'DifficultyList'..Color()..' 1x8.png'" InitCommand="aux,2" UpdateCommand="%function(self) DifficultyListCommand(self,'feet') self:x(20) self:shadowlength(1) end" />
+		<Layer File="@'DifficultyList'..Color()..' 1x8.png'" InitCommand="aux,3" UpdateCommand="%function(self) DifficultyListCommand(self,'feet') self:x(20) self:shadowlength(1) end" />
+		<Layer File="@'DifficultyList'..Color()..' 1x8.png'" InitCommand="aux,4" UpdateCommand="%function(self) DifficultyListCommand(self,'feet') self:x(20) self:shadowlength(1) end" />
+		<Layer File="@'DifficultyList'..Color()..' 1x8.png'" InitCommand="aux,5" UpdateCommand="%function(self) DifficultyListCommand(self,'feet') self:x(20) self:shadowlength(1) end" />
+	</children></Layer>
+	<Layer Font="_wendywhite numbers" Text="" InitCommand="aux,1" UpdateCommand="%function(self) DifficultyListCommand(self,'meter') self:x(SCREEN_LEFT) end" />
+	<Layer Font="_wendywhite numbers" Text="" InitCommand="aux,2" UpdateCommand="%function(self) DifficultyListCommand(self,'meter') self:x(SCREEN_LEFT) end" />
+	<Layer Font="_wendywhite numbers" Text="" InitCommand="aux,3" UpdateCommand="%function(self) DifficultyListCommand(self,'meter') self:x(SCREEN_LEFT) end" />
+	<Layer Font="_wendywhite numbers" Text="" InitCommand="aux,4" UpdateCommand="%function(self) DifficultyListCommand(self,'meter') self:x(SCREEN_LEFT) end" />
+	<Layer Font="_wendywhite numbers" Text="" InitCommand="aux,5" UpdateCommand="%function(self) DifficultyListCommand(self,'meter') self:x(SCREEN_LEFT) end" />
+</children></ActorFrame>

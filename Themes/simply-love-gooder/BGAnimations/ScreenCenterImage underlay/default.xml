@@ -1,0 +1,13 @@
+<ActorFrame><children>
+	<Actor
+		File="test"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.3;diffusealpha,1"
+		OffCommand="linear,0.3;diffusealpha,0"
+	/>
+	<Actor
+		Font="Common Normal"
+		Text="Use the arrow keys to move. Hold shift while pressing them to resize.::Press space to restore settings back to normal."
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-7;shadowlength,2;diffusealpha,0;zoom,0.5;linear,0.3;diffusealpha,1"
+		OffCommand="linear,0.3;diffusealpha,0"
+	/>
+</children></ActorFrame>

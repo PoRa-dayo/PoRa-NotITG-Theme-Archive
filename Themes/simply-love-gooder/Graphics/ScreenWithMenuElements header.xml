@@ -1,0 +1,7 @@
+<ActorFrame> <children>
+	<Layer
+        Type="Quad"
+        OnCommand="diffuse,0,0,0,0;zoom,10000000;"
+        />
+
+</children> </ActorFrame>

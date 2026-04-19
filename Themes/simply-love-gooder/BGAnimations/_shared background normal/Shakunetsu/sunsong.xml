@@ -1,0 +1,23 @@
+<ActorFrame><children>
+	
+	<Layer
+		File="background.png"
+		OnCommand="%function(self)
+		ColorRGBCommand(self, 1)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(1)
+		end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end"
+		/>
+	<Layer
+		File="background.png"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(1)
+		self:diffusealpha(0.8)
+		end"
+		/>
+	
+</children></ActorFrame>

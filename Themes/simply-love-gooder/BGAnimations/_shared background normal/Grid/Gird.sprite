@@ -1,0 +1,20 @@
+[Sprite]
+Texture=vhsgridspr 2x5.png
+Frame0000=1
+Delay0000=0.05
+Frame0001=2
+Delay0001=0.05
+Frame0002=3
+Delay0002=0.05
+Frame0003=4
+Delay0003=0.05
+Frame0004=5
+Delay0004=0.05
+Frame0005=6
+Delay0005=0.05
+Frame0006=7
+Delay0006=0.05
+Frame0007=8
+Delay0007=0.05
+Frame0008=9
+Delay0008=0.05

@@ -1,0 +1,216 @@
+<ActorFrame><children>
+	
+	<Layer
+		File="Hexagon"
+		OnCommand="%function(self)
+        self:x(SCREEN_RIGHT-250)
+        self:y(SCREEN_CENTER_Y)
+        ColorRGBCommand(self, 1)
+        self:diffusealpha(0.6)
+        end"
+        ColorSelectedMessageCommand="%function(self) self:linear(1) ColorRGBCommand(self, 1) self:diffusealpha(.6) end"
+		/>
+	<Layer
+    File="square"
+    OnCommand="%function(self)
+    self:x(SCREEN_CENTER_X+450)
+    self:y(SCREEN_CENTER_Y)
+    self:hidden(0)
+    self:zoom(2)
+    self:glow(ColorRGB(1))
+    self:zoomx(0.03)
+    self:diffusealpha(1)
+    self:blend('WeightedMultiply')
+    self:linear(6)
+    self:x(SCREEN_CENTER_X-120)
+    self:queuecommand('Loop')
+    end"
+
+    LoopCommand="%function(self)
+    self:x(SCREEN_CENTER_X+450)
+    self:y(SCREEN_CENTER_Y)
+    self:hidden(0)
+    self:zoom(2)
+    self:glow(ColorRGB(1))
+    self:zoomx(0.03)
+    self:diffusealpha(1)
+    self:blend('WeightedMultiply')
+    self:linear(6)
+    self:x(SCREEN_CENTER_X-120)
+    self:queuecommand('Loop')
+    end"
+
+    ColorSelectedMessageCommand="%function(self) self:linear(0) ColorRGBCommand(self, 1) self:diffusealpha(1) end"
+    />
+
+    <Layer
+    File="square"
+    OnCommand="%function(self)
+    self:x(SCREEN_CENTER_X+450)
+    self:y(SCREEN_CENTER_Y)
+    self:hidden(0)
+    self:zoom(2)
+    self:glow(ColorRGB(2))
+    self:zoomx(0.03)
+    self:diffusealpha(1)
+    self:sleep(1)
+    self:blend('WeightedMultiply')
+    self:linear(6)
+    self:x(SCREEN_CENTER_X-120)
+    self:queuecommand('Loop')
+    end"
+
+    LoopCommand="%function(self)
+    self:x(SCREEN_CENTER_X+450)
+    self:y(SCREEN_CENTER_Y)
+    self:hidden(0)
+    self:zoom(2)
+    self:glow(ColorRGB(2))
+    self:zoomx(0.03)
+    self:diffusealpha(1)
+    self:blend('WeightedMultiply')
+    self:linear(6)
+    self:x(SCREEN_CENTER_X-120)
+    self:queuecommand('Loop')
+    end"
+
+    ColorSelectedMessageCommand="%function(self) self:linear(0) ColorRGBCommand(self, 3) self:diffusealpha(1) end"
+    />
+
+    <Layer
+    File="square"
+    OnCommand="%function(self)
+    self:x(SCREEN_CENTER_X+450)
+    self:y(SCREEN_CENTER_Y)
+    self:hidden(0)
+    self:zoom(2)
+    self:glow(ColorRGB(3))
+    self:zoomx(0.03)
+    self:diffusealpha(1)
+    self:sleep(2)
+    self:blend('WeightedMultiply')
+    self:linear(6)
+    self:x(SCREEN_CENTER_X-120)
+    self:queuecommand('Loop')
+    end"
+
+    LoopCommand="%function(self)
+    self:x(SCREEN_CENTER_X+450)
+    self:y(SCREEN_CENTER_Y)
+    self:hidden(0)
+    self:zoom(2)
+    self:glow(ColorRGB(3))
+    self:zoomx(0.03)
+    self:diffusealpha(1)
+    self:blend('WeightedMultiply')
+    self:linear(6)
+    self:x(SCREEN_CENTER_X-120)
+    self:queuecommand('Loop')
+    end"
+
+    ColorSelectedMessageCommand="%function(self) self:linear(0) ColorRGBCommand(self, 3) self:diffusealpha(1) end"
+    />
+
+    <Layer
+    File="square"
+    OnCommand="%function(self)
+    self:x(SCREEN_CENTER_X+450)
+    self:y(SCREEN_CENTER_Y)
+    self:hidden(0)
+    self:zoom(2)
+    self:glow(ColorRGB(4))
+    self:zoomx(0.03)
+    self:diffusealpha(1)
+    self:sleep(3)
+    self:blend('WeightedMultiply')
+    self:linear(6)
+    self:x(SCREEN_CENTER_X-120)
+    self:queuecommand('Loop')
+    end"
+
+    LoopCommand="%function(self)
+    self:x(SCREEN_CENTER_X+450)
+    self:y(SCREEN_CENTER_Y)
+    self:hidden(0)
+    self:zoom(2)
+    self:glow(ColorRGB(4))
+    self:zoomx(0.03)
+    self:diffusealpha(1)
+    self:blend('WeightedMultiply')
+    self:linear(6)
+    self:x(SCREEN_CENTER_X-120)
+    self:queuecommand('Loop')
+    end"
+
+    ColorSelectedMessageCommand="%function(self) self:linear(0) ColorRGBCommand(self, 4) self:diffusealpha(1) end"
+    />
+
+    <Layer
+    File="square"
+    OnCommand="%function(self)
+    self:x(SCREEN_CENTER_X+450)
+    self:y(SCREEN_CENTER_Y)
+    self:hidden(0)
+    self:zoom(2)
+    self:glow(ColorRGB(5))
+    self:zoomx(0.03)
+    self:diffusealpha(1)
+    self:sleep(4)
+    self:blend('WeightedMultiply')
+    self:linear(6)
+    self:x(SCREEN_CENTER_X-120)
+    self:queuecommand('Loop')
+    end"
+
+    LoopCommand="%function(self)
+    self:x(SCREEN_CENTER_X+450)
+    self:y(SCREEN_CENTER_Y)
+    self:hidden(0)
+    self:zoom(2)
+    self:glow(ColorRGB(5))
+    self:zoomx(0.03)
+    self:diffusealpha(1)
+    self:blend('WeightedMultiply')
+    self:linear(6)
+    self:x(SCREEN_CENTER_X-120)
+    self:queuecommand('Loop')
+    end"
+
+    ColorSelectedMessageCommand="%function(self) self:linear(0) ColorRGBCommand(self, 5) self:diffusealpha(1) end"
+    />
+
+    <Layer
+    File="square"
+    OnCommand="%function(self)
+    self:x(SCREEN_CENTER_X+450)
+    self:y(SCREEN_CENTER_Y)
+    self:hidden(0)
+    self:zoom(2)
+    self:glow(ColorRGB(6))
+    self:zoomx(0.03)
+    self:diffusealpha(1)
+    self:sleep(5)
+    self:blend('WeightedMultiply')
+    self:linear(6)
+    self:x(SCREEN_CENTER_X-120)
+    self:queuecommand('Loop')
+    end"
+
+    LoopCommand="%function(self)
+    self:x(SCREEN_CENTER_X+450)
+    self:y(SCREEN_CENTER_Y)
+    self:hidden(0)
+    self:zoom(2)
+    self:glow(ColorRGB(6))
+    self:zoomx(0.03)
+    self:diffusealpha(1)
+    self:blend('WeightedMultiply')
+    self:linear(6)
+    self:x(SCREEN_CENTER_X-120)
+    self:queuecommand('Loop')
+    end"
+
+    ColorSelectedMessageCommand="%function(self) self:linear(0) ColorRGBCommand(self, 6) self:diffusealpha(1) end"
+    />
+	
+</children></ActorFrame>

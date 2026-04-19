@@ -1,0 +1,54 @@
+<ActorFrame><children>
+	
+	<Layer
+		File="background.png"
+		OnCommand="%function(self)
+		ColorRGBCommand(self, 1)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(1)
+		end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end"
+		/>
+	<Layer
+		File="background.png"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(1)
+		self:diffusealpha(0.8)
+		end"
+		/>
+	<Layer
+		File="relax.png"
+		OnCommand="%function(self)
+		ColorRGBCommand(self, 1)
+		self:x(SCREEN_CENTER_X+90)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(1)
+		if string.find(string.lower(PREFSMAN:GetPreference('DisplayAspectRatio')), '1.777778')  then
+                self:zoomx(0.75)
+                end
+                if string.find(string.lower(PREFSMAN:GetPreference('DisplayAspectRatio')), '1.333333')  then
+                self:zoomx(1)
+                end
+		end"
+		ColorSelectedMessageCommand="%function(self) self:linear(.5) ColorRGBCommand(self, 1) self:diffusealpha(1) end"
+		/>
+	<Layer
+		File="relax.png"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X+90)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(1)
+		self:diffusealpha(0.8)
+		if string.find(string.lower(PREFSMAN:GetPreference('DisplayAspectRatio')), '1.777778')  then
+                self:zoomx(0.75)
+                end
+                if string.find(string.lower(PREFSMAN:GetPreference('DisplayAspectRatio')), '1.333333')  then
+                self:zoomx(1)
+                end
+		end"
+		/>
+	
+</children></ActorFrame>

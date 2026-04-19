@@ -1,0 +1,19 @@
+<ActorFrame> <children>
+	<Layer
+		Text="DANCE"
+		File="_wendy white"
+		InitCommand="y,0;x,-205;zoom,0.4" 
+		OffCommand="%OutCommand" 
+		GainFocusCommand="stoptweening;bounceend,0.2;diffuse,1,1,1,1"
+		LoseFocusCommand="stoptweening;decelerate,0.2;diffuse,0.3,0.3,0.3,1"
+		/>
+	<BitampText
+		Text="Your regular game mode"
+		File="_misoreg small"
+		OnCommand="x,-250;horizalign,left;zoom,.4;y,20;"
+		GainFocusCommand="stoptweening;bounceend,0.2;diffuse,1,1,1,1"
+		LoseFocusCommand="stoptweening;bounceend,0.2;diffuse,0.3,0.3,0.3,1"
+		OffCommand="bounceend,0.3;diffusealpha,0"
+	/>
+
+</children> </ActorFrame>

@@ -1,0 +1,26 @@
+[Sprite]
+Texture=idle 5x1.png
+Frame0000=0
+Delay0000=0.125
+Frame0001=1
+Delay0001=0.125
+Frame0002=2
+Delay0002=0.125
+Frame0003=0
+Delay0003=0.125
+Frame0004=1
+Delay0004=0.125
+Frame0005=2
+Delay0005=0.125
+Frame0006=0
+Delay0006=0.125
+Frame0007=1
+Delay0007=0.125
+Frame0008=2
+Delay0008=0.125
+Frame0009=0
+Delay0009=0.125
+Frame0010=3
+Delay0010=0.125
+Frame0011=4
+Delay0011=0.125
