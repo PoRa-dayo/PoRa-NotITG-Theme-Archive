@@ -189,7 +189,7 @@ This theme already has almost every feature you can ask for, so there are very f
 
 ## Changelogs:
 -Added "Play Mods" (takes you to 2P Regular immediately)\
--Placed Dance Mode, Battle Mode and Fitness Mode inside Arcade Modes option.\
+-Placed Dance Mode, Battle Mode and Survival Mode inside Arcade Modes option.\
 -Changed the layering of the BPM number and the player icons during gameplay so they stay hidden in modfiles.\
 -Moved the help text in the Config Keys screen to the top.\
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Profile Options (broken in NotITG). Removed Show Caution and Show Instructions options, they don't do anything in this theme and break other themes.\
