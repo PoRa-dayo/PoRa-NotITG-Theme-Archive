@@ -16,7 +16,7 @@ An archive by PoRa that hosts old NotITG-compatible themes, slightly edited to e
 These were only tested on NotITG v4.9.1 Coin Mode Home + Event Mode.
 
 All themes here are ensured to have: modern noteskin customization, modern judgment font customization, proper difficulty number, step artist, song length indicator and result indicator (can be grades or percentage score) on song selection screen, Stitch.lua stuff (FailOverlay, in-game console, whatever extra overlays you want, etc.), a "Play Mods" button (takes you to 2P Regular immediately), Course (Marathon) Mode being accessible, a Select Theme option, and a Display Resolution option.\
-Other modern features are not necessarily added, mainly for either the sake of keeping it true to the original, or because of UI issues.
+Other modern features are not necessarily added, mainly for either the sake of keeping it true to the original, or because of UI issues. I also want to keep these themes at a 'frozen in time' state as much as possible, which means the themes' version numbers stay the same, the tips and birthdays stay the same no matter how outdated they are, and some menus remain lacking in features, to show that they're products of their time.
 
 I'm still new to theming so I actually don't know for sure how this all works, I just copy pasted stuff from other themes until I figure out what works haha. I just want there to be a bunch of working themes to make theming easier in the future. Maybe I'll try making my own theme some day? But until then, back to noteskin hole I go.
 
@@ -56,7 +56,7 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Original theme by Connormgs, still maintained? (not sure) Optimized for NotITG 4.9.1 by PoRa
 
 ## Changelogs:
--Added "Play Mods" (takes you to 2P Regular immediately)\
+-Added "Play Mods" (takes you to 2P Dance immediately)\
 -Made noteskins use the entire NoteSkins folder, and judgment fonts use the _Judgments folder\
 -Mods now affect players 1-8\
 -Added NotITG MetaMods\
@@ -118,7 +118,7 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 -Original theme by Mad Matt, no longer maintained. Optimized for NotITG 4.9.1 by PoRa
 
 ## Changelogs:
--Added "Continue" (takes you to 2P Regular and selects Squire immediately since this theme doesn't save your class once you exit)\
+-Added "Continue" (takes you to 2P Dance and selects Squire immediately since this theme doesn't save your class once you exit)\
 -Fixed duplicated/overlapping text in the Options menu.\
 -Added Display Mode, Resolution, Select Theme option.\
 -_missing font now redirects to FFT2 white font for better readability in the UI that uses it.\
@@ -188,7 +188,7 @@ This theme already has almost every feature you can ask for, so there are very f
 -Original theme by Ace of Arrows, and unlike most other SM3.95/OITG themes, it's still being maintained! Optimized for NotITG 4.9.1 by PoRa with permission.
 
 ## Changelogs:
--Added "Play Mods" (takes you to 2P Regular immediately)\
+-Added "Play Mods" (takes you to 2P Dance immediately)\
 -Placed Dance Mode, Battle Mode and Survival Mode inside Arcade Modes option.\
 -Changed the layering of the BPM number and the player icons during gameplay so they stay hidden in modfiles.\
 -Moved the help text in the Config Keys screen to the top.\
@@ -203,5 +203,18 @@ This theme already has almost every feature you can ask for, so there are very f
 <img width="200" height="150" alt="NotITG-v4 9 1_W6ivwVRoeT" src="https://github.com/user-attachments/assets/9fcada5c-edc2-4c9d-b406-a7dc334d24e6" />
 <img width="200" height="150" alt="NotITG-v4 9 1_AnneehDTt7" src="https://github.com/user-attachments/assets/b8037208-3117-4324-941b-0229eee88d94" />
 
+# SIMPLY LOVE GOODER (Jose's Unofficial Visual Modification)
+A custom fork of NotITG's Simply Love, with loads of new features.
 
+## Credits:
+Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 by PoRa.
 
+## Changelogs:
+-Added "Play Mods" (takes you to 2P Dance immediately)\
+-Fixed the 'The actor file in '/Themes/simply-love-gooder/BGAnimations/ScreenGameplay ready/' is as a blank, invalid File attribute "Layer1"' error.
+-Moved Advanced Graphic Options to the main options because it keeps refreshing the theme every time you select it inside Graphic Options.\
+-Added the grades on the music wheel similar to the latest Simply Love themes.
+-Made noteskins use the entire NoteSkins folder, judgment fonts use the _Judgments folder. Mods now affect players 1-8.\
+-Added M speedmod.\
+-Added NotITG MetaMods.\
+-Added SmartBlender. Everyone loves SmartBlender.\

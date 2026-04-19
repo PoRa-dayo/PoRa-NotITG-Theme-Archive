@@ -169,7 +169,7 @@
 				Type="BitmapText"
 
 				Font="_eurostile normal"
-				Text="&MENUUP;"
+				Text="&MENULEFT;"
 				OnCommand="x,-5;horizalign,right;zoomx,0.5;zoomy,0.7;diffusealpha,0"
 				EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,1;zoomx,0.7"
 				SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.5"
@@ -202,7 +202,7 @@
 				Type="BitmapText"
 
 				Font="_eurostile normal"
-				Text="&MENUDOWN;"
+				Text="&MENURIGHT;"
 				OnCommand="x,+15;horizalign,center;zoomx,0.5;zoomy,0.7;diffusealpha,0"
 				EnableSelectHelpMessageCommand="stoptweening;bounceend,0.2;diffusealpha,1;zoomx,0.7"
 				SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;zoomx,0.5"
