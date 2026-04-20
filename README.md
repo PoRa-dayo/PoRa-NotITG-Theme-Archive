@@ -222,6 +222,9 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -Added NotITG MetaMods.\
 -Added SmartBlender. Everyone loves SmartBlender.\
 -Not sure why the Config Key menu is shifted to the right, so I changed the Config Key menu to look like the original Simply Love.\
+-Marathon Mode no longer shows a bunch of errors when starting a course.\
+-Slightly altered the UI of course contents.\
+-Courses now redirect you to evaluation screen instead of back to the title screen.\
 -Added offset plot and spellcard viewer.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 

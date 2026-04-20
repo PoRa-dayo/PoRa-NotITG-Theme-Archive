@@ -16,6 +16,7 @@ function ScreenTitleBranch()
 end
 
 function EvaluationNextScreen()
+
 	if GetPref('EventMode') then return SongSelectionScreen() end
 	if IsTimedSet() then
 		if Clock( TimedSet.End ) < 0 then 
@@ -66,11 +67,7 @@ function GetGameplayScreen()
 	if Song and Song:GetSongDir() == "Songs/In The Groove/Training1/" then
 		return "ScreenGameplayTraining"
 	end
-
-	if GAMESTATE:IsCourseMode() then
-		return "ScreenGameplayTraining"
-	end
-
+    
 	return "ScreenGameplay"
 end
 
