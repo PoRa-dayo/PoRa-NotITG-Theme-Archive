@@ -18,7 +18,7 @@
 	/>
 	<Layer
 		Font="Common Normal"
-		Text="Check out the other game modes of NotITG."
+		Text="Check out other game modes of NotITG."
 		InitCommand="addx,250;zoom,2;horizalign,center;shadowlength,0;diffusealpha,0"
 		GainFocusCommand="@'diffuse,'..DifficultyColor(1)..';finishtweening;zoom,2.2;bounceend,0.2;zoom,2;y,60'"
 		LoseFocusCommand="decelerate,0.3;zoom,1.8;y,0;diffusealpha,0"
