@@ -232,3 +232,5 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 <img width="200" height="150" alt="NotITG-v4 9 1_gPeVZXXoP2" src="https://github.com/user-attachments/assets/35cc0244-202f-4176-9894-ad1bd0f49ed6" />
 <img width="200" height="150" alt="NotITG-v4 9 1_WvZvelobqm" src="https://github.com/user-attachments/assets/23019231-2fdc-442f-b4e9-0d3ade98ff5a" />
 <img width="200" height="150" alt="NotITG-v4 9 1_O7mSi1rTVj" src="https://github.com/user-attachments/assets/50e12b52-e612-4316-b23e-bb6736f156a7" />
+<img width="200" height="150" alt="NotITG-v4 9 1_PuoX0zosiz" src="https://github.com/user-attachments/assets/a79d82fe-cdf8-4934-b89a-a54740262c0c" />
+
