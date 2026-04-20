@@ -213,7 +213,7 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 
 ## Changelogs:
 -Added "Play Mods" (takes you to 2P Dance immediately)\
--Fixed the 'The actor file in '/Themes/simply-love-gooder/BGAnimations/ScreenGameplay ready/' is as a blank, invalid File attribute "Layer1"' error.
+-Fixed the 'The actor file in '/Themes/simply-love-gooder/BGAnimations/ScreenGameplay ready/' is as a blank, invalid File attribute "Layer1"' error.\
 -Fixed the issue that made the speedmod set at setdefault in modfiles get overwritten by player's speedmod.\
 -Moved Advanced Graphic Options to the main options because it keeps refreshing the theme every time you select it inside Graphic Options.\
 -Added the grades on the music wheel similar to the latest Simply Love themes.\
