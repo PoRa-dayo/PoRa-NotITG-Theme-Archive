@@ -1014,7 +1014,7 @@ ModsPlayer = {}
 ModsMaster = {}
 ModsMaster.Perspective =	{ modlist = {'Overhead','Hallway','Distant','Incoming','Space'}, Select = 1 }
 ModsMaster.NoteSkin =		{ modlist = NOTESKIN:GetNoteSkinNames(), Select = 1 }
-ModsMaster.Turn =			{ modlist = {'Mirror','Left','Right','Shuffle','SmartBlender','Blender'}, default = 'no mirror,no left,no right,no shuffle,no supershuffle', mods = {'mirror','left','right','shuffle','supershuffle'} }
+ModsMaster.Turn =			{ modlist = {'Mirror','Left','Right','Shuffle','SmartBlender','Blender'}, default = 'no mirror,no left,no right,no shuffle,no supershuffle,nosmartblender', mods = {'mirror','left','right','shuffle','smartblender','supershuffle'} }
 ModsMaster.Hide = 			{ modlist = {'Hide Targets','Hide Judgments','Hide Background'}, default ='no dark,no blind,no cover', mods = {'dark','blind','cover'} }
 ModsMaster.Accel =			{ modlist = {'Accel','Decel','Wave','Boomerang','Expand','Bump'}, default = 'no boost,no brake,no wave,no boomerang,no expand,no bumpy', mods = {'Boost','Brake','Wave','Boomerang','Expand','Bumpy'} }
 ModsMaster.Scroll = 		{ modlist = {'Reverse','Split','Alternate','Cross','Centered'}, default = 'no reverse,no split,no alternate,no cross,no centered' }
