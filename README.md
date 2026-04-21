@@ -1,5 +1,5 @@
 This archive only hosts NotITG-compatible themes that do not already have a NotITG fork maintained by anyone else, with the exception being Simply ITG because idk how to contact the creator.
-So here's a list of themes that do have NotITG forks and are still currently maintained by other people:
+So here's a list of usable themes that do have NotITG forks and are still currently maintained by other people:
 
 [Simply Love - Oat vs. Rya's Fork](https://github.com/oatmealine/simply-love-oat-fork) \
 [GrooveNights for NotITG](https://github.com/Altracer42/GrooveNights_nitg) \
@@ -86,7 +86,7 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 # DANCE WITH INTENSITY
 A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHorse.
 ## Credits:
--Original theme by Jose Varela, no longer maintained (detailed credits in README). Optimized for NotITG 4.9.1 by PoRa
+-Original theme by Jose Varela, no longer maintained (detailed credits in README). Optimized for NotITG 4.9.1 by PoRa with permission.
 
 ## Changelogs:
 -Added "Play Mods" (takes you to 2P Regular immediately)\
@@ -148,7 +148,7 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 The accelerated operational interface for Stepmania 3.95 ported to NotITG!\
 OITGThemerFallback is a fallback theme that's made to be closer to the base SM3.9 theme. It also has some documentation in the metrics that you can use as a reference to make your own theme.
 ## Credits:
--Original theme by k//eternal. Original NotITG port by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 by Nhan and PoRa.
+-Original theme by k//eternal. Original NotITG port by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 by Nhan and PoRa with permission.
 
 ## Changelogs:
 -Added "Play Mods" (takes you to 2P Regular Hard difficulty immediately)\
@@ -210,7 +210,7 @@ This theme already has almost every feature you can ask for, so there are very f
 A custom fork of NotITG's Simply Love, with loads of new features.
 
 ## Credits:
-Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 by PoRa.
+Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 by PoRa with permission.
 
 ## Changelogs:
 -Added "Play Mods" (takes you to 2P Dance immediately)\
