@@ -235,3 +235,7 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 <img width="200" height="150" alt="NotITG-v4 9 1_O7mSi1rTVj" src="https://github.com/user-attachments/assets/50e12b52-e612-4316-b23e-bb6736f156a7" />
 <img width="200" height="150" alt="NotITG-v4 9 1_PuoX0zosiz" src="https://github.com/user-attachments/assets/a79d82fe-cdf8-4934-b89a-a54740262c0c" />
 
+
+# Special thanks
+[MattMayuga](https://github.com/Tiny-Foxes/JudgeFonts-by-MattMayuga/) - Judgment fonts.
+[HURG-IIDX](https://github.com/HURG-IIDX/Simply-Love-Judgefonts) - Judgment fonts.
