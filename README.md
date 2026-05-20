@@ -104,6 +104,8 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Fixed the softlock that occurs when discarding offset changes\
 -Fixed the tween overflow error that occurs when scrolling through songs too quickly\
 -Added the ability to set the resolution alongside the ratio. All ratios except for 4:3, 16:10, 16:9, 3:2 and 5:4 are removed.\
+-Little triangles are shown in song selection screen whenever there's an easier or harder difficulty available.\
+-Machine Percentage High Score is now shown in song selection screen when Show Score in Select Music option is enabled.\
 -Added the song title in the evaluation screen to account for charts with no banners.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.
@@ -173,6 +175,8 @@ OITGThemerFallback is a fallback theme that's made to be closer to the base SM3.
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that) and Profile Options (NotITG's built-in profile system is broken). Removed Show Caution, Show Song Options and Show Instructions options as it doesn't really affect anything in A.O.I., it just causes other themes to break.\
 -Finished the UI in Edit Mode.\
 -Changed the background of the results screen to one of the unused backgrounds when you get an E grade.\
+-Little triangles are shown in song selection screen whenever there's an easier or harder difficulty available.\
+-Machine Percentage High Score is now shown in song selection screen.
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.
 

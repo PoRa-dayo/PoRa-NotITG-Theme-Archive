@@ -608,6 +608,34 @@ function GetStepsDescriptionText(n)
 	return text
 end
 
+function IsEasierDifficulty( pn ) 
+    if not GAMESTATE:GetCurrentSong() then return false end
+    local DiffList = GAMESTATE:GetCurrentSong():GetAllSteps()
+    local EasiestDiff = 5
+    for _, steps in pairs(DiffList) do
+        if steps:GetDifficulty() < EasiestDiff then
+            EasiestDiff = steps:GetDifficulty()
+        end
+    end
+    local CurrentDiff = GAMESTATE:PlayerDifficulty(pn)
+    local IsEasierDiff = EasiestDiff < CurrentDiff
+    return IsEasierDiff
+end
+
+function IsHarderDifficulty( pn ) 
+    if not GAMESTATE:GetCurrentSong() then return false end
+    local DiffList = GAMESTATE:GetCurrentSong():GetAllSteps()
+    local HardestDiff = 0
+    for _, steps in pairs(DiffList) do
+        if steps:GetDifficulty() > HardestDiff then
+            HardestDiff = steps:GetDifficulty()
+        end
+    end
+    local CurrentDiff = GAMESTATE:PlayerDifficulty(pn)
+    local IsHarderDiff = HardestDiff > CurrentDiff
+    return IsHarderDiff
+end
+
 function StarCheck()
     local title
     if GAMESTATE:IsCourseMode() then
@@ -624,7 +652,7 @@ function StarCheck()
     if not title then
         return false
     end
-    local wordList = {"atmosphere","atomosphere","andromeda","astro","mars","uranus","earth","moon","space","planet","galaxy","star","cosmos","cosmic","gravity","orbit","nebula","comet","constellation","quasar","quaoar","mars","wormhole","zenith"}
+    local wordList = {"atmosphere","atomosphere","asteroid","andromeda","astro","astra","black hole","extraterrestrial","mars","uranus","saturn","jupiter","venus","earth","moon","meteor","space","planet","galaxy","galacti","star","cosmos","cosmic","gravity","orbit","redshift","nebula","comet","singularity","stella","nova","quasar","quaoar","univers","satellite","void","wormhole","zenith"}
     title = string.lower(title)
     for _,word in ipairs(wordList) do
         if string.find(title,word,1) then

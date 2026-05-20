@@ -1238,3 +1238,33 @@ function GetStepsDescriptionText(n)
 	if string.lower(text) == 'blank' then text = '' end
 	return text
 end
+
+function IsEasierDifficulty( pn ) 
+    local CurrSong = GAMESTATE:GetCurrentSong()
+    if not CurrSong then return false end
+    local DiffList = CurrSong:GetAllSteps()
+    local EasiestDiff = 5
+    for _, steps in pairs(DiffList) do
+        if steps:GetDifficulty() < EasiestDiff then
+            EasiestDiff = steps:GetDifficulty()
+        end
+    end
+    local CurrentDiff = GAMESTATE:PlayerDifficulty(pn)
+    local IsEasierDiff = EasiestDiff < CurrentDiff
+    return IsEasierDiff
+end
+
+function IsHarderDifficulty( pn ) 
+    local CurrSong = GAMESTATE:GetCurrentSong()
+    if not CurrSong then return false end
+    local DiffList = CurrSong:GetAllSteps()
+    local HardestDiff = 0
+    for _, steps in pairs(DiffList) do
+        if steps:GetDifficulty() > HardestDiff then
+            HardestDiff = steps:GetDifficulty()
+        end
+    end
+    local CurrentDiff = GAMESTATE:PlayerDifficulty(pn)
+    local IsHarderDiff = HardestDiff > CurrentDiff
+    return IsHarderDiff
+end
