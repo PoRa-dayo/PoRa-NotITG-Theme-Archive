@@ -113,7 +113,7 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 <img width="200" height="150" alt="NotITG-v4 9 1_yNGDFvPqYA" src="https://github.com/user-attachments/assets/a0337299-a99f-4f32-8a6e-25090ab40973" />
 <img width="200" height="150" alt="NotITG-v4 9 1_Odd72sXTZe" src="https://github.com/user-attachments/assets/6b90feff-2ba1-4053-b787-ab8c8ec3daad" />
 <img width="200" height="150" alt="NotITG-v4 9 1_emRLmGJCsw" src="https://github.com/user-attachments/assets/509b91eb-c5d7-401d-ad51-5069370aafef" />
-<img width="200" height="150" alt="NotITG-v4 9 1_L5Hfu5MVmg" src="https://github.com/user-attachments/assets/67da3e71-55ee-469f-b69a-5619bf79e423" />
+<img width="200" height="150" alt="NotITG-v4 9 1_jTjLyQS3jd" src="https://github.com/user-attachments/assets/1b7b3857-42e2-4062-89d1-a8b4d8c7b432" />
 <img width="200" height="150" alt="NotITG-v4 9 1_FgkErb8ypD" src="https://github.com/user-attachments/assets/38283b56-7547-4437-8b7c-a4a8180158f0" />
 
 
@@ -183,7 +183,7 @@ OITGThemerFallback is a fallback theme that's made to be closer to the base SM3.
 <img width="200" height="150" alt="NotITG-v4 9 1_fI2Rc4ccEX" src="https://github.com/user-attachments/assets/42d665a7-7956-4a56-b381-5b2600e8456e" />
 <img width="200" height="150" alt="NotITG-v4 9 1_rAmhAt1GeF" src="https://github.com/user-attachments/assets/7e4efa9c-987e-486a-ba07-4e89dbb3dff8" />
 <img width="200" height="150" alt="NotITG-v4 9 1_sYwGA8m7HN" src="https://github.com/user-attachments/assets/63642c71-c162-430a-8544-bdf0890b3eee" />
-<img width="200" height="150" alt="NotITG-v4 9 1_0KusHFIzfG" src="https://github.com/user-attachments/assets/08fb87c8-7249-478b-b9b5-9eb321b2dadf" />
+<img width="200" height="150" alt="NotITG-v4 9 1_isD7hniFEx" src="https://github.com/user-attachments/assets/47f72736-7eaf-45ae-bfd7-22e0a165c422" />
 <img width="200" height="150" alt="NotITG-v4 9 1_nV1CXnBpCu" src="https://github.com/user-attachments/assets/96dd0d70-1574-4480-b898-58e9e1306d97" />
 
 
