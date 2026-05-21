@@ -30,7 +30,7 @@ Pretty insane how functional this theme still is even on NotITG current version
 ## Changelogs:
 -Added "Play Mods" (takes you to 2P Regular immediately, also note that this will always pick The Forest since this theme doesn't save the world you picked last session)\
 -Fixed the issue that made the speedmod set at setdefault in modfiles get overwritten by player's speedmod.\
--Made noteskins use the entire NoteSkins folder, judgment fonts use the _Judgments folder, and swapped the positions of Turn and Judgment Font in Options\
+-Made noteskins use the entire NoteSkins folder, judgment fonts use the _Judgments folder, added Hold Judgment customizations, and moved around some options.\
 -Mods now affect players 1-8\
 -Added NotITG MetaMods\
 -Added M speedmod\
@@ -54,14 +54,14 @@ Pretty insane how functional this theme still is even on NotITG current version
 
 
 # SIMPLY ITG
-The default In The Groove 2 theme, with certain features from NotITG Simply Love ported over.
+The default In The Groove 2 theme, with certain features from NotITG Simply Love ported over, most notably the ability to choose the theme's color!
 ## Credits:
 -Original theme by Connormgs, still maintained? (not sure) Optimized for NotITG 4.9.1 by PoRa
 
 ## Changelogs:
 -Added "Play Mods" (takes you to 2P Dance immediately)\
 -Fixed the issue that made the speedmod set at setdefault in modfiles get overwritten by player's speedmod.\
--Made noteskins use the entire NoteSkins folder, and judgment fonts use the _Judgments folder\
+-Made noteskins use the entire NoteSkins folder, and judgment fonts use the _Judgments folder. Added Hold Judgment customizations.\
 -Mods now affect players 1-8\
 -Added NotITG MetaMods\
 -Removed Tutorial and Edit Courses (they don't work).\
@@ -74,6 +74,7 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Removed Reset Menu button in Options as it screws up the game real badly. (not so surprising isn't it)\
 -Replay Song? screen now takes you to evaluation screen if No is selected.\
 -Removed Marathon Mode and Battle Mode buttons on title screen, select those inside Dance Mode instead.\
+-F grades are now shown in song selection screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.
 
@@ -128,12 +129,13 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 -Fixed duplicated/overlapping text in the Options menu.\
 -Added Display Mode, Resolution, Select Theme option.\
 -_missing font now redirects to FFT2 white font for better readability in the UI that uses it.\
--Made noteskins option (Note) use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font (Judge) customization option.\
+-Made noteskins option (Note) use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font (Judge) and Hold Judgment (Hold Judge) customization options.\
 -Changed the layering of the BPM number so that it stays hidden during modfiles.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Fixed some of the UI in Marathon Mode, fixed the bug where the course title is updated one course late when switching courses.\
 -NOTE: I did NOT change this one to the 17-tier scoring threshold, so the saved grades will be messed up when you check out other themes. (Will automatically fix itself when it's fixed in the next NotITG release)\
 -Fixed the oversight that made system messages stay hidden after showing up for the first time.\
+-Added Undead status icons next to songs you failed in the song selection screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.
 
@@ -159,7 +161,7 @@ OITGThemerFallback is a fallback theme that's made to be closer to the base SM3.
 -Default sort option is set to Group.\
 -Changed all the .gif files into .png files.\
 -Redirected more fonts into using the _shared1 font.\
--Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font customization option, added Music Rate customization option\
+-Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options, added Music Rate customization option\
 -Replaced the "Loading..." sprite with an original one.\
 -Changed the layering of the timer bar and difficulty frame, as well as removing some duplicated elements in the song selection screen.\
 -Changed the layering of the life bar, score bar and difficulty bar so they don't show up in modfiles, and slightly change their animation so that it makes sense.\
@@ -177,7 +179,7 @@ OITGThemerFallback is a fallback theme that's made to be closer to the base SM3.
 -Finished the UI in Edit Mode.\
 -Changed the background of the results screen to one of the unused backgrounds when you get an E grade.\
 -Little triangles are shown in song selection screen whenever there's an easier or harder difficulty available.\
--Machine Percentage High Score is now shown in song selection screen.
+-Machine Percentage High Score is now shown in song selection screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.
 
@@ -202,6 +204,8 @@ This theme already has almost every feature you can ask for, so there are very f
 -Moved the help text in the Config Keys screen to the top.\
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Profile Options (broken in NotITG). Removed Show Caution and Show Instructions options, they don't do anything in this theme and break other themes.\
 -Noteskins now affect players 1-8.\
+-Added Hold Judgment customization.\
+-F grades now show up in song selection screen.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
@@ -223,11 +227,12 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -Fixed the issue that made the speedmod set at setdefault in modfiles get overwritten by player's speedmod.\
 -Moved Advanced Graphic Options to the main options because it keeps refreshing the theme every time you select it inside Graphic Options.\
 -Added the grades on the music wheel similar to the latest Simply Love themes.\
--Made noteskins use the entire NoteSkins folder, judgment fonts use the _Judgments folder. Mods now affect players 1-8.\
+-Made noteskins use the entire NoteSkins folder, judgment fonts use the _Judgments folder. Added Hold Judgment customization. Mods now affect players 1-8.\
 -Added M speedmod.\
 -Added NotITG MetaMods.\
 -Added SmartBlender. Everyone loves SmartBlender.\
 -Not sure why the Config Key menu is shifted to the right, so I changed the Config Key menu to look like the original Simply Love.\
+-Made the text in Edit Mode's UI slightly bigger because I could barely read the small text.\
 -Marathon Mode no longer shows a bunch of errors when starting a course.\
 -Slightly altered the UI of course contents.\
 -Courses now redirect you to evaluation screen instead of back to the title screen after clearing.\
@@ -244,3 +249,4 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 # Special thanks
 [MattMayuga](https://github.com/Tiny-Foxes/JudgeFonts-by-MattMayuga/) - Judgment fonts.
 [HURG-IIDX](https://github.com/HURG-IIDX/Simply-Love-Judgefonts) - Judgment fonts.
+Maybell Eigenhart - Hold judgment fonts.

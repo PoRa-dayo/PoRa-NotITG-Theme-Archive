@@ -7,7 +7,96 @@ function Sound(str) SOUND:PlayOnce( Path("sounds",str )) end
 function Path(ec,str) return THEME:GetPath( _G['EC_'..string.upper(ec)] , '' , str ) end
 function TableToString(t) local s = '' for i,v in ipairs(t) do s = s .. v end return s end
 
+-- Judgment Font List
+judgmentFontList = { 'Default', 'DDR 1st', 'DDR 2nd', 'DDR 3rd & 4th', 'DDR 5th', 'DDR Max 1 & 2', 'DDR Extreme 1', 'DDR Extreme 2', 'DDR Supernova 1', 'DDR Supernova 2', 'DDR X1', 'DDR X2', 'DDR X3', 'DDR A1', 'DDR A2', 'DDR A3', 'DDR World', 'ITG1', 'Chroma ITG1', 'ITG2', 'Chroma ITG2', 'ITG3', 'Chroma ITG3', 'ITG Simply Love', 'ITG GrooveNights', 'ITG Velocity', 'ITG Deco', 'ITG Empress', 'ITG Gold', 'ITG Tactics SD', 'ITG Tactics HD', 'PrismRhythm Ver1', 'PrismRhythm Ver2', 'PrismRhythm Ver3', 'CyberiaStyle', 'Focus', 'Sliced', 'Reptilian', 'Glowstone', 'Obsidian', 'Tron', 'Powerpuff', 'VHS', 'StepMania 4', 'StepMania 5' }
+if FUCK_EXE then -- Auto load on NotITG
+    local list = { 'Default' }
+    
+    local dir = string.sub(THEME:GetPath(2,'','_blank.png'),9)
+    dir = string.sub(dir,1,string.find(dir,'/')-1)
+    for _,v in pairs({ GAMESTATE:GetFileStructure('Themes/'.. dir ..'/Graphics/_Judgments/') }) do
+        local t, _, name = string.find(v, "(.+) %dx%d")
+        if t then table.insert( list, name )
+        else print('[Judgment] Error in loading ' .. v)
+        end
+    end
+
+    judgmentFontList = list
+end
+
+-- Hold Judgment List
+holdJudgmentList = { 'PrismRhythm Ver1', 'PrismRhythm Ver2', 'PrismRhythm Ver3' }
+if FUCK_EXE then -- Auto load on NotITG
+    local list = { 'Default' }
+    
+    local dir = string.sub(THEME:GetPath(2,'','_blank.png'),9)
+    dir = string.sub(dir,1,string.find(dir,'/')-1)
+    for _,v in pairs({ GAMESTATE:GetFileStructure('Themes/'.. dir ..'/Graphics/_HoldJudgments/') }) do
+        local t, _, name = string.find(v, "(.+) %dx%d")
+        if t then table.insert( list, name )
+        else print('[Hold Judgment] Error in loading ' .. v)
+        end
+    end
+
+    holdJudgmentList = list
+end
+
+--NoteSkin list
+local noteskins = NOTESKIN:GetNoteSkinNames()
+NoteSkinList = {}
+local ind = 1
+local blacklist = {'arrowkun', 'arrowkun-notweens', 'cel2d', 'cel-cmd', 'cel-cmd-notweens', 'cel-glow2', 'cel-yuno', 'coin', 'controlcel', 'controlmetal', 'controlmetal2', 'couples-cmd', 'couplescontrol', 'divinentity', 'dunno', 'dunno2', 'justholds', 'metal2_dpad', 'metal-cmd', 'metal-cmdholds', 'metal-cmdnotweens', 'mindcode', 'minderror', 'mindgalaxykiss', 'mindkickmetal', 'mindnoshow', 'mindpressure', 'mindrockstarmetal', 'mindstarsmetal', 'mindtechmetal', 'pixel', 'proxynotes', 'shape', 'slow', 'solid_black', 'spikes2', 'splitter', 'spt'}
+
+for i, noteskin in ipairs(noteskins) do
+    local name = string.lower(noteskin)
+    local blacklisted = false
+    for _, blackName in ipairs(blacklist) do
+        if name == blackName then
+            blacklisted = true
+        end
+    end
+    if not blacklisted then
+        NoteSkinList[ind] = name
+        ind = ind+1
+    end
+end
+
+-- find a noteskin listed in the DefaultModifiers string located in Data/GamePrefs.ini
+function GetDefaultNoteSkinFromGamePrefsIni()
+    -- if this function is called too early: as in there is no game style set (dance, pump, etc)
+    -- the game will return the names of the directories of each noteskin, rather than a map of noteskin names
+    -- there aren't many differences between the two, but the latter returns a list where all names are lowercased, and the former returns names capitalized as-is in the NoteSkins directory
+    -- while these differences are small, it's enough to cause problems when looking through DefaultModifiers, since the casing might not match, and we cannot guarantee to receive a list of names lowercased by the game either
+    -- which means we now need to take matters in our own hands and string.lower everything
+    local noteskins = NOTESKIN:GetNoteSkinNames()
+    for i, noteskin in ipairs(noteskins) do
+        noteskins[i] = string.lower(noteskin)
+    end
+    local defaults = string.lower(PREFSMAN:GetPreference'DefaultModifiers')
+    for str in string.gfind(defaults, '[^,]+') do
+        local mod = string.gsub(str, " ", "")
+        for i, noteskin in ipairs(noteskins) do
+            if mod == noteskin then
+                return noteskin
+            end
+        end
+    end
+    -- no noteskins present within DefaultModifiers, fall back onto a common noteskin
+    return 'scalable'
+end
+
 modJudgmentFont = {1,1}
+modHoldJudgment = {1,1}
+modNoteSkin = {1,1}
+local defaultSkin = GetDefaultNoteSkinFromGamePrefsIni()
+--look for the player's current noteskin
+for pn=0,1 do
+    for modInd, modName in ipairs(NoteSkinList) do
+        if modName == defaultSkin then
+            modNoteSkin[pn+1] = modInd
+        end
+    end
+end
 
 -- BGAnimation Screen Functions
 
@@ -32,6 +121,7 @@ function InitializeMods()
 	if GAMESTATE:GetEnv('Mods') then return end
 	modRate = 1
 	modJudgmentFont = {1,1}
+    modNoteSkin = {1,1}
 	CalculateSpeedMod()
 	GAMESTATE:SetEnv('Mods',1)
 end
@@ -71,8 +161,35 @@ function JudgmentInit()
 	Holds = {}
 	OK = {}
 	NG = {}
-	local P1 = SCREENMAN:GetTopScreen():GetChild('PlayerP1') if P1 then P1 = P1:GetChild('Judgment'):GetChild(''); k = modJudgmentFont[1]; P1:aux(1); if k ~= 1 then P1:Load( THEME:GetPath( EC_GRAPHICS, '', '_Judgments/'..judgmentFontList[k] )) end end
-	local P2 = SCREENMAN:GetTopScreen():GetChild('PlayerP2') if P2 then P2 = P2:GetChild('Judgment'):GetChild(''); k = modJudgmentFont[2]; P2:aux(2); if k ~= 1 then P2:Load( THEME:GetPath( EC_GRAPHICS, '', '_Judgments/'..judgmentFontList[k] )) end end
+    
+    -- Apply judgments
+	for pn=1,8 do
+        local PL = SCREENMAN:GetTopScreen():GetChild('PlayerP'..pn)
+        local k
+        if PL then
+            --Judgment font
+            local PJudge = PL:GetChild('Judgment'):GetChild('')
+            k = modJudgmentFont[pn%2 == 1 and 1 or 2]
+            PJudge:aux(pn%2 == 1 and 1 or 2)
+            
+            if k ~= 1 then 
+                PJudge:Load( THEME:GetPath( EC_GRAPHICS, '', '_Judgments/'..judgmentFontList[k] ))
+            end
+            
+            --Hold judgment
+            if FUCK_EXE then
+                for col=0,15 do
+                    local PHold = PL:GetChild('HoldJudgmentCol'..col):GetChild('')
+                    k = modHoldJudgment[pn%2 == 1 and 1 or 2]
+                    PHold:aux(pn%2 == 1 and 1 or 2)
+                    
+                    if k ~= 1 then 
+                        PHold:Load( THEME:GetPath( EC_GRAPHICS, '', '_HoldJudgments/'..holdJudgmentList[k] ))
+                    end
+                end
+            end
+        end
+    end
 end
 
 function JudgmentTween(self) self:zoom(.8) self:decelerate(.1) self:zoom(.75) self:sleep(.6) self:accelerate(.2) self:zoom(0) end
@@ -422,28 +539,106 @@ function BackButton()
 end
 
 
+function CreateOptionRow( Params, Names, LoadFctn, SaveFctn )
+	if not Params.Name then return nil end
+
+	-- this needs to be used because Lua evaluates 'false' as 'nil', so
+	-- we can't use an OR operator to assign the value properly.
+	local function setbool( value, default )
+		if value ~= nil then return value else return default end
+	end
+
+	-- fill in with passed params or default values. only Name is required.
+	local t =
+	{
+		Name = Params.Name,
+
+		LayoutType = Params.LayoutType or "ShowAllInRow",
+		SelectType = Params.SelectType or "SelectOne",
+
+		OneChoiceForAllPlayers = setbool(Params.OneChoiceForAllPlayers, true),
+		EnabledForPlayers = Params.EnabledForPlayers or {PLAYER_1, PLAYER_2},
+
+		ExportOnChange = setbool(Params.ExportOnChange, false),
+		ReloadRowMessages= Params.ReloadRowMessages or {},
+
+		Choices = Names,
+		LoadSelections = LoadFctn,
+		SaveSelections = SaveFctn,
+	}
+
+	setmetatable( t, t )
+	return t
+end
+
+
 -- Must put the list "judgmentFontList" in another lua so it doesn't get overwritten whenever this file is updated from the master copy.
 function JudgmentOption()
 	local modList = judgmentFontList
-	local t = {
+    
+	local Params = {
 		Name = "Judgment Font",
 		LayoutType = "ShowAllInRow",
 		SelectType = "SelectOne",
 		OneChoiceForAllPlayers = false,
-		ExportOnChange = false,
-		Choices = modList,
+		ExportOnChange = false
+    }
 	   
-		LoadSelections = function(self, list, pn)
-			list[modJudgmentFont[pn+1]] = true
-		end,
+    local loadFunc = function(self, list, pn)
+        list[modJudgmentFont[pn+1]] = true
+    end
 
-		SaveSelections = function(self, list, pn)
-			for i=1,table.getn(modList) do if list[i] then modJudgmentFont[pn+1] = i end end
-		end
+    local saveFunc = function(self, list, pn)
+        for i=1,table.getn(modList) do if list[i] then modJudgmentFont[pn+1] = i end end
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+
+function HoldJudgmentOption()
+	local modList = holdJudgmentList
+    
+	local Params = {
+		Name = "Hold Judgment",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = false,
+		ExportOnChange = false
+    }
 	   
+    local loadFunc = function(self, list, pn)
+        list[modHoldJudgment[pn+1]] = true
+    end
+
+    local saveFunc = function(self, list, pn)
+        for i=1,table.getn(modList) do if list[i] then modHoldJudgment[pn+1] = i end end
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+
+function NoteSkinOption()
+	local modList = NoteSkinList
+
+	local Params = {
+		Name = "Noteskin",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = false,
+		ExportOnChange = false
 	}
-	setmetatable(t, t)
-	return t
+    
+    local loadFunc = function(self, list, pn)
+        list[modNoteSkin[pn+1]] = true
+    end
+
+    local saveFunc = function(self, list, pn)
+        for i=1,table.getn(modList) do if list[i] then modNoteSkin[pn+1] = i end end
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
 end
 
 -- Lua Option Row support functions
@@ -599,9 +794,10 @@ function FixedDifficultyRows()
 	return true
 end
 
+--Apply noteskin to all players
 function ApplyNoteskin()
-    --both GetCurrentNoteSkins and ApplyModifiers for noteskins only work before ScreenGameplay, so activating this function at ScreenStage would do
-    local sk = GAMESTATE:GetCurrentNoteSkins()
+    --ApplyModifiers for noteskins only work before ScreenGameplay, so activating this function at ScreenStage would do
+    local sk = {NoteSkinList[modNoteSkin[1]],NoteSkinList[modNoteSkin[2]]}
     if FUCK_EXE then
         for pn=1,7,2 do
             if GAMESTATE:IsPlayerEnabled(pn) then

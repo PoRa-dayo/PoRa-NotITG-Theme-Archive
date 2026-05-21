@@ -108,6 +108,43 @@
 
 		judgmentFontList = list
 	end
+    
+-- Hold Judgment List
+holdJudgmentList = { 'Bebas', 'Code', 'Love', 'mute', 'None', 'Wendy' }
+if FUCK_EXE then -- Auto load on NotITG
+    local list = { 'Default' }
+    
+    local dir = string.sub(THEME:GetPath(2,'','_blank.png'),9)
+    dir = string.sub(dir,1,string.find(dir,'/')-1)
+    for _,v in pairs({ GAMESTATE:GetFileStructure('Themes/'.. dir ..'/Graphics/_HoldJudgments/') }) do
+        local t, _, name = string.find(v, "(.+) %dx%d")
+        if t then table.insert( list, name )
+        else print('[Hold Judgment] Error in loading ' .. v)
+        end
+    end
+
+    holdJudgmentList = list
+end
+
+--NoteSkin list
+local noteskins = NOTESKIN:GetNoteSkinNames()
+NoteSkinList = {}
+local ind = 1
+local blacklist = {'arrowkun', 'arrowkun-notweens', 'cel2d', 'cel-cmd', 'cel-cmd-notweens', 'cel-glow2', 'cel-yuno', 'coin', 'controlcel', 'controlmetal', 'controlmetal2', 'couples-cmd', 'couplescontrol', 'divinentity', 'dunno', 'dunno2', 'justholds', 'metal2_dpad', 'metal-cmd', 'metal-cmdholds', 'metal-cmdnotweens', 'mindcode', 'minderror', 'mindgalaxykiss', 'mindkickmetal', 'mindnoshow', 'mindpressure', 'mindrockstarmetal', 'mindstarsmetal', 'mindtechmetal', 'pixel', 'proxynotes', 'shape', 'slow', 'solid_black', 'spikes2', 'splitter', 'spt'}
+
+for i, noteskin in ipairs(noteskins) do
+    local name = string.lower(noteskin)
+    local blacklisted = false
+    for _, blackName in ipairs(blacklist) do
+        if name == blackName then
+            blacklisted = true
+        end
+    end
+    if not blacklisted then
+        NoteSkinList[ind] = name
+        ind = ind+1
+    end
+end
 
 -- Used with ThemeFiles function
 	themeDir = '_ThemeFiles'
@@ -127,9 +164,9 @@
 
 -- These will be the option rows available on the [nth] option screen. The 'NextScreen' row will be automatically added as long as there is more than 1 option screen.
 	playerOptions = {}
-	playerOptions[1] = { 'SpeedType','SpeedNumber','Perspective','NoteSkin','JudgmentFont','Mini','Rate' }
-    playerOptions[2] = { 'Turn','LifeBar','Compare','Measure','Ghost','Handicap','Hide' }
-    playerOptions[3] = { 'Turn','Accel','Scroll','Effect','Appearance','InsertTaps','InsertOther' }
+	playerOptions[1] = { 'SpeedType','SpeedNumber','Rate','NoteSkin','JudgmentFont','HoldJudgment','Mini' }
+    playerOptions[2] = { 'Perspective','Turn','LifeBar','Compare','Measure','Ghost','Handicap' }
+    playerOptions[3] = { 'Hide','Accel','Scroll','Effect','Appearance','InsertTaps','InsertOther' }
     if FUCK_EXE and tonumber(GAMESTATE:GetVersionDate()) >= 20210420 then -- v4.2.0
         playerOptions[4] = { 'MetaMods1','MetaMods2','MetaMods3' }
     end
@@ -247,27 +284,31 @@ function JudgmentInit()
 		local mpn = math.mod(pn - 1, 2) + 1
 		local judgeIndex = ModCustom.JudgmentFont[mpn]
 		local judgeName = judgmentFontList[judgeIndex]
+        local holdIndex = ModCustom.HoldJudgment[mpn]
+		local holdName = holdJudgmentList[holdIndex]
 		if px then
-			px = px:GetChild('Judgment')
-			local pxc = px:GetChild('')
-			px:aux(mpn)
+            --Judgment font
+			local pj = px:GetChild('Judgment')
+			local pxc = pj:GetChild('')
+			pj:aux(mpn)
 			if judgeIndex ~= 1 then
 				pxc:Load( THEME:GetPath( EC_GRAPHICS, '', '_Judgments/'.. judgeName ))
-				-- special case for invisible judgment font
+                
+				-- special case for invisible judgment font START
 				if judgeName == 'Invisible' then
 					-- if selected, use every method possible to hide the judgment sprite in case a file loads an alternate judgment font
 					-- maybe a bit overkill 
-					for _, actor in ipairs{px, pxc} do
+					for _, actor in ipairs{pj, pxc} do
 						for i = 1, #invisibleSettings, 2 do
 							method = invisibleSettings[i]
 							value = invisibleSettings[i + 1]
-							if px[method] then
-								px[method](px, value)
+							if pj[method] then
+								pj[method](pj, value)
 							end
 						end
 					end
 					if FUCK_EXE then
-						for _, actor in ipairs{px, pxc} do
+						for _, actor in ipairs{pj, pxc} do
 							if actor.SetDrawFunction then
 								actor:SetDrawFunction(function() end)
 							end
@@ -276,8 +317,8 @@ function JudgmentInit()
 									for i = 1, #invisibleSettings, 2 do
 										method = invisibleSettings[i]
 										value = invisibleSettings[i + 1]
-										if px[method] then
-											px[method](px, value)
+										if pj[method] then
+											pj[method](pj, value)
 										end
 									end
 								end)
@@ -285,7 +326,20 @@ function JudgmentInit()
 						end
 					end
 				end
+                -- special case for invisible judgment font END
 			end
+            
+            --Hold judgment
+            if FUCK_EXE then
+                for col=0,15 do
+                    local ph = px:GetChild('HoldJudgmentCol'..col)
+                    local phc = ph:GetChild('')
+                    ph:aux(mpn)
+                    if holdIndex ~= 1 then
+                        phc:Load( THEME:GetPath( EC_GRAPHICS, '', '_HoldJudgments/'.. holdName ))
+                    end
+                end
+            end
 		end
 	end
 end
@@ -652,7 +706,7 @@ end
 function InitializeMods()
 	if GAMESTATE:GetEnv('Mods') then return end
 	ModsPlayer = { }
-	ModCustom = { LifeBar = {1,1}, JudgmentFont = {1,1}, Compare = {1,1}, Measure = {1,1} }
+	ModCustom = { LifeBar = {1,1}, JudgmentFont = {1,1}, HoldJudgment = {1,1}, Compare = {1,1}, Measure = {1,1} }
 	modRate = 1
 	CalculateSpeedMod()
 	ResetScores()
@@ -666,6 +720,7 @@ function LoadFromProfile()
 	for pn = 1,2 do if Player(pn) then local t = Profile(pn) if not t.Mods then t.Mods = {} end
 		for s,v in pairs(ModCustom) do v[pn] = tonumber(t.Mods[s]) or 1 end
 		for i,v in ipairs(judgmentFontList) do if t.Mods.JudgmentFont == v then ModCustom.JudgmentFont[pn] = i end end
+        for i,v in ipairs(holdJudgmentList) do if t.Mods.HoldJudgment == v then ModCustom.HoldJudgment[pn] = i end end
 		if vocalize and Profile(pn).Voice then vocalize[pn] = Profile(pn).Voice end
 		LoadFloatFromProfile(pn,'Mini',t)
 		if t.Mods.Cover then ApplyMod('cover',pn) end
@@ -686,6 +741,7 @@ function SaveToProfile()
 		for s,v in pairs(ModCustom) do t.Mods[s] = v[pn] end
 		if vocalize then Profile(pn).Voice = vocalize[pn] end
 		t.Mods.JudgmentFont = judgmentFontList[ModCustom.JudgmentFont[pn]]
+        t.Mods.HoldJudgment = judgmentFontList[ModCustom.HoldJudgment[pn]]
 		t.Mods.Mini = OptionFromEvalPlayerOptions(pn,'mini')
 		GhostData(pn,'Compress')
 	end end
@@ -922,7 +978,7 @@ modRate = 1
 ModsPlayer = {}
 ModsMaster = {}
 ModsMaster.Perspective =	{ modlist = {'Overhead','Hallway','Distant','Incoming','Space'}, Select = 1 }
-ModsMaster.NoteSkin =		{ modlist = NOTESKIN:GetNoteSkinNames(), Select = 1 }
+ModsMaster.NoteSkin =		{ modlist = NoteSkinList, Select = 1 }
 ModsMaster.Turn =			{ modlist = {'Mirror','Left','Right','Shuffle','Blender'}, default = 'no mirror,no left,no right,no shuffle,no supershuffle', mods = {'mirror','left','right','shuffle','supershuffle'} }
 ModsMaster.Hide = 			{ modlist = {'Hide Targets','Hide Judgments','Hide Background'}, default ='no dark,no blind,no cover', mods = {'dark','blind','cover'} }
 ModsMaster.Accel =			{ modlist = {'Accel','Decel','Wave','Boomerang','Expand','Bump'}, default = 'no boost,no brake,no wave,no boomerang,no expand,no bumpy', mods = {'Boost','Brake','Wave','Boomerang','Expand','Bumpy'} }
@@ -967,6 +1023,7 @@ ModsMaster.Measure =		{ fnctn = 'MeasureOption', modlist = {-1,0,8,12,16,24,32} 
 ModsMaster.Compare =		{ fnctn = 'CompareOption' }
 ModsMaster.LifeBar =		{ fnctn = 'LifeBarOption' }
 ModsMaster.JudgmentFont =	{ fnctn = 'JudgmentOption' }
+ModsMaster.HoldJudgment =	{ fnctn = 'HoldJudgmentOption' }
 ModsMaster.Voice =			{ fnctn = 'VocalizeOption' }
 ModsMaster.Rate =			{ fnctn = 'RateMods' }
 ModsMaster.RateEdit =		{ fnctn = 'RateMods', arg = 'Edit' }
@@ -1286,6 +1343,7 @@ function CutOffTime()
 end
 
 function JudgmentOption() return CustomMod('Judgment Font','JudgmentFont',judgmentFontList) end
+function HoldJudgmentOption() return CustomMod('Hold Judgment','HoldJudgment',holdJudgmentList) end
 function LifeBarOption() return CustomMod('Life Bar Type','LifeBar',{'Normal','Surround'}) end
 function CompareOption()
 	local t = CustomMod('Compare Score','Compare',{ 'None' , 'Personal' , 'Machine' , 'Subtractive' })
