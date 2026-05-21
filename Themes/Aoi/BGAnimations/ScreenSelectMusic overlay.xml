@@ -1,4 +1,3 @@
-<!-- The extra difficulty number for diffs above 10 -->
 <ActorFrame
     CurrentSongChangedMessageCommand="queuecommand,SendUpdate"
     CurrentStepsP1ChangedMessageCommand="queuecommand,SendUpdate"
@@ -7,6 +6,7 @@
     MESSAGEMAN:Broadcast('Update')
     end"
     ><children>
+    <!-- The extra difficulty number for diffs above 10, and the triangle difficulty hints to indicate easier/harder diffs available -->
     <Layer
         File="bonus diff frame"
         Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"

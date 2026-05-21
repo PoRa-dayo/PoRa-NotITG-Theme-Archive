@@ -610,7 +610,9 @@ end
 
 function IsEasierDifficulty( pn ) 
     if not GAMESTATE:GetCurrentSong() then return false end
-    local DiffList = GAMESTATE:GetCurrentSong():GetAllSteps()
+    -- Apparently GetStepsByStepsType only returns the UNLOCKED steps that match the stepsType, like, WOW DID YOU KNOW THAT?????
+    local stype = GAMESTATE:GetCurrentSteps(pn):GetStepsType()
+    local DiffList = GAMESTATE:GetCurrentSong():GetStepsByStepsType(stype)
     local EasiestDiff = 5
     for _, steps in pairs(DiffList) do
         if steps:GetDifficulty() < EasiestDiff then
@@ -624,7 +626,8 @@ end
 
 function IsHarderDifficulty( pn ) 
     if not GAMESTATE:GetCurrentSong() then return false end
-    local DiffList = GAMESTATE:GetCurrentSong():GetAllSteps()
+    local stype = GAMESTATE:GetCurrentSteps(pn):GetStepsType()
+    local DiffList = GAMESTATE:GetCurrentSong():GetStepsByStepsType(stype)
     local HardestDiff = 0
     for _, steps in pairs(DiffList) do
         if steps:GetDifficulty() > HardestDiff then

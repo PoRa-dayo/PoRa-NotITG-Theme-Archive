@@ -40,7 +40,8 @@ Pretty insane how functional this theme still is even on NotITG current version
 -_missing font now redirects to Common title font as the Meat font is too big for the debug menu\
 -Common normal font is now an edited version of Common title (instead of an edited version of Meat) so that the UI that use it fit the game\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
-Since the detailed scores it uses is already similar to the 17-tier one, I also changed the score threshold in metrics.ini to a 17-tier one for consistency across themes.\
+-Since the detailed scores it uses is already similar to the 17-tier one, I also changed the score threshold in metrics.ini to a 17-tier one for consistency across themes.\
+-Dr. Fetus now shows up in the song selection screen on whatever song you failed.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.
 
