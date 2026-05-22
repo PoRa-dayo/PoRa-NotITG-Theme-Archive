@@ -80,7 +80,7 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 
 <img width="200" height="150" alt="NotITG-v4 9 1_aSZEkP7Qqw" src="https://github.com/user-attachments/assets/cafa07e5-a603-408a-b327-56bc7472d54b" />
 <img width="200" height="150" alt="NotITG-v4 9 1_WEXP4fVbKx" src="https://github.com/user-attachments/assets/be3345b4-037c-4ee0-9865-b69f5daab26f" />
-<img width="200" height="150" alt="NotITG-v4 9 1_jUI7JOitBB" src="https://github.com/user-attachments/assets/6f34b1b8-bf6c-40a4-8e95-53eee088e152" />
+<img width="200" height="150" alt="NotITG-v4 9 1_v6voTYf2em" src="https://github.com/user-attachments/assets/706c3bda-f26f-4f8b-adf0-24b610bd1f22" />
 <img width="200" height="150" alt="NotITG-v4 9 1_8OMtk3BqCK" src="https://github.com/user-attachments/assets/2a9fb97b-316c-4e47-8764-f35eacc6d315" />
 <img width="200" height="150" alt="NotITG-v4 9 1_TO6OPIpG9X" src="https://github.com/user-attachments/assets/3e73d16f-4af4-4da7-8acf-810da2296895" />
 
