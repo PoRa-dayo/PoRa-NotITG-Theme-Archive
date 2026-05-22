@@ -343,7 +343,7 @@ end
 -- so that the Course Select screen can still be used in OpenITG.
 function NITG_CourseTimer(self, pn)
 
-	if FUCK_EXE then
+	if FUCK_EXE and GAMESTATE:GetCurrentTrail(pn) then
         if GAMESTATE:IsPlayerEnabled(pn) then
             self:settext('Time: '..SecondsToMMSS( GAMESTATE:GetCurrentTrail(pn):GetLengthSeconds() ) )
         end
