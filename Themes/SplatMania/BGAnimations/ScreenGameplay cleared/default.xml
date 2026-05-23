@@ -1,0 +1,77 @@
+<ActorFrame
+	InitCommand="%function(self)
+	ColorToMimic = {math.random(140,255)/255,math.random(140,255)/255,math.random(140,255)/255}
+	SurvivedTime = GAMESTATE:GetSongTime()
+	end"
+	><children>
+
+	<Layer
+        File="SongBackground"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT;diffusealpha,0;decelerate,0.5;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+    />
+
+    <Layer File="../Background"
+    	Condition="GAMESTATE:GetCurrentSong():GetBackgroundPath() == nil"
+		InitCommand="zoom,0;pause"
+		OnCommand="zoom,1;diffusealpha,0;linear,1;diffusealpha,1;pause;stopeffect"
+		/>
+
+	<!-- Cleared Animation -->
+<Layer Type="ActorFrame" OnCommand="fov,45;rotationz,45;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;"><children>
+	<Layer File="@ThemeFile('ClearedRibbon/ClearedTextBGMAIN')"
+	InitCommand="y,800;zoomx,12;zoomy,0.5;decelerate,0.6;y,-100"
+	OnCommand="%function(self)
+	--self:zoomx(5)
+	self:diffuse( ColorToMimic[1],ColorToMimic[2],ColorToMimic[3],1 )
+	self:customtexturerect(0,0,22,1);
+    	end"
+			/>
+		</children></Layer>
+
+<Layer Type="ActorFrame" OnCommand="fov,45;rotationz,-45;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;"><children>
+	<Layer File="@ThemeFile('ClearedRibbon/ClearedTextBGMAIN')"
+	InitCommand="y,800;zoomx,12;zoomy,0.5;decelerate,0.8;y,-100"
+	OnCommand="%function(self)
+	--self:zoomx(5)
+	self:diffuse( ColorToMimic[1],ColorToMimic[2],ColorToMimic[3],1 )
+	self:customtexturerect(0,0,22,1);
+    	end"
+			/>
+		</children></Layer>
+
+<Layer Type="ActorFrame" OnCommand="fov,45;rotationz,35;x,SCREEN_CENTER_X-10;y,SCREEN_CENTER_Y+200;"><children>
+	<Layer File="@ThemeFile('ClearedRibbon/ClearedTextBGMAIN')"
+	InitCommand="y,800;zoomx,12;zoomy,0.5;decelerate,1;y,-100"
+	OnCommand="%function(self)
+	--self:zoomx(5)
+	self:diffuse( ColorToMimic[1],ColorToMimic[2],ColorToMimic[3],1 )
+	self:customtexturerect(0,0,22,1);
+    	end"
+			/>
+		</children></Layer>
+
+<Layer Type="ActorFrame" OnCommand="fov,45;rotationz,-35;x,SCREEN_CENTER_X+10;y,SCREEN_CENTER_Y+200;"><children>
+	<Layer File="@ThemeFile('ClearedRibbon/ClearedTextBGMAIN')"
+	InitCommand="y,800;zoomx,12;zoomy,0.5;decelerate,1.2;y,-100"
+	OnCommand="%function(self)
+	--self:zoomx(5)
+	self:diffuse( ColorToMimic[1],ColorToMimic[2],ColorToMimic[3],1 )
+	self:customtexturerect(0,0,22,1);
+    	end"
+			/>
+		</children></Layer>
+
+	<Layer File="@ThemeFile('ClearedRibbon/ClearedTextMAIN')"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;bounceend,0.4;y,SCREEN_CENTER_Y;sleep,1.25;accelerate,0.3;diffusealpha,0"
+	InitCommand="%function(self) self:diffuse( ColorToMimic[1],ColorToMimic[2],ColorToMimic[3],1 ) end" />
+
+
+	<Layer File="@ThemeFile('ClearedRibbon/ClearedTextBG')"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,1.5;accelerate,0.3;diffusealpha,1"
+	InitCommand="%function(self) self:diffuse( ColorToMimic[1],ColorToMimic[2],ColorToMimic[3],0 ) end" />
+
+<Layer File="@ThemeFile('ClearedRibbon/ClearedTextFG')"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,0.4;diffusealpha,1;decelerate,0.9;zoom,1.5;diffusealpha,0"
+	InitCommand="%function(self) self:diffuse( ColorToMimic[1],ColorToMimic[2],ColorToMimic[3],0 ) end" />
+</children></ActorFrame>

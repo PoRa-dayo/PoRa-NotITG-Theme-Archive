@@ -1,0 +1,40 @@
+<ActorFrame><children>
+
+	<Layer File="MainOptionsFrame" OnCommand="%function(self)
+	Center(self);
+	self:zoom(1.5)
+	end" />
+
+		
+	<Layer Type="ActorFrame" InitCommand="y,SCREEN_CENTER_Y-155;x,SCREEN_CENTER_X-240"
+		OnCommand="%function(self) if TActor_ShowTab1 then self:hidden(0) else self:hidden(1) end end"><children>
+		<Layer File="OptionTag " Condition="not TActor_Tab1Selected" OnCommand="%function(self) self:zoom(1.5) end" />
+		<Layer File="OptionTagSelected " Condition="TActor_Tab1Selected" OnCommand="%function(self) self:zoom(1.5) end" />
+		<Layer Font="Splat1"
+			Text="TagText" OnCommand="%function(self) self:y(-5) self:zoom(.6) self:shadowlength(2) self:settext( TActor_Tab1Text or 'REDACTED' ) end" />
+	</children></Layer>
+
+	<Layer Type="ActorFrame" InitCommand="y,SCREEN_CENTER_Y-155;x,SCREEN_CENTER_X-80"
+		OnCommand="%function(self) if TActor_ShowTab2 then self:hidden(0) else self:hidden(1) end end"><children>
+		<Layer File="OptionTag " Condition="not TActor_Tab2Selected" OnCommand="%function(self) self:zoom(1.5) end" />
+		<Layer File="OptionTagSelected " Condition="TActor_Tab2Selected" OnCommand="%function(self) self:zoom(1.5) end" />
+		<Layer Font="Splat1"
+			Text="TagText" OnCommand="%function(self) self:y(-5) self:zoom(.6) self:shadowlength(2) self:settext( TActor_Tab2Text or 'REDACTED' ) end" />
+	</children></Layer>
+
+	<Layer Type="ActorFrame" InitCommand="y,SCREEN_CENTER_Y-155;x,SCREEN_CENTER_X+80"
+		OnCommand="%function(self) if TActor_ShowTab3 then self:hidden(0) else self:hidden(1) end end"><children>
+		<Layer File="OptionTag " Condition="not TActor_Tab3Selected" OnCommand="%function(self) self:zoom(1.5) end" />
+		<Layer File="OptionTagSelected " Condition="TActor_Tab3Selected" OnCommand="%function(self) self:zoom(1.5) end" />
+		<Layer Font="Splat1"
+			Text="TagText" OnCommand="%function(self) self:y(-5) self:zoom(.6) self:shadowlength(2) self:settext( TActor_Tab3Text or 'REDACTED' ) end" />
+	</children></Layer>
+
+	<Layer Type="ActorFrame" InitCommand="y,SCREEN_CENTER_Y-155;x,SCREEN_CENTER_X+240"
+		OnCommand="%function(self) if TActor_ShowTab4 then self:hidden(0) else self:hidden(1) end end"><children>
+		<Layer File="OptionTag " Condition="not TActor_Tab4Selected" OnCommand="%function(self) self:zoom(1.5) end" />
+		<Layer File="OptionTagSelected " Condition="TActor_Tab4Selected" OnCommand="%function(self) self:zoom(1.5) end" />
+		<Layer Font="Splat1"
+			Text="TagText" OnCommand="%function(self) self:y(-5) self:zoom(.6) self:shadowlength(2) self:settext( TActor_Tab4Text or 'REDACTED' ) end" />
+	</children></Layer>
+</children></ActorFrame>

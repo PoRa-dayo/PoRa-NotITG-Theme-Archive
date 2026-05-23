@@ -1,0 +1,94 @@
+<ActorFrame InitCommand="%function(self)
+TestEnviroment = false;
+end"> <children>
+		<Layer File="@ThemeFile('EcoInfoBG')" />
+
+		<Layer File="@ThemeFile('SplatSelectGameMode scroll choice1/IconRegular')" Condition="GAMESTATE:GetPlayMode() == 0 " OnCommand="zoom,0.1;x,-190" />
+
+		<Layer File="@ThemeFile('SplatSelectGameMode scroll choice2/IconBattle')" Condition="GAMESTATE:GetPlayMode() == 5" OnCommand="zoom,0.1;x,-190" />
+
+		<Layer Font="Splat2_NumbersMarked" 
+			Text="@string.format('% 4d',GAMESTATE:StageIndex()+1)"
+			OnCommand="maxwidth,100;y,-25;x,-130;horizalign,left;shadowlength,1" />
+
+		<Layer Font="Splat2" 
+			Condition="TestEnviroment"
+			Text="Testing build.::Please keep in mind that the credits earned here will not::transfer to the main game."
+			OnCommand="y,-90;x,-240;horizalign,left;shadowlength,1;zoom,0.5;diffuseblink" />
+
+		<Layer File="@ThemeFile('CreditCoin')" OnCommand="zoom,0.75;addx,-5" />
+		
+		<Layer Font="Splat2_NumbersMarked" Text=" "
+			OnCommand="maxwidth,190;y,-25;x,50;horizalign,left;shadowlength,1;queuecommand,LoadCreditAmmount"
+			LoadCreditAmmountCommand="%function(self)
+
+			if Profile().CreditsEarnedTEST then
+				self:settext( string.format('% 8d',Profile().CreditsEarnedTEST) )
+				self:sleep(1)
+				if UpdateCoinAmmount then
+					if CoinGenerator(PLAYER_1) > 0 then
+						self:bouncebegin(0.1)
+						self:y(-35)
+						self:sleep(1/6000)
+						self:queuecommand('UpdateCoinAmmount')
+					end
+				end
+			else
+				self:settext( 'Not Found!' )
+				Profile().CreditsEarnedTEST = 0	
+			end
+
+			end"
+			UpdateCoinAmmountCommand="%function(self)
+
+			if Profile().CreditsEarnedTEST then
+				if GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsPlayerEnabled(PLAYER_2) then
+					self:settext( string.format('% 8d',(Profile().CreditsEarnedTEST) + CoinGenerator(PLAYER_1) ) )
+					Profile().CreditsEarnedTEST = Profile().CreditsEarnedTEST + CoinGenerator(PLAYER_1)
+					Profile().CreditsEarnedTotalTEST = Profile().CreditsEarnedTotalTEST + CoinGenerator(PLAYER_1)
+					Profile().TotalSongsPlayed = Profile().TotalSongsPlayed + 1
+
+					-- Add survival Time
+					if SurvivedTime then
+						Profile().TotalSongPlayTime = Profile().TotalSongPlayTime + SurvivedTime
+					end
+
+				end
+
+				if GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsPlayerEnabled(PLAYER_1) then
+					self:settext( string.format('% 8d',(Profile().CreditsEarnedTEST) + CoinGenerator(PLAYER_2) ) )
+					Profile().CreditsEarnedTEST = Profile().CreditsEarnedTEST + CoinGenerator(PLAYER_2)
+					Profile().CreditsEarnedTotalTEST = Profile().CreditsEarnedTotalTEST + CoinGenerator(PLAYER_2)
+					Profile().TotalSongsPlayed = Profile().TotalSongsPlayed + 1
+
+					-- Add survival Time
+					if SurvivedTime then
+						Profile().TotalSongPlayTime = Profile().TotalSongPlayTime + SurvivedTime
+					end
+
+				end
+
+				if GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsPlayerEnabled(PLAYER_1) then
+					self:settext( string.format('% 8d',(Profile().CreditsEarnedTEST) + CoinGenerator(PLAYER_1) + CoinGenerator(PLAYER_2) ) )
+					Profile().CreditsEarnedTEST = Profile().CreditsEarnedTEST + CoinGenerator(PLAYER_1) + CoinGenerator(PLAYER_2)
+					Profile().CreditsEarnedTotalTEST = Profile().CreditsEarnedTotalTEST + CoinGenerator(PLAYER_1) + CoinGenerator(PLAYER_2)
+					Profile().TotalSongsPlayed = Profile().TotalSongsPlayed + 1
+
+					-- Add survival Time
+					if SurvivedTime then
+						Profile().TotalSongPlayTime = Profile().TotalSongPlayTime + SurvivedTime
+					end
+
+				end
+
+				AudioPlay('AerialRing_Appear' )
+				self:diffuse(1,1,0,1)
+				self:bounceend(0.1)
+				self:diffuse(1,1,1,1)
+				self:y(-25)
+				SaveProfiles()
+			end
+
+			end"
+			/>
+	</children></ActorFrame>

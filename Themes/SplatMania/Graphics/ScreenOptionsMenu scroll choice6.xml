@@ -1,0 +1,43 @@
+<ActorFrame><children>
+
+		<Layer
+		File="@ThemeFile('OptionButton')"
+		OnCommand="%function(self)
+		Splat_OptionsMenu_OptionIcon(self, 'Start', 0.9, 2.7)
+		end"
+		GainFocusMessageCommand="%function(self)
+		Splat_OptionsMenu_OptionIcon(self, 'GainFocus', 0.9, 1.7)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		Splat_OptionsMenu_OptionIcon(self, 'LoseFocus', 0.9, 2.7)
+		end"
+		/>
+
+	<Layer
+		Font="Splat2"
+		Text="Main Settings"
+		OnCommand="%function(self)
+		Splat_OptionsMenu_OptionLabel(self, 'Label', 'Start', 'About '..SplatoonInfo['Name'], -27)
+		end"
+		GainFocusMessageCommand="%function(self)
+		Splat_OptionsMenu_OptionLabel(self, 'Label', 'GainFocus', 'About '..SplatoonInfo['Name'], -27)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		Splat_OptionsMenu_OptionLabel(self, 'Label', 'LoseFocus', 'About '..SplatoonInfo['Name'], -27)
+		end"
+		/>
+
+	<Layer
+		File="@ThemeFile('Cursor.sprite')"
+		OnCommand="%function(self)
+		Splat_OptionsMenu_OptionLabel(self, 'Cursor', 'Start', '', 0, -260)
+		end"
+		GainFocusMessageCommand="%function(self)
+		Splat_OptionsMenu_OptionLabel(self, 'Cursor', 'GainFocus')
+		end"
+		LoseFocusMessageCommand="%function(self)
+		Splat_OptionsMenu_OptionLabel(self, 'Cursor', 'LoseFocus')
+		end"
+		/>
+
+</children></ActorFrame>

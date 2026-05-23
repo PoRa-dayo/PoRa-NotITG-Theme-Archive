@@ -1,0 +1,88 @@
+<ActorFrame
+	InitCommand="%function(self)
+	NewsAvailable = false;
+	end"><children>
+
+	<News File="@ThemeFile('HookIcon')"
+		OnCommand="x,SCREEN_LEFT+50;y,SCREEN_TOP+50;zoom,0.2;diffusealpha,0;queuecommand,NewsStart"
+		NewsStartCommand="%function(self)
+		
+		if NewsAvailable then
+			self:bounceend(0.2)
+			self:zoom(0.22)
+			self:diffusealpha(1)
+			self:diffuseshift()
+			self:effectcolor1(1,1,1,1)
+			self:effectcolor2(1,1,1,0)
+			AudioPlay('IdolNewsEyecatch')
+		end
+
+		end"
+		OffCommand="bounceend,0.2;zoom,0"
+		/>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomto(SCREEN_WIDTH+3,SCREEN_HEIGHT,0,0)
+		self:diffusealpha(0)
+		self:linear(0.5)
+		self:cmd('diffuseupperright,#07AB9D')
+		end"
+		OffCommand="linear,0.5;diffusealpha,0"
+		/>
+
+	<Layer Font="Splat2" Text="@THEME:GetMetric('SplatManiaGlobal','Version')..' '..SplatoonInfo['Version']"
+		OnCommand="x,SCREEN_RIGHT-30;y,SCREEN_TOP+30;horizalign,right;zoom,0.3;shadowlength,2"
+		OffCommand="linear,0.5;diffusealpha,0"
+		/>
+
+	<Layer Font="Splat2" Text="@THEME:GetMetric('SplatManiaGlobal','Compiled')..' '..SplatoonInfo['VersionDate'][1]..'/'..SplatoonInfo['VersionDate'][2]..'/'..SplatoonInfo['VersionDate'][3]"
+		OnCommand="x,SCREEN_RIGHT-30;y,SCREEN_TOP+45;horizalign,right;zoom,0.2;shadowlength,2"
+		OffCommand="linear,0.5;diffusealpha,0"
+		/>
+
+
+	<Layer Type="ActorFrame" InitCommand="x,SCREEN_CENTER_X-125;y,SCREEN_CENTER_Y"><children>
+	<Layer File="@ThemeFile('SplatSelectGameMode scroll choice1/IconRegular')"
+		OnCommand="%function(self)
+		self:zoom(0.49)
+		self:y(1.5)
+		self:x(12)
+		self:diffusealpha(0.2)
+		self:rotationz(-20)
+		end"
+		OffCommand="zoom,0.8;bounceend,0.4;zoom,1.5;diffusealpha,0"
+		/>
+	<Layer File="@ThemeFile('SplatSelectGameMode scroll choice1/IconRegular')"
+		OnCommand="%function(self)
+		self:y(7)
+		self:x(11.5)
+		self:zoom(0.49)
+		self:rotationz(-20)
+		end"
+		OffCommand="zoom,0.8;bounceend,0.4;zoom,1.5;diffusealpha,0"
+		/>
+
+	<Layer File="@ThemeFile('SplatSelectGameMode scroll choice1/IconRegular')"
+		OnCommand="%function(self)
+		self:zoom(0.5)
+		self:diffusealpha(0)
+		self:rotationz(-20)
+		end"
+		OffCommand="diffusealpha,0.5;decelerate,0.4;zoom,2;diffusealpha,0"
+		/>
+	</children></Layer>
+
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-95;y,SCREEN_CENTER_Y-10"><children>	
+		<Layer File="@ThemeFile('SplatManiaLogo')"
+			OnCommand="%function(self)
+			self:y(15)
+			self:zoom(0.5)
+			end"
+			OffCommand="zoom,2;bounceend,0.4;zoom,1.5;diffusealpha,0"
+			/>
+		</children></Layer>
+</children></ActorFrame>

@@ -1,0 +1,150 @@
+<ActorFrame><children>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomto(SCREEN_WIDTH+3,SCREEN_HEIGHT,0,0)
+		self:cmd('diffusebottomedge,#A0243E;diffusetopedge,#064557')
+		end"
+		/>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:vertalign('bottom')
+		self:y(SCREEN_BOTTOM)
+		self:zoomto(SCREEN_WIDTH+3,SCREEN_HEIGHT/1.5,0,0)
+		self:rainbow()
+		self:effectperiod(80)
+		--self:cmd('diffusebottomedge,#A0243E;diffusetopedge,0,0,0,0;')
+		self:fadetop(1)
+		end"
+		/>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_TOP)
+		self:zoomto(SCREEN_WIDTH+3,SCREEN_HEIGHT/1.5,0,0)
+		self:vertalign('top')
+		--self:cmd('diffusebottomedge,0,0,0,0;diffusetopedge,#064557')
+		self:rainbow()
+		self:effectperiod(80)
+		self:effectoffset(-4)
+		self:fadebottom(1)
+		end"
+		/>
+
+	<Layer Type="ActorFrame" OnCommand="fov,120"><children>
+
+	<Layer
+		File="@ThemeFile('_GlobalBackground/Pattern2')"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-40)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(20)
+		self:rotationz(125)
+		-- self:rotationy(10)
+		-- self:rotationx(-55)
+		self:skewx(0)
+		self:diffusealpha(0.2)
+		self:zoomx(18)
+		self:diffuse(0,1,0,0.7)
+		self:customtexturerect(0,0,5*2,5*2);
+    	self:texcoordvelocity(0.05/2,0.05/2);
+		end"
+		/>
+
+	<Layer
+		File="@ThemeFile('_GlobalBackground/Pattern2')"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(20)
+		self:rotationz(125)
+		-- self:rotationy(10)
+		-- self:rotationx(-55)
+		self:skewx(0)
+		self:diffusealpha(0.2)
+		self:zoomx(18)
+		self:diffuse(0,1,0,0.7)
+		self:customtexturerect(0,0,5*2,5*2);
+    	self:texcoordvelocity(0.05/2,0.05/2);
+		end"
+		/>
+
+		<Layer
+		File="noise"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(10)
+		self:diffusealpha(0.2)
+		self:diffuse(1,1,1,0.3)
+		self:customtexturerect(0,0,5*4,5*4);
+		self:texcoordvelocity(0,100);
+		end"
+		/>
+
+	<Layer
+		File="@ThemeFile('_GlobalBackground/Pattern2')"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-20)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(15)
+		self:rotationz(125)
+		-- self:rotationy(10)
+		-- self:rotationx(-55)
+		self:skewx(0)
+		self:diffusealpha(0.2)
+		self:zoomx(13)
+		self:diffuse(0,0.4,0,0.2)
+		self:customtexturerect(0,0,5*2,5*2);
+    	self:texcoordvelocity(-0.05/4,0.05/4);
+		end"
+		/>
+	</children></Layer>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:vertalign('bottom')
+		self:y(SCREEN_BOTTOM)
+		self:zoomto(SCREEN_WIDTH+3,SCREEN_HEIGHT/1.5,0,0)
+		self:cmd('diffusebottomedge,#A0243E;diffusetopedge,0,0,0,0;')
+		end"
+		/>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_TOP)
+		self:zoomto(SCREEN_WIDTH+3,SCREEN_HEIGHT/1.5,0,0)
+		self:vertalign('top')
+		self:cmd('diffusebottomedge,0,0,0,0;diffusetopedge,#064557')
+		end"
+		/>
+
+	<!-- Additional Glare -->
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_TOP)
+		self:zoomto(SCREEN_WIDTH+3,SCREEN_HEIGHT/1.5,0,0)
+		self:vertalign('top')
+		self:cmd('diffuse,#994F60')
+		self:cmd('diffusebottomedge,0,0,0,0;')
+		self:cmd('diffusetopedge,0,0,0,0;')
+		self:cmd('diffuseupperleft,#006886')
+		self:cmd('diffuseupperright,#07AB9D')
+		end"
+		/>
+
+</children></ActorFrame>

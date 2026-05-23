@@ -1,0 +1,27 @@
+<ActorFrame><children>
+	<Layer File="CardBG" OnCommand="zoom,2.5;sleep,2;queuecommand,CheckForFail;"
+	CheckForFailCommand="%function(self)
+	if Player1Failed then
+		self:decelerate(0.5)
+		self:diffuse(0.6,0.6,0.6,1)
+	end
+	end" />
+
+	<Layer Type="ActorFrame"><children>
+
+		<Layer File="Tab1_MainInfo.xml" />
+
+	</children></Layer>
+
+
+	<Layer File="../Failed" OnCommand="y,685;x,280;diffusealpha,0;zoom,2;sleep,2;queuecommand,CheckForFail"
+	CheckForFailCommand="%function(self)
+	if Player1Failed then
+		self:bounceend(0.5)
+		self:zoom(1)
+		self:diffusealpha(1)
+	end
+	end"
+	/>
+
+</children></ActorFrame>

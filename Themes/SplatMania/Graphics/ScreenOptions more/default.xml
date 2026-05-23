@@ -1,0 +1,8 @@
+<ActorFrame><children>
+	<Layer Font="Splat2" Text="Exit" OnCommand="y,15;shadowlength,1;diffusealpha,0.5;zoom,0.5"
+		ExitSelectedP1Command="stoptweening;decelerate,0.5;diffusealpha,1;zoom,0.6"
+		ExitUnselectedP1Command="stoptweening;decelerate,0.5;diffusealpha,0.5;zoom,0.5"
+		ExitSelectedP2Command="stoptweening;decelerate,0.5;diffusealpha,1;zoom,0.6"
+		ExitUnselectedP2Command="stoptweening;decelerate,0.5;diffusealpha,0.5;zoom,0.5"
+		/>
+</children></ActorFrame>

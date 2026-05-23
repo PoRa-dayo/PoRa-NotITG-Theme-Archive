@@ -1,0 +1,16 @@
+<ActorFrame HideTextBoxMessageCommand="%function(self) self:hidden(1) end"><children>
+
+	<Layer
+		File="@ThemeFile('DialogBox')"
+		InitCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_BOTTOM-20)
+		self:vertalign('bottom')
+		self:SetTextureFiltering(false)
+		self:zoom(0.75)
+
+		TextBoxEnabled = true;
+		end"
+		/>
+
+</children></ActorFrame>

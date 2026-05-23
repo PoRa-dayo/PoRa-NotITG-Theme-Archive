@@ -1,0 +1,11 @@
+<ActorFrame InitCommand="%function(self)
+	TextBankData1 = 'DialogTest'
+	TextBankData2 = 'VanillaBegin'
+	end"><children>
+		
+	<!-- TEXT BOX BEGINGS -->
+
+	 <Layer File="@LoadTextBox()" />
+	 <Layer File="@LoadTextBox_Anim()" /> 
+		
+</children></ActorFrame>

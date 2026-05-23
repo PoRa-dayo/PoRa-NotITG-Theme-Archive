@@ -1,0 +1,93 @@
+<ActorFrame><children>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT,0,0)
+		self:cmd('diffusebottomedge,#A0243E;diffusetopedge,#064557')
+		end"
+		OffCommand="linear,0.3;diffusealpha,1"
+		/>
+
+	<Layer Type="ActorFrame" OnCommand="fov,120"><children>
+	<Layer
+		File="Pattern2"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(20)
+		self:rotationz(125)
+		-- self:rotationy(10)
+		-- self:rotationx(-55)
+		self:skewx(0)
+		self:diffusealpha(0.2)
+		self:zoomx(18)
+		self:diffuse(0,1,0,0.2)
+		self:customtexturerect(0,0,5*2,5*2);
+    	self:texcoordvelocity(0.05/2,0.05/2);
+		end"
+		/>
+
+	<Layer
+		File="Pattern2"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-20)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(15)
+		self:rotationz(125)
+		-- self:rotationy(10)
+		-- self:rotationx(-55)
+		self:skewx(0)
+		self:diffusealpha(0.2)
+		self:zoomx(13)
+		self:diffuse(0,0.4,0,0.2)
+		self:customtexturerect(0,0,5*2,5*2);
+    	self:texcoordvelocity(-0.05/4,0.05/4);
+		end"
+		/>
+	</children></Layer>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:vertalign('bottom')
+		self:y(SCREEN_BOTTOM)
+		self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT/1.5,0,0)
+		self:cmd('diffusebottomedge,#A0243E;diffusetopedge,0,0,0,0;')
+		end"
+		OffCommand="linear,0.3;diffusealpha,1"
+		/>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_TOP)
+		self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT/1.5,0,0)
+		self:vertalign('top')
+		self:cmd('diffusebottomedge,0,0,0,0;diffusetopedge,#064557')
+		end"
+		OffCommand="linear,0.3;diffusealpha,1"
+		/>
+
+	<!-- Additional Glare -->
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_TOP)
+		self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT/1.5,0,0)
+		self:vertalign('top')
+		self:cmd('diffuse,#994F60')
+		self:cmd('diffusebottomedge,0,0,0,0;')
+		self:cmd('diffusetopedge,0,0,0,0;')
+		self:cmd('diffuseupperleft,#006886')
+		self:cmd('diffuseupperright,#07AB9D')
+		end"
+		OffCommand="linear,0.3;diffusealpha,1"
+		/>
+
+</children></ActorFrame>

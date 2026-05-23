@@ -1,0 +1,11 @@
+<ActorFrame> <children>
+
+	<!-- UPDATER -->
+
+	<Layer
+		Type="Quad"
+		PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(1); self:queuecommand('Pulse') end"
+		InitCommand="hidden,1;playcommand,Pulse"
+	/>
+
+</children></ActorFrame>

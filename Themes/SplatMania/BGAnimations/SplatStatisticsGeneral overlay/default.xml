@@ -1,0 +1,44 @@
+<ActorFrame><children>
+	<Laye File="Updater.xml" />
+
+	<Layer Type="ActorFrame" OnCommand="zoom,1.5;x,SCREEN_CENTER_X;y,SCREEN_HEIGHT*2;decelerate,1;y,SCREEN_CENTER_Y-30"
+		GoOffMessageCommand="accelerate,1;y,-SCREEN_HEIGHT*2"><children>
+		<Layer File="StatsBG" OnCommand="%function(self) end" />
+
+		<!-- Text info -->
+		<Layer Font="Splat2" Text="GENERAL STATISTICS" OnCommand="zoom,0.5;x,7;y,-105;shadowlength,2" />
+		<Layer Type="Quad" OnCommand="zoomto,450,3;y,-80;fadeleft,0.4;faderight,0.4" />
+
+		<!-- Songs Played -->
+		<Layer Type="ActorFrame" OnCommand="y,-60"><children>
+			<Layer Font="Splat2" Text="Songs Played" OnCommand="zoom,0.3;horizalign,left;x,-200;" />
+			<Layer Font="Splat2_Numbers" Text="@Profile().TotalSongsPlayed or 0" OnCommand="zoom,0.3;horizalign,right;x,200;y,-2" />
+		</children></Layer>
+
+		<!-- Current Time Played -->
+		<Layer Type="ActorFrame" OnCommand="y,-40"><children>
+			<Layer Font="Splat2" Text="Current Time Played (This Session)" OnCommand="zoom,0.3;horizalign,left;x,-200;" />
+			<Layer
+		Font="Splat2_Numbers"
+		Text="@GetUptime()"
+		SetCommand="%function(self) self:settext( GetUptime() ) end"
+		PulseMessageCommand="playcommand,Set" Text=""
+		OnCommand="zoom,0.3;horizalign,right;x,200;y,-2"
+	/>
+		</children></Layer>
+
+		<!-- Total Time Played (In Songs) -->
+		<Layer Type="ActorFrame" OnCommand="y,-20"><children>
+			<Layer Font="Splat2" Text="Total Time Played (In Songs)" OnCommand="zoom,0.3;horizalign,left;x,-200;" />
+			<Layer Font="Splat2_Numbers" Text="@SecondsToHHMMSS( Profile().TotalSongPlayTime or 0 )" OnCommand="zoom,0.3;horizalign,right;x,200;y,-2" />
+		</children></Layer>
+
+		<!-- Total Gold Earned -->
+		<Layer Type="ActorFrame" OnCommand="y,0"><children>
+			<Layer File="@ThemeFile('CreditCoin')" OnCommand="zoom,0.2;horizalign,left;x,-200;y,6" />
+			<Layer Font="Splat2" Text="Total Credits Earned" OnCommand="zoom,0.3;horizalign,left;x,-170;" />
+			<Layer Font="Splat2_Numbers" Text="@Profile().CreditsEarnedTotalTEST or 0" OnCommand="diffusetopedge,1,1,0,1;zoom,0.3;horizalign,right;x,200;y,-2" />
+		</children></Layer>
+
+	</children></Layer>
+</children></ActorFrame>

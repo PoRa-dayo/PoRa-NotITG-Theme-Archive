@@ -1,0 +1,66 @@
+<ActorFrame InitCommand="%function(self)
+
+function CountDownAnim(self, n)
+	self:sleep(n)
+	self:zoom(0)
+	self:decelerate(0.2)
+	self:diffusealpha(1)
+	self:zoom(0.5)
+	self:rotationz( math.random(-5,5) )
+	self:sleep(0.2)
+	self:accelerate(0.3)
+	self:diffusealpha(0)
+end
+
+end"><children>
+
+	<Layer
+			Type="BitmapText"
+			Font="Paintball"
+			OnCommand="%function(self)
+			self:zoom(0)
+			CheckForTimer = false
+				end"
+			InitCommand="animate,0;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+			local timeintimer = self:GetSecsIntoEffect();
+			local totaltimer = GAMESTATE:GetCurrentSong():MusicLengthSeconds()
+			self:effectclock('music')
+				if timeintimer >= totaltimer-60 then
+					self:diffuse(1,1,0,1)
+					self:settext(SecondsToMMSS(totaltimer-timeintimer))
+				end
+				if timeintimer >= totaltimer-11 and CheckForTimer == false then MESSAGEMAN:Broadcast('CountdownBegin') CheckForTimer = true; end
+			self:sleep(0.02)
+			self:queuecommand('Update')
+			end"
+			TweenOffCommand="bouncebegin,0.3;zoom,0"
+			OffCommand="queuecommand,TweenOff"
+			ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+			HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		/>
+
+	<Layer File="N10" OnCommand="%function(self) Center(self); self:diffusealpha(0) self:zoom(2) end"
+		CountdownBeginMessageCommand="%function(self) CountDownAnim(self,0) end" />
+	<Layer File="N9" OnCommand="%function(self) Center(self); self:diffusealpha(0) self:zoom(2) end"
+		CountdownBeginMessageCommand="%function(self) CountDownAnim(self,1) end" />
+	<Layer File="N8" OnCommand="%function(self) Center(self); self:diffusealpha(0) self:zoom(2) end"
+		CountdownBeginMessageCommand="%function(self) CountDownAnim(self,2) end" />
+	<Layer File="N7" OnCommand="%function(self) Center(self); self:diffusealpha(0) self:zoom(2) end"
+		CountdownBeginMessageCommand="%function(self) CountDownAnim(self,3) end" />
+	<Layer File="N6" OnCommand="%function(self) Center(self); self:diffusealpha(0) self:zoom(2) end"
+		CountdownBeginMessageCommand="%function(self) CountDownAnim(self,4) end" />
+	<Layer File="N5" OnCommand="%function(self) Center(self); self:diffusealpha(0) self:zoom(2) end"
+		CountdownBeginMessageCommand="%function(self) CountDownAnim(self,5) end" />
+	<Layer File="N4" OnCommand="%function(self) Center(self); self:diffusealpha(0) self:zoom(2) end"
+		CountdownBeginMessageCommand="%function(self) CountDownAnim(self,6) end" />
+	<Layer File="N3" OnCommand="%function(self) Center(self); self:diffusealpha(0) self:zoom(2) end"
+		CountdownBeginMessageCommand="%function(self) CountDownAnim(self,7) end" />
+	<Layer File="N2" OnCommand="%function(self) Center(self); self:diffusealpha(0) self:zoom(2) end"
+		CountdownBeginMessageCommand="%function(self) CountDownAnim(self,8) end" />
+	<Layer File="N1" OnCommand="%function(self) Center(self); self:diffusealpha(0) self:zoom(2) end"
+		CountdownBeginMessageCommand="%function(self) CountDownAnim(self,9) end" />
+
+
+</children></ActorFrame>

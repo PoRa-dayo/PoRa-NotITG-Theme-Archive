@@ -1,0 +1,168 @@
+<ActorFrame><children>
+
+	<Layer File="Background" />
+		
+		<Layer Type="ActorFrame" InitCommand="%function(self)
+		self:x(SCREEN_RIGHT+3)
+		self:y(SCREEN_CENTER_Y)
+		self:addx(2000) self:decelerate(1) self:addx(-2000)
+	end"
+	OffCommand="%function(self) self:accelerate(1) self:addx(2000) end"><children>
+	<Layer File="@ThemeFile('SongSelection/SongListBackground')"
+		OnCommand="%function(self)
+		self:horizalign('right')
+		self:zoom(0.9)
+		self:customtexturerect(0,0,1,1);
+		self:texcoordvelocity(0,0.05/2);
+		self:diffusealpha(0.5)
+		self:cropleft(0.01)
+		end"
+		/>
+
+	<Layer File="@ThemeFile('SongSelection/SongListBackground')"
+		OnCommand="%function(self)
+		self:horizalign('right')
+		self:zoom(0.9)
+		self:customtexturerect(0,0,1,1);
+		self:texcoordvelocity(0,0.05);
+		self:diffusealpha(0.5)
+		self:cropleft(0.01)
+		end"
+		/>
+
+	<Layer File="@ThemeFile('Tiles/MapTile')"
+		OnCommand="%function(self)
+		self:horizalign('left')
+		self:x(-450)
+		self:zoom(0.7)
+		self:customtexturerect(0,0,1,1);
+		self:texcoordvelocity(0,0.08/2);
+		self:diffusealpha(0.2)
+		self:cropleft(0.01)
+		end"
+		/>
+
+	<Layer File="@ThemeFile('Tiles/MapTile')"
+		OnCommand="%function(self)
+		self:horizalign('left')
+		self:x(-450)
+		self:zoom(0.9)
+		self:customtexturerect(0,0,1,1);
+		self:texcoordvelocity(0,0.05/2);
+		self:diffusealpha(0.3)
+		self:cropleft(0.01)
+		end"
+		/>
+	</children></Layer>
+
+	<Layer Type="ActorFrame" InitCommand="%function(self) self:x(SCREEN_RIGHT-100) self:y(SCREEN_CENTER_Y) end"><children>
+		<BGAnimation 
+			UseScroller="1"
+			SecondsPerItem="0.5" 
+			NumItemsToDraw="30" 
+			ItemPaddingStart="15"
+			ItemPaddingEnd="15"
+			TransformFunction="function(self,offset,itemIndex,numItems) self:y(offset*24); end">
+			<children>
+
+				<A File="@ThemeFile('SplatManiaLogo')" Command="zoom,0.4;horizalign,right;x,50" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Text="Development Team" File="Splat2" Command="zoom,0.7;diffuse,#76B1D5;ztest,1;x,-38" />
+				<A Type="Quad" Command="hidden,1" />
+				<A Text="@Credits['Devel'][1][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['Devel'][1][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" />
+				<A Text="@Credits['Devel'][2][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['Devel'][2][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Text="@Credits['Devel'][3][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['Devel'][3][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Text="@Credits['Devel'][4][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['Devel'][4][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Text="@Credits['Devel'][5][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['Devel'][5][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A File="@CImg('Separator')" Command="zoom,0.4;horizalign,right;x,15;rotationz,45" /> <A Type="Quad" Command="hidden,1" />
+				<A Text="Special Thanks" File="Splat2" Command="zoom,0.7;diffuse,#76B1D5;ztest,1;x,-20" />
+				<A Type="Quad" Command="hidden,1" />
+
+				<A Text="@Credits['SPThk'][1][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['SPThk'][1][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+
+				<A Text="@Credits['SPThk'][2][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['SPThk'][2][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" />
+
+				<A Text="@Credits['SPThk'][3][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['SPThk'][3][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" />
+
+				<A Text="@Credits['SPThk'][4][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['SPThk'][4][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" />
+
+				<A Text="@Credits['SPThk'][5][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['SPThk'][5][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+
+
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A File="@CImg('Separator')" Command="zoom,0.4;horizalign,right;x,15;rotationz,45" /> <A Type="Quad" Command="hidden,1" />
+
+
+				<A Text="@Credits['MPThk'][1][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['MPThk'][1][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+
+				<A Text="@Credits['MPThk'][2][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['MPThk'][2][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+
+				<A Text="@Credits['MPThk'][3][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['MPThk'][3][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+
+				<A Text="@Credits['MPThk'][4][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['MPThk'][4][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Type="Quad" Command="hidden,1" /> 
+
+				<A Text="@Credits['MPThk'][5][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['MPThk'][5][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+
+				<A Text="@Credits['MPThk'][6][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['MPThk'][6][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Text="@Credits['ChatP'][1]" File="Splat2" Command="%function(self) Credits_Name(self) end" />
+				<A Text="@Credits['ChatP'][2]" File="Splat2" Command="%function(self) Credits_Info(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+
+
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Text="@Credits['LegalInfo'][1]" File="Splat2" Command="%function(self) Credits_Legal(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Text="@Credits['LegalInfo'][2]" File="Splat2" Command="%function(self) Credits_Legal(self) end" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Type="Quad" Command="hidden,1" /> 
+				<A Text="@Credits['LegalInfo'][3]" File="Splat2" Command="%function(self) Credits_Legal(self) end" />
+
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A Type="Quad" Command="hidden,1" /> <A Type="Quad" Command="hidden,1" />
+				<A File="@CImg('Jose_Varela')" Command="zoom,0.6;horizalign,right;x,15" />
+
+			</children>
+		</BGAnimation>
+	</children></Layer>
+
+
+</children></ActorFrame>

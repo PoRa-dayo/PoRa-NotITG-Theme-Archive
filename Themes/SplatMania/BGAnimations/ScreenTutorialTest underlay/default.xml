@@ -1,0 +1,268 @@
+<ActorFrame><children>
+
+	<ActorFrame OnCommand="fov,120"><children>
+		<Layer Type="Quad"
+			InitCommand="zoomto,SCREEN_WIDTH*4,SCREEN_HEIGHT*4;diffuse,0,0,0,1"
+			OnCommand="%function(self)
+			GAMESTATE:ApplyGameCommand('mod, 2.5x, failoff, contrast')
+			end"
+			/>
+	<Layer
+		File="../Background/Icon1"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(2)
+		self:rotationz(45)
+		self:rotationy(10)
+		self:rotationx(-55)
+		self:fadeleft(0.5)
+		self:diffuse(math.random(0.9,1),math.random(0.9,1),math.random(0.9,1),0.3)
+		self:customtexturerect(0,0,5*2,5*2);
+    	self:texcoordvelocity(0.1,0.1);
+		end"
+		/>
+	</children></ActorFrame>
+
+	<Layer
+		File="../Background/Foreground"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(2)
+		self:customtexturerect(0,0,7*2,7*2);
+		end"
+		/>
+
+	<Layer
+		Font="Paintball"
+		Text="@GrabTransText('Tutorial', 'HelpText', 'Text1')"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-100)
+		self:y(SCREEN_CENTER_Y)
+		self:horizalign('right')
+		self:zoom(0.4)
+		self:shadowlength(1)
+		self:diffusealpha(0)
+		self:queuecommand('fadeinout')
+		end"
+		fadeinoutCommand="%function(self)
+		self:diffusealpha(0)
+		self:sleep(0.5)
+		self:linear(0.5)
+		self:diffusealpha(1)
+		self:sleep(1.5)
+		self:linear(0.5)
+		self:diffusealpha(0)
+		end"
+		/>
+
+	<Layer
+		Font="Paintball"
+		Text="@GrabTransText('Tutorial', 'HelpText', 'Text2')"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-100)
+		self:y(SCREEN_CENTER_Y)
+		self:horizalign('right')
+		self:zoom(0.4)
+		self:shadowlength(1)
+		self:diffusealpha(0)
+		self:sleep(2)
+		self:queuecommand('fadeinout')
+		end"
+		fadeinoutCommand="%function(self)
+		self:diffusealpha(0)
+		self:sleep(0.5)
+		self:linear(0.5)
+		self:diffusealpha(1)
+		self:sleep(2)
+		self:linear(0.5)
+		self:diffusealpha(0)
+		end"
+		/>
+
+	<Layer
+		Font="Paintball"
+		Text="@GrabTransText('Tutorial', 'HelpText', 'Text3')"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-100)
+		self:y(SCREEN_CENTER_Y-100)
+		self:horizalign('right')
+		self:zoom(0.4)
+		self:shadowlength(1)
+		self:diffusealpha(0)
+		self:sleep(5)
+		self:queuecommand('fadeinout')
+		end"
+		fadeinoutCommand="%function(self)
+		self:diffusealpha(0)
+		self:sleep(0.5)
+		self:linear(0.5)
+		self:diffusealpha(1)
+		self:sleep(1.5)
+		self:linear(0.5)
+		self:diffusealpha(0)
+		end"
+		/>
+
+	<Layer
+		Font="Paintball"
+		Text="@GrabTransText('Tutorial', 'HelpText', 'Text4')"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-100)
+		self:y(SCREEN_CENTER_Y-100)
+		self:horizalign('right')
+		self:zoom(0.4)
+		self:shadowlength(1)
+		self:diffusealpha(0)
+		self:sleep(8)
+		self:queuecommand('fadeinout')
+		end"
+		fadeinoutCommand="%function(self)
+		self:diffusealpha(0)
+		self:sleep(0.5)
+		self:linear(0.5)
+		self:diffusealpha(1)
+		self:sleep(1.5)
+		self:linear(0.5)
+		self:diffusealpha(0)
+		end"
+		/>
+
+	<Layer
+		Font="Paintball"
+		Text="@GrabTransText('Tutorial', 'HelpText', 'Text4')"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-100)
+		self:y(SCREEN_CENTER_Y-100)
+		self:horizalign('right')
+		self:zoom(0.4)
+		self:shadowlength(1)
+		self:diffusealpha(0)
+		self:sleep(10)
+		self:queuecommand('fadeinout')
+		end"
+		fadeinoutCommand="%function(self)
+		self:diffusealpha(0)
+		self:sleep(0.5)
+		self:linear(0.5)
+		self:diffusealpha(1)
+		self:sleep(3)
+		self:linear(0.5)
+		self:diffusealpha(0)
+		end"
+		/>
+
+	<Layer
+		Font="Paintball"
+		Text="@GrabTransText('Tutorial', 'HelpText', 'Text5')"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-100)
+		self:y(SCREEN_CENTER_Y-100)
+		self:horizalign('right')
+		self:zoom(0.4)
+		self:shadowlength(1)
+		self:diffusealpha(0)
+		self:sleep(14)
+		self:queuecommand('fadeinout')
+		end"
+		fadeinoutCommand="%function(self)
+		self:diffusealpha(0)
+		self:sleep(0.5)
+		self:linear(0.5)
+		self:diffusealpha(1)
+		self:sleep(3)
+		self:linear(0.5)
+		self:diffusealpha(0)
+		end"
+		/>
+
+
+		<Layer Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X+160;y,SCREEN_CENTER_Y+40;zoom,0;sleep,5;decelerate,1;zoom,1.2"
+		FOV="45"
+		VanishX="SCREEN_CENTER_X-160"
+		VanishY="SCREEN_CENTER_Y+40"
+	><children>
+		<Layer
+			File="platform"
+			OnCommand="y,7;diffuse,0.6,0.6,0.6,0.8"
+		/>
+		<!-- left -->
+		<Layer
+			File="panelglow"
+			OnCommand="x,-45;blend,add;diffusealpha,0"
+		Fk_P1_0_W1MessageCommand="finishtweening;diffuse,0,1,1,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_0_W2MessageCommand="finishtweening;diffuse,1,1,0,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_0_W3MessageCommand="finishtweening;diffuse,0,1,0,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_0_W4MessageCommand="finishtweening;diffuse,1,0.5,0,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_0_W5MessageCommand="finishtweening;diffuse,1,0,1,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_0_W6MessageCommand="finishtweening;diffuse,1,0,0,1;zoom,1.1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<Layer
+			File="panelglow"
+			OnCommand="x,-45;blend,add;diffusealpha,0"
+			StepP1LeftPressMessageCommand="stoptweening;zoom,1.1;linear,0.1;diffusealpha,1;zoom,1;"
+			StepP1LeftLiftMessageCommand="finishtweening;zoom,1;linear,0.3;zoom,1.5;diffusealpha,0"
+		/>
+
+		<Layer
+			File="panelglow"
+			OnCommand="x,+45;blend,add;diffusealpha,0"
+		Fk_P1_3_W1MessageCommand="finishtweening;diffuse,0,1,1,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_3_W2MessageCommand="finishtweening;diffuse,1,1,0,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_3_W3MessageCommand="finishtweening;diffuse,0,1,0,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_3_W4MessageCommand="finishtweening;diffuse,1,0.5,0,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_3_W5MessageCommand="finishtweening;diffuse,1,0,1,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_3_W6MessageCommand="finishtweening;diffuse,1,0,0,1;zoom,1.1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<Layer
+			File="panelglow"
+			OnCommand="x,+45;blend,add;diffusealpha,0"
+			StepP1RightPressMessageCommand="stoptweening;zoom,1.1;linear,0.1;diffusealpha,1;zoom,1;"
+			StepP1RightLiftMessageCommand="finishtweening;zoom,1;linear,0.3;zoom,1.5;diffusealpha,0"
+		/>
+
+		<Layer
+			File="panelglow"
+			OnCommand="y,-45;blend,add;diffusealpha,0"
+		Fk_P1_2_W1MessageCommand="finishtweening;diffuse,0,1,1,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_2_W2MessageCommand="finishtweening;diffuse,1,1,0,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_2_W3MessageCommand="finishtweening;diffuse,0,1,0,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_2_W4MessageCommand="finishtweening;diffuse,1,0.5,0,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_2_W5MessageCommand="finishtweening;diffuse,1,0,1,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_2_W6MessageCommand="finishtweening;diffuse,1,0,0,1;zoom,1.1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+
+		<Layer
+			File="panelglow"
+			OnCommand="y,-45;blend,add;diffusealpha,0"
+			StepP1UpPressMessageCommand="stoptweening;zoom,1.1;linear,0.1;diffusealpha,1;zoom,1;"
+			StepP1UpLiftMessageCommand="finishtweening;zoom,1;linear,0.3;zoom,1.5;diffusealpha,0"
+		/>
+		<Layer
+			File="panelglow"
+			OnCommand="y,+45;blend,add;diffusealpha,0"
+		Fk_P1_1_W1MessageCommand="finishtweening;diffuse,0,1,1,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_1_W2MessageCommand="finishtweening;diffuse,1,1,0,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_1_W3MessageCommand="finishtweening;diffuse,0,1,0,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_1_W4MessageCommand="finishtweening;diffuse,1,0.5,0,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_1_W5MessageCommand="finishtweening;diffuse,1,0,1,1;zoom,1.1;linear,0.3;zoom,1.5;diffusealpha,0"
+		Fk_P1_1_W6MessageCommand="finishtweening;diffuse,1,0,0,1;zoom,1.1;linear,0.3;zoom,1;diffusealpha,0"
+		/>
+		<Layer
+			File="panelglow"
+			OnCommand="y,45;blend,add;diffusealpha,0"
+			StepP1DownPressMessageCommand="stoptweening;zoom,1.1;linear,0.1;diffusealpha,1;zoom,1;"
+			StepP1DownLiftMessageCommand="finishtweening;zoom,1;linear,0.3;zoom,1.5;diffusealpha,0"
+		/>
+	</children></Layer>
+
+
+</children></ActorFrame>

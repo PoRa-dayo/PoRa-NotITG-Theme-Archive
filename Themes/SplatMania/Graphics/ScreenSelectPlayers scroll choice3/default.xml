@@ -1,0 +1,58 @@
+<ActorFrame InitCommand="fov,45"><children>
+	<Layer Type="ActorFrame" GainFocusMessageCommand="bob;effectmagnitude,0,10,0;effectperiod,2" LoseFocusMessageCommand="stopeffect"><children>
+	<Layer Type="ActorFrame" GainFocusMessageCommand="bob;effectmagnitude,10,0,0;effectperiod,4" LoseFocusMessageCommand="stopeffect"><children>
+			<Layer
+			File="PlayIcon"
+			OnCommand="%function(self)
+			
+			self:x(0)
+			self:y(0)
+			self:zoom(0)
+			end"
+			GainFocusMessageCommand="%function(self)
+			Mode3Selected = true;
+			self:stoptweening()
+			self:bouncebegin(0.1)
+			self:diffuse(1,1,1,1)
+			self:rotationz(20)
+			self:bounceend(0.3)
+			self:rotationz(0)
+			self:z(20)
+			self:zoom(1)
+			self:zoomx(1.05)
+			end"
+			LoseFocusMessageCommand="%function(self)
+			Mode3Selected = false;
+			self:stoptweening()
+			self:bouncebegin(0.1)
+			self:diffuse(0.7,0.7,0.7,1)
+			self:rotationz(-20)
+			self:bounceend(0.3)
+			self:rotationz(0)
+			self:zoom(1)
+			self:zoomx(0.95)
+			self:z(-30)
+			end"
+			MadeChoiceP1MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+			MadeChoiceP2MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+			GoOffMessageCommand="%function(self)
+			self:bounceend(0.3);
+				if Mode3Selected then 
+					self:diffuse(1,1,1,1);
+					self:glowblink();
+					self:effectperiod(0.2)
+					self:zoom(1);
+					self:zoomx(0.95)
+					self:sleep(0.5)
+					self:accelerate(0.3)
+					self:x(-1500)
+				else
+					self:z(0);
+					self:zoom(0);
+				end
+			end"
+			/>
+		</children></Layer>
+	</children></Layer>
+
+</children></ActorFrame>

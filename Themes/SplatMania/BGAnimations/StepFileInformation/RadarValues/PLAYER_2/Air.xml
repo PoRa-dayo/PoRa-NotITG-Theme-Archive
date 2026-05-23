@@ -1,0 +1,57 @@
+<ActorFrame><children>
+
+            <Layer
+            Font="Paintball"
+            Text="@THEME:GetMetric('PaneDisplay', 'Air')"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            OnCommand="%function(self)
+            self:shadowlength(1)
+            self:x(23.5+XOffset)
+            self:y(27)
+            self:zoom(0.3)
+            end"
+            />
+
+                  <Layer
+            Type="Quad"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            InitCommand="zoom,1;diffusebottomedge,0,0,0,1;diffusetopedge,0.5,0.5,0.5,1"
+            OnCommand="%function(self)
+            self:zoomto(6,42)
+            self:horizalign('right')
+            self:shadowlength(-2)
+            self:x(25+XOffset)
+            end"
+            />
+
+            <Layer
+            Type="Quad"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            InitCommand="diffuse,0,0.6,1,1;zoom,1;diffusebottomedge,0,0,0,1;diffusetopedge,0.8,0.8,0.8,1"
+            OnCommand="%function(self)
+            self:zoomto(6,42)
+            self:horizalign('right')
+            self:shadowlength(0)
+            self:x(25+XOffset)
+            end"
+            CurrentStepsP1ChangedMessageCommand="%function(self)
+            self:hurrytweening(0.01)
+            self:sleep(0.05)
+            self:queuecommand('UpdateRadarValue')
+            end"
+            CurrentStepsP2ChangedMessageCommand="%function(self)
+            self:hurrytweening(0.01)
+            self:sleep(0.05)
+            self:queuecommand('UpdateRadarValue')
+            end"
+            UpdateRadarValueCommand="%function(self)
+            self:decelerate(0.2)
+            if GAMESTATE:GetCurrentSong() then
+                  self:croptop( 1 - RadarValue(PLAYER_2,2) )
+            else
+                  self:croptop( 1 )
+            end
+            end"
+            />
+
+</children></ActorFrame>

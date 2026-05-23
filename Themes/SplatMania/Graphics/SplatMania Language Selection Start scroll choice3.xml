@@ -1,0 +1,106 @@
+<ActorFrame><children>
+		<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','Paint Splats/Splat1')"
+		OnCommand="%function(self)
+		
+		self:zoom(0)
+		end"
+		GainFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bounceend(0.1)
+		self:diffuse(0,1,1,1)
+		self:zoom(0.9)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bouncebegin(0.1)
+		self:diffuse(0,0.2,0.2,1)
+		self:zoom(0.3)
+		end"
+		/>
+
+	<Layer
+		Font="Paintball"
+		Text="日本語"
+		OnCommand="%function(self)
+		
+		self:x(33)
+		self:y(-4)
+		self:zoom(0.9)
+		self:shadowlength(1)
+		end"
+		GainFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bounceend(0.1)
+		self:diffuse(1,1,1,1)
+		self:zoom(1.5)
+		self:x(33)
+		self:y(-4)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bouncebegin(0.1)
+		self:diffuse(0.2,0.2,0.2,1)
+		self:zoom(0.3)
+		self:x(8)
+		self:y(-4)
+		end"
+		/>
+
+	<Layer
+		Font="Paintball"
+		Text="非常に実験的！"
+		OnCommand="%function(self)
+		
+		self:x(26)
+		self:y(-40)
+		self:zoom(0.9)
+		self:shadowlength(1)
+		end"
+		GainFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bounceend(0.1)
+		self:diffuse(1,1,1,1)
+		self:zoom(0.8)
+		self:x(26)
+		self:y(-40)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bouncebegin(0.1)
+		self:diffuse(0.2,0.2,0.2,1)
+		self:zoom(0.3)
+		self:x(16)
+		self:y(-20)
+		end"
+		/>
+
+	<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','Cursor.sprite')"
+		OnCommand="%function(self)
+		
+		self:x(-100)
+		self:y(100)
+		self:rotationz(45)
+		self:zoom(2)
+		self:bounce()
+		self:effectmagnitude(10,-10,0)
+		self:effectperiod(1)
+		self:diffusetopedge(1,0.5,0.5,1)
+		self:diffusebottomedge(1,0.8,0.3,1)
+		end"
+		GainFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bounceend(0.1)
+		self:zoom(2)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bouncebegin(0.1)
+		self:zoom(0)
+		end"
+		/>
+
+
+
+</children></ActorFrame>

@@ -1,0 +1,28 @@
+<ActorFrame><children>
+
+	<Layer Type="ActorFrame" 
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(0.5)
+	end"><children>
+
+	<Layer File="@ThemeFile('EcoInfoBG')" 
+		InitCommand="diffusealpha,0"
+		OnCommand="sleep,1;linear,0.3;diffusealpha,1"
+		/>
+	<Layer
+		Font="Splat2"
+		Text="@THEME:GetMetric('LoadingTransitions','ToMusicInterface')"
+		InitCommand="%function(self)
+		
+		self:zoom(0.9)
+		self:diffusealpha(0)
+		self:shadowlength(1)
+		end"
+		OnCommand="sleep,1;linear,0.3;diffusealpha,1"
+		/>
+		
+	</children></Layer>
+		
+</children></ActorFrame>

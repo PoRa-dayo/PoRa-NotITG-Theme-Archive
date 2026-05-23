@@ -1,0 +1,23 @@
+<ActorFrame><children>
+
+
+	<Layer
+		Font="Splat2"
+		Text="@GrabTransText('SplatManiaOptions', 'LanguageOptions', 'Warning')"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_CENTER_X+7)
+		self:y(SCREEN_CENTER_Y+110)
+		self:zoom(0.5)
+		self:shadowlength(1)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		/>
+
+
+		<Layer File="MenuButtons.xml" OnCommand="%function(self)
+		ShowMove = true
+		ShowStart = true
+		ShowReturn = false
+		end" />
+</children></ActorFrame>

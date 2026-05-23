@@ -1,0 +1,302 @@
+<ActorFrame><children>
+
+	<Layer
+		Font="Paintball"
+		Text=" "
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-75)
+		self:y(SCREEN_CENTER_Y+45)
+		self:horizalign('right')
+		self:shadowlength(1)
+		self:rotationy(-7)
+		self:queuecommand('SetNow')
+		end"
+		SetNowCommand="%function(self)
+		if GAMESTATE:GetCurrentSong() then
+
+			self:settext( GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() )
+			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()+1
+			
+			for i=1,table.getn(DiffColorTable) do
+				if Diff == i then
+					self:diffuse( DiffColorTable[i][2][1],DiffColorTable[i][2][2],DiffColorTable[i][2][3],DiffColorTable[i][2][4] )
+				end
+			end
+
+		else
+			self:settext('ND')
+			self:diffuse(1,1,1,0.5)
+		end
+		self:queuecommand('AnimationStart')
+		end"
+		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-275) end"
+		CurrentStepsP1ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
+		/>
+
+		<Layer
+		Font="Paintball"
+		Text=" "
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-75)
+		self:y(SCREEN_CENTER_Y+50)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:zoom(0.5)
+		self:maxwidth(170)
+		self:rotationy(-5)
+		self:queuecommand('SetNow')
+		end"
+		SetNowCommand="%function(self)
+		if GAMESTATE:GetCurrentSong() then
+
+			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()+1
+			for i=1,table.getn(DiffColorTable) do
+				if Diff == i then
+					self:diffuse( DiffColorTable[i][2][1],DiffColorTable[i][2][2],DiffColorTable[i][2][3],DiffColorTable[i][2][4] )
+					self:settext( DiffColorTable[i][1] )
+					self:y(SCREEN_CENTER_Y+50)
+					self:zoom(0.5)
+				end
+			end
+
+            self:zoom(0.4)
+            self:y(SCREEN_CENTER_Y+45)
+
+		else
+			self:settext('No data')
+			self:diffuse(1,1,1,0.5)
+		end
+
+		self:queuecommand('AnimationStart')
+		end"
+		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-265) end"
+		CurrentStepsP1ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
+		/>
+
+		<Layer
+		Font="Paintball"
+		Text=" "
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-75)
+		self:y(SCREEN_CENTER_Y+60)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:zoom(0.5)
+		self:maxwidth(170)
+		self:rotationy(-5)
+		self:queuecommand('SetNow')
+		end"
+		SetNowCommand="%function(self)
+		if GAMESTATE:GetCurrentSong() then
+
+
+            self:diffuse(1,1,1,0.5)
+            if GetStepsDescriptionText(PLAYER_1) == '' then
+                self:settext( 'Creator Not Set!' )
+                self:diffuse(1,0,0,0.5)
+            else
+                self:settext( 'By: '..GetStepsDescriptionText(PLAYER_1) )
+            end
+            self:zoom(0.4)
+
+		else
+			self:settext('No data')
+			self:diffuse(1,1,1,0.5)
+		end
+
+		self:queuecommand('AnimationStart')
+		end"
+		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-265) end"
+		CurrentStepsP1ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
+		/>
+
+		<Layer
+		Font="Paintball"
+		Text=" "
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-5)
+		self:y(SCREEN_CENTER_Y+40)
+		self:horizalign('right')
+		self:shadowlength(1)
+		self:rotationy(-7)
+		self:maxwidth(100)
+		self:queuecommand('SetNow')
+		end"
+		SetNowCommand="%function(self)
+		if GAMESTATE:GetCurrentSong() then
+
+			self:settext( GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() )
+			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()+1
+			for i=1,table.getn(DiffColorTable) do
+				if Diff == i then
+					self:diffuse( DiffColorTable[i][2][1],DiffColorTable[i][2][2],DiffColorTable[i][2][3],DiffColorTable[i][2][4] )
+				end
+			end
+
+		else
+			self:settext('ND')
+			self:diffuse(1,1,1,0.5)
+		end
+		self:queuecommand('AnimationStart')
+		end"
+		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-125) end"
+		CurrentStepsP2ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
+		/>
+
+		<Layer
+		Font="Paintball"
+		Text=" "
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-75)
+		self:y(SCREEN_CENTER_Y+57)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:zoom(0.5)
+		self:rotationy(-5)
+		self:maxwidth(130)
+		self:queuecommand('SetNow')
+		end"
+		SetNowCommand="%function(self)
+		if GAMESTATE:GetCurrentSong() then
+
+			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()
+
+            self:diffuse(1,1,1,0.5)
+            if GetStepsDescriptionText(PLAYER_2) == '' then
+                self:settext( 'Creator Not Set!' )
+                self:diffuse(1,0,0,0.5)
+            else
+                self:settext( 'By: '..GetStepsDescriptionText(PLAYER_2) )
+            end
+            self:zoom(0.4)
+
+		else
+			self:settext('No data')
+			self:diffuse(1,1,1,0.5)
+		end
+
+		self:queuecommand('AnimationStart')
+		end"
+		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-115) end"
+		CurrentStepsP2ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
+		/>
+
+		<Layer
+		Font="Paintball"
+		Text=" "
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-75)
+		self:y(SCREEN_CENTER_Y+45)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:zoom(0.5)
+		self:rotationy(-5)
+		self:maxwidth(130)
+		self:queuecommand('SetNow')
+		end"
+		SetNowCommand="%function(self)
+		if GAMESTATE:GetCurrentSong() then
+
+			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()+1
+			for i=1,table.getn(DiffColorTable) do
+				if Diff == i then
+					self:diffuse( DiffColorTable[i][2][1],DiffColorTable[i][2][2],DiffColorTable[i][2][3],DiffColorTable[i][2][4] )
+					self:settext( DiffColorTable[i][1] )
+					self:y(SCREEN_CENTER_Y+45)
+					self:zoom(0.5)
+				end
+			end
+
+            self:zoom(0.4)
+            self:y(SCREEN_CENTER_Y+42)
+
+		else
+			self:settext('No data')
+			self:diffuse(1,1,1,0.5)
+		end
+		self:queuecommand('AnimationStart')
+		end"
+		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-115) end"
+		CurrentStepsP2ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
+		/>
+
+
+
+		<Layer
+		Font="Paintball"
+		Text="@THEME:GetMetric('PaneDisplay', 'BottomHeaderText')"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-310)
+		self:y(SCREEN_CENTER_Y+22)
+		self:zoom(0.3)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:rotationy(-1)
+		self:rotationz(2)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		/>
+
+		<Layer
+		Type="Quad"
+		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-180)
+		self:y(SCREEN_CENTER_Y+115)
+		self:zoomto(2,80,0,0)
+		self:rotationy(-1)
+		self:fadetop(0.1)
+		self:fadebottom(0.1)
+		self:rotationz(2)
+		end"
+		/>
+
+		<Layer Type="ActorFrame" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)" Command="x,SCREEN_CENTER_X-320;y,SCREEN_CENTER_Y+85;rotationy,-15;zoom,1.5"><children>
+
+			<Layer File="RadarValues/PLAYER_1/StepsInfo.xml" OnCommand="%function(self) XOffset = 20; end" />
+
+			<Layer Type="ActorFrame" Condition="not GAMESTATE:IsPlayerEnabled(PLAYER_2)" Command="x,55;y,15;zoom,1.2"><children>
+				<Layer File="RadarValues/PLAYER_1/Stream.xml" OnCommand="%function(self)  XOffset = 20; end" />
+				<Layer File="RadarValues/PLAYER_1/Voltage.xml" OnCommand="%function(self) XOffset = 30; end" />
+				<Layer File="RadarValues/PLAYER_1/Air.xml" OnCommand="%function(self) 	  XOffset = 40; end" />
+				<Layer File="RadarValues/PLAYER_1/Freeze.xml" OnCommand="%function(self)  XOffset = 50; end" />
+				<Layer File="RadarValues/PLAYER_1/Chaos.xml" OnCommand="%function(self)  XOffset = 60; end" />
+			</children></Layer>
+
+        </children></Layer>
+
+        <Layer Type="ActorFrame" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)" Command="x,SCREEN_CENTER_X-200;y,SCREEN_CENTER_Y+80;rotationy,-11;zoom,1.5"><children>
+
+        	<Layer File="RadarValues/PLAYER_2/StepsInfo.xml" OnCommand="%function(self)  XOffset = 20; end" />
+
+        	<Layer Type="ActorFrame" Condition="not GAMESTATE:IsPlayerEnabled(PLAYER_1)" Command="x,-105;y,15;zoom,1.2"><children>
+				<Layer File="RadarValues/PLAYER_2/Stream.xml" OnCommand="%function(self)  XOffset = 20; end" />
+				<Layer File="RadarValues/PLAYER_2/Voltage.xml" OnCommand="%function(self) XOffset = 30; end" />
+				<Layer File="RadarValues/PLAYER_2/Air.xml" OnCommand="%function(self) 	  XOffset = 40; end" />
+				<Layer File="RadarValues/PLAYER_2/Freeze.xml" OnCommand="%function(self)  XOffset = 50; end" />
+				<Layer File="RadarValues/PLAYER_2/Chaos.xml" OnCommand="%function(self)  XOffset = 60; end" />
+			</children></Layer>
+
+		</children></Layer>
+
+		<Layer Type="ActorFrame" Command="x,SCREEN_CENTER_X-170;y,SCREEN_CENTER_Y+180;"><children>
+		<Layer
+		Font="Splat2"
+		Text=" "
+		OnCommand="%function(self)
+		self:zoom(0.25)
+		self:rotationy(-2)
+		self:settext('Current Sort Mode: Group')
+		self:shadowlength(1)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+        UpdateSortOrderMessageCommand="%function(self) UpdateSortName(self) end" />
+	</children></Layer>
+
+</children></ActorFrame>

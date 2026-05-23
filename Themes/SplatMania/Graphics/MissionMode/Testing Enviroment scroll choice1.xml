@@ -1,0 +1,134 @@
+<ActorFrame><children>
+
+	<Layer Type="ActorFrame" OnCommand="fov,90;rotationx,-45"><children>
+		<!-- <Layer File="../../BGAnimations/Background" /> -->
+		<Layer Type="Quad" OnCommand="zoomto,SCREEN_WIDTH*4,SCREEN_HEIGHT*4" />
+		<Layer
+		File="../../BGAnimations/Background/Foreground"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(12)
+		self:customtexturerect(0,0,7*2,7*2);
+		end"
+		/>
+		<Layer Type="Quad" OnCommand="zoomto,600,20;horizalign,left;fadeleft,0.05;faderight,0.05" />
+	</children></Layer>
+
+	<Layer Type="ActorFrame" OnCommand="fov,90"><children>
+	<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','MissionCards/Global/MPointHover')"
+		OnCommand="%function(self)
+		
+		self:rotationx(-45)
+		self:zoom(0.75)
+		self:pulse()
+		self:effectperiod(2)
+		self:effectmagnitude(1.1,1,0)
+		end"
+		GainFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bounceend(0.2)
+		self:diffuse(1,1,1,1)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bouncebegin(0.2)
+		self:diffuse(0.5,0.5,0.5,1)
+		end"
+		/>
+
+	<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','MissionCards/Global/MPointSelected')"
+		OnCommand="%function(self)
+		
+		self:z(0)
+		self:rotationx(-45)
+		self:zoom(0)
+		self:bob()
+		self:effectperiod(2)
+		self:effectmagnitude(0,0,10)
+		end"
+		GainFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bounceend(0.2)
+		self:zoom(0.75)
+		self:z(10)
+		self:diffuse(1,1,1,1)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bouncebegin(0.2)
+		self:zoom(0)
+		self:diffusealpha(0)
+		end"
+		/>
+
+	<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','MissionCards/Global/MPointSelectedOK')"
+		OnCommand="%function(self)
+		
+		self:x(0)
+		self:y(-40)
+		self:z(0)
+		self:rotationx(0)
+		self:zoom(0)
+		self:bob()
+		self:effectperiod(2)
+		self:effectoffset(-0.5)
+		self:effectmagnitude(0,0,10)
+		end"
+		GainFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bounceend(0.2)
+		self:zoom(0.75)
+		--self:z(90)
+		self:y(-40)
+		self:diffuse(1,1,1,1)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:bouncebegin(0.2)
+		self:y(40)
+		self:zoom(0)
+		self:diffusealpha(0)
+		end"
+		GoOffMessageCommand="%function(self)
+		self:decelerate(0.5)
+		self:zoom(2)
+		self:y(-100)
+		self:accelerate(0.5)
+		self:y(-800)
+		self:sleep(0.01)
+		self:diffusealpha(0)
+		end"
+		MadeChoiceP1MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+		MadeChoiceP2MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+		/>
+	</children></Layer>
+		
+		<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','MissionCards/Mission1')"
+		OnCommand="%function(self)
+		
+		self:x(0)
+		self:y(300)
+		self:zoom(0.75)
+		end"
+		GainFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:decelerate(0.1)
+		self:y(300)
+		self:rotationz(0)
+		self:diffuse(1,1,1,1)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		self:finishtweening()
+		self:accelerate(0.1)
+		self:y(500)
+		self:rotationz(30)
+		self:diffusealpha(0)
+		end"
+		/>
+
+</children></ActorFrame>

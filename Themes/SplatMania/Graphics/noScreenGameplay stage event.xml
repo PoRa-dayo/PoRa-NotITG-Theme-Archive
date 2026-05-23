@@ -1,0 +1,101 @@
+<ActorFrame InitCommand="%function(self)
+self:zoom(0)
+if DebugMode then
+	self:zoom(1)
+end
+end"><children>
+
+	<CODE Type="Quad" InitCommand="hidden,1;playcommand,Pulse"
+		PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(1); self:queuecommand('Pulse') end" />
+
+	<CODE Type="Quad" OnCommand="diffuse,0.2,0.2,0.2,0.5;diffuseupperleft,0,0,0,0;diffuseleftedge,0,0,0,0;zoomto,300,100;x,SCREEN_RIGHT;horizalign,right;y,SCREEN_BOTTOM;vertalign,bottom" />
+
+	<Layer
+		Font="Splat2"
+		Text="Grafical Statistics"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-8)
+		self:y(SCREEN_BOTTOM-84)
+		self:horizalign('right')
+		self:diffusealpha(0.7)
+		self:zoom(0.3)
+		self:shadowlength(1)
+		self:diffusetopedge(0,1,1,1)
+		self:diffusebottomedge(1,0,1,1)
+		end"
+		/>
+
+	<Layer
+		Font="Splat2"
+		Text="FPS INFO"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-10)
+		self:y(SCREEN_BOTTOM-68)
+		self:horizalign('right')
+		self:diffusealpha(0.7)
+		self:zoom(0.3)
+		self:shadowlength(1)
+		self:settext( 'FPS: --' )
+		end"
+		PulseMessageCommand="%function(self)
+		self:settext( 'FPS: '..DISPLAY:GetFPS() )
+		if DISPLAY:GetFPS() > 50 then
+			self:diffuse(0,1,0,0.7)
+		end
+		if DISPLAY:GetFPS() > 30 and DISPLAY:GetFPS() < 50 then
+			self:diffuse(1,0.5,0,0.7)
+		end
+		end"
+		/>
+
+	<Layer
+		Font="Splat2"
+		Text="AV FPS INFO"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-10)
+		self:y(SCREEN_BOTTOM-56)
+		self:horizalign('right')
+		self:diffusealpha(0.7)
+		self:zoom(0.3)
+		self:shadowlength(1)
+		self:settext( 'Av. FPS: --' )
+		end"
+		PulseMessageCommand="%function(self) self:settext( 'Av. FPS: '..DISPLAY:GetCumFPS() ) end"
+		/>
+
+	<Layer
+		Font="Splat2"
+		Text="VPF INFO"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-10)
+		self:y(SCREEN_BOTTOM-44)
+		self:horizalign('right')
+		self:diffusealpha(0.7)
+		self:zoom(0.3)
+		self:shadowlength(1)
+		self:settext( 'VPF: --' )
+		end"
+		PulseMessageCommand="%function(self) self:settext( 'VPF: '..DISPLAY:GetVPF() ) end"
+		/>
+
+	<Layer
+		Font="Splat2"
+		Text="Grafic card vendor"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-10)
+		self:y(SCREEN_BOTTOM-32)
+		self:horizalign('right')
+		self:diffusealpha(0.7)
+		self:zoom(0.3)
+		self:shadowlength(1)
+		self:settext( 'Current Grafics Card Vendor: --' )
+		end"
+		PulseMessageCommand="%function(self) self:settext( 'Current Grafics Card Vendor: '..DISPLAY:GetVendor() ) end"
+		/>
+
+</children></ActorFrame>

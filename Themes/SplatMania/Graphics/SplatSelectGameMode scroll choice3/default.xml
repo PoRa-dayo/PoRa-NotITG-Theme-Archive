@@ -1,0 +1,177 @@
+<ActorFrame InitCommand="fov,45"><children>
+	<Layer Type="ActorFrame" GainFocusMessageCommand="bob;effectmagnitude,0,10,0;effectperiod,2" LoseFocusMessageCommand="stopeffect"><children>
+	<Layer Type="ActorFrame" GainFocusMessageCommand="bob;effectmagnitude,10,0,0;effectperiod,4" LoseFocusMessageCommand="stopeffect"><children>
+			<Layer
+			File="ModeIcon"
+			OnCommand="%function(self)
+			
+			self:x(0)
+			self:y(0)
+			self:zoom(0)
+			end"
+			GainFocusMessageCommand="%function(self)
+			Choice3Selected = true;
+			self:stoptweening()
+			self:bouncebegin(0.1)
+			self:diffuse(1,1,1,1)
+			self:rotationz(20)
+			self:bounceend(0.3)
+			self:rotationz(0)
+			self:z(30)
+			self:zoom(0.9)
+			self:zoomx(0.85)
+			end"
+			LoseFocusMessageCommand="%function(self)
+			Choice3Selected = false;
+			self:stoptweening()
+			self:bouncebegin(0.1)
+			self:diffuse(0.7,0.7,0.7,1)
+			self:rotationz(-20)
+			self:bounceend(0.3)
+			self:rotationz(0)
+			self:zoom(0.8)
+			self:z(-30)
+			end"
+			MadeChoiceP1MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+			MadeChoiceP2MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+			GoOffMessageCommand="%function(self)
+			self:bounceend(0.3);
+				if Choice3Selected then 
+					self:x(0); 
+					self:y(0); 
+					self:diffuse(1,1,1,1);
+					self:glowblink();
+					self:effectperiod(0.2)
+					self:zoom(1);
+					self:zoomx(0.95)
+					self:sleep(0.5)
+					self:accelerate(0.3)
+					self:x(-1000)
+				else
+					self:x(0);
+					self:y(0);
+					self:z(0);
+					self:zoom(0);
+				end
+				self:sleep(5)
+			end"
+			/>
+		</children></Layer>
+	</children></Layer>
+
+	<Layer Type="ActorFrame"
+		GoOffMessageCommand="%function(self)
+			self:bounceend(0.3);
+				if Choice3Selected then 
+					self:sleep(0.5)
+					self:accelerate(0.3)
+					self:x(3000)
+					self:z(300);
+				else
+					self:x(0);
+					self:y(0);
+					self:z(0);
+					self:zoom(0);
+				end
+				self:sleep(5)
+			end"><children>
+		<Layer File="../GameModeExplanationBox"
+		OnCommand="%function(self)
+		
+		self:x(430)
+		self:horizalign('left')
+		self:y(0)
+		self:rotationy(20)
+		self:diffuseleftedge(0.5,0.5,1,1)
+		self:diffusealpha(0)
+		self:zoom(1)
+		end"
+		GainFocusMessageCommand="%function(self)
+		self:stoptweening()
+		self:decelerate(0.3)
+		self:diffusealpha(1)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		self:stoptweening()
+		self:accelerate(0.3)
+		self:diffusealpha(0)
+		end"
+		/>
+
+		<Layer File="IconMarathon"
+		OnCommand="%function(self)
+		
+		self:x(480)
+		self:horizalign('left')
+		self:y(0)
+		self:rotationy(35)
+		self:diffusealpha(0)
+		self:zoom(1.5)
+		end"
+		GainFocusMessageCommand="%function(self)
+		self:stoptweening()
+		self:decelerate(0.3)
+		self:diffusealpha(0.2)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		self:stoptweening()
+		self:accelerate(0.3)
+		self:diffusealpha(0)
+		end"
+		/>
+
+		<Layer
+		Font="Splat2"
+		Text="@THEME:GetMetric('SelectGameMode','MarathonHeader')"
+		OnCommand="%function(self)
+		
+		self:x(500)
+		self:horizalign('left')
+		self:y(-400)
+		self:diffuse(0.5,0.5,1,1)
+		self:rotationy(20)
+		self:diffusealpha(0)
+		self:zoom(1.3)
+        self:zoomx(0.9)
+		end"
+		GainFocusMessageCommand="%function(self)
+		self:stoptweening()
+		self:decelerate(0.3)
+		self:diffusealpha(1)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		self:stoptweening()
+		self:accelerate(0.3)
+		self:diffusealpha(0)
+		end"
+		/>
+
+		<Layer
+		Font="Splat2"
+		Text="@THEME:GetMetric('SelectGameMode','MarathonDescription')"
+		OnCommand="%function(self)
+		
+		self:x(500)
+		self:shadowlength(2)
+		self:horizalign('left')
+		self:vertalign('top')
+		self:y(-300)
+		self:wrapwidthpixels( SCREEN_WIDTH/0.9 )
+		self:rotationy(25)
+		self:diffusealpha(0)
+		self:zoom(1.3)
+		end"
+		GainFocusMessageCommand="%function(self)
+		self:stoptweening()
+		self:decelerate(0.3)
+		self:diffusealpha(1)
+		end"
+		LoseFocusMessageCommand="%function(self)
+		self:stoptweening()
+		self:accelerate(0.3)
+		self:diffusealpha(0)
+		end"
+		/>
+	</children></Layer>
+
+</children></ActorFrame>

@@ -1,0 +1,8 @@
+<ActorFrame><children>
+	<Layer File="@ThemeFile('Splatted')" />
+
+	<Layer Type="Quad" OnCommand="queuecommand,PlaySound" PlaySoundCommand="%function(self)
+	AudioPlay('FireImpact')
+	SurvivedTime = GAMESTATE:GetSongTime()
+	end" />
+</children></ActorFrame>

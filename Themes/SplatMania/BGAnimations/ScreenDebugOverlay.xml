@@ -1,0 +1,84 @@
+<ActorFrame><children>
+
+	<CODE Type="Quad" InitCommand="hidden,1;playcommand,Pulse"
+		PulseCommand="%function(self) MESSAGEMAN:Broadcast('Pulse'); self:sleep(1); self:queuecommand('Pulse') end" />
+
+	<Layer
+		Font="Splat2"
+		Text="Grafical Statistics"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-8)
+		self:y(SCREEN_BOTTOM-84)
+		self:horizalign('right')
+		self:diffusealpha(0.7)
+		self:zoom(0.3)
+		self:shadowlength(1)
+		end"
+		/>
+
+	<Layer
+		Font="Splat2"
+		Text="FPS INFO"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-10)
+		self:y(SCREEN_BOTTOM-68)
+		self:horizalign('right')
+		self:diffusealpha(0.7)
+		self:zoom(0.3)
+		self:shadowlength(1)
+		self:settext( 'FPS: --' )
+		end"
+		PulseMessageCommand="%function(self) self:settext( 'FPS: '..DISPLAY:GetFPS() ) end"
+		/>
+
+	<Layer
+		Font="Splat2"
+		Text="AV FPS INFO"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-10)
+		self:y(SCREEN_BOTTOM-56)
+		self:horizalign('right')
+		self:diffusealpha(0.7)
+		self:zoom(0.3)
+		self:shadowlength(1)
+		self:settext( 'Av. FPS: --' )
+		end"
+		PulseMessageCommand="%function(self) self:settext( 'Av. FPS: '..DISPLAY:GetCumFPS() ) end"
+		/>
+
+	<Layer
+		Font="Splat2"
+		Text="VPF INFO"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-10)
+		self:y(SCREEN_BOTTOM-44)
+		self:horizalign('right')
+		self:diffusealpha(0.7)
+		self:zoom(0.3)
+		self:shadowlength(1)
+		self:settext( 'VPF: --' )
+		end"
+		PulseMessageCommand="%function(self) self:settext( 'VPF: '..DISPLAY:GetVPF() ) end"
+		/>
+
+	<Layer
+		Font="Splat2"
+		Text="Grafic card vendor"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-10)
+		self:y(SCREEN_BOTTOM-32)
+		self:horizalign('right')
+		self:diffusealpha(0.7)
+		self:zoom(0.3)
+		self:shadowlength(1)
+		self:settext( 'Current Grafics Card Vendor: --' )
+		end"
+		PulseMessageCommand="%function(self) self:settext( 'Current Grafics Card Vendor: '..DISPLAY:GetVendor() ) end"
+		/>
+
+</children></ActorFrame>

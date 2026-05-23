@@ -1,0 +1,95 @@
+<ActorFrame
+	InitCommand="%function(self)
+	OffsetInc = -30
+	end"
+	><children>
+
+	<Layer
+		Font="Splat2"
+		Text="@THEME:GetMetric('ScreenSelectMusic','HeaderText')"
+		OnCommand="%function(self)
+		self:x(SCREEN_RIGHT-180)
+		self:y(SCREEN_TOP+45)
+		self:zoom(0.6)
+		self:shadowlength(1)
+		self:addx(2000) self:decelerate(1) self:addx(-2000)
+		end"
+		OffCommand="accelerate,1;addx,2000;diffusealpha,0"
+		/>
+
+	<Layer Type="ActorFrame" OnCommand="fov,110"><children>
+
+		<Layer File="StepFileInformation/SongInformation.xml"
+			OnCommand="%function(self) self:x(SCREEN_CENTER_X-318) self:y(SCREEN_CENTER_Y-57+OffsetInc)
+			self:addx(-2000) self:decelerate(1) self:addx(2000)
+			end"
+			OffCommand="%function(self) self:accelerate(1) self:addx(-2000) end"
+			/>
+
+		<Layer File="StepFileInformation/SongDataInformation.xml" 
+			OnCommand="%function(self)
+			self:addy(OffsetInc)
+			self:addx(-2000) self:decelerate(1) self:addx(2000)
+			end"
+			OffCommand="%function(self) self:accelerate(1) self:addx(-2000) end"
+			/>
+
+		<Layer File="CoinAndStageInfo.xml" OnCommand="%function(self)
+	self:x(SCREEN_CENTER_X-200);
+	self:y(SCREEN_CENTER_Y-175+OffsetInc);
+	self:zoom(0.3)
+	UpdateCoinAmmount = false;
+	self:addx(-2000) self:decelerate(1) self:addx(2000)
+	self:rotationy(-5)
+	end"
+	OffCommand="%function(self) self:accelerate(1) self:addx(-2000) end" />
+
+	</children></Layer>
+
+		<Layer File="MenuButtons.xml" OnCommand="%function(self)
+		ShowMove = false
+		ShowStart = true
+		ShowReturn = false
+		end"
+		OffCommand="%function(self) self:accelerate(1) self:diffusealpha(0) end"
+		/>
+
+
+	<Layer Type="ActorFrame" OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(0.5)
+	end"><children>
+
+	<Layer File="@ThemeFile('EcoInfoBG')" OnCommand="linear,0.3;diffusealpha,0"
+		/>
+	<Layer
+		Font="Splat2"
+		Text="@THEME:GetMetric('LoadingTransitions','ToMusicInterface')"
+		OnCommand="%function(self)
+		
+		self:zoom(0.9)
+		self:linear(0.3)
+		self:diffusealpha(0)
+		end"
+		/>
+	</children></Layer>
+
+	<Layer Type="ActorFrame" OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_BOTTOM+200)
+	end"
+	OffCommand="decelerate,0.2;addy,-SCREEN_CENTER_Y-200;sleep,1;accelerate,0.2;addy,SCREEN_TOP-200"><children>
+
+	<Layer File="@ThemeFile('EcoInfoBG')" OnCommand="zoom,0.7;diffusealpha,0" OffCommand="linear,0.3;diffusealpha,1;" />
+
+		<Layer
+		Type="BitmapText"
+		Font="Splat2"
+		Text="@THEME:GetMetric('LoadingTransitions','ToOptions')"
+		InitCommand="diffusealpha,0;"
+		OffCommand="diffusealpha,1;zoom,0.5;"
+		/>
+	</children></Layer>
+
+</children></ActorFrame>

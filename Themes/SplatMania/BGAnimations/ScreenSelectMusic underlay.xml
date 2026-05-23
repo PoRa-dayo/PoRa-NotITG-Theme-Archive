@@ -1,0 +1,78 @@
+<ActorFrame
+	InitCommand="%function(self)
+	OffsetInc = -40
+	LimitX = {SCREEN_LEFT,SCREEN_CENTER_X}
+	end"
+	><children>
+
+		<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = 4   end" />
+		<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = 4.5 end" />
+		<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = 5.5 end" />
+		<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = 6   end" />
+		<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = 7.5 end" />
+		<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = 8   end" />
+		<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = 9.5 end" />
+		<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = 10.5 end" />
+
+	<Layer Type="ActorFrame" InitCommand="%function(self)
+		self:x(SCREEN_RIGHT+30)
+		self:y(SCREEN_CENTER_Y)
+		self:addx(2000) self:decelerate(1) self:addx(-2000)
+	end"
+	OffCommand="%function(self) self:accelerate(1) self:addx(2000) end"><children>
+		<Layer
+		File="@ThemeFile('_GlobalBackground/Pattern2')"
+		OnCommand="%function(self)
+		self:x(-146)
+		self:fadeleft(0.2)
+		self:skewx(0)
+		self:diffusealpha(0.2)
+		self:diffuse(0,0.5,0,0.2)
+		self:customtexturerect(0,0,2,4);
+		self:zoomy(3)
+    		self:texcoordvelocity(0.05/2,0);
+		end"
+		/>
+	<Layer File="@ThemeFile('SongSelection/SongListBackground')"
+		OnCommand="%function(self)
+		self:horizalign('right')
+		self:zoom(0.9)
+		self:customtexturerect(0,0,1,1);
+		self:texcoordvelocity(0,0.05/2);
+		self:diffusealpha(0.3)
+		self:cropleft(0.01)
+		end"
+		/>
+
+	<Layer File="@ThemeFile('SongSelection/SongListBackground')"
+		OnCommand="%function(self)
+		self:horizalign('right')
+		self:zoom(0.9)
+		self:customtexturerect(0,0,1,1);
+		self:texcoordvelocity(0,0.05);
+		self:diffusealpha(0.3)
+		self:cropleft(0.01)
+		end"
+		/>
+	</children></Layer>
+
+	<Layer File="SelectMusic/SongInfo.xml" OnCommand="x,SCREEN_CENTER_X-190;y,SCREEN_CENTER_Y-35;addx,-2000;queuecommand,PlayTween"
+	PlayTweenCommand="%function(self) self:decelerate(1) self:addy(10+OffsetInc) self:addx(2000) end"
+	OffCommand="%function(self) self:stoptweening() self:accelerate(1) self:addx(-2000) end"
+	/>
+	<Layer File="SelectMusic/SongDataInfo.xml" OnCommand="x,SCREEN_CENTER_X-188;y,SCREEN_CENTER_Y+115;addx,-2000;queuecommand,PlayTween"
+	PlayTweenCommand="%function(self) self:decelerate(1) self:addy(OffsetInc) self:addx(2000) end"
+	OffCommand="%function(self) self:stoptweening() self:accelerate(1) self:addx(-2000) end"
+	/>
+    
+    <Layer Type="Sprite"
+        OnCommand="x,20;y,115;horizalign,left;shadowlength,0;rotationy,-40;addx,-2000;queuecommand,PlayTween"
+        PlayTweenCommand="%function(self) self:decelerate(1) self:addy(OffsetInc) self:addx(2000) end"
+        OffCommand="%function(self) self:stoptweening() self:accelerate(1) self:addx(-2000) end"
+        CurrentSongChangedMessageCommand="%function(self)
+            Splat_LoadBanner(self)
+        end"
+    />
+
+	
+</children></ActorFrame>

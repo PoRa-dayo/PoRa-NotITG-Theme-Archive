@@ -1,0 +1,94 @@
+<ActorFrame
+	InitCommand="%function(self)
+	InitColorSplat = { math.random(100,255)/255,math.random(100,255)/255,math.random(100,255)/255 }
+	end"
+	><children>
+
+
+		<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','Tiles/MiniSquidTile')"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_TOP+10)
+		self:zoom(1)
+		self:diffuse(0,0.52,0.52,1)
+		self:zoomx(20)
+		self:fadebottom(0.2)
+		-- Aqui hacemos que el fondo se duplique por si mismo.
+		self:customtexturerect(0,0,20,1);
+		-- Haremos que el fondo se mueva en la pantalla.
+    	self:texcoordvelocity(0,0.1);
+		end"
+		GoOffMessageCommand="sleep,1;accelerate,0.3;y,SCREEN_TOP-30;diffusealpha,0"
+		/>
+	<Layer
+		Font="Paintball"
+		Text="Select Number of Players"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_LEFT+20)
+		self:y(SCREEN_TOP+20)
+		self:zoom(0.5)
+		self:diffusealpha(0)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:linear(0.3)
+		self:diffusealpha(1)
+		end"
+		MadeChoiceP1MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+		MadeChoiceP2MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+		GoOffMessageCommand="sleep,1;linear,0.3;diffusealpha,0"
+		/>
+
+	<Layer Type="ActorFrame" OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(0.5)
+	end"><children>
+
+	<Layer File="@ThemeFile('EcoInfoBG')" OnCommand="diffusealpha,0"
+		GoOffMessageCommand="sleep,1;linear,0.3;diffusealpha,1"
+		/>
+	<Layer
+		Font="Splat2"
+		Text="@THEME:GetMetric('LoadingTransitions','ToMusicInterface')"
+		OnCommand="%function(self)
+		
+		self:zoom(0.9)
+		self:diffusealpha(0)
+		self:shadowlength(1)
+		end"
+		MadeChoiceP1MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+		MadeChoiceP2MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+		GoOffMessageCommand="sleep,1;linear,0.3;diffusealpha,1"
+		/>
+
+	<!-- <Layer Type="ActorFrame" OnCommand="fov,90;bob;effectmagnitude,0,0,20;y,80"><children>
+		<Layer
+			File="@ThemeFile('Paint Splats/Splat1')"
+			InitCommand="%function(self)
+			
+			self:zoom(0.3)
+			self:diffuse( InitColorSplat[1],InitColorSplat[2],InitColorSplat[3],0 )
+			end"
+			GoOffMessageCommand="sleep,1;linear,0.3;diffusealpha,1"
+			/>
+		</children></Layer>
+
+	<Layer Type="ActorFrame" OnCommand="fov,90;bob;effectmagnitude,0,0,40;y,80"><children>
+		<Layer
+			File="@ThemeFile('Paint Splats/Splat1')"
+			InitCommand="%function(self)
+			
+			self:zoom(0.25)
+			self:diffuse( InitColorSplat[1]/1.5,InitColorSplat[2]/1.5,InitColorSplat[3]/1.5,0 )
+			end"
+			GoOffMessageCommand="sleep,1;linear,0.3;diffusealpha,0.5"
+			/>
+		</children></Layer> -->
+		
+	</children></Layer>
+
+	<Layer File="DEBUG_StatsInfo overlay" />
+
+</children></ActorFrame>

@@ -1,0 +1,67 @@
+<ActorFrame><children>
+		
+	<!-- TEXT BOX BEGINGS -->
+	<Layer Font="Paintball" Text="Splat1 - Loaded!" OnCommand="x,SCREEN_LEFT+90;y,SCREEN_CENTER_Y-170;zoom,0.5" />
+	<Layer Font="Splat2" Text="Splat2 - Loaded!" OnCommand="x,SCREEN_LEFT+100;y,SCREEN_CENTER_Y-200;zoom,0.5" />
+
+		<!-- Song Info Transition -->
+		<!-- Completed and implemented -->
+
+		<!-- Cleared Animation -->
+		<!-- Completed and implemented -->
+
+		<!-- NEW Global BG -->
+		<!-- Completed and implemented -->
+
+		<!-- Failed Animation -->
+		<!-- Completed and implemented -->
+
+		<!-- <Layer File="Background/Pixel" />
+		<Layer File="DEBUG_StatsInfo overlay" /> -->
+
+		<Layer Type="ActorFrame" InitCommand="%function(self)
+		self:x(SCREEN_RIGHT+16)
+		self:y(SCREEN_CENTER_Y)
+		self:addx(2000) self:decelerate(1) self:addx(-2000)
+	end"
+	OffCommand="%function(self) self:accelerate(1) self:addx(2000) end"><children>
+	<Layer File="@ThemeFile('SongSelection/SongListBackground')"
+		OnCommand="%function(self)
+		self:horizalign('right')
+		self:zoom(0.9)
+		self:customtexturerect(0,0,1,1);
+		self:texcoordvelocity(0,0.05/2);
+		self:diffusealpha(0.5)
+		self:cropleft(0.01)
+		end"
+		/>
+
+	<Layer File="@ThemeFile('SongSelection/SongListBackground')"
+		OnCommand="%function(self)
+		self:horizalign('right')
+		self:zoom(0.9)
+		self:customtexturerect(0,0,1,1);
+		self:texcoordvelocity(0,0.05);
+		self:diffusealpha(0.5)
+		self:cropleft(0.01)
+		end"
+		/>
+	</children></Layer>
+
+		<Layer File="@ThemeFile('ScoreCards/Player1')" OnCommand="x,SCREEN_RIGHT-190;y,SCREEN_CENTER_Y-110;zoom,0.16;rotationz,-3" />
+
+		<Layer File="@ThemeFile('ScoreCards/Player1')" OnCommand="x,SCREEN_RIGHT-190;y,SCREEN_CENTER_Y+110;zoom,0.16;rotationz,3" />
+
+			<!-- looop de looop -->
+		
+		<!-- Here goes the AFT instances you wanted -->
+
+		<Layer File="MenuButtons.xml" OnCommand="%function(self)
+		ShowMove = false
+		ShowStart = true
+		ShowReturn = true
+		end"
+		OffCommand="%function(self) self:accelerate(1) self:diffusealpha(0) end"
+		/>
+
+</children></ActorFrame>

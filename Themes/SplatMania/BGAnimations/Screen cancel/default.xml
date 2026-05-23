@@ -1,0 +1,12 @@
+<ActorFrame><children>
+	<Layer Type="Quad"
+		OnCommand="%function(self)
+		self:diffuse(0,0,0,1);
+		self:stretchto(SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM);
+		self:cropleft(1);
+		self:fadeleft(.5);
+		self:linear(0.2);
+		self:cropleft(-0.5);
+		end"
+		/>
+</children></ActorFrame>

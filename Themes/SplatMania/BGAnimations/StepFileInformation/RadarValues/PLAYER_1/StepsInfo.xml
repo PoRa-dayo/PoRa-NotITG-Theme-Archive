@@ -1,0 +1,247 @@
+<ActorFrame><children>
+
+	<CODE Type="Quad" InitCommand="hidden,1"
+		CurrentStepsP1ChangedMessageCommand="%function(self) MESSAGEMAN:Broadcast('StartUpdateTransitionP1') end"
+		/>
+
+            <!-- Taps -->
+
+            <Layer
+            Font="Paintball"
+            Text="@THEME:GetMetric('PaneDisplay','Steps')"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="%function(self)
+            self:shadowlength(1)
+            self:horizalign('right')
+            self:x(30+XOffset)
+            self:y(0-3)
+            self:zoom(0.3)
+            end"
+            />
+
+            <Layer
+            Font="Splat2"
+            Text="taps"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="%function(self) self:horizalign('right') self:shadowlength(0) self:x(85) self:y(2) self:zoom(0.2) end"
+            StartUpdateTransitionP1MessageCommand="%function(self)
+            self:stoptweening()
+            self:sleep(0.02*1)
+            self:decelerate(0.05)
+            self:x(65)
+            self:diffusealpha(0)
+            self:queuecommand('UpdateRadarValue')
+            end"
+            UpdateRadarValueCommand="%function(self)
+            self:decelerate(0.05)
+            self:diffusealpha(1)
+            self:x(75)
+            if GAMESTATE:GetCurrentSong() then
+                  self:settext( RadarValue(PLAYER_1,5) )
+            else
+                  self:settext( ' ' )
+            end
+            end"
+            />
+
+            <!-- Jumps -->
+
+            <Layer
+            Font="Paintball"
+            Text="@THEME:GetMetric('PaneDisplay','Jumps')"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="%function(self)
+            self:shadowlength(1)
+            self:horizalign('right')
+            self:x(30+XOffset)
+            self:y(10-3)
+            self:zoom(0.3)
+            end"
+            />
+
+            <Layer
+            Font="Splat2"
+            Text="taps"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="%function(self) self:horizalign('right') self:shadowlength(0) self:x(85) self:y(12) self:zoom(0.2) end"
+            StartUpdateTransitionP1MessageCommand="%function(self)
+            self:stoptweening()
+            self:sleep(0.02*2)
+            self:decelerate(0.05)
+            self:x(65)
+            self:diffusealpha(0)
+            self:queuecommand('UpdateRadarValue')
+            end"
+            UpdateRadarValueCommand="%function(self)
+            self:decelerate(0.05)
+            self:diffusealpha(1)
+            self:x(75)
+            if GAMESTATE:GetCurrentSong() then
+                  self:settext( RadarValue(PLAYER_1,6) )
+            else
+                  self:settext( ' ' )
+            end
+            end"
+            />
+
+            <!-- Holds -->
+
+            <Layer
+            Font="Paintball"
+            Text="@THEME:GetMetric('PaneDisplay','Holds')"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="%function(self)
+            self:shadowlength(1)
+            self:horizalign('right')
+            self:x(30+XOffset)
+            self:y(20-3)
+            self:zoom(0.3)
+            end"
+            />
+
+            <Layer
+            Font="Splat2"
+            Text="taps"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="%function(self) self:horizalign('right') self:shadowlength(0) self:x(85) self:y(22) self:zoom(0.2) end"
+            StartUpdateTransitionP1MessageCommand="%function(self)
+            self:stoptweening()
+            self:sleep(0.02*3)
+            self:decelerate(0.05)
+            self:x(65)
+            self:diffusealpha(0)
+            self:queuecommand('UpdateRadarValue')
+            end"
+            UpdateRadarValueCommand="%function(self)
+            self:decelerate(0.05)
+            self:diffusealpha(1)
+            self:x(75)
+            if GAMESTATE:GetCurrentSong() then
+                  self:settext( RadarValue(PLAYER_1,7) )
+            else
+                  self:settext( ' ' )
+            end
+            end"
+            />
+
+            <!-- Mines -->
+
+            <Layer
+            Font="Paintball"
+            Text="@THEME:GetMetric('PaneDisplay','Mines')"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="%function(self)
+            self:shadowlength(1)
+            self:horizalign('right')
+            self:x(30+XOffset)
+            self:y(30-3)
+            self:zoom(0.3)
+            end"
+            />
+
+            <Layer
+            Font="Splat2"
+            Text="taps"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="%function(self) self:horizalign('right') self:shadowlength(0) self:x(85) self:y(32) self:zoom(0.2) end"
+            StartUpdateTransitionP1MessageCommand="%function(self)
+            self:stoptweening()
+            self:sleep(0.02*4)
+            self:decelerate(0.05)
+            self:x(65)
+            self:diffusealpha(0)
+            self:queuecommand('UpdateRadarValue')
+            end"
+            UpdateRadarValueCommand="%function(self)
+            self:decelerate(0.05)
+            self:diffusealpha(1)
+            self:x(75)
+            if GAMESTATE:GetCurrentSong() then
+                  self:settext( RadarValue(PLAYER_1,8) )
+            else
+                  self:settext( ' ' )
+            end
+            end"
+            />
+
+            <!-- Hands -->
+
+            <Layer
+            Font="Paintball"
+            Text="@THEME:GetMetric('PaneDisplay','Hands')"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="%function(self)
+            self:shadowlength(1)
+            self:horizalign('right')
+            self:x(30+XOffset)
+            self:y(40-3)
+            self:zoom(0.3)
+            end"
+            />
+
+            <Layer
+            Font="Splat2"
+            Text="taps"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="%function(self) self:horizalign('right') self:shadowlength(0) self:x(85) self:y(42) self:zoom(0.2) end"
+            StartUpdateTransitionP1MessageCommand="%function(self)
+            self:stoptweening()
+            self:sleep(0.02*5)
+            self:decelerate(0.05)
+            self:x(65)
+            self:diffusealpha(0)
+            self:queuecommand('UpdateRadarValue')
+            end"
+            UpdateRadarValueCommand="%function(self)
+            self:decelerate(0.05)
+            self:diffusealpha(1)
+            self:x(75)
+            if GAMESTATE:GetCurrentSong() then
+                  self:settext( RadarValue(PLAYER_1,9) )
+            else
+                  self:settext( ' ' )
+            end
+            end"
+            />
+
+            <!-- Rolls -->
+
+            <Layer
+            Font="Paintball"
+            Text="@THEME:GetMetric('PaneDisplay','Rolls')"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="%function(self)
+            self:shadowlength(1)
+            self:horizalign('right')
+            self:x(30+XOffset)
+            self:y(50-3)
+            self:zoom(0.3)
+            end"
+            />
+
+            <Layer
+            Font="Splat2"
+            Text="taps"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="%function(self) self:horizalign('right') self:shadowlength(0) self:x(85) self:y(52) self:zoom(0.2) end"
+            StartUpdateTransitionP1MessageCommand="%function(self)
+            self:stoptweening()
+            self:sleep(0.02*6)
+            self:decelerate(0.05)
+            self:x(65)
+            self:diffusealpha(0)
+            self:queuecommand('UpdateRadarValue')
+            end"
+            UpdateRadarValueCommand="%function(self)
+            self:decelerate(0.05)
+            self:diffusealpha(1)
+            self:x(75)
+            if GAMESTATE:GetCurrentSong() then
+                  self:settext( RadarValue(PLAYER_1,10) )
+            else
+                  self:settext( ' ' )
+            end
+            end"
+            />
+
+</children></ActorFrame>

@@ -1,0 +1,180 @@
+<ActorFrame InitCommand="%function(self)
+Player1Failed = false;
+Player2Failed = false;
+TestEnviroment = true;
+end"> <children>
+
+<Layer File="@THEME:GetPath(EC_GRAPHICS,'','GameModeExplanationBox')" OnCommand="horizalign,left;x,SCREEN_LEFT+10;vertalign,top;y,5;blend,noeffect;spin" />
+
+	<Layer Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24;addy,-100;sleep,0.5;zoom,0.6;queuecommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		TweenOnCommand="decelerate,0.8;addy,+100"
+		TweenOffCommand="accelerate,0.8;addy,-100"
+		> <children>
+
+		<Layer
+			Type="BitmapText"
+			Font="Paintball"
+			OnCommand="y,-18;zoom,.5;shadowlength,0"
+			InitCommand="animate,0;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+			local song = GAMESTATE:GetCurrentSong();
+			self:settext(GAMESTATE:GetCurrentSong():GetDisplayMainTitle())
+	if string.len( string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 1) ) < 1 then
+			self:zoom(0.7)
+			self:y(-13)
+		end
+			end"
+		/>
+
+		<!-- Subtitle Display 
+
+		How it works: (Explained by HeySora.)
+
+		Get the length of the string returned by GetDisplayMainTitle
+		substring the string returned by the GetDisplayFullTitle
+		Like, the start index will be the length of GetDisplayMainTitle + 2 (to remove the space, and start right after)(editado)
+		
+		string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 2);
+
+		The code will look like that ^
+		
+		What string.sub does is that it returns a portion of the string. for example :
+		
+		string.sub('Hello', 3); -- Returns 'llo', because it starts reading at the 3rd letter
+		
+		GetDisplayFullTitle is returning the title, a space, and the subtitle
+		-->
+
+		<Layer
+			Type="BitmapText"
+			Font="Paintball"
+			OnCommand="%function(self)
+			local song = GAMESTATE:GetCurrentSong();
+			self:y(-5)
+			self:zoom(0.5)
+			self:shadowlength(0)
+			self:settext(string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 2))
+			end"
+			InitCommand="animate,0;playcommand,Update"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+			local song = GAMESTATE:GetCurrentSong();
+			string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 1);
+			end"
+		/>
+	</children> </Layer>
+
+	<!-- Difficulty: -->
+	<Layer Type="ActorFrame"
+		OnCommand="sleep,0.5;queuecommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		> <children>
+		
+		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="x,SCREEN_LEFT+42;y,SCREEN_TOP+47;zoom,0.4"
+			><children>
+			<Actor
+				File="@THEME:GetPath(EC_GRAPHICS,'','GameplayDifficulty')"
+				OnCommand="animate,0;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_1) end"
+			/>
+		</children></ActorFrame>
+		
+		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="x,SCREEN_RIGHT-42;y,SCREEN_TOP+47;zoom,0.4"><children>
+			<Actor
+				File="@THEME:GetPath(EC_GRAPHICS,'','GameplayDifficulty')"
+				OnCommand="zoomx,-1;animate,0;playcommand,Update"
+				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_2) end"
+			/>
+		</children></ActorFrame>
+		
+	</children> </Layer>
+
+
+	<Layer
+			File="@THEME:GetPath(EC_GRAPHICS,'','Button')"
+			OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+46;zoom,0.15;shadowlength,0;queuecommand,ApplyColor"
+			ApplyColorCommand="%function(self)
+			if GAMESTATE:GetCurrentSong():IsLong() then
+				self:diffuse(1,0.5,0,1)
+			end
+			if GAMESTATE:GetCurrentSong():IsMarathon() then
+				self:diffuse(1,0.2,0,1)
+			end
+			end"
+			TweenOffCommand="bouncebegin,0.3;zoom,0"
+			OffCommand="queuecommand,TweenOff"
+			ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+			HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		/>
+
+	<Layer
+			Type="BitmapText"
+			Font="Splat2"
+			OnCommand="%function(self)
+			self:x(SCREEN_CENTER_X)
+			self:y(SCREEN_TOP+45)
+			self:zoom(0.5)
+			self:queuecommand('Update')
+			end"
+			InitCommand="animate,0;"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+			local timeintimer = self:GetSecsIntoEffect();
+			local totaltimer = GAMESTATE:GetCurrentSong():MusicLengthSeconds()
+			self:effectclock('music')
+				if totaltimer >= 3600 then
+					self:settext(SecondsToHHMMSS(totaltimer-timeintimer))
+						if timeintimer >= totaltimer-60 then
+							self:decelerate(0.2)
+							self:zoom(0.5)
+						end
+						if timeintimer >= totaltimer then
+							self:diffuse(1,1,0,1)
+							self:settext(SecondsToHHMMSS(0))
+						end
+				else
+					self:settext(SecondsToMMSS(totaltimer-timeintimer))
+						if timeintimer >= totaltimer-60 then
+							self:diffuse(1,1,0,1)
+							self:settext(SecondsToMMSS(totaltimer-timeintimer))
+						end
+						if timeintimer >= totaltimer then
+							self:diffuse(1,1,0,1)
+							self:settext(SecondsToMMSS(0))
+						end
+				end
+
+			self:sleep(0.1)
+			self:queuecommand('Update')
+			end"
+			TweenOffCommand="bouncebegin,0.3;zoom,0"
+			OffCommand="queuecommand,TweenOff"
+			ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+			HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		/>
+
+	<Layer File="DifficultyNames.xml" />
+
+	<!-- <Layer File="@THEME:GetPath(EC_GRAPHICS,'Lifebar','concept')" OnCommand="horizalign,left;x,SCREEN_LEFT+10;zoom,0.6;vertalign,top;y,5" /> -->
+
+	<Layer File="@THEME:GetPath(EC_GRAPHICS,'','Countdown')" />
+	<Layer File="InitialTransition.xml" />
+
+	<CODE Type="Quad" InitCommand="hidden,1"
+	FailP1MessageCommand="%function(self) Player1Failed = true; end"
+	FailP2MessageCommand="%function(self) Player2Failed = true; end"
+	/>
+
+</children> </ActorFrame>
+

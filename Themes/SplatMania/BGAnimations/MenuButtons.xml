@@ -1,0 +1,93 @@
+<ActorFrame><children>
+
+	<Layer Type="ActorFrame" OnCommand="%function(self)
+	if ShowMove then self:zoom(1) else self:zoom(0) end
+	end"><children>
+		<Layer File="@ThemeFile('ButtonHelpBG')" OnCommand="x,SCREEN_LEFT+160;y,SCREEN_BOTTOM-65;zoomx,-0.3;zoomy,0.3;horizalign,left" />
+
+		<Layer
+			Font="Paintball"
+			Text="@THEME:GetMetric('MenuButtons', 'Move')"
+			OnCommand="%function(self)
+			self:x(SCREEN_LEFT+50)
+			self:y(SCREEN_BOTTOM-65-5)
+			self:horizalign('left')
+			self:zoom(0.4)
+			self:shadowlength(1)
+			end"
+			/>
+			<Layer
+			Font="Paintball"
+			Text="&MENUUP;"
+			OnCommand="%function(self)
+			self:x(SCREEN_LEFT+18)
+			self:y(SCREEN_BOTTOM-60-5)
+			self:horizalign('left')
+			self:zoom(0.8)
+			self:shadowlength(1)
+			if XboxController() then
+				self:settext('&AUX1;')
+			end
+			end"
+			/>
+	</children></Layer>
+
+
+	<Layer Type="ActorFrame" OnCommand="%function(self)
+	if ShowStart then self:zoom(1) else self:zoom(0) end
+	end"><children>
+	<Layer File="@ThemeFile('ButtonHelpBG')" OnCommand="x,SCREEN_LEFT+160;y,SCREEN_BOTTOM-40.5;zoomx,-0.3;zoomy,0.3;horizalign,left" />
+		<Layer
+		Font="Paintball"
+		Text="@THEME:GetMetric('MenuButtons', 'Accept')"
+		OnCommand="%function(self)
+		self:x(SCREEN_LEFT+50)
+		self:y(SCREEN_BOTTOM-42-5)
+		self:horizalign('left')
+		self:zoom(0.4)
+		self:shadowlength(1)
+		end"
+		/>
+		<Layer
+		Font="Paintball"
+		Text="&START;"
+		OnCommand="%function(self)
+		self:x(SCREEN_LEFT+20)
+		self:y(SCREEN_BOTTOM-35-5)
+		self:horizalign('left')
+		self:zoom(0.7)
+		self:shadowlength(1)
+		end"
+		/>
+	</children></Layer>
+
+
+
+	<Layer Type="ActorFrame" OnCommand="%function(self)
+	if ShowReturn then self:zoom(1) else self:zoom(0) end
+	end"><children>
+	<Layer File="@ThemeFile('ButtonHelpBG')" OnCommand="x,SCREEN_LEFT+160;y,SCREEN_BOTTOM-16;zoomx,-0.3;zoomy,0.3;horizalign,left" />
+		<Layer
+		Font="Paintball"
+		Text="@THEME:GetMetric('MenuButtons', 'Return')"
+		OnCommand="%function(self)
+		self:x(SCREEN_LEFT+50)
+		self:y(SCREEN_BOTTOM-22)
+		self:horizalign('left')
+		self:zoom(0.4)
+		self:shadowlength(1)
+		end"
+		/>
+		<Layer
+		Font="Paintball"
+		Text="&SELECT;"
+		OnCommand="%function(self)
+		self:x(SCREEN_LEFT+20)
+		self:y(SCREEN_BOTTOM-15)
+		self:horizalign('left')
+		self:zoom(0.7)
+		self:shadowlength(1)
+		end"
+		/>
+	</children></Layer>
+</children></ActorFrame>

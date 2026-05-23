@@ -1,0 +1,32 @@
+<ActorFrame> <children>
+
+
+	<Layer
+        File="SongBackground"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT;diffusealpha,0;fadeleft,0.3;faderight,0.3;queuecommand,PlayBackground"
+        OffCommand="linear,0.3;diffusealpha,0"
+        PlayBackgroundCommand="%function(self)
+        self:decelerate(0.5)
+        	if GAMESTATE:GetCurrentSong() then
+        		if GAMESTATE:GetCurrentSong():GetBackgroundPath() == nil then
+        			self:diffusealpha(0)
+        		else
+        			self:diffusealpha(1)
+        		end
+        	end
+        end"
+    />
+
+    <Layer Type="ActorFrame" OnCommand="%function(self) Center(self); self:zoom(1.5) self:addy(SCREEN_CENTER_Y*2); self:decelerate(0.5) self:addy(-SCREEN_CENTER_Y*2) end"><children>
+        <Layer File="@ThemeFile('OptionsBG/MainOptionsFrame')" OnCommand="%function(self) self:diffuse(0,0,0,1) end" />
+        <Layer File="@ThemeFile('OptionsBG/MainOptionsFrame')" />
+    </children></Layer>
+
+    <Layer Type="ActorFrame" OnCommand="%function(self)
+    self:y(SCREEN_CENTER_Y-155) self:x(SCREEN_CENTER_X-240 ) self:addy(-400) self:decelerate(0.5) self:addy(400) end"><children>
+        <Layer File="@ThemeFile('OptionsBG/OptionTagSelected ')" OnCommand="%function(self) self:zoom(1.5) end" />
+        <Layer Font="Splat1" Text="Player Options" OnCommand="%function(self) self:y(-5) self:zoom(.6) self:shadowlength(2) end" />
+    </children></Layer>
+
+   
+</children> </ActorFrame>

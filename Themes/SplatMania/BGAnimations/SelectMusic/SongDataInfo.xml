@@ -1,0 +1,62 @@
+<ActorFrame><children>
+
+	<Layer File="@ThemeFile('SongSelection/SongDataInfo')"
+		OnCommand="%function(self)
+		self:x(-2)
+		self:y(0)
+		self:zoom(1.1)
+		self:blend('WeightedMultiply')
+		end"
+		/>
+		
+	<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','Tiles/MiniSquidTile')"
+		OnCommand="%function(self)
+		self:x(2)
+		self:y(-20)
+		self:zoom(1)
+		self:blend('add')
+		self:diffuse(0,0.52,0.52,1)
+		self:fadebottom(0.2)
+		self:fadetop(0.2)
+		self:zoomx(5)
+		self:zoomy(3)
+		-- Aqui hacemos que el fondo se duplique por si mismo.
+		self:customtexturerect(0,0,5,3);
+		self:croptop(0.23)
+		self:cropright(0.08)
+		self:cropleft(0.1)
+		-- Haremos que el fondo se mueva en la pantalla.
+    	self:texcoordvelocity(0,0.1);
+		end"
+		/>
+
+	<Layer File="@ThemeFile('SongSelection/SongDataInfo')"
+		OnCommand="%function(self)
+		self:x(0)
+		self:y(0)
+		self:zoom(1.1)
+		self:fadeleft(1)
+		end"
+		/>
+
+	<Layer File="@ThemeFile('SongSelection/SongDataInfo')"
+		OnCommand="%function(self)
+		self:x(-2)
+		self:y(0)
+		self:zoom(1.1)
+		self:faderight(1)
+		end"
+		/>
+
+	<Layer File="@ThemeFile('SongSelection/SongDataInfo')"
+		OnCommand="%function(self)
+		self:x(-2)
+		self:y(0)
+		self:zoom(1.1)
+		self:croptop(0.1)
+		self:fadetop(1)
+		end"
+		/>
+
+</children></ActorFrame>

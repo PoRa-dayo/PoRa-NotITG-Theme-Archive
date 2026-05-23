@@ -1,0 +1,52 @@
+<ActorFrame><children>
+
+	<Layer
+		File="@THEME:GetPath(EC_GRAPHICS,'','Cursor.sprite')"
+		OnCommand="%function(self)
+		
+		self:hibernate( Hib or 0 )
+		self:x(SCREEN_CENTER_X-80)
+		self:y(SCREEN_BOTTOM+50)
+		self:zoom(0.8)
+		self:effectperiod(2)
+		self:diffusealpha(0.5)
+		self:playcommand('TweenStart')
+		end"
+		TweenStartCommand="%function(self)
+		if LimitX == nil then
+			self:x(math.random( SCREEN_LEFT, SCREEN_RIGHT ) )
+		else
+			self:x(math.random( LimitX[1] or SCREEN_LEFT, LimitX[2] or SCREEN_RIGHT ) )
+		end
+		self:decelerate(0.8)
+		self:addy(-50)
+		self:decelerate(0.8)
+		self:addy(-50)
+		self:decelerate(0.8)
+		self:addy(-50)
+		self:decelerate(0.8)
+		self:addy(-50)
+		self:decelerate(0.8)
+		self:addy(-50)
+		self:decelerate(0.8)
+		self:addy(-50)
+		self:decelerate(0.8)
+		self:addy(-50)
+		self:decelerate(0.8)
+		self:addy(-50)
+		self:decelerate(0.8)
+		self:addy(-50)
+		self:decelerate(0.8)
+		self:addy(-50)
+		self:decelerate(0.8)
+		self:addy(-50)
+		self:decelerate(0.8)
+		self:addy(-50)
+		self:sleep(0.01)
+		self:addy(600)
+		self:queuecommand('TweenStart')
+		end"
+		OffCommand="stoptweening;linear,0.2;diffusealpha,0"
+		/>
+
+</children></ActorFrame>

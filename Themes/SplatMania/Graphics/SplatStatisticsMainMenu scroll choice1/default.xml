@@ -1,0 +1,57 @@
+<ActorFrame InitCommand="fov,45"><children>
+	
+	<Layer Type="ActorFrame" GainFocusMessageCommand="bob;effectmagnitude,0,3,0;effectperiod,2" LoseFocusMessageCommand="stopeffect"><children>
+	<Layer Type="ActorFrame" GainFocusMessageCommand="bob;effectmagnitude,3,0,0;effectperiod,4" LoseFocusMessageCommand="stopeffect"><children>
+			<Layer
+			File="BannerIcon"
+			OnCommand="%function(self)
+			
+			self:x(0)
+			self:y(0)
+			self:zoom(0)
+			end"
+			GainFocusMessageCommand="%function(self)
+			Choice1Selected = true;
+			self:stoptweening()
+			self:bouncebegin(0.1)
+			self:diffuse(1,1,1,1)
+			self:bounceend(0.3)
+			self:zoom(2)
+			end"
+			LoseFocusMessageCommand="%function(self)
+			Choice1Selected = false;
+			self:stoptweening()
+			self:bouncebegin(0.1)
+			self:diffuse(0.7,0.7,0.7,1)
+			self:bounceend(0.3)
+			self:zoom(1.8)
+			self:z(-30)
+			end"
+			MadeChoiceP1MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+			MadeChoiceP2MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+			GoOffMessageCommand="%function(self)
+			self:bounceend(0.3);
+				if Choice1Selected then 
+					self:x(0); 
+					self:y(0); 
+					self:diffuse(1,1,1,1);
+					self:glowblink();
+					self:effectperiod(0.2)
+					self:zoom(2.2);
+					self:sleep(0.5)
+					self:accelerate(0.3)
+					self:zoom(1.5)
+					self:diffusealpha(0)
+				else
+					self:x(0);
+					self:y(0);
+					self:z(0);
+					self:zoom(0);
+				end
+				self:sleep(5)
+			end"
+			/>
+		</children></Layer>
+	</children></Layer>
+
+</children></ActorFrame>

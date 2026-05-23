@@ -1,0 +1,5 @@
+<ActorFrame><children>
+
+    <Layer Type="Quad" OnCommand="%function(self) self:zoom(0) end" OffCommand="sleep,3" />
+    
+</children></ActorFrame>

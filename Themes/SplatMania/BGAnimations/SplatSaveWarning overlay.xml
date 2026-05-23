@@ -1,0 +1,69 @@
+<ActorFrame><children>
+
+	<Layer Type="ActorFrame" OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y-20)
+		self:zoom(0.4)
+		self:sleep(1)
+		self:bounceend(0.3)
+		self:y(SCREEN_CENTER_Y)
+		self:rotationz(-1)
+	end"
+	GoOffMessageCommand="%function(self)
+		self:accelerate(0.3)
+		self:y(SCREEN_CENTER_Y+20)
+		self:rotationz(-2)
+	end"
+	MadeChoiceP1MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+	MadeChoiceP2MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+		><children>
+
+	<Layer File="@ThemeFile('MessageCard')" InitCommand="diffusealpha,0;zoom,0.9"
+		OnCommand="sleep,1;linear,0.3;diffusealpha,1"
+		GoOffMessageCommand="linear,0.3;diffusealpha,0"
+		/>
+	<Layer
+		Font="Splat2"
+		Text="@THEME:GetMetric('Common','SaveWarning')"
+		InitCommand="%function(self)
+		self:x(0)
+		self:y(-15)
+		self:wrapwidthpixels(1200)
+		self:diffusealpha(0)
+		self:shadowlength(1)
+		end"
+		OnCommand="sleep,1;linear,0.3;diffusealpha,1"
+		GoOffMessageCommand="linear,0.3;diffusealpha,0"
+		/>
+	<Layer
+		Font="Splat2"
+		Text="&START;"
+		InitCommand="%function(self)
+		self:x(600)
+		self:y(150)
+		self:zoom(2.5)
+		self:diffusealpha(0)
+		self:shadowlength(1)
+		end"
+		OnCommand="sleep,1;linear,0.3;diffusealpha,1;diffuseblink"
+		GoOffMessageCommand="linear,0.3;diffusealpha,0"
+		/>
+
+		<Layer
+		File="@ThemeFile('SavingIcon')"
+		InitCommand="%function(self)
+		self:x(0)
+		self:y(140)
+		self:zoom(0.15)
+		self:diffuseshift()
+		self:effectperiod(2)
+		self:diffusealpha(0)
+		self:shadowlength(1)
+		end"
+		OnCommand="sleep,1;linear,0.3;diffusealpha,1"
+		GoOffMessageCommand="linear,0.3;diffusealpha,0"
+		/>
+		
+	</children></Layer>
+
+</children></ActorFrame>

@@ -1,0 +1,163 @@
+<ActorFrame><children>
+
+	<Layer
+        File="SongBackground"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT;diffusealpha,0;queuecommand,ChangeBackground"
+        ChangeBackgroundCommand="%function(self)
+        self:linear(0.5)
+        	if GAMESTATE:GetCurrentSong() then
+        		if GAMESTATE:GetCurrentSong():GetBackgroundPath() == nil then
+        			self:diffusealpha(0)
+        		else
+        			self:diffusealpha(0.5)
+        		end
+        	end
+        end"
+        OffCommand="linear,0.3;diffusealpha,0"
+    />
+
+	<Layer Type="ActorFrame" InitCommand="%function(self)
+		self:x(SCREEN_RIGHT+16)
+		self:y(SCREEN_CENTER_Y)
+		self:addx(2000) self:decelerate(1) self:addx(-2000)
+	end"
+	OffCommand="%function(self) self:accelerate(1) self:addx(2000) end"><children>
+	<Layer File="@ThemeFile('SongSelection/SongListBackground')"
+		OnCommand="%function(self)
+		self:horizalign('right')
+		self:zoom(0.9)
+		self:customtexturerect(0,0,1,1);
+		self:texcoordvelocity(0,0.05/2);
+		self:diffusealpha(0.5)
+		self:cropleft(0.01)
+		end"
+		/>
+
+	<Layer File="@ThemeFile('SongSelection/SongListBackground')"
+		OnCommand="%function(self)
+		self:horizalign('right')
+		self:zoom(0.9)
+		self:customtexturerect(0,0,1,1);
+		self:texcoordvelocity(0,0.05);
+		self:diffusealpha(0.5)
+		self:cropleft(0.01)
+		end"
+		/>
+
+		<Layer File="@ThemeFile('ScoreCards/Player1')" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" 
+			OnCommand="x,-210;y,-110;zoom,0.18;rotationz,-3;queuecommand,CheckPosition"
+			CheckPositionCommand="%function(self) if not GAMESTATE:IsPlayerEnabled(PLAYER_2) then self:y(0) end end"
+			/>
+
+		<Layer File="@ThemeFile('ScoreCards/Player2')" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" 
+			OnCommand="x,-210;y,110;zoom,0.18;rotationz,3;queuecommand,CheckPosition"
+			CheckPositionCommand="%function(self) if not GAMESTATE:IsPlayerEnabled(PLAYER_1) then self:y(0) end end"
+			/>
+	</children></Layer>
+
+
+
+
+		<!-- Song Information -->
+
+		<Layer
+		Font="Splat2"
+		Text="Song name"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_LEFT+50)
+		self:y(SCREEN_BOTTOM-80)
+		self:vertalign('bottom')
+		self:horizalign('left')
+		self:zoom(.8)
+		self:shadowlength(1)
+		self:maxwidth(SCREEN_WIDTH/2)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		InitCommand="animate,0;playcommand,Update"
+		CurrentSongChangedMessageCommand="playcommand,Update"
+		UpdateCommand="%function(self)
+			if GAMESTATE:GetCurrentSong() then
+				self:finishtweening()
+				self:hidden(0)
+				self:settext(GAMESTATE:GetCurrentSong():GetDisplayFullTitle())
+				self:diffuse(0,1,1,1)
+				self:zoom(0.6)
+				self:decelerate(0.2)
+				self:diffuse(1,1,1,1)
+				self:zoom(0.5)
+			else
+				self:hidden(1)
+			end
+		end"
+		/>
+
+		<Layer
+		Font="Splat2"
+		Text="Update Timer"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_LEFT+50)
+		self:y(SCREEN_BOTTOM-60)
+		self:vertalign('bottom')
+		self:horizalign('left')
+		self:zoom(.5)
+		self:shadowlength(1)
+		self:maxwidth(SCREEN_WIDTH/2)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		InitCommand="animate,0;playcommand,Update"
+		CurrentSongChangedMessageCommand="playcommand,Update"
+		UpdateCommand="%function(self)
+			if GAMESTATE:GetCurrentSong() then
+				self:finishtweening()
+				self:hidden(0)
+				self:settext(GAMESTATE:GetCurrentSong():GetDisplayArtist())
+				self:diffuse(0,1,1,1)
+				self:zoom(0.8)
+				self:decelerate(0.15)
+				self:diffuse(1,1,1,1)
+				self:zoom(0.7)
+			else
+				self:hidden(1)
+			end
+		end"
+		/>
+
+	<Layer File="CoinAndStageInfo.xml" OnCommand="%function(self)
+	self:x(SCREEN_LEFT+150);
+	self:y(SCREEN_TOP+40);
+	self:zoom(0.5)
+	UpdateCoinAmmount = true;
+	end"
+	OffCommand="%function(self)
+	self:accelerate(0.3);
+	self:addy(-1000)
+	end" />
+
+	<Layer
+		File="@ThemeFile('SavingIcon')"
+		InitCommand="%function(self)
+		self:x(SCREEN_LEFT+40);
+		self:y(SCREEN_TOP+80);
+		self:horizalign('left')
+		self:vertalign('top')
+		self:zoom(0.1)
+		self:diffuseshift()
+		self:effectperiod(3)
+		self:diffusealpha(0)
+		self:shadowlength(1)
+		end"
+		OnCommand="%function(self)
+		if UpdateCoinAmmount then
+			self:sleep(0.3);
+			self:linear(0.3);
+			self:diffusealpha(1)
+			self:sleep(0.6);
+			self:linear(0.3);
+			self:diffusealpha(0)
+		end
+		end"
+		/>
+
+</children></ActorFrame>

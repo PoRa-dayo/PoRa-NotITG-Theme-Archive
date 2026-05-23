@@ -1,0 +1,72 @@
+<ActorFrame><children>
+	<!--
+
+		Jose's Dialog System
+		XML Segment
+		Version 2.4
+		(c) 2018, Jose_Varela
+		It might not be robust nor complex as UnderText, but, it's more simple that
+		anyone can understand how to use the system.
+
+	-->
+<Layer Type="ActorFrame" OnCommand="%function(self)
+
+	if DialogTextBank[TextBankData1] ~= nil then
+		if DialogTextBank[TextBankData1][TextBankData2] ~= nil then
+			self:hidden(0)
+		else
+			self:hidden(1)
+		end
+	else
+		self:hidden(1)
+	end
+end"><children>
+		<Layer File="@ThemeFile('Mugshots 3x2')"
+			InitCommand="%function(self) InitializeFace(self) end"
+			StartImageTweenCommand="%function(self) LoadCharacterIcon(self) end"
+			UpdateCharacterInfoCommand="%function(self) GRABBER_NewFace(self) end"
+			HideTextBoxMessageCommand="%function(self) self:hidden(1) end"
+			ShowTextBoxMessageCommand="%function(self) self:hidden(0) end"
+			/>
+	
+		<Layer Font="Common Normal" Text="Dialog"
+			InitCommand="%function(self) LoadCharacterData(self) self:queuecommand('PlayText') end"
+			PlayTextCommand="%function(self) SleepData(self) end"
+			UpdateCharacterInfoCommand="%function(self) LoadNewCharacterData(self) end"
+			HideTextBoxMessageCommand="%function(self) self:hidden(1) end"
+			ShowTextBoxMessageCommand="%function(self) self:hidden(0) end"
+			/>
+	
+		<Layer Font="Common Normal" Text="Dialog"
+			InitCommand="%function(self) InitializeDialog(self) end"
+			PlayTextCommand="%function(self) PlayDialog(self) end"
+			UpdateTextStringCommand="%function(self) GRABBER_NewText(self) end"
+			HideTextBoxMessageCommand="%function(self) self:hidden(1) end"
+			ShowTextBoxMessageCommand="%function(self) self:hidden(0) end"
+			/>
+</children></Layer>
+
+<!-- 
+
+	(c) 2018, Jose_Varela
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+	
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+	
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
+
+-->
+	
+</children></ActorFrame>

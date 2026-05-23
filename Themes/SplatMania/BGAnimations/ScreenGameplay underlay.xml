@@ -1,0 +1,45 @@
+<ActorFrame> <children>
+
+	<Quad
+		OnCommand="%function(self)
+		if GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1) then
+			self:hidden(0)
+			self:x(SCREEN_LEFT+30)
+			self:y(SCREEN_TOP+47)
+			self:horizalign('left')
+			self:diffuse(0,0,0,1)
+			self:zoomtowidth(175)
+			self:zoomtoheight(18)
+		else
+			self:hidden(1)
+		end
+		end"
+		CancelMessageCommand="sleep,1;zoom,0"
+		/>
+
+		<Layer File="Background"
+			OnCommand="zoom,0;pause"
+			CancelMessageCommand="sleep,1;zoom,1;pause;stopeffect"
+			/>
+
+	<Quad
+		OnCommand="%function(self)
+		if GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2) then
+			self:hidden(0)
+			self:x(SCREEN_RIGHT-30)
+			self:y(SCREEN_TOP+47)
+			self:horizalign('right')
+			self:diffuse(0,0,0,1)
+			self:zoomtowidth(175)
+			self:zoomtoheight(18)
+		else
+			self:hidden(1)
+		end
+		end"
+		CancelMessageCommand="sleep,1;zoom,0"
+		/>
+
+		<Layer File="@THEME:GetPath(EC_GRAPHICS,'','GameModeExplanationBox')" OnCommand="horizalign,left;x,SCREEN_LEFT+10;vertalign,top;y,5;zoom,0.5;blend,noeffect" />
+
+</children> </ActorFrame>
+

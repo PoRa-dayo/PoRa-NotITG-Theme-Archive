@@ -1,0 +1,96 @@
+<ActorFrame><children>
+        <Layer Font="Splat2" Text="Player 2" OnCommand="shadowlength,1;zoom,2.8;y,-460;x,-618" />
+        <Layer Font="Splat2" Text="Score:" OnCommand="shadowlength,1;zoom,1.8;y,-160;x,428" />
+        <Layer Font="Splat2" Text="Rank" OnCommand="shadowlength,1;zoom,2.2;y,-30;x,600" />
+
+        <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
+        InitCommand="zoom,1.6;horizalign,left;animate,0;setstate,0;x,-990;y,-150*(0.95*2);"
+        />
+        <Layer Font="Splat2Stroke" Text="0"
+        InitCommand="horizalign,right;queuecommand,ShowScore"
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_2, 8, 150, -350+(50*0.0), 1, 100, 2, 'Stage', 'Fantastic') end" 
+        />
+
+        <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
+        InitCommand="zoom,1.6;horizalign,left;animate,0;setstate,1;x,-990;y,-150;"
+        />
+        <Layer Font="Splat2Stroke" Text="0"
+        InitCommand="horizalign,right;queuecommand,ShowScore"
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_2, 7, 150, -345+(135*1.0), 1, 100, 2, 'Stage', 'Excellent') end" 
+        />
+
+        <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
+        InitCommand="zoom,1.6;horizalign,left;animate,0;setstate,2;x,-1080;y,-13;"
+        />
+        <Layer Font="Splat2Stroke" Text="0"
+        InitCommand="horizalign,right;queuecommand,ShowScore"
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_2, 6, 150, -345+(135*2.0), 1, 100, 2, 'Stage', 'Great') end" 
+        />
+
+        <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
+        InitCommand="zoom,1.6;horizalign,left;animate,0;setstate,3;x,-1045;y,123;"
+        />
+        <Layer Font="Splat2Stroke" Text="0"
+        InitCommand="horizalign,right;queuecommand,ShowScore"
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_2, 5, 150, -345+(135*3.0), 1, 100, 2, 'Stage', 'Decent') end" 
+        />
+
+        <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
+        InitCommand="zoom,1.6;horizalign,left;animate,0;setstate,4;x,-1015;y,253;"
+        />
+        <Layer Font="Splat2Stroke" Text="0"
+        InitCommand="horizalign,right;queuecommand,ShowScore"
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_2, 4, 150, -345+(135*4.0), 1, 100, 2, 'Stage', 'WayOff') end" 
+        />
+
+        <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
+        InitCommand="zoom,1.6;horizalign,left;animate,0;setstate,5;x,-1090;y,390;"
+        />
+        <Layer Font="Splat2Stroke" Text="0"
+        InitCommand="horizalign,right;queuecommand,ShowScore"
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_2, 3, 150, -345+(135*5.0), 1, 100, 2, 'Stage', 'Miss') end" 
+        />
+
+        <!-- Holds: Fresh! -->
+        <Layer Font="Splat2" Text="0"
+        InitCommand="horizalign,left;draworder,90;shadowlength,0;queuecommand,ShowScore;zoom,1.2;y,-300;x,410"
+        ShowScoreCommand="%function(self)
+        self:settext( 'x  '..GetPSStageStats(PLAYER_2):GetHoldNoteScores(2) )
+        end" 
+        />
+
+        <!-- Holds: Bad! -->
+        <Layer Font="Splat2" Text="0"
+        InitCommand="horizalign,left;draworder,90;shadowlength,0;queuecommand,ShowScore;zoom,1.2;y,-240;x,410"
+        ShowScoreCommand="%function(self)
+        self:settext( 'x  '..GetPSStageStats(PLAYER_2):GetHoldNoteScores(1) )
+        end" 
+        />
+
+        <Layer Font="Splat2" Text="Score:"
+        OnCommand="%function(self)
+        self:zoom(2.3);
+        self:horizalign('right')
+        self:y(-170);
+        self:shadowlength(0)
+        self:x(500*1.8);
+        CalculatePercentage(self, PLAYER_2, 'Cur')
+        end"
+        StepP1LeftPressMessageCommand="stoptweening;decelerate,0.3;diffusealpha,1"
+        StepP1RightPressMessageCommand="stoptweening;decelerate,0.3;diffusealpha,0"
+        />
+
+        <Layer Font="Splat2" Text="Score:"
+        OnCommand="%function(self)
+        self:zoom(1.7);
+        self:horizalign('right')
+        self:y(-270);
+        self:shadowlength(0)
+        self:x(500*1.8);
+        self:settext( GetScore(PLAYER_2)..'p' )
+        end"
+        StepP1LeftPressMessageCommand="stoptweening;decelerate,0.3;diffusealpha,1"
+        StepP1RightPressMessageCommand="stoptweening;decelerate,0.3;diffusealpha,0"
+        />
+
+</children></ActorFrame>

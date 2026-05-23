@@ -1,0 +1,129 @@
+<ActorFrame InitCommand="%function(self)
+DifficultyNames = {
+	{ {0.5,1.0,1.0}, ( THEME:GetMetric('Difficulties', 'Beginner') ) },
+	{ {0.5,1.0,0.5}, ( THEME:GetMetric('Difficulties', 'Easy') ) },
+	{ {1.0,1.0,0.5}, ( THEME:GetMetric('Difficulties', 'Medium') ) },
+	{ {1.0,0.5,0.5}, ( THEME:GetMetric('Difficulties', 'Hard') ) },
+	{ {0.5,0.5,1.0}, ( THEME:GetMetric('Difficulties', 'Expert') ) },
+	{ {1.0,1.0,1.0}, ( THEME:GetMetric('Difficulties', 'EditShort') ) },
+}
+
+Jud_Normal = ThemeFile('Judge/'..THEME:GetCurLanguage() )
+Jud_CPUPlr = ThemeFile('Judge/CPU/'..THEME:GetCurLanguage() )
+end"> <children>
+
+	<!-- PLAYER 1  -->
+
+	<Layer Type="ActorFrame" OnCommand="%function(self)
+		self:x(SCREEN_LEFT+42)
+		self:y(SCREEN_TOP+41)
+	end" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"><children>
+
+	<Layer File="@ThemeFile('EcoInfoBG')" OnCommand="diffusealpha,1;zoom,0.3;horizalign,left;y,-20;"
+		/>
+
+	<Layer
+				Font="Splat2Stroke" Text=""
+				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+				InitCommand="zoom,0.3;shadowlength,2;horizalign,left;y,-28;x,10"
+				OnCommand="%function(self)
+				if GAMESTATE:IsHumanPlayer(PLAYER_1) then
+					for i=1,table.getn(DifficultyNames) do
+						if PlrDiff(PLAYER_1) == i then
+							self:settext( DifficultyNames[i+1][2] )
+							self:diffuse( DifficultyNames[i+1][1][1],DifficultyNames[i+1][1][2],DifficultyNames[i+1][1][3],1 )
+						end
+					end
+				end
+				end"
+			/>
+
+			<Layer
+				Font="Paintball" Text=""
+				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+				InitCommand="zoom,0.4;shadowlength,1"
+				OnCommand="%function(self)
+				if GAMESTATE:IsHumanPlayer(PLAYER_1) then
+					self:settext( GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() )
+				end
+				self:sleep(1)
+				self:queuecommand('LoadJudgment')
+				end"
+				LoadJudgmentCommand="%function(self)
+
+				-- This is to check for the language.
+				if SCREENMAN:GetTopScreen():GetChild('PlayerP1') then
+					local Plr = SCREENMAN:GetTopScreen():GetChild('PlayerP1')
+					if Plr:GetChild('Judgment') then
+						if GAMESTATE:IsHumanPlayer(PLAYER_1) then
+							Plr:GetChild('Judgment'):GetChild(''):Load( Jud_Normal )
+						else
+							Plr:GetChild('Judgment'):GetChild(''):Load( Jud_CPUPlr )
+						end
+					end
+				end
+
+				end"
+			/>
+
+		</children></Layer>
+		
+
+		<!-- PLAYER 2 -->
+
+	<Layer Type="ActorFrame" OnCommand="%function(self)
+		self:x(SCREEN_RIGHT-42)
+		self:y(SCREEN_TOP+41)
+	end" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"><children>
+
+	<Layer File="@ThemeFile('EcoInfoBG')" OnCommand="diffusealpha,1;zoom,0.3;horizalign,right;y,-20;"
+		/>
+
+		<Layer
+				Font="Splat2Stroke" Text=""
+				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+				InitCommand="zoom,0.3;shadowlength,2;horizalign,left;y,-28;x,-145"
+				OnCommand="%function(self)
+				if GAMESTATE:IsHumanPlayer(PLAYER_2) then
+					for i=1,table.getn(DifficultyNames) do
+						if PlrDiff(PLAYER_2) == i then
+							self:settext( DifficultyNames[i+1][2] )
+							self:diffuse( DifficultyNames[i+1][1][1],DifficultyNames[i+1][1][2],DifficultyNames[i+1][1][3],1 )
+						end
+					end
+				end
+				end"
+			/>
+
+		<Layer
+				Font="Paintball" Text=""
+				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+				InitCommand="zoom,0.4;shadowlength,1"
+				OnCommand="%function(self)
+				if GAMESTATE:IsHumanPlayer(PLAYER_2) then
+					self:settext( GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() )
+				end
+				self:sleep(1)
+				self:queuecommand('LoadJudgment')
+				end"
+				LoadJudgmentCommand="%function(self)
+				
+				-- This is to check for the language.
+				if SCREENMAN:GetTopScreen():GetChild('PlayerP2') then
+					local Plr = SCREENMAN:GetTopScreen():GetChild('PlayerP2')
+					if Plr:GetChild('Judgment') then
+						if GAMESTATE:IsHumanPlayer(PLAYER_2) then
+							Plr:GetChild('Judgment'):GetChild(''):Load( Jud_Normal )
+						else
+							Plr:GetChild('Judgment'):GetChild(''):Load( Jud_CPUPlr )
+						end
+					end
+				end
+
+				end"
+			/>
+
+		</children></Layer>
+
+</children> </ActorFrame>
+

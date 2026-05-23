@@ -1,0 +1,268 @@
+<ActorFrame><children>
+
+	<!-- BG LAYER -->
+	<Layer File="@ThemeFile('SongSelection/NewDesign/MainBG.png')" OnCommand="%function(self) self:zoom(0.35) end" />
+
+	<Layer Type="ActorFrame" OnCommand="x,-120;y,-120"><children>
+
+		<Layer
+		Font="Paintball"
+		Text="@GrabTransText('SelectMusic', 'MenuText', 'SongInfo')"
+		OnCommand="%function(self)
+		
+		self:x(-20)
+		self:y(0)
+		self:zoom(0.3)
+		self:horizalign('left')
+		self:shadowlength(1)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		/>
+
+		<Layer Type="ActorFrame" OnCommand="x,-20"><children>
+
+		<Layer
+		Font="Paintball"
+		Text="Song name"
+		OnCommand="%function(self)
+		
+		self:x(0)
+		self:y(30)
+		self:zoom(.5)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:maxwidth(480)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		InitCommand="animate,0;playcommand,UpdateStart"
+		CurrentSongChangedMessageCommand="playcommand,UpdateStart"
+		UpdateStartCommand="%function(self)
+				self:finishtweening()
+				self:accelerate(0.1)
+				self:x(-10)
+				self:diffusealpha(0)
+				self:sleep(0.001)
+				self:queuecommand('Update')
+		end"
+		UpdateCommand="%function(self)
+			self:x(20)
+			if GAMESTATE:GetCurrentSong() then
+				self:hidden(0)
+				self:diffuse(1,1,1,0)
+				local song = GAMESTATE:GetCurrentSong();
+				self:settext(GAMESTATE:GetCurrentSong():GetDisplayMainTitle())
+				if string.len( string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 1) ) > 0 then
+						self:zoom(0.4)
+						self:y(20)
+					else
+						self:y(30)
+						self:zoom(.5)
+					end
+			else
+				self:hidden(1)
+			end
+			self:decelerate(0.1)
+			self:x(10)
+			self:diffusealpha(1)
+		end"
+		/>
+
+		<Layer
+		Font="Paintball"
+		Text="Song name"
+		OnCommand="%function(self)
+		
+		self:x(0)
+		self:y(30)
+		self:zoom(.5)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:maxwidth(450)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		InitCommand="animate,0;playcommand,UpdateStart"
+		CurrentSongChangedMessageCommand="playcommand,UpdateStart"
+		UpdateStartCommand="%function(self)
+				self:finishtweening()
+				self:accelerate(0.1)
+				self:x(-10)
+				self:diffusealpha(0)
+				self:sleep(0.001)
+				self:queuecommand('Update')
+		end"
+		UpdateCommand="%function(self)
+			self:x(20)
+			if GAMESTATE:GetCurrentSong() then
+				self:hidden(0)
+				self:diffuse(1,1,1,0)
+				local song = GAMESTATE:GetCurrentSong();
+				self:settext( string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 1) )
+				if string.len( string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 1) ) > 0 then
+						self:zoom(0.4)
+						self:y(32)
+					else
+						self:y(30)
+						self:zoom(.5)
+					end
+			else
+				self:hidden(1)
+			end
+			self:decelerate(0.1)
+			self:x(10)
+			self:diffusealpha(1)
+		end"
+		/>
+
+
+		<Layer
+		Font="Paintball"
+		Text="Song name"
+		OnCommand="%function(self)
+		
+		self:x(0)
+		self:y(45)
+		self:zoom(.3)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:maxwidth(SCREEN_WIDTH/1.5)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		InitCommand="animate,0;playcommand,UpdateStart"
+		CurrentSongChangedMessageCommand="playcommand,UpdateStart"
+		UpdateStartCommand="%function(self)
+				self:finishtweening()
+				self:accelerate(0.1)
+				self:x(-10)
+				self:diffusealpha(0)
+				self:sleep(0.001)
+				self:queuecommand('Update')
+		end"
+		UpdateCommand="%function(self)
+			self:x(20)
+			if GAMESTATE:GetCurrentSong() then
+				self:hidden(0)
+				self:diffuse(1,1,1,0)
+				self:settext(GAMESTATE:GetCurrentSong():GetDisplayArtist())
+				self:decelerate(0.1)
+			else
+				self:hidden(1)
+			end
+			self:x(10)
+			self:diffusealpha(1)
+		end"
+		/>
+
+	</children></Layer>
+
+		<Layer File="@ThemeFile('EcoInfoBG')"
+			OnCommand="%function(self)
+		
+		self:x(0)
+		self:y(-17)
+		self:zoom(.2)
+		self:horizalign('left')
+		self:shadowlength(1)
+		end"
+		/>
+
+		<Layer
+		Font="Paintball"
+		Text="Song name"
+		OnCommand="%function(self)
+		
+		self:x(50)
+		self:y(-20)
+		self:zoom(.2)
+		self:shadowlength(1)
+		self:maxwidth(SCREEN_WIDTH/1.5)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		InitCommand="animate,0;playcommand,UpdateStart"
+		CurrentSongChangedMessageCommand="playcommand,UpdateStart"
+		UpdateStartCommand="%function(self)
+				self:finishtweening()
+				self:accelerate(0.1)
+				self:zoom(0.18)
+				self:diffusealpha(0)
+				self:sleep(0.001)
+				self:queuecommand('Update')
+		end"
+		UpdateCommand="%function(self)
+			self:zoom(0.18)
+			if GAMESTATE:GetCurrentSong() then
+				self:hidden(0)
+				self:diffuse(1,1,1,0)
+				if PROFILEMAN:GetMachineProfile():GetSongNumTimesPlayed(GAMESTATE:GetCurrentSong()) > 0 then
+					self:settext( GrabTransText('SelectMusic', 'MenuText', 'AmmPlay')..PROFILEMAN:GetMachineProfile():GetSongNumTimesPlayed(GAMESTATE:GetCurrentSong()) )
+				else
+					self:settext( GrabTransText('SelectMusic', 'MenuText', 'NeverP') )
+					self:diffusetopedge(1,0,1,1)
+					self:diffusebottomedge(0,1,1,1)
+				end
+				self:decelerate(0.1)
+			else
+				self:hidden(1)
+			end
+			self:zoom(0.3)
+			self:diffusealpha(1)
+		end"
+		/>
+
+
+
+
+
+
+
+
+
+
+
+
+		<Layer
+		Font="Paintball"
+		Text="Song name"
+		OnCommand="%function(self)
+		
+		self:x(220)
+		self:y(20)
+		self:zoom(.3)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:maxwidth(SCREEN_WIDTH/1.5)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		InitCommand="animate,0;playcommand,UpdateStart"
+		CurrentSongChangedMessageCommand="playcommand,UpdateStart"
+		UpdateStartCommand="%function(self)
+				self:finishtweening()
+				self:accelerate(0.1)
+				self:y(10)
+				self:diffusealpha(0)
+				self:sleep(0.001)
+				self:queuecommand('Update')
+		end"
+		UpdateCommand="%function(self)
+			MESSAGEMAN:Broadcast('UpdateSortOrder')
+			self:y(30)
+			if GAMESTATE:GetCurrentSong() then
+				self:hidden(0)
+				self:diffuse(1,1,1,0)
+				self:settext(GAMESTATE:GetCurrentSong():GetDisplayArtist())
+				self:decelerate(0.1)
+				if GAMESTATE:GetCurrentSong():MusicLengthSeconds() >= 3600 then
+					self:settext(SecondsToHHMMSS(GAMESTATE:GetCurrentSong():MusicLengthSeconds()))
+				else
+					self:settext(SecondsToMMSS(GAMESTATE:GetCurrentSong():MusicLengthSeconds()))
+				end
+			else
+				self:hidden(1)
+			end
+			self:y(10)
+			self:diffusealpha(1)
+		end"
+		/>
+
+</children></Layer>
+
+</children></ActorFrame>

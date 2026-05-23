@@ -1,0 +1,88 @@
+<ActorFrame> <children>
+	<Layer
+		Type="Quad"
+		InitCommand="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT+3,SCREEN_BOTTOM"
+		OnCommand="cropleft,1;linear,0.5;cropleft,-0.5;sleep,1;linear,0.5;cropright,1"
+	/>
+
+	<Layer Type="ActorFrame" OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoom(0.5)
+	end"><children>
+
+	<Layer File="@ThemeFile('EcoInfoBG')" InitCommand="diffusealpha,0"
+		OnCommand="sleep,2;linear,0.3;diffusealpha,1"
+		/>
+	<Layer
+		Font="Splat2"
+		Text="@THEME:GetMetric('LoadingTransitions','ToMusicInterface')"
+		InitCommand="%function(self)
+		
+		self:zoom(0.9)
+		self:diffusealpha(0)
+		self:shadowlength(1)
+		end"
+		OnCommand="sleep,2;linear,0.3;diffusealpha,1"
+		/>
+	</children></Layer>
+
+
+	<!-- CODE STUFF -->
+			<CODE Type="Quad" InitCommand="zoom,0;"
+				OnCommand="%function(self) self:sleep(0.4) self:queuecommand('ApplyTransition') end"
+				ApplyTransitionCommand="%function(self)
+
+				if SCREENMAN:GetTopScreen():GetChild('LifeP1') then LifeP1 = SCREENMAN:GetTopScreen():GetChild('LifeP1') end
+                if SCREENMAN:GetTopScreen():GetChild('LifeP2') then LifeP2 = SCREENMAN:GetTopScreen():GetChild('LifeP2') end
+                if SCREENMAN:GetTopScreen():GetChild('PlayerP1') then P1 = SCREENMAN:GetTopScreen():GetChild('PlayerP1') end
+                if SCREENMAN:GetTopScreen():GetChild('PlayerP2') then P2 = SCREENMAN:GetTopScreen():GetChild('PlayerP2') end
+                if SCREENMAN:GetTopScreen():GetChild('ScoreP1') then ScoreP1 = SCREENMAN:GetTopScreen():GetChild('ScoreP1') end
+                if SCREENMAN:GetTopScreen():GetChild('ScoreP2') then ScoreP2 = SCREENMAN:GetTopScreen():GetChild('ScoreP2') end
+                if SCREENMAN:GetTopScreen():GetChild('Overlay') then Overlay = SCREENMAN:GetTopScreen():GetChild('Overlay') end
+                if SCREENMAN:GetTopScreen():GetChild('Underlay') then Underlay = SCREENMAN:GetTopScreen():GetChild('Underlay') end
+                if SCREENMAN:GetTopScreen():GetChild('SongForeground') then SongForeground = SCREENMAN:GetTopScreen():GetChild('SongForeground') end
+                if SCREENMAN:GetTopScreen():GetChild('SongBackground') then SongBackground = SCREENMAN:GetTopScreen():GetChild('SongBackground') end
+
+                MESSAGEMAN:Broadcast('Cancel')
+
+                if P1 then
+                	P1:sleep(1)
+                	P1:zoom(0)
+                end
+                if SongBackground then
+                	SongBackground:sleep(1)
+                	SongBackground:zoom(0)
+                end
+                if SongForeground then
+                	SongForeground:sleep(1)
+                	SongForeground:zoom(0)
+                end
+                if P2 then
+                	P2:sleep(1)
+                	P2:zoom(0)
+                end
+				if Overlay then
+					Overlay:accelerate(1)
+					Overlay:addy(-200)
+				end
+				if LifeP1 then
+					LifeP1:accelerate(1)
+					LifeP1:addy(-200)
+				end
+				if ScoreP1 then
+					ScoreP1:accelerate(1)
+					ScoreP1:addy(-200)
+				end
+				if LifeP2 then
+					LifeP2:accelerate(1)
+					LifeP2:addy(-200)
+				end
+				if ScoreP2 then
+					ScoreP2:accelerate(1)
+					ScoreP2:addy(-200)
+				end
+
+				end"
+			/>
+</children> </ActorFrame>

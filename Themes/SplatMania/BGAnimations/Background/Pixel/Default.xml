@@ -1,0 +1,127 @@
+<ActorFrame><children>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomto(SCREEN_WIDTH+3,SCREEN_HEIGHT,0,0)
+		self:diffuse(0,0,0.3,1)
+		end"
+		/>
+
+	<Layer File="BGLayer" OnCommand="%function(self)
+	Center(self);
+	TileAmmount = 5
+	self:zoom(TileAmmount)
+	self:customtexturerect(0,0,TileAmmount,TileAmmount);
+	self:texcoordvelocity(0,-0.1);
+	self:SetTextureFiltering(false)
+	end"
+	/>
+
+	<Layer File="PlatformTile" OnCommand="%function(self)
+	Center(self);
+	self:y(100)
+	self:x(0)
+	self:horizalign('left')
+	self:zoom(2)
+	self:diffusealpha(0.4)
+	self:vertalign('top')
+	self:SetTextureFiltering(false)
+	end"
+	/>
+
+	<Layer File="PlatformTile" OnCommand="%function(self)
+	Center(self);
+	self:y(SCREEN_BOTTOM-150)
+	self:x(SCREEN_CENTER_X)
+	self:zoom(2)
+	self:diffusealpha(0.4)
+	self:SetTextureFiltering(false)
+	end"
+	/>
+
+	<Layer File="PlatformTile" OnCommand="%function(self)
+	Center(self);
+	self:y(180)
+	self:x(SCREEN_RIGHT)
+	self:horizalign('right')
+	self:zoom(2)
+	self:diffusealpha(0.4)
+	self:vertalign('top')
+	self:SetTextureFiltering(false)
+	end"
+	/>
+
+	<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = math.random(2,8) end" />
+	<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = math.random(2,8) end" />
+	<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = math.random(2,8) end" />
+	<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = math.random(2,8) end" />
+	<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = math.random(2,8) end" />
+	<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = math.random(2,8) end" />
+	<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = math.random(2,8) end" />
+	<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = math.random(2,8) end" />
+	<Layer File="SquidFlow.xml" OnCommand="%function(self) Hib = math.random(2,8) end" />
+
+<Layer Type="ActorFrame" InitCommand="bob;effectmagnitude,10,0,0;effectoffset,0.5;effectperiod,10"><children>
+ <Layer Type="ActorFrame" InitCommand="bob;effectmagnitude,0,10,0;effectperiod,10"><children>
+
+	<Layer File="AcidBody" OnCommand="%function(self)
+	Center(self);
+	self:y(SCREEN_BOTTOM-100)
+	self:vertalign('top')
+	TileAmmount = 80
+	self:zoomy(80*2)
+	self:zoomx(TileAmmount*2)
+	self:customtexturerect(0,0,TileAmmount,TileAmmount);
+	self:texcoordvelocity(0,0);
+	self:SetTextureFiltering(false)
+	end"
+	/>
+
+	<Layer File="AcidTop" OnCommand="%function(self)
+	Center(self);
+	self:y(SCREEN_BOTTOM-100)
+	TileAmmount = 80
+	self:zoomy(2)
+	self:zoomx(TileAmmount*2)
+	self:customtexturerect(0,0,TileAmmount,1);
+	self:texcoordvelocity(0,0);
+	self:SetTextureFiltering(false)
+	end"
+	/>
+	</children></Layer>
+</children></Layer>
+
+<!-- <Layer Type="ActorFrame"
+	InitCommand="%function(self) Center(self); end"
+	JumpAnimMessageCommand="%function(self)
+	NewXPos = math.random(-100,100)
+	self:sleep(0.7)
+	self:decelerate(0.5)
+	self:x( SCREEN_CENTER_X+(NewXPos/2) )
+	self:accelerate(0.5)
+	self:x( SCREEN_CENTER_X+(NewXPos) )
+	end"
+	><children>
+	<Layer File="SquidAnim.sprite"
+	InitCommand="%function(self)
+	self:zoom(3.2)
+	self:SetTextureFiltering(false)
+	MESSAGEMAN:Broadcast('JumpAnim')
+	end"
+	JumpAnimMessageCommand="%function(self)
+	self:sleep(0.7)
+	self:decelerate(0.5)
+	self:y(-100)
+	self:accelerate(0.5)
+	self:y(0)
+	self:sleep(1.3)
+	self:queuecommand('RestartAnimation')
+	end"
+	RestartAnimationCommand="%function(self) MESSAGEMAN:Broadcast('JumpAnim') end"
+	/>
+</children></Layer> -->
+	
+</children></ActorFrame>

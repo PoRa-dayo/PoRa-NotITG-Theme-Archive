@@ -1,0 +1,190 @@
+<ActorFrame><children>
+<Layer
+        File="SongBackground"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH+3,SCREEN_HEIGHT;diffusealpha,1;playcommand,CheckForBG"
+        CheckForBGCommand="%function(self)
+        if GAMESTATE:GetCurrentSong():GetBackgroundPath() == nil then
+        		self:diffusealpha(0)
+        	else
+        		self:diffusealpha(1)
+        	end
+        end"
+        OnCommand="accelerate,0.5;zoom,0.5;diffusealpha,0;fadetop,1;fadebottom,1"
+    />
+
+	<Layer File="@ThemeFile('blur')" InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,3"
+		OnCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
+		/>
+
+	<Layer File="@ThemeFile('ClearedRibbon/ClearedTextBG')"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;accelerate,0.5;zoom,0.5;diffusealpha,0"
+	InitCommand="%function(self)
+		if ColorToMimic then
+			self:diffuse( ColorToMimic[1],ColorToMimic[2],ColorToMimic[3],1 )
+		else
+			self:diffuse(1,1,1,1)
+		end
+	end"
+	/>
+
+	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentSong():GetDisplayMainTitle()"
+	InitCommand="maxwidth,SCREEN_WIDTH/0.8;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-45;shadowlength,2"
+	OnCommand="accelerate,0.5;zoom,0.8;addx,-5;diffusealpha,0"
+			/>
+
+	<Layer Font="Splat2" Text="@SPCommand:GetDisplaySubtitle()"
+	InitCommand="x,SCREEN_CENTER_X;zoom,0.6;y,SCREEN_CENTER_Y;shadowlength,2"
+	OnCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
+			/>
+
+	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentSong():GetDisplayArtist()"
+	InitCommand="x,SCREEN_CENTER_X;zoom,0.6;y,SCREEN_CENTER_Y+30;shadowlength,2"
+	OnCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
+			/>
+
+	<!-- Player One Info -->
+	<Layer Font="Splat2" Text="Player 1"
+	Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
+	InitCommand="horizalign,left;x,SCREEN_LEFT+20;diffusealpha,0.5;zoom,0.4;y,SCREEN_CENTER_Y-60;shadowlength,2"
+	OnCommand="accelerate,0.5;zoom,0.3;diffusealpha,0"
+			/>
+	<Layer
+		Font="Splat2Stroke"
+		Text=" "
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		TweenOffCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
+		InitCommand="%function(self)
+		
+		self:x(SCREEN_LEFT+20)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:rotationy(-7)
+		self:queuecommand('SetNow')
+		end"
+		SetNowCommand="%function(self)
+		if GAMESTATE:GetCurrentSong() then
+
+			self:settext( GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() )
+			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()+1
+			for i=1,table.getn(DiffColorTable) do
+				if Diff == i then
+					self:diffuse( DiffColorTable[i][2][1],DiffColorTable[i][2][2],DiffColorTable[i][2][3],DiffColorTable[i][2][4] )
+				end
+			end
+		end
+
+		self:zoom(0.6);
+		self:y(SCREEN_CENTER_Y-50);
+		self:shadowlength(2);
+		self:queuecommand('TweenOff')
+		end"
+		/>
+
+		<Layer
+		Font="Splat2"
+		Text=" "
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		TweenOffCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
+		InitCommand="%function(self)
+		
+		self:x(SCREEN_LEFT+60)
+		self:y(SCREEN_CENTER_Y+50)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:zoom(0.5)
+		self:maxwidth(130)
+		self:rotationy(-5)
+		self:queuecommand('SetNow')
+		end"
+		SetNowCommand="%function(self)
+		if GAMESTATE:GetCurrentSong() then
+
+			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()+1
+			for i=1,table.getn(DiffColorTable) do
+				if Diff == i then
+					self:diffuse( DiffColorTable[i][2][1],DiffColorTable[i][2][2],DiffColorTable[i][2][3],DiffColorTable[i][2][4] )
+					self:settext( DiffColorTable[i][1] )
+				end
+			end
+		end
+		
+		self:zoom(0.6);
+		self:y(SCREEN_CENTER_Y-35);
+		self:shadowlength(2);
+		self:queuecommand('TweenOff')
+		end"
+		/>
+
+
+	<!-- Player Two Info -->
+	<Layer Font="Splat2" Text="Player 2"
+	Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+	InitCommand="horizalign,right;x,SCREEN_RIGHT-10;diffusealpha,0.5;zoom,0.4;y,SCREEN_CENTER_Y-60;shadowlength,2"
+	OnCommand="accelerate,0.5;zoom,0.3;diffusealpha,0"
+			/>
+	<Layer
+		Font="Splat2Stroke"
+		Text=" "
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT)
+		self:horizalign('right')
+		self:shadowlength(1)
+		self:rotationy(-7)
+		self:queuecommand('SetNow')
+		end"
+		SetNowCommand="%function(self)
+		if GAMESTATE:GetCurrentSong() then
+
+			self:settext( GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() )
+			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()+1
+			for i=1,table.getn(DiffColorTable) do
+				if Diff == i then
+					self:diffuse( DiffColorTable[i][2][1],DiffColorTable[i][2][2],DiffColorTable[i][2][3],DiffColorTable[i][2][4] )
+				end
+			end
+		end
+
+		self:zoom(0.6);
+		self:y(SCREEN_CENTER_Y-50);
+		self:shadowlength(2);
+		self:queuecommand('TweenOff')
+		end"
+		TweenOffCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
+		/>
+
+		<Layer
+		Font="Splat2"
+		Text=" "
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		TweenOffCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
+		OnCommand="%function(self)
+		
+		self:x(SCREEN_RIGHT-50)
+		self:y(SCREEN_CENTER_Y+50)
+		self:horizalign('right')
+		self:shadowlength(1)
+		self:zoom(0.5)
+		self:maxwidth(130)
+		self:rotationy(-5)
+		self:queuecommand('SetNow')
+		end"
+		SetNowCommand="%function(self)
+		if GAMESTATE:GetCurrentSong() then
+
+			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()
+			for i=1,table.getn(DiffColorTable) do
+				if Diff == i then
+					self:diffuse( DiffColorTable[i][2][1],DiffColorTable[i][2][2],DiffColorTable[i][2][3],DiffColorTable[i][2][4] )
+					self:settext( DiffColorTable[i][1] )
+				end
+			end
+		end
+		self:zoom(0.6);
+		self:y(SCREEN_CENTER_Y-35);
+		self:shadowlength(2);
+		self:queuecommand('TweenOff')
+		end"
+		/>
+</children></ActorFrame>

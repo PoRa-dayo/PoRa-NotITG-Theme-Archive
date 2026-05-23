@@ -1,0 +1,105 @@
+<ActorFrame><children>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomto(SCREEN_WIDTH+3,SCREEN_HEIGHT,0,0)
+		self:diffuse(0,0,0,0)
+		self:decelerate(1)
+		self:diffuse(0,0,0,1)
+		end"
+		/>
+
+	<Layer File="@ThemeFile('Paint Splats/Splat2')"
+		OnCommand="%function(self)
+		Center(self);
+		self:addx(80)
+		self:rotationz(-45)
+		self:zoom(3)
+		self:decelerate(0.5)
+		self:zoom(0.7)
+		self:blend('add')
+		self:cmd('diffuse,#C400FF')
+		end"
+		/>
+
+	<Layer File="@ThemeFile('Paint Splats/Splat2')"
+		OnCommand="%function(self)
+		Center(self);
+		self:zoom(3)
+		self:decelerate(0.5)
+		self:zoom(0.7)
+		self:blend('add')
+		self:cmd('diffuse,#C400FF')
+		end"
+		/>
+
+	<Layer File="@ThemeFile('Paint Splats/Splat2')"
+		OnCommand="%function(self)
+		Center(self);
+		self:addy(80)
+		self:rotationz(95)
+		self:zoom(3)
+		self:decelerate(0.5)
+		self:zoom(0.7)
+		self:blend('add')
+		self:cmd('diffuse,#C400FF')
+		end"
+		/>
+
+	<Layer File="@ThemeFile('Paint Splats/Splat2')"
+		OnCommand="%function(self)
+		Center(self);
+		self:addx(80)
+		self:rotationz(45)
+		self:zoom(3)
+		self:decelerate(0.5)
+		self:zoom(0.7)
+		self:blend('add')
+		self:cmd('diffuse,#C400FF')
+		end"
+		/>
+
+	<Layer File="@ThemeFile('blur')"
+		OnCommand="%function(self)
+		Center(self);
+		self:zoom(3)
+		end"
+		/>
+
+	<Layer File="@ThemeFile('blur')"
+		OnCommand="%function(self)
+		Center(self);
+		self:zoom(3)
+		end"
+		/>
+
+	<Layer File="MainText"
+		OnCommand="%function(self)
+		Center(self);
+		self:addx(20)
+		self:zoom(2)
+		self:rotationz(20)
+		self:diffusealpha(0)
+		self:bounceend(0.5)
+		self:rotationz(25)
+		self:zoom(0.75)
+		self:diffusealpha(1)
+		end"
+		/>
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X)
+		self:y(SCREEN_CENTER_Y)
+		self:zoomto(SCREEN_WIDTH+3,SCREEN_HEIGHT,0,0)
+		self:diffuse(0,0,0,0)
+		self:sleep(1.6)
+		self:linear(1)
+		self:diffuse(0,0,0,1)
+		end"
+		/>
+</children></ActorFrame>

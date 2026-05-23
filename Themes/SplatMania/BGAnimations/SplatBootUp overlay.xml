@@ -1,0 +1,47 @@
+<ActorFrame><children>
+
+	<CODE Type="Quad" InitCommand="hidden,1"
+		OnCommand="%function(self)
+		if not Profile().CreditsEarnedTEST then
+			Profile().CreditsEarnedTEST = 0
+		end
+		if not Profile().CreditsEarnedTotalTEST then
+			Profile().CreditsEarnedTotalTEST = 0
+		end
+		if not Profile().TotalSongsPlayed then
+			Profile().TotalSongsPlayed = 0
+		end
+		if not Profile().TotalSongPlayTime then
+			Profile().TotalSongPlayTime = 0
+		end
+		PROFILEMAN:SaveMachineProfile()
+		end" />
+
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+		Center(self);
+		self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT,0,0)
+		self:diffuse(0,0,0,0)
+		GAMESTATE:JoinPlayer(PLAYER_1)
+		end"
+		MadeChoiceP1MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+		MadeChoiceP2MessageCommand="%function(self) MESSAGEMAN:Broadcast('GoOff') end"
+		/>
+
+	<Layer Font="Splat2" Text="@'Version '..SplatoonInfo['Version']"
+		OnCommand="x,SCREEN_RIGHT-20;y,SCREEN_TOP+20;shadowlength,2;horizalign,right;zoom,0.3"
+		GoOffMessageCommand="linear,0.5;diffusealpha,0"
+		/>
+
+	<Layer Type="ActorFrame" OnCommand="%function(self) Center(self) end"><children>
+		<Layer Font="Splat2" Text="@ReturnTestingText()" OnCommand="zoom,0.35;y,-15;wrapwidthpixels,SCREEN_WIDTH/0.42;shadowlength,2"
+		GoOffMessageCommand="linear,0.5;diffusealpha,0" />
+
+		<Layer Font="Splat2" Text="Press START to continue." OnCommand="shadowlength,2;zoom,0.5;wrapwidthpixels,SCREEN_WIDTH+700;y,200"
+			GoOffMessageCommand="linear,0.5;diffusealpha,0"
+			/>
+	</children></Layer>
+
+	
+</children></ActorFrame>

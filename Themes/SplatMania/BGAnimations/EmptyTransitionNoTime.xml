@@ -1,0 +1,11 @@
+<ActorFrame><children>
+
+	<Quad
+		OnCommand="%function(self)
+		Center(self);
+		self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT,0,0)
+		self:diffuse(0,0,0,0)
+		end"
+		/>
+
+</children></ActorFrame>
