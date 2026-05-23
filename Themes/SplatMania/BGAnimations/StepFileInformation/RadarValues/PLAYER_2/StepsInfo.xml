@@ -23,7 +23,7 @@
             Font="Splat2"
             Text="taps"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="%function(self) self:horizalign('left') self:shadowlength(0) self:x(30+XOffset) self:y(2) self:zoom(0.2) end"
+            OnCommand="%function(self) self:horizalign('left') self:shadowlength(0) self:x(30+XOffset) self:y(2) self:zoom(0.19) end"
             StartUpdateTransitionP2MessageCommand="%function(self)
             self:stoptweening()
             self:sleep(0.02*1)
@@ -63,7 +63,7 @@
             Font="Splat2"
             Text="taps"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="%function(self) self:horizalign('left') self:shadowlength(0) self:x(30+XOffset) self:y(12) self:zoom(0.2) end"
+            OnCommand="%function(self) self:horizalign('left') self:shadowlength(0) self:x(30+XOffset) self:y(12) self:zoom(0.19) end"
             StartUpdateTransitionP2MessageCommand="%function(self)
             self:stoptweening()
             self:sleep(0.02*2)
@@ -103,7 +103,7 @@
             Font="Splat2"
             Text="taps"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="%function(self) self:horizalign('left') self:shadowlength(0) self:x(30+XOffset) self:y(22) self:zoom(0.2) end"
+            OnCommand="%function(self) self:horizalign('left') self:shadowlength(0) self:x(30+XOffset) self:y(21) self:zoom(0.19) end"
             StartUpdateTransitionP2MessageCommand="%function(self)
             self:stoptweening()
             self:sleep(0.02*3)
@@ -143,7 +143,7 @@
             Font="Splat2"
             Text="taps"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="%function(self) self:horizalign('left') self:shadowlength(0) self:x(30+XOffset) self:y(32) self:zoom(0.2) end"
+            OnCommand="%function(self) self:horizalign('left') self:shadowlength(0) self:x(30+XOffset) self:y(31) self:zoom(0.19) end"
             StartUpdateTransitionP2MessageCommand="%function(self)
             self:stoptweening()
             self:sleep(0.02*4)
@@ -183,7 +183,7 @@
             Font="Splat2"
             Text="taps"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="%function(self) self:horizalign('left') self:shadowlength(0) self:x(30+XOffset) self:y(42) self:zoom(0.2) end"
+            OnCommand="%function(self) self:horizalign('left') self:shadowlength(0) self:x(30+XOffset) self:y(40) self:zoom(0.19) end"
             StartUpdateTransitionP2MessageCommand="%function(self)
             self:stoptweening()
             self:sleep(0.02*5)
@@ -223,7 +223,7 @@
             Font="Splat2"
             Text="taps"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="%function(self) self:horizalign('left') self:shadowlength(0) self:x(30+XOffset) self:y(52) self:zoom(0.2) end"
+            OnCommand="%function(self) self:horizalign('left') self:shadowlength(0) self:x(30+XOffset) self:y(50) self:zoom(0.19) end"
             StartUpdateTransitionP2MessageCommand="%function(self)
             self:stoptweening()
             self:sleep(0.02*6)

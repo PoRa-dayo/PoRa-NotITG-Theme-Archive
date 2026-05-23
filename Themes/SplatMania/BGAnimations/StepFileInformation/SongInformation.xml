@@ -166,9 +166,10 @@
         <Layer File="@ThemeFile('EcoInfoBG')"
 			OnCommand="%function(self)
 		
-		self:x(143)
+		self:x(132)
 		self:y(-7)
 		self:zoom(.2)
+        self:zoomx(.25)
 		self:horizalign('left')
 		self:shadowlength(1)
 		self:rotationy(-3)
@@ -226,7 +227,7 @@
             Text="Song name"
             OnCommand="%function(self)
             
-            self:x(150)
+            self:x(140)
             self:y(-10)
             self:zoom(.2)
             self:horizalign('left')
@@ -237,7 +238,8 @@
             end"
             OffCommand="linear,0.3;diffusealpha,0"
             InitCommand="animate,0;playcommand,UpdateStart"
-            CurrentSongChangedMessageCommand="playcommand,UpdateStart"
+            CurrentStepsP1ChangedMessageCommand="playcommand,UpdateStart"
+            CurrentStepsP2ChangedMessageCommand="playcommand,UpdateStart"
             UpdateStartCommand="%function(self)
                     self:finishtweening()
                     self:accelerate(0.1)
@@ -251,15 +253,13 @@
                 local panep1=SCREENMAN:GetTopScreen():GetChild('PaneDisplayP1')
                 local panep2=SCREENMAN:GetTopScreen():GetChild('PaneDisplayP2')
                 if GAMESTATE:GetCurrentSong() and (panep1 or panep2) then
-                    local scoretxt
-                    if panep1 then
-                        scoretxt = panep1:GetChild(''):GetChild('MachineHighScoreText'):GetText()
-                    else
-                        scoretxt = panep2:GetChild(''):GetChild('MachineHighScoreText'):GetText()
-                    end
+                    local scoretxt1 = '0.00%'
+                    local scoretxt2 = '0.00%'
+                    if panep1 then scoretxt1 = panep1:GetChild(''):GetChild('MachineHighScoreText'):GetText() end
+                    if panep2 then scoretxt2 = panep2:GetChild(''):GetChild('MachineHighScoreText'):GetText() end
                     self:hidden(0)
                     self:diffuse(1,1,1,0)
-                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore')..scoretxt )
+                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore')..scoretxt1..' / '..scoretxt2 )
                     self:decelerate(0.1)
                 else
                     self:hidden(1)
@@ -325,5 +325,60 @@
 			self:diffusealpha(1)
 		end"
 		/>
+        
+        
+        <Layer
+            File="../diff_hint"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="zoom,0.5;x,10;y,150;diffuseshift;effectcolor1,0,0,0,0.5;effectcolor2,#FFFFFF"
+            OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
+            CurrentStepsP1ChangedMessageCommand="%function(self)
+                if IsEasierDifficulty(PLAYER_1) then
+                    self:hidden(0)
+                else
+                    self:hidden(1)
+                end
+            end"
+        />
+        <Layer
+            File="../diff_hint"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="zoom,0.5;x,10;y,175;rotationz,180;diffuseshift;effectcolor1,0,0,0,0.5;effectcolor2,#FFFFFF"
+            OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
+            CurrentStepsP1ChangedMessageCommand="%function(self)
+                if IsHarderDifficulty(PLAYER_1) then
+                    self:hidden(0)
+                else
+                    self:hidden(1)
+                end
+            end"
+        />
+        
+        <Layer
+            File="../diff_hint"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            OnCommand="zoom,0.5;x,255;y,140;diffuseshift;effectcolor1,0,0,0,0.5;effectcolor2,#FFFFFF"
+            OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
+            CurrentStepsP2ChangedMessageCommand="%function(self)
+                if IsEasierDifficulty(PLAYER_2) then
+                    self:hidden(0)
+                else
+                    self:hidden(1)
+                end
+            end"
+        />
+        <Layer
+            File="../diff_hint"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            OnCommand="zoom,0.5;x,255;y,165;rotationz,180;diffuseshift;effectcolor1,0,0,0,0.5;effectcolor2,#FFFFFF"
+            OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
+            CurrentStepsP2ChangedMessageCommand="%function(self)
+                if IsHarderDifficulty(PLAYER_2) then
+                    self:hidden(0)
+                else
+                    self:hidden(1)
+                end
+            end"
+        />
 
 </children></ActorFrame>

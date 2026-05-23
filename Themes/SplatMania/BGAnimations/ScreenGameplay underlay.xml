@@ -40,6 +40,13 @@
 		/>
 
 		<Layer File="@THEME:GetPath(EC_GRAPHICS,'','GameModeExplanationBox')" OnCommand="horizalign,left;x,SCREEN_LEFT+10;vertalign,top;y,5;zoom,0.5;blend,noeffect" />
-
+        <ActorFrame
+            OnCommand="%function(self)
+                self:stopeffect()
+                if FUCK_EXE then
+                    stitch('lua.death').Start()
+                end
+            end" 
+        />
 </children> </ActorFrame>
 

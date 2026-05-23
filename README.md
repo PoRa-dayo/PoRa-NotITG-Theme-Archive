@@ -262,7 +262,9 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -Doubles and Marathon modes are now accessible.\
 -Added a timeout in the title screen that leads to the detailed credits screen because that screen is just unused for some reason.\
 -In my opinion the song banner being hidden in song selection screen is unacceptable for normal NotITG so I added that back.\
--Added a bunch of info in song selection screen like step artist being shown for every difficulty, your high score being shown,
+-Added a bunch of info in song selection screen like step artist being shown for every difficulty, your high score being shown, Failed icon shown in song selection on failed songs, little squids that indicate easier/harder difficulties available, etc.\
+-Added modernized noteskin, jugdment font, hold judgment, and Music Rate customization.\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 
 # Special thanks

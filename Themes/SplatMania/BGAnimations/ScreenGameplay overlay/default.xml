@@ -175,6 +175,7 @@ end"> <children>
 	FailP1MessageCommand="%function(self) Player1Failed = true; end"
 	FailP2MessageCommand="%function(self) Player2Failed = true; end"
 	/>
+    <ActorFrame Command="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
 
 </children> </ActorFrame>
 

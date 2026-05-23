@@ -446,3 +446,36 @@ function GetTotalScore( pn ) return STATSMAN:GetAccumStageStats():GetPlayerStage
 function GetPSStats( pn ) return STATSMAN:GetAccumStageStats():GetPlayerStageStats(pn) end
 -- Get Specific Tap Note Score for Normal Evaluation
 function GetPSStageStats( pn ) return STATSMAN:GetCurStageStats():GetPlayerStageStats(pn) end
+
+function GetStartScreen() PREFSMAN:SetPreference("DelayedScreenLoad",false) if PREFSMAN:GetPreference('BreakComboToGetItem') and GetInputType and GetInputType() == "" then return "ScreenArcadeStart" end return THEME:GetMetric('Common','FirstAttractScreen') end
+
+function IsEasierDifficulty( pn ) 
+    if not GAMESTATE:GetCurrentSong() or not GAMESTATE:GetCurrentSteps(pn) then return false end
+    -- Apparently GetStepsByStepsType only returns the UNLOCKED steps that match the stepsType, like, WOW DID YOU KNOW THAT?????
+    local stype = GAMESTATE:GetCurrentSteps(pn):GetStepsType()
+    local DiffList = GAMESTATE:GetCurrentSong():GetStepsByStepsType(stype)
+    local EasiestDiff = 5
+    for _, steps in pairs(DiffList) do
+        if steps:GetDifficulty() < EasiestDiff then
+            EasiestDiff = steps:GetDifficulty()
+        end
+    end
+    local CurrentDiff = GAMESTATE:PlayerDifficulty(pn)
+    local IsEasierDiff = EasiestDiff < CurrentDiff
+    return IsEasierDiff
+end
+
+function IsHarderDifficulty( pn ) 
+    if not GAMESTATE:GetCurrentSong() or not GAMESTATE:GetCurrentSteps(pn) then return false end
+    local stype = GAMESTATE:GetCurrentSteps(pn):GetStepsType()
+    local DiffList = GAMESTATE:GetCurrentSong():GetStepsByStepsType(stype)
+    local HardestDiff = 0
+    for _, steps in pairs(DiffList) do
+        if steps:GetDifficulty() > HardestDiff then
+            HardestDiff = steps:GetDifficulty()
+        end
+    end
+    local CurrentDiff = GAMESTATE:PlayerDifficulty(pn)
+    local IsHarderDiff = HardestDiff > CurrentDiff
+    return IsHarderDiff
+end
