@@ -64,15 +64,6 @@
 	PlayTweenCommand="%function(self) self:decelerate(1) self:addy(OffsetInc) self:addx(2000) end"
 	OffCommand="%function(self) self:stoptweening() self:accelerate(1) self:addx(-2000) end"
 	/>
-    
-    <Layer Type="Sprite"
-        OnCommand="x,20;y,115;horizalign,left;shadowlength,0;rotationy,-40;addx,-2000;queuecommand,PlayTween"
-        PlayTweenCommand="%function(self) self:decelerate(1) self:addy(OffsetInc) self:addx(2000) end"
-        OffCommand="%function(self) self:stoptweening() self:accelerate(1) self:addx(-2000) end"
-        CurrentSongChangedMessageCommand="%function(self)
-            Splat_LoadBanner(self)
-        end"
-    />
 
 	
 </children></ActorFrame>
