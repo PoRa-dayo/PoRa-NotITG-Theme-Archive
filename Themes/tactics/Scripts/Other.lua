@@ -610,20 +610,14 @@ function ApplyNoteskin()
     local sk = {NoteSkinList[modNoteSkin[1]],NoteSkinList[modNoteSkin[2]]}
     if FUCK_EXE then
         for pn=1,7,2 do
-            if GAMESTATE:IsPlayerEnabled(pn) then
-                GAMESTATE:ApplyModifiers(sk[1],pn)
-            end
+            GAMESTATE:ApplyModifiers(sk[1],pn)
         end
         for pn=2,8,2 do
-            if GAMESTATE:IsPlayerEnabled(pn) then
-                GAMESTATE:ApplyModifiers(sk[2],pn)
-            end
+            GAMESTATE:ApplyModifiers(sk[2],pn)
         end
     else 
         for pn=1,2 do
-            if GAMESTATE:IsPlayerEnabled(pn) then
-                GAMESTATE:ApplyGameCommand('mod,'..sk[pn],pn)
-            end
+            GAMESTATE:ApplyGameCommand('mod,'..sk[pn],pn)
         end
     end
 end
