@@ -95,7 +95,7 @@
         <Layer
                 Font="Splat2Stroke" Text=""
                 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-                InitCommand="zoom,1.8;shadowlength,2;horizalign,right;y,-510;x,800"
+                InitCommand="zoom,1.8;shadowlength,2;horizalign,right;y,-480;x,800"
                 OnCommand="%function(self)
                 if GAMESTATE:IsHumanPlayer(PLAYER_1) then
                         for i=1,table.getn(DiffColorTable) do

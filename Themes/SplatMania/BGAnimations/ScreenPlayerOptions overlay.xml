@@ -11,7 +11,7 @@
 		self:y(0)
 		self:zoom(.5)
 		self:shadowlength(1)
-		self:maxwidth(SCREEN_WIDTH/2)
+		self:maxwidth(SCREEN_WIDTH*1.8)
 		end"
 		OffCommand="linear,0.3;diffusealpha,0"
 		InitCommand="animate,0;playcommand,Update"
@@ -39,7 +39,7 @@
 		self:y(20)
 		self:zoom(.7)
 		self:shadowlength(1)
-		self:maxwidth(SCREEN_WIDTH/2)
+		self:maxwidth(SCREEN_WIDTH)
 		end"
 		OffCommand="linear,0.3;diffusealpha,0"
 		InitCommand="animate,0;playcommand,Update"

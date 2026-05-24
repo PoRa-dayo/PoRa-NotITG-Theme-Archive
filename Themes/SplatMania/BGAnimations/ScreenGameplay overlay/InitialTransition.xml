@@ -28,17 +28,17 @@
 	/>
 
 	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentSong():GetDisplayMainTitle()"
-	InitCommand="maxwidth,SCREEN_WIDTH/0.8;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-45;shadowlength,2"
+	InitCommand="maxwidth,SCREEN_WIDTH/2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-45;shadowlength,2"
 	OnCommand="accelerate,0.5;zoom,0.8;addx,-5;diffusealpha,0"
 			/>
 
 	<Layer Font="Splat2" Text="@SPCommand:GetDisplaySubtitle()"
-	InitCommand="x,SCREEN_CENTER_X;zoom,0.6;y,SCREEN_CENTER_Y;shadowlength,2"
+	InitCommand="maxwidth,SCREEN_WIDTH/1.2;x,SCREEN_CENTER_X;zoom,0.6;y,SCREEN_CENTER_Y;shadowlength,2"
 	OnCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
 			/>
 
 	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentSong():GetDisplayArtist()"
-	InitCommand="x,SCREEN_CENTER_X;zoom,0.6;y,SCREEN_CENTER_Y+30;shadowlength,2"
+	InitCommand="maxwidth,SCREEN_WIDTH/1.2;x,SCREEN_CENTER_X;zoom,0.6;y,SCREEN_CENTER_Y+30;shadowlength,2"
 	OnCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
 			/>
 
@@ -88,7 +88,7 @@
 		InitCommand="%function(self)
 		
 		self:x(SCREEN_LEFT+60)
-		self:y(SCREEN_CENTER_Y+50)
+		self:y(SCREEN_CENTER_Y+70)
 		self:horizalign('left')
 		self:shadowlength(1)
 		self:zoom(0.5)
@@ -108,8 +108,8 @@
 			end
 		end
 		
-		self:zoom(0.6);
-		self:y(SCREEN_CENTER_Y-35);
+		self:zoom(0.4);
+		self:y(SCREEN_CENTER_Y-40);
 		self:shadowlength(2);
 		self:queuecommand('TweenOff')
 		end"
@@ -128,7 +128,7 @@
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
 		OnCommand="%function(self)
 		
-		self:x(SCREEN_RIGHT)
+		self:x(SCREEN_RIGHT-10)
 		self:horizalign('right')
 		self:shadowlength(1)
 		self:rotationy(-7)
@@ -146,7 +146,7 @@
 			end
 		end
 
-		self:zoom(0.6);
+		self:zoom(0.4);
 		self:y(SCREEN_CENTER_Y-50);
 		self:shadowlength(2);
 		self:queuecommand('TweenOff')
@@ -181,8 +181,8 @@
 				end
 			end
 		end
-		self:zoom(0.6);
-		self:y(SCREEN_CENTER_Y-35);
+		self:zoom(0.4);
+		self:y(SCREEN_CENTER_Y-40);
 		self:shadowlength(2);
 		self:queuecommand('TweenOff')
 		end"
