@@ -260,9 +260,9 @@ end
 function JudgmentTween(self)
 	self:y(20);
 	self:diffusealpha(1);
-	self:zoom(0.6);
+	self:zoom(0.8);
 	self:decelerate(0.1);
-	self:zoom(0.5);
+	self:zoom(0.7);
 	self:sleep(0.5);
 	self:accelerate(0.2);
 	self:diffusealpha(0);

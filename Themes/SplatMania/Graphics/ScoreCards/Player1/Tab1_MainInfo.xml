@@ -4,51 +4,51 @@
         <Layer Font="Splat2" Text="Rank" OnCommand="shadowlength,1;zoom,2.2;y,-30;x,600" />
 
         <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
-        InitCommand="zoom,1.6;horizalign,left;animate,0;setstate,0;x,-990;y,-150*(0.95*2);"
+        InitCommand="zoom,2.4;horizalign,left;animate,0;setstate,0;x,-990;y,-150*(0.95*2);"
         />
         <Layer Font="Splat2Stroke" Text="0"
         InitCommand="horizalign,right;queuecommand,ShowScore"
-        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 8, 150, -350+(50*0.0), 1, 100, 2, 'Stage', 'Fantastic') end" 
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 8, 150, -330+(50*0.0), 1, 100, 2, 'Stage', 'Fantastic') end" 
         />
 
         <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
-        InitCommand="zoom,1.6;horizalign,left;animate,0;setstate,1;x,-990;y,-150;"
+        InitCommand="zoom,2.4;horizalign,left;animate,0;setstate,1;x,-990;y,-150;"
         />
         <Layer Font="Splat2Stroke" Text="0"
         InitCommand="horizalign,right;queuecommand,ShowScore"
-        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 7, 150, -345+(135*1.0), 1, 100, 2, 'Stage', 'Excellent') end" 
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 7, 150, -330+(135*1.0), 1, 100, 2, 'Stage', 'Excellent') end" 
         />
 
         <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
-        InitCommand="zoom,1.6;horizalign,left;animate,0;setstate,2;x,-1080;y,-13;"
+        InitCommand="zoom,2.4;horizalign,left;animate,0;setstate,2;x,-1080;y,-13;"
         />
         <Layer Font="Splat2Stroke" Text="0"
         InitCommand="horizalign,right;queuecommand,ShowScore"
-        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 6, 150, -345+(135*2.0), 1, 100, 2, 'Stage', 'Great') end" 
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 6, 150, -330+(135*2.0), 1, 100, 2, 'Stage', 'Great') end" 
         />
 
         <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
-        InitCommand="zoom,1.6;horizalign,left;animate,0;setstate,3;x,-1045;y,123;"
+        InitCommand="zoom,2.4;horizalign,left;animate,0;setstate,3;x,-1045;y,123;"
         />
         <Layer Font="Splat2Stroke" Text="0"
         InitCommand="horizalign,right;queuecommand,ShowScore"
-        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 5, 150, -345+(135*3.0), 1, 100, 2, 'Stage', 'Decent') end" 
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 5, 150, -330+(135*3.0), 1, 100, 2, 'Stage', 'Decent') end" 
         />
 
         <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
-        InitCommand="zoom,1.6;horizalign,left;animate,0;setstate,4;x,-1015;y,253;"
+        InitCommand="zoom,2.4;horizalign,left;animate,0;setstate,4;x,-1015;y,253;"
         />
         <Layer Font="Splat2Stroke" Text="0"
         InitCommand="horizalign,right;queuecommand,ShowScore"
-        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 4, 150, -345+(135*4.0), 1, 100, 2, 'Stage', 'WayOff') end" 
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 4, 150, -330+(135*4.0), 1, 100, 2, 'Stage', 'WayOff') end" 
         />
 
         <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
-        InitCommand="zoom,1.6;horizalign,left;animate,0;setstate,5;x,-1090;y,390;"
+        InitCommand="zoom,2.4;horizalign,left;animate,0;setstate,5;x,-1090;y,390;"
         />
         <Layer Font="Splat2Stroke" Text="0"
         InitCommand="horizalign,right;queuecommand,ShowScore"
-        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 3, 150, -345+(135*5.0), 1, 100, 2, 'Stage', 'Miss') end" 
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 3, 150, -330+(135*5.0), 1, 100, 2, 'Stage', 'Miss') end" 
         />
 
         <!-- Holds: Fresh! -->

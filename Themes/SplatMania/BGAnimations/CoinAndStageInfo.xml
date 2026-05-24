@@ -29,7 +29,7 @@ end"> <children>
 					if CoinGenerator(PLAYER_1) > 0 then
 						self:bouncebegin(0.1)
 						self:y(-35)
-						self:sleep(1/6000)
+						self:sleep(2)
 						self:queuecommand('UpdateCoinAmmount')
 					end
 				end

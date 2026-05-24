@@ -16,16 +16,16 @@ end"> <children>
 
 	<Layer Type="ActorFrame" OnCommand="%function(self)
 		self:x(SCREEN_LEFT+42)
-		self:y(SCREEN_TOP+41)
+		self:y(SCREEN_TOP+21)
 	end" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"><children>
 
-	<Layer File="@ThemeFile('EcoInfoBG')" OnCommand="diffusealpha,1;zoom,0.3;horizalign,left;y,-20;"
+	<Layer File="@ThemeFile('EcoInfoBG')" OnCommand="diffusealpha,1;zoom,0.3;zoomx,0.2;horizalign,left;y,0;x,62"
 		/>
 
 	<Layer
 				Font="Splat2Stroke" Text=""
 				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-				InitCommand="zoom,0.3;shadowlength,2;horizalign,left;y,-28;x,10"
+				InitCommand="zoom,0.3;shadowlength,2;horizalign,left;y,20;x,80"
 				OnCommand="%function(self)
 				if GAMESTATE:IsHumanPlayer(PLAYER_1) then
 					for i=1,table.getn(DifficultyNames) do
@@ -73,16 +73,16 @@ end"> <children>
 
 	<Layer Type="ActorFrame" OnCommand="%function(self)
 		self:x(SCREEN_RIGHT-42)
-		self:y(SCREEN_TOP+41)
+		self:y(SCREEN_TOP+21)
 	end" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"><children>
 
-	<Layer File="@ThemeFile('EcoInfoBG')" OnCommand="diffusealpha,1;zoom,0.3;horizalign,right;y,-20;"
+	<Layer File="@ThemeFile('EcoInfoBG')" OnCommand="diffusealpha,1;zoom,0.3;zoomx,0.2;horizalign,right;y,0;x,-62"
 		/>
 
 		<Layer
 				Font="Splat2Stroke" Text=""
 				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-				InitCommand="zoom,0.3;shadowlength,2;horizalign,left;y,-28;x,-145"
+				InitCommand="zoom,0.3;shadowlength,2;horizalign,left;y,20;x,-130"
 				OnCommand="%function(self)
 				if GAMESTATE:IsHumanPlayer(PLAYER_2) then
 					for i=1,table.getn(DifficultyNames) do

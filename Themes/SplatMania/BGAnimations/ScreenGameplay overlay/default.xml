@@ -6,6 +6,94 @@ end"> <children>
 
 <Layer File="@THEME:GetPath(EC_GRAPHICS,'','GameModeExplanationBox')" OnCommand="horizalign,left;x,SCREEN_LEFT+10;vertalign,top;y,5;blend,noeffect;spin" />
 
+
+    --fixed the lifebar, though, goodbye openitg compatibility
+    --lifebar p1
+    
+    <Layer
+        File="@THEME:GetPath(EC_GRAPHICS,'LifeMeter','mask')"
+        OnCommand="x,SCREEN_LEFT+75;y,SCREEN_TOP+47;zoom,0.55;zwrite,1;blend,noeffect"
+    />
+    
+    <Layer
+        Type="ActorProxy"
+        OnCommand="%function(self)
+            self:sleep(0.1)
+			self:queuecommand('Capture')
+        end"
+        CaptureCommand="%function(self)
+            local life = SCREENMAN:GetTopScreen():GetChild('LifeP1');
+            self:SetTarget(life)
+        end"
+    />
+    
+    <Layer
+        File="@THEME:GetPath(EC_GRAPHICS,'LifeMeter','mask')"
+        OnCommand="x,SCREEN_LEFT+75;y,SCREEN_TOP+47;zoom,0.55;zwrite,1;blend,noeffect"
+    />
+    
+    <Layer Type="Quad" OnCommand="hidden,1;stretchto,0,0,60,60;x,SCREEN_LEFT+75;y,SCREEN_TOP+47;diffuseshift;effectcolor1,1,0,0,1;effectcolor2,0,0,0,0;effectperiod,0.7;ztest,1;ztestmode,writeonpass;queuecommand,CheckDanger"
+        CheckDangerCommand="%function(self)
+            if SCREENMAN:GetTopScreen():GetLife(0) < 0.3 then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+            self:sleep(0.2)
+			self:queuecommand('CheckDanger')
+        end"
+    />
+    
+    
+    --lifebar p2
+    <Layer
+        File="@THEME:GetPath(EC_GRAPHICS,'LifeMeter','mask')"
+        OnCommand="x,SCREEN_RIGHT-75;y,SCREEN_TOP+47;zoom,0.55;zwrite,1;blend,noeffect"
+    />
+    
+    <Layer
+        Type="ActorProxy"
+        OnCommand="%function(self)
+            self:sleep(0.1)
+			self:queuecommand('Capture')
+        end"
+        CaptureCommand="%function(self)
+            local life = SCREENMAN:GetTopScreen():GetChild('LifeP2');
+            self:SetTarget(life)
+        end"
+    />
+    
+    <Layer
+        File="@THEME:GetPath(EC_GRAPHICS,'LifeMeter','mask')"
+        OnCommand="x,SCREEN_RIGHT-75;y,SCREEN_TOP+47;zoom,0.55;zwrite,1;blend,noeffect"
+    />
+    
+    <Layer Type="Quad" OnCommand="hidden,1;stretchto,0,0,60,60;x,SCREEN_RIGHT-75;y,SCREEN_TOP+47;diffuseshift;effectcolor1,1,0,0,1;effectcolor2,0,0,0,0;effectperiod,0.7;ztest,1;ztestmode,writeonpass;queuecommand,CheckDanger"
+        CheckDangerCommand="%function(self)
+            if SCREENMAN:GetTopScreen():GetLife(1) < 0.3 then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+            self:sleep(0.2)
+			self:queuecommand('CheckDanger')
+        end"
+    />
+    
+    --lifebar frames
+    
+    <Layer
+        File="@THEME:GetPath(EC_GRAPHICS,'LifeMeter','frame')"
+        OnCommand="x,SCREEN_LEFT+75;y,SCREEN_TOP+47;zoom,0.45;"
+    />
+    <Layer
+        File="@THEME:GetPath(EC_GRAPHICS,'LifeMeter','frame')"
+        OnCommand="x,SCREEN_RIGHT-75;y,SCREEN_TOP+47;zoom,0.45;"
+    />
+    
+    
+    
+    
 	<Layer Type="ActorFrame"
 		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24;addy,-100;sleep,0.5;zoom,0.6;queuecommand,TweenOn"
 		OffCommand="queuecommand,TweenOff"
@@ -77,7 +165,7 @@ end"> <children>
 		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
 		> <children>
 		
-		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="x,SCREEN_LEFT+42;y,SCREEN_TOP+47;zoom,0.4"
+		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="x,SCREEN_LEFT+42;y,SCREEN_TOP+27;zoom,0.4"
 			><children>
 			<Actor
 				File="@THEME:GetPath(EC_GRAPHICS,'','GameplayDifficulty')"
@@ -88,7 +176,7 @@ end"> <children>
 			/>
 		</children></ActorFrame>
 		
-		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="x,SCREEN_RIGHT-42;y,SCREEN_TOP+47;zoom,0.4"><children>
+		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="x,SCREEN_RIGHT-42;y,SCREEN_TOP+27;zoom,0.4"><children>
 			<Actor
 				File="@THEME:GetPath(EC_GRAPHICS,'','GameplayDifficulty')"
 				OnCommand="zoomx,-1;animate,0;playcommand,Update"
@@ -163,6 +251,8 @@ end"> <children>
 			ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
 			HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
 		/>
+
+
 
 	<Layer File="DifficultyNames.xml" />
 
