@@ -13,9 +13,19 @@
 
 	</children></Layer>
 
-	<Layer File="../Failed" OnCommand="y,685;x,280;diffusealpha,0;zoom,2;sleep,2;queuecommand,CheckForFail"
+	<Layer File="../Failed" OnCommand="y,255;x,600;diffusealpha,0;zoom,2;sleep,2;queuecommand,CheckForFail"
 	CheckForFailCommand="%function(self)
 	if Player2Failed then
+		self:bounceend(0.5)
+		self:zoom(1)
+		self:diffusealpha(1)
+	end
+	end"
+	/>
+    
+    <Layer File="../Success" OnCommand="y,255;x,600;diffusealpha,0;zoom,2;sleep,2;queuecommand,CheckForFail"
+	CheckForFailCommand="%function(self)
+	if not Player2Failed then
 		self:bounceend(0.5)
 		self:zoom(1)
 		self:diffusealpha(1)

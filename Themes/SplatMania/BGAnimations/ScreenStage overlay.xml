@@ -28,15 +28,15 @@
 	REMAKE TEXT CLASS AS ITS NOT RESIZING FOR SOME FUCKING REASON.
 	-->
 	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentSong():GetDisplayMainTitle()"
-	OnCommand="maxwidth,SCREEN_WIDTH/0.8;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;bounceend,0.4;y,SCREEN_CENTER_Y-45;shadowlength,2"
+	OnCommand="maxwidth,SCREEN_WIDTH/2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;bounceend,0.4;y,SCREEN_CENTER_Y-45;shadowlength,2"
 			/>
 
 	<Layer Font="Splat2" Text="@SPCommand:GetDisplaySubtitle()"
-	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;zoom,0.6;bounceend,0.4;y,SCREEN_CENTER_Y;shadowlength,2"
+	OnCommand="maxwidth,SCREEN_WIDTH/1.2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;zoom,0.6;bounceend,0.4;y,SCREEN_CENTER_Y;shadowlength,2"
 			/>
 
 	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentSong():GetDisplayArtist()"
-	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;zoom,0.6;bounceend,0.4;y,SCREEN_CENTER_Y+30;shadowlength,2"
+	OnCommand="maxwidth,SCREEN_WIDTH/1.2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;zoom,0.6;bounceend,0.4;y,SCREEN_CENTER_Y+30;shadowlength,2"
 			/>
 
 	<!-- Player One Info -->
@@ -106,13 +106,9 @@
 				end
 			end
 			self:y(SCREEN_CENTER_Y+500);
-			self:zoom(0.6);
 			self:bounceend(0.4);
-			self:y(SCREEN_CENTER_Y-35);
-			if Diff-1 == 5 then
-				self:zoom(0.4)
-				self:y(SCREEN_CENTER_Y-40)
-			end
+            self:zoom(0.4)
+            self:y(SCREEN_CENTER_Y-40)
 		end
 		
 		self:shadowlength(2);
@@ -130,7 +126,7 @@
 		self:horizalign('left')
 		self:shadowlength(1)
 		self:zoom(0.5)
-		self:maxwidth(130)
+		self:maxwidth(230)
 		self:rotationy(-5)
 		self:queuecommand('SetNow')
 		end"
@@ -139,21 +135,17 @@
 
 			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()
 
-			if Diff == 5 then
-				self:diffuse(1,1,1,0.5)
-				if GetStepsDescriptionText(PLAYER_1) == '' then
-					self:settext( 'By: Not Set!' )
-					self:diffuse(1,0,0,0.5)
-				else
-					self:settext( 'By: '..GetStepsDescriptionText(PLAYER_1) )
-				end
-				self:zoom(0.4)
-				self:y(SCREEN_CENTER_Y+500);
-				self:bounceend(0.4);
-				self:y(SCREEN_CENTER_Y-25);
-			else
-				self:zoom(0)
-			end
+            self:diffuse(1,1,1,0.5)
+            if GetStepsDescriptionText(PLAYER_1) == '' then
+                self:settext( 'By: Not Set!' )
+                self:diffuse(1,0,0,0.5)
+            else
+                self:settext( 'By: '..GetStepsDescriptionText(PLAYER_1) )
+            end
+            self:zoom(0.4)
+            self:y(SCREEN_CENTER_Y+500);
+            self:bounceend(0.4);
+            self:y(SCREEN_CENTER_Y-25);
 		end
 		
 		self:shadowlength(2);
@@ -172,7 +164,7 @@
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
 		OnCommand="%function(self)
 		
-		self:x(SCREEN_RIGHT)
+		self:x(SCREEN_RIGHT-10)
 		self:horizalign('right')
 		self:shadowlength(1)
 		self:rotationy(-7)
@@ -224,13 +216,9 @@
 				end
 			end
 			self:y(SCREEN_CENTER_Y+500);
-			self:zoom(0.6);
 			self:bounceend(0.4);
-			self:y(SCREEN_CENTER_Y-35);
-			if Diff-1 == 5 then
-				self:zoom(0.4)
-				self:y(SCREEN_CENTER_Y-40)
-			end
+            self:zoom(0.4)
+            self:y(SCREEN_CENTER_Y-40)
 		end
 		self:shadowlength(2);
 		end"
@@ -242,12 +230,12 @@
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
 		OnCommand="%function(self)
 		
-		self:x(SCREEN_RIGHT-50)
+		self:x(SCREEN_RIGHT-55)
 		self:y(SCREEN_CENTER_Y+70)
-		self:horizalign('left')
+		self:horizalign('right')
 		self:shadowlength(1)
 		self:zoom(0.5)
-		self:maxwidth(130)
+		self:maxwidth(230)
 		self:rotationy(-5)
 		self:queuecommand('SetNow')
 		end"
@@ -256,21 +244,17 @@
 
 			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()
 
-			if Diff == 5 then
-				self:diffuse(1,1,1,0.5)
-				if GetStepsDescriptionText(PLAYER_2) == '' then
-					self:settext( 'By: Not Set!' )
-					self:diffuse(1,0,0,0.5)
-				else
-					self:settext( 'By: '..GetStepsDescriptionText(PLAYER_2) )
-				end
-				self:zoom(0.4)
-				self:y(SCREEN_CENTER_Y+500);
-				self:bounceend(0.4);
-				self:y(SCREEN_CENTER_Y-25);
-			else
-				self:zoom(0)
-			end
+            self:diffuse(1,1,1,0.5)
+            if GetStepsDescriptionText(PLAYER_2) == '' then
+                self:settext( 'By: Not Set!' )
+                self:diffuse(1,0,0,0.5)
+            else
+                self:settext( 'By: '..GetStepsDescriptionText(PLAYER_2) )
+            end
+            self:zoom(0.4);
+            self:y(SCREEN_CENTER_Y+500);
+            self:bounceend(0.4);
+            self:y(SCREEN_CENTER_Y-25);
 		end
 		
 		self:shadowlength(2);

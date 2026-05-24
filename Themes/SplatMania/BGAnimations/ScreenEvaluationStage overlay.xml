@@ -65,7 +65,7 @@
 		Text="Song name"
 		OnCommand="%function(self)
 		
-		self:x(SCREEN_LEFT+50)
+		self:x(SCREEN_LEFT+20)
 		self:y(SCREEN_BOTTOM-80)
 		self:vertalign('bottom')
 		self:horizalign('left')
@@ -97,7 +97,7 @@
 		Text="Update Timer"
 		OnCommand="%function(self)
 		
-		self:x(SCREEN_LEFT+50)
+		self:x(SCREEN_LEFT+20)
 		self:y(SCREEN_BOTTOM-60)
 		self:vertalign('bottom')
 		self:horizalign('left')

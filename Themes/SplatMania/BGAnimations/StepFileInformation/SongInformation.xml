@@ -330,7 +330,7 @@
         <Layer
             File="../diff_hint"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-            OnCommand="zoom,0.5;x,10;y,150;diffuseshift;effectcolor1,0,0,0,0.5;effectcolor2,#FFFFFF"
+            OnCommand="zoom,0.5;x,10;y,150;diffuseshift;effectcolor1,0.5,0.5,0.5,0.5;effectcolor2,#FFFFFF"
             OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
             CurrentStepsP1ChangedMessageCommand="%function(self)
                 if IsEasierDifficulty(PLAYER_1) then
@@ -343,7 +343,7 @@
         <Layer
             File="../diff_hint"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-            OnCommand="zoom,0.5;x,10;y,175;rotationz,180;diffuseshift;effectcolor1,0,0,0,0.5;effectcolor2,#FFFFFF"
+            OnCommand="zoom,0.5;x,10;y,175;rotationz,180;diffuseshift;effectcolor1,0.5,0.5,0.5,0.5;effectcolor2,#FFFFFF"
             OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
             CurrentStepsP1ChangedMessageCommand="%function(self)
                 if IsHarderDifficulty(PLAYER_1) then
@@ -357,7 +357,7 @@
         <Layer
             File="../diff_hint"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="zoom,0.5;x,255;y,140;diffuseshift;effectcolor1,0,0,0,0.5;effectcolor2,#FFFFFF"
+            OnCommand="zoom,0.5;x,255;y,140;diffuseshift;effectcolor1,0.5,0.5,0.5,0.5;effectcolor2,#FFFFFF"
             OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
             CurrentStepsP2ChangedMessageCommand="%function(self)
                 if IsEasierDifficulty(PLAYER_2) then
@@ -370,7 +370,7 @@
         <Layer
             File="../diff_hint"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="zoom,0.5;x,255;y,165;rotationz,180;diffuseshift;effectcolor1,0,0,0,0.5;effectcolor2,#FFFFFF"
+            OnCommand="zoom,0.5;x,255;y,165;rotationz,180;diffuseshift;effectcolor1,0.5,0.5,0.5,0.5;effectcolor2,#FFFFFF"
             OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
             CurrentStepsP2ChangedMessageCommand="%function(self)
                 if IsHarderDifficulty(PLAYER_2) then

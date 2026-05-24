@@ -257,15 +257,19 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -Common normal font is now an edited version of PaintballStroke so that the UI that use it fit the game more.\
 -Fixed some issues with japanese/korean text.\
 -The Start button now takes you to 2P Regular immediately. The usual select mode button is now the Other modes button.\
--Slightly altered some UI so text doesn't get covered up.\
+-Slightly altered some UI so that it makes more sense and text doesn't get covered up.\
 -Added some more Options for the sake of long-term usage of this theme inside NotITG rather than the SplatMania build.\
 -Doubles and Marathon modes are now accessible.\
 -Added a timeout in the title screen that leads to the detailed credits screen because that screen is just unused for some reason.\
 -In my opinion the song banner being hidden in song selection screen is unacceptable for normal NotITG so I added that back.\
 -Added a bunch of info in song selection screen like step artist being shown for every difficulty, your high score being shown, Failed icon shown in song selection on failed songs, little squids that indicate easier/harder difficulties available, etc.\
 -Added modernized noteskin, jugdment font, hold judgment, and Music Rate customization.\
+-Fixed the error where the Long/Marathon pop-up in song selection screen keeps getting bigger if you switch through songs rapidly, also changed its location.\
+-A "Success!" rank is added to the evaluation screen for when you lifebar pass the song. The song banner is also added there.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
+
+TO-DO: FIX FONT, FIX COURSE MODE
 
 # Special thanks
 [MattMayuga](https://github.com/Tiny-Foxes/JudgeFonts-by-MattMayuga/) - Judgment fonts.
