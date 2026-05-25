@@ -228,3 +228,55 @@ function NoteSkinOption()
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
 end
+
+
+function CoinSystemOption()
+	local modList = {"ON", "OFF"}
+    
+	local Params = {
+		Name = "Coin System",
+		LayoutType = "ShowOneInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        if not Profile().SplatManiaCoinDisabled then list[1] = true
+        elseif Profile().SplatManiaCoinDisabled then list[2] = true
+        else list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        if list[1] then Profile().SplatManiaCoinDisabled = false; end
+		if list[2] then Profile().SplatManiaCoinDisabled = true; end
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+
+function CountdownOption()
+	local modList = {"ON", "OFF"}
+    
+	local Params = {
+		Name = "Countdown",
+		LayoutType = "ShowOneInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        if not Profile().SplatManiaCountdownDisabled then list[1] = true
+        elseif Profile().SplatManiaCountdownDisabled then list[2] = true
+        else list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        if list[1] then Profile().SplatManiaCountdownDisabled = false; end
+		if list[2] then Profile().SplatManiaCountdownDisabled = true; end
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end

@@ -12,11 +12,13 @@ end"> <children>
     
     <Layer
         File="@THEME:GetPath(EC_GRAPHICS,'LifeMeter','mask')"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
         OnCommand="x,SCREEN_LEFT+75;y,SCREEN_TOP+47;zoom,0.55;zwrite,1;blend,noeffect"
     />
     
     <Layer
         Type="ActorProxy"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
         OnCommand="%function(self)
             self:sleep(0.1)
 			self:queuecommand('Capture')
@@ -29,12 +31,16 @@ end"> <children>
     
     <Layer
         File="@THEME:GetPath(EC_GRAPHICS,'LifeMeter','mask')"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
         OnCommand="x,SCREEN_LEFT+75;y,SCREEN_TOP+47;zoom,0.55;zwrite,1;blend,noeffect"
     />
     
+    --GetLife just doesn't exist in Battle mode, fun
     <Layer Type="Quad" OnCommand="hidden,1;stretchto,0,0,60,60;x,SCREEN_LEFT+75;y,SCREEN_TOP+47;diffuseshift;effectcolor1,1,0,0,1;effectcolor2,0,0,0,0;effectperiod,0.7;ztest,1;ztestmode,writeonpass;queuecommand,CheckDanger"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
         CheckDangerCommand="%function(self)
-            if SCREENMAN:GetTopScreen():GetLife(0) < 0.3 then
+            local lf = SCREENMAN:GetTopScreen():GetLife(0)
+            if type(lf) == 'number' and lf < 0.3 then
                 self:hidden(0)
             else
                 self:hidden(1)
@@ -48,11 +54,13 @@ end"> <children>
     --lifebar p2
     <Layer
         File="@THEME:GetPath(EC_GRAPHICS,'LifeMeter','mask')"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
         OnCommand="x,SCREEN_RIGHT-75;y,SCREEN_TOP+47;zoom,0.55;zwrite,1;blend,noeffect"
     />
     
     <Layer
         Type="ActorProxy"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
         OnCommand="%function(self)
             self:sleep(0.1)
 			self:queuecommand('Capture')
@@ -65,12 +73,15 @@ end"> <children>
     
     <Layer
         File="@THEME:GetPath(EC_GRAPHICS,'LifeMeter','mask')"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
         OnCommand="x,SCREEN_RIGHT-75;y,SCREEN_TOP+47;zoom,0.55;zwrite,1;blend,noeffect"
     />
     
     <Layer Type="Quad" OnCommand="hidden,1;stretchto,0,0,60,60;x,SCREEN_RIGHT-75;y,SCREEN_TOP+47;diffuseshift;effectcolor1,1,0,0,1;effectcolor2,0,0,0,0;effectperiod,0.7;ztest,1;ztestmode,writeonpass;queuecommand,CheckDanger"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
         CheckDangerCommand="%function(self)
-            if SCREENMAN:GetTopScreen():GetLife(1) < 0.3 then
+            local lf = SCREENMAN:GetTopScreen():GetLife(1)
+            if type(lf) == 'number' and lf < 0.3 then
                 self:hidden(0)
             else
                 self:hidden(1)
@@ -84,13 +95,19 @@ end"> <children>
     
     <Layer
         File="@THEME:GetPath(EC_GRAPHICS,'LifeMeter','frame')"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
         OnCommand="x,SCREEN_LEFT+75;y,SCREEN_TOP+47;zoom,0.45;"
     />
     <Layer
         File="@THEME:GetPath(EC_GRAPHICS,'LifeMeter','frame')"
+        Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
         OnCommand="x,SCREEN_RIGHT-75;y,SCREEN_TOP+47;zoom,0.45;"
     />
-    
+    --clearzbuffer or else the masks interact with the ztest stuff in modfiles
+    <Layer
+        Type="Quad"
+        OnCommand="clearzbuffer,1"
+    />
     
     
     

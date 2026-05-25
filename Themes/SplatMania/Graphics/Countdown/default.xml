@@ -31,7 +31,7 @@ end"><children>
 					self:diffuse(1,1,0,1)
 					self:settext(SecondsToMMSS(totaltimer-timeintimer))
 				end
-				if timeintimer >= totaltimer-11 and CheckForTimer == false then MESSAGEMAN:Broadcast('CountdownBegin') CheckForTimer = true; end
+				if not Profile().SplatManiaCountdownDisabled and timeintimer >= totaltimer-11 and CheckForTimer == false then MESSAGEMAN:Broadcast('CountdownBegin') CheckForTimer = true; end
                 if timeintimer < totaltimer-11 and CheckForTimer == true then CheckForTimer = false; N1:hidden(1); N2:hidden(1); N3:hidden(1); N4:hidden(1); N5:hidden(1); N6:hidden(1); N7:hidden(1); N8:hidden(1); N9:hidden(1); N10:hidden(1); end
 			self:sleep(0.02)
 			self:queuecommand('Update')

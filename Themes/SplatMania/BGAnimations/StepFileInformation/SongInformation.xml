@@ -12,7 +12,7 @@
 		end"
 		OffCommand="linear,0.3;diffusealpha,0"
 		/>
-
+--song title
 		<Layer
 		Font="Paintball"
 		Text="Song name"
@@ -60,7 +60,7 @@
 			self:diffusealpha(1)
 		end"
 		/>
-
+--song subtitle
 		<Layer
 		Font="Paintball"
 		Text="Song name"
@@ -109,7 +109,7 @@
 		end"
 		/>
 
-
+--song artist 
 		<Layer
 		Font="Paintball"
 		Text="Song name"
@@ -149,7 +149,7 @@
 			self:diffusealpha(1)
 		end"
 		/>
-
+--background sprites
 		<Layer File="@ThemeFile('EcoInfoBG')"
 			OnCommand="%function(self)
 		
@@ -176,7 +176,7 @@
 		self:rotationz(-1)
 		end"
 		/>
-
+--times played
 		<Layer
 		Font="Paintball"
 		Text="Song name"
@@ -279,7 +279,7 @@
 
 
 
-
+--song length
 		<Layer
 		Font="Paintball"
 		Text="Song name"
@@ -311,7 +311,6 @@
 			if GAMESTATE:GetCurrentSong() then
 				self:hidden(0)
 				self:diffuse(1,1,1,0)
-				self:settext(GAMESTATE:GetCurrentSong():GetDisplayArtist())
 				self:decelerate(0.1)
 				if GAMESTATE:GetCurrentSong():MusicLengthSeconds() >= 3600 then
 					self:settext(SecondsToHHMMSS(GAMESTATE:GetCurrentSong():MusicLengthSeconds()))
@@ -326,7 +325,88 @@
 		end"
 		/>
         
+--song bpm
+        <Layer
+		Font="Paintball"
+		Text="BPM"
+		OnCommand="%function(self)
+		
+		self:x(220)
+		self:y(48)
+		self:zoom(.2)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:rotationy(-5)
+		self:rotationz(-1)
+        end"
+        OffCommand="linear,0.3;diffusealpha,0"
+		InitCommand="animate,0;playcommand,UpdateStart"
+		CurrentSongChangedMessageCommand="playcommand,UpdateStart"
+		UpdateStartCommand="%function(self)
+				self:finishtweening()
+				self:accelerate(0.1)
+				self:y(58)
+				self:diffusealpha(0)
+				self:sleep(0.001)
+				self:queuecommand('Update')
+		end"
+		UpdateCommand="%function(self)
+			MESSAGEMAN:Broadcast('UpdateSortOrder')
+			self:y(58)
+			if GAMESTATE:GetCurrentSong() then
+				self:hidden(0)
+				self:diffuse(1,1,1,0)
+				self:decelerate(0.1)
+			else
+				self:hidden(1)
+			end
+			self:y(48)
+			self:diffusealpha(1)
+		end"
+		/>
         
+		<Layer
+		Font="Paintball"
+		Text="Song name"
+		OnCommand="%function(self)
+		
+		self:x(220)
+		self:y(55)
+		self:zoom(.3)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:maxwidth(SCREEN_WIDTH/1.5)
+		self:rotationy(-5)
+		self:rotationz(-1)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		InitCommand="animate,0;playcommand,UpdateStart"
+		CurrentSongChangedMessageCommand="playcommand,UpdateStart"
+		UpdateStartCommand="%function(self)
+				self:finishtweening()
+				self:accelerate(0.1)
+				self:y(65)
+				self:diffusealpha(0)
+				self:sleep(0.001)
+				self:queuecommand('Update')
+		end"
+		UpdateCommand="%function(self)
+			MESSAGEMAN:Broadcast('UpdateSortOrder')
+			self:y(65)
+			if GAMESTATE:GetCurrentSong() then
+				self:hidden(0)
+				self:diffuse(1,1,1,0)
+				self:decelerate(0.1)
+				self:settext(SCREENMAN:GetTopScreen():GetChild('BPMDisplay'):GetChild('Text'):GetText())
+			else
+				self:hidden(1)
+			end
+			self:y(55)
+			self:diffusealpha(1)
+		end"
+		/>
+        
+--the diff hints that show up to indicate easier/harder difficulties existing
         <Layer
             File="../diff_hint"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"

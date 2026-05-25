@@ -80,41 +80,6 @@
 		end"
 		/>
 
-		<Layer
-		Font="Splat2"
-		Text=" "
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
-		TweenOffCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
-		InitCommand="%function(self)
-		
-		self:x(SCREEN_LEFT+60)
-		self:y(SCREEN_CENTER_Y+70)
-		self:horizalign('left')
-		self:shadowlength(1)
-		self:zoom(0.5)
-		self:maxwidth(130)
-		self:rotationy(-5)
-		self:queuecommand('SetNow')
-		end"
-		SetNowCommand="%function(self)
-		if GAMESTATE:GetCurrentSong() then
-
-			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()+1
-			for i=1,table.getn(DiffColorTable) do
-				if Diff == i then
-					self:diffuse( DiffColorTable[i][2][1],DiffColorTable[i][2][2],DiffColorTable[i][2][3],DiffColorTable[i][2][4] )
-					self:settext( DiffColorTable[i][1] )
-				end
-			end
-		end
-		
-		self:zoom(0.4);
-		self:y(SCREEN_CENTER_Y-40);
-		self:shadowlength(2);
-		self:queuecommand('TweenOff')
-		end"
-		/>
-
 
 	<!-- Player Two Info -->
 	<Layer Font="Splat2" Text="Player 2"
@@ -154,37 +119,4 @@
 		TweenOffCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
 		/>
 
-		<Layer
-		Font="Splat2"
-		Text=" "
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
-		TweenOffCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
-		OnCommand="%function(self)
-		
-		self:x(SCREEN_RIGHT-50)
-		self:y(SCREEN_CENTER_Y+50)
-		self:horizalign('right')
-		self:shadowlength(1)
-		self:zoom(0.5)
-		self:maxwidth(130)
-		self:rotationy(-5)
-		self:queuecommand('SetNow')
-		end"
-		SetNowCommand="%function(self)
-		if GAMESTATE:GetCurrentSong() then
-
-			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()
-			for i=1,table.getn(DiffColorTable) do
-				if Diff == i then
-					self:diffuse( DiffColorTable[i][2][1],DiffColorTable[i][2][2],DiffColorTable[i][2][3],DiffColorTable[i][2][4] )
-					self:settext( DiffColorTable[i][1] )
-				end
-			end
-		end
-		self:zoom(0.4);
-		self:y(SCREEN_CENTER_Y-40);
-		self:shadowlength(2);
-		self:queuecommand('TweenOff')
-		end"
-		/>
 </children></ActorFrame>

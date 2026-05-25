@@ -1,5 +1,7 @@
 <ActorFrame InitCommand="%function(self)
 TestEnviroment = false;
+CoinP1 = 0;
+CoinP2 = 0;
 end"> <children>
 		<Layer File="@ThemeFile('EcoInfoBG')" />
 
@@ -22,30 +24,42 @@ end"> <children>
 			OnCommand="maxwidth,190;y,-25;x,50;horizalign,left;shadowlength,1;queuecommand,LoadCreditAmmount"
 			LoadCreditAmmountCommand="%function(self)
 
-			if Profile().CreditsEarnedTEST then
-				self:settext( string.format('% 8d',Profile().CreditsEarnedTEST) )
-				self:sleep(1)
-				if UpdateCoinAmmount then
-					if CoinGenerator(PLAYER_1) > 0 then
-						self:bouncebegin(0.1)
-						self:y(-35)
-						self:sleep(2)
-						self:queuecommand('UpdateCoinAmmount')
-					end
-				end
-			else
-				self:settext( 'Not Found!' )
-				Profile().CreditsEarnedTEST = 0	
-			end
+            if not Profile().SplatManiaCoinDisabled then
+                if Profile().CreditsEarnedTEST then
+                    self:settext( string.format('% 8d',Profile().CreditsEarnedTEST) )
+                    self:sleep(2.5)
+                    if UpdateCoinAmmount then
+                        if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
+                            CoinP1 = CoinGenerator(PLAYER_1)
+                        end
+                        if GAMESTATE:IsPlayerEnabled(PLAYER_2) then
+                            CoinP2 = CoinGenerator(PLAYER_2)
+                        end
+                        if CoinP1 > 0 then
+                            self:bouncebegin(0.1)
+                            self:y(-35)
+                            self:sleep(0.3)
+                            self:queuecommand('UpdateCoinAmmount')
+                        end
+                    end
+                else
+                    self:settext( 'Not Found!' )
+                    Profile().CreditsEarnedTEST = 0	
+                end
+            else
+                if Profile().CreditsEarnedTEST then
+                    self:settext( string.format('% 8d',Profile().CreditsEarnedTEST) )
+                end
+            end
 
 			end"
 			UpdateCoinAmmountCommand="%function(self)
 
 			if Profile().CreditsEarnedTEST then
 				if GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsPlayerEnabled(PLAYER_2) then
-					self:settext( string.format('% 8d',(Profile().CreditsEarnedTEST) + CoinGenerator(PLAYER_1) ) )
-					Profile().CreditsEarnedTEST = Profile().CreditsEarnedTEST + CoinGenerator(PLAYER_1)
-					Profile().CreditsEarnedTotalTEST = Profile().CreditsEarnedTotalTEST + CoinGenerator(PLAYER_1)
+					self:settext( string.format('% 8d',(Profile().CreditsEarnedTEST) + CoinP1 ) )
+					Profile().CreditsEarnedTEST = Profile().CreditsEarnedTEST + CoinP1
+					Profile().CreditsEarnedTotalTEST = Profile().CreditsEarnedTotalTEST + CoinP1
 					Profile().TotalSongsPlayed = Profile().TotalSongsPlayed + 1
 
 					-- Add survival Time
@@ -56,9 +70,9 @@ end"> <children>
 				end
 
 				if GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsPlayerEnabled(PLAYER_1) then
-					self:settext( string.format('% 8d',(Profile().CreditsEarnedTEST) + CoinGenerator(PLAYER_2) ) )
-					Profile().CreditsEarnedTEST = Profile().CreditsEarnedTEST + CoinGenerator(PLAYER_2)
-					Profile().CreditsEarnedTotalTEST = Profile().CreditsEarnedTotalTEST + CoinGenerator(PLAYER_2)
+					self:settext( string.format('% 8d',(Profile().CreditsEarnedTEST) + CoinP2 ) )
+					Profile().CreditsEarnedTEST = Profile().CreditsEarnedTEST + CoinP2
+					Profile().CreditsEarnedTotalTEST = Profile().CreditsEarnedTotalTEST + CoinP2
 					Profile().TotalSongsPlayed = Profile().TotalSongsPlayed + 1
 
 					-- Add survival Time
@@ -69,9 +83,9 @@ end"> <children>
 				end
 
 				if GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsPlayerEnabled(PLAYER_1) then
-					self:settext( string.format('% 8d',(Profile().CreditsEarnedTEST) + CoinGenerator(PLAYER_1) + CoinGenerator(PLAYER_2) ) )
-					Profile().CreditsEarnedTEST = Profile().CreditsEarnedTEST + CoinGenerator(PLAYER_1) + CoinGenerator(PLAYER_2)
-					Profile().CreditsEarnedTotalTEST = Profile().CreditsEarnedTotalTEST + CoinGenerator(PLAYER_1) + CoinGenerator(PLAYER_2)
+					self:settext( string.format('% 8d',(Profile().CreditsEarnedTEST) + CoinP1 + CoinP2 ) )
+					Profile().CreditsEarnedTEST = Profile().CreditsEarnedTEST + CoinP1 + CoinP2
+					Profile().CreditsEarnedTotalTEST = Profile().CreditsEarnedTotalTEST + CoinP1 + CoinP2
 					Profile().TotalSongsPlayed = Profile().TotalSongsPlayed + 1
 
 					-- Add survival Time

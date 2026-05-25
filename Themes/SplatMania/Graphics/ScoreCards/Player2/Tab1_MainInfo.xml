@@ -2,6 +2,7 @@
         <Layer Font="Splat2" Text="Player 2" OnCommand="shadowlength,1;zoom,2.8;y,-460;x,-618" />
         <Layer Font="Splat2" Text="Score:" OnCommand="shadowlength,1;zoom,1.8;y,-160;x,428" />
         <Layer Font="Splat2" Text="Rank" OnCommand="shadowlength,1;zoom,2.2;y,-30;x,600" />
+        <Layer Font="Splat2" Text="@SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP2'):GetText()" OnCommand="shadowlength,1;zoom,1.4;y,480;x,-780;horizalign,left;maxwidth,SCREEN_WIDTH" />
 
         <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
         InitCommand="zoom,2.4;horizalign,left;animate,0;setstate,0;x,-990;y,-150*(0.95*2);"

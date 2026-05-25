@@ -1,12 +1,13 @@
 <ActorFrame><children>
-
-	<Layer
+--P1 diff num
+    <Layer
 		Font="Paintball"
 		Text=" "
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
 		OnCommand="%function(self)
 		self:x(SCREEN_CENTER_X-75)
 		self:y(SCREEN_CENTER_Y+45)
+        self:maxwidth(40)
 		self:horizalign('right')
 		self:shadowlength(1)
 		self:rotationy(-7)
@@ -34,6 +35,43 @@
 		CurrentStepsP1ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
 		/>
 
+--P2 diff num
+    <Layer
+		Font="Paintball"
+		Text=" "
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-5)
+		self:y(SCREEN_CENTER_Y+40)
+        self:maxwidth(40)
+		self:horizalign('right')
+		self:shadowlength(1)
+		self:rotationy(-7)
+		self:queuecommand('SetNow')
+		end"
+		SetNowCommand="%function(self)
+		if GAMESTATE:GetCurrentSong() then
+
+			self:settext( GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() )
+			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()+1
+			for i=1,table.getn(DiffColorTable) do
+				if Diff == i then
+					self:diffuse( DiffColorTable[i][2][1],DiffColorTable[i][2][2],DiffColorTable[i][2][3],DiffColorTable[i][2][4] )
+				end
+			end
+
+		else
+			self:settext('ND')
+			self:diffuse(1,1,1,0.5)
+		end
+		self:queuecommand('AnimationStart')
+		end"
+		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-125) end"
+		CurrentStepsP2ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
+		/>
+
+	
+--P1 diff name
 		<Layer
 		Font="Paintball"
 		Text=" "
@@ -74,7 +112,7 @@
 		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-265) end"
 		CurrentStepsP1ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
 		/>
-
+--P1 step artist
 		<Layer
 		Font="Paintball"
 		Text=" "
@@ -112,81 +150,12 @@
 		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-265) end"
 		CurrentStepsP1ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
 		/>
-
-		<Layer
-		Font="Paintball"
-		Text=" "
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
-		OnCommand="%function(self)
-		self:x(SCREEN_CENTER_X-5)
-		self:y(SCREEN_CENTER_Y+40)
-		self:horizalign('right')
-		self:shadowlength(1)
-		self:rotationy(-7)
-		self:maxwidth(100)
-		self:queuecommand('SetNow')
-		end"
-		SetNowCommand="%function(self)
-		if GAMESTATE:GetCurrentSong() then
-
-			self:settext( GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() )
-			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()+1
-			for i=1,table.getn(DiffColorTable) do
-				if Diff == i then
-					self:diffuse( DiffColorTable[i][2][1],DiffColorTable[i][2][2],DiffColorTable[i][2][3],DiffColorTable[i][2][4] )
-				end
-			end
-
-		else
-			self:settext('ND')
-			self:diffuse(1,1,1,0.5)
-		end
-		self:queuecommand('AnimationStart')
-		end"
-		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-125) end"
-		CurrentStepsP2ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
-		/>
-
-		<Layer
-		Font="Paintball"
-		Text=" "
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
-		OnCommand="%function(self)
-		self:x(SCREEN_CENTER_X-75)
-		self:y(SCREEN_CENTER_Y+57)
-		self:horizalign('left')
-		self:shadowlength(1)
-		self:zoom(0.5)
-		self:rotationy(-5)
-		self:maxwidth(130)
-		self:queuecommand('SetNow')
-		end"
-		SetNowCommand="%function(self)
-		if GAMESTATE:GetCurrentSong() then
-
-			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()
-
-            self:diffuse(1,1,1,0.5)
-            if GetStepsDescriptionText(PLAYER_2) == '' then
-                self:settext( 'Creator Not Set!' )
-                self:diffuse(1,0,0,0.5)
-            else
-                self:settext( 'By: '..GetStepsDescriptionText(PLAYER_2) )
-            end
-            self:zoom(0.4)
-
-		else
-			self:settext('No data')
-			self:diffuse(1,1,1,0.5)
-		end
-
-		self:queuecommand('AnimationStart')
-		end"
-		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-115) end"
-		CurrentStepsP2ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
-		/>
-
-		<Layer
+        
+        
+        
+        
+--P2 diff name
+        <Layer
 		Font="Paintball"
 		Text=" "
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
@@ -225,6 +194,47 @@
 		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-115) end"
 		CurrentStepsP2ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
 		/>
+--P2 step artist
+        <Layer
+		Font="Paintball"
+		Text=" "
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-75)
+		self:y(SCREEN_CENTER_Y+57)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:zoom(0.5)
+		self:rotationy(-5)
+		self:maxwidth(130)
+		self:queuecommand('SetNow')
+		end"
+		SetNowCommand="%function(self)
+		if GAMESTATE:GetCurrentSong() then
+
+			local Diff = GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()
+
+            self:diffuse(1,1,1,0.5)
+            if GetStepsDescriptionText(PLAYER_2) == '' then
+                self:settext( 'Creator Not Set!' )
+                self:diffuse(1,0,0,0.5)
+            else
+                self:settext( 'By: '..GetStepsDescriptionText(PLAYER_2) )
+            end
+            self:zoom(0.4)
+
+		else
+			self:settext('No data')
+			self:diffuse(1,1,1,0.5)
+		end
+
+		self:queuecommand('AnimationStart')
+		end"
+		AnimationStartCommand="%function(self) self:x(SCREEN_CENTER_X-115) end"
+		CurrentStepsP2ChangedMessageCommand="sleep,0.01;queuecommand,SetNow"
+		/>
+        
+        
 
 
 
