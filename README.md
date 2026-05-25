@@ -271,6 +271,7 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -Made the music wheel highlight in song selection screen clearer, and made it not disappear when entering sort mode.\
 -No more long wait after pressing start to enter song options.\
 -Added options to disable the Countdown near the end of the song, as well as the Coin System.\
+-Removed the custom Language Settings menu as it doesn't work, so the built-in Language options is used now. I don't know if it's even possible to make it keep picking the language you last used by default every time you start the game though.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 

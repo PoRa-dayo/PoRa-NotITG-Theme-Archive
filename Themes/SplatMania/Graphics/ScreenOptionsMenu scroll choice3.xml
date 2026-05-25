@@ -17,13 +17,13 @@
 		Font="Splat2"
 		Text="Main Settings"
 		OnCommand="%function(self)
-		Splat_OptionsMenu_OptionLabel(self, 'Label', 'Start', 'Graphic Options', -27)
+		Splat_OptionsMenu_OptionLabel(self, 'Label', 'Start', THEME:GetMetric('GraphicOptions','HeaderText'), -27)
 		end"
 		GainFocusMessageCommand="%function(self)
-		Splat_OptionsMenu_OptionLabel(self, 'Label', 'GainFocus', 'Graphic Options', -27)
+		Splat_OptionsMenu_OptionLabel(self, 'Label', 'GainFocus', THEME:GetMetric('GraphicOptions','HeaderText'), -27)
 		end"
 		LoseFocusMessageCommand="%function(self)
-		Splat_OptionsMenu_OptionLabel(self, 'Label', 'LoseFocus', 'Graphic Options', -27)
+		Splat_OptionsMenu_OptionLabel(self, 'Label', 'LoseFocus', THEME:GetMetric('GraphicOptions','HeaderText'), -27)
 		end"
 		/>
 

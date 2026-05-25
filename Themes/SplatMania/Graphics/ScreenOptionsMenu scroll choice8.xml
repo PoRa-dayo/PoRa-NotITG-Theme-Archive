@@ -15,15 +15,15 @@
 
 	<Layer
 		Font="Splat2"
-		Text="Gameplay Options"
+		Text="@THEME:GetMetric('GameplayOptions', 'HeaderText')"
 		OnCommand="%function(self)
-		Splat_OptionsMenu_OptionLabel(self, 'Label', 'Start', 'Gameplay Options', -27)
+		Splat_OptionsMenu_OptionLabel(self, 'Label', 'Start', THEME:GetMetric('GameplayOptions', 'HeaderText'), -27)
 		end"
 		GainFocusMessageCommand="%function(self)
-		Splat_OptionsMenu_OptionLabel(self, 'Label', 'GainFocus', 'Gameplay Options', -27)
+		Splat_OptionsMenu_OptionLabel(self, 'Label', 'GainFocus', THEME:GetMetric('GameplayOptions', 'HeaderText'), -27)
 		end"
 		LoseFocusMessageCommand="%function(self)
-		Splat_OptionsMenu_OptionLabel(self, 'Label', 'LoseFocus', 'Gameplay Options', -27)
+		Splat_OptionsMenu_OptionLabel(self, 'Label', 'LoseFocus', THEME:GetMetric('GameplayOptions', 'HeaderText'), -27)
 		end"
 		/>
 

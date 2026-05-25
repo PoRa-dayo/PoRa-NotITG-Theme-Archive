@@ -235,7 +235,7 @@ function CoinSystemOption()
     
 	local Params = {
 		Name = "Coin System",
-		LayoutType = "ShowOneInRow",
+		LayoutType = "ShowAllInRow",
 		SelectType = "SelectOne",
 		OneChoiceForAllPlayers = true
 	}
@@ -261,7 +261,7 @@ function CountdownOption()
     
 	local Params = {
 		Name = "Countdown",
-		LayoutType = "ShowOneInRow",
+		LayoutType = "ShowAllInRow",
 		SelectType = "SelectOne",
 		OneChoiceForAllPlayers = true
 	}
