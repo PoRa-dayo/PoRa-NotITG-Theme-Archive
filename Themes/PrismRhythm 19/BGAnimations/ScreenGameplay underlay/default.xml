@@ -224,7 +224,7 @@
 		/>
 	</children></ActorFrame>
     
-    <!--The MenuElements icons that got disabled in ScreenGameplay's metrics-->
+    <!--The StyleIcons that got disabled in ScreenGameplay's metrics-->
     
     <Layer
 			File="MenuElements icon single"
