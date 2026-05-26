@@ -95,6 +95,7 @@
     
     --the course content scrolling thing is fucking bullshit, why doesn't it properly cover up the top and bottom by default
 	<Layer File="@ThemeFile('SongSelection/SongDataInfoCover')"
+        Condition="GAMESTATE:IsCourseMode()"
         PlayTweenCommand="%function(self) self:decelerate(1) self:addy(10+OffsetInc) self:addx(2000) end"
         OffCommand="%function(self) self:stoptweening() self:accelerate(1) self:addx(-2000) end"
 		OnCommand="%function(self)

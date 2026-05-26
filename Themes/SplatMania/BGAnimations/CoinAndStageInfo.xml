@@ -9,6 +9,8 @@ end"> <children>
 
 		<Layer File="@ThemeFile('SplatSelectGameMode scroll choice2/IconBattle')" Condition="GAMESTATE:GetPlayMode() == 5" OnCommand="zoom,0.1;x,-190" />
 
+        <Layer File="@ThemeFile('SplatSelectGameMode scroll choice3/IconMarathon')" Condition="GAMESTATE:IsCourseMode() " OnCommand="zoom,0.1;x,-190" />
+
 		<Layer Font="Splat2_NumbersMarked" 
 			Text="@string.format('% 4d',GAMESTATE:StageIndex()+1)"
 			OnCommand="maxwidth,100;y,-25;x,-130;horizalign,left;shadowlength,1" />
