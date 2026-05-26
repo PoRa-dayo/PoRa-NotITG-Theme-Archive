@@ -277,8 +277,6 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 
-TO-DO: FIX COURSE MODE
-
 # Special thanks
 [MattMayuga](https://github.com/Tiny-Foxes/JudgeFonts-by-MattMayuga/) - Judgment fonts.
 [HURG-IIDX](https://github.com/HURG-IIDX/Simply-Love-Judgefonts) - Judgment fonts.
