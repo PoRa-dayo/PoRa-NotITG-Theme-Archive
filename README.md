@@ -106,6 +106,8 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Fixed the softlock that occurs when discarding offset changes\
 -Fixed the tween overflow error that occurs when scrolling through songs too quickly\
 -Added the ability to set the resolution alongside the ratio. All ratios except for 4:3, 16:10, 16:9, 3:2 and 5:4 are removed.\
+-Course entries' titles are now properly left-aligned like in the original DWI.\
+-Course mode's music now properly loops.\
 -Little triangles are shown in song selection screen whenever there's an easier or harder difficulty available.\
 -Machine Percentage High Score is now shown in song selection screen when Show Score in Select Music option is enabled.\
 -Added the song title in the evaluation screen to account for charts with no banners.\
