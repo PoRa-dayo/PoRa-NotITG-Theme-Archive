@@ -77,7 +77,16 @@
 		InitCommand="animate,0;playcommand,Update"
 		CurrentSongChangedMessageCommand="playcommand,Update"
 		UpdateCommand="%function(self)
-			if GAMESTATE:GetCurrentSong() then
+            if GAMESTATE:GetCurrentCourse() then
+                self:finishtweening()
+				self:hidden(0)
+				self:settext(GAMESTATE:GetCurrentCourse():GetDisplayFullTitle())
+				self:diffuse(0,1,1,1)
+				self:zoom(0.6)
+				self:decelerate(0.2)
+				self:diffuse(1,1,1,1)
+				self:zoom(0.5)
+			elseif GAMESTATE:GetCurrentSong() then
 				self:finishtweening()
 				self:hidden(0)
 				self:settext(GAMESTATE:GetCurrentSong():GetDisplayFullTitle())
@@ -109,7 +118,9 @@
 		InitCommand="animate,0;playcommand,Update"
 		CurrentSongChangedMessageCommand="playcommand,Update"
 		UpdateCommand="%function(self)
-			if GAMESTATE:GetCurrentSong() then
+            if GAMESTATE:GetCurrentCourse() then
+                self:hidden(1)
+			elseif GAMESTATE:GetCurrentSong() then
 				self:finishtweening()
 				self:hidden(0)
 				self:settext(GAMESTATE:GetCurrentSong():GetDisplayArtist())

@@ -27,6 +27,7 @@
 			/>
 
 		<Layer File="StepFileInformation/SongDataInformation.xml" 
+            Condition="not GAMESTATE:IsCourseMode()"
 			OnCommand="%function(self)
 			self:addy(OffsetInc)
 			self:addx(-2000) self:decelerate(1) self:addx(2000)
@@ -91,5 +92,18 @@
 		OffCommand="diffusealpha,1;zoom,0.5;"
 		/>
 	</children></Layer>
+    
+    --the course content scrolling thing is fucking bullshit, why doesn't it properly cover up the top and bottom by default
+	<Layer File="@ThemeFile('SongSelection/SongDataInfoCover')"
+        PlayTweenCommand="%function(self) self:decelerate(1) self:addy(10+OffsetInc) self:addx(2000) end"
+        OffCommand="%function(self) self:stoptweening() self:accelerate(1) self:addx(-2000) end"
+		OnCommand="%function(self)
+		self:x(SCREEN_CENTER_X-188)
+		self:y(SCREEN_CENTER_Y+105)
+        self:addx(-2000)
+        self:zoom(1.1)
+        self:queuecommand('PlayTween')
+		end"
+    />
 
 </children></ActorFrame>

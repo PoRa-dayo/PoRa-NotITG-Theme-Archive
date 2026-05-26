@@ -7,7 +7,7 @@ end"> <children>
 <Layer File="@THEME:GetPath(EC_GRAPHICS,'','GameModeExplanationBox')" OnCommand="horizalign,left;x,SCREEN_LEFT+10;vertalign,top;y,5;blend,noeffect;spin" />
 
 
-    --fixed the lifebar, though, goodbye openitg compatibility
+    --finally decided to fix the lifebar with ActorProxies
     --lifebar p1
     
     <Layer
@@ -26,6 +26,7 @@ end"> <children>
         CaptureCommand="%function(self)
             local life = SCREENMAN:GetTopScreen():GetChild('LifeP1');
             self:SetTarget(life)
+            self:y(-4269)
         end"
     />
     
@@ -68,6 +69,7 @@ end"> <children>
         CaptureCommand="%function(self)
             local life = SCREENMAN:GetTopScreen():GetChild('LifeP2');
             self:SetTarget(life)
+            self:y(-4269)
         end"
     />
     
@@ -127,12 +129,14 @@ end"> <children>
 			InitCommand="animate,0;playcommand,Update"
 			CurrentSongChangedMessageCommand="playcommand,Update"
 			UpdateCommand="%function(self)
-			local song = GAMESTATE:GetCurrentSong();
-			self:settext(GAMESTATE:GetCurrentSong():GetDisplayMainTitle())
-	if string.len( string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 1) ) < 1 then
-			self:zoom(0.7)
-			self:y(-13)
-		end
+                if GAMESTATE:GetCurrentSong() then
+                    local song = GAMESTATE:GetCurrentSong();
+                    self:settext(song:GetDisplayMainTitle())
+                    if string.len( string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 1) ) < 1 then
+                        self:zoom(0.7)
+                        self:y(-13)
+                    end
+                end
 			end"
 		/>
 
@@ -159,17 +163,52 @@ end"> <children>
 			Type="BitmapText"
 			Font="Paintball"
 			OnCommand="%function(self)
-			local song = GAMESTATE:GetCurrentSong();
-			self:y(-5)
-			self:zoom(0.5)
-			self:shadowlength(0)
-			self:settext(string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 2))
-			end"
+                if GAMESTATE:GetCurrentSong() then
+                    local song = GAMESTATE:GetCurrentSong();
+                    self:y(-5)
+                    self:zoom(0.5)
+                    self:shadowlength(0)
+                    self:settext(string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 2))
+                end
+            end"
 			InitCommand="animate,0;playcommand,Update"
 			CurrentSongChangedMessageCommand="playcommand,Update"
 			UpdateCommand="%function(self)
-			local song = GAMESTATE:GetCurrentSong();
-			string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 1);
+            if GAMESTATE:GetCurrentSong() then
+                local song = GAMESTATE:GetCurrentSong();
+                string.sub(song:GetDisplayFullTitle(), string.len(song:GetDisplayMainTitle()) + 1);
+            end
+			end"
+		/>
+	</children> </Layer>
+    
+    <!-- song num for course -->
+    <Layer
+			Type="BitmapText"
+			Font="Paintball"
+			OnCommand="%function(self)
+                local songind = GAMESTATE:GetCourseSongIndex()
+                if songind then
+                    self:y(65)
+                    self:x(SCREEN_CENTER_X)
+                    self:zoom(0.4)
+                    self:shadowlength(0)
+                    self:settext('Song '..songind+1)
+                end
+            end"
+            CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+            CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+            CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self)
+                local songind = GAMESTATE:GetCourseSongIndex()
+                if songind then
+                    self:y(65)
+                    self:x(SCREEN_CENTER_X)
+                    self:zoom(0.4)
+                    self:shadowlength(0)
+                    self:settext('Song '..songind+1)
+                end
+            end"
 			end"
 		/>
 	</children> </Layer>
@@ -236,29 +275,31 @@ end"> <children>
 			CurrentSongChangedMessageCommand="playcommand,Update"
 			UpdateCommand="%function(self)
 			local timeintimer = self:GetSecsIntoEffect();
-			local totaltimer = GAMESTATE:GetCurrentSong():MusicLengthSeconds()
-			self:effectclock('music')
-				if totaltimer >= 3600 then
-					self:settext(SecondsToHHMMSS(totaltimer-timeintimer))
-						if timeintimer >= totaltimer-60 then
-							self:decelerate(0.2)
-							self:zoom(0.5)
-						end
-						if timeintimer >= totaltimer then
-							self:diffuse(1,1,0,1)
-							self:settext(SecondsToHHMMSS(0))
-						end
-				else
-					self:settext(SecondsToMMSS(totaltimer-timeintimer))
-						if timeintimer >= totaltimer-60 then
-							self:diffuse(1,1,0,1)
-							self:settext(SecondsToMMSS(totaltimer-timeintimer))
-						end
-						if timeintimer >= totaltimer then
-							self:diffuse(1,1,0,1)
-							self:settext(SecondsToMMSS(0))
-						end
-				end
+            if GAMESTATE:GetCurrentSong() then
+                local totaltimer = GAMESTATE:GetCurrentSong():MusicLengthSeconds()
+                self:effectclock('music')
+                if totaltimer >= 3600 then
+                    self:settext(SecondsToHHMMSS(totaltimer-timeintimer))
+                        if timeintimer >= totaltimer-60 then
+                            self:decelerate(0.2)
+                            self:zoom(0.5)
+                        end
+                        if timeintimer >= totaltimer then
+                            self:diffuse(1,1,0,1)
+                            self:settext(SecondsToHHMMSS(0))
+                        end
+                else
+                    self:settext(SecondsToMMSS(totaltimer-timeintimer))
+                        if timeintimer >= totaltimer-60 then
+                            self:diffuse(1,1,0,1)
+                            self:settext(SecondsToMMSS(totaltimer-timeintimer))
+                        end
+                        if timeintimer >= totaltimer then
+                            self:diffuse(1,1,0,1)
+                            self:settext(SecondsToMMSS(0))
+                        end
+                end
+            end
 
 			self:sleep(0.1)
 			self:queuecommand('Update')

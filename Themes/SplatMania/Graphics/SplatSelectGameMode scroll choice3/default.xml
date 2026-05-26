@@ -121,18 +121,20 @@
 		/>
 
 		<Layer
-		Font="Splat2"
+		Font="Splat2Stroke"
 		Text="@THEME:GetMetric('SelectGameMode','MarathonHeader')"
 		OnCommand="%function(self)
 		
 		self:x(500)
 		self:horizalign('left')
 		self:y(-400)
+		self:shadowlength(1)
+		self:rotationy(15)
 		self:diffuse(0.5,0.5,1,1)
-		self:rotationy(20)
 		self:diffusealpha(0)
 		self:zoom(1.3)
-        self:zoomx(0.9)
+        self:zoomx(2)
+		self:maxwidth(SCREEN_WIDTH-230)
 		end"
 		GainFocusMessageCommand="%function(self)
 		self:stoptweening()

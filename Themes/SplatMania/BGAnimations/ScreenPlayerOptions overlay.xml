@@ -17,10 +17,11 @@
 		InitCommand="animate,0;playcommand,Update"
 		CurrentSongChangedMessageCommand="playcommand,Update"
 		UpdateCommand="%function(self)
-			if GAMESTATE:GetCurrentSong() then
+            local songg = GAMESTATE:GetCurrentSong() or GAMESTATE:GetCurrentCourse()
+			if songg then
 				self:finishtweening()
 				self:hidden(0)
-				self:settext(GAMESTATE:GetCurrentSong():GetDisplayFullTitle())
+				self:settext(songg:GetDisplayFullTitle())
 				self:diffuse(0,1,1,1)
 				self:zoom(0.6)
 				self:decelerate(0.2)

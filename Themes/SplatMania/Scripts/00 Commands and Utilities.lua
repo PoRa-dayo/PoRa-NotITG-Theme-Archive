@@ -98,6 +98,7 @@ function math.round(v, bracket)
 end
 
 function PlrDiff(pn)
+    if not GAMESTATE:GetCurrentSteps(pn) then return 0 end
 	return GAMESTATE:GetCurrentSteps(pn):GetDifficulty()
 end
 

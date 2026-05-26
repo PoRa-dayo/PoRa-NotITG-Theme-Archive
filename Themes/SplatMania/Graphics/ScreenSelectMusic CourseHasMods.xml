@@ -1,0 +1,34 @@
+<ActorFrame> <children>
+<Layer Type="ActorFrame" OnCommand="fov,90"><children>
+	<Layer File="@ThemeFile('EcoInfoBG')"
+		OnCommand="%function(self)
+		self:diffuse(1,0.5,0,1)
+		self:zoom(.2)
+		self:shadowlength(1)
+		self:rotationy(-3)
+		end"
+		OffCommand="%function(self)
+		end"/>
+	<Layer
+		Type="BitmapText"
+		Text="COURSE HAS MODS"
+		File="Paintball"
+		OnCommand="%function(self)
+		self:diffuse(1,0.5,0,1)
+		self:y(-3)
+		self:zoom(.3)
+		self:shadowlength(1)
+		self:maxwidth(SCREEN_WIDTH/1.5)
+		self:rotationy(-5)
+		self:pulse()
+		self:effectdelay(0.75)
+		self:effectmagnitude(0.9,1,0)
+		self:effectclock('bgm')
+		self:effectperiod(0.25)
+		self:settext( THEME:GetMetric('PaneDisplay','CourseHasMods') )
+		end"
+		OffCommand="%function(self)
+		end"
+	/>
+</children></Layer>
+</children> </ActorFrame>

@@ -1,0 +1,31 @@
+<ActorFrame
+	InitCommand="%function(self)
+	ColorToMimic = {math.random(140,255)/255,math.random(140,255)/255,math.random(140,255)/255}
+    NotCourse = not GAMESTATE:IsCourseMode()
+	end"
+	><children>
+	<Layer
+		Type="Sprite"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+		NextCourseSongMessageCommand="%function(self) 
+            local song = GAMESTATE:Env().NextSong
+            local Path = song:GetBackgroundPath()
+            if not Path then
+                self:diffusealpha(0)
+            else 
+                self:LoadBackground( Path )
+            end
+        end"
+		StartCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffusealpha,0;sleep,0.3;linear,0.3;diffusealpha,1"
+		FinishCommand="sleep,0.3;linear,0.3;diffusealpha,0"
+	/>
+    <Layer File="@ThemeFile('blur')" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,3;diffusealpha,0;decelerate,1;diffusealpha,1" />
+
+	<Layer File="@ThemeFile('ClearedRibbon/ClearedTextBG')"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;bounceend,0.4;y,SCREEN_CENTER_Y;"
+	InitCommand="%function(self) self:diffuse( ColorToMimic[1],ColorToMimic[2],ColorToMimic[3],1 ) end" />
+    
+    <Layer Font="Splat2" Condition="not NotCourse" Text="@GAMESTATE:GetCurrentCourse():GetDisplayFullTitle()"
+	OnCommand="maxwidth,SCREEN_WIDTH/2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;bounceend,0.4;y,SCREEN_CENTER_Y-15;shadowlength,2"
+			/>
+</children> </ActorFrame>

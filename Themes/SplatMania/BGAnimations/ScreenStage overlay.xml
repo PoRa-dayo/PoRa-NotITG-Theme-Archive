@@ -1,13 +1,15 @@
 <ActorFrame
 	InitCommand="%function(self)
 	ColorToMimic = {math.random(140,255)/255,math.random(140,255)/255,math.random(140,255)/255}
+    NotCourse = not GAMESTATE:IsCourseMode()
 	end"
 	><children>
 	<Layer
         File="SongBackground"
+        Condition="NotCourse"
         OnCommand="%function(self)
         self:cmd('x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,1.5;diffusealpha,0;fadetop,0.3;fadebottom,0.3;decelerate,1;zoomto,SCREEN_WIDTH+3,SCREEN_HEIGHT;')
-        if GAMESTATE:GetCurrentSong():GetBackgroundPath() == nil then
+        if not GAMESTATE:GetCurrentSong() or GAMESTATE:GetCurrentSong():GetBackgroundPath() == nil then
         		self:diffusealpha(0)
         	else
         		self:diffusealpha(1)
@@ -27,27 +29,31 @@
 	<!-- Note to self:
 	REMAKE TEXT CLASS AS ITS NOT RESIZING FOR SOME FUCKING REASON.
 	-->
-	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentSong():GetDisplayMainTitle()"
+	<Layer Font="Splat2" Condition="NotCourse" Text="@GAMESTATE:GetCurrentSong():GetDisplayMainTitle()"
 	OnCommand="maxwidth,SCREEN_WIDTH/2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;bounceend,0.4;y,SCREEN_CENTER_Y-45;shadowlength,2"
 			/>
+            
+    <Layer Font="Splat2" Condition="not NotCourse" Text="@GAMESTATE:GetCurrentCourse():GetDisplayFullTitle()"
+	OnCommand="maxwidth,SCREEN_WIDTH/2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;bounceend,0.4;y,SCREEN_CENTER_Y-15;shadowlength,2"
+			/>
 
-	<Layer Font="Splat2" Text="@SPCommand:GetDisplaySubtitle()"
+	<Layer Font="Splat2" Condition="NotCourse" Text="@SPCommand:GetDisplaySubtitle()"
 	OnCommand="maxwidth,SCREEN_WIDTH/1.2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;zoom,0.6;bounceend,0.4;y,SCREEN_CENTER_Y;shadowlength,2"
 			/>
 
-	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentSong():GetDisplayArtist()"
+	<Layer Font="Splat2" Condition="NotCourse" Text="@GAMESTATE:GetCurrentSong():GetDisplayArtist()"
 	OnCommand="maxwidth,SCREEN_WIDTH/1.2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;zoom,0.6;bounceend,0.4;y,SCREEN_CENTER_Y+30;shadowlength,2"
 			/>
 
 	<!-- Player One Info -->
-	<Layer Font="Splat2" Text="Player 1"
+	<Layer Font="Splat2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and NotCourse" Text="Player 1"
 	Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
 	OnCommand="horizalign,left;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y+500;diffusealpha,0.5;zoom,0.4;bounceend,0.4;y,SCREEN_CENTER_Y-60;shadowlength,2"
 			/>
 	<Layer
 		Font="Splat2Stroke"
 		Text=" "
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and NotCourse"
 		OnCommand="%function(self)
 		
 		self:x(SCREEN_LEFT+20)
@@ -83,7 +89,7 @@
 		<Layer
 		Font="Splat2"
 		Text=" "
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and NotCourse"
 		OnCommand="%function(self)
 		
 		self:x(SCREEN_LEFT+60)
@@ -118,7 +124,7 @@
 		<Layer
 		Font="Splat2"
 		Text=" "
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and NotCourse"
 		OnCommand="%function(self)
 		
 		self:x(SCREEN_LEFT+60)
@@ -155,13 +161,13 @@
 
 	<!-- Player Two Info -->
 	<Layer Font="Splat2" Text="Player 2"
-	Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+	Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2) and NotCourse"
 	OnCommand="horizalign,right;x,SCREEN_RIGHT-10;y,SCREEN_CENTER_Y+500;diffusealpha,0.5;zoom,0.4;bounceend,0.4;y,SCREEN_CENTER_Y-60;shadowlength,2"
 			/>
 	<Layer
 		Font="Splat2Stroke"
 		Text=" "
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2) and NotCourse"
 		OnCommand="%function(self)
 		
 		self:x(SCREEN_RIGHT-10)
@@ -193,7 +199,7 @@
 		<Layer
 		Font="Splat2"
 		Text=" "
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2) and NotCourse"
 		OnCommand="%function(self)
 		
 		self:x(SCREEN_RIGHT-50)
@@ -227,7 +233,7 @@
 		<Layer
 		Font="Splat2"
 		Text=" "
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2) and NotCourse"
 		OnCommand="%function(self)
 		
 		self:x(SCREEN_RIGHT-55)

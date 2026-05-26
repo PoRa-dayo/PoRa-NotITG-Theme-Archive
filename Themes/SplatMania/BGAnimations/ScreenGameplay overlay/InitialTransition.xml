@@ -1,6 +1,10 @@
-<ActorFrame><children>
-<Layer
-        File="SongBackground"
+<ActorFrame
+	InitCommand="%function(self)
+    NotCourse = not GAMESTATE:IsCourseMode()
+	end"
+	><children>
+    <Layer
+        File="SongBackground" Condition="NotCourse"
         InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH+3,SCREEN_HEIGHT;diffusealpha,1;playcommand,CheckForBG"
         CheckForBGCommand="%function(self)
         if GAMESTATE:GetCurrentSong():GetBackgroundPath() == nil then
@@ -27,31 +31,36 @@
 	end"
 	/>
 
-	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentSong():GetDisplayMainTitle()"
+	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentSong():GetDisplayMainTitle()" Condition="NotCourse"
 	InitCommand="maxwidth,SCREEN_WIDTH/2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-45;shadowlength,2"
 	OnCommand="accelerate,0.5;zoom,0.8;addx,-5;diffusealpha,0"
 			/>
+            
+    	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentCourse():GetDisplayFullTitle()" Condition="not NotCourse"
+	InitCommand="maxwidth,SCREEN_WIDTH/2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-15;shadowlength,2"
+	OnCommand="accelerate,0.5;zoom,0.8;addx,-5;diffusealpha,0"
+			/>
 
-	<Layer Font="Splat2" Text="@SPCommand:GetDisplaySubtitle()"
+	<Layer Font="Splat2" Text="@SPCommand:GetDisplaySubtitle()" Condition="NotCourse"
 	InitCommand="maxwidth,SCREEN_WIDTH/1.2;x,SCREEN_CENTER_X;zoom,0.6;y,SCREEN_CENTER_Y;shadowlength,2"
 	OnCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
 			/>
 
-	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentSong():GetDisplayArtist()"
+	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentSong():GetDisplayArtist()" Condition="NotCourse"
 	InitCommand="maxwidth,SCREEN_WIDTH/1.2;x,SCREEN_CENTER_X;zoom,0.6;y,SCREEN_CENTER_Y+30;shadowlength,2"
 	OnCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
 			/>
 
 	<!-- Player One Info -->
 	<Layer Font="Splat2" Text="Player 1"
-	Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
+	Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and NotCourse"
 	InitCommand="horizalign,left;x,SCREEN_LEFT+20;diffusealpha,0.5;zoom,0.4;y,SCREEN_CENTER_Y-60;shadowlength,2"
 	OnCommand="accelerate,0.5;zoom,0.3;diffusealpha,0"
 			/>
 	<Layer
 		Font="Splat2Stroke"
 		Text=" "
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1)"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and NotCourse"
 		TweenOffCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
 		InitCommand="%function(self)
 		
@@ -83,14 +92,14 @@
 
 	<!-- Player Two Info -->
 	<Layer Font="Splat2" Text="Player 2"
-	Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+	Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2) and NotCourse"
 	InitCommand="horizalign,right;x,SCREEN_RIGHT-10;diffusealpha,0.5;zoom,0.4;y,SCREEN_CENTER_Y-60;shadowlength,2"
 	OnCommand="accelerate,0.5;zoom,0.3;diffusealpha,0"
 			/>
 	<Layer
 		Font="Splat2Stroke"
 		Text=" "
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2)"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:IsHumanPlayer(PLAYER_2) and NotCourse"
 		OnCommand="%function(self)
 		
 		self:x(SCREEN_RIGHT-10)

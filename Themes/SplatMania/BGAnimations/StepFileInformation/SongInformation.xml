@@ -1,5 +1,5 @@
 <ActorFrame><children>
-
+--Song Information/Course Information header
 	<Layer
 		Font="Paintball"
 		Text="@THEME:GetMetric('PaneDisplay', 'TopHeaderText')"
@@ -9,6 +9,24 @@
 		self:horizalign('left')
 		self:shadowlength(1)
 		self:rotationy(-3)
+        if GAMESTATE:IsCourseMode() then
+            self:settext(THEME:GetMetric('PaneDisplay', 'TopHeaderTextCourse'))
+		end
+        end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		/>
+--the Course Contents header, only for course mode       
+    <Layer
+		Font="Paintball"
+		Text="@THEME:GetMetric('PaneDisplay', 'BottomHeaderTextCourse')"
+		OnCommand="%function(self)
+		if not GAMESTATE:IsCourseMode() then self:hidden(1) end
+		self:zoom(0.3)
+        self:y(82)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:rotationy(-3)
+        self:settext(THEME:GetMetric('PaneDisplay', 'BottomHeaderTextCourse'))
 		end"
 		OffCommand="linear,0.3;diffusealpha,0"
 		/>
@@ -52,7 +70,13 @@
 					self:y(30)
 					self:zoom(.5)
 				end
-			else
+			elseif GAMESTATE:GetCurrentCourse() then
+                self:hidden(0)
+				self:diffuse(1,1,1,0)
+				self:settext(GAMESTATE:GetCurrentCourse():GetDisplayFullTitle())
+				self:y(30)
+                self:zoom(.5)
+            else
 				self:hidden(1)
 			end
 			self:decelerate(0.1)
@@ -137,16 +161,33 @@
 		end"
 		UpdateCommand="%function(self)
 			self:x(20)
-			if GAMESTATE:GetCurrentSong() then
+            local songg = GAMESTATE:GetCurrentSong()
+            local coursee = GAMESTATE:GetCurrentCourse()
+			if songg or coursee then
 				self:hidden(0)
 				self:diffuse(1,1,1,0)
-				self:settext(GAMESTATE:GetCurrentSong():GetDisplayArtist())
+                if songg then
+                    self:settext(songg:GetDisplayArtist())
+                else
+                    self:settext(SCREENMAN:GetTopScreen():GetChild('ArtistDisplay'):GetText())
+                end
 				self:decelerate(0.1)
 			else
 				self:hidden(1)
 			end
 			self:x(10)
 			self:diffusealpha(1)
+            if coursee then
+                self:sleep(0.2)
+				self:queuecommand('SlightUpdate')
+            end
+		end"
+        SlightUpdateCommand="%function(self)
+            if GAMESTATE:GetCurrentCourse() then
+                self:settext(SCREENMAN:GetTopScreen():GetChild('ArtistDisplay'):GetText())
+            end
+            self:sleep(0.2)
+			self:queuecommand('SlightUpdate')
 		end"
 		/>
 --background sprites
@@ -222,6 +263,58 @@
 			self:diffusealpha(1)
 		end"
 		/>
+--no. of songs (replaces times played in Marathon mode)
+		<Layer
+		Font="Paintball"
+		Text="Song name"
+		OnCommand="%function(self)
+		
+		self:x(10)
+		self:y(-20)
+		self:zoom(.2)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:maxwidth(SCREEN_WIDTH/1.5)
+		self:rotationy(-4.5)
+		self:rotationz(-1)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		InitCommand="animate,0;playcommand,UpdateStart"
+		CurrentSongChangedMessageCommand="playcommand,UpdateStart"
+		UpdateStartCommand="%function(self)
+				self:finishtweening()
+				self:accelerate(0.1)
+				self:zoom(0.18)
+				self:diffusealpha(0)
+				self:sleep(0.001)
+				self:queuecommand('Update')
+		end"
+		UpdateCommand="%function(self)
+			self:zoom(0.18)
+			if GAMESTATE:GetCurrentCourse() then
+				self:hidden(0)
+				self:diffuse(1,1,1,0)
+                local SongNumTxt = SCREENMAN:GetTopScreen():GetChild('NumSongs'):GetText()
+                if SongNumTxt then
+                    if tonumber(SongNumTxt) == 1 then
+                        self:settext( THEME:GetMetric('PaneDisplay', 'Contains')..' '..SongNumTxt..' '..THEME:GetMetric('PaneDisplay', 'NumSong') )
+                    else 
+                        self:settext( THEME:GetMetric('PaneDisplay', 'Contains')..' '..SongNumTxt..' '..THEME:GetMetric('PaneDisplay', 'NumSongs') )
+                    end
+                    if tonumber(SongNumTxt) > 5 then
+                        self:diffusetopedge(1,0,1,1)
+                        self:diffusebottomedge(1,1,0,1)
+                    end
+                end
+				self:decelerate(0.1)
+			else
+				self:hidden(1)
+			end
+			self:zoom(0.3)
+			self:diffusealpha(1)
+		end"
+		/>
+--high score
         <Layer
             Font="Paintball"
             Text="Song name"
@@ -252,17 +345,30 @@
                 self:zoom(0.18)
                 local panep1=SCREENMAN:GetTopScreen():GetChild('PaneDisplayP1')
                 local panep2=SCREENMAN:GetTopScreen():GetChild('PaneDisplayP2')
-                if GAMESTATE:GetCurrentSong() and (panep1 or panep2) then
-                    local scoretxt1 = '0.00%'
-                    local scoretxt2 = '0.00%'
-                    if panep1 then scoretxt1 = panep1:GetChild(''):GetChild('MachineHighScoreText'):GetText() end
-                    if panep2 then scoretxt2 = panep2:GetChild(''):GetChild('MachineHighScoreText'):GetText() end
+                local scoretxt1 = '?'
+                local scoretxt2 = '?'
+                if panep1 or panep2 then
+                    if GAMESTATE:GetCurrentSong() then
+                        if panep1 then scoretxt1 = panep1:GetChild(''):GetChild('MachineHighScoreText'):GetText() end
+                        if panep2 then scoretxt2 = panep2:GetChild(''):GetChild('MachineHighScoreText'):GetText() end
+                    elseif GAMESTATE:GetCurrentCourse() then
+                        if panep1 then scoretxt1 = panep1:GetChild(''):GetChild('CourseMachineHighScoreText'):GetText() end
+                        if panep2 then scoretxt2 = panep2:GetChild(''):GetChild('CourseMachineHighScoreText'):GetText() end
+                    end
                     self:hidden(0)
                     self:diffuse(1,1,1,0)
-                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore')..scoretxt1..' / '..scoretxt2 )
                     self:decelerate(0.1)
                 else
                     self:hidden(1)
+                end
+                if panep1 and panep2 then
+                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore')..scoretxt1..' / '..scoretxt2 )
+                elseif panep1 and not panep2 then
+                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore')..scoretxt1)
+                elseif panep1 and not panep2 then
+                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore')..scoretxt2)
+                else
+                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore')..'?')
                 end
                 self:zoom(0.3)
                 self:diffusealpha(1)
@@ -317,6 +423,12 @@
 				else
 					self:settext(SecondsToMMSS(GAMESTATE:GetCurrentSong():MusicLengthSeconds()))
 				end
+			elseif GAMESTATE:GetCurrentCourse() then
+				self:hidden(0)
+				self:diffuse(1,1,1,0)
+				self:decelerate(0.1)
+                local TheTrail = GAMESTATE:GetCurrentTrail(0) or GAMESTATE:GetCurrentTrail(1)
+				self:settext(SecondsToMMSS( TheTrail:GetLengthSeconds()))
 			else
 				self:hidden(1)
 			end
@@ -353,7 +465,7 @@
 		UpdateCommand="%function(self)
 			MESSAGEMAN:Broadcast('UpdateSortOrder')
 			self:y(58)
-			if GAMESTATE:GetCurrentSong() then
+			if GAMESTATE:GetCurrentSong() or GAMESTATE:GetCurrentCourse() then
 				self:hidden(0)
 				self:diffuse(1,1,1,0)
 				self:decelerate(0.1)
@@ -393,7 +505,7 @@
 		UpdateCommand="%function(self)
 			MESSAGEMAN:Broadcast('UpdateSortOrder')
 			self:y(65)
-			if GAMESTATE:GetCurrentSong() then
+			if GAMESTATE:GetCurrentSong() or GAMESTATE:GetCurrentCourse() then
 				self:hidden(0)
 				self:diffuse(1,1,1,0)
 				self:decelerate(0.1)
