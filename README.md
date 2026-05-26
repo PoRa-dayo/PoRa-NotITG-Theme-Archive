@@ -276,8 +276,14 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -Removed the custom Language Settings menu as it doesn't work, so the built-in Language options is used now. I don't know if it's even possible to make it keep picking the language you last used by default every time you start the game though.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
+<img width="200" alt="NotITG-v4 9 1_69H7WSJs1d" src="https://github.com/user-attachments/assets/1846daee-f457-4cdf-8b6f-4630d29df30b" />
+<img width="200" alt="NotITG-v4 9 1_D4dXsxAH9l" src="https://github.com/user-attachments/assets/1f007dd7-b83f-4529-a454-021ff5741d97" />
+<img width="200" alt="xVIwFUbVN5" src="https://github.com/user-attachments/assets/f0667d9d-032f-4b25-aecc-d62dbb7fc1a4" />
+<img width="200" alt="NotITG-v4 9 1_FneqyfElaC" src="https://github.com/user-attachments/assets/084a0e32-b386-401f-9402-956b66f62f1f" />
+<img width="200" alt="NotITG-v4 9 1_CKdGVjXYv6" src="https://github.com/user-attachments/assets/78dc781b-3f50-44fb-91a5-51edbc2d0d31" />
+
 
 # Special thanks
-[MattMayuga](https://github.com/Tiny-Foxes/JudgeFonts-by-MattMayuga/) - Judgment fonts.
-[HURG-IIDX](https://github.com/HURG-IIDX/Simply-Love-Judgefonts) - Judgment fonts.
+[MattMayuga](https://github.com/Tiny-Foxes/JudgeFonts-by-MattMayuga/) - Judgment fonts.\
+[HURG-IIDX](https://github.com/HURG-IIDX/Simply-Love-Judgefonts) - Judgment fonts.\
 Maybell Eigenhart - Hold judgment fonts.
