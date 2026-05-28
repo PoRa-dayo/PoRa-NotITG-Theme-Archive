@@ -47,22 +47,6 @@ end"> <children>
                     self:settext( GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() )
 				end
 				self:sleep(1)
-				self:queuecommand('LoadJudgment')
-				end"
-				LoadJudgmentCommand="%function(self)
-
-				-- This is to check for the language.
-				if modJudgmentFont[1] == 1 and SCREENMAN:GetTopScreen():GetChild('PlayerP1') then
-					local Plr = SCREENMAN:GetTopScreen():GetChild('PlayerP1')
-					if Plr:GetChild('Judgment') then
-						if GAMESTATE:IsHumanPlayer(PLAYER_1) then
-							Plr:GetChild('Judgment'):GetChild(''):Load( Jud_Normal )
-						else
-							Plr:GetChild('Judgment'):GetChild(''):Load( Jud_CPUPlr )
-						end
-					end
-				end
-
 				end"
 			/>
 
@@ -104,22 +88,6 @@ end"> <children>
                     self:settext( GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() )
 				end
 				self:sleep(1)
-				self:queuecommand('LoadJudgment')
-				end"
-				LoadJudgmentCommand="%function(self)
-				
-				-- This is to check for the language.
-				if modJudgmentFont[2] == 1 and SCREENMAN:GetTopScreen():GetChild('PlayerP2') then
-					local Plr = SCREENMAN:GetTopScreen():GetChild('PlayerP2')
-					if Plr:GetChild('Judgment') then
-						if GAMESTATE:IsHumanPlayer(PLAYER_2) then
-							Plr:GetChild('Judgment'):GetChild(''):Load( Jud_Normal )
-						else
-							Plr:GetChild('Judgment'):GetChild(''):Load( Jud_CPUPlr )
-						end
-					end
-				end
-
 				end"
 			/>
 

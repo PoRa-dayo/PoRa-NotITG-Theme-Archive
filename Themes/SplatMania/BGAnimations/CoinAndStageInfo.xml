@@ -7,7 +7,7 @@ end"> <children>
 
 		<Layer File="@ThemeFile('SplatSelectGameMode scroll choice1/IconRegular')" Condition="GAMESTATE:GetPlayMode() == 0 " OnCommand="zoom,0.1;x,-190" />
 
-		<Layer File="@ThemeFile('SplatSelectGameMode scroll choice2/IconBattle')" Condition="GAMESTATE:GetPlayMode() == 5" OnCommand="zoom,0.1;x,-190" />
+		<Layer File="@ThemeFile('SplatSelectGameMode scroll choice2/IconBattle')" Condition="GAMESTATE:GetPlayMode() >= 4" OnCommand="zoom,0.1;x,-190" />
 
         <Layer File="@ThemeFile('SplatSelectGameMode scroll choice3/IconMarathon')" Condition="GAMESTATE:IsCourseMode() " OnCommand="zoom,0.1;x,-190" />
 

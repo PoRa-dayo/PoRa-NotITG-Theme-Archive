@@ -186,7 +186,7 @@ end"> <children>
     <Layer
 			Type="BitmapText"
 			Font="Paintball"
-            Conditon="GAMESTATE:IsCourseMode()"
+            Condition="GAMESTATE:IsCourseMode()"
 			OnCommand="%function(self)
                 local songind = GAMESTATE:GetCourseSongIndex()
                 if songind then
@@ -324,7 +324,7 @@ end"> <children>
 	FailP1MessageCommand="%function(self) Player1Failed = true; end"
 	FailP2MessageCommand="%function(self) Player2Failed = true; end"
 	/>
-    <ActorFrame Command="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
+    <ActorFrame Command="%GameplayInit" CurrentSongChangedMessageCommand="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
 
 </children> </ActorFrame>
 

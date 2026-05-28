@@ -110,6 +110,8 @@ function Gameplay(self) JudgmentInit() end
 -- Apply judgments
 
 function JudgmentInit()
+    local Jud_Normal = THEME:GetPath( EC_GRAPHICS, '', 'Judge/'..THEME:GetCurLanguage() )
+    local Jud_CPUPlr = THEME:GetPath( EC_GRAPHICS, '', 'Judge/CPU/'..THEME:GetCurLanguage() )
     for pn=1,8 do
         local PL = SCREENMAN:GetTopScreen():GetChild('PlayerP'..pn)
         local k
@@ -119,8 +121,14 @@ function JudgmentInit()
             k = modJudgmentFont[pn%2 == 1 and 1 or 2]
             PJudge:aux(pn%2 == 1 and 1 or 2)
             
-            if k ~= 1 then 
-                PJudge:Load( THEME:GetPath( EC_GRAPHICS, '', '_Judgments/'..judgmentFontList[k] ))
+            if (pn == 1 and not GAMESTATE:IsHumanPlayer(PLAYER_1)) or (pn == 2 and not GAMESTATE:IsHumanPlayer(PLAYER_2)) then
+                PJudge:Load( Jud_CPUPlr )
+            else
+                if PJudge and k ~= 1 then 
+                    PJudge:Load( THEME:GetPath( EC_GRAPHICS, '', '_Judgments/'..judgmentFontList[k] ))
+                else
+                    PJudge:Load( Jud_Normal )
+                end   
             end
             
             --Hold judgment
