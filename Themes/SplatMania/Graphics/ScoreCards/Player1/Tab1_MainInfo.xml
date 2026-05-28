@@ -95,7 +95,7 @@
         end" 
         />
 
-        <Layer Font="Splat2" Text="Score:"
+        <Layer Font="Splat2" Text="?.??%"
         OnCommand="%function(self)
         self:zoom(2.3);
         self:horizalign('right')
@@ -106,9 +106,9 @@
         end"
         />
 
-        <Layer Font="Splat2" Text="Score:"
+        <Layer Font="Splat2" Text="0p"
         OnCommand="%function(self)
-        self:zoom(1.7);
+        self:zoom(1.4);
         self:horizalign('right')
         self:y(-190);
         self:shadowlength(0)
