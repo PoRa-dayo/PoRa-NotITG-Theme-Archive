@@ -26,8 +26,9 @@ end"> <children>
 				Font="Splat2Stroke" Text=""
 				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
 				InitCommand="zoom,0.3;shadowlength,2;horizalign,left;y,20;x,80;sleep,0.1;queuecommand,Update"
+                CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
 				UpdateCommand="%function(self)
-				if GAMESTATE:IsHumanPlayer(PLAYER_1) then
+				if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 					for i=1,table.getn(DifficultyNames) do
 						if PlrDiff(PLAYER_1) == i then
 							self:settext( DifficultyNames[i+1][2] )
@@ -42,11 +43,11 @@ end"> <children>
 				Font="Paintball" Text=""
 				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
 				InitCommand="zoom,0.4;shadowlength,1;sleep,0.1;queuecommand,Update"
+                CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
 				UpdateCommand="%function(self)
-				if GAMESTATE:IsHumanPlayer(PLAYER_1) and GAMESTATE:GetCurrentSteps(PLAYER_1) then
+				if GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:GetCurrentSteps(PLAYER_1) then
                     self:settext( GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter() )
 				end
-				self:sleep(1)
 				end"
 			/>
 
@@ -67,8 +68,9 @@ end"> <children>
 				Font="Splat2Stroke" Text=""
 				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
 				InitCommand="zoom,0.3;shadowlength,2;horizalign,left;y,20;x,-130;sleep,0.1;queuecommand,Update"
+                CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
 				UpdateCommand="%function(self)
-				if GAMESTATE:IsHumanPlayer(PLAYER_2) then
+				if GAMESTATE:IsPlayerEnabled(PLAYER_2) then
 					for i=1,table.getn(DifficultyNames) do
 						if PlrDiff(PLAYER_2) == i then
 							self:settext( DifficultyNames[i+1][2] )
@@ -83,11 +85,11 @@ end"> <children>
 				Font="Paintball" Text=""
 				Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
 				InitCommand="zoom,0.4;shadowlength,1;sleep,0.1;queuecommand,Update"
+                CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
 				UpdateCommand="%function(self)
-				if GAMESTATE:IsHumanPlayer(PLAYER_2) and GAMESTATE:GetCurrentSteps(PLAYER_2) then
+				if GAMESTATE:IsPlayerEnabled(PLAYER_2) and GAMESTATE:GetCurrentSteps(PLAYER_2) then
                     self:settext( GAMESTATE:GetCurrentSteps(PLAYER_2):GetMeter() )
 				end
-				self:sleep(1)
 				end"
 			/>
 
