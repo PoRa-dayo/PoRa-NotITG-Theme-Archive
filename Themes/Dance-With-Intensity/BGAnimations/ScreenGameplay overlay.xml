@@ -148,7 +148,7 @@ oh and this approach means I can use accurate fonts too.
         		self:settext(' ')
         	end
 		end"
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsCourseMode()"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
 		ScoreChangedP1MessageCommand="%function(self)
 		local Pr = PROFILEMAN:GetMachineProfile():GetSaved()
         	if Pr.DWIPercentageShow then
@@ -233,7 +233,7 @@ oh and this approach means I can use accurate fonts too.
         		self:settext(' ')
         	end
 		end"
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsCourseMode()"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
 		ScoreChangedP2MessageCommand="%function(self)
 		local Pr = PROFILEMAN:GetMachineProfile():GetSaved()
         	if Pr.DWIPercentageShow then
