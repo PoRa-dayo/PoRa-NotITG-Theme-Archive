@@ -186,6 +186,7 @@ end"> <children>
     <Layer
 			Type="BitmapText"
 			Font="Paintball"
+            Conditon="GAMESTATE:IsCourseMode()"
 			OnCommand="%function(self)
                 local songind = GAMESTATE:GetCourseSongIndex()
                 if songind then

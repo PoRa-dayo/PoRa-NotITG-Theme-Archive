@@ -152,12 +152,12 @@
 		InitCommand="animate,0;playcommand,UpdateStart"
 		CurrentSongChangedMessageCommand="playcommand,UpdateStart"
 		UpdateStartCommand="%function(self)
-				self:finishtweening()
-				self:accelerate(0.1)
-				self:x(-10)
-				self:diffusealpha(0)
-				self:sleep(0.001)
-				self:queuecommand('Update')
+            self:finishtweening()
+            self:accelerate(0.1)
+            self:x(-10)
+            self:diffusealpha(0)
+            self:sleep(0.001)
+            self:queuecommand('Update')
 		end"
 		UpdateCommand="%function(self)
 			self:x(20)
@@ -351,11 +351,14 @@
                     if GAMESTATE:GetCurrentSong() then
                         if panep1 then scoretxt1 = panep1:GetChild(''):GetChild('MachineHighScoreText'):GetText() end
                         if panep2 then scoretxt2 = panep2:GetChild(''):GetChild('MachineHighScoreText'):GetText() end
+                        self:hidden(0)
                     elseif GAMESTATE:GetCurrentCourse() then
                         if panep1 then scoretxt1 = panep1:GetChild(''):GetChild('CourseMachineHighScoreText'):GetText() end
                         if panep2 then scoretxt2 = panep2:GetChild(''):GetChild('CourseMachineHighScoreText'):GetText() end
+                        self:hidden(0)
+                    else
+                        self:hidden(1)
                     end
-                    self:hidden(0)
                     self:diffuse(1,1,1,0)
                     self:decelerate(0.1)
                 else
