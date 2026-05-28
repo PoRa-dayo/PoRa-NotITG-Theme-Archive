@@ -25,7 +25,7 @@
 		OnCommand="queuecommand,Update"
 		UpdateCommand="%GameplayBPM"
 	/>
-    <ActorFrame FirstUpdateCommand="%Gameplay" Command="%function(self)
+    <ActorFrame FirstUpdateCommand="%Gameplay" CurrentSongChangedMessageCommand="%GameplayInit" Command="%function(self)
         GameplayInit(self)
         self:stopeffect()
         if FUCK_EXE then
