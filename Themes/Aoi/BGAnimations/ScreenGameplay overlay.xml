@@ -5,5 +5,5 @@
 		OnCommand="%function(self)
 		end"
 	/>
-    <ActorFrame Command="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
+    <ActorFrame Command="%GameplayInit" CurrentSongChangedMessageCommand="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
 </children></ActorFrame>
