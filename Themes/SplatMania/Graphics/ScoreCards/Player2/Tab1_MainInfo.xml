@@ -1,7 +1,26 @@
 <ActorFrame><children>
+        <Layer File="../Failed" OnCommand="y,265;x,600;diffusealpha,0;zoom,2;sleep,2;queuecommand,CheckForFail"
+        CheckForFailCommand="%function(self)
+        if Player2Failed then
+            self:bounceend(0.5)
+            self:zoom(1)
+            self:diffusealpha(1)
+        end
+        end"
+        />
+        
+        <Layer File="../Success" OnCommand="y,265;x,600;diffusealpha,0;zoom,2;sleep,2;queuecommand,CheckForFail"
+        CheckForFailCommand="%function(self)
+        if not Player2Failed then
+            self:bounceend(0.5)
+            self:zoom(1)
+            self:diffusealpha(1)
+        end
+        end"
+        />
         <Layer Font="Splat2" Text="Player 2" OnCommand="shadowlength,1;zoom,2.8;y,-460;x,-618" />
-        <Layer Font="Splat2" Text="Score:" OnCommand="shadowlength,1;zoom,1.8;y,-160;x,428" />
-        <Layer Font="Splat2" Text="Rank" OnCommand="shadowlength,1;zoom,2.2;y,-30;x,600" />
+        <Layer Font="Splat2" Text="Score:" OnCommand="shadowlength,1;zoom,1.8;y,-80;x,428" />
+        <Layer Font="Splat2" Text="Rank" OnCommand="shadowlength,1;zoom,2.2;y,50;x,600" />
         <Layer Font="Splat2" Text="@SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP2'):GetText()" OnCommand="shadowlength,1;zoom,1.4;y,480;x,-780;horizalign,left;maxwidth,SCREEN_WIDTH" />
 
         <Layer File="@ThemeFile('Judge/'..THEME:GetCurLanguage() )"
@@ -67,12 +86,20 @@
         self:settext( 'x  '..GetPSStageStats(PLAYER_2):GetHoldNoteScores(1) )
         end" 
         />
+        
+        <!-- Mines -->
+        <Layer Font="Splat2" Text="0"
+        InitCommand="horizalign,left;draworder,90;shadowlength,0;queuecommand,ShowScore;zoom,1.2;y,-180;x,410;maxwidth,180"
+        ShowScoreCommand="%function(self)
+        self:settext( SCREENMAN:GetTopScreen():GetChild('MinesTextP2'):GetText() )
+        end" 
+        />
 
         <Layer Font="Splat2" Text="Score:"
         OnCommand="%function(self)
         self:zoom(2.3);
         self:horizalign('right')
-        self:y(-170);
+        self:y(-90);
         self:shadowlength(0)
         self:x(500*1.8);
         CalculatePercentage(self, PLAYER_2, 'Cur')
@@ -83,7 +110,7 @@
         OnCommand="%function(self)
         self:zoom(1.7);
         self:horizalign('right')
-        self:y(-270);
+        self:y(-190);
         self:shadowlength(0)
         self:x(500*1.8);
         self:settext( GetScore(PLAYER_2)..'p' )

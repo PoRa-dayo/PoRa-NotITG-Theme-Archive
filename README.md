@@ -268,6 +268,7 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -Added modernized noteskin, judgment font, hold judgment, and Music Rate customization.\
 -Fixed the error where the Long/Marathon pop-up in song selection screen keeps getting bigger if you switch through songs rapidly, also changed its location.\
 -A "Success!" rank is added to the evaluation screen for when you lifebar pass the song. The song banner and player mods are also added there.\
+-Added mine counter in the evaluation screen similar to SplatMania 0.5.0.\
 -Fully overhauled the UI of the lifebar, difficulty counter, etc. during non-mods gameplay.\
 -Resized the default judgment textures and changed the judgment tween accordingly so that it scales well with most other judgments out there.\
 -Made the music wheel highlight in song selection screen clearer, and made it not disappear when entering sort mode.\
