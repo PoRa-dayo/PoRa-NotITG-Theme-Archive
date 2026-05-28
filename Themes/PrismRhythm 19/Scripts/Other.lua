@@ -533,10 +533,9 @@ function AwesomeModeSet(n)
 	end
 end
 
-function Screen() return SCREENMAN:GetTopScreen() end
 
 function GameplayBPM(self)
-	local b = Screen():GetChild('BPMDisplay')
+	local b = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
 	if b then b = b:GetChild('Text'):GetText() end
 	if b then
 		self:settext(b)

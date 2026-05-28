@@ -239,7 +239,7 @@
 			OnCommand="animate,0;setstate,1"
 	/>
 
-    <ActorFrame Command="%GameplayInit" FirstUpdateCommand="%Gameplay" UnknwonHoldMessageCommand="%HoldCheck" AssignHoldsCommand="%AssignHold"/>
+    <ActorFrame Command="%GameplayInit" CurrentSongChangedMessageCommand="%GameplayInit" FirstUpdateCommand="%Gameplay" UnknwonHoldMessageCommand="%HoldCheck" AssignHoldsCommand="%AssignHold"/>
     <ActorFrame
 		OnCommand="%function(self)
 			self:stopeffect()
