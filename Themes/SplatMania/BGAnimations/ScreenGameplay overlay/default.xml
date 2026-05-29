@@ -277,7 +277,7 @@ end"> <children>
 			UpdateCommand="%function(self)
 			local timeintimer = self:GetSecsIntoEffect();
             if GAMESTATE:GetCurrentSong() then
-                local totaltimer = GAMESTATE:GetCurrentSong():MusicLengthSeconds()
+                local totaltimer = GAMESTATE:GetCurrentSong():StepsLengthSeconds()
                 self:effectclock('music')
                 if totaltimer >= 3600 then
                     self:settext(SecondsToHHMMSS(totaltimer-timeintimer))

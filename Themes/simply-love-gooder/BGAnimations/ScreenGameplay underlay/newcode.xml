@@ -248,7 +248,7 @@ end"
 			OnCommand="y,SCREEN_TOP+16;x,SCREEN_CENTER_X+(SCREEN_WIDTH*160/640-35);zoom,0.25;shadowlength,0;playcommand,Update"
 			CurrentSongChangedMessageCommand="playcommand,Update"
 			UpdateCommand="%function(self)
-			local totaltimer = GAMESTATE:GetCurrentSong():MusicLengthSeconds()
+			local totaltimer = GAMESTATE:GetCurrentSong():StepsLengthSeconds()
 
 			self:settext(SecondsToMMSS(totaltimer))
 			end"
@@ -266,7 +266,7 @@ end"
 			self:effectclock('music')
 			ColorRGBCommand(self, 1)
 			self:diffusealpha(0)
-			if timeintimer >= GAMESTATE:GetCurrentSong():MusicLengthSeconds()/2 and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
+			if timeintimer >= GAMESTATE:GetCurrentSong():StepsLengthSeconds()/2 and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
 				if HalfwayCheck == 0 then
 					self:diffusealpha(1)
 					self:decelerate(1)
@@ -297,7 +297,7 @@ end"
 			self:effectclock('music')
 			self:diffusealpha(0)
 			self:shadowlength(1)
-			if timeintimer >= GAMESTATE:GetCurrentSong():MusicLengthSeconds()/2 and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
+			if timeintimer >= GAMESTATE:GetCurrentSong():StepsLengthSeconds()/2 and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
 				if HalfwayCheck == 0 then
 					self:settext('Half-Way!')
 					self:diffusealpha(1)
@@ -330,7 +330,7 @@ end"
 			self:effectclock('music')
 			ColorRGBCommand(self, 1)
 			self:diffusealpha(0)
-			if timeintimer >= GAMESTATE:GetCurrentSong():MusicLengthSeconds()*.90 and GAMESTATE:GetCurrentSong():IsMarathon() and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
+			if timeintimer >= GAMESTATE:GetCurrentSong():StepsLengthSeconds()*.90 and GAMESTATE:GetCurrentSong():IsMarathon() and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
 				if HalfwayCheck == 0 then
 					self:diffusealpha(1)
 					self:decelerate(1)
@@ -361,7 +361,7 @@ end"
 			self:effectclock('music')
 			self:diffusealpha(0)
 			self:shadowlength(1)
-			if timeintimer >= GAMESTATE:GetCurrentSong():MusicLengthSeconds()*.90 and GAMESTATE:GetCurrentSong():IsMarathon() and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
+			if timeintimer >= GAMESTATE:GetCurrentSong():StepsLengthSeconds()*.90 and GAMESTATE:GetCurrentSong():IsMarathon() and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
 				if HalfwayCheck == 0 then
 					self:settext('You almost have it! Keep going!')
 					self:diffusealpha(1)

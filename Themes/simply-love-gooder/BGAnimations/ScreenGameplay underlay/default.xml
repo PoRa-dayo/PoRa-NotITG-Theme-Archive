@@ -265,7 +265,7 @@ end"
 			UpdateCommand="%function(self)
             local songg = GAMESTATE:GetCurrentSong()
             if not songg then return end
-			local totaltimer = songg:MusicLengthSeconds()
+			local totaltimer = songg:StepsLengthSeconds()
 
 			self:settext(SecondsToMMSS(totaltimer))
 			end"
@@ -286,7 +286,7 @@ end"
 			self:diffusealpha(0)
             local songg = GAMESTATE:GetCurrentSong()
             if not songg then return end
-			if timeintimer >= songg:MusicLengthSeconds()/2 and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
+			if timeintimer >= songg:StepsLengthSeconds()/2 and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
 				if HalfwayCheck == 0 then
 					self:diffusealpha(1)
 					self:decelerate(1)
@@ -319,7 +319,7 @@ end"
 			self:shadowlength(1)
             local songg = GAMESTATE:GetCurrentSong()
             if not songg then return end
-			if timeintimer >= songg:MusicLengthSeconds()/2 and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
+			if timeintimer >= songg:StepsLengthSeconds()/2 and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
 				if HalfwayCheck == 0 then
 					self:settext('Half-Way!')
 					self:diffusealpha(1)
@@ -354,7 +354,7 @@ end"
 			self:diffusealpha(0)
             local songg = GAMESTATE:GetCurrentSong()
             if not songg then return end
-			if timeintimer >= songg:MusicLengthSeconds()*.90 and songg:IsMarathon() and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
+			if timeintimer >= songg:StepsLengthSeconds()*.90 and songg:IsMarathon() and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
 				if HalfwayCheck == 0 then
 					self:diffusealpha(1)
 					self:decelerate(1)
@@ -387,7 +387,7 @@ end"
 			self:shadowlength(1)
             local songg = GAMESTATE:GetCurrentSong()
             if not songg then return end
-			if timeintimer >= songg:MusicLengthSeconds()*.90 and songg:IsMarathon() and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
+			if timeintimer >= songg:StepsLengthSeconds()*.90 and songg:IsMarathon() and not GAMESTATE:IsCourseMode() and JUVMProfile.JUVMDisplayHalfway then
 				if HalfwayCheck == 0 then
 					self:settext('You almost have it! Keep going!')
 					self:diffusealpha(1)

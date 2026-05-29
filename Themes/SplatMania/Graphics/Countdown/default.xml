@@ -26,7 +26,7 @@ end"><children>
 			UpdateCommand="%function(self)
 			local timeintimer = self:GetSecsIntoEffect();
             if GAMESTATE:GetCurrentSong() then
-                local totaltimer = GAMESTATE:GetCurrentSong():MusicLengthSeconds()
+                local totaltimer = GAMESTATE:GetCurrentSong():StepsLengthSeconds()
                 self:effectclock('music')
                 if not Profile().SplatManiaCountdownDisabled and timeintimer >= totaltimer-11 and CheckForTimer == false then MESSAGEMAN:Broadcast('CountdownBegin') CheckForTimer = true; end
                 if timeintimer < totaltimer-11 and CheckForTimer == true then CheckForTimer = false; MESSAGEMAN:Broadcast('CountdownHide'); end

@@ -239,6 +239,7 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -Marathon Mode no longer shows a bunch of errors when starting a course.\
 -Slightly altered the UI of course contents.\
 -Courses now redirect you to evaluation screen instead of back to the title screen after clearing.\
+-The song progress timer now uses NotITG's StepsLengthSeconds instead of MusicLengthSeconds for more accuracy.\
 -Added offset plot and spellcard viewer.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
@@ -275,6 +276,7 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -No more long wait after pressing start to enter song options.\
 -Added options to disable the Countdown near the end of the song, as well as the Coin System.\
 -Removed the custom Language Settings menu as it doesn't work, so the built-in Language options is used now. I don't know if it's even possible to make it keep picking the language you last used by default every time you start the game though.\
+-The song progress timer now uses NotITG's StepsLengthSeconds instead of MusicLengthSeconds for more accuracy.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 <img width="200" alt="NotITG-v4 9 1_69H7WSJs1d" src="https://github.com/user-attachments/assets/1846daee-f457-4cdf-8b6f-4630d29df30b" />
