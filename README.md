@@ -49,7 +49,7 @@ Pretty insane how functional this theme still is even on NotITG current version
 <img width="200" height="150" alt="NotITG-v4 9 1_ydQ8VCPOex" src="https://github.com/user-attachments/assets/0f8bc8c2-9e2a-4ae8-aabc-0c3b48679eea" />
 <img width="200" height="150" alt="NotITG-v4 9 1_13CBcIFn30" src="https://github.com/user-attachments/assets/7767509a-61a6-48d3-a398-cc5428121afe" />
 <img width="200" height="150" alt="NotITG-v4 9 1_3LoP7zfpwd" src="https://github.com/user-attachments/assets/d8575bbb-d00c-4c00-af22-ed18defb8526" />
-<img width="200" height="150" alt="NotITG-v4 9 1_IV6PgA7Zjo" src="https://github.com/user-attachments/assets/7b6fd3a0-f78b-448d-acda-8401e8c622c3" />
+<img width="200" height="150" alt="NotITG-v4 9 1_QnEUawLGTH" src="https://github.com/user-attachments/assets/0ecbb2f7-db8e-4a2d-aa72-329da4e08376" />
 <img width="200" height="150" alt="NotITG-v4 9 1_5IrQY1r7ci" src="https://github.com/user-attachments/assets/a41efbde-30bb-485b-91d0-395f90f3eb4e" />
 
 
