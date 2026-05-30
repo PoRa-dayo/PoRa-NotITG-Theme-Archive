@@ -17,6 +17,7 @@
     SCDiffZoom = 0.6*1.1
     SCPercentZoom = 0.55*1.1
     SCJudgeZoom = 0.5*1.1
+    SCTitleMaxWidth = 294/.75*.85
     
     
 	function math.round(num, numDecimalPlaces)
@@ -803,7 +804,7 @@ end"><children>
 					_G['oplot_s'..pn..'_title']:shadowlength(0)
 					_G['oplot_s'..pn..'_title']:diffuse( color[1], color[2], color[3], 1 )
 					_G['oplot_s'..pn..'_title']:zoom(SCTitleZoom)
-					_G['oplot_s'..pn..'_title']:maxwidth(294/.75)
+					_G['oplot_s'..pn..'_title']:maxwidth(SCTitleMaxWidth)
 					_G['oplot_s'..pn..'_title']:settext( oplot_spellCards[pn][ curcard[pn] ].Name )
 					
 					if tonumber(GAMESTATE:GetVersionDate()) >= 20181211 then
@@ -1624,7 +1625,7 @@ end"><children>
 					_G['oplot_s'..pn..'_title']:shadowlength(0)
 					_G['oplot_s'..pn..'_title']:diffuse( color[1], color[2], color[3], 1 )
 					_G['oplot_s'..pn..'_title']:zoom(SCTitleZoom)
-					_G['oplot_s'..pn..'_title']:maxwidth(294/.75)
+					_G['oplot_s'..pn..'_title']:maxwidth(SCTitleMaxWidth)
 					_G['oplot_s'..pn..'_title']:settext( oplot_spellCards[pn][ curcard[pn] ].Name )
 					
 					if tonumber(GAMESTATE:GetVersionDate()) >= 20181211 then
