@@ -184,7 +184,9 @@ OITGThemerFallback is a fallback theme that's made to be closer to the base SM3.
 -Little triangles are shown in song selection screen whenever there's an easier or harder difficulty available.\
 -Machine Percentage High Score is now shown in song selection screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
--Added step artist display in song selection screen.
+-Added step artist display in song selection screen.\
+-Added offset plot and spellcard viewer in results screen.\
+-Added a mine counter next to the misses counter in results screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_fI2Rc4ccEX" src="https://github.com/user-attachments/assets/42d665a7-7956-4a56-b381-5b2600e8456e" />
 <img width="200" height="150" alt="NotITG-v4 9 1_rAmhAt1GeF" src="https://github.com/user-attachments/assets/7e4efa9c-987e-486a-ba07-4e89dbb3dff8" />
@@ -240,7 +242,7 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -Slightly altered the UI of course contents.\
 -Courses now redirect you to evaluation screen instead of back to the title screen after clearing.\
 -The song progress timer now uses NotITG's StepsLengthSeconds instead of MusicLengthSeconds for more accuracy.\
--Added offset plot and spellcard viewer.\
+-Added offset plot and spellcard viewer in results screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_xlioNAwSXk" src="https://github.com/user-attachments/assets/20fe8442-5a88-4921-bdcb-3528798df37e" />
