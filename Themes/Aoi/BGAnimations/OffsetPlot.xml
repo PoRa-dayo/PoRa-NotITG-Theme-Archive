@@ -1,6 +1,18 @@
 <ActorFrame 
 	Condition="FUCK_EXE"
 	InitCommand="%function(self)
+    
+	function math.round(num, numDecimalPlaces)
+	  local mult = 10^(numDecimalPlaces or 0)
+	  return math.floor(num * mult + 0.5) / mult
+	end
+	
+	function math.clamp(val, min, max)
+		if val < min then return min end
+		if val > max then return max end
+		return val
+	end
+	
     P1AddX = -36
     P1AddY = -75
     P1Zoom = 0.8
@@ -19,18 +31,12 @@
     SCJudgeZoom = 0.5*1.1
     SCTitleMaxWidth = 294/.75*.85
     
+    EarlyLateZoom = 0.4*1.3
+    EarlyAddX = 0
+    EarlyAddY = 5
+    LateAddX = 0
+    LateAddY = 5
     
-	function math.round(num, numDecimalPlaces)
-	  local mult = 10^(numDecimalPlaces or 0)
-	  return math.floor(num * mult + 0.5) / mult
-	end
-	
-	function math.clamp(val, min, max)
-		if val < min then return min end
-		if val > max then return max end
-		return val
-	end
-	
 	oplot_plotWidth, oplot_plotHeight = 301,112
 	oplot_plotWidthSml, oplot_plotHeightSml = 150,112
 	oplot_xOffset, oplot_yOffset = 150, 0
@@ -957,13 +963,13 @@ end"><children>
 
 		<!-- Early/late markers -->
 		<Layer Type="BitmapText" File="_shared1"
-			OnCommand="xy,oplot_plotWidth/2,-oplot_plotHeight/2-6;shadowlength,0;zoom,0.4;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
+			OnCommand="xy,oplot_plotWidth/2+EarlyAddX,-oplot_plotHeight/2-6+EarlyAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		<Layer Type="BitmapText" File="_shared1"
-			OnCommand="xy,oplot_plotWidth/2,oplot_plotHeight/2-6;shadowlength,0;zoom,0.4;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
+			OnCommand="xy,oplot_plotWidth/2+LateAddX,oplot_plotHeight/2-6+LateAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
@@ -1776,13 +1782,13 @@ end"><children>
 
 		<!-- Early/late markers -->
 		<Layer Type="BitmapText" File="_shared1"
-			OnCommand="xy,oplot_plotWidth/2,-oplot_plotHeight/2-6;shadowlength,0;zoom,0.4;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
+			OnCommand="xy,oplot_plotWidth/2+EarlyAddX,-oplot_plotHeight/2-6+EarlyAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		<Layer Type="BitmapText" File="_shared1"
-			OnCommand="xy,oplot_plotWidth/2,oplot_plotHeight/2-6;shadowlength,0;zoom,0.4;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
+			OnCommand="xy,oplot_plotWidth/2+LateAddX,oplot_plotHeight/2-6+LateAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"

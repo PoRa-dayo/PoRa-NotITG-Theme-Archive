@@ -22,7 +22,7 @@
         MineTotal = string.gsub(MineTotal,' ','')
         local MineHit = tostring(tonumber(MineTotal) - tonumber(MinePass))
         if tonumber(MineHit) > 0 then
-            self:settext('(+'..MineHit..')')
+            self:settext('+'..MineHit)
         end
     end"/>
     
@@ -46,7 +46,7 @@
         MineTotal = string.gsub(MineTotal,' ','')
         local MineHit = tostring(tonumber(MineTotal) - tonumber(MinePass))
         if tonumber(MineHit) > 0 then
-            self:settext('(+'..MineHit..')')
+            self:settext('+'..MineHit)
         end
     end"/>
 </children> </ActorFrame>
