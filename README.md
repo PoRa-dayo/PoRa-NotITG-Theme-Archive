@@ -112,7 +112,9 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Machine Percentage High Score is now shown in song selection screen when Show Score in Select Music option is enabled.\
 -Added the song title in the evaluation screen to account for charts with no banners.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
--Added step artist display in song selection screen.
+-Added step artist display in song selection screen.\
+-Added offset plot and spellcard viewer in results screen.\
+-Added back OK counter, as well as mine counter next to the misses counter in results screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_yNGDFvPqYA" src="https://github.com/user-attachments/assets/a0337299-a99f-4f32-8a6e-25090ab40973" />
 <img width="200" height="150" alt="NotITG-v4 9 1_Odd72sXTZe" src="https://github.com/user-attachments/assets/6b90feff-2ba1-4053-b787-ab8c8ec3daad" />

@@ -92,4 +92,9 @@
             <Layer  File="ProfileInfo.xml" />
 
         <Layer File="OptionIcons.xml" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+205" />
+        
+        
+    <!-- NotITG Offset Plot -->
+            
+    <Layer File="OffsetPlot" />
 </children></ActorFrame>

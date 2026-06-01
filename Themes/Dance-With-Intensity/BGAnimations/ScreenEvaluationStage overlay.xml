@@ -92,7 +92,7 @@
 	<Layer
 		Font="_sg stroke"
 		Text="0"
-		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+115;zoom,0.5"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+125;zoom,0.5"
 		OnCommand="%function(self)
 			self:settext( 'TOTAL' )
 		end"
@@ -100,7 +100,7 @@
 	<Layer
 		Font="_sg stroke"
 		Text="0"
-		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+138;zoom,0.5"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+148;zoom,0.5"
 		OnCommand="%function(self)
 			self:settext( 'SCORE' )
 		end"
@@ -108,7 +108,7 @@
 	<Layer
 		Font="_sg stroke"
 		Text="0"
-		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+160;zoom,0.5"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+170;zoom,0.5"
 		OnCommand="%function(self)
 			self:settext( 'PERCENTAGE' )
 		end"
@@ -117,7 +117,7 @@
 		Font="_score"
 		Text="0"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-		InitCommand="diffuse,68/255,187/255,238/255,1;x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y+138;zoom,0;horizalign,right;draworder,90;sleep,0.1;queuecommand,ShowScore"
+		InitCommand="diffuse,68/255,187/255,238/255,1;x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y+148;zoom,0;horizalign,right;draworder,90;sleep,0.1;queuecommand,ShowScore"
 		ScoreChangedP1MessageCommand="%function(self)
 			self:settext( GetScore(PLAYER_1) )
 		end"
@@ -134,7 +134,7 @@
 		Font="_score"
 		Text="0"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-		InitCommand="diffuse,68/255,187/255,238/255,1;x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y+115;zoom,0;horizalign,right;draworder,90;sleep,0.1;queuecommand,ShowScore"
+		InitCommand="diffuse,68/255,187/255,238/255,1;x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y+125;zoom,0;horizalign,right;draworder,90;sleep,0.1;queuecommand,ShowScore"
 		ScoreChangedP1MessageCommand="%function(self)
 			self:settext( GetTotalScore(PLAYER_1) )
 		end"
@@ -150,7 +150,7 @@
 	<Layer
         Font="_gpscore P1"
         Text=" 0.00%"
-        InitCommand="x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y+160;zoom,1;horizalign,right;draworder,90;sleep,0.1;"
+        InitCommand="x,SCREEN_CENTER_X-60;y,SCREEN_CENTER_Y+170;zoom,1;horizalign,right;draworder,90;sleep,0.1;"
         Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
         OnCommand="%function(self)
         CalculatePercentage(self, PLAYER_1, 'Cur')
@@ -168,7 +168,7 @@
 		Font="_score"
 		Text="0"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-		InitCommand="diffuse,238/255,221/255,0,1;x,SCREEN_CENTER_X+60;y,SCREEN_CENTER_Y+138;zoom,0;horizalign,left;draworder,90;sleep,0.1;queuecommand,ShowScore"
+		InitCommand="diffuse,238/255,221/255,0,1;x,SCREEN_CENTER_X+60;y,SCREEN_CENTER_Y+148;zoom,0;horizalign,left;draworder,90;sleep,0.1;queuecommand,ShowScore"
 		ScoreChangedP1MessageCommand="%function(self)
 			self:settext( GetScore(PLAYER_2) )
 		end"
@@ -209,7 +209,7 @@
         Font="_score"
         Text="0"
         Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-        InitCommand="diffuse,238/255,221/255,0,1;x,SCREEN_CENTER_X+60;y,SCREEN_CENTER_Y+115;zoom,0;horizalign,left;draworder,90;sleep,0.1;queuecommand,ShowScore"
+        InitCommand="diffuse,238/255,221/255,0,1;x,SCREEN_CENTER_X+60;y,SCREEN_CENTER_Y+125;zoom,0;horizalign,left;draworder,90;sleep,0.1;queuecommand,ShowScore"
         ScoreChangedP1MessageCommand="%function(self)
             self:settext( GetTotalScore(PLAYER_2) )
         end"
@@ -225,7 +225,7 @@
 	<Layer
         Font="_gpscore P2"
         Text=" 0.00%"
-        InitCommand="x,SCREEN_CENTER_X+60;y,SCREEN_CENTER_Y+160;zoom,1;horizalign,left;draworder,90;sleep,0.1"
+        InitCommand="x,SCREEN_CENTER_X+60;y,SCREEN_CENTER_Y+170;zoom,1;horizalign,left;draworder,90;sleep,0.1"
         Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
         OnCommand="%function(self)
         CalculatePercentage(self, PLAYER_2, 'Cur')
@@ -240,6 +240,56 @@
         />
 
         <Layer File="ScoresEvaluationStage.xml" OnCommand="%function(self) ScoreType = 'Stage'; end" />
+        
+        
+    <!-- MINES -->
+    <Layer Font="_sg stroke" Text="" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X-70)
+        self:y(SCREEN_CENTER_Y+78)
+        self:shadowlength(0)
+        self:diffuse(1,0,0,1)
+        self:horizalign('right')
+        self:zoom(0)
+        self:sleep(0.125*7)
+        self:queuecommand('CalcMine')
+        self:bounceend(0.4)
+        self:zoom(0.4)
+    end"
+    CalcMineCommand="%function(self)
+        local MineTxt = SCREENMAN:GetTopScreen():GetChild('MinesTextP1'):GetText()
+        local MinePass = string.gsub(MineTxt, '/.*', '')
+        MinePass = string.gsub(MinePass,' ','')
+        local MineTotal = string.gsub(MineTxt, '^.*/', '')
+        MineTotal = string.gsub(MineTotal,' ','')
+        local MineHit = tostring(tonumber(MineTotal) - tonumber(MinePass))
+        if tonumber(MineHit) > 0 then
+            self:settext('+'..MineHit)
+        end
+    end"/>
+    
+    <Layer Font="_sg stroke" Text="" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X+70)
+        self:y(SCREEN_CENTER_Y+78)
+        self:shadowlength(0)
+        self:diffuse(1,0,0,1)
+        self:horizalign('left')
+        self:zoom(0)
+        self:sleep(0.125*7)
+        self:queuecommand('CalcMine')
+        self:bounceend(0.4)
+        self:zoom(0.4)
+    end"
+    CalcMineCommand="%function(self)
+        local MineTxt = SCREENMAN:GetTopScreen():GetChild('MinesTextP2'):GetText()
+        local MinePass = string.gsub(MineTxt, '/.*', '')
+        MinePass = string.gsub(MinePass,' ','')
+        local MineTotal = string.gsub(MineTxt, '^.*/', '')
+        MineTotal = string.gsub(MineTotal,' ','')
+        local MineHit = tostring(tonumber(MineTotal) - tonumber(MinePass))
+        if tonumber(MineHit) > 0 then
+            self:settext('+'..MineHit)
+        end
+    end"/>
 
 		<!-- VOICE JUDGMENT STUFF -->
 
@@ -272,11 +322,17 @@
             Font="_eval combo"
             Text="Max Combo 2"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            InitCommand="x,SCREEN_CENTER_X+260;y,SCREEN_CENTER_Y+67;diffuse,1,1,0,1;zoom,0.8"
+            InitCommand="x,SCREEN_CENTER_X+270;y,SCREEN_CENTER_Y+67;diffuse,1,1,0,1;zoom,0.8"
             OnCommand="%function(self) MaxComboGlow(self, PLAYER_2) end" />
 
             <!-- Radar Values -->
 
             <Layer File="OptionIcons.xml" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+205" />
+            
+            
+            
+    <!-- NotITG Offset Plot -->
+            
+    <Layer File="OffsetPlot" />
 
 </children></ActorFrame>

@@ -2,7 +2,7 @@
 	<Layer File="OffsetPlot" />
     
     
-    <Layer Type="BitmapText" Text="" Font="ScreenManager credits" OnCommand="%function(self)
+    <Layer Type="BitmapText" Text="" Font="ScreenManager credits" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
         self:x(SCREEN_CENTER_X+(155-320-55))
         self:y(SCREEN_CENTER_Y+(367-240))
         self:zoom(0.8)
@@ -26,7 +26,7 @@
         end
     end"/>
     
-    <Layer Type="BitmapText" Text="" Font="ScreenManager credits" OnCommand="%function(self)
+    <Layer Type="BitmapText" Text="" Font="ScreenManager credits" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
         self:x(SCREEN_CENTER_X+(485-320+55))
         self:y(SCREEN_CENTER_Y+(367-240))
         self:zoom(0.8)
