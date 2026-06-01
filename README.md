@@ -113,6 +113,7 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Added the song title in the evaluation screen to account for charts with no banners.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.\
+-Added back the percentage in results screen of course mode.\
 -Added offset plot and spellcard viewer in results screen.\
 -Added back OK counter, as well as mine counter next to the misses counter in results screen.
 
