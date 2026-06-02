@@ -119,7 +119,7 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Added offset plot and spellcard viewer in results screen.\
 -Added back OK counter, as well as mine counter next to the misses counter in results screen.
 
-<img width="200" height="150" alt="NotITG-v4 9 1_yNGDFvPqYA" src="https://github.com/user-attachments/assets/a0337299-a99f-4f32-8a6e-25090ab40973" />
+<img width="200" height="150" alt="NotITG-v4 9 1_84cZ519p1U" src="https://github.com/user-attachments/assets/07b5914b-0c8d-4f09-99b4-4b4b625e862a" />
 <img width="200" height="150" alt="NotITG-v4 9 1_Odd72sXTZe" src="https://github.com/user-attachments/assets/6b90feff-2ba1-4053-b787-ab8c8ec3daad" />
 <img width="200" height="150" alt="NotITG-v4 9 1_emRLmGJCsw" src="https://github.com/user-attachments/assets/509b91eb-c5d7-401d-ad51-5069370aafef" />
 <img width="200" height="150" alt="NotITG-v4 9 1_jTjLyQS3jd" src="https://github.com/user-attachments/assets/1b7b3857-42e2-4062-89d1-a8b4d8c7b432" />
