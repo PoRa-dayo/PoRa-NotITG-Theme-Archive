@@ -8,9 +8,9 @@
 			BX_DispCustomLife = {0.5, 0.5}
 			BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
 			BX_DisplayedGraph = 'Life'
-			BX_SaltyResets = 0
+            if BX_SaltyResets == nil then BX_SaltyResets = 0 end
 			
-			BX_SaltyResetPos = {}
+			if BX_SaltyResetPos == nil then BX_SaltyResetPos = {} end
             
 			BX_pss = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
 			BX_dvt = BX_pss:GetOffsetVector()

@@ -1,5 +1,9 @@
 <ActorFrame> <children>
-	<Layer File="OffsetPlot" />
+    <!-- NotITG Offset Plot -->
+    <Layer File="OffsetPlot" OffCommand="%function(self)
+        BX_SaltyResets = 0
+        BX_SaltyResetPos = {}
+    end"/>
     
     
     <Layer Type="BitmapText" Text="" Font="ScreenManager credits" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
