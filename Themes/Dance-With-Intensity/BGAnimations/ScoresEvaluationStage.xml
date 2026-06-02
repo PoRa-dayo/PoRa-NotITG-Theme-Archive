@@ -29,6 +29,11 @@
         <Layer Font="_score" Text="0" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
         InitCommand="diffuse,68/255,187/255,238/255,1;horizalign,right;draworder,90;sleep,0.01;queuecommand,ShowScore"
         ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 3, -70, 68, 6, ScoreType) end" />
+        
+        <!-- OK -->
+        <Layer Font="_score" Text="0" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+        InitCommand="diffuse,68/255,187/255,238/255,1;horizalign,right;draworder,90;sleep,0.01;queuecommand,ShowScore"
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_1, 9, -70, 95, 7, ScoreType) end" />
 
     <!-- Scores P2 -->
         <!-- Marvelous -->
@@ -60,5 +65,10 @@
         <Layer Font="_score" Text="0" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
         InitCommand="diffuse,238/255,221/255,0,1;horizalign,left;draworder,90;sleep,0.01;queuecommand,ShowScore"
         ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_2, 3, 70, 68, 6, ScoreType) end" />
+        
+        <!-- OK -->
+        <Layer Font="_score" Text="0" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+        InitCommand="diffuse,238/255,221/255,0,1;horizalign,left;draworder,90;sleep,0.01;queuecommand,ShowScore"
+        ShowScoreCommand="%function(self) RecieveTapNoteScore(self, PLAYER_2, 9, 70, 95, 7, ScoreType) end" />
 
 	</children></ActorFrame>

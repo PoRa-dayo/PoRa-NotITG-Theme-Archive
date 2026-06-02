@@ -105,7 +105,12 @@ function RecieveTapNoteScore(self, pn, n1, n2, n3, n4, name)
     	if NoteType[name] == nil then
     		self:settext('     ')
     	else
-        	self:settext( string.format('% 5d',NoteType[name]:GetTapNoteScores(n1)) )
+            if n1<9 then
+                self:settext( string.format('% 5d',NoteType[name]:GetTapNoteScores(n1)) )
+            else
+                local pnum = (pn == PLAYER_1 and 1 or 2)
+                self:settext( string.format('% 5d',SCREENMAN:GetTopScreen():GetChild('OKNumberP'..pnum):GetText()) )
+            end
         end
         self:sleep(0.125*n4)
         self:bounceend(0.4)
