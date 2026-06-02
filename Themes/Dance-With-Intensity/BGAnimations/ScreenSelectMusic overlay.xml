@@ -123,7 +123,7 @@
         <Layer
             File="diff_hint"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-            OnCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-5;diffuseshift;effectcolor1,0,0,0,0.5;effectcolor2,#FFFFFF"
+            OnCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-5;diffuseshift;effectcolor1,0,0,0,0.3;effectcolor2,#FFFFFF"
             OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
             UpdateMessageCommand="%function(self)
                 if IsEasierDifficulty(PLAYER_1) then
@@ -136,7 +136,7 @@
         <Layer
             File="diff_hint"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-            OnCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y+15;rotationz,180;diffuseshift;effectcolor1,0,0,0,0.5;effectcolor2,#FFFFFF"
+            OnCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y+15;rotationz,180;diffuseshift;effectcolor1,0,0,0,0.3;effectcolor2,#FFFFFF"
             OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
             UpdateMessageCommand="%function(self)
                 if IsHarderDifficulty(PLAYER_1) then
@@ -150,7 +150,7 @@
         <Layer
             File="diff_hint"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="x,SCREEN_CENTER_X-310;y,SCREEN_CENTER_Y-5;diffuseshift;effectcolor1,0,0,0,0.5;effectcolor2,#FFFFFF"
+            OnCommand="x,SCREEN_CENTER_X-310;y,SCREEN_CENTER_Y-5;diffuseshift;effectcolor1,0,0,0,0.3;effectcolor2,#FFFFFF"
             OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
             UpdateMessageCommand="%function(self)
                 if IsEasierDifficulty(PLAYER_2) then
@@ -163,7 +163,7 @@
         <Layer
             File="diff_hint"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="x,SCREEN_CENTER_X-310;y,SCREEN_CENTER_Y+15;rotationz,180;diffuseshift;effectcolor1,0,0,0,0.5;effectcolor2,#FFFFFF"
+            OnCommand="x,SCREEN_CENTER_X-310;y,SCREEN_CENTER_Y+15;rotationz,180;diffuseshift;effectcolor1,0,0,0,0.3;effectcolor2,#FFFFFF"
             OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
             UpdateMessageCommand="%function(self)
                 if IsHarderDifficulty(PLAYER_2) then

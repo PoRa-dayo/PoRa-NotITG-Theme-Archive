@@ -1,7 +1,7 @@
 <ActorFrame><children>
 	<ActorFrame Condition="not GAMESTATE:IsCourseMode()"><children>
 	<!-- Overlay -->
-	<Layer Type="Quad" OnCommand="sleep,5" />
+	<Layer Type="Quad" OnCommand="sleep,3" />
 	<Layer
 		Type="Quad"
 		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;stretchto,0,0,SCREEN_WIDTH+3,SCREEN_HEIGHT;diffuse,0,0,0,0"

@@ -120,7 +120,7 @@ end
 function ModFind(self, n, name)
 	if GAMESTATE:IsPlayerEnabled(n-1) then
         local ptext = SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP'..n)
-		if ptext and string.find(ptext:GetText(), name ) then
+		if ptext and string.find(string.lower(ptext:GetText()), string.lower(name) ) then
 			self:diffusealpha(1)
 		else
 			self:diffusealpha(0)

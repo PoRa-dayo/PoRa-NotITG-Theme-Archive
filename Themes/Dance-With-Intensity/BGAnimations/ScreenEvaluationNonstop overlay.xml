@@ -145,5 +145,8 @@
         
     <!-- NotITG Offset Plot -->
             
-    <Layer File="OffsetPlot" />
+    <Layer File="OffsetPlot" OffCommand="%function(self)
+        BX_SaltyResets = 0
+        BX_SaltyResetPos = {}
+    end"/>
 </children></ActorFrame>

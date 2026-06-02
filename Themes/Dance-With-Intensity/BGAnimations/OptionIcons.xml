@@ -65,8 +65,83 @@
 		<Layer File="@OpIco(2, 'turn_shuffle')" InitCommand="%function(self) ModFind(self, 2, 'Shuffle' ) end" />
 	</children></Layer>
 
+<!-- Other Mods (Custom) -->
+    
+    <Layer Type="ActorFrame" OnCommand="addx,-112;diffusealpha,1" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"><children>
+		<Layer File="@OpIco(1, 'non')"/>
+        <Layer
+            Font="_sui generis"
+            Text="SCALABLE"
+            OnCommand="%function(self)
+                self:y(2)
+                self:maxwidth(100)
+                self:shadowlength(0)
+                self:diffuse(0,0,0,1)
+                self:zoom(0.34)
+                self:zoomx(0.32)
+                local str = string.upper(NoteSkinList[modNoteSkin[1]])
+                if #str > 6 then
+                    str = string.sub(str, 1, 6)..'.'
+                end
+                self:settext(str)
+            end"
+        />
+        <Layer
+            Font="_sg stroke"
+            Text="SCALABLE"
+            OnCommand="%function(self)
+                self:y(2)
+                self:maxwidth(100)
+                self:shadowlength(0)
+                self:zoom(0.3)
+                local str = string.upper(NoteSkinList[modNoteSkin[1]])
+                if #str > 6 then
+                    str = string.sub(str, 1, 6)..'.'
+                end
+                self:settext(str)
+            end"
+        />
+	</children></Layer>
+    
+    <Layer Type="ActorFrame" OnCommand="addx,144;diffusealpha,1" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"><children>
+		<Layer File="@OpIco(2, 'non')"/>
+        <Layer
+            Font="_sui generis"
+            Text="SCALABLE"
+            OnCommand="%function(self)
+                self:y(2)
+                self:maxwidth(100)
+                self:shadowlength(0)
+                self:diffuse(0,0,0,1)
+                self:zoom(0.34)
+                self:zoomx(0.32)
+                local str = string.upper(NoteSkinList[modNoteSkin[2]])
+                if #str > 6 then
+                    str = string.sub(str, 1, 6)..'.'
+                end
+                self:settext(str)
+            end"
+        />
+        <Layer
+            Font="_sg stroke"
+            Text="SCALABLE"
+            OnCommand="%function(self)
+                self:y(2)
+                self:maxwidth(100)
+                self:shadowlength(0)
+                self:zoom(0.3)
+                local str = string.upper(NoteSkinList[modNoteSkin[2]])
+                if #str > 6 then
+                    str = string.sub(str, 1, 6)..'.'
+                end
+                self:settext(str)
+            end"
+        />
+	</children></Layer>
+    
 <!-- Other Mods -->
-	<Layer Type="ActorFrame" OnCommand="addx,-112" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"><children>
+    
+    <Layer Type="ActorFrame" OnCommand="addx,-112" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"><children>
 		<Layer File="@OpIco(1, 'arrow_little')" InitCommand="%function(self) ModFind(self, 1, 'Little' ) end" />
 		<Layer File="@OpIco(1, 'arrow_flat')" InitCommand="%function(self) ModFind(self, 1, 'Flat' ) end" />
 		<Layer File="@OpIco(1, 'arrow_solo')" InitCommand="%function(self) ModFind(self, 1, 'dwisolo' ) end" />

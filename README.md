@@ -110,10 +110,12 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Course mode's music now properly loops.\
 -Little triangles are shown in song selection screen whenever there's an easier or harder difficulty available.\
 -Machine Percentage High Score is now shown in song selection screen when Show Score in Select Music option is enabled.\
--Added the song title in the evaluation screen to account for charts with no banners.\
+-Added the song title in the evaluation screen to account for charts with no text in their banners.\
+-The CLEARED screen now takes 3 seconds instead of 5.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.\
 -Added back the percentage in results screen of course mode.\
+-Added mod icons for custom noteskins.\
 -Added offset plot and spellcard viewer in results screen.\
 -Added back OK counter, as well as mine counter next to the misses counter in results screen.
 
