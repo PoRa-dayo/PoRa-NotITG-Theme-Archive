@@ -79,7 +79,12 @@
                 self:diffuse(0,0,0,1)
                 self:zoom(0.34)
                 self:zoomx(0.32)
-                local str = string.upper(NoteSkinList[modNoteSkin[1]])
+                local str
+                if FUCK_EXE then 
+                    str = string.upper(GAMESTATE:GetCurrentNoteSkins()[1])
+                else
+                    str = string.upper(NoteSkinList[modNoteSkin[1]])
+                end
                 if #str > 6 then
                     str = string.sub(str, 1, 6)..'.'
                 end
@@ -94,7 +99,12 @@
                 self:maxwidth(100)
                 self:shadowlength(0)
                 self:zoom(0.3)
-                local str = string.upper(NoteSkinList[modNoteSkin[1]])
+                local str
+                if FUCK_EXE then 
+                    str = string.upper(GAMESTATE:GetCurrentNoteSkins()[1])
+                else
+                    str = string.upper(NoteSkinList[modNoteSkin[1]])
+                end
                 if #str > 6 then
                     str = string.sub(str, 1, 6)..'.'
                 end
@@ -115,7 +125,12 @@
                 self:diffuse(0,0,0,1)
                 self:zoom(0.34)
                 self:zoomx(0.32)
-                local str = string.upper(NoteSkinList[modNoteSkin[2]])
+                local str
+                if FUCK_EXE then 
+                    str = string.upper(GAMESTATE:GetCurrentNoteSkins()[2])
+                else
+                    str = string.upper(NoteSkinList[modNoteSkin[2]])
+                end
                 if #str > 6 then
                     str = string.sub(str, 1, 6)..'.'
                 end
@@ -130,7 +145,12 @@
                 self:maxwidth(100)
                 self:shadowlength(0)
                 self:zoom(0.3)
-                local str = string.upper(NoteSkinList[modNoteSkin[2]])
+                local str
+                if FUCK_EXE then 
+                    str = string.upper(GAMESTATE:GetCurrentNoteSkins()[2])
+                else
+                    str = string.upper(NoteSkinList[modNoteSkin[2]])
+                end
                 if #str > 6 then
                     str = string.sub(str, 1, 6)..'.'
                 end
