@@ -49,6 +49,7 @@
     PlayNumZoom = 0.8
     ResetNumZoom = 0.5
     
+   --This theme has a different timing system which causes the plot to shrink a bit, so the life graph has to be changed accordingly
     LifeP1AddY = 7
     LifeP1ZoomY = 0.9
     LifeP2AddY = 7

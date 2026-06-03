@@ -12,19 +12,29 @@
 		if val > max then return max end
 		return val
 	end
+    
+    -- So this is like a mini metrics.ini I made to make it easier to modify common OffsetPlot elements lol
+    -- SC is short for spellcard. The stuff with SC in the name here only shows up when viewing spellcards.
+    -- The SC highlight is the glowing rectangles that show the spellcard's location and duration.
+    -- SC Info refers to the SC Title, Diff, Percent, Judgments, and its background.
+    -- Early and Late refers to the Early (-180ms)/Late (+180ms) markers.
 	
     P1AddX = -36
     P1AddY = -75
     P1Zoom = 0.8
     SCHighlightAddHeightP1 = -13
     SCHighlightYP1 = -67
+    SCScrollBarAddXP1 = 0
     
     P2AddX = 36
     P2AddY = -75
     P2Zoom = 0.8
     SCHighlightAddHeightP2 = -13
     SCHighlightYP2 = -67
+    SCScrollBarAddXP2 = 0
     
+    SCInfoAddXP1 = 0
+    SCInfoAddXP2 = 0
     SCTitleZoom = 0.75*1.1
     SCDiffZoom = 0.6*1.1
     SCPercentZoom = 0.55*1.1
@@ -38,6 +48,23 @@
     LateAddY = 5
     PlayNumZoom = 0.8
     ResetNumZoom = 0.5
+    
+    LifeP1AddY = 0
+    LifeP1ZoomY = 1
+    LifeP2AddY = 0
+    LifeP2ZoomY = 1
+    
+    BGColorP1 = {0,0,0,1}
+    BGColorP2 = {0,0,0,1}
+    PlotBGColorP1 = {0.1,0.1,0.1,0.8}
+    PlotBGColorP2 = {0.1,0.1,0.1,0.8}
+    BGSCScrollBarColorP1 = {.2,.2,.2,1}
+    BGSCScrollBarColorP2 = {.2,.2,.2,1}
+    SCScrollBarThumbColorP1 = {.8,.8,.8,1}
+    SCScrollBarThumbColorP2 = {.8,.8,.8,1}
+    BGWidth = 305
+    
+    --change oplot_plotWidth here for the plot itself to match the BGWidth
     
 	oplot_plotWidth, oplot_plotHeight = 301,112
 	oplot_plotWidthSml, oplot_plotHeightSml = 150,112
@@ -317,20 +344,20 @@ end"><children>
 	><children>
 	
 		<!-- Background -->
-		<Layer Type="Quad" InitCommand="y,0;zoomto,305,112;diffuse,0,0,0,1"
-		UpdateSpellDisplayP1MessageCommand="%function(self)
+		<Layer Type="Quad" InitCommand="y,0;zoomto,BGWidth,112;diffuse,BGColorP1[1],BGColorP1[2],BGColorP1[3],BGColorP1[4]"
+        UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
-				self:zoomto(305,112)
+				self:zoomto(BGWidth,112)
 				self:y(0)
 			else
-				self:zoomto(305,176)
+				self:zoomto(BGWidth,176)
 				self:y(-30)
 			end
 		end"
 		/>
 		
-		<Layer Type="Quad" InitCommand="zoomto,305,999;diffuse,#1E282F"
+		<Layer Type="Quad" InitCommand="zoomto,BGWidth,999;diffuse,#1E282F"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
@@ -341,7 +368,7 @@ end"><children>
 			else
 				self:x(0)
 				self:y(-88)
-				self:zoomto(305,60)
+				self:zoomto(BGWidth,60)
 				self:hidden(1)
 			end
 		end"
@@ -469,11 +496,11 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Type="Quad" InitCommand="zoomto,oplot_plotWidth+oplot_plotMargin,oplot_plotHeight+oplot_plotMargin;diffuse,0.1,0.1,0.1,0.8;"/>
+		<Layer Type="Quad" InitCommand="zoomto,oplot_plotWidth+oplot_plotMargin,oplot_plotHeight+oplot_plotMargin;diffuse,PlotBGColorP1[1],PlotBGColorP1[2],PlotBGColorP1[3],PlotBGColorP1[4];"/>
 		
 		<Layer Type="Polygon" DrawMode="quadstrip" 
 		Var="BX_CustomLifeGraph_1bg" 
-		OnCommand="sleep,0;queuecommand,MakeAndUpdate"
+		OnCommand="sleep,0;addy,LifeP1AddY;zoomy,LifeP1ZoomY;queuecommand,MakeAndUpdate"
 		MakeAndUpdateCommand="%function(self)
 			if GAMESTATE:IsCourseMode() then return end
 
@@ -545,7 +572,7 @@ end"><children>
 		
 		<Layer Type="Polygon" DrawMode="LineStrip" 
 		Var="BX_CustomLifeGraph_1"
-		OnCommand="sleep,0;queuecommand,MakeAndUpdate"
+		OnCommand="sleep,0;addy,LifeP1AddY;zoomy,LifeP1ZoomY;queuecommand,MakeAndUpdate"
 		MakeAndUpdateCommand="%function(self)
 			if GAMESTATE:IsCourseMode() then return end
 
@@ -617,14 +644,14 @@ end"><children>
 		end"
 		/>
 
-		<Layer Type="Quad" InitCommand="zoomto,305,999;diffuse,#1E282F"
+		<Layer Type="Quad" InitCommand="zoomto,BGWidth,999;diffuse,#1E282F"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
 				self:hidden(1)
 			else
 				self:zoomto(60,114)
-				self:x(-152+31)
+				self:x(-152+31+SCInfoAddXP1)
 				self:y(0)
 				self:hidden(0)
 				local color = oplot_spellCards[pn][ curcard[pn] ].Color;
@@ -633,13 +660,13 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Type="Quad" InitCommand="zoomto,305,999;diffuse,0,0,0,1"
+		<Layer Type="Quad" InitCommand="zoomto,BGWidth,999;diffuse,BGColorP1[1],BGColorP1[2],BGColorP1[3],BGColorP1[4]"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
 				self:hidden(1)
 			else
-				self:x(-148)
+				self:x(-148+SCInfoAddXP1)
 				self:y(-30)
 				self:zoomto(8,176)
 				self:hidden(0)
@@ -647,13 +674,13 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Type="Quad" InitCommand="zoomto,305,999;diffuse,.2,.2,.2,1"
+		<Layer Type="Quad" InitCommand="zoomto,BGWidth,999;diffuse,BGSCScrollBarColorP1[1],BGSCScrollBarColorP1[2],BGSCScrollBarColorP1[3],BGSCScrollBarColorP1[4]"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
 				self:hidden(1)
 			else
-				self:x(-150)
+				self:x(-150+SCScrollBarAddXP1)
 				self:y(-30)
 				self:zoomto(6,176)
 				self:hidden(0)
@@ -661,13 +688,13 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Type="Quad" InitCommand="zoomto,305,999;diffuse,.8,.8,.8,1"
+		<Layer Type="Quad" InitCommand="zoomto,BGWidth,999;diffuse,SCScrollBarThumbColorP1[1],SCScrollBarThumbColorP1[2],SCScrollBarThumbColorP1[3],SCScrollBarThumbColorP1[4]"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
 				self:hidden(1)
 			else
-				self:x(-150)
+				self:x(-150+SCScrollBarAddXP1)
 				self:y(-30 - 88 + 8 + 160*((curcard[pn]-1)/(table.getn(oplot_spellCards[pn])-1)) )
 				self:zoomto(6,16)
 				self:hidden(0)
@@ -675,15 +702,15 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Var="oplot_s1_title" File="_shared1" Text="" />
-		<Layer Var="oplot_s1_diff" File="_shared1" Text="" />
-		<Layer Var="oplot_s1_perc" File="_shared1" Text="" />
-		<Layer Var="oplot_s1_1" File="_shared1" Text="" />
-		<Layer Var="oplot_s1_2" File="_shared1" Text="" />
-		<Layer Var="oplot_s1_3" File="_shared1" Text="" />
-		<Layer Var="oplot_s1_4" File="_shared1" Text="" />
-		<Layer Var="oplot_s1_5" File="_shared1" Text="" />
-		<Layer Var="oplot_s1_6" File="_shared1" Text="" />
+		<Layer Var="oplot_s1_title" File="_standard" Text="" />
+		<Layer Var="oplot_s1_diff" File="_standard" Text="" />
+		<Layer Var="oplot_s1_perc" File="_standard" Text="" />
+		<Layer Var="oplot_s1_1" File="_standard" Text="" />
+		<Layer Var="oplot_s1_2" File="_standard" Text="" />
+		<Layer Var="oplot_s1_3" File="_standard" Text="" />
+		<Layer Var="oplot_s1_4" File="_standard" Text="" />
+		<Layer Var="oplot_s1_5" File="_standard" Text="" />
+		<Layer Var="oplot_s1_6" File="_standard" Text="" />
 		
 		<!-- Convert noterows to timestamps and plot dots -->
 		<Layer Type="Polygon" DrawMode="Quads" OnCommand="sleep,0.02;queuecommand,Make"
@@ -807,7 +834,7 @@ end"><children>
 					if color[1] == 0 and color[2] == 0 and color[3] == 0 then color = {1,1,1,1} end
 				
 					_G['oplot_s'..pn..'_title']:horizalign('left')
-					_G['oplot_s'..pn..'_title']:x(-148+7)
+					_G['oplot_s'..pn..'_title']:x(-148+7+SCInfoAddXP1)
 					_G['oplot_s'..pn..'_title']:y(-104)
 					_G['oplot_s'..pn..'_title']:shadowlength(0)
 					_G['oplot_s'..pn..'_title']:diffuse( color[1], color[2], color[3], 1 )
@@ -817,7 +844,7 @@ end"><children>
 					
 					if tonumber(GAMESTATE:GetVersionDate()) >= 20181211 then
 						_G['oplot_s'..pn..'_diff']:horizalign('left')
-						_G['oplot_s'..pn..'_diff']:x(-148+7)
+						_G['oplot_s'..pn..'_diff']:x(-148+7+SCInfoAddXP1)
 						_G['oplot_s'..pn..'_diff']:y(-104+20)
 						_G['oplot_s'..pn..'_diff']:shadowlength(0)
 						_G['oplot_s'..pn..'_diff']:diffuse( (color[1]+2)/3, (color[2]+2)/3, (color[3]+2)/3, 1 )
@@ -829,7 +856,7 @@ end"><children>
 					for i=1,6 do
 						_G['oplot_s'..pn..'_'..i]:diffuse(gradeToJudgeColor(i))
 						_G['oplot_s'..pn..'_'..i]:horizalign('left')
-						_G['oplot_s'..pn..'_'..i]:x(-148+7)
+						_G['oplot_s'..pn..'_'..i]:x(-148+7+SCInfoAddXP1)
 						_G['oplot_s'..pn..'_'..i]:zoom(SCJudgeZoom)
 						_G['oplot_s'..pn..'_'..i]:y(-61 + 15*(i+1))
 						_G['oplot_s'..pn..'_'..i]:shadowlength(0)
@@ -841,7 +868,7 @@ end"><children>
 					end
 					
 					_G['oplot_s'..pn..'_perc']:horizalign('left')
-					_G['oplot_s'..pn..'_perc']:x(-148+7)
+					_G['oplot_s'..pn..'_perc']:x(-148+7+SCInfoAddXP1)
 					_G['oplot_s'..pn..'_perc']:y(-63 + 15*1)
 					_G['oplot_s'..pn..'_perc']:shadowlength(0)
 					_G['oplot_s'..pn..'_perc']:zoom(SCPercentZoom)
@@ -960,24 +987,24 @@ end"><children>
 		end"
 		UpdateSpellDisplayP1MessageCommand="hidden,curcard[1]"><children>
 			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight-4;diffusealpha,.2"/>
-			<Layer Type="BitmapText" File="_shared1" Text="R" InitCommand="xy,2,-oplot_plotHeight/3-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
+			<Layer Type="BitmapText" File="_standard" Text="R" InitCommand="xy,2,-oplot_plotHeight/3-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
 		</children></Layer>
 
 		<!-- Early/late markers -->
-		<Layer Type="BitmapText" File="_shared1"
+		<Layer Type="BitmapText" File="_standard"
 			OnCommand="xy,oplot_plotWidth/2+EarlyAddX,-oplot_plotHeight/2-6+EarlyAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
-		<Layer Type="BitmapText" File="_shared1"
+		<Layer Type="BitmapText" File="_standard"
 			OnCommand="xy,oplot_plotWidth/2+LateAddX,oplot_plotHeight/2-6+LateAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		
-		<Layer Type="BitmapText" Text="" Font="_shared1"
+		<Layer Type="BitmapText" Text="" Font="_standard"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
@@ -1005,7 +1032,7 @@ end"><children>
 			
 		end" />
 		
-		<Layer Type="BitmapText" Text="" Font="_shared1"
+		<Layer Type="BitmapText" Text="" Font="_standard"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
@@ -1139,20 +1166,20 @@ end"><children>
 	><children>
 	
 		<!-- Background -->
-		<Layer Type="Quad" InitCommand="y,0;zoomto,305,112;diffuse,0,0,0,1"
-		UpdateSpellDisplayP2MessageCommand="%function(self)
+		<Layer Type="Quad" InitCommand="y,0;zoomto,BGWidth,112;diffuse,BGColorP2[1],BGColorP2[2],BGColorP2[3],BGColorP2[4]"
+        UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
-				self:zoomto(305,112)
+				self:zoomto(BGWidth,112)
 				self:y(0)
 			else
-				self:zoomto(305,176)
+				self:zoomto(BGWidth,176)
 				self:y(-30)
 			end
 		end"
 		/>
 		
-		<Layer Type="Quad" InitCommand="zoomto,305,999;diffuse,#1E282F"
+		<Layer Type="Quad" InitCommand="zoomto,BGWidth,999;diffuse,#1E282F"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
@@ -1163,7 +1190,7 @@ end"><children>
 			else
 				self:x(0)
 				self:y(-88)
-				self:zoomto(305,60)
+				self:zoomto(BGWidth,60)
 				self:hidden(1)
 			end
 		end"
@@ -1291,14 +1318,14 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Type="Quad" InitCommand="zoomto,oplot_plotWidth+oplot_plotMargin,oplot_plotHeight+oplot_plotMargin;diffuse,0.1,0.1,0.1,0.8;"/>
+		<Layer Type="Quad" InitCommand="zoomto,oplot_plotWidth+oplot_plotMargin,oplot_plotHeight+oplot_plotMargin;diffuse,PlotBGColorP1[1],PlotBGColorP1[2],PlotBGColorP1[3],PlotBGColorP1[4];"/>
 		
 		
 		
 
 		<Layer Type="Polygon" DrawMode="quadstrip" 
 		Var="BX_CustomLifeGraph_2bg" 
-		OnCommand="sleep,0;queuecommand,MakeAndUpdate"
+		OnCommand="sleep,0;addy,LifeP1AddY;zoomy,LifeP1ZoomY;queuecommand,MakeAndUpdate"
 		MakeAndUpdateCommand="%function(self)
 			if GAMESTATE:IsCourseMode() then return end
 
@@ -1370,7 +1397,7 @@ end"><children>
 		
 		<Layer Type="Polygon" DrawMode="LineStrip" 
 		Var="BX_CustomLifeGraph_2"
-		OnCommand="sleep,0;queuecommand,MakeAndUpdate"
+		OnCommand="sleep,0;addy,LifeP1AddY;zoomy,LifeP1ZoomY;queuecommand,MakeAndUpdate"
 		MakeAndUpdateCommand="%function(self)
 			if GAMESTATE:IsCourseMode() then return end
 
@@ -1446,14 +1473,14 @@ end"><children>
 		
 		
 		
-		<Layer Type="Quad" InitCommand="zoomto,305,999;diffuse,#1E282F"
+		<Layer Type="Quad" InitCommand="zoomto,BGWidth,999;diffuse,#1E282F"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
 				self:hidden(1)
 			else
 				self:zoomto(60,114)
-				self:x(-152+31)
+				self:x(-152+31+SCInfoAddXP2)
 				self:y(0)
 				self:hidden(0)
 				local color = oplot_spellCards[pn][ curcard[pn] ].Color;
@@ -1462,13 +1489,13 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Type="Quad" InitCommand="zoomto,305,999;diffuse,0,0,0,1"
+		<Layer Type="Quad" InitCommand="zoomto,BGWidth,999;diffuse,BGColorP2[1],BGColorP1[2],BGColorP1[3],BGColorP1[4]"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
 				self:hidden(1)
 			else
-				self:x(-148)
+				self:x(-148+SCInfoAddXP2)
 				self:y(-30)
 				self:zoomto(8,176)
 				self:hidden(0)
@@ -1476,13 +1503,13 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Type="Quad" InitCommand="zoomto,305,999;diffuse,.2,.2,.2,1"
+		<Layer Type="Quad" InitCommand="zoomto,BGWidth,999;diffuse,BGSCScrollBarColorP2[1],BGSCScrollBarColorP2[2],BGSCScrollBarColorP2[3],BGSCScrollBarColorP2[4]"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
 				self:hidden(1)
 			else
-				self:x(-150)
+				self:x(-150+SCScrollBarAddXP2)
 				self:y(-30)
 				self:zoomto(6,176)
 				self:hidden(0)
@@ -1490,13 +1517,13 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Type="Quad" InitCommand="zoomto,305,999;diffuse,.8,.8,.8,1"
+		<Layer Type="Quad" InitCommand="zoomto,BGWidth,999;diffuse,SCScrollBarThumbColorP2[1],SCScrollBarThumbColorP2[2],SCScrollBarThumbColorP2[3],SCScrollBarThumbColorP2[4]"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
 				self:hidden(1)
 			else
-				self:x(-150)
+				self:x(-150+SCScrollBarAddXP2)
 				self:y(-30 - 88 + 8 + 160*((curcard[pn]-1)/(table.getn(oplot_spellCards[pn])-1)) )
 				self:zoomto(6,16)
 				self:hidden(0)
@@ -1504,15 +1531,15 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Var="oplot_s2_title" File="_shared1" Text="" />
-		<Layer Var="oplot_s2_diff" File="_shared1" Text="" />
-		<Layer Var="oplot_s2_perc" File="_shared1" Text="" />
-		<Layer Var="oplot_s2_1" File="_shared1" Text="" />
-		<Layer Var="oplot_s2_2" File="_shared1" Text="" />
-		<Layer Var="oplot_s2_3" File="_shared1" Text="" />
-		<Layer Var="oplot_s2_4" File="_shared1" Text="" />
-		<Layer Var="oplot_s2_5" File="_shared1" Text="" />
-		<Layer Var="oplot_s2_6" File="_shared1" Text="" />
+		<Layer Var="oplot_s2_title" File="_standard" Text="" />
+		<Layer Var="oplot_s2_diff" File="_standard" Text="" />
+		<Layer Var="oplot_s2_perc" File="_standard" Text="" />
+		<Layer Var="oplot_s2_1" File="_standard" Text="" />
+		<Layer Var="oplot_s2_2" File="_standard" Text="" />
+		<Layer Var="oplot_s2_3" File="_standard" Text="" />
+		<Layer Var="oplot_s2_4" File="_standard" Text="" />
+		<Layer Var="oplot_s2_5" File="_standard" Text="" />
+		<Layer Var="oplot_s2_6" File="_standard" Text="" />
 		
 		<!-- Convert noterows to timestamps and plot dots -->
 		<Layer Type="Polygon" DrawMode="Quads" OnCommand="sleep,0.02;queuecommand,Make"
@@ -1628,7 +1655,7 @@ end"><children>
 					if color[1] == 0 and color[2] == 0 and color[3] == 0 then color = {1,1,1,1} end
 				
 					_G['oplot_s'..pn..'_title']:horizalign('left')
-					_G['oplot_s'..pn..'_title']:x(-148+7)
+					_G['oplot_s'..pn..'_title']:x(-148+7+SCInfoAddXP2)
 					_G['oplot_s'..pn..'_title']:y(-104)
 					_G['oplot_s'..pn..'_title']:shadowlength(0)
 					_G['oplot_s'..pn..'_title']:diffuse( color[1], color[2], color[3], 1 )
@@ -1638,7 +1665,7 @@ end"><children>
 					
 					if tonumber(GAMESTATE:GetVersionDate()) >= 20181211 then
 						_G['oplot_s'..pn..'_diff']:horizalign('left')
-						_G['oplot_s'..pn..'_diff']:x(-148+7)
+						_G['oplot_s'..pn..'_diff']:x(-148+7+SCInfoAddXP2)
 						_G['oplot_s'..pn..'_diff']:y(-104+20)
 						_G['oplot_s'..pn..'_diff']:shadowlength(0)
 						_G['oplot_s'..pn..'_diff']:diffuse( (color[1]+2)/3, (color[2]+2)/3, (color[3]+2)/3, 1 )
@@ -1650,7 +1677,7 @@ end"><children>
 					for i=1,6 do
 						_G['oplot_s'..pn..'_'..i]:diffuse(gradeToJudgeColor(i))
 						_G['oplot_s'..pn..'_'..i]:horizalign('left')
-						_G['oplot_s'..pn..'_'..i]:x(-148+7)
+						_G['oplot_s'..pn..'_'..i]:x(-148+7+SCInfoAddXP2)
 						_G['oplot_s'..pn..'_'..i]:zoom(SCJudgeZoom)
 						_G['oplot_s'..pn..'_'..i]:y(-61 + 15*(i+1))
 						_G['oplot_s'..pn..'_'..i]:shadowlength(0)
@@ -1662,7 +1689,7 @@ end"><children>
 					end
 					
 					_G['oplot_s'..pn..'_perc']:horizalign('left')
-					_G['oplot_s'..pn..'_perc']:x(-148+7)
+					_G['oplot_s'..pn..'_perc']:x(-148+7+SCInfoAddXP2)
 					_G['oplot_s'..pn..'_perc']:y(-63 + 15*1)
 					_G['oplot_s'..pn..'_perc']:shadowlength(0)
 					_G['oplot_s'..pn..'_perc']:zoom(SCPercentZoom)
@@ -1779,24 +1806,24 @@ end"><children>
 		end"
 		UpdateSpellDisplayP2MessageCommand="hidden,curcard[2]"><children>
 			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight;diffusealpha,.2"/>
-			<Layer Type="BitmapText" File="_shared1" Text="R" InitCommand="xy,2,-oplot_plotHeight/2-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
+			<Layer Type="BitmapText" File="_standard" Text="R" InitCommand="xy,2,-oplot_plotHeight/2-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
 		</children></Layer>
 
 		<!-- Early/late markers -->
-		<Layer Type="BitmapText" File="_shared1"
+		<Layer Type="BitmapText" File="_standard"
 			OnCommand="xy,oplot_plotWidth/2+EarlyAddX,-oplot_plotHeight/2-6+EarlyAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
-		<Layer Type="BitmapText" File="_shared1"
+		<Layer Type="BitmapText" File="_standard"
 			OnCommand="xy,oplot_plotWidth/2+LateAddX,oplot_plotHeight/2-6+LateAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		
-		<Layer Type="BitmapText" Text="" Font="_shared1"
+		<Layer Type="BitmapText" Text="" Font="_standard"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
@@ -1824,7 +1851,7 @@ end"><children>
 			
 		end" />
 		
-		<Layer Type="BitmapText" Text="" Font="_shared1"
+		<Layer Type="BitmapText" Text="" Font="_standard"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
