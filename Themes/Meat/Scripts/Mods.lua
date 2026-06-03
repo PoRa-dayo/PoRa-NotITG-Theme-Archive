@@ -925,8 +925,8 @@ end
 function DisplaySpeedMod(pn)
 	local s = ''
 	if modType[pn] == 'x' and tonumber(bpm[1]) then
-		s = math.floor(modSpeed[pn] / 100 * bpm[1] + 0.5)
-		if tonumber(bpm[2]) then s = s ..  '-' .. math.floor(modSpeed[pn] / 100 * bpm[2] + 0.5) end
+		s = math.floor(modSpeed[pn] / 100 * bpm[1] * modRate + 0.5)
+		if tonumber(bpm[2]) then s = s ..  '-' .. math.floor(modSpeed[pn] / 100 * bpm[2] * modRate + 0.5) end
 		s = ' (' .. s .. ')'
 	end
 	return SpeedString(pn) .. s
@@ -935,7 +935,7 @@ end
 function GameplayBPM(self)
 	local b = Screen():GetChild('BPMDisplay')
 	if b then b = b:GetChild('Text'):GetText() end
-	if b then 
+	if b and bpm then
 		bpm[3] = Screen():GetChild('BPMDisplay'):GetChild('Text'):GetText()
 		if not OPENITG then bpm[3] = math.floor(bpm[3] * modRate + 0.5) end
 		self:settext(bpm[3])

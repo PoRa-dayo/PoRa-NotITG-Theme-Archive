@@ -43,7 +43,8 @@ Pretty insane how functional this theme still is even on NotITG current version
 -Since the detailed scores it uses is already similar to the 17-tier one, I also changed the score threshold in metrics.ini to a 17-tier one for consistency across themes.\
 -Dr. Fetus now shows up in the song selection screen on whatever song you failed.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
--Added step artist display in song selection screen.
+-Added step artist display in song selection screen.\
+-Added offset plot and spellcard viewer in results screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_N1zP0GNTDo" src="https://github.com/user-attachments/assets/5864a2e9-8bf0-4821-9ba5-ba2db0a5f711" />
 <img width="200" height="150" alt="NotITG-v4 9 1_ydQ8VCPOex" src="https://github.com/user-attachments/assets/0f8bc8c2-9e2a-4ae8-aabc-0c3b48679eea" />
@@ -171,7 +172,7 @@ OITGThemerFallback is a fallback theme that's made to be closer to the base SM3.
 -Redirected more fonts into using the _shared1 font.\
 -Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options, added Music Rate customization option\
 -Replaced the "Loading..." sprite with an original one.\
--Changed the layering of the timer bar and difficulty frame, as well as removing some duplicated elements in the song selection screen.\
+-Changed the layering of the player mods, timer bar and difficulty frame, as well as removing some duplicated elements in the song selection screen.\
 -Changed the layering of the life bar, score bar and difficulty bar so they don't show up in modfiles, and slightly change their animation so that it makes sense.\
 -Removed the "Player 1" during gameplay. (why is that thereee)\
 -All elements on song selection screen now properly disappear when a song is selected.\

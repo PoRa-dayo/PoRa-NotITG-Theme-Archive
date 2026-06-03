@@ -1,4 +1,51 @@
 <ActorFrame><children>
+	<Layer
+		Font="_shared1"
+		Text="Loading mods..."
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(448-240);"
+		OnCommand="%function(self)
+            self:zoom(0.4);
+            self:diffusealpha(0);
+            self:shadowlength(0);
+            self:maxwidth(450);
+			self:sleep(0.05)
+			self:queuecommand('GetModText')
+            self:decelerate(0.5);
+            self:diffusealpha(1);
+		end"
+        OffCommand="diffusealpha,1;accelerate,0.5;diffusealpha,0"
+		GetModTextCommand="%function(self)
+		self:settext( string.gsub(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP1'):GetText(), 'Overhead, metal', ' ' ) )
+		self:sleep(0.1)
+		self:queuecommand('GetModText')
+		end"
+		/>
+
+	<Layer
+		Font="_shared1"
+		Text="Loading mods..."
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(462-240);"
+		OnCommand="%function(self)
+            self:zoom(0.4);
+            self:diffusealpha(0);
+            self:shadowlength(0);
+            self:maxwidth(450);
+			self:sleep(0.05)
+			self:queuecommand('GetModText')
+            self:decelerate(0.5);
+            self:diffusealpha(1);
+		end"
+        OffCommand="diffusealpha,1;accelerate,0.5;diffusealpha,0"
+		GetModTextCommand="%function(self)
+		self:settext( string.gsub(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP2'):GetText(), 'Overhead, metal', ' ' ) )
+		self:sleep(0.1)
+		self:queuecommand('GetModText')
+		end"
+		/>
+
+
     --FOR OFFSET PLOT AND ITS LIFE GRAPH: START
 
 	<Layer Type="Quad"

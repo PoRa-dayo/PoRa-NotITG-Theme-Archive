@@ -36,6 +36,8 @@
     EarlyAddY = 5
     LateAddX = 0
     LateAddY = 5
+    PlayNumZoom = 0.8
+    ResetNumZoom = 0.5
     
 	oplot_plotWidth, oplot_plotHeight = 301,112
 	oplot_plotWidthSml, oplot_plotHeightSml = 150,112
@@ -987,7 +989,7 @@ end"><children>
 		OnCommand="%function(self)
 			self:hidden(1)
 			self:xy(83,-98)
-			self:zoom(.8)
+			self:zoom(PlayNumZoom)
 			self:shadowlength(0)
 			
 			local prof = PROFILEMAN:GetMachineProfile()
@@ -1015,7 +1017,7 @@ end"><children>
 		OnCommand="%function(self)
 			self:hidden(1)
 			self:xy(83,-74)
-			self:zoom(.5)
+			self:zoom(ResetNumZoom)
 			self:diffuse(1, 1, 1, 0.6)
 			self:shadowlength(0)
 			
@@ -1806,7 +1808,7 @@ end"><children>
 		OnCommand="%function(self)
 			self:hidden(1)
 			self:xy(-83,-98)
-			self:zoom(.8)
+			self:zoom(PlayNumZoom)
 			self:shadowlength(0)
 			
 			local prof = PROFILEMAN:GetMachineProfile()
@@ -1834,7 +1836,7 @@ end"><children>
 		OnCommand="%function(self)
 			self:hidden(1)
 			self:xy(-83,-74)
-			self:zoom(.5)
+			self:zoom(ResetNumZoom)
 			self:diffuse(1, 1, 1, 0.6)
 			self:shadowlength(0)
 			

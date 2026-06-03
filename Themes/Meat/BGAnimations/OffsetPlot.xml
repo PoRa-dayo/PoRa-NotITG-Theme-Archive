@@ -13,31 +13,31 @@
 		return val
 	end
 	
-    P1AddX = -30
-    P1AddY = -21
-    P1Zoom = 0.85
+    P1AddX = -54
+    P1AddY = -91
+    P1Zoom = 0.85*0.84
     SCHighlightAddHeightP1 = -13
     SCHighlightYP1 = -67
     
-    P2AddX = 30
-    P2AddY = -21
-    P2Zoom = 0.85
+    P2AddX = 54
+    P2AddY = -91
+    P2Zoom = 0.85*0.84
     SCHighlightAddHeightP2 = -13
     SCHighlightYP2 = -67
     
-    SCTitleZoom = 0.75
-    SCDiffZoom = 0.6
-    SCPercentZoom = 0.55*0.9
-    SCJudgeZoom = 0.5*0.9
-    SCTitleMaxWidth = 294/.75
+    SCTitleZoom = 0.75*0.7
+    SCDiffZoom = 0.6*0.7
+    SCPercentZoom = 0.55*0.7
+    SCJudgeZoom = 0.5*0.7
+    SCTitleMaxWidth = 294/.75*1.4
     
-    EarlyLateZoom = 0.4
+    EarlyLateZoom = 0.4*0.7
     EarlyAddX = 0
-    EarlyAddY = 5
+    EarlyAddY = 4
     LateAddX = 0
-    LateAddY = 5
-    PlayNumZoom = 0.8
-    ResetNumZoom = 0.5
+    LateAddY = 4
+    PlayNumZoom = 0.8*0.7
+    ResetNumZoom = 0.5*0.7
     
 	oplot_plotWidth, oplot_plotHeight = 301,112
 	oplot_plotWidthSml, oplot_plotHeightSml = 150,112
@@ -322,14 +322,6 @@ end"><children>
 			local pn = 1
 			self:zoomto(305,176)
 			self:y(-30)
-		end"
-		/>
-        <Layer Type="Quad" InitCommand="y,0;zoomto,120,112;diffuse,0,0,0,1"
-		UpdateSpellDisplayP1MessageCommand="%function(self)
-			local pn = 1
-			self:zoomto(120,176)
-			self:y(-50)
-            self:x(90)
 		end"
 		/>
 		
@@ -678,15 +670,15 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Var="oplot_s1_title" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s1_diff" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s1_perc" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s1_1" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s1_2" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s1_3" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s1_4" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s1_5" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s1_6" File="_sg stroke" Text="" />
+		<Layer Var="oplot_s1_title" File="_Meat" Text="" />
+		<Layer Var="oplot_s1_diff" File="_Meat" Text="" />
+		<Layer Var="oplot_s1_perc" File="_Meat" Text="" />
+		<Layer Var="oplot_s1_1" File="_Meat" Text="" />
+		<Layer Var="oplot_s1_2" File="_Meat" Text="" />
+		<Layer Var="oplot_s1_3" File="_Meat" Text="" />
+		<Layer Var="oplot_s1_4" File="_Meat" Text="" />
+		<Layer Var="oplot_s1_5" File="_Meat" Text="" />
+		<Layer Var="oplot_s1_6" File="_Meat" Text="" />
 		
 		<!-- Convert noterows to timestamps and plot dots -->
 		<Layer Type="Polygon" DrawMode="Quads" OnCommand="sleep,0.02;queuecommand,Make"
@@ -963,24 +955,24 @@ end"><children>
 		end"
 		UpdateSpellDisplayP1MessageCommand="hidden,curcard[1]"><children>
 			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight-4;diffusealpha,.2"/>
-			<Layer Type="BitmapText" File="_sg stroke" Text="R" InitCommand="xy,2,-oplot_plotHeight/3-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
+			<Layer Type="BitmapText" File="_Meat" Text="R" InitCommand="xy,2,-oplot_plotHeight/3-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
 		</children></Layer>
 
 		<!-- Early/late markers -->
-		<Layer Type="BitmapText" File="_sg stroke"
+		<Layer Type="BitmapText" File="_Meat"
 			OnCommand="xy,oplot_plotWidth/2+EarlyAddX,-oplot_plotHeight/2-6+EarlyAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
-		<Layer Type="BitmapText" File="_sg stroke"
+		<Layer Type="BitmapText" File="_Meat"
 			OnCommand="xy,oplot_plotWidth/2+LateAddX,oplot_plotHeight/2-6+LateAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		
-		<Layer Type="BitmapText" Text="" Font="_sg stroke"
+		<Layer Type="BitmapText" Text="" Font="_Meat"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
@@ -1008,7 +1000,7 @@ end"><children>
 			
 		end" />
 		
-		<Layer Type="BitmapText" Text="" Font="_sg stroke"
+		<Layer Type="BitmapText" Text="" Font="_Meat"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
@@ -1147,14 +1139,6 @@ end"><children>
 			local pn = 2
 			self:zoomto(305,176)
 			self:y(-30)
-		end"
-		/>
-        <Layer Type="Quad" InitCommand="y,0;zoomto,120,112;diffuse,0,0,0,1"
-		UpdateSpellDisplayP2MessageCommand="%function(self)
-			local pn = 2
-			self:zoomto(120,176)
-			self:y(-50)
-            self:x(-90)
 		end"
 		/>
 		
@@ -1510,15 +1494,15 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Var="oplot_s2_title" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s2_diff" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s2_perc" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s2_1" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s2_2" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s2_3" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s2_4" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s2_5" File="_sg stroke" Text="" />
-		<Layer Var="oplot_s2_6" File="_sg stroke" Text="" />
+		<Layer Var="oplot_s2_title" File="_Meat" Text="" />
+		<Layer Var="oplot_s2_diff" File="_Meat" Text="" />
+		<Layer Var="oplot_s2_perc" File="_Meat" Text="" />
+		<Layer Var="oplot_s2_1" File="_Meat" Text="" />
+		<Layer Var="oplot_s2_2" File="_Meat" Text="" />
+		<Layer Var="oplot_s2_3" File="_Meat" Text="" />
+		<Layer Var="oplot_s2_4" File="_Meat" Text="" />
+		<Layer Var="oplot_s2_5" File="_Meat" Text="" />
+		<Layer Var="oplot_s2_6" File="_Meat" Text="" />
 		
 		<!-- Convert noterows to timestamps and plot dots -->
 		<Layer Type="Polygon" DrawMode="Quads" OnCommand="sleep,0.02;queuecommand,Make"
@@ -1785,24 +1769,24 @@ end"><children>
 		end"
 		UpdateSpellDisplayP2MessageCommand="hidden,curcard[2]"><children>
 			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight;diffusealpha,.2"/>
-			<Layer Type="BitmapText" File="_sg stroke" Text="R" InitCommand="xy,2,-oplot_plotHeight/2-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
+			<Layer Type="BitmapText" File="_Meat" Text="R" InitCommand="xy,2,-oplot_plotHeight/2-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
 		</children></Layer>
 
 		<!-- Early/late markers -->
-		<Layer Type="BitmapText" File="_sg stroke"
+		<Layer Type="BitmapText" File="_Meat"
 			OnCommand="xy,oplot_plotWidth/2+EarlyAddX,-oplot_plotHeight/2-6+EarlyAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
-		<Layer Type="BitmapText" File="_sg stroke"
+		<Layer Type="BitmapText" File="_Meat"
 			OnCommand="xy,oplot_plotWidth/2+LateAddX,oplot_plotHeight/2-6+LateAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		
-		<Layer Type="BitmapText" Text="" Font="_sg stroke"
+		<Layer Type="BitmapText" Text="" Font="_Meat"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
@@ -1830,7 +1814,7 @@ end"><children>
 			
 		end" />
 		
-		<Layer Type="BitmapText" Text="" Font="_sg stroke"
+		<Layer Type="BitmapText" Text="" Font="_Meat"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
