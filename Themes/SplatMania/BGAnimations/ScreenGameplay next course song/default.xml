@@ -26,6 +26,14 @@
 	InitCommand="%function(self) self:diffuse( ColorToMimic[1],ColorToMimic[2],ColorToMimic[3],1 ) end" />
     
     <Layer Font="Splat2" Condition="not NotCourse" Text="@GAMESTATE:GetCurrentCourse():GetDisplayFullTitle()"
-	OnCommand="maxwidth,SCREEN_WIDTH/2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;bounceend,0.4;y,SCREEN_CENTER_Y-15;shadowlength,2"
+	OnCommand="maxwidth,SCREEN_WIDTH/2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;bounceend,0.4;y,SCREEN_CENTER_Y-25;shadowlength,2"
+			/>
+            
+    <Layer Font="Splat2" Condition="not NotCourse" Text=""
+	OnCommand="maxwidth,SCREEN_WIDTH/1.2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+500;zoom,0.6"
+    NextCourseSongMessageCommand="queuecommand,Update;bounceend,0.4;y,SCREEN_CENTER_Y+20;shadowlength,2"
+    UpdateCommand="%function(self)
+        self:settext('Song '..(GAMESTATE:GetCourseSongIndex()+2))
+    end"
 			/>
 </children> </ActorFrame>
