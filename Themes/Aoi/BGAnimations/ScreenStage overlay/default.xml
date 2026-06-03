@@ -128,6 +128,14 @@
             self:zoom(0)
         end
     end" />
+    
+    --FOR OFFSET PLOT AND ITS LIFE GRAPH
+	<Layer Type="Quad"
+		OnCommand="%function(self)
+			BX_SaltyResets = 0
+			BX_SaltyResetPos = {}
+		end"
+	/>
 </children></ActorFrame>
 [BGAnimation]
 LengthSeconds=1.75
