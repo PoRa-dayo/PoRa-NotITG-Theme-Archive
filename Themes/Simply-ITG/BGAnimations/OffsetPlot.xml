@@ -698,15 +698,15 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Var="oplot_s1_title" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s1_diff" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s1_perc" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s1_1" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s1_2" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s1_3" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s1_4" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s1_5" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s1_6" File="_eurostile normal" Text="" />
+		<Layer Var="oplot_s1_title" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s1_diff" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s1_perc" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s1_1" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s1_2" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s1_3" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s1_4" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s1_5" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s1_6" File="_eurostile outline" Text="" />
 		
 		<!-- Convert noterows to timestamps and plot dots -->
 		<Layer Type="Polygon" DrawMode="Quads" OnCommand="sleep,0.02;queuecommand,Make"
@@ -983,24 +983,24 @@ end"><children>
 		end"
 		UpdateSpellDisplayP1MessageCommand="hidden,curcard[1]"><children>
 			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight-4;diffusealpha,.2"/>
-			<Layer Type="BitmapText" File="_eurostile normal" Text="R" InitCommand="xy,2,-oplot_plotHeight/3-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
+			<Layer Type="BitmapText" File="_eurostile outline" Text="R" InitCommand="xy,2,-oplot_plotHeight/3-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
 		</children></Layer>
 
 		<!-- Early/late markers -->
-		<Layer Type="BitmapText" File="_eurostile normal"
+		<Layer Type="BitmapText" File="_eurostile outline"
 			OnCommand="xy,oplot_plotWidth/2+EarlyAddX,-oplot_plotHeight/2-6+EarlyAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
-		<Layer Type="BitmapText" File="_eurostile normal"
+		<Layer Type="BitmapText" File="_eurostile outline"
 			OnCommand="xy,oplot_plotWidth/2+LateAddX,oplot_plotHeight/2-6+LateAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		
-		<Layer Type="BitmapText" Text="" Font="_eurostile normal"
+		<Layer Type="BitmapText" Text="" Font="_eurostile outline"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
@@ -1028,7 +1028,7 @@ end"><children>
 			
 		end" />
 		
-		<Layer Type="BitmapText" Text="" Font="_eurostile normal"
+		<Layer Type="BitmapText" Text="" Font="_eurostile outline"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
@@ -1522,15 +1522,15 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Var="oplot_s2_title" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s2_diff" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s2_perc" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s2_1" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s2_2" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s2_3" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s2_4" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s2_5" File="_eurostile normal" Text="" />
-		<Layer Var="oplot_s2_6" File="_eurostile normal" Text="" />
+		<Layer Var="oplot_s2_title" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s2_diff" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s2_perc" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s2_1" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s2_2" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s2_3" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s2_4" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s2_5" File="_eurostile outline" Text="" />
+		<Layer Var="oplot_s2_6" File="_eurostile outline" Text="" />
 		
 		<!-- Convert noterows to timestamps and plot dots -->
 		<Layer Type="Polygon" DrawMode="Quads" OnCommand="sleep,0.02;queuecommand,Make"
@@ -1797,24 +1797,24 @@ end"><children>
 		end"
 		UpdateSpellDisplayP2MessageCommand="hidden,curcard[2]"><children>
 			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight;diffusealpha,.2"/>
-			<Layer Type="BitmapText" File="_eurostile normal" Text="R" InitCommand="xy,2,-oplot_plotHeight/2-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
+			<Layer Type="BitmapText" File="_eurostile outline" Text="R" InitCommand="xy,2,-oplot_plotHeight/2-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
 		</children></Layer>
 
 		<!-- Early/late markers -->
-		<Layer Type="BitmapText" File="_eurostile normal"
+		<Layer Type="BitmapText" File="_eurostile outline"
 			OnCommand="xy,oplot_plotWidth/2+EarlyAddX,-oplot_plotHeight/2-6+EarlyAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
-		<Layer Type="BitmapText" File="_eurostile normal"
+		<Layer Type="BitmapText" File="_eurostile outline"
 			OnCommand="xy,oplot_plotWidth/2+LateAddX,oplot_plotHeight/2-6+LateAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		
-		<Layer Type="BitmapText" Text="" Font="_eurostile normal"
+		<Layer Type="BitmapText" Text="" Font="_eurostile outline"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
@@ -1842,7 +1842,7 @@ end"><children>
 			
 		end" />
 		
-		<Layer Type="BitmapText" Text="" Font="_eurostile normal"
+		<Layer Type="BitmapText" Text="" Font="_eurostile outline"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
