@@ -214,11 +214,13 @@ This theme already has almost every feature you can ask for, so there are very f
 -Changed the layering of the BPM number and the player icons during gameplay so they stay hidden in modfiles.\
 -Moved the help text in the Config Keys screen to the top.\
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Profile Options (broken in NotITG). Removed Show Caution and Show Instructions options, they don't do anything in this theme and break other themes.\
+-Removed Reset Menu button in Options as it screws up the game real badly. (not so surprising isn't it)\
 -Noteskins now affect players 1-8.\
 -Added Hold Judgment customization.\
 -F grades now show up in song selection screen.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
--Stitch.lua is implemented, alongside FailOverlays and the in-game console.
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
+-Added offset plot and spellcard viewer in results screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_fYdoivIhTT" src="https://github.com/user-attachments/assets/4eb11608-3b2b-4e31-8a99-8fa6aaaaa1a6" />
 <img width="200" height="150" alt="NotITG-v4 9 1_oXfyWZ7KUg" src="https://github.com/user-attachments/assets/9957c377-345c-4fcb-8e87-a04bf5488d72" />

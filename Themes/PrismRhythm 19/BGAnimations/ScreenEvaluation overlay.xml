@@ -148,5 +148,13 @@ TweenOffCommand="accelerate,0.8;addy,-100"
 				/>
 			</children>
 		</Layer>
+        
+        
+        <!-- NotITG Offset Plot -->
+        <Layer File="OffsetPlot" OffCommand="%function(self)
+            BX_SaltyResets = 0
+            BX_SaltyResetPos = {}
+            self:diffusealpha(0)
+        end"/>
 	</children>
 </ActorFrame>
