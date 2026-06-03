@@ -77,7 +77,8 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Removed Marathon Mode and Battle Mode buttons on title screen, select those inside Dance Mode instead.\
 -F grades are now shown in song selection screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
--Added step artist display in song selection screen.
+-Added step artist display in song selection screen.\
+-Added offset plot and spellcard viewer in results screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_aSZEkP7Qqw" src="https://github.com/user-attachments/assets/cafa07e5-a603-408a-b327-56bc7472d54b" />
 <img width="200" height="150" alt="NotITG-v4 9 1_WEXP4fVbKx" src="https://github.com/user-attachments/assets/be3345b4-037c-4ee0-9865-b69f5daab26f" />

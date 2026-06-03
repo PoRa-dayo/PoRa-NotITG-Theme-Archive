@@ -4,7 +4,6 @@
         --FOR OFFSET PLOT AND ITS LIFE GRAPH
 	<Layer Type="Quad"
 		OnCommand="%function(self)
-            self:sleep(0.3)
 			BX_SaltyResets = 0
 			BX_SaltyResetPos = {}
 		end"
