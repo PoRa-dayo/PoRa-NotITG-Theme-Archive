@@ -702,15 +702,15 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Var="oplot_s1_title" File="_standard" Text="" />
-		<Layer Var="oplot_s1_diff" File="_standard" Text="" />
-		<Layer Var="oplot_s1_perc" File="_standard" Text="" />
-		<Layer Var="oplot_s1_1" File="_standard" Text="" />
-		<Layer Var="oplot_s1_2" File="_standard" Text="" />
-		<Layer Var="oplot_s1_3" File="_standard" Text="" />
-		<Layer Var="oplot_s1_4" File="_standard" Text="" />
-		<Layer Var="oplot_s1_5" File="_standard" Text="" />
-		<Layer Var="oplot_s1_6" File="_standard" Text="" />
+		<Layer Var="oplot_s1_title" File="_shared1" Text="" />
+		<Layer Var="oplot_s1_diff" File="_shared1" Text="" />
+		<Layer Var="oplot_s1_perc" File="_shared1" Text="" />
+		<Layer Var="oplot_s1_1" File="_shared1" Text="" />
+		<Layer Var="oplot_s1_2" File="_shared1" Text="" />
+		<Layer Var="oplot_s1_3" File="_shared1" Text="" />
+		<Layer Var="oplot_s1_4" File="_shared1" Text="" />
+		<Layer Var="oplot_s1_5" File="_shared1" Text="" />
+		<Layer Var="oplot_s1_6" File="_shared1" Text="" />
 		
 		<!-- Convert noterows to timestamps and plot dots -->
 		<Layer Type="Polygon" DrawMode="Quads" OnCommand="sleep,0.02;queuecommand,Make"
@@ -987,24 +987,24 @@ end"><children>
 		end"
 		UpdateSpellDisplayP1MessageCommand="hidden,curcard[1]"><children>
 			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight-4;diffusealpha,.2"/>
-			<Layer Type="BitmapText" File="_standard" Text="R" InitCommand="xy,2,-oplot_plotHeight/3-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
+			<Layer Type="BitmapText" File="_shared1" Text="R" InitCommand="xy,2,-oplot_plotHeight/3-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
 		</children></Layer>
 
 		<!-- Early/late markers -->
-		<Layer Type="BitmapText" File="_standard"
+		<Layer Type="BitmapText" File="_shared1"
 			OnCommand="xy,oplot_plotWidth/2+EarlyAddX,-oplot_plotHeight/2-6+EarlyAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
-		<Layer Type="BitmapText" File="_standard"
+		<Layer Type="BitmapText" File="_shared1"
 			OnCommand="xy,oplot_plotWidth/2+LateAddX,oplot_plotHeight/2-6+LateAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		
-		<Layer Type="BitmapText" Text="" Font="_standard"
+		<Layer Type="BitmapText" Text="" Font="_shared1"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
@@ -1032,7 +1032,7 @@ end"><children>
 			
 		end" />
 		
-		<Layer Type="BitmapText" Text="" Font="_standard"
+		<Layer Type="BitmapText" Text="" Font="_shared1"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
@@ -1531,15 +1531,15 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Var="oplot_s2_title" File="_standard" Text="" />
-		<Layer Var="oplot_s2_diff" File="_standard" Text="" />
-		<Layer Var="oplot_s2_perc" File="_standard" Text="" />
-		<Layer Var="oplot_s2_1" File="_standard" Text="" />
-		<Layer Var="oplot_s2_2" File="_standard" Text="" />
-		<Layer Var="oplot_s2_3" File="_standard" Text="" />
-		<Layer Var="oplot_s2_4" File="_standard" Text="" />
-		<Layer Var="oplot_s2_5" File="_standard" Text="" />
-		<Layer Var="oplot_s2_6" File="_standard" Text="" />
+		<Layer Var="oplot_s2_title" File="_shared1" Text="" />
+		<Layer Var="oplot_s2_diff" File="_shared1" Text="" />
+		<Layer Var="oplot_s2_perc" File="_shared1" Text="" />
+		<Layer Var="oplot_s2_1" File="_shared1" Text="" />
+		<Layer Var="oplot_s2_2" File="_shared1" Text="" />
+		<Layer Var="oplot_s2_3" File="_shared1" Text="" />
+		<Layer Var="oplot_s2_4" File="_shared1" Text="" />
+		<Layer Var="oplot_s2_5" File="_shared1" Text="" />
+		<Layer Var="oplot_s2_6" File="_shared1" Text="" />
 		
 		<!-- Convert noterows to timestamps and plot dots -->
 		<Layer Type="Polygon" DrawMode="Quads" OnCommand="sleep,0.02;queuecommand,Make"
@@ -1806,24 +1806,24 @@ end"><children>
 		end"
 		UpdateSpellDisplayP2MessageCommand="hidden,curcard[2]"><children>
 			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight;diffusealpha,.2"/>
-			<Layer Type="BitmapText" File="_standard" Text="R" InitCommand="xy,2,-oplot_plotHeight/2-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
+			<Layer Type="BitmapText" File="_shared1" Text="R" InitCommand="xy,2,-oplot_plotHeight/2-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
 		</children></Layer>
 
 		<!-- Early/late markers -->
-		<Layer Type="BitmapText" File="_standard"
+		<Layer Type="BitmapText" File="_shared1"
 			OnCommand="xy,oplot_plotWidth/2+EarlyAddX,-oplot_plotHeight/2-6+EarlyAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
-		<Layer Type="BitmapText" File="_standard"
+		<Layer Type="BitmapText" File="_shared1"
 			OnCommand="xy,oplot_plotWidth/2+LateAddX,oplot_plotHeight/2-6+LateAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		
-		<Layer Type="BitmapText" Text="" Font="_standard"
+		<Layer Type="BitmapText" Text="" Font="_shared1"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
@@ -1851,7 +1851,7 @@ end"><children>
 			
 		end" />
 		
-		<Layer Type="BitmapText" Text="" Font="_standard"
+		<Layer Type="BitmapText" Text="" Font="_shared1"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
