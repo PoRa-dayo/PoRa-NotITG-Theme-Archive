@@ -119,7 +119,7 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Added back the percentage in results screen of course mode.\
 -Added mod icons for custom noteskins.\
 -Added offset plot and spellcard viewer in results screen.\
--Added back OK counter, as well as mine counter next to the misses counter in results screen.
+-Added back OK counter, as well as an N.G. counter next to it, and a mine counter next to the misses counter in results screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_AHPX1eOta3" src="https://github.com/user-attachments/assets/873f8787-f810-48cd-ae25-193a1293accc" />
 <img width="200" height="150" alt="NotITG-v4 9 1_Odd72sXTZe" src="https://github.com/user-attachments/assets/6b90feff-2ba1-4053-b787-ab8c8ec3daad" />
@@ -193,7 +193,7 @@ OITGThemerFallback is a fallback theme that's made to be closer to the base SM3.
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.\
 -Added offset plot and spellcard viewer in results screen.\
--Added a mine counter next to the misses counter in results screen.
+-Added a mine counter next to the misses counter, and a N.G. counter next to the freeze counter in results screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_fI2Rc4ccEX" src="https://github.com/user-attachments/assets/42d665a7-7956-4a56-b381-5b2600e8456e" />
 <img width="200" height="150" alt="NotITG-v4 9 1_rAmhAt1GeF" src="https://github.com/user-attachments/assets/7e4efa9c-987e-486a-ba07-4e89dbb3dff8" />

@@ -290,6 +290,46 @@
             self:settext('+'..MineHit)
         end
     end"/>
+    
+    
+    <!-- N.G. -->
+    <Layer Font="_sg stroke" Text="" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X-70)
+        self:y(SCREEN_CENTER_Y+105)
+        self:shadowlength(0)
+        self:diffuse(1,0,0,1)
+        self:horizalign('right')
+        self:zoom(0)
+        self:sleep(0.125*8)
+        self:queuecommand('CalcNG')
+        self:bounceend(0.4)
+        self:zoom(0.4)
+    end"
+    CalcNGCommand="%function(self)
+        local NGTxt = GetPSStageStats(PLAYER_1):GetHoldNoteScores(1)
+        if NGTxt > 0 then
+            self:settext('N.G. '..NGTxt)
+        end
+    end"/>
+    
+    <Layer Font="_sg stroke" Text="" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X+70)
+        self:y(SCREEN_CENTER_Y+105)
+        self:shadowlength(0)
+        self:diffuse(1,0,0,1)
+        self:horizalign('left')
+        self:zoom(0)
+        self:sleep(0.125*8)
+        self:queuecommand('CalcNG')
+        self:bounceend(0.4)
+        self:zoom(0.4)
+    end"
+    CalcNGCommand="%function(self)
+        local NGTxt = GetPSStageStats(PLAYER_2):GetHoldNoteScores(1)
+        if NGTxt > 0 then
+            self:settext('N.G. '..NGTxt)
+        end
+    end"/>
 
 		<!-- VOICE JUDGMENT STUFF -->
 
