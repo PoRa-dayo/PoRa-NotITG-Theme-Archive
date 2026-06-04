@@ -169,6 +169,14 @@
 			self:diffusealpha(0)
 		end
 		end"
-		/>
+    />
+        
+    <!-- NotITG Offset Plot -->
+            
+    <Layer File="OffsetPlot" OffCommand="%function(self)
+        self:diffusealpha(0)
+        BX_SaltyResets = 0
+        BX_SaltyResetPos = {}
+    end"/>
 
 </children></ActorFrame>
