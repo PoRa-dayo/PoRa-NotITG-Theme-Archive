@@ -223,5 +223,13 @@
             self:y(SCREEN_TOP-90)
             end"
         />
+        
+    --FOR OFFSET PLOT AND ITS LIFE GRAPH
+	<Layer Type="Quad"
+		OnCommand="%function(self)
+			BX_SaltyResets = 0
+			BX_SaltyResetPos = {}
+		end"
+	/>
 
 </children></ActorFrame>
