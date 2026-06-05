@@ -16,7 +16,7 @@ An archive by PoRa that hosts old NotITG-compatible themes, slightly edited to e
 
 These were only tested on NotITG v4.9.1 Coin Mode Home + Event Mode.
 
-All themes here are ensured to have: modern noteskin customization, modern judgment font customization, proper difficulty number, step artist, song length indicator, available difficulties indicator (can be a difficulty list, or show whether easier/harder difficulties are available) and result indicator (can be grades or percentage score) on song selection screen, Stitch.lua stuff (FailOverlay, in-game console, whatever extra overlays you want, etc.), a "Play Mods" button (takes you to 2P Regular immediately), Course (Marathon) Mode being accessible, a Select Theme option, and a Display Resolution option.\
+All themes here are ensured to have: modern noteskin customization, modern judgment font customization, modern judgment hold customization (except DWI theme), proper difficulty number, step artist, song length indicator (can just be Long/Marathon indicator), available difficulties indicator (can be a difficulty list, or show whether easier/harder difficulties are available) and result indicator (percentage score and Failed grades must be visible) on song selection screen, hold (OK and NG) and mine counter as well as offset plot/spellcard viewer on results screen, Stitch.lua stuff (FailOverlay, in-game console, etc.), a "Play Mods" button (takes you to 2P Regular immediately), Course (Marathon) Mode being accessible, a Select Theme option, and a Display Resolution option.\
 Other modern features are not necessarily added, mainly for either the sake of keeping it true to the original, or because of UI issues. I also want to keep these themes at a 'frozen in time' state as much as possible, which means the themes' version numbers stay the same, the tips and birthdays stay the same no matter how outdated they are, and some menus remain lacking in features, to show that they're products of their time.
 
 I'm still new to theming so there are a lot of things I have no clue about. All the fixes were done purely by copying stuff from other themes until I figure out what works. I just want there to be a bunch of working themes to make theming easier in the future. Maybe I'll try making my own theme some day? But until then, back to noteskin hole I go.
@@ -147,7 +147,8 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 -Added Config Key/Joy Mappings option.\
 -Added Undead status icons next to songs you failed in the song selection screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
--Added step artist display in song selection screen.
+-Added step artist display in song selection screen.\
+-Added offset plot and spellcard viewer in results screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_1tjK7gDr5J" src="https://github.com/user-attachments/assets/89a4413f-d6ae-452e-9efa-250af917df0b" />
 <img width="200" height="150" alt="NotITG-v4 9 1_PBIx9s7E0H" src="https://github.com/user-attachments/assets/0b08f8a2-4aeb-4368-a9be-4432b97c23c3" />

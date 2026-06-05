@@ -18,5 +18,13 @@
 				InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;shadowlength,0;zoom,1.2;zoomx,1.5"
 				OnCommand="cropright,1;faderight,.3;linear,1;cropright,-.3;linear,.1;faderight,0;sleep,.4"
 			/>
+            
+        --FOR OFFSET PLOT AND ITS LIFE GRAPH
+        <Layer Type="Quad"
+            OnCommand="%function(self)
+                BX_SaltyResets = 0
+                BX_SaltyResetPos = {}
+            end"
+        />
 	</children>
 </ActorFrame>

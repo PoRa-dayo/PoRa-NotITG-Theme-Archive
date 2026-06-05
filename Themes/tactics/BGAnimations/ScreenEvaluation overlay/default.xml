@@ -78,6 +78,14 @@
 		<Layer
 			File="@THEME:GetPath( EC_BGANIMATIONS, '', '_boarder' )"
 		/>
+        
+        
+        <!-- NotITG Offset Plot -->
+            
+        <Layer File="@THEME:GetPath( EC_BGANIMATIONS, '', 'OffsetPlot' )" OffCommand="%function(self)
+            BX_SaltyResets = 0
+            BX_SaltyResetPos = {}
+        end"/>
 	</children>
 </ActorFrame>
 
