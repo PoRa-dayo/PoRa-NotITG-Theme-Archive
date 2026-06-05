@@ -1171,7 +1171,7 @@ end"><children>
 	
 		<!-- Background -->
 		<Layer Type="Quad" InitCommand="y,0;zoomto,BGWidth,112;diffuse,BGColorP2[1],BGColorP2[2],BGColorP2[3],BGColorP2[4]"
-        UpdateSpellDisplayP1MessageCommand="%function(self)
+        UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			self:zoomto(BGWidth,176)
 			self:y(-30)
@@ -1572,7 +1572,7 @@ end"><children>
 			
 			local w, xo, s, e = nil, nil, nil, nil
 				
-			if not GAMESTATE:IsCourseMode() and curcard[pn] > 0 then
+			if curcard[pn] > 0 then
 				w = oplot_plotWidth-80
 				xo = 30
 				s = oplot_spellCards[pn][ curcard[pn] ].StartBeat
@@ -1582,7 +1582,7 @@ end"><children>
 			local vert = 0;
 			for i=1,table.getn(nrt) do
 			
-				if s and e and ((not GAMESTATE:IsCourseMode() and nrt[i]/48 < s or nrt[i]/48 > e) or (GAMESTATE:IsCourseMode() and nrs[i] == curcard[pn] or curcard[pn] == 0)) then
+				if s and e and ((not GAMESTATE:IsCourseMode() and (nrt[i]/48 < s or nrt[i]/48 > e)) or (GAMESTATE:IsCourseMode() and nrs[i]+1 ~= curcard[pn])) then
 					--continue, but it's dealing with verts, so we can't...
 					
 					for j=0,3 do
@@ -1611,7 +1611,7 @@ end"><children>
 						self:SetVertexColor(vert+j,offsetToJudgeColor(dvt[i]/1000))
 					end
 					
-					if not GAMESTATE:IsCourseMode() and curcard[pn] > 0 then
+					if curcard[pn] > 0 then
 						local jw = offsetToJudgeWindow(dvt[i]/1000)
 						tns[jw] = tns[jw]+1
 					end
