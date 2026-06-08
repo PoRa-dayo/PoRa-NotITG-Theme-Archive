@@ -284,6 +284,7 @@ function CountdownOption()
     local saveFunc = function(self, list, pn)
         if list[1] then Profile().SplatManiaCountdownDisabled = false; end
 		if list[2] then Profile().SplatManiaCountdownDisabled = true; end
+        PROFILEMAN:SaveMachineProfile()
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
