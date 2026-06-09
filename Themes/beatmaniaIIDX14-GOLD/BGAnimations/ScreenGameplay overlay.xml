@@ -1,0 +1,191 @@
+<ActorFrame><children>
+    <Layer File="red_part_of_lifebar"
+    Condition="FUCK_EXE and GAMESTATE:IsPlayerEnabled(PLAYER_1) and PlayModeName() ~= 'Rave'"
+    OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X+(130-320));
+        self:y(SCREEN_CENTER_Y+(26-240));
+        self:zoomx(0.59)
+        self:queuecommand('Update')
+        self:cropright(0.1)
+    end"
+    UpdateCommand="%function(self)
+        self:cropright(math.max(0, 1-SCREENMAN:GetTopScreen():GetLife(PLAYER_1)-0.02))
+        self:addx(2)
+        self:sleep(0.05)
+        self:addx(-2)
+        self:sleep(0.05)
+        self:queuecommand('Update')
+    end"
+    />
+    
+    <Layer File="red_part_of_lifebar"
+    Condition="FUCK_EXE and GAMESTATE:IsPlayerEnabled(PLAYER_2) and PlayModeName() ~= 'Rave'"
+    OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X+(511-320));
+        self:y(SCREEN_CENTER_Y+(26-240));
+        self:zoomx(0.59)
+        self:queuecommand('Update')
+        self:cropright(0.1)
+    end"
+    UpdateCommand="%function(self)
+        self:cropright(math.max(0, 1-SCREENMAN:GetTopScreen():GetLife(PLAYER_2)-0.02))
+        self:addx(2)
+        self:sleep(0.05)
+        self:addx(-2)
+        self:sleep(0.05)
+        self:queuecommand('Update')
+    end"
+    />
+    
+    
+    
+    <Layer File="life frame"
+    Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PlayModeName() ~= 'Rave'"
+    OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X-191);
+        self:y(SCREEN_CENTER_Y-215);
+    end"/>
+    
+    <Layer File="life frame"
+    Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PlayModeName() ~= 'Rave'"
+    OnCommand="%function(self)
+        self:rotationy(180)
+        self:x(SCREEN_CENTER_X+190);
+        self:y(SCREEN_CENTER_Y-215);
+    end"/>
+    
+    
+    
+    <Layer Class="ActorFrame"
+        OnCommand="diffusealpha,0;sleep,0.2;decelerate,0.25;diffusealpha,1;shadowlength,0"><children>
+            <Layer
+                Font="../Numbers/BPMDisplay bpm"
+                Text="69420"
+                InitCommand="%function(self) self:horizalign('center') self:x(SCREEN_CENTER_X); self:y(SCREEN_CENTER_Y-147); self:zoom(1); self:shadowlength(0); end"
+                OnCommand="queuecommand,Update"
+                UpdateCommand="%GameplayBPM"
+            />
+    </children></Layer>
+    
+    <Layer 
+        Type="SongMeterDisplay" 
+        StreamWidth="85" 
+        StreamPath="meter stream" 
+        Command="%function(self)
+            self:x(SCREEN_CENTER_X)
+            self:y(SCREEN_CENTER_Y+(18-240))
+            self:draworder(20);
+            self:addx(85);
+            self:diffusealpha(0.5);
+            self:sleep(.8);
+            self:linear(0.2);
+            self:diffusealpha(1);
+            self:decelerate(1.6);
+            self:addx(-85);
+        end" 
+    >
+        <Tip File="ScreenGameplay song position tip" OnCommand="" />
+    </Layer>
+    
+    --FOR THE SONG TITLE SHOWCASE, THE READY IS IN SCREENGAMEPLAY IN
+    <Layer File="_white.png" OnCommand="x,SCREEN_CENTER_X;zoomtowidth,640;zoomtoheight,220;y,250;diffusealpha,0;sleep,1;linear,.2;diffusealpha,0.5;sleep,1.8;linear,.2;diffusealpha,0" />
+    
+    <Layer Type="BitmapText" Text="Song title" Font="ScreenGameplay song title" OnCommand="%function(self) 
+        local song = GAMESTATE:GetCurrentSong()
+        local course = GAMESTATE:GetCurrentCourse()
+        if song then
+            self:settext(song:GetDisplayMainTitle())
+        elseif course then
+            self:settext(course:GetDisplayFullTitle())
+        end
+        self:x(SCREEN_CENTER_X)
+        self:y(SCREEN_CENTER_Y+20)
+        self:shadowlength(0)
+        self:diffuse(0,0,0,1)
+        self:draworder(1000)
+        self:zoomy(1.2)
+        self:maxwidth(280)
+        self:horizalign('center')
+        self:diffusealpha(0)
+        self:sleep(1)
+        self:linear(0.2)
+        self:diffusealpha(1)
+        self:sleep(1.8)
+        self:linear(0.2)
+        self:diffusealpha(0)
+    end" />
+    
+    --FOR COMBO CHECK
+    <Layer Type="Quad"
+		InitCommand="hidden,1"
+        OnCommand="%function(self) IsFC = {true, true} end"
+        Fk_P1_W6MessageCommand="%function(self) IsFC[1] = false end"
+		Fk_P2_W6MessageCommand="%function(self) IsFC[2] = false end"
+    />
+
+    --FOR OFFSET PLOT AND ITS LIFE GRAPH: START
+
+	<Layer Type="Quad"
+		InitCommand="hidden,1"
+		OnCommand="%function(self)
+            BX_CurCustomLife = {0.5, 0.5}
+			BX_DispCustomLife = {0.5, 0.5}
+			BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
+			BX_DisplayedGraph = 'Life'
+            if BX_SaltyResets == nil then BX_SaltyResets = 0 end
+			
+			if BX_SaltyResetPos == nil then BX_SaltyResetPos = {} end
+            
+			BX_pss = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+			BX_dvt = BX_pss:GetOffsetVector()
+			BX_nrt = BX_pss:GetNoteRowVector()
+			
+			function math.clamp(val, min, max)
+				if val < min then return min end
+				if val > max then return max end
+				return val
+			end
+
+			function BX_lifebar(pn, off, looping)
+				--[[if PREFSMAN:GetPreference('InputDuplication') and not looping then
+					Trace('duplicating judgement: ' .. pn .. ' to ' .. (3 - pn))
+					BX_lifebar(3 - pn, off, true) -- duplicate
+				end]]
+
+				BX_CurCustomLife[pn] = math.clamp(BX_CurCustomLife[pn] + off,-100,1)
+				BX_DispCustomLife[pn] = math.clamp(BX_CurCustomLife[pn],0,1)
+				--table.insert(BX_CustomLifeChanges[pn],{GAMESTATE:GetSongBeat(),BX_DispCustomLife[pn]})
+				table.insert(BX_CustomLifeChanges[pn],{GAMESTATE:GetSongBeat(),SCREENMAN:GetTopScreen():GetLife(pn - 1)})
+			end
+		end"
+		SaltyResetMessageCommand="%function(self)
+			BX_CurCustomLife = {0.5, 0.5}
+			BX_DispCustomLife = {0.5, 0.5}
+			BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
+			BX_SaltyResets = BX_SaltyResets + 1
+			table.insert(BX_SaltyResetPos, GAMESTATE:GetSongBeat())
+		end"
+
+		Fk_P1_Complete_W1MessageCommand="%function(self) BX_lifebar(1, 0.008) end"
+		Fk_P1_Complete_W2MessageCommand="%function(self) BX_lifebar(1, 0.008) end"
+		Fk_P1_Complete_W3MessageCommand="%function(self) BX_lifebar(1, 0.004) end"
+		Fk_P1_Complete_W4MessageCommand="%function(self) BX_lifebar(1, 0) end"
+		Fk_P1_Complete_W5MessageCommand="%function(self) BX_lifebar(1, -0.05) end"
+		Fk_P1_Complete_W6MessageCommand="%function(self) BX_lifebar(1, -0.1) end"
+		Fk_P1_OKMessageCommand="%function(self) BX_lifebar(1, 0.008) end"
+		Fk_P1_NGMessageCommand="%function(self) BX_lifebar(1, -0.08) end"
+		Fk_P1_W8MessageCommand="%function(self) BX_lifebar(1, -0.05) end"
+
+		Fk_P2_Complete_W1MessageCommand="%function(self) BX_lifebar(2, 0.008) end"
+		Fk_P2_Complete_W2MessageCommand="%function(self) BX_lifebar(2, 0.008) end"
+		Fk_P2_Complete_W3MessageCommand="%function(self) BX_lifebar(2, 0.004) end"
+		Fk_P2_Complete_W4MessageCommand="%function(self) BX_lifebar(2, 0) end"
+		Fk_P2_Complete_W5MessageCommand="%function(self) BX_lifebar(2, -0.05) end"
+		Fk_P2_Complete_W6MessageCommand="%function(self) BX_lifebar(2, -0.1) end"
+		Fk_P2_OKMessageCommand="%function(self) BX_lifebar(2, 0.008) end"
+		Fk_P2_NGMessageCommand="%function(self) BX_lifebar(2, -0.08) end"
+		Fk_P2_W8MessageCommand="%function(self) BX_lifebar(2, -0.05) end"
+	/>
+    --FOR OFFSET PLOT AND ITS LIFE GRAPH: END
+    <ActorFrame Command="%GameplayInit" CurrentSongChangedMessageCommand="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
+</children></ActorFrame>

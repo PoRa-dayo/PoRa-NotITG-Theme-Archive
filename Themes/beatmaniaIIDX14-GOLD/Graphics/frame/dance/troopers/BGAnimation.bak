@@ -1,0 +1,40 @@
+[Layer1]
+Import=P1_Dance
+Condition=PlayModeName() == "Regular" and CurStyleName()=="single" and IsHumanPlayer(1) and not IsHumanPlayer(2) or PlayModeName() == "Regular" and CurStyleName()=="double" and IsHumanPlayer(1) and not IsHumanPlayer(2)
+[Layer2]
+Import=P2_Dance
+Condition=PlayModeName() == "Regular" and CurStyleName()=="single" and IsHumanPlayer(2) and not IsHumanPlayer(1) or PlayModeName() == "Regular" and CurStyleName()=="double" and IsHumanPlayer(2) and not IsHumanPlayer(1)
+
+[Layer3]
+Import=P1_Nonstop
+Condition=PlayModeName() == "Nonstop" and IsHumanPlayer(1) and not IsHumanPlayer(2)
+[Layer4]
+Import=P2_Nonstop
+Condition=PlayModeName() == "Nonstop" and IsHumanPlayer(2) and not IsHumanPlayer(1)
+
+[Layer5]
+Import=P1_Oni
+Condition=PlayModeName() == "Oni" and IsHumanPlayer(1) and not IsHumanPlayer(2) or PlayModeName() == "Endless" and IsHumanPlayer(1) and not IsHumanPlayer(2)
+[Layer6]
+Import=P2_Oni
+Condition=PlayModeName() == "Oni" and IsHumanPlayer(2) and not IsHumanPlayer(1) or PlayModeName() == "Endless" and IsHumanPlayer(2) and not IsHumanPlayer(1)
+
+[Layer7]
+Import=Versus
+Condition=(PlayModeName() == "Regular" or PlayModeName() == "Nonstop" or PlayModeName() == "Oni" or PlayModeName() == "Endless") and CurStyleName()=="versus"
+
+[Layer8]
+Import=Solo
+Condition=PlayModeName() == "Regular" and CurStyleName()=="solo"
+
+[Layer9]
+Import=Solo_Course
+Condition=PlayModeName() == "Nonstop" and CurStyleName()=="solo"
+
+[Layer10]
+Import=Rave
+Condition=PlayModeName() == "Rave"
+
+[Layer11]
+Import=P1_Oni
+Condition=PlayModeName() == "Endless" and CurStyleName()=="double" and IsHumanPlayer(1) and not IsHumanPlayer(2)

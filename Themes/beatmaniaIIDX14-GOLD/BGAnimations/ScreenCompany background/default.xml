@@ -1,0 +1,14 @@
+<ActorFrame><children>
+    <Layer File="../_black"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1"/>
+    
+    <Layer File="warning"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;sleep,3.2;linear,0.6;diffusealpha,0"/>
+    
+    <Layer File="konami"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,4.2;decelerate,0.6;diffusealpha,1;sleep,5.2;accelerate,0.6;diffusealpha,0"/>
+    
+    <Layer File="bemani"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,10.6;decelerate,0.6;diffusealpha,1;sleep,2.2;accelerate,0.6;diffusealpha,0"/>
+	
+</children></ActorFrame>

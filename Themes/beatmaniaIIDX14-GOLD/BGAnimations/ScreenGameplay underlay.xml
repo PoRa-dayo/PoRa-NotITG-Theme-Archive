@@ -1,0 +1,40 @@
+<ActorFrame><children>
+    <Layer File="ScreenGameplayNormalP1 score frame" Condition="GAMESTATE:IsPlayerEnabled(0)" OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X)
+        self:y(SCREEN_CENTER_Y)
+        self:addx(-300)
+        self:linear(0.25)
+        self:addx(300)
+        if Profile().IIDXGoldScreenFilter then
+            self:diffusealpha(tonumber(Profile().IIDXGoldScreenFilter))
+        else
+            self:diffusealpha(0.3)
+        end
+    end"/>
+    <Layer File="ScreenGameplayNormalP2 score frame" Condition="GAMESTATE:IsPlayerEnabled(1)" OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X)
+        self:y(SCREEN_CENTER_Y)
+        self:addx(300)
+        self:linear(0.25)
+        self:addx(-300)
+        if Profile().IIDXGoldScreenFilter then
+            self:diffusealpha(tonumber(Profile().IIDXGoldScreenFilter))
+        else
+            self:diffusealpha(0.3)
+        end
+    end"/>
+
+    <Layer File="../Graphics/frame/dance/troopers/Versus" Condition="GAMESTATE:IsPlayerEnabled(1) and GAMESTATE:IsPlayerEnabled(0)"/>
+    <Layer File="../Graphics/frame/dance/troopers/P1_Dance" Condition="GAMESTATE:IsPlayerEnabled(0) and not GAMESTATE:IsPlayerEnabled(1)"/>
+    <Layer File="../Graphics/frame/dance/troopers/P2_Dance" Condition="GAMESTATE:IsPlayerEnabled(1) and not GAMESTATE:IsPlayerEnabled(0)"/>
+    <Layer File="../Graphics/frame/dance/troopers/Versus" Condition="GAMESTATE:IsPlayerEnabled(1) and GAMESTATE:IsPlayerEnabled(0)"/>
+    
+    <ActorFrame
+		OnCommand="%function(self)
+			self:stopeffect()
+			if FUCK_EXE then
+				stitch('lua.death').Start()
+			end
+		end" 
+	/>
+</children></ActorFrame>

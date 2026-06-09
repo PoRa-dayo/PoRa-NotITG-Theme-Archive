@@ -1,0 +1,30 @@
+<ActorFrame><children>
+    <Layer File="left" Condition="FUCK_EXE and CurStyleName()~='double' and GAMESTATE:IsPlayerEnabled(0)"
+    OnCommand="%function(self)
+        self:queuecommand('GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppears')
+    end"
+    GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppearsCommand="%function(self)
+        if not IsFC[1] then
+            self:x(99999)
+        end
+    end"/>
+    <Layer File="right" Condition="FUCK_EXE and CurStyleName()~='double' and GAMESTATE:IsPlayerEnabled(1)"
+    OnCommand="%function(self)
+        self:queuecommand('GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppears')
+    end"
+    GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppearsCommand="%function(self)
+        if not IsFC[2] then
+            self:x(99999)
+        end
+    end"/>
+    <Layer File="center" Condition="FUCK_EXE and CurStyleName()=='double'"
+    OnCommand="%function(self)
+        self:queuecommand('GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppears')
+    end"
+    GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppearsCommand="%function(self)
+        if not IsFC[1] then
+            self:x(99999)
+        end
+    end"/>
+</children></ActorFrame>
+

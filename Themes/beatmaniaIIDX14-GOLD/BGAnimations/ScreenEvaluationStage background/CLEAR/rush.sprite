@@ -1,0 +1,6 @@
+[Sprite]
+Texture=rush 2x1.png
+Frame0000=1
+Delay0000=0.005
+Frame0001=0
+Delay0001=0.005

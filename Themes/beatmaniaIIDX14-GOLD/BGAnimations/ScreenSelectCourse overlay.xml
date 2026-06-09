@@ -1,0 +1,31 @@
+<ActorFrame
+    CurrentSongChangedMessageCommand="queuecommand,SendUpdate"
+    CurrentStepsP1ChangedMessageCommand="queuecommand,SendUpdate"
+    CurrentStepsP2ChangedMessageCommand="queuecommand,SendUpdate"
+    SendUpdateCommand="%function(self)
+    MESSAGEMAN:Broadcast('Update')
+    end"
+    ><children>
+    <Layer
+        Type="BitmapText"
+        Font="songtitle 16px"
+        Text="Mirin Template"
+        OnCommand="zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-90;horizalign,right;shadowlength,0;maxwidth,300;addx,480;decelerate,0.3;addx,-480;maxwidth,460"
+        OffCommand=""
+        UpdateMessageCommand="%function(self) 
+            local song = GAMESTATE:GetCurrentSong()
+            local course = GAMESTATE:GetCurrentCourse()
+            if song then
+                self:settext(song:GetDisplayMainTitle())
+            elseif course then
+                self:settext(course:GetDisplayFullTitle())
+            else
+                self:settext('')
+            end
+        end" />
+        
+    <Layer
+        File="ScreenSelectCourse banner frame"
+        OnCommand="zoom,0.62;zoomy,0.6;x,SCREEN_CENTER_X-58;y,SCREEN_CENTER_Y-38;"
+    />
+</children></ActorFrame>

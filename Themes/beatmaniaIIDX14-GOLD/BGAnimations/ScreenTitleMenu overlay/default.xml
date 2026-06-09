@@ -1,0 +1,38 @@
+<ActorFrame><children>
+	<!-- OpenITG's Center isn't the ACTUAL center; it's the top left corner, so we need to center it again. -->
+	<!-- StepMania 3.9's CenterX is 320, and CenterY is 240. So i need to do some math in order to makeout what the actual value is using SCREEN_CENTER_Y first and then the value. Thankfully we can let OpenITG do the actual math. -->
+	<Layer File="START"
+    OnCommand="%function(self)
+        if GAMESTATE:GetCoinMode() ~= 2 then
+            self:hidden(0)
+        else
+            self:hidden(1)
+        end
+        self:queuecommand('Thing')
+    end"
+	ThingCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(376-240);diffuseblink;effectperiod,0.5;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0;diffusealpha,0;sleep,1.6;diffusealpha,1"/>
+    
+    <Layer File="COIN"
+    OnCommand="%function(self)
+        if GAMESTATE:GetCoinMode() == 2 then
+            self:hidden(0)
+        else
+            self:hidden(1)
+        end
+        self:queuecommand('Thing')
+    end"
+	ThingCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(376-240);diffuseblink;effectperiod,0.5;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0;diffusealpha,0;sleep,1.6;diffusealpha,1"/>
+    
+    <Layer File="1CREDIT_DP"
+    OnCommand="%function(self)
+        if GAMESTATE:GetCoinMode() == 2 then
+            self:hidden(0)
+        else
+            self:hidden(1)
+        end
+        self:queuecommand('Thing')
+    end"
+	ThingCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+(410-240);diffuseblink;effectcolor1,1,1,1,1;effectcolor2,1,1,1,.8;effectperiod,.8;customtexturerect,0,0,2,1;zoomto,2048*0.625,64*0.625;texcoordvelocity,0.2,0"/>
+    
+	
+</children></ActorFrame>

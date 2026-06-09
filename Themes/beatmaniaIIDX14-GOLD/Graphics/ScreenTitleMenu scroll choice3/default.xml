@@ -1,0 +1,13 @@
+<ActorFrame> <children>
+    <AutoActor 
+        File="Options"
+        OnCommand="%function(self)
+            if GAMESTATE:GetCoinMode() ~= 2 then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+            self:shadowlength(0)
+        end"
+    />
+</children> </ActorFrame>
