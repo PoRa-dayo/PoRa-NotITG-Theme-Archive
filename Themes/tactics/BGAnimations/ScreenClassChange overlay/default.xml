@@ -472,4 +472,9 @@
 	<Layer
 		File="@THEME:GetPath( EC_BGANIMATIONS, '', '_boarder' )"
 	/>
+    <Layer
+		Type="Quad"
+        OnCommand="hidden,1;sleep,4;queuecommand,Save"
+        SaveCommand="%function(self) SaveClassToProfile(GAMESTATE:GetEnv('class')) end"
+	/>
 </children></ActorFrame>

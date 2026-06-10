@@ -135,7 +135,7 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 -Original theme by Mad Matt, no longer maintained. Optimized for NotITG 4.9.1 by PoRa
 
 ## Changelogs:
--Added "Continue" (takes you to 2P Dance and selects Squire immediately since this theme doesn't save your class once you exit)\
+-Added "Continue" (takes you to 2P Dance and selects Squire immediately (or your last selected class if found))\
 -Fixed duplicated/overlapping text in the Options menu.\
 -Added Display Mode, Resolution, Select Theme option.\
 -_missing font now redirects to FFT2 white font for better readability in the UI that uses it.\
@@ -219,7 +219,7 @@ This theme already has almost every feature you can ask for, so there are very f
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Profile Options (broken in NotITG). Removed Show Caution and Show Instructions options, they don't do anything in this theme and break other themes.\
 -Removed Reset Menu button in Options as it screws up the game real badly. (not so surprising isn't it)\
 -Noteskins now affect players 1-8.\
--Added Hold Judgment customization.\
+-Added Hold Judgment and Vocalize customization.\
 -F grades now show up in song selection screen.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\

@@ -472,3 +472,12 @@ function GetArrow( num )
 	if num == 2 then return "D " end
 	if num == 3 then return "R " end
 end	
+
+function SaveClassToProfile( num )
+    PROFILEMAN:GetMachineProfile():GetSaved().ITGTACTICSLastUsedClass = num
+    PROFILEMAN:SaveMachineProfile()
+end
+
+function GetSavedClass( num )
+    return PROFILEMAN:GetMachineProfile():GetSaved().ITGTACTICSLastUsedClass
+end
