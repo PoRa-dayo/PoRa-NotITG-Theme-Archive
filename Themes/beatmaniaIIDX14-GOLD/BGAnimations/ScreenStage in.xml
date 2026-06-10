@@ -1,0 +1,14 @@
+<ActorFrame><children>
+	<Layer Type="Quad" OnCommand="%function(self)
+        self:zoom(0) 
+        if not Profile().IIDXGoldDecideSFX then
+            AudioPlay('decide/default') 
+        elseif Profile().IIDXGoldDecideSFX == 'RANDOM' then
+            local SFXList = {'default', 'extra', 'led', 'suzaku', 'taka', 'yoshitaka'}
+            local RandomSFX = SFXList[math.random(#SFXList)]
+            AudioPlay('decide/'..RandomSFX)
+        else
+            AudioPlay('decide/'..string.lower(Profile().IIDXGoldDecideSFX)) 
+        end
+    end" />
+</children></ActorFrame>
