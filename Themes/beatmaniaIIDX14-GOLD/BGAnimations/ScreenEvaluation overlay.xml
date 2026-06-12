@@ -1,6 +1,32 @@
-<ActorFrame> <children>
+<ActorFrame InitCommand="%function(self)
+
+	local prof = PROFILEMAN:GetMachineProfile()
+	for pn=0,1 do
+		_G['uksrt_cached_highscore_'..pn] = 0
+		if GAMESTATE:IsPlayerEnabled(pn) then
+			local sco = 0
+			if GAMESTATE:IsCourseMode() then
+				sco = prof:GetHighScoreForCourseAndTrail( GAMESTATE:GetCurrentCourse(), GAMESTATE:GetCurrentTrail(pn):GetDifficulty() )
+			else
+				sco = prof:GetHighScoreForSongAndSteps( GAMESTATE:GetCurrentSong(), GAMESTATE:GetCurrentSteps(pn):GetDifficulty() )
+			end
+			if sco then
+				_G['uksrt_cached_highscore_'..pn] = math.floor(sco:GetPercentDP()*10000)/10000
+			end
+		end
+	end
+	
+end"> <children>
     <!-- NotITG Offset Plot -->
-    <Layer File="OffsetPlot" OffCommand="%function(self)
+    <Layer File="OffsetPlot" InitCommand="%function(self)
+        if PlayModeName() == 'Rave' or PlayModeName() == 'Endless' then
+            BX_CurCustomLife = {0.5, 0.5}
+			BX_DispCustomLife = {0.5, 0.5}
+			BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
+			BX_DisplayedGraph = 'Life'
+        end
+    end"
+    OffCommand="%function(self)
         BX_SaltyResets = 0
         BX_SaltyResetPos = {}
     end"/>
@@ -90,6 +116,45 @@
         local NGTxt = GetPSStageStats(PLAYER_2):GetHoldNoteScores(1)
         if NGTxt > 0 then
             self:settext('BAD '..NGTxt)
+        end
+    end"/>
+    
+    <!-- New Record -->
+    <Layer File="ScreenEvaluation MachineRecord 01" Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and PlayModeName() ~= 'Endless'" OnCommand="%function(self)
+        self:hidden(1)
+        self:x(SCREEN_CENTER_X+(140-320))
+        self:y(SCREEN_CENTER_Y+(114-240))
+        self:draworder(40)
+        self:shadowlength(0)
+        self:zoomy(0)
+        self:diffusealpha(0)
+        self:sleep(3)
+        self:linear(0.15)
+        self:zoomy(1)
+        self:diffusealpha(1)
+        
+        local perc = math.floor(STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_1):GetPercentDancePoints()*10000)/10000
+        if perc > _G['uksrt_cached_highscore_0'] then
+            self:hidden(0)
+        end
+    end"/>
+    
+    <Layer File="ScreenEvaluation MachineRecord 01" Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and PlayModeName() ~= 'Endless'" OnCommand="%function(self)
+        self:hidden(1)
+        self:x(SCREEN_CENTER_X+(500-320))
+        self:y(SCREEN_CENTER_Y+(114-240))
+        self:draworder(40)
+        self:shadowlength(0)
+        self:zoomy(0)
+        self:diffusealpha(0)
+        self:sleep(3)
+        self:linear(0.15)
+        self:zoomy(1)
+        self:diffusealpha(1)
+        
+        local perc = math.floor(STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetPercentDancePoints()*10000)/10000
+        if perc > _G['uksrt_cached_highscore_1'] then
+            self:hidden(0)
         end
     end"/>
 </children> </ActorFrame>

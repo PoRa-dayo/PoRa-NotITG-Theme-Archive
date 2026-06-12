@@ -24,10 +24,12 @@
         end
     end"/>
 
-    <Layer File="../Graphics/frame/dance/troopers/Versus" Condition="GAMESTATE:IsPlayerEnabled(1) and GAMESTATE:IsPlayerEnabled(0)"/>
-    <Layer File="../Graphics/frame/dance/troopers/P1_Dance" Condition="GAMESTATE:IsPlayerEnabled(0) and not GAMESTATE:IsPlayerEnabled(1)"/>
-    <Layer File="../Graphics/frame/dance/troopers/P2_Dance" Condition="GAMESTATE:IsPlayerEnabled(1) and not GAMESTATE:IsPlayerEnabled(0)"/>
-    <Layer File="../Graphics/frame/dance/troopers/Versus" Condition="GAMESTATE:IsPlayerEnabled(1) and GAMESTATE:IsPlayerEnabled(0)"/>
+    <Layer File="../Graphics/frame/dance/troopers/Versus" Condition="GAMESTATE:IsPlayerEnabled(1) and GAMESTATE:IsPlayerEnabled(0) and PlayModeName() ~= 'Rave'"/>
+    <Layer File="../Graphics/frame/dance/troopers/P1_Dance" Condition="GAMESTATE:IsPlayerEnabled(0) and not GAMESTATE:IsPlayerEnabled(1) and PlayModeName() ~= 'Rave' and PlayModeName() ~= 'Oni'"/>
+    <Layer File="../Graphics/frame/dance/troopers/P2_Dance" Condition="GAMESTATE:IsPlayerEnabled(1) and not GAMESTATE:IsPlayerEnabled(0) and PlayModeName() ~= 'Rave' and PlayModeName() ~= 'Oni'"/>
+    <Layer File="../Graphics/frame/dance/troopers/P1_Oni" Condition="GAMESTATE:IsPlayerEnabled(0) and not GAMESTATE:IsPlayerEnabled(1) and PlayModeName() == 'Oni'"/>
+    <Layer File="../Graphics/frame/dance/troopers/P2_Oni" Condition="GAMESTATE:IsPlayerEnabled(1) and not GAMESTATE:IsPlayerEnabled(0) and PlayModeName() == 'Oni'"/>
+    <Layer File="../Graphics/frame/dance/troopers/Rave" Condition="PlayModeName() == 'Rave'"/>
     
     <ActorFrame
 		OnCommand="%function(self)

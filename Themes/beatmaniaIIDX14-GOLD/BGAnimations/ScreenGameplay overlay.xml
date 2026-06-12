@@ -16,6 +16,7 @@
         self:sleep(0.05)
         self:queuecommand('Update')
     end"
+    OffCommand="diffusealpha,0"
     />
     
     <Layer File="red_part_of_lifebar"
@@ -35,24 +36,27 @@
         self:sleep(0.05)
         self:queuecommand('Update')
     end"
+    OffCommand="diffusealpha,0"
     />
     
     
     
     <Layer File="life frame"
-    Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PlayModeName() ~= 'Rave'"
+    Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) or PlayModeName() == 'Rave'"
     OnCommand="%function(self)
         self:x(SCREEN_CENTER_X-191);
         self:y(SCREEN_CENTER_Y-215);
-    end"/>
+    end"
+    OffCommand="diffusealpha,0"/>
     
     <Layer File="life frame"
-    Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PlayModeName() ~= 'Rave'"
+    Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) or PlayModeName() == 'Rave'"
     OnCommand="%function(self)
         self:rotationy(180)
         self:x(SCREEN_CENTER_X+190);
         self:y(SCREEN_CENTER_Y-215);
-    end"/>
+    end"
+    OffCommand="diffusealpha,0"/>
     
     
     
@@ -64,6 +68,7 @@
                 InitCommand="%function(self) self:horizalign('center') self:x(SCREEN_CENTER_X); self:y(SCREEN_CENTER_Y-147); self:zoom(1); self:shadowlength(0); end"
                 OnCommand="queuecommand,Update"
                 UpdateCommand="%GameplayBPM"
+                OffCommand="diffusealpha,0"
             />
     </children></Layer>
     
@@ -83,6 +88,7 @@
             self:decelerate(1.6);
             self:addx(-85);
         end" 
+        OffCommand="diffusealpha,0"
     >
         <Tip File="ScreenGameplay song position tip" OnCommand="" />
     </Layer>
@@ -119,6 +125,10 @@
     <Layer Type="Quad"
 		InitCommand="hidden,1"
         OnCommand="%function(self) IsFC = {true, true} end"
+        Fk_P1_W4MessageCommand="%function(self) IsFC[1] = false end"
+		Fk_P2_W4MessageCommand="%function(self) IsFC[2] = false end"
+        Fk_P1_W5MessageCommand="%function(self) IsFC[1] = false end"
+		Fk_P2_W5MessageCommand="%function(self) IsFC[2] = false end"
         Fk_P1_W6MessageCommand="%function(self) IsFC[1] = false end"
 		Fk_P2_W6MessageCommand="%function(self) IsFC[2] = false end"
     />

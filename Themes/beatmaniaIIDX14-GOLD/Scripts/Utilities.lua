@@ -675,8 +675,10 @@ function CommonBGMOption()
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
 end
 
+DecideSFXList = {"DEFAULT", "EXTRA", "LED", "SUZAKU", "TAKA", "YOSHITAKA", "RANDOM"}
+
 function DecideSFXOption()
-	local modList = {"DEFAULT", "EXTRA", "LED", "SUZAKU", "TAKA", "YOSHITAKA", "RANDOM"}
+	local modList = DecideSFXList
     
 	local Params = {
 		Name = "Decide SFX",

@@ -4,11 +4,19 @@
         if not Profile().IIDXGoldDecideSFX then
             AudioPlay('decide/default') 
         elseif Profile().IIDXGoldDecideSFX == 'RANDOM' then
-            local SFXList = {'default', 'extra', 'led', 'suzaku', 'taka', 'yoshitaka'}
-            local RandomSFX = SFXList[math.random(#SFXList)]
-            AudioPlay('decide/'..RandomSFX)
+            local RandomSFX = DecideSFXList[math.random(#DecideSFXList-1)]
+            AudioPlay('decide/'..string.lower(RandomSFX))
         else
             AudioPlay('decide/'..string.lower(Profile().IIDXGoldDecideSFX)) 
         end
     end" />
+    
+    --FOR OFFSET PLOT AND ITS LIFE GRAPH
+	<Layer Type="Quad"
+		OnCommand="%function(self)
+			BX_SaltyResets = 0
+			BX_SaltyResetPos = {}
+		end"
+	/>
+    <ActorFrame Command="%ApplyNoteskin"/>
 </children></ActorFrame>

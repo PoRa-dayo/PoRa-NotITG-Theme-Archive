@@ -2,5 +2,7 @@
 	<!-- This will act as the BGAnimation LengthSeconds command. -->
 	<Layer Type="Quad" OnCommand="%function(self) self:zoom(0) self:sleep(0.8) end" />
 
-	<Layer File="../_black" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"/>
+	<Layer File="../_black" Condition="PlayModeName() ~= 'Oni'" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"/>
+    
+    <Layer File="_fade out" Condition="PlayModeName() == 'Oni'"/>
 </children></ActorFrame>
