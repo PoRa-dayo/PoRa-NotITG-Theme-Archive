@@ -1,0 +1,14 @@
+<ActorFrame><children>
+    <Layer
+        File="_mselect"
+        Condition="not IsExtraStage() == true and not IsExtraStage2() == true"/>
+        
+    <Layer
+        File="_extra"
+        Condition="IsExtraStage() == true or IsExtraStage2() == true"/>
+        
+    <Layer
+        File="../goldrush.avi"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT"
+        Condition="not IsExtraStage() == true and not IsExtraStage2() == true"/>
+</children></ActorFrame>

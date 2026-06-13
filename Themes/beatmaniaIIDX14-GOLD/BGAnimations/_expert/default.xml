@@ -1,0 +1,37 @@
+<ActorFrame><children>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(90))
+    end"><children>
+    
+        <Layer
+            Type="Model" Meshes="2.txt" Materials="2.txt" Bones="2.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,200;zoomy,200;zoomz,200;rotationz,-30;addy,-20;addz,140;rotationx,50;addx,40;blend,add"/>
+            
+        <Layer
+            Type="Model" Meshes="2.txt" Materials="2.txt" Bones="2.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,200;zoomy,200;zoomz,200;rotationz,-32;addy,-20;addz,80;rotationx,50;addx,40;"/>
+            
+        <Layer
+            Type="Model" Meshes="1.txt" Materials="1.txt" Bones="1.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,200;zoomy,200;zoomz,200;rotationz,-30;addy,-20;addz,140;rotationx,50;addx,40;backfacecull,0;blend,add;"/>
+            
+        <Layer
+            Type="Model" Meshes="1.txt" Materials="1.txt" Bones="1.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,200;zoomy,200;zoomz,200;rotationz,-30;addy,-20;addz,140;rotationx,50;addx,40;backfacecull,0;blend,add;"/>
+    </children></ActorFrame>
+    
+    <Layer
+        File="bg2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"/>
+        
+    <Layer
+        File="smoke.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+50;blend,add;diffusealpha,0.5;customtexturerect,0,0,2,1;zoomto,2048*0.625,768;texcoordvelocity,0.2,0"/>
+    
+    <Layer
+        File="bg.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"/>
+        
+</children></ActorFrame>
+

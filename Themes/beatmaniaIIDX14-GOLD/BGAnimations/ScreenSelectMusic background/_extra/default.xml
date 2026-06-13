@@ -1,0 +1,15 @@
+<ActorFrame OnCommand="%function(self)
+    self:fov(RealFOV(90))
+end"><children>
+    <Layer
+        Type="Model" Meshes="1.txt" Materials="1.txt" Bones="1.txt"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,20;zoomy,18;zoomz,20;addz,340;addy,30;rotationy,-10"/>
+
+    <Layer
+        File="BG.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"/>
+        
+    <Layer
+        Type="Model" Meshes="2.txt" Materials="2.txt" Bones="2.txt"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,20;zoomy,18;zoomz,20;addz,320;addy,28;rotationx,-10;rotationy,-10"/>
+</children></ActorFrame>

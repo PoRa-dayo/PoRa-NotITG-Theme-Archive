@@ -1,0 +1,23 @@
+<ActorFrame><children>
+    <Layer
+        File="../_expert"
+        Condition="PlayModeName() == 'Nonstop'"/>
+        
+    <Layer
+        File="../_challenge"
+        Condition="PlayModeName() == 'Oni'"/>
+        
+    <Layer
+        File="../_challenge/1.png"
+        Command="x,SCREEN_CENTER_X;y,230;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"
+        Condition="PlayModeName() == 'Oni'"/>
+        
+    <Layer
+        File="../ScreenSelectMusic background/_extra"
+        Condition="PlayModeName() == 'Endless'"/>
+        
+    <Layer
+        File=".../goldrush.avi"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;blend,add"
+        Condition="PlayModeName() == 'Nonstop' or PlayModeName() == 'Oni'"/>
+</children></ActorFrame>

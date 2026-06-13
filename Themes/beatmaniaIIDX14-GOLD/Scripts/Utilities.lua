@@ -586,6 +586,10 @@ function Grade(value)
     return ToSM39GradeNum(value)
 end
 
+--scaling FOV to different res (ty brother mojo)
+function RealFOV(fov) return 360 / math.pi * math.atan(math.tan(math.pi * (1 / (360 / fov))) * SCREEN_WIDTH / SCREEN_HEIGHT * 0.75) end
+
+
 -- Function for neccesary profile request calls.
 function Profile() return PROFILEMAN:GetMachineProfile():GetSaved() end
 function SaveProfiles() return PROFILEMAN:SaveMachineProfile() end

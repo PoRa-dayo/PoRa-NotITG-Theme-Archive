@@ -94,7 +94,7 @@
     </Layer>
     
     --FOR THE SONG TITLE SHOWCASE, THE READY IS IN SCREENGAMEPLAY IN
-    <Layer File="_white.png" OnCommand="x,SCREEN_CENTER_X;zoomtowidth,640;zoomtoheight,220;y,250;diffusealpha,0;sleep,1;linear,.2;diffusealpha,0.5;sleep,1.8;linear,.2;diffusealpha,0" />
+    <Layer File="_white.png" OnCommand="x,SCREEN_CENTER_X;zoomtowidth,SCREEN_WIDTH;zoomtoheight,220;y,250;diffusealpha,0;sleep,1;linear,.2;diffusealpha,0.5;sleep,1.8;linear,.2;diffusealpha,0" />
     
     <Layer Type="BitmapText" Text="Song title" Font="ScreenGameplay song title" OnCommand="%function(self) 
         local song = GAMESTATE:GetCurrentSong()

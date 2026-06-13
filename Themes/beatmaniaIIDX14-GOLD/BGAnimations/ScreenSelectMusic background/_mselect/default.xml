@@ -1,0 +1,24 @@
+<ActorFrame><children>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(90))
+    end"><children>
+    
+        <Layer
+            Type="Model" Meshes="1.txt" Materials="1.txt" Bones="1.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,400;zoomy,400;zoomz,400;addz,100;addy,-30;addx,-50;spin;effectmagnitude,0,20,0;rotationx,3"/>
+            
+        <Layer
+            Type="Model" Meshes="2.txt" Materials="2.txt" Bones="2.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,400;zoomy,400;zoomz,400;addz,100;addy,-30;addx,-50;spin;effectmagnitude,0,20,0;rotationx,3"/>
+    </children></ActorFrame>
+    
+    <Layer
+        File="bg2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT"/>
+        
+    <Layer
+        File="smoke.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+50;blend,add;diffusealpha,0.5;customtexturerect,0,0,2,1;zoomto,2048*0.625,768;texcoordvelocity,0.2,0"/>
+
+</children></ActorFrame>

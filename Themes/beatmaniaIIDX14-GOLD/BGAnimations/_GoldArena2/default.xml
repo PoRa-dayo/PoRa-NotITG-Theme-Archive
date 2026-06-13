@@ -1,0 +1,18 @@
+<ActorFrame><children>
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(140))
+    end"><children>
+    
+        <Layer
+            File="GA2.model"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;rotationx,-30;z,10;zoom,2;zoomz,1.6;spin;effectmagnitude,0,0,20;y,200;x,280"/>
+    </children></ActorFrame>
+    
+    <Layer
+        File="bg2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;additiveblend,1"/>
+        
+    <Layer
+        File="smoke.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+50;blend,add;diffusealpha,0.5;customtexturerect,0,0,2,1;zoomto,2048*0.625,768;texcoordvelocity,0.2,0"/>
+</children></ActorFrame>

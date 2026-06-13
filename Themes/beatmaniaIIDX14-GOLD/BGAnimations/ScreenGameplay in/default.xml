@@ -1,5 +1,5 @@
 <ActorFrame><children>
-    <!-- This will load another command with an existing animation. -->
+    <!-- Play UI appearing animation of the corresponding mode, defined in BGAnimations/frame, after that it'll disappear and is replaced with the static UI in ScreenGameplay underlay, defined in Graphics/frame -->
 	<Layer File="../frame/dance/troopers/P1_Dance" Condition="GAMESTATE:IsPlayerEnabled(0) and not GAMESTATE:IsPlayerEnabled(1) and PlayModeName() ~= 'Rave'"/>
     <Layer File="../frame/dance/troopers/P2_Dance" Condition="GAMESTATE:IsPlayerEnabled(1) and not GAMESTATE:IsPlayerEnabled(0) and PlayModeName() ~= 'Rave'"/>
     <Layer File="../frame/dance/troopers/Versus" Condition="GAMESTATE:IsPlayerEnabled(1) and GAMESTATE:IsPlayerEnabled(0) and PlayModeName() ~= 'Rave'"/>

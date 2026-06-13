@@ -19,14 +19,14 @@
     -- SC Info refers to the SC Title, Diff, Percent, Judgments, and its background.
     -- Early and Late refers to the Early (-180ms)/Late (+180ms) markers.
 	
-    P1AddX = -28
+    P1X = 137
     P1AddY = -162
     P1Zoom = 0.75
     SCHighlightAddHeightP1 = -13
     SCHighlightYP1 = -67
     SCScrollBarAddXP1 = 0
     
-    P2AddX = 28
+    P2X = SCREEN_WIDTH-137
     P2AddY = -162
     P2Zoom = 0.75
     SCHighlightAddHeightP2 = -13
@@ -261,7 +261,7 @@
 	
 end"><children>
 	<!--xy,SCREEN_WIDTH*0.25-oplot_plotWidth/2,SCREEN_HEIGHT*0.5+56+oplot_plotHeight/2-->
-	<Layer Type="ActorFrame" OnCommand="xy,SCREEN_WIDTH*0.5-157+P1AddX,SCREEN_HEIGHT*0.5+72-14+P1AddY;hidden,1;zoom,P1Zoom"
+	<Layer Type="ActorFrame" OnCommand="xy,P1X,SCREEN_HEIGHT*0.5+72-14+P1AddY;hidden,1;zoom,P1Zoom"
 	StepP1LeftPressMessageCommand="%function(self)
 		local pn = 1
 		curcard[pn] = 0;
@@ -1102,7 +1102,7 @@ end"><children>
 
 	</children></Layer>
 	
-	<Layer Type="ActorFrame" OnCommand="xy,SCREEN_WIDTH*0.5+157+P2AddX,SCREEN_HEIGHT*0.5+72-14+P2AddY;hidden,1;zoom,P2Zoom"
+	<Layer Type="ActorFrame" OnCommand="xy,P2X,SCREEN_HEIGHT*0.5+72-14+P2AddY;hidden,1;zoom,P2Zoom"
 	StepP1RightPressMessageCommand="%function(self)
 		local pn = 2
 		curcard[pn] = 0;

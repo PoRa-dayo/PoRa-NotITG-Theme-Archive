@@ -33,7 +33,7 @@ end"> <children>
     
     <!-- Mines -->
     <Layer Type="BitmapText" Text="" Font="Common normal" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
-        self:x(SCREEN_CENTER_X+(139-320+62))
+        self:x(139+62)
         self:y(SCREEN_CENTER_Y+(398-240))
         self:shadowlength(0)
         self:zoom(0.5)
@@ -57,7 +57,7 @@ end"> <children>
     end"/>
     
     <Layer Type="BitmapText" Text="" Font="Common normal" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
-        self:x(SCREEN_CENTER_X+(501-320-62))
+        self:x(SCREEN_WIDTH-(640-501)-62)
         self:y(SCREEN_CENTER_Y+(398-240))
         self:shadowlength(0)
         self:zoom(0.5)
@@ -82,7 +82,7 @@ end"> <children>
     
     <!-- NG -->
     <Layer Type="BitmapText" Text="" Font="Common normal" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
-        self:x(SCREEN_CENTER_X+(139-320+62))
+        self:x(139+62)
         self:y(SCREEN_CENTER_Y+(421-240))
         self:shadowlength(0)
         self:zoom(0.5)
@@ -101,7 +101,7 @@ end"> <children>
     end"/>
     
     <Layer Type="BitmapText" Text="" Font="Common normal" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
-        self:x(SCREEN_CENTER_X+(501-320-62))
+        self:x(SCREEN_WIDTH-(640-501)-62)
         self:y(SCREEN_CENTER_Y+(421-240))
         self:shadowlength(0)
         self:zoom(0.5)
@@ -122,7 +122,7 @@ end"> <children>
     <!-- New Record -->
     <Layer File="ScreenEvaluation MachineRecord 01" Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and PlayModeName() ~= 'Endless'" OnCommand="%function(self)
         self:hidden(1)
-        self:x(SCREEN_CENTER_X+(140-320))
+        self:x(140)
         self:y(SCREEN_CENTER_Y+(114-240))
         self:draworder(40)
         self:shadowlength(0)
@@ -141,7 +141,7 @@ end"> <children>
     
     <Layer File="ScreenEvaluation MachineRecord 01" Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and PlayModeName() ~= 'Endless'" OnCommand="%function(self)
         self:hidden(1)
-        self:x(SCREEN_CENTER_X+(500-320))
+        self:x(SCREEN_WIDTH-(640-500))
         self:y(SCREEN_CENTER_Y+(114-240))
         self:draworder(40)
         self:shadowlength(0)

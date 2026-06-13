@@ -9,12 +9,12 @@
     <Layer
         File="ScreenSelectMusic score frame p1"
         Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-        OnCommand="x,SCREEN_CENTER_X+(114-320);y,SCREEN_CENTER_Y+(455-240)"/>
+        OnCommand="x,114;y,SCREEN_CENTER_Y+(455-240)"/>
         
     <Layer
         File="ScreenSelectMusic score frame p1"
         Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-        OnCommand="x,SCREEN_CENTER_X+(529-320);y,SCREEN_CENTER_Y+(455-240)"/>
+        OnCommand="x,SCREEN_WIDTH-(640-529);y,SCREEN_CENTER_Y+(455-240)"/>
         
     <Layer
         Type="BitmapText"
@@ -53,7 +53,7 @@
         Font="OptionIcon"
         Text=""
         Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-        OnCommand="draworder,102;x,SCREEN_CENTER_X+(115-320)-100;y,SCREEN_CENTER_Y+(398-240)+14;horizalign,left;shadowlength,0;maxwidth,160;zoom,1.2"
+        OnCommand="draworder,102;x,20;y,SCREEN_CENTER_Y+(398-240)+14;horizalign,left;shadowlength,0;maxwidth,160;zoom,1.2"
         OffCommand=""
         UpdateMessageCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_1)) end" />
     <Layer
@@ -61,7 +61,7 @@
         Font="OptionIcon"
         Text=""
         Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-        OnCommand="draworder,102;x,SCREEN_CENTER_X+(531-320)-100;y,SCREEN_CENTER_Y+(398-240)+14;horizalign,left;shadowlength,0;maxwidth,160;zoom,1.2"
+        OnCommand="draworder,102;x,SCREEN_WIDTH-(600-395);y,SCREEN_CENTER_Y+(398-240)+14;horizalign,left;shadowlength,0;maxwidth,160;zoom,1.2"
         OffCommand=""
         UpdateMessageCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" />
 </children></ActorFrame>
