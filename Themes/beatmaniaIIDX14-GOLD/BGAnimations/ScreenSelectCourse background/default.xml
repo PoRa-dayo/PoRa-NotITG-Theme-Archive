@@ -17,7 +17,7 @@
         Condition="PlayModeName() == 'Endless'"/>
         
     <Layer
-        File=".../goldrush.avi"
+        File="../goldrush.avi"
         Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;blend,add"
         Condition="PlayModeName() == 'Nonstop' or PlayModeName() == 'Oni'"/>
 </children></ActorFrame>

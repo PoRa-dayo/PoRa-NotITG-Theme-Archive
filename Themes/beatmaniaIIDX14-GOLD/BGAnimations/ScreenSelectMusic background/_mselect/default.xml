@@ -19,6 +19,6 @@
         
     <Layer
         File="smoke.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+50;blend,add;diffusealpha,0.5;customtexturerect,0,0,2,1;zoomto,2048*0.625,768;texcoordvelocity,0.2,0"/>
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+72;blend,add;diffusealpha,0.5;customtexturerect,0,0,2,1;zoomto,2048*0.625,672;texcoordvelocity,0.1,0"/>
 
 </children></ActorFrame>

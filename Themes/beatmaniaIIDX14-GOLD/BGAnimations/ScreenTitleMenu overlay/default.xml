@@ -25,7 +25,7 @@
     
     <Layer File="1CREDIT_DP"
     OnCommand="%function(self)
-        if GAMESTATE:GetCoinMode() == 2 then
+        if GAMESTATE:GetCoinMode() == 2 and GAMESTATE:GetPremium() > 0 then
             self:hidden(0)
         else
             self:hidden(1)
