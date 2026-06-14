@@ -1,4 +1,21 @@
 <ActorFrame><children>
+    --TOASTY (if Profile().IIDXGoldToasty is nil then ScreenStage in will change it to Michael a la mode
+    <Layer File="toasty" Condition="Profile().IIDXGoldToasty ~= 'OFF'" OnCommand="%function(self)
+        DeltaToastyMilestone = 100
+        P1ToastyMilestone = DeltaToastyMilestone
+        P2ToastyMilestone = DeltaToastyMilestone
+        
+        ToastP1AddX = -159
+        ToastP2AddX = 159
+        if GAMESTATE:IsHumanPlayer(PLAYER_1) and CurStyleName()=='single' then
+            ToastP1AddX = 159
+        end
+        if GAMESTATE:IsHumanPlayer(PLAYER_2) and CurStyleName()=='single' then
+            ToastP2AddX = -159
+        end
+    end"
+    />
+    
     <Layer File="ScreenGameplayNormalP1 score frame" Condition="GAMESTATE:IsPlayerEnabled(0)" OnCommand="%function(self)
         self:x(SCREEN_CENTER_X)
         self:y(SCREEN_CENTER_Y)

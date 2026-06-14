@@ -427,6 +427,13 @@ function GetTotalScore( pn ) return STATSMAN:GetAccumStageStats():GetPlayerStage
 function GetPSStats( pn ) return STATSMAN:GetAccumStageStats():GetPlayerStageStats(pn) end
 -- Get Specific Tap Note Score for Normal Evaluation
 function GetPSStageStats( pn ) return STATSMAN:GetCurStageStats():GetPlayerStageStats(pn) end
+-- Get Current Combo during gameplay
+function GetCurCombo( pn )
+    local scr = SCREENMAN:GetTopScreen():GetChild("PlayerP"..pn)
+    if FUCK_EXE and scr then
+        return scr:GetCombo()
+    end
+end
 
 -- Position For Players
 function PlayerPositionP1()
@@ -709,6 +716,43 @@ function DecideSFXOption()
         for ind, val in ipairs(list) do
             if val then
                 Profile().IIDXGoldDecideSFX = modList[ind]
+            end
+        end
+        SaveProfiles()
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+
+function ToastyOption()
+	local modList = {"Michael a la Mode", "Happy Sky", "DistorteD", "Gold", "Troopers", "Empress", "SIRIUS", "OFF"}
+    
+	local Params = {
+		Name = "Toasty",
+		LayoutType = "ShowOneInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        if not Profile().IIDXGoldToasty then
+            list[1] = true
+        elseif Profile().IIDXGoldToasty then 
+            for ind, val in ipairs(modList) do
+                if val == Profile().IIDXGoldToasty then
+                    list[ind] = true
+                end
+            end
+        else
+            list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        for ind, val in ipairs(list) do
+            if val then
+                Profile().IIDXGoldToasty = modList[ind]
             end
         end
         SaveProfiles()

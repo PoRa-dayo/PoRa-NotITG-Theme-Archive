@@ -18,5 +18,13 @@
 			BX_SaltyResetPos = {}
 		end"
 	/>
+    
+    <Layer File="Quad" OnCommand="%function(self)
+        if not Profile().IIDXGoldToasty then
+            Profile().IIDXGoldToasty = 'Michael a la Mode'
+        end
+        self:hidden(1)
+    end"
+    />
     <ActorFrame Command="%ApplyNoteskin"/>
 </children></ActorFrame>

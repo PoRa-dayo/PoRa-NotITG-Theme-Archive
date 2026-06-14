@@ -1,0 +1,118 @@
+<ActorFrame
+    Condition="FUCK_EXE"
+    Fk_P1_W1MessageCommand="%function(self) self:queuecommand('CheckP1') end"
+    Fk_P1_W2MessageCommand="%function(self) self:queuecommand('CheckP1') end"
+    Fk_P1_W3MessageCommand="%function(self) self:queuecommand('CheckP1') end"
+    Fk_P1_W4MessageCommand="%function(self) P1ToastyMilestone = DeltaToastyMilestone end"
+    Fk_P1_W5MessageCommand="%function(self) P1ToastyMilestone = DeltaToastyMilestone end"
+    Fk_P1_W6MessageCommand="%function(self) P1ToastyMilestone = DeltaToastyMilestone end"
+    CheckP1Command="%function(self)
+        local comb = GetCurCombo(1)
+        if comb >= P1ToastyMilestone then
+            P1ToastyMilestone = P1ToastyMilestone + DeltaToastyMilestone
+            self:queuecommand('SendToastyP1')
+        end
+    end"
+    
+    
+    Fk_P2_W1MessageCommand="%function(self) self:queuecommand('CheckP2') end"
+    Fk_P2_W2MessageCommand="%function(self) self:queuecommand('CheckP2') end"
+    Fk_P2_W3MessageCommand="%function(self) self:queuecommand('CheckP2') end"
+    Fk_P2_W4MessageCommand="%function(self) P2ToastyMilestone = DeltaToastyMilestone end"
+    Fk_P2_W5MessageCommand="%function(self) P2ToastyMilestone = DeltaToastyMilestone end"
+    Fk_P2_W6MessageCommand="%function(self) P2ToastyMilestone = DeltaToastyMilestone end"
+    CheckP2Command="%function(self)
+        local comb = GetCurCombo(2)
+        if comb >= P2ToastyMilestone then
+            P2ToastyMilestone = P2ToastyMilestone + DeltaToastyMilestone
+            self:queuecommand('SendToastyP2')
+        end
+    end"
+    
+    
+    SendToastyP1Command="%function(self)
+        MESSAGEMAN:Broadcast('ToastyP1')
+    end"
+    SendToastyP2Command="%function(self)
+        MESSAGEMAN:Broadcast('ToastyP2')
+    end"
+    ><children>
+    
+    //PLAYER 1
+    <Layer
+        File="@string.lower(Profile().IIDXGoldToasty)..'/toastyP1_bg_static'"
+        OnCommand="draworder,-1;diffusealpha,0"
+        Condition="IsPlayerEnabled(1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and CurStyleName()~='double'"
+        ToastyP1MessageCommand="x,SCREEN_CENTER_X+ToastP1AddX;y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.166;diffusealpha,1;sleep,1;linear,0.166;diffusealpha,0"/>
+        
+    <Layer
+        File="@string.lower(Profile().IIDXGoldToasty)..'/toastyP1_bg'"
+        OnCommand="draworder,-1;diffusealpha,0;blend,add;"
+        Condition="IsPlayerEnabled(1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and CurStyleName()~='double'"
+        ToastyP1MessageCommand="addx,0;x,SCREEN_CENTER_X+(292-320)+ToastP1AddX;y,SCREEN_CENTER_Y;cropleft,0.24;cropright,0;diffusealpha,0;sleep,0.066;linear,0.1;diffusealpha,0.8;linear,0.668;addx,56;cropleft,0;cropright,0.24;linear,0.1;diffusealpha,0"/>
+        
+    <Layer
+        File="@string.lower(Profile().IIDXGoldToasty)..'/toastyP1'"
+        OnCommand="draworder,-1;diffusealpha,0;"
+        Condition="IsPlayerEnabled(1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and CurStyleName()~='double'"
+        ToastyP1MessageCommand="setstate,0;animate,1;x,SCREEN_CENTER_X+ToastP1AddX;y,SCREEN_CENTER_Y+(364-240);addy,-120;diffusealpha,0;sleep,0.066;linear,0.1;addy,-4;diffusealpha,1;linear,1;addy,-10;linear,0.1;addy,-4;diffusealpha,0"/>
+               
+    <Layer
+        File="@string.lower(Profile().IIDXGoldToasty)..'/toastyP1_gradient'"
+        OnCommand="draworder,-1;diffusealpha,0;"
+        Condition="IsPlayerEnabled(1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and CurStyleName()~='double'"
+        ToastyP1MessageCommand="x,SCREEN_CENTER_X+ToastP1AddX;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,0.166;linear,0.5;diffusealpha,0.8;linear,0.5;diffusealpha,0"/>
+
+
+    //PLAYER 2
+    <Layer
+        File="@string.lower(Profile().IIDXGoldToasty)..'/toastyP1_bg_static'"
+        OnCommand="draworder,-1;diffusealpha,0"
+        Condition="IsPlayerEnabled(2) and GAMESTATE:IsHumanPlayer(PLAYER_2) and CurStyleName()~='double'"
+        ToastyP2MessageCommand="x,SCREEN_CENTER_X+ToastP2AddX;y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.166;diffusealpha,1;sleep,1;linear,0.166;diffusealpha,0"/>
+        
+    <Layer
+        File="@string.lower(Profile().IIDXGoldToasty)..'/toastyP1_bg'"
+        OnCommand="draworder,-1;diffusealpha,0;blend,add"
+        Condition="IsPlayerEnabled(2) and GAMESTATE:IsHumanPlayer(PLAYER_2) and CurStyleName()~='double'"
+        ToastyP2MessageCommand="addx,0;x,SCREEN_CENTER_X+(292-320)+ToastP2AddX;y,SCREEN_CENTER_Y;cropleft,0.24;cropright,0;diffusealpha,0;sleep,0.066;linear,0.1;diffusealpha,0.8;linear,0.668;addx,56;cropleft,0;cropright,0.24;linear,0.1;diffusealpha,0"/>
+        
+    <Layer
+        File="@string.lower(Profile().IIDXGoldToasty)..'/toastyP1'"
+        OnCommand="draworder,-1;diffusealpha,0;rotationy,180"
+        Condition="IsPlayerEnabled(2) and GAMESTATE:IsHumanPlayer(PLAYER_2) and CurStyleName()~='double'"
+        ToastyP2MessageCommand="setstate,0;animate,1;x,SCREEN_CENTER_X+ToastP2AddX;y,SCREEN_CENTER_Y+(364-240);addy,-120;diffusealpha,0;sleep,0.066;linear,0.1;addy,-4;diffusealpha,1;linear,1;addy,-10;linear,0.1;addy,-4;diffusealpha,0"/>
+               
+    <Layer
+        File="@string.lower(Profile().IIDXGoldToasty)..'/toastyP1_gradient'"
+        OnCommand="draworder,-1;diffusealpha,0;"
+        Condition="IsPlayerEnabled(2) and GAMESTATE:IsHumanPlayer(PLAYER_2) and CurStyleName()~='double'"
+        ToastyP2MessageCommand="x,SCREEN_CENTER_X+ToastP2AddX;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,0.166;linear,0.5;diffusealpha,0.8;linear,0.5;diffusealpha,0"/>
+
+        
+    //PLAYER 1 (DOUBLE)
+    <Layer
+        File="@string.lower(Profile().IIDXGoldToasty)..'/toastyP1_bg_static'"
+        OnCommand="draworder,-1;diffusealpha,0"
+        Condition="IsPlayerEnabled(1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and ( CurStyleName()=='double' )"
+        ToastyP1MessageCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.166;diffusealpha,1;sleep,1;linear,0.166;diffusealpha,0"/>
+        
+    <Layer
+        File="@string.lower(Profile().IIDXGoldToasty)..'/toastyP1_bg'"
+        OnCommand="draworder,-1;diffusealpha,0;blend,add;"
+        Condition="IsPlayerEnabled(1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and ( CurStyleName()=='double' )"
+        ToastyP1MessageCommand="addx,0;x,SCREEN_CENTER_X+(292-320);y,SCREEN_CENTER_Y;cropleft,0.24;cropright,0;diffusealpha,0;sleep,0.066;linear,0.1;diffusealpha,0.8;linear,0.668;addx,56;cropleft,0;cropright,0.24;linear,0.1;diffusealpha,0"/>
+        
+    <Layer
+        File="@string.lower(Profile().IIDXGoldToasty)..'/toastyP1'"
+        OnCommand="draworder,-1;diffusealpha,0;"
+        Condition="IsPlayerEnabled(1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and ( CurStyleName()=='double' )"
+        ToastyP1MessageCommand="setstate,0;animate,1;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(364-240);addy,-120;diffusealpha,0;sleep,0.066;linear,0.1;addy,-4;diffusealpha,1;linear,1;addy,-10;linear,0.1;addy,-4;diffusealpha,0"/>
+               
+    <Layer
+        File="@string.lower(Profile().IIDXGoldToasty)..'/toastyP1_gradient'"
+        OnCommand="draworder,-1;diffusealpha,0;"
+        Condition="IsPlayerEnabled(1) and GAMESTATE:IsHumanPlayer(PLAYER_1) and ( CurStyleName()=='double' )"
+        ToastyP1MessageCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,0.166;linear,0.5;diffusealpha,0.8;linear,0.5;diffusealpha,0"/>
+
+</children></ActorFrame>
