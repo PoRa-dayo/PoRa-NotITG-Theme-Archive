@@ -9,12 +9,12 @@
     <Layer
         File="ScreenSelectMusic score frame p1"
         Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-        OnCommand="x,114;y,SCREEN_CENTER_Y+(455-240)"/>
+        OnCommand="x,114;y,SCREEN_CENTER_Y+(455-240);draworder,99;addx,-300;linear,0.25;addx,300"/>
         
     <Layer
         File="ScreenSelectMusic score frame p1"
         Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-        OnCommand="x,SCREEN_WIDTH-(640-529);y,SCREEN_CENTER_Y+(455-240)"/>
+        OnCommand="x,SCREEN_WIDTH-(640-529);y,SCREEN_CENTER_Y+(455-240);draworder,99;addx,300;linear,0.25;addx,-300"/>
         
     <Layer
         Type="BitmapText"
