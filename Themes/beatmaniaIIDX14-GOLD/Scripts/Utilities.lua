@@ -291,69 +291,6 @@ end
 -- get a formatted max combo text, sine Lua's string.format
 function GetFormattedMaxCombo(pn) return string.format("% 4d",STATSMAN:GetCurStageStats():GetPlayerStageStats(pn):MaxCombo()) end
 
--- If the player(s) have passed AT LEAST one song, take them to the Summary screen if they back out.
--- Otherwise, return them to the main menu.
-function TitleMusicRedirect()
-	if GAMESTATE:StageIndex() >= 1 then 
-		return "ScreenEvaluationSummaryTitle"
-	else
-		return "ScreenTitleMenu"
-	end
-end
-
-function SongSelectionScreen()
-	local s = "ScreenSelectMusic";
-	if GAMESTATE:IsCourseMode() then s = s.."Course" end
-	return s
-end
-
--- Set the next screen for Evaluation.
-function SetEvaluationNextScreen()
-	Trace( "GetGameplayNextScreen: " )
-	-- If all failed the song
-	Trace( " AllFailed = "..tostring(AllFailed()) )
-	-- If the game is in Event Mode.
-	Trace( " IsEventMode = "..tostring(GAMESTATE:IsEventMode()) )
-	-- If it's the Final Stage.
-	Trace( " IsFinalStage = "..tostring(IsFinalStage()) )
-
-	if GAMESTATE:IsEventMode() then return SongSelectionScreen() end
-	if AllFailed() or IsFinalStage() and not AbleToEnterExtraStage() then return "ScreenEvaluationSummary" end
-	if IsFinalStage() and AbleToEnterExtraStage() then return SongSelectionScreen() end
-	return SongSelectionScreen();
-end
-
-function GetGameplayNextScreen()
-	Trace( "GetGameplayNextScreen: " )
-	Trace( " AllFailed = "..tostring(AllFailed()) )
-	Trace( " IsEventMode = "..tostring(GAMESTATE:IsEventMode()) )
-	Trace( " IsSyncDataChanged = "..tostring(GAMESTATE:IsSyncDataChanged()) )
-
-	if GAMESTATE:IsSyncDataChanged() then 
-		return "ScreenSaveSync"
-	end
-		
-	-- Never show evaluation for training.
-	-- Since it's not really neccesary.
-	if GAMESTATE:GetCurrentSong():GetSongDir() == "Songs/In The Groove/Training1/" then 
-		if GAMESTATE:IsEventMode() then 
-			return SongSelectionScreen()
-		else
-			return EvaluationNextScreen()
-		end
-	elseif AllFailed() and not GAMESTATE:IsCourseMode() then 
-		if GAMESTATE:IsEventMode() then 
-			return SelectEvaluationScreen()
-		else
-			return "ScreenEvaluationStage"
-		end
-	else
-		return SelectEvaluationScreen() 
-	end
-	
-	return "GetGameplayNextScreen: YOU SHOULD NEVER GET HERE"
-end
-
 function DangerSize()
 	if IsUsingWideScreen() then 
 		return 0.75
@@ -483,11 +420,6 @@ function SongTitle(self)
     end
 end
 
-function SongSelectionScreen()
-	local s = "ScreenSelectMusic";
-	if GAMESTATE:IsCourseMode() then s = "ScreenSelectCourse" end
-	return s
-end
 function GetStartScreen() PREFSMAN:SetPreference("DelayedScreenLoad",false) if PREFSMAN:GetPreference('BreakComboToGetItem') and GetInputType and GetInputType() == "" then return "ScreenArcadeStart" end return THEME:GetMetric('Common','FirstAttractScreen') end
 function GetStepsDescriptionText(n)
 	local steps = GAMESTATE:GetCurrentSteps(n)
@@ -601,12 +533,6 @@ function RealFOV(fov) return 360 / math.pi * math.atan(math.tan(math.pi * (1 / (
 function Profile() return PROFILEMAN:GetMachineProfile():GetSaved() end
 function SaveProfiles() return PROFILEMAN:SaveMachineProfile() end
 
-function SongSelectionScreen()
-	local s = "ScreenBranchSelectMusic";
-	if GAMESTATE:IsCourseMode() then s = s.."Course" end
-	return s
-end
-
 --Theme Options
 
 function ScreenFilterOption()
@@ -651,8 +577,10 @@ function ScreenFilterOption()
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
 end
 
+CommonBGMList = {"DEFAULT", "EXTRA", "LED", "SUZAKU", "TAKA", "YOSHITAKA", "RANDOM"}
+
 function CommonBGMOption()
-	local modList = {"DEFAULT", "EXTRA", "LED", "SUZAKU", "TAKA", "YOSHITAKA"}
+	local modList = CommonBGMList
     
 	local Params = {
 		Name = "Common BGM",
