@@ -162,8 +162,10 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 # A.O.I.
 ***NOTE: This theme requires you to have the theme OITGThemerFallback for it to work!!! And just like any other fallback theme, do not actually use OITGThemerFallback.***
 
-The accelerated operational interface for Stepmania 3.9 ported to NotITG!\
-OITGThemerFallback is a fallback theme that's made to be closer to the base SM3.9 theme. It also has some documentation in the metrics that you can use as a reference to make your own theme.
+The accelerated operational interface for Stepmania 3.9, ported to NotITG!\
+PROJEKT A.O.I. is based on the UI of Beatmania IIDX 12: Happy Sky. It is also known as the 10th installment of the PROJEKT series - a series revolving around themes based on the UI of Beatmania.
+
+OITGThemerFallback is a fallback theme that's made to make it easier to port SM3.9 themes. It also has some documentation in the metrics that you can use as a reference to make your own theme.
 ## Credits:
 -Original theme by k//eternal. Original NotITG port by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 by Nhan and PoRa with permission.
 
@@ -298,6 +300,35 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 <img width="200" alt="NotITG-v4 9 1_FneqyfElaC" src="https://github.com/user-attachments/assets/084a0e32-b386-401f-9402-956b66f62f1f" />
 <img width="200" alt="NotITG-v4 9 1_xTsWBdgqQz" src="https://github.com/user-attachments/assets/d0c7edf9-3166-4989-b3e5-4702a0bf9412" />
 
+
+# BEATMANIA IIDX 14: GOLD
+***NOTE: This theme requires you to have the theme OITGThemerFallback for it to work!!! And just like any other fallback theme, do not actually use OITGThemerFallback.***
+
+A very animated theme based on the game Beatmania IIDX 14: Gold, the 14th installment in Konami's Beatmania IIDX series. This is also my very first full port of a SM3.9 theme, using OITGThemerFallback and A.O.I. as a base.
+
+## Credits:
+Original theme by DJ.Tony. Ported and optimized for NotITG 4.9.1 by PoRa.
+
+## Changelogs: (compared to the SM3.9 ver)
+-This was a big theme. The original theme had a custom .exe that came along with it that allowed you to customize some things like the Common BGM, Decide SFX, Toasties, Screen Filter, Explosions of the Beatmania skins that came along with it, the Lane Covers, and even options to make the UI become an actual Beatmania simulator.:\
+-- .exe programs like those existed at the time was because the Scripts folder weren't a thing. Now that it is a thing, options like Common BGM, Decide SFX, Toasties and Screen Filter can now be customized right inside the theme via Options -> Theme Options.\
+-- All the stuff related to turning the theme into a Beatmania simulator, including Lane Cover and Noteskin Explosions, is removed for obvious reasons.\
+-Added "Play Mods" (takes you to 2P Versus Dance immediately)\
+-No longer possible to select Solo (6K) mode (the button is replaced with Doubles mode).\
+-The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
+-Added roll counter and steps description (step artist) to the pane display.\
+-Added more sort icons.\
+-Added the banner frame and total time counter in course selection screen.\
+-Above the banner in the song selection screen is now the song title, song subtitle and song artist, instead of just the song artist.\
+-Converted the grade system to a 17-tier one.\
+-Noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options.\
+-The Full Combo animation is no longer unused.\
+-Toasties now use cropping instead of masking to avoid messing with the playfields. They will not show up in modfiles. The Toasties in 2-player modes now appear behind the playfield of the corresponding player.\
+-Finished Edit Mode's UI.\
+-Modern resolution settings are added. Elements are now made to *mostly* support other screen ratios that can be picked via the in-theme options.\
+-Added offset plot and spellcard viewer in results screen.\
+-Added a BAD counter next to the OK counter, and a mine counter next to the misses counter in results screen.\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 
 # Special thanks

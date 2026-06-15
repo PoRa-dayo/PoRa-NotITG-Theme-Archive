@@ -725,11 +725,11 @@ function DecideSFXOption()
 end
 
 
-function ToastyOption()
+function ToastyP1Option()
 	local modList = {"Michael a la Mode", "Happy Sky", "DistorteD", "Gold", "Troopers", "Empress", "SIRIUS", "OFF"}
     
 	local Params = {
-		Name = "Toasty",
+		Name = "P1 Toasty",
 		LayoutType = "ShowOneInRow",
 		SelectType = "SelectOne",
 		OneChoiceForAllPlayers = true
@@ -753,6 +753,43 @@ function ToastyOption()
         for ind, val in ipairs(list) do
             if val then
                 Profile().IIDXGoldToasty = modList[ind]
+            end
+        end
+        SaveProfiles()
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+
+function ToastyP2Option()
+	local modList = {"Michael a la Mode", "Happy Sky", "DistorteD", "Gold", "Troopers", "Empress", "SIRIUS", "OFF"}
+    
+	local Params = {
+		Name = "P2 Toasty",
+		LayoutType = "ShowOneInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        if not Profile().IIDXGoldToastyP2 then
+            list[1] = true
+        elseif Profile().IIDXGoldToastyP2 then 
+            for ind, val in ipairs(modList) do
+                if val == Profile().IIDXGoldToastyP2 then
+                    list[ind] = true
+                end
+            end
+        else
+            list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        for ind, val in ipairs(list) do
+            if val then
+                Profile().IIDXGoldToastyP2 = modList[ind]
             end
         end
         SaveProfiles()

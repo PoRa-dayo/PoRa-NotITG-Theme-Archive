@@ -23,6 +23,9 @@
         if not Profile().IIDXGoldToasty then
             Profile().IIDXGoldToasty = 'Michael a la Mode'
         end
+        if not Profile().IIDXGoldToastyP2 then
+            Profile().IIDXGoldToastyP2 = 'Michael a la Mode'
+        end
         self:hidden(1)
     end"
     />
