@@ -331,6 +331,12 @@ Original theme by DJ.Tony. Ported and optimized for NotITG 4.9.1 by PoRa.
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 
+<img width="200" alt="NotITG-v4 9 1_NJKWbTCH2e" src="https://github.com/user-attachments/assets/85104be9-b12b-44b3-b650-20dfa4f0c3fa" />
+<img width="200" alt="NotITG-v4 9 1_GtUzV3sWtd" src="https://github.com/user-attachments/assets/f7e91440-57b8-43ae-8328-64bd20ba9cfe" />
+<img width="200" alt="NotITG-v4 9 1_Unfo7oMYgr" src="https://github.com/user-attachments/assets/9438d72d-a179-43aa-b91b-3dab1137374a" />
+<img width="200" alt="NotITG-v4 9 1_UnfWajcjL7" src="https://github.com/user-attachments/assets/f04a3188-6999-4781-90ed-dc1b4c006535" />
+<img width="200" alt="NotITG-v4 9 1_WynyrU45bV" src="https://github.com/user-attachments/assets/db5daea4-0fe4-41db-90b2-19d67a210ed5" />
+
 # Special thanks
 [MattMayuga](https://github.com/Tiny-Foxes/JudgeFonts-by-MattMayuga/) - Judgment fonts.\
 [HURG-IIDX](https://github.com/HURG-IIDX/Simply-Love-Judgefonts) - Judgment fonts.\
