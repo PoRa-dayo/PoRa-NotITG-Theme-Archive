@@ -37,12 +37,17 @@
 			/>
             
     	<Layer Font="Splat2" Text="@GAMESTATE:GetCurrentCourse():GetDisplayFullTitle()" Condition="not NotCourse"
-	InitCommand="maxwidth,SCREEN_WIDTH/2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-15;shadowlength,2"
+	InitCommand="maxwidth,SCREEN_WIDTH/2;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-25;shadowlength,2"
 	OnCommand="accelerate,0.5;zoom,0.8;addx,-5;diffusealpha,0"
 			/>
 
 	<Layer Font="Splat2" Text="@SPCommand:GetDisplaySubtitle()" Condition="NotCourse"
 	InitCommand="maxwidth,SCREEN_WIDTH/1.2;x,SCREEN_CENTER_X;zoom,0.6;y,SCREEN_CENTER_Y;shadowlength,2"
+	OnCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
+			/>
+            
+        <Layer Font="Splat2" Text="Song 1" Condition="not NotCourse"
+	InitCommand="maxwidth,SCREEN_WIDTH/1.2;x,SCREEN_CENTER_X;zoom,0.6;y,SCREEN_CENTER_Y+20;shadowlength,2"
 	OnCommand="accelerate,0.5;zoom,0.5;diffusealpha,0"
 			/>
 
