@@ -1,8 +1,11 @@
 <ActorFrame
-    CurrentSongChangedMessageCommand="queuecommand,SendUpdate"
-    CurrentStepsP1ChangedMessageCommand="queuecommand,SendUpdate"
-    CurrentStepsP2ChangedMessageCommand="queuecommand,SendUpdate"
-    SendUpdateCommand="%function(self)
+    CurrentSongChangedMessageCommand="%function(self)
+    MESSAGEMAN:Broadcast('Update')
+    end"
+    CurrentStepsP1ChangedMessageCommand="%function(self)
+    MESSAGEMAN:Broadcast('Update')
+    end"
+    CurrentStepsP2ChangedMessageCommand="%function(self)
     MESSAGEMAN:Broadcast('Update')
     end"
     ><children>

@@ -11,5 +11,6 @@
 	<Layer File="bars.png" OnCommand="hibernate,0.25;x,SCREEN_CENTER_X+(316-320);y,SCREEN_CENTER_Y+(401-240);diffusealpha,0;linear,0.1;diffusealpha,1" />
 	<Layer File="by.png" OnCommand="hibernate,0.35;x,SCREEN_CENTER_X+(316-320);y,SCREEN_CENTER_Y+(455-240);diffusealpha,0;linear,0.1;diffusealpha,1" />
 	<Layer File="title.png" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(127-240);diffusealpha,0;linear,0.3;diffusealpha,1" />
-	<Layer File="text.png" OnCommand="hibernate,0.35;x,SCREEN_CENTER_X+(92-320);y,SCREEN_CENTER_Y+(342-240);diffusealpha,0;linear,0.2;diffusealpha,1" />
+	<Layer File="text.png" Condition="GAMESTATE:GetCoinMode() == 0" OnCommand="hibernate,0.35;x,SCREEN_CENTER_X+(92-320);y,SCREEN_CENTER_Y+(342-240);diffusealpha,0;linear,0.2;diffusealpha,1" />
+    <Layer File="text_join.png" Condition="GAMESTATE:GetCoinMode() > 0" OnCommand="hibernate,0.35;x,SCREEN_CENTER_X+(92-320);y,SCREEN_CENTER_Y+(342-240);diffusealpha,0;linear,0.2;diffusealpha,1" />
 </children></ActorFrame>
