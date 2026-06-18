@@ -64,7 +64,7 @@
         Font="artist 16px"
         Text="Subtitle"
         Condition="not GAMESTATE:IsCourseMode()"
-        OnCommand="zoom,0.6;maxwidth,550;draworder,32;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-100;horizalign,right;shadowlength,0;addx,-280;decelerate,0.3;addx,280"
+        OnCommand="zoom,0.6;maxwidth,550;draworder,32;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-100;horizalign,right;shadowlength,0;addx,180;decelerate,0.3;addx,-180"
         OffCommand=""
         UpdateMessageCommand="%function(self)
             if not AllowTween then self:finishtweening() end
@@ -88,7 +88,7 @@
         Type="BitmapText"
         Font="songtitle 16px"
         Text="Mirin Template"
-        OnCommand="zoom,0.8;zoomx,0.7;maxwidth,460;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-80;horizalign,right;shadowlength,0;addx,-280;decelerate,0.3;addx,280"
+        OnCommand="zoom,0.8;zoomx,0.7;maxwidth,460;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-80;horizalign,right;shadowlength,0;addx,-180;decelerate,0.3;addx,180;"
         OffCommand=""
         UpdateMessageCommand="%function(self) 
             if not AllowTween then self:finishtweening() end

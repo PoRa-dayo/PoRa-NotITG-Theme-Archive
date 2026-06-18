@@ -13,7 +13,7 @@
         Type="BitmapText"
         Font="songtitle 16px"
         Text="Mirin Template"
-        OnCommand="zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-90;horizalign,right;shadowlength,0;maxwidth,460;addx,-280;decelerate,0.3;addx,280"
+        OnCommand="zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-90;horizalign,right;shadowlength,0;maxwidth,460;addx,-180;decelerate,0.3;addx,180;"
         OffCommand=""
         UpdateMessageCommand="%function(self) 
             local song = GAMESTATE:GetCurrentSong()

@@ -95,10 +95,16 @@ function GetSubtitle(ind)
 end
 
 function GetLongTitle(index)
+    if not (SongTitles and ArtistTitles) then
+        return ''
+    end
     return (SongTitles[index] or '').." "..GetSubtitle(index).." "..(ArtistTitles[index] or '')
 end
 
 function IsRoulette(ind)
+    if not MusicWheelList[ind] then
+        return false
+    end
     return (not MusicWheelList[ind]:GetChildAt(10):GetHidden()) and (not MusicWheelList[(ind % #MusicWheelList)+1]:GetChildAt(10):GetHidden())
 end
 
