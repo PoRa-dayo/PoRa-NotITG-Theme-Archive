@@ -2,6 +2,7 @@
     <Layer File="left" Condition="FUCK_EXE and CurStyleName()~='double' and GAMESTATE:IsPlayerEnabled(0)"
     OnCommand="%function(self)
         self:zoom(0)
+        self:sleep(0.2)
         self:queuecommand('GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppears')
     end"
     GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppearsCommand="%function(self)
@@ -12,6 +13,7 @@
     <Layer File="right" Condition="FUCK_EXE and CurStyleName()~='double' and GAMESTATE:IsPlayerEnabled(1)"
     OnCommand="%function(self)
         self:zoom(0)
+        self:sleep(0.2)
         self:queuecommand('GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppears')
     end"
     GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppearsCommand="%function(self)
@@ -22,6 +24,7 @@
     <Layer File="center" Condition="FUCK_EXE and CurStyleName()=='double'"
     OnCommand="%function(self)
         self:zoom(0)
+        self:sleep(0.2)
         self:queuecommand('GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppears')
     end"
     GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppearsCommand="%function(self)
