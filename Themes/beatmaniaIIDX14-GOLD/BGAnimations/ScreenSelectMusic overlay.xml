@@ -1,7 +1,7 @@
 --better avoid using GAMESTATE:GetEasiestStepsDifficulty() too many times as it lowers performance
 <ActorFrame
     CurrentSongChangedMessageCommand="%function(self)
-    MESSAGEMAN:Broadcast('Update')
+        MESSAGEMAN:Broadcast('Update')
     end"
     CurrentStepsP1ChangedMessageCommand="%function(self)
         local temp = GAMESTATE:GetEasiestStepsDifficulty()
@@ -18,16 +18,27 @@
         MESSAGEMAN:Broadcast('Update')
     end"
     ><children>
+    <!--CurrentSongChanged is not used here because the Artist commands in [TextBanner] in metrics.ini do a better job. -->
+    <!--As CurrentSongChanged is not activated when the player opens a group. -->
     <Layer
         Type="Quad"
         OnCommand="%function(self)
             MusicWheelList={}
             ArtistTitles={}
             DiffNumTitles={}
+            AllowTween=true
             self:sleep(0.1)
             self:queuecommand('Wheel')
+            self:sleep(0.5)
+            self:queuecommand('Disallow')
         end"
-        UpdateMessageCommand="%function(self)
+        DisallowCommand="%function(self)
+            AllowTween=false
+        end"
+        CurrentStepsP1ChangedMessageCommand="%function(self)
+            self:queuecommand('Wheel')
+        end"
+        CurrentStepsP2ChangedMessageCommand="%function(self)
             self:queuecommand('Wheel')
         end"
         WheelCommand="%function(self)
@@ -49,46 +60,121 @@
         Font="artist 16px"
         Text="Subtitle"
         Condition="not GAMESTATE:IsCourseMode()"
-        OnCommand="zoom,0.6;draworder,32;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-100;horizalign,right;shadowlength,0;addx,480;decelerate,0.3;addx,-480;maxwidth,550"
+        OnCommand="zoom,0.6;maxwidth,550;draworder,32;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-100;horizalign,right;shadowlength,0;addx,-280;decelerate,0.3;addx,280"
         OffCommand=""
-        UpdateMessageCommand="%function(self) 
+        UpdateMessageCommand="%function(self)
+            if not AllowTween then self:finishtweening() end
+            local ind = CurWheelIndex()
             local song = GAMESTATE:GetCurrentSong()
             if song then
                 self:settext(song:GetDisplaySubTitle())
+            elseif IsRoulette(ind) then
+                Rand = math.random(TotalSongNum)
+                self:settext(AllSongs[Rand]:GetDisplaySubTitle())
+                self:sleep(0.05)
+                self:queuecommand('Update')
             else
                 self:settext('')
+                self:sleep(0.3)
+                self:queuecommand('Update')
+                self:sleep(0.1)
+                self:queuecommand('Update')
+                self:sleep(0.1)
+                self:queuecommand('Update')
             end
         end" />
     <Layer
         Type="BitmapText"
         Font="songtitle 16px"
         Text="Mirin Template"
-        OnCommand="zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-80;horizalign,right;shadowlength,0;addx,480;decelerate,0.3;addx,-480;maxwidth,460"
+        OnCommand="zoom,0.8;zoomx,0.7;maxwidth,460;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-80;horizalign,right;shadowlength,0;addx,-280;decelerate,0.3;addx,280"
         OffCommand=""
         UpdateMessageCommand="%function(self) 
-            self:finishtweening()
+            if not AllowTween then self:finishtweening() end
             local song = GAMESTATE:GetCurrentSong()
             local course = GAMESTATE:GetCurrentCourse()
+            local ind = CurWheelIndex()
             if song then
                 self:settext(song:GetDisplayMainTitle())
             elseif course then
                 self:settext(course:GetDisplayFullTitle())
+            elseif IsRoulette(ind) then
+                self:settext(AllSongs[Rand]:GetDisplayMainTitle())
+                self:sleep(0.05)
+                self:queuecommand('Update')
             else
                 self:settext('')
+                self:sleep(0.3)
+                self:queuecommand('Update')
+                self:sleep(0.1)
+                self:queuecommand('Update')
+                self:sleep(0.1)
+                self:queuecommand('Update')
             end
         end"/>
+    <Layer
+        Type="BitmapText"
+        Font="artist 16px"
+        Text=""
+        Condition="not GAMESTATE:IsCourseMode()"
+        OnCommand="x,SCREEN_CENTER_X+(340-320);y,SCREEN_CENTER_Y+(180-240);maxwidth,550;zoom,0.6;draworder,33;shadowlength,0;horizalign,right;"
+        OffCommand=""
+        UpdateMessageCommand="%function(self)
+            self:finishtweening()
+            local ind = CurWheelIndex()
+            local song = GAMESTATE:GetCurrentSong()
+            if (not song) and IsRoulette(ind) then
+                self:settext(AllSongs[Rand]:GetDisplayArtist())
+                self:sleep(0.05)
+                self:queuecommand('Update')
+            else
+                self:settext('')
+                self:sleep(0.3)
+                self:queuecommand('Update')
+                self:sleep(0.1)
+                self:queuecommand('Update')
+                self:sleep(0.1)
+                self:queuecommand('Update')
+            end
+        end" />
+    <Layer
+        Type="BitmapText"
+        Font="../Numbers/BPMDisplay bpm"
+        Text=""
+        Condition="not GAMESTATE:IsCourseMode()"
+        OnCommand="x,SCREEN_CENTER_X+(340-320);y,SCREEN_CENTER_Y+(301-240);shadowlength,1;horizalign,right"
+        OffCommand=""
+        UpdateMessageCommand="%function(self)
+            self:finishtweening()
+            local ind = CurWheelIndex()
+            local song = GAMESTATE:GetCurrentSong()
+            if (not song) and IsRoulette(ind) then
+                self:settext(string.format('%03d', math.floor(AllSongs[Rand]:GetMinBPM())))
+                self:sleep(0.05)
+                self:queuecommand('Update')
+            else
+                self:settext('')
+                self:sleep(0.3)
+                self:queuecommand('Update')
+                self:sleep(0.1)
+                self:queuecommand('Update')
+                self:sleep(0.1)
+                self:queuecommand('Update')
+            end
+        end" />
         
         
-    <ActorFrame UpdateMessageCommand="%function(self) 
+    <ActorFrame Condition="FUCK_EXE"
+    UpdateMessageCommand="%function(self) 
         self:finishtweening()
         self:queuecommand('Recheck')
         self:sleep(0.4)
         self:queuecommand('Recheck')
     end"
-    RecheckCommand="%function(self) 
+    RecheckCommand="%function(self)
         local ind = CurWheelIndex()
         local group = GroupTitles[ind]
-        if (not GAMESTATE:GetCurrentSong()) and GAMESTATE:GetSortOrder() ~= 13 and group then
+        if (not GAMESTATE:GetCurrentSong()) and (not IsRoulette(ind)) and GAMESTATE:GetSortOrder() ~= 13 and group then
             self:hidden(0)
         else
             self:hidden(1)
@@ -101,6 +187,11 @@
             Condition="not GAMESTATE:IsCourseMode()"
             OnCommand="zoom,0.4;zoomx,0.9;draworder,32;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-110;horizalign,right;shadowlength,0;maxwidth,150;"
             OffCommand=""
+            UpdateCommand="%function(self)
+                self:cropright(1)
+                self:linear(0.5)
+                self:cropright(0)
+            end"
             />  
         <Layer
             Type="BitmapText"
@@ -122,6 +213,8 @@
                 local group = GroupTitles[CurWheelIndex()]
                 if (not GAMESTATE:GetCurrentSong()) and group then
                     self:settext(group)
+                else
+                    self:settext('')
                 end
             end" />
         <Layer
@@ -129,7 +222,7 @@
             Font="font"
             Text="MUSIC NUMBER"
             Condition="not GAMESTATE:IsCourseMode()"
-            OnCommand="zoom,0.8;zoomy,0.9;draworder,32;x,SCREEN_CENTER_X-40;y,SCREEN_CENTER_Y-65;horizalign,right;shadowlength,0;"
+            OnCommand="zoom,0.8;zoomy,0.9;draworder,32;x,SCREEN_CENTER_X-40;y,SCREEN_CENTER_Y-62;horizalign,right;shadowlength,0;"
             OffCommand=""
             UpdateMessageCommand="%function(self) 
                 self:finishtweening()
@@ -145,7 +238,7 @@
             Font="font"
             Text=""
             Condition="not GAMESTATE:IsCourseMode()"
-            OnCommand="zoom,0.8;zoomy,0.9;draworder,32;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-65;horizalign,right;shadowlength,0;maxwidth,150;"
+            OnCommand="zoom,0.8;zoomy,0.9;draworder,32;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-62;horizalign,right;shadowlength,0;maxwidth,150;"
             OffCommand=""
             UpdateMessageCommand="%function(self) 
                 self:finishtweening()
@@ -166,6 +259,8 @@
                 local group = GroupTitles[CurWheelIndex()]
                 if (not GAMESTATE:GetCurrentSong()) and GroupSongNum[group] then
                     self:settext(GroupSongNum[group])
+                else
+                    self:settext('')
                 end
             end" />
     </children></ActorFrame>

@@ -16,15 +16,20 @@
 --Oh but here comes the worst part, the BitmapText that it doesn't use DOES NOT GET CLEARED.
 --So you can have a Song MusicWheelItem that has a completely unrelated group name in it because the group name did not get cleared.
 --Or a Group MusicWheelItem that has freaking 'ROULETTE' in the Sort BitmapText because the ROULETTE did not get cleared.
+--It does get hidden though, well except for the group name not being hidden on the roulette-type sections, so you can use GetHidden() on it.
 
 --some of the stuff is updated in ScreenSelectMusic overlay
 SongTitles={}
 GroupTitles={}
+RouletteTitles={}
 GroupSongNum={}
 SongDiffs={}
+MusicWheelList={}
 StartIndex=nil
-local AllSongs = SONGMAN:GetAllSongs()
-CurDiff = GAMESTATE:GetEasiestStepsDifficulty()
+Rand=1
+AllSongs = SONGMAN:GetAllSongs()
+TotalSongNum = #AllSongs
+CurDiff = 7
 
 for index, songg in ipairs(AllSongs) do
     --calculate all the song amounts each song folder (group) has
@@ -83,11 +88,18 @@ for index, songg in ipairs(AllSongs) do
 end
 
 function GetSubtitle(ind)
+    if not MusicWheelList[ind] then
+        return ''
+    end
     return MusicWheelList[ind]:GetChildAt(8):GetChild('Subtitle'):GetText()
 end
 
 function GetLongTitle(index)
     return (SongTitles[index] or '').." "..GetSubtitle(index).." "..(ArtistTitles[index] or '')
+end
+
+function IsRoulette(ind)
+    return (not MusicWheelList[ind]:GetChildAt(10):GetHidden()) and (not MusicWheelList[(ind % #MusicWheelList)+1]:GetChildAt(10):GetHidden())
 end
 
 --so since the TextBanner only lets you use one font, I had to resort to... this
@@ -126,12 +138,14 @@ function ArtistCorrupted(str)
 end
 
 function UpdateWheelTitles()
+    if not FUCK_EXE then return end
     --some of the stuff is defined in ScreenSelectMusic overlay, depending on when I want it to reset
     SongTitles={}
     GroupTitles={}
     UsedTitles={}
-    --go from StartIndex to #MusicWheelList, then go back to 1 to CurWheelIndex()-1
-    --StartIndex becomes nil when the player is not hovering on a song, and only updates when the player is hovering on a song again.
+    RouletteTitles={}
+    --modulo loops my beloved
+    --go from StartIndex to #MusicWheelList, then go back to 1 to StartIndex-1
     local CSong = GAMESTATE:GetCurrentSong()
     if not CSong then StartIndex = nil end
     local Count = #MusicWheelList
@@ -144,6 +158,7 @@ function UpdateWheelTitles()
         --grab the titles and subtitles and store them in their corresponding tables
         SongTitles[index] = item:GetChildAt(8):GetChild('Title'):GetText()
         GroupTitles[index] = item:GetChildAt(9):GetText()
+        RouletteTitles[index] = item:GetChildAt(10):GetText()
 
         -- if the Artist has not been changed to a diff number (corrupted), put it in ArtistTitles
         local ArtistDisp = item:GetChildAt(8):GetChild('Artist')
