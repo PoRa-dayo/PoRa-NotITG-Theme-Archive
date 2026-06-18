@@ -4,16 +4,20 @@
         MESSAGEMAN:Broadcast('Update')
     end"
     CurrentStepsP1ChangedMessageCommand="%function(self)
-        local temp = GAMESTATE:GetEasiestStepsDifficulty()
-        if temp < 6 then
-            CurDiff = GAMESTATE:GetEasiestStepsDifficulty()
+        if not GAMESTATE:IsCourseMode() then
+            local temp = GAMESTATE:GetEasiestStepsDifficulty()
+            if temp < 6 then
+                CurDiff = GAMESTATE:GetEasiestStepsDifficulty()
+            end
         end
         MESSAGEMAN:Broadcast('Update')
     end"
     CurrentStepsP2ChangedMessageCommand="%function(self)
-        local temp = GAMESTATE:GetEasiestStepsDifficulty()
-        if temp < 6 then
-            CurDiff = GAMESTATE:GetEasiestStepsDifficulty()
+        if not GAMESTATE:IsCourseMode() then
+            local temp = GAMESTATE:GetEasiestStepsDifficulty()
+            if temp < 6 then
+                CurDiff = GAMESTATE:GetEasiestStepsDifficulty()
+            end
         end
         MESSAGEMAN:Broadcast('Update')
     end"

@@ -1,16 +1,19 @@
 <ActorFrame
-    CurrentSongChangedMessageCommand="queuecommand,SendUpdate"
-    CurrentStepsP1ChangedMessageCommand="queuecommand,SendUpdate"
-    CurrentStepsP2ChangedMessageCommand="queuecommand,SendUpdate"
-    SendUpdateCommand="%function(self)
-    MESSAGEMAN:Broadcast('Update')
+    CurrentSongChangedMessageCommand="%function(self)
+        MESSAGEMAN:Broadcast('Update')
+    end"
+    CurrentStepsP1ChangedMessageCommand="%function(self)
+        MESSAGEMAN:Broadcast('Update')
+    end"
+    CurrentStepsP2ChangedMessageCommand="%function(self)
+        MESSAGEMAN:Broadcast('Update')
     end"
     ><children>
     <Layer
         Type="BitmapText"
         Font="songtitle 16px"
         Text="Mirin Template"
-        OnCommand="zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-90;horizalign,right;shadowlength,0;maxwidth,300;addx,480;decelerate,0.3;addx,-480;maxwidth,460"
+        OnCommand="zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-90;horizalign,right;shadowlength,0;maxwidth,460;addx,-280;decelerate,0.3;addx,280"
         OffCommand=""
         UpdateMessageCommand="%function(self) 
             local song = GAMESTATE:GetCurrentSong()

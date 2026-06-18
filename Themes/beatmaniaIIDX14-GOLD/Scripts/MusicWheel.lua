@@ -139,6 +139,7 @@ end
 
 function UpdateWheelTitles()
     if not FUCK_EXE then return end
+    if GAMESTATE:IsCourseMode() then return end
     --some of the stuff is defined in ScreenSelectMusic overlay, depending on when I want it to reset
     SongTitles={}
     GroupTitles={}
