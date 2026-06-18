@@ -1,4 +1,5 @@
-This archive only hosts NotITG-compatible themes that do not already have a NotITG fork maintained by anyone else, with the exception being Simply ITG because idk how to contact the creator.
+This archive only hosts NotITG-compatible themes that do not already have a NotITG fork maintained by anyone else.
+
 So here's a list of usable themes that do have NotITG forks and are still currently maintained by other people:
 
 [Simply Love - Oat vs. Rya's Fork](https://github.com/oatmealine/simply-love-oat-fork) \
@@ -58,7 +59,7 @@ Pretty insane how functional this theme still is even on NotITG current version
 # SIMPLY ITG
 The default In The Groove 2 theme, with certain features from NotITG Simply Love ported over, most notably the ability to choose the theme's color!
 ## Credits:
--Original theme by Connormgs, still maintained? (not sure) Optimized for NotITG 4.9.1 by PoRa
+-Original theme by Connormgs (beaglebark), no longer maintained. Optimized for NotITG 4.9.1 by PoRa with permission.
 
 ## Changelogs:
 -Added "Play Mods" (takes you to 2P Dance immediately)\
