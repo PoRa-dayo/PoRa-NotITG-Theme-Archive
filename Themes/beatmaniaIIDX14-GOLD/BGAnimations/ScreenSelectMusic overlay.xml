@@ -79,9 +79,6 @@
                 self:queuecommand('Update')
             else
                 self:settext('')
-                self:sleep(0.3)
-                self:queuecommand('Update')
-                self:sleep(0.1)
                 self:queuecommand('Update')
                 self:sleep(0.1)
                 self:queuecommand('Update')
@@ -108,9 +105,6 @@
                 self:queuecommand('Update')
             else
                 self:settext('')
-                self:sleep(0.3)
-                self:queuecommand('Update')
-                self:sleep(0.1)
                 self:queuecommand('Update')
                 self:sleep(0.1)
                 self:queuecommand('Update')
@@ -133,9 +127,6 @@
                 self:queuecommand('Update')
             else
                 self:settext('')
-                self:sleep(0.3)
-                self:queuecommand('Update')
-                self:sleep(0.1)
                 self:queuecommand('Update')
                 self:sleep(0.1)
                 self:queuecommand('Update')
@@ -158,9 +149,6 @@
                 self:queuecommand('Update')
             else
                 self:settext('')
-                self:sleep(0.3)
-                self:queuecommand('Update')
-                self:sleep(0.1)
                 self:queuecommand('Update')
                 self:sleep(0.1)
                 self:queuecommand('Update')
@@ -172,7 +160,7 @@
     UpdateMessageCommand="%function(self) 
         self:finishtweening()
         self:queuecommand('Recheck')
-        self:sleep(0.4)
+        self:sleep(0.1)
         self:queuecommand('Recheck')
     end"
     RecheckCommand="%function(self)
@@ -206,15 +194,12 @@
             UpdateMessageCommand="%function(self) 
                 self:finishtweening()
                 self:queuecommand('Group')
-                self:sleep(0.3)
-                self:queuecommand('Group')
-                self:sleep(0.1)
-                self:queuecommand('Group')
                 self:sleep(0.1)
                 self:queuecommand('Group')
             end" 
             GroupCommand="%function(self)
-                local group = GroupTitles[CurWheelIndex()]
+                local ind = CurWheelIndex()
+                local group = GroupTitles[ind]
                 if (not GAMESTATE:GetCurrentSong()) and group then
                     self:settext(group)
                 else
@@ -230,7 +215,8 @@
             OffCommand=""
             UpdateMessageCommand="%function(self) 
                 self:finishtweening()
-                local group = GroupTitles[CurWheelIndex()]
+                local ind = CurWheelIndex()
+                local group = GroupTitles[ind]
                 if GAMESTATE:GetSortOrder() ~= 1 then
                     self:hidden(1)
                 else
@@ -252,15 +238,12 @@
                     self:hidden(0)
                 end
                 self:queuecommand('Group')
-                self:sleep(0.3)
-                self:queuecommand('Group')
-                self:sleep(0.1)
-                self:queuecommand('Group')
                 self:sleep(0.1)
                 self:queuecommand('Group')
             end" 
             GroupCommand="%function(self)
-                local group = GroupTitles[CurWheelIndex()]
+                local ind = CurWheelIndex()
+                local group = GroupTitles[ind]
                 if (not GAMESTATE:GetCurrentSong()) and GroupSongNum[group] then
                     self:settext(GroupSongNum[group])
                 else

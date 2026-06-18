@@ -213,11 +213,17 @@ end
 function CurWheelIndex()
     --so as far as I can tell there's no way to tell which MusicWheelItem is the selected one, other than it being the one with Y = 0
     --but lo and behold, scrolling animations exist which mess up all the Y coordinates grrrrr
+    --so this will just be returning the one with the smallest absolute Y position, aka smallest abs
+    local smallestAbs = 999
+    local returnInd = 1
     for index, item in ipairs(MusicWheelList) do
-        if item:GetY() > -28 and item:GetY() < 28 then
-            return index
+        local ypos = item:GetY()
+        if math.abs(ypos) < smallestAbs then
+            returnInd = index
+            smallestAbs = math.abs(ypos)
         end
     end
+    return returnInd
 end
 
 --get the difficulty slot closest to CurDiff if SonggDiff[CurDiff] doesn't exist
