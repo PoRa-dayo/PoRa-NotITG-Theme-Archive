@@ -61,31 +61,6 @@
         
     <Layer
         Type="BitmapText"
-        Font="artist 16px"
-        Text="Subtitle"
-        Condition="not GAMESTATE:IsCourseMode()"
-        OnCommand="zoom,0.6;maxwidth,550;draworder,32;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-100;horizalign,right;shadowlength,0;addx,180;decelerate,0.3;addx,-180"
-        OffCommand=""
-        UpdateMessageCommand="%function(self)
-            if not AllowTween then self:finishtweening() end
-            local ind = CurWheelIndex()
-            local song = GAMESTATE:GetCurrentSong()
-            if song then
-                self:settext(song:GetDisplaySubTitle())
-            elseif IsRoulette(ind) then
-                Rand = math.random(TotalSongNum)
-                self:settext(AllSongs[Rand]:GetDisplaySubTitle())
-                self:sleep(0.05)
-                self:queuecommand('Update')
-            else
-                self:settext('')
-                self:queuecommand('Update')
-                self:sleep(0.1)
-                self:queuecommand('Update')
-            end
-        end" />
-    <Layer
-        Type="BitmapText"
         Font="songtitle 16px"
         Text="Mirin Template"
         OnCommand="zoom,0.8;zoomx,0.7;maxwidth,460;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-80;horizalign,right;shadowlength,0;addx,-180;decelerate,0.3;addx,180;"
@@ -113,15 +88,42 @@
     <Layer
         Type="BitmapText"
         Font="artist 16px"
-        Text=""
+        Text="Subtitle"
         Condition="not GAMESTATE:IsCourseMode()"
-        OnCommand="x,SCREEN_CENTER_X+(340-320);y,SCREEN_CENTER_Y+(180-240);maxwidth,550;zoom,0.6;draworder,33;shadowlength,0;horizalign,right;"
+        OnCommand="zoom,0.6;maxwidth,550;draworder,34;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-100;horizalign,right;shadowlength,0;addx,180;decelerate,0.3;addx,-180"
+        OffCommand=""
+        UpdateMessageCommand="%function(self)
+            if not AllowTween then self:finishtweening() end
+            local ind = CurWheelIndex()
+            local song = GAMESTATE:GetCurrentSong()
+            if song then
+                self:settext(song:GetDisplaySubTitle())
+            elseif IsRoulette(ind) then
+                Rand = math.random(TotalSongNum)
+                self:settext(AllSongs[Rand]:GetDisplaySubTitle())
+                self:sleep(0.05)
+                self:queuecommand('Update')
+            else
+                self:settext('')
+                self:queuecommand('Update')
+                self:sleep(0.1)
+                self:queuecommand('Update')
+            end
+        end" />
+    <Layer
+        Type="BitmapText"
+        Font="artist 16px"
+        Text="Artist"
+        Condition="not GAMESTATE:IsCourseMode()"
+        OnCommand="x,SCREEN_CENTER_X+(340-320);y,SCREEN_CENTER_Y+(180-240);maxwidth,550;zoom,0.6;draworder,34;shadowlength,0;horizalign,right;addy,-50;decelerate,0.5;addy,50"
         OffCommand=""
         UpdateMessageCommand="%function(self)
             self:finishtweening()
             local ind = CurWheelIndex()
             local song = GAMESTATE:GetCurrentSong()
-            if (not song) and IsRoulette(ind) then
+            if song then
+                self:settext(song:GetDisplayArtist())
+            elseif IsRoulette(ind) then
                 self:settext(AllSongs[Rand]:GetDisplayArtist())
                 self:sleep(0.05)
                 self:queuecommand('Update')
