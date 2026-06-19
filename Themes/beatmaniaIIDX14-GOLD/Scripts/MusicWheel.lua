@@ -21,12 +21,10 @@
 --some of the stuff is updated in ScreenSelectMusic overlay
 SongTitles={}
 GroupTitles={}
-RouletteTitles={}
 GroupSongNum={}
 SongDiffs={}
 MusicWheelList={}
-StartIndex=nil
-Rand=1
+local StartIndex=nil
 AllSongs = SONGMAN:GetAllSongs()
 TotalSongNum = #AllSongs
 CurDiff = 7
@@ -85,6 +83,7 @@ for index, songg in ipairs(AllSongs) do
             end
         end
     end
+    --note: currently it does not know when a new difficulty has been unlocked during the session
 end
 
 function GetSubtitle(ind)
@@ -150,11 +149,9 @@ function UpdateWheelTitles()
     SongTitles={}
     GroupTitles={}
     UsedTitles={}
-    RouletteTitles={}
     --modulo loops my beloved
     --go from StartIndex to #MusicWheelList, then go back to 1 to StartIndex-1
     local CSong = GAMESTATE:GetCurrentSong()
-    if not CSong then StartIndex = nil end
     local Count = #MusicWheelList
     local StartIndex = FindStartPoint()
     for i = 0, Count - 1 do
@@ -165,7 +162,6 @@ function UpdateWheelTitles()
         --grab the titles and subtitles and store them in their corresponding tables
         SongTitles[index] = item:GetChildAt(8):GetChild('Title'):GetText()
         GroupTitles[index] = item:GetChildAt(9):GetText()
-        RouletteTitles[index] = item:GetChildAt(10):GetText()
 
         -- if the Artist has not been changed to a diff number (corrupted), put it in ArtistTitles
         local ArtistDisp = item:GetChildAt(8):GetChild('Artist')
