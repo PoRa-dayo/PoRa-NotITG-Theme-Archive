@@ -320,13 +320,15 @@ end
 function UpdateDiffOfCSong(KeyTitl)
     local CSong = GAMESTATE:GetCurrentSong()
     if CSong then
-        --if it matches, and there's no information about the currently selected difficulty, then it's probably a new difficulty
+        --if it matches, and there's no information about one of the difficulties, then it's probably a new difficulty
         --that the player unlocked. If that's the case, update the SongDiffs.
         local SonggDiff = BMIIDX14Glob.SongDiffs[KeyTitl]
-        if SonggDiff and (not SonggDiff[BMIIDX14Glob.CurDiff]) then
-            local DList = GetDiffList(CSong)
-            if next(DList) ~= nil then
-                BMIIDX14Glob.SongDiffs[KeyTitl][BMIIDX14Glob.CurDiff] = DList[BMIIDX14Glob.CurDiff]
+        local DList = GetDiffList(CSong)
+        if next(DList) ~= nil then
+            for ind,val in pairs(DList) do
+                if DList[ind] and (not SonggDiff[ind]) then
+                    BMIIDX14Glob.SongDiffs[KeyTitl][ind] = DList[ind]
+                end
             end
         end
     end
