@@ -9,19 +9,53 @@
         MESSAGEMAN:Broadcast('Update')
     end"
     ><children>
+    
+    <Layer
+        Type="Quad"
+        OnCommand="%function(self)
+            FirstTweenOver=true
+            self:sleep(0.5)
+            self:queuecommand('Disallow')
+        end"
+        DisallowCommand="%function(self)
+            FirstTweenOver=false
+        end"
+        CurrentSongChangedMessageCommand="%function(self)
+            local ArtEle = BMIIDX14Glob.CourseArtist
+            if ArtEle and (not FirstTweenOver) then
+                ArtEle:finishtweening()
+                ArtEle:diffusealpha(0)
+                ArtEle:addy(-12)
+                
+                ArtEle:decelerate(0.2)
+                ArtEle:diffusealpha(1)
+                ArtEle:addy(12)
+            end
+        end"/>
+    
     <Layer
         Type="BitmapText"
         Font="songtitle 16px"
         Text="Mirin Template"
-        OnCommand="zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-90;horizalign,right;shadowlength,0;maxwidth,460;addx,-180;decelerate,0.3;addx,180;"
+        OnCommand="zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-90;horizalign,right;shadowlength,0;maxwidth,460;addx,-24;decelerate,0.3;addx,24"
         OffCommand=""
-        UpdateMessageCommand="%function(self) 
-            local song = GAMESTATE:GetCurrentSong()
+        CurrentSongChangedMessageCommand="%function(self) 
+            if not FirstTweenOver then self:finishtweening() end
+            
             local course = GAMESTATE:GetCurrentCourse()
-            if song then
-                self:settext(song:GetDisplayMainTitle())
-            elseif course then
+            if course then
+                if not FirstTweenOver then
+                    self:diffusealpha(0)
+                    self:addx(-24)
+                end
+                
                 self:settext(course:GetDisplayFullTitle())
+                
+                if not FirstTweenOver then
+                    self:decelerate(0.2)
+                    self:diffusealpha(1)
+                    self:addx(24)
+                end
             else
                 self:settext('')
             end

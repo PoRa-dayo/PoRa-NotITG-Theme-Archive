@@ -2,12 +2,13 @@
 <ActorFrame
     CurrentSongChangedMessageCommand="%function(self)
         MESSAGEMAN:Broadcast('Update')
+        MESSAGEMAN:Broadcast('SongUpdate')
     end"
     CurrentStepsP1ChangedMessageCommand="%function(self)
         if not GAMESTATE:IsCourseMode() then
             local temp = GAMESTATE:GetEasiestStepsDifficulty()
             if temp < 6 then
-                CurDiff = GAMESTATE:GetEasiestStepsDifficulty()
+                BMIIDX14Glob.CurDiff = GAMESTATE:GetEasiestStepsDifficulty()
             end
         end
         MESSAGEMAN:Broadcast('Update')
@@ -16,29 +17,40 @@
         if not GAMESTATE:IsCourseMode() then
             local temp = GAMESTATE:GetEasiestStepsDifficulty()
             if temp < 6 then
-                CurDiff = GAMESTATE:GetEasiestStepsDifficulty()
+                BMIIDX14Glob.CurDiff = GAMESTATE:GetEasiestStepsDifficulty()
             end
         end
         MESSAGEMAN:Broadcast('Update')
     end"
     ><children>
+    
+    <!--To minimize the amount of times UpdateWheelTitles gets called-->
+    <Layer
+        Type="Quad"
+        CurrentStepsP1ChangedMessageCommand="%function(self)
+            BMIIDX14Glob.YouShouldChangeThatShitNOW=true
+        end"
+        CurrentStepsP2ChangedMessageCommand="%function(self)
+            BMIIDX14Glob.YouShouldChangeThatShitNOW=true
+        end"/>
+        
     <!--CurrentSongChanged is not used here because the Artist commands in [TextBanner] in metrics.ini do a better job. -->
     <!--As CurrentSongChanged is not activated when the player opens a group. -->
     <Layer
         Type="Quad"
         OnCommand="%function(self)
-            MusicWheelList={}
-            ArtistTitles={}
-            DiffNumTitles={}
-            AllowTween=true
+            BMIIDX14Glob.MusicWheelList = {}
+            BMIIDX14Glob.ArtistTitles = {}
+            BMIIDX14Glob.DiffNumTitles = {}
+            FirstTweenOver=true
             Rand=1
             self:sleep(0.1)
-            self:queuecommand('Wheel')
+            self:queuecommand('FirstUpdate')
             self:sleep(0.5)
             self:queuecommand('Disallow')
         end"
         DisallowCommand="%function(self)
-            AllowTween=false
+            FirstTweenOver=false
         end"
         CurrentStepsP1ChangedMessageCommand="%function(self)
             self:queuecommand('Wheel')
@@ -46,8 +58,14 @@
         CurrentStepsP2ChangedMessageCommand="%function(self)
             self:queuecommand('Wheel')
         end"
+        FirstUpdateCommand="%function(self)
+            UpdateWheelTitles(true)
+        end"
         WheelCommand="%function(self)
-            UpdateWheelTitles()
+            if BMIIDX14Glob.YouShouldChangeThatShitNOW then
+                BMIIDX14Glob.YouShouldChangeThatShitNOW = false
+                UpdateWheelTitles()
+            end
         end"/>
         
     <Layer
@@ -64,26 +82,37 @@
         Type="BitmapText"
         Font="songtitle 16px"
         Text="Mirin Template"
-        OnCommand="zoom,0.8;zoomx,0.7;maxwidth,460;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-80;horizalign,right;shadowlength,0;addx,-180;decelerate,0.3;addx,180;"
+        OnCommand="zoom,0.8;zoomx,0.7;maxwidth,460;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-80;horizalign,right;shadowlength,0;addx,-24;decelerate,0.3;addx,24"
         OffCommand=""
-        UpdateMessageCommand="%function(self) 
-            if not AllowTween then self:finishtweening() end
+        SongUpdateMessageCommand="%function(self) 
+            if not FirstTweenOver then self:finishtweening() end
+
             local song = GAMESTATE:GetCurrentSong()
             local course = GAMESTATE:GetCurrentCourse()
             local ind = CurWheelIndex()
             if song then
+                if not FirstTweenOver then
+                    self:diffusealpha(0)
+                    self:addx(-24)
+                end
+                
                 self:settext(song:GetDisplayMainTitle())
+                
+                if not FirstTweenOver then
+                    self:decelerate(0.2)
+                    self:diffusealpha(1)
+                    self:addx(24)
+                end
             elseif course then
                 self:settext(course:GetDisplayFullTitle())
             elseif IsRoulette(ind) then
-                self:settext(AllSongs[Rand]:GetDisplayMainTitle())
+                self:settext(BMIIDX14Glob.AllSongs[Rand]:GetDisplayMainTitle())
                 self:sleep(0.05)
-                self:queuecommand('Update')
+                self:queuecommand('SongUpdate')
             else
                 self:settext('')
-                self:queuecommand('Update')
                 self:sleep(0.1)
-                self:queuecommand('Update')
+                self:queuecommand('SongUpdate')
             end
         end"/>
     <Layer
@@ -91,24 +120,34 @@
         Font="artist 16px"
         Text="Subtitle"
         Condition="not GAMESTATE:IsCourseMode()"
-        OnCommand="zoom,0.6;maxwidth,550;draworder,34;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-100;horizalign,right;shadowlength,0;addx,180;decelerate,0.3;addx,-180"
+        OnCommand="zoom,0.6;maxwidth,550;draworder,34;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-100;horizalign,right;shadowlength,0;addx,24;decelerate,0.3;addx,-24"
         OffCommand=""
-        UpdateMessageCommand="%function(self)
-            if not AllowTween then self:finishtweening() end
+        SongUpdateMessageCommand="%function(self)
+            if not FirstTweenOver then self:finishtweening() end
             local ind = CurWheelIndex()
             local song = GAMESTATE:GetCurrentSong()
             if song then
+                if not FirstTweenOver then
+                    self:diffusealpha(0)
+                    self:addx(24)
+                end
+                
                 self:settext(song:GetDisplaySubTitle())
+                
+                if not FirstTweenOver then
+                    self:decelerate(0.2)
+                    self:diffusealpha(1)
+                    self:addx(-24)
+                end
             elseif IsRoulette(ind) then
-                Rand = math.random(TotalSongNum)
-                self:settext(AllSongs[Rand]:GetDisplaySubTitle())
+                Rand = math.random(BMIIDX14Glob.TotalSongNum)
+                self:settext(BMIIDX14Glob.AllSongs[Rand]:GetDisplaySubTitle())
                 self:sleep(0.05)
-                self:queuecommand('Update')
+                self:queuecommand('SongUpdate')
             else
                 self:settext('')
-                self:queuecommand('Update')
                 self:sleep(0.1)
-                self:queuecommand('Update')
+                self:queuecommand('SongUpdate')
             end
         end" />
     <Layer
@@ -116,23 +155,34 @@
         Font="artist 16px"
         Text="Artist"
         Condition="not GAMESTATE:IsCourseMode()"
-        OnCommand="x,SCREEN_CENTER_X+(340-320);y,SCREEN_CENTER_Y+(180-240);maxwidth,550;zoom,0.6;draworder,34;shadowlength,0;horizalign,right;addy,-50;decelerate,0.5;addy,50"
+        OnCommand="x,SCREEN_CENTER_X+(340-320);y,SCREEN_CENTER_Y+(180-240);maxwidth,550;zoom,0.6;draworder,34;shadowlength,0;horizalign,right;addy,-12;decelerate,0.3;addy,12"
         OffCommand=""
-        UpdateMessageCommand="%function(self)
-            self:finishtweening()
+        SongUpdateMessageCommand="%function(self)
+            if not FirstTweenOver then self:finishtweening() end
+            
             local ind = CurWheelIndex()
             local song = GAMESTATE:GetCurrentSong()
             if song then
+                if not FirstTweenOver then
+                    self:diffusealpha(0)
+                    self:addy(-12)
+                end
+                
                 self:settext(song:GetDisplayArtist())
+                
+                if not FirstTweenOver then
+                    self:decelerate(0.2)
+                    self:diffusealpha(1)
+                    self:addy(12)
+                end
             elseif IsRoulette(ind) then
-                self:settext(AllSongs[Rand]:GetDisplayArtist())
+                self:settext(BMIIDX14Glob.AllSongs[Rand]:GetDisplayArtist())
                 self:sleep(0.05)
-                self:queuecommand('Update')
+                self:queuecommand('SongUpdate')
             else
                 self:settext('')
-                self:queuecommand('Update')
                 self:sleep(0.1)
-                self:queuecommand('Update')
+                self:queuecommand('SongUpdate')
             end
         end" />
     <Layer
@@ -142,33 +192,31 @@
         Condition="not GAMESTATE:IsCourseMode()"
         OnCommand="x,SCREEN_CENTER_X+(340-320);y,SCREEN_CENTER_Y+(301-240);shadowlength,1;horizalign,right"
         OffCommand=""
-        UpdateMessageCommand="%function(self)
+        SongUpdateMessageCommand="%function(self)
             self:finishtweening()
             local ind = CurWheelIndex()
             local song = GAMESTATE:GetCurrentSong()
             if (not song) and IsRoulette(ind) then
-                self:settext(string.format('%03d', math.floor(AllSongs[Rand]:GetMinBPM())))
+                self:settext(string.format('%03d', math.floor(BMIIDX14Glob.AllSongs[Rand]:GetMinBPM())))
                 self:sleep(0.05)
-                self:queuecommand('Update')
+                self:queuecommand('SongUpdate')
             else
                 self:settext('')
-                self:queuecommand('Update')
                 self:sleep(0.1)
-                self:queuecommand('Update')
+                self:queuecommand('SongUpdate')
             end
         end" />
         
-        
+    <!--shows up when a group is selected-->    
     <ActorFrame Condition="FUCK_EXE"
     UpdateMessageCommand="%function(self) 
         self:finishtweening()
-        self:queuecommand('Recheck')
         self:sleep(0.1)
         self:queuecommand('Recheck')
     end"
     RecheckCommand="%function(self)
         local ind = CurWheelIndex()
-        local group = GroupTitles[ind]
+        local group = BMIIDX14Glob.GroupTitles[ind]
         if (not GAMESTATE:GetCurrentSong()) and (not IsRoulette(ind)) and GAMESTATE:GetSortOrder() ~= 13 and group then
             self:hidden(0)
         else
@@ -196,13 +244,19 @@
             OffCommand=""
             UpdateMessageCommand="%function(self) 
                 self:finishtweening()
+                self:diffusealpha(0)
+                self:addx(-24)
+                self:linear(0.1)
+                self:diffusealpha(0.3)
+                self:addx(12)
                 self:queuecommand('Group')
-                self:sleep(0.1)
-                self:queuecommand('Group')
-            end" 
+                self:decelerate(0.1)
+                self:diffusealpha(1)
+                self:addx(12)
+            end"
             GroupCommand="%function(self)
                 local ind = CurWheelIndex()
-                local group = GroupTitles[ind]
+                local group = BMIIDX14Glob.GroupTitles[ind]
                 if (not GAMESTATE:GetCurrentSong()) and group then
                     self:settext(group)
                 else
@@ -219,7 +273,7 @@
             UpdateMessageCommand="%function(self) 
                 self:finishtweening()
                 local ind = CurWheelIndex()
-                local group = GroupTitles[ind]
+                local group = BMIIDX14Glob.GroupTitles[ind]
                 if GAMESTATE:GetSortOrder() ~= 1 then
                     self:hidden(1)
                 else
@@ -240,15 +294,14 @@
                 else
                     self:hidden(0)
                 end
-                self:queuecommand('Group')
                 self:sleep(0.1)
                 self:queuecommand('Group')
             end" 
             GroupCommand="%function(self)
                 local ind = CurWheelIndex()
-                local group = GroupTitles[ind]
-                if (not GAMESTATE:GetCurrentSong()) and GroupSongNum[group] then
-                    self:settext(GroupSongNum[group])
+                local group = BMIIDX14Glob.GroupTitles[ind]
+                if (not GAMESTATE:GetCurrentSong()) and BMIIDX14Glob.GroupSongNum[group] then
+                    self:settext(BMIIDX14Glob.GroupSongNum[group])
                 else
                     self:settext('')
                 end
