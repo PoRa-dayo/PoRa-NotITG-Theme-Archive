@@ -478,6 +478,6 @@ function SaveClassToProfile( num )
     PROFILEMAN:SaveMachineProfile()
 end
 
-function GetSavedClass( num )
-    return PROFILEMAN:GetMachineProfile():GetSaved().ITGTACTICSLastUsedClass
+function GetSavedClass( )
+    return PROFILEMAN:GetMachineProfile():GetSaved().ITGTACTICSLastUsedClass or '001'
 end
