@@ -106,6 +106,7 @@
             elseif course then
                 self:settext(course:GetDisplayFullTitle())
             elseif IsRoulette(ind) then
+                Rand = math.random(BMIIDX14Glob.TotalSongNum)
                 self:settext(BMIIDX14Glob.AllSongs[Rand]:GetDisplayMainTitle())
                 self:sleep(0.05)
                 self:queuecommand('SongUpdate')
@@ -140,7 +141,6 @@
                     self:addx(-24)
                 end
             elseif IsRoulette(ind) then
-                Rand = math.random(BMIIDX14Glob.TotalSongNum)
                 self:settext(BMIIDX14Glob.AllSongs[Rand]:GetDisplaySubTitle())
                 self:sleep(0.05)
                 self:queuecommand('SongUpdate')
