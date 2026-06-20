@@ -305,7 +305,7 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 # BEATMANIA IIDX 14: GOLD
 ***NOTE: This theme requires you to have the theme OITGThemerFallback for it to work!!! And just like any other fallback theme, do not actually use OITGThemerFallback.***
 
-A very animated theme based on the game Beatmania IIDX 14: Gold, the 14th installment in Konami's Beatmania IIDX series. This is also my very first full port of a SM3.9 theme, using OITGThemerFallback and A.O.I. as a base.\
+A very animated and flashy theme based on the game Beatmania IIDX 14: Gold, the 14th installment in Konami's Beatmania IIDX series. This is also my very first full port of a SM3.9 theme, using OITGThemerFallback and A.O.I. as a base.\
 Now, it's party time! Ready to relive your hypest moments with IIDX GOOOOOOOOOOOOOOOOLD!!!!!
 
 ## Credits:
