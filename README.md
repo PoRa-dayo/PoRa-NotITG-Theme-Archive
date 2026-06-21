@@ -268,7 +268,7 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 
 
 # SPLATMANIA 0.3.3.0
-A very animated theme based on the game Splatoon developed by Nintendo, though it was definitely more optimized for the SplatMania build rather than actual NotITG so some changes had to be made about that. There's also a newer 0.5.0.0 version for StepMania 5, but the UI there is so different that it's basically a different alternate theme, so I won't be referencing it too much.
+A modern animated theme based on the game Splatoon developed by Nintendo, though it was definitely more optimized for the SplatMania build rather than actual NotITG so some changes had to be made about that. There's also a newer 0.5.0.0 version for StepMania 5, but the UI there is so different that it's basically a different alternate theme, so I won't be referencing it too much.
 
 ## Credits:
 Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 by PoRa with permission.
