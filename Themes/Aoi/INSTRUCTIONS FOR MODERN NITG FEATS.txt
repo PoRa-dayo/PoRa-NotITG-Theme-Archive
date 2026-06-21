@@ -1,0 +1,52 @@
+*Stitch.lua:
+    -Copy Lua, Screens folders and config.lua file over
+    -In Graphics folder, copy OverlayScreen footer.redir and OverlayScreen header.redir over
+    -In Scripts folder, copy Stitch.lua over
+    -In Sounds folder, copy gta-wasted.ogg and srt_hit.ogg over, which are the sounds for the two default FailOverlays.
+    -In metrics.ini, at [Common], change it to this:
+    [Common]
+    ...
+    InitialScreen=InitializeScripts
+    OverlayScreens=ScreenSystemLayer,ScreenSyncOverlay,ScreenDebugOverlay,OverlayScreen
+
+    [InitializeScripts]
+    Class=ScreenStage
+    NextScreen= !!!(whatever the original InitialScreen= is)!!!
+    InitCommand=%stx("lua.event").OverlayReady
+    MinimumDelay=0
+
+    [OverlayScreen]
+    Class=ScreenTestInput
+    InputsOnCommand=luaeffect,Update;zoom,0.7;horizalign,left;diffusealpha,0;
+    InputsUpdateCommand=%function(a) stx("lua.keyboard").KeyHandler(a) end
+    TimerOnCommand=hidden,1
+    DevicesOnCommand=hidden,1
+    
+*Offset Plot: (This is done entirely in the BGAnimations folder)
+    -Copy OffsetPlot.xml over.
+    -Put the corresponding offset plot codes in their corresponding screens. In Aoi they're at ScreenStage overlay, ScreenGameplay overlay,
+    and ScreenEvaluation overlay. It doesn't have to be 'overlay', it just needs to be somewhere in the correct screen,
+    'underlay', 'in', 'background', etc. is fine.
+
+*basic_nitg_v491_feats.lua:
+    -Copy the contents of basic_nitg_v491_feats.lua to somewhere in your Scripts folder. It doesn't matter which .lua file it's in, the game will
+    load it all.
+    (Unless the theme you're working with is really really old like this one, chances are some of the functions here already exist in the theme.
+    It's highly recommended that you remove the duplicates.)
+    
+    -In BGAnimations folder, call the Gameplay function somewhere in ScreenGameplay, here it's at ScreenGameplay overlay:
+    <ActorFrame Command="%GameplayInit" CurrentSongChangedMessageCommand="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
+    
+    -In BGAnimations folder, call the ApplyNoteskin function somewhere in ScreenStage, here it's at ScreenStage in:
+    <ActorFrame Command="%ApplyNoteskin"/>
+    
+    -In Graphics folder, copy the _Judgments and _HoldJudgments folders.
+    
+    -In metrics.ini, at [ScreenPlayerOptions], add the noteskin, judgment and hold judgment options in, for example:
+    Line9=lua,NoteSkinOption()
+    Line10=lua,JudgmentOption()
+    Line11=lua,HoldJudgmentOption()
+    and modify the LineNames accordingly.
+    
+    -In metrics.ini, add the resolution settings to your option screen of choice. Here it's at [ScreenScreenSettings].
+    Make sure to modify the Y positions of the rows so that all LuaSetResolution rows have the same Y position.
