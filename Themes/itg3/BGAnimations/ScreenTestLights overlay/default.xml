@@ -1,0 +1,24 @@
+<ActorFrame><children>
+	<!-- On ITGIO/PIUIO, the bass lights are triggered together. This quad
+	     transparently converts BassLeft/BassRight into Bass messages. -->
+	<Quad
+		Condition="IsArcadeIO()"
+		InitCommand="hidden,1"
+		UpdateCommand="%function(self)
+			local msg = (STLBassLeft or STLBassRight) and 'BassOn' or 'BassOff'
+			MESSAGEMAN:Broadcast( msg )
+		end"
+
+		BassLeftOnMessageCommand="%function(self) STLBassLeft = true; self:playcommand('Update'); end"
+		BassRightOnMessageCommand="%function(self) STLBassRight = true; self:playcommand('Update'); end"
+		BassLeftOffMessageCommand="%function(self) STLBassLeft = false; self:playcommand('Update'); end"
+		BassRightOffMessageCommand="%function(self) STLBassRight = false; self:playcommand('Update'); end"
+		OffCommand="%function(self) STLBassLeft = nil; STLBassRight = nil; end"
+	/>
+
+	<!-- ITG2 dedicated cabinet, displayed by default -->
+	<Layer Condition="not IsITGIO()" File="dedicab" />
+
+	<!-- ITG upgrade cabinet, displayed for ITGIO only -->
+	<Layer Condition="IsITGIO()" File="upgrade" />
+</children></ActorFrame>

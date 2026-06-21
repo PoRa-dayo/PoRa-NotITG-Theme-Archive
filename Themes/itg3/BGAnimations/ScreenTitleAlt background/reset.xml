@@ -1,0 +1,8 @@
+﻿<ActorFrame
+OnCommand="%function(self)
+		ResetCustomMods()
+		InitializeSpeedMods()
+		end"
+		><children>
+
+</children></ActorFrame>

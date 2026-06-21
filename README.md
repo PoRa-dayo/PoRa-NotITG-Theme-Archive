@@ -302,6 +302,30 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 <img width="200" alt="NotITG-v4 9 1_FneqyfElaC" src="https://github.com/user-attachments/assets/084a0e32-b386-401f-9402-956b66f62f1f" />
 <img width="200" alt="NotITG-v4 9 1_xTsWBdgqQz" src="https://github.com/user-attachments/assets/d0c7edf9-3166-4989-b3e5-4702a0bf9412" />
 
+# IN THE GROOVE 3
+A futuristic-looking theme made for In The Groove 3, the "supposedly" third installment in the In The Groove series by Roxor Games, hadn't it been for the Konami acquisition.
+
+## Credits:
+Original theme by ITG3 Team, no longer maintained. Optimized for NotITG 4.9.1 by PoRa.
+
+## Changelogs:
+-Now falls back on NotITG's fallback theme instead of ITG3's fallback3 theme, though there are barely any differences between the two anyway.\
+-Added "Play Mods" (takes you to 2P Dance immediately). All the other modes except Fitness Mode are now in Arcade Modes.\
+-Removed the labels in Records.\
+-Moved Select Theme to the main options screen because it's too important to be in freaking "Custom Song Options".\
+-Moved Map Inputs to the main options screen to make the title screen less cluttery.\
+-Removed Reset To Factory Defaults because it messes up the game real badly.\
+-There were a bunch of blacklisted themes in Select Theme. Now only the default and fallback themes are blacklisted.\
+-Added fullscreen/windowed option.\
+-Added the ability to set the resolution alongside the ratio. All ratios except for 4:3, 16:10, 16:9, 3:2 and 5:4 are removed.\
+-Moved the Clean Screen options to Arcade Option.\
+-Added step artist display in song selection screen.\
+-Difficulty in the song selection screen now displays up to 20 blocks.\
+-Lowered the max width of the artist display, course titles and course contents in the song/course selection screen.\
+-Added a length indicator in Marathon mode.\
+-Altered some of the UI of Edit mode to fit NotITG's settings.\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.
+
 
 # BEATMANIA IIDX 14: GOLD
 ***NOTE: This theme requires you to have the theme OITGThemerFallback for it to work!!! And just like any other fallback theme, do not actually use OITGThemerFallback.***

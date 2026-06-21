@@ -1,0 +1,35 @@
+﻿<ActorFrame><children>
+	<!-- OpenITG logo (obviously, used only on OpenITG) -->
+	<Layer
+		Condition="OPENITG"
+		File="openitg"
+		InitCommand="zoom,.65;x,SCREEN_LEFT-15;y,SCREEN_CENTER_Y-SCREEN_HEIGHT/2.8"
+	/>
+
+	<!-- Animated BoXoRRoXoRs logo -->
+	<!-- Use "BoXoR" command to init if on OpenITG, "RoXoR" on ITG2 -->
+	<Layer
+		File="bxrx"
+		BoXoRCommand="zoom,.6;x,SCREEN_RIGHT-SCREEN_WIDTH/3.3;y,SCREEN_BOTTOM-150"
+		RoXoRCommand="zoom,.9;x,SCREEN_RIGHT-SCREEN_WIDTH/2;y,SCREEN_BOTTOM-190"
+		InitCommand="%function(self) self:playcommand(OPENITG and 'BoXoR' or 'RoXoR') end"
+	/>
+
+	<!-- ITG3 logo -->
+	<!-- Use "BoXoR" command to init if on OpenITG, "RoXoR" on ITG2 -->
+	<Layer
+		File="in the groove"
+		BoXoRCommand="zoom,.7;x,SCREEN_RIGHT-SCREEN_WIDTH/3;y,SCREEN_TOP+100"
+		RoXoRCommand="zoom,.8;x,SCREEN_RIGHT-SCREEN_WIDTH/2;y,SCREEN_TOP+120"
+		InitCommand="%function(self) self:playcommand(OPENITG and 'BoXoR' or 'RoXoR') end"
+	/>
+
+	<!-- Full-screen fade in -->
+	<Quad
+		InitCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuse,#FFFFFF"
+		OnCommand="diffusealpha,1;sleep,0.1;accelerate,0.5;diffusealpha,0"
+	/>
+
+	<!-- Shared attract overlay -->
+	<Layer File="../ScreenAttract overlay" />
+</children></ActorFrame>
