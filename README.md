@@ -144,6 +144,7 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 -Changed the layering of the BPM number so that it stays hidden during modfiles.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Fixed some of the UI in Marathon Mode, fixed the bug where the course title is updated one course late when switching courses.\
+-Added course length in Marathon Mode.\
 -NOTE: I did NOT change this one to the 17-tier scoring threshold, so the saved grades will be messed up when you check out other themes. (Will automatically fix itself when it's fixed in the next NotITG release)\
 -Fixed the oversight that made system messages stay hidden after showing up for the first time.\
 -Added Config Key/Joy Mappings option.\
