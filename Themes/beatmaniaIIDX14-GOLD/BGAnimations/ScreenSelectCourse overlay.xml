@@ -37,11 +37,13 @@
         Type="BitmapText"
         Font="songtitle 16px"
         Text="Mirin Template"
-        OnCommand="zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-90;horizalign,right;shadowlength,0;maxwidth,460;addx,-24;decelerate,0.3;addx,24"
+        OnCommand="queuecommand,UpdateTitle;zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-90;horizalign,right;shadowlength,0;maxwidth,460;addx,-24;decelerate,0.3;addx,24"
         OffCommand=""
         CurrentSongChangedMessageCommand="%function(self) 
             if not FirstTweenOver then self:finishtweening() end
-            
+            self:queuecommand('UpdateTitle')
+        end"
+        UpdateTitleCommand="%function(self) 
             local course = GAMESTATE:GetCurrentCourse()
             if course then
                 if not FirstTweenOver then
