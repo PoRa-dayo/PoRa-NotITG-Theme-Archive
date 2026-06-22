@@ -412,8 +412,9 @@ function LuaSetResolution( ratio )
 				Debug( "New resolution: " .. width .. "x" .. height .. ", ratio " .. Resolutions[ratio].Ratio )
 				
 				DISPLAY:SetWindowPositionAndSize(0,0,width,height)
-
-				GAMESTATE:DelayedGameCommand( "reloadtheme" )
+                
+                -- the ThemeSwitcher in dwiutils does this job now
+				-- GAMESTATE:DelayedGameCommand( "reloadtheme" )
 			end
 		end
 	end
