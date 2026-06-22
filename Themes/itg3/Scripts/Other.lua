@@ -1349,11 +1349,11 @@ function DisplayBPM(pn)
 
 	if ITG3GlobVar.modType[pn] == "x-mod" then
 
-		if lowBPM == "Various" or lowBPM == "..." or lowBPM == nil then
+		if lowBPM == "Various" or lowBPM == "..." or lowBPM == nil or tonumber(lowBPM) == nil then
 		return "???"
 		end
 		
-		lowScrollBPM = lowBPM * speedMod * modRate
+		lowScrollBPM = tonumber(lowBPM) * speedMod * modRate
 	
 		if string.sub(lowScrollBPM, 2, 2) == "." then
 		lowScrollBPM = string.sub(lowScrollBPM, 1, 1)
@@ -1377,7 +1377,7 @@ function DisplayBPM(pn)
 
 		if highBPM ~= "" then
 
-			highScrollBPM = highBPM * speedMod * modRate
+			highScrollBPM = tonumber(highBPM) * speedMod * modRate
 		
 			if string.sub(highScrollBPM, 2, 2) == "." then
 			highScrollBPM = string.sub(highScrollBPM, 1, 1)

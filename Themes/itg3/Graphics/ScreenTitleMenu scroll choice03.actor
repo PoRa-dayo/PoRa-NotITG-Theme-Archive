@@ -2,7 +2,7 @@
 File=_ScreenTitleMenu choices
 Text=Play Mods
 InitCommand=HorizAlign,right;ShadowLength,2;setstate,0;pause;StopTweening;DiffuseShift;EffectColor1,#DDDD00;EffectColor2,#DDDD00
-GainFocusCommand=StopTweening;Linear,0;Zoom,0.8;DiffuseShift;EffectPeriod,0.5;EffectColor1,#DDDD00;EffectColor2,#FFFFBB
+GainFocusCommand=StopTweening;Linear,0;Zoom,0.8;DiffuseShift;EffectPeriod,0.5;EffectColor1,#DDDD00;EffectColor2,#FFFFFF
 LoseFocusCommand=StopTweening;StopEffect;DiffuseShift;EffectColor1,#DDDD00;EffectColor2,#DDDD00;Linear,0;Zoom,0.7
 EnabledCommand=
 DisabledCommand=Diffuse,0.5,0.5,0.5,1

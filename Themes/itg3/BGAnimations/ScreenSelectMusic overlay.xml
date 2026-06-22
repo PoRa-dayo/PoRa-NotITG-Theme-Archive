@@ -9,10 +9,12 @@
         InitCommand="sleep,0.1;queuecommand,SSMCountDown;"
         SSMCountDownCommand="%function(self)
             self:stoptweening();
-            ScreenSelectMusicTimer = ScreenSelectMusicTimer - 0.1;
-                if ScreenSelectMusicTimer <= 0 then
-                    ScreenSelectMusicTimer = 0;
-                end
+            if ScreenSelectMusicTimer then
+                ScreenSelectMusicTimer = ScreenSelectMusicTimer - 0.1;
+                    if ScreenSelectMusicTimer <= 0 then
+                        ScreenSelectMusicTimer = 0;
+                    end
+            end
         self:sleep(0.1);
         self:queuecommand('SSMCountDown');
         end"
@@ -478,7 +480,7 @@
         Type="BitmapText"
         Font="_r bold shadow 18px"
         Text=""
-        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsHumanPlayer(PLAYER_1)"
         OnCommand="draworder,102;x,SCREEN_CENTER_X-280;y,SCREEN_CENTER_Y+220;horizalign,left;shadowlength,0;maxwidth,300;zoom,0.7;addy,300;sleep,0.1;queuecommand,Update;decelerate,0.5;addy,-300"
         OffCommand="accelerate,0.5;addy,300"
         CurrentSongChangedMessageCommand="queuecommand,Update"
@@ -488,12 +490,16 @@
         Type="BitmapText"
         Font="_r bold shadow 18px"
         Text=""
-        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsHumanPlayer(PLAYER_2)"
         OnCommand="draworder,102;x,SCREEN_CENTER_X+280;y,SCREEN_CENTER_Y+220;horizalign,right;shadowlength,0;maxwidth,300;zoom,0.7;addy,300;sleep,0.1;queuecommand,Update;decelerate,0.5;addy,-300"
         OffCommand="accelerate,0.5;addy,300"
         CurrentSongChangedMessageCommand="queuecommand,Update"
         CurrentStepsP2ChangedMessageCommand="queuecommand,Update"
         UpdateCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" />
+        
+        
+    <!--the gauges of the holds/jumps/mines/etc. in the pane display (P1)-->
+    <Layer File="PaneGauge" />
     
 
 </children></ActorFrame>

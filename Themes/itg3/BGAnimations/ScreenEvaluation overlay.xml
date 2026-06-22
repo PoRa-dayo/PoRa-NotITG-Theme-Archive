@@ -169,5 +169,7 @@
     <Layer File="OffsetPlot" OffCommand="%function(self)
         BX_SaltyResets = 0
         BX_SaltyResetPos = {}
+        self:accelerate(0.5)
+        self:y(500)
     end"/>
 </children></ActorFrame>

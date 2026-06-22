@@ -285,6 +285,7 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -Added a bunch of info in song selection screen like step artist being shown for every difficulty, your high score being shown, Failed icon shown in song selection on failed songs, little squids that indicate easier/harder difficulties available, etc.\
 -Added modernized noteskin, judgment font, hold judgment, and Music Rate customization.\
 -Fixed the error where the Long/Marathon pop-up in song selection screen keeps getting bigger if you switch through songs rapidly, also changed its location.\
+-Added offset plot and spellcard viewer in results screen.\
 -A "Success!" rank is added to the evaluation screen for when you lifebar pass the song. The song banner and player mods are also added there.\
 -Added mine counter in the evaluation screen similar to SplatMania 0.5.0.\
 -Fully overhauled the UI of the lifebar, difficulty counter, etc. during non-mods gameplay.\
@@ -322,8 +323,14 @@ Original theme by ITG3 Team, no longer maintained. Optimized for NotITG 4.9.1 by
 -Added step artist display in song selection screen.\
 -Difficulty in the song selection screen now displays up to 20 blocks.\
 -Lowered the max width of the artist display, course titles and course contents in the song/course selection screen.\
+-Increased the spacing between the difficulties and the course entries' titles.\
+-F grades are shown in the song selection screen.\
+-The amount of jumps, holds, mines, hands, and rolls are now also shown in numbers in the song/course selection screen.\
 -Added a length indicator in Marathon mode.\
+-Added modernized noteskin, judgment font, and hold judgment customization.\
+-Fixed the error that happens in the player options menu when the song's BPM is negative.\
 -Altered some of the UI of Edit mode to fit NotITG's settings.\
+-Added offset plot and spellcard viewer in results screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 

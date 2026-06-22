@@ -1,0 +1,330 @@
+<ActorFrame> <children>
+        
+    <!--the gauges of the holds/jumps/mines/etc. in the pane display (P1)-->
+    <Layer
+        Type="BitmapText"
+        Font="PaneDisplay text"
+        Text=""
+        Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
+        OnCommand="x,GetPaneX(PLAYER_1)-75;y,SCREEN_CENTER_Y+203;additiveblend,1;zoomy,0;diffusealpha,0;sleep,1;queuecommand,Check;finishtweening;linear,0.5;diffusealpha,1;vertalign,bottom;shadowlength,0"
+        OffCommand="linear,.15;diffusealpha,0"
+        CurrentSongChangedMessageCommand="queuecommand,Check"
+        CurrentStepsP2ChangedMessageCommand="queuecommand,Check"
+        CheckCommand="%function(self) 
+            local num = tonumber(GetPaneTextP1('Jumps'))
+            if (not num) or num == 0 then
+                self:queuecommand('Lv0')
+            else
+                local thresholds = GAMESTATE:IsCourseMode() and {1, 49, 99, 149, 399, 99999} or {1, 25, 50, 100, 200, 99999}
+                for lv = 1, #thresholds do
+                    if not thresholds[lv+1] then
+                        self:queuecommand('Lv5')
+                    elseif num >= thresholds[lv] and num < thresholds[lv+1] then
+                        self:queuecommand('Lv'..lv)
+                        break
+                    end
+                end
+            end
+        end"
+        Lv0Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-5;zoomy,0;settext,█;diffusealpha,0;stopeffect"
+        Lv1Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-4;zoomy,.2;settext,█;diffuse,#00FF00FF;stopeffect"
+        Lv2Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-3;zoomy,.4;settext,█;diffuse,#FFFF00FF;stopeffect"
+        Lv3Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-2;zoomy,.6;settext,█;diffuse,#FF8800FF;stopeffect"
+        Lv4Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-1;zoomy,.8;settext,█;diffuse,#FF0000FF;stopeffect"
+        Lv5Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203;zoomy,1;settext,█;diffuse,#00C0FFFF;stopeffect"
+        />
+        
+    <Layer
+        Type="BitmapText"
+        Font="PaneDisplay text"
+        Text=""
+        Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
+        OnCommand="x,GetPaneX(PLAYER_1)-51;y,SCREEN_CENTER_Y+203;additiveblend,1;zoomy,0;diffusealpha,0;sleep,1;queuecommand,Check;finishtweening;linear,0.5;diffusealpha,1;vertalign,bottom;shadowlength,0"
+        OffCommand="linear,.15;diffusealpha,0"
+        CurrentSongChangedMessageCommand="queuecommand,Check"
+        CurrentStepsP2ChangedMessageCommand="queuecommand,Check"
+        CheckCommand="%function(self) 
+            local num = tonumber(GetPaneTextP1('Holds'))
+            if (not num) or num == 0 then
+                self:queuecommand('Lv0')
+            else
+                local thresholds = GAMESTATE:IsCourseMode() and {1, 49, 99, 199, 399, 99999} or {1, 25, 50, 100, 150, 99999}
+                for lv = 1, #thresholds do
+                    if not thresholds[lv+1] then
+                        self:queuecommand('Lv5')
+                    elseif num >= thresholds[lv] and num < thresholds[lv+1] then
+                        self:queuecommand('Lv'..lv)
+                        break
+                    end
+                end
+            end
+        end"
+        Lv0Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-5;zoomy,0;settext,█;diffusealpha,0;stopeffect"
+        Lv1Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-4;zoomy,.2;settext,█;diffuse,#00FF00FF;stopeffect"
+        Lv2Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-3;zoomy,.4;settext,█;diffuse,#FFFF00FF;stopeffect"
+        Lv3Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-2;zoomy,.6;settext,█;diffuse,#FF8800FF;stopeffect"
+        Lv4Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-1;zoomy,.8;settext,█;diffuse,#FF0000FF;stopeffect"
+        Lv5Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203;zoomy,1;settext,█;diffuse,#00C0FFFF;stopeffect"
+        />
+    <Layer
+        Type="BitmapText"
+        Font="PaneDisplay text"
+        Text=""
+        Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
+        OnCommand="x,GetPaneX(PLAYER_1)-26;y,SCREEN_CENTER_Y+203;additiveblend,1;zoomy,0;diffusealpha,0;sleep,1;queuecommand,Check;finishtweening;linear,0.5;diffusealpha,1;vertalign,bottom;shadowlength,0"
+        OffCommand="linear,.15;diffusealpha,0"
+        CurrentSongChangedMessageCommand="queuecommand,Check"
+        CurrentStepsP2ChangedMessageCommand="queuecommand,Check"
+        CheckCommand="%function(self) 
+            local num = tonumber(GetPaneTextP1('Mines'))
+            if (not num) or num == 0 then
+                self:queuecommand('Lv0')
+            else
+                local thresholds = GAMESTATE:IsCourseMode() and {1, 49, 99, 199, 999, 99999} or {1, 25, 50, 90, 140, 99999}
+                for lv = 1, #thresholds do
+                    if not thresholds[lv+1] then
+                        self:queuecommand('Lv5')
+                    elseif num >= thresholds[lv] and num < thresholds[lv+1] then
+                        self:queuecommand('Lv'..lv)
+                        break
+                    end
+                end
+            end
+        end"
+        Lv0Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-5;zoomy,0;settext,█;diffusealpha,0;stopeffect"
+        Lv1Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-4;zoomy,.2;settext,█;diffuse,#00FF00FF;stopeffect"
+        Lv2Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-3;zoomy,.4;settext,█;diffuse,#FFFF00FF;stopeffect"
+        Lv3Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-2;zoomy,.6;settext,█;diffuse,#FF8800FF;stopeffect"
+        Lv4Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-1;zoomy,.8;settext,█;diffuse,#FF0000FF;stopeffect"
+        Lv5Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203;zoomy,1;settext,█;diffuse,#00C0FFFF;stopeffect"
+        />
+    <Layer
+        Type="BitmapText"
+        Font="PaneDisplay text"
+        Text=""
+        Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
+        OnCommand="x,GetPaneX(PLAYER_1)-1;y,SCREEN_CENTER_Y+203;additiveblend,1;zoomy,0;diffusealpha,0;sleep,1;queuecommand,Check;finishtweening;linear,0.5;diffusealpha,1;vertalign,bottom;shadowlength,0"
+        OffCommand="linear,.15;diffusealpha,0"
+        CurrentSongChangedMessageCommand="queuecommand,Check"
+        CurrentStepsP2ChangedMessageCommand="queuecommand,Check"
+        CheckCommand="%function(self) 
+            local num = tonumber(GetPaneTextP1('Hands'))
+            if (not num) or num == 0 then
+                self:queuecommand('Lv0')
+            else
+                local thresholds = GAMESTATE:IsCourseMode() and {1, 14, 34, 99, 399, 99999} or {1, 15, 30, 40, 52, 99999}
+                for lv = 1, #thresholds do
+                    if not thresholds[lv+1] then
+                        self:queuecommand('Lv5')
+                    elseif num >= thresholds[lv] and num < thresholds[lv+1] then
+                        self:queuecommand('Lv'..lv)
+                        break
+                    end
+                end
+            end
+        end"
+        Lv0Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-5;zoomy,0;settext,█;diffusealpha,0;stopeffect"
+        Lv1Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-4;zoomy,.2;settext,█;diffuse,#00FF00FF;stopeffect"
+        Lv2Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-3;zoomy,.4;settext,█;diffuse,#FFFF00FF;stopeffect"
+        Lv3Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-2;zoomy,.6;settext,█;diffuse,#FF8800FF;stopeffect"
+        Lv4Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-1;zoomy,.8;settext,█;diffuse,#FF0000FF;stopeffect"
+        Lv5Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203;zoomy,1;settext,█;diffuse,#00C0FFFF;stopeffect"
+        />
+    <Layer
+        Type="BitmapText"
+        Font="PaneDisplay text"
+        Text=""
+        Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)"
+        OnCommand="x,GetPaneX(PLAYER_1)+24;y,SCREEN_CENTER_Y+203;additiveblend,1;zoomy,0;diffusealpha,0;sleep,1;queuecommand,Check;finishtweening;linear,0.5;diffusealpha,1;vertalign,bottom;shadowlength,0"
+        OffCommand="linear,.15;diffusealpha,0"
+        CurrentSongChangedMessageCommand="queuecommand,Check"
+        CurrentStepsP2ChangedMessageCommand="queuecommand,Check"
+        CheckCommand="%function(self) 
+            local num = tonumber(GetPaneTextP1('Rolls'))
+            if (not num) or num == 0 then
+                self:queuecommand('Lv0')
+            else
+                local thresholds = GAMESTATE:IsCourseMode() and {1, 19, 39, 79, 399, 99999} or {1, 10, 20, 30, 40, 99999}
+                for lv = 1, #thresholds do
+                    if not thresholds[lv+1] then
+                        self:queuecommand('Lv5')
+                    elseif num >= thresholds[lv] and num < thresholds[lv+1] then
+                        self:queuecommand('Lv'..lv)
+                        break
+                    end
+                end
+            end
+        end"
+        Lv0Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-5;zoomy,0;settext,█;diffusealpha,0;stopeffect"
+        Lv1Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-4;zoomy,.2;settext,█;diffuse,#00FF00FF;stopeffect"
+        Lv2Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-3;zoomy,.4;settext,█;diffuse,#FFFF00FF;stopeffect"
+        Lv3Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-2;zoomy,.6;settext,█;diffuse,#FF8800FF;stopeffect"
+        Lv4Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-1;zoomy,.8;settext,█;diffuse,#FF0000FF;stopeffect"
+        Lv5Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203;zoomy,1;settext,█;diffuse,#00C0FFFF;stopeffect"
+        />
+        
+    
+    <!--the gauges of the holds/jumps/mines/etc. in the pane display (P2)-->    
+    <Layer
+        Type="BitmapText"
+        Font="PaneDisplay text"
+        Text=""
+        Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+        OnCommand="x,GetPaneX(PLAYER_2)+25;y,SCREEN_CENTER_Y+203;additiveblend,1;zoomy,0;diffusealpha,0;sleep,1;queuecommand,Check;finishtweening;linear,0.5;diffusealpha,1;vertalign,bottom;shadowlength,0"
+        OffCommand="linear,.15;diffusealpha,0"
+        CurrentSongChangedMessageCommand="queuecommand,Check"
+        CurrentStepsP2ChangedMessageCommand="queuecommand,Check"
+        CheckCommand="%function(self) 
+            local num = tonumber(GetPaneTextP2('Jumps'))
+            if (not num) or num == 0 then
+                self:queuecommand('Lv0')
+            else
+                local thresholds = GAMESTATE:IsCourseMode() and {1, 49, 99, 149, 399, 99999} or {1, 25, 50, 100, 200, 99999}
+                for lv = 1, #thresholds do
+                    if not thresholds[lv+1] then
+                        self:queuecommand('Lv5')
+                    elseif num >= thresholds[lv] and num < thresholds[lv+1] then
+                        self:queuecommand('Lv'..lv)
+                        break
+                    end
+                end
+            end
+        end"
+        Lv0Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-5;zoomy,0;settext,█;diffusealpha,0;stopeffect"
+        Lv1Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-4;zoomy,.2;settext,█;diffuse,#00FF00FF;stopeffect"
+        Lv2Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-3;zoomy,.4;settext,█;diffuse,#FFFF00FF;stopeffect"
+        Lv3Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-2;zoomy,.6;settext,█;diffuse,#FF8800FF;stopeffect"
+        Lv4Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-1;zoomy,.8;settext,█;diffuse,#FF0000FF;stopeffect"
+        Lv5Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203;zoomy,1;settext,█;diffuse,#00C0FFFF;stopeffect"
+        />
+    <Layer
+        Type="BitmapText"
+        Font="PaneDisplay text"
+        Text=""
+        Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+        OnCommand="x,GetPaneX(PLAYER_2)+49;y,SCREEN_CENTER_Y+203;additiveblend,1;zoomy,0;diffusealpha,0;sleep,1;queuecommand,Check;finishtweening;linear,0.5;diffusealpha,1;vertalign,bottom;shadowlength,0"
+        OffCommand="linear,.15;diffusealpha,0"
+        CurrentSongChangedMessageCommand="queuecommand,Check"
+        CurrentStepsP2ChangedMessageCommand="queuecommand,Check"
+        CheckCommand="%function(self) 
+            local num = tonumber(GetPaneTextP2('Holds'))
+            if (not num) or num == 0 then
+                self:queuecommand('Lv0')
+            else
+                local thresholds = GAMESTATE:IsCourseMode() and {1, 49, 99, 199, 399, 99999} or {1, 25, 50, 100, 150, 99999}
+                for lv = 1, #thresholds do
+                    if not thresholds[lv+1] then
+                        self:queuecommand('Lv5')
+                    elseif num >= thresholds[lv] and num < thresholds[lv+1] then
+                        self:queuecommand('Lv'..lv)
+                        break
+                    end
+                end
+            end
+        end"
+        Lv0Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-5;zoomy,0;settext,█;diffusealpha,0;stopeffect"
+        Lv1Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-4;zoomy,.2;settext,█;diffuse,#00FF00FF;stopeffect"
+        Lv2Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-3;zoomy,.4;settext,█;diffuse,#FFFF00FF;stopeffect"
+        Lv3Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-2;zoomy,.6;settext,█;diffuse,#FF8800FF;stopeffect"
+        Lv4Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-1;zoomy,.8;settext,█;diffuse,#FF0000FF;stopeffect"
+        Lv5Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203;zoomy,1;settext,█;diffuse,#00C0FFFF;stopeffect"
+        />
+    <Layer
+        Type="BitmapText"
+        Font="PaneDisplay text"
+        Text=""
+        Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+        OnCommand="x,GetPaneX(PLAYER_2)+74;y,SCREEN_CENTER_Y+203;additiveblend,1;zoomy,0;diffusealpha,0;sleep,1;queuecommand,Check;finishtweening;linear,0.5;diffusealpha,1;vertalign,bottom;shadowlength,0"
+        OffCommand="linear,.15;diffusealpha,0"
+        CurrentSongChangedMessageCommand="queuecommand,Check"
+        CurrentStepsP2ChangedMessageCommand="queuecommand,Check"
+        CheckCommand="%function(self) 
+            local num = tonumber(GetPaneTextP2('Mines'))
+            if (not num) or num == 0 then
+                self:queuecommand('Lv0')
+            else
+                local thresholds = GAMESTATE:IsCourseMode() and {1, 49, 99, 199, 999, 99999} or {1, 25, 50, 90, 140, 99999}
+                for lv = 1, #thresholds do
+                    if not thresholds[lv+1] then
+                        self:queuecommand('Lv5')
+                    elseif num >= thresholds[lv] and num < thresholds[lv+1] then
+                        self:queuecommand('Lv'..lv)
+                        break
+                    end
+                end
+            end
+        end"
+        Lv0Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-5;zoomy,0;settext,█;diffusealpha,0;stopeffect"
+        Lv1Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-4;zoomy,.2;settext,█;diffuse,#00FF00FF;stopeffect"
+        Lv2Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-3;zoomy,.4;settext,█;diffuse,#FFFF00FF;stopeffect"
+        Lv3Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-2;zoomy,.6;settext,█;diffuse,#FF8800FF;stopeffect"
+        Lv4Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-1;zoomy,.8;settext,█;diffuse,#FF0000FF;stopeffect"
+        Lv5Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203;zoomy,1;settext,█;diffuse,#00C0FFFF;stopeffect"
+        />
+    <Layer
+        Type="BitmapText"
+        Font="PaneDisplay text"
+        Text=""
+        Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+        OnCommand="x,GetPaneX(PLAYER_2)+99;y,SCREEN_CENTER_Y+203;additiveblend,1;zoomy,0;diffusealpha,0;sleep,1;queuecommand,Check;finishtweening;linear,0.5;diffusealpha,1;vertalign,bottom;shadowlength,0"
+        OffCommand="linear,.15;diffusealpha,0"
+        CurrentSongChangedMessageCommand="queuecommand,Check"
+        CurrentStepsP2ChangedMessageCommand="queuecommand,Check"
+        CheckCommand="%function(self) 
+            local num = tonumber(GetPaneTextP2('Hands'))
+            if (not num) or num == 0 then
+                self:queuecommand('Lv0')
+            else
+                local thresholds = GAMESTATE:IsCourseMode() and {1, 14, 34, 99, 399, 99999} or {1, 15, 30, 40, 52, 99999}
+                for lv = 1, #thresholds do
+                    if not thresholds[lv+1] then
+                        self:queuecommand('Lv5')
+                    elseif num >= thresholds[lv] and num < thresholds[lv+1] then
+                        self:queuecommand('Lv'..lv)
+                        break
+                    end
+                end
+            end
+        end"
+        Lv0Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-5;zoomy,0;settext,█;diffusealpha,0;stopeffect"
+        Lv1Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-4;zoomy,.2;settext,█;diffuse,#00FF00FF;stopeffect"
+        Lv2Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-3;zoomy,.4;settext,█;diffuse,#FFFF00FF;stopeffect"
+        Lv3Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-2;zoomy,.6;settext,█;diffuse,#FF8800FF;stopeffect"
+        Lv4Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-1;zoomy,.8;settext,█;diffuse,#FF0000FF;stopeffect"
+        Lv5Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203;zoomy,1;settext,█;diffuse,#00C0FFFF;stopeffect"
+        />
+    <Layer
+        Type="BitmapText"
+        Font="PaneDisplay text"
+        Text=""
+        Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+        OnCommand="x,GetPaneX(PLAYER_2)+124;y,SCREEN_CENTER_Y+203;additiveblend,1;zoomy,0;diffusealpha,0;sleep,1;queuecommand,Check;finishtweening;linear,0.5;diffusealpha,1;vertalign,bottom;shadowlength,0"
+        OffCommand="linear,.15;diffusealpha,0"
+        CurrentSongChangedMessageCommand="queuecommand,Check"
+        CurrentStepsP2ChangedMessageCommand="queuecommand,Check"
+        CheckCommand="%function(self) 
+            local num = tonumber(GetPaneTextP2('Rolls'))
+            if (not num) or num == 0 then
+                self:queuecommand('Lv0')
+            else
+                local thresholds = GAMESTATE:IsCourseMode() and {1, 19, 39, 79, 399, 99999} or {1, 10, 20, 30, 40, 99999}
+                for lv = 1, #thresholds do
+                    if not thresholds[lv+1] then
+                        self:queuecommand('Lv5')
+                    elseif num >= thresholds[lv] and num < thresholds[lv+1] then
+                        self:queuecommand('Lv'..lv)
+                        break
+                    end
+                end
+            end
+        end"
+        Lv0Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-5;zoomy,0;settext,█;diffusealpha,0;stopeffect"
+        Lv1Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-4;zoomy,.2;settext,█;diffuse,#00FF00FF;stopeffect"
+        Lv2Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-3;zoomy,.4;settext,█;diffuse,#FFFF00FF;stopeffect"
+        Lv3Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-2;zoomy,.6;settext,█;diffuse,#FF8800FF;stopeffect"
+        Lv4Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203-1;zoomy,.8;settext,█;diffuse,#FF0000FF;stopeffect"
+        Lv5Command="stoptweening;linear,.12;y,SCREEN_CENTER_Y+203;zoomy,1;settext,█;diffuse,#00C0FFFF;stopeffect"
+        />
+    
+
+</children></ActorFrame>

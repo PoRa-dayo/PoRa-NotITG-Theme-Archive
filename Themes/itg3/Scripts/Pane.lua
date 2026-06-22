@@ -168,3 +168,29 @@ else
 		return steps:GetMeter()
 	end
 end 
+
+function GetPaneTextP1(cat)
+    local pane = SCREENMAN:GetTopScreen():GetChild('PaneDisplayP1')
+    if not (FUCK_EXE and pane) then return end
+	local panetxt = pane:GetChildAt(1)
+    if cat then
+        if GAMESTATE:IsCourseMode() then
+            return panetxt:GetChild('Course'..cat..'Text'):GetText()
+        else
+            return panetxt:GetChild('Song'..cat..'Text'):GetText()
+        end
+    end
+end 
+
+function GetPaneTextP2(cat)
+    local pane = SCREENMAN:GetTopScreen():GetChild('PaneDisplayP2')
+    if not (FUCK_EXE and pane) then return end
+	local panetxt = pane:GetChildAt(1)
+    if cat then
+        if GAMESTATE:IsCourseMode() then
+            return panetxt:GetChild('Course'..cat..'Text'):GetText()
+        else
+            return panetxt:GetChild('Song'..cat..'Text'):GetText()
+        end
+    end
+end 
