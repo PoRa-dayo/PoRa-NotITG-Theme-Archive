@@ -1,6 +1,6 @@
 <ActorFrame> <children>
 
-    <ActorFrame Command="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
+    <ActorFrame Command="%GameplayInit" CurrentSongChangedMessageCommand="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
 		
 	<ActorFrame 
 		Condition="GAMESTATE:GetPlayMode()==PLAY_MODE_REGULAR and GAMESTATE:GetEasiestStepsDifficulty()==DIFFICULTY_BEGINNER"
