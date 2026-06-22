@@ -1,4 +1,4 @@
-<ActorFrame> <children>
+﻿<ActorFrame> <children>
 <Layer 
 		Type="BitmapText"
 		Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
@@ -15,10 +15,9 @@
 		OnCommand="x,SCREEN_CENTER_X+254;y,SCREEN_TOP+58;shadowlength,0;zoom,.55;maxwidth,180;addy,-100;sleep,0.5;decelerate,0.8;addy,+100"
 		OffCommand="accelerate,0.8;addy,-100"
 	/>
-
 <Layer 
 		Type="ActorFrame"
-		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+27;addy,-100;sleep,0.5;queuecommand,TweenOn"
+		OnCommand="addy,-100;sleep,0.5;queuecommand,TweenOn"
 		OffCommand="queuecommand,TweenOff"
 		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
 		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
@@ -29,11 +28,24 @@
 				self:accelerate(0.8)
 				self:addy(-100)
 			end"> 	
+	<children>
+</children> 
+</Layer>
+
+<Layer 
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+27;addy,-100;sleep,0.5;queuecommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		TweenOnCommand="decelerate,0.8;addy,+100"
+		TweenOffCommand="accelerate,0.8;addy,-100"
+	> 	
 		<children>
 			<Layer
 					Type="SongMeterDisplay"
 					OnCommand="additiveblend,1"
-					StreamWidth="220"
+					StreamWidth="226"
 					StreamPath="meter stream"
 				>
 					<Tip
@@ -53,7 +65,14 @@
 		TweenOffCommand="accelerate,0.8;addy,-100"
 	> 
 	<children>
-			<Layer 	
+			
+                            <Layer
+			                Type="BitmapText"
+			                File="_eurostile normal"
+			                Text="BPM"
+			                OnCommand="x,SCREEN_CENTER_X+6;y,SCREEN_CENTER_Y-175;zoomx,0;zoomy,0;sleep,1.2;accelerate,0.3;zoomx,0.6;zoomy,0.6;sleep,1;decelerate,0.3;zoomx,0;zoomy,3"
+		        />
+<Layer 	
 					File="width"
 					InitCommand="x,SCREEN_CENTER_X-190;y,SCREEN_TOP+23;horizalign,right;zoomtowidth,3"
 					OnCommand="sleep,1.5;linear,.1;zoomtowidth,SCREEN_WIDTH/2-206"
@@ -79,7 +98,7 @@
 			/>
 			<Layer 
 					File="base"
-					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+41"
 					OffCommand=""
 			/> 
 			<Layer
@@ -90,10 +109,18 @@
 					
 					
 			/>
+                        <Layer
+					File="_neon2"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+43"
+					OnCommand="EffectClock,beat;DiffuseBlink;effectperiod,0.5;EffectDelay,0.5;"
+					
+					
+					
+			/>
 			<Layer
 					Type="BitmapText"
 					Font="_serpentine outline"
-					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+23;maxwidth,390;diffusebottomedge,#dedede"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+23;maxwidth,540;diffusebottomedge,#dedede"
 					OnCommand="addy,3;zoom,.5;shadowlength,0;zoomy,0;sleep,2;decelerate,0.3;zoomy,.5;animate,0;playcommand,Update"
 					CurrentSongChangedMessageCommand="playcommand,Update"
 					UpdateCommand="%SetFromSongTitleAndCourseTitle"

@@ -1,4 +1,4 @@
-<ActorFrame> <children>
+﻿<ActorFrame> <children>
 <Layer 
 		Type="BitmapText"
 		Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
@@ -73,11 +73,16 @@
 		TweenOffCommand="accelerate,0.8;addy,-100"
 	> 
 	<children>
+                        <Layer
+			                Type="BitmapText"
+			                File="_eurostile normal"
+			                Text="BPM"
+			                OnCommand="x,SCREEN_CENTER_X+4;y,SCREEN_CENTER_Y-175;zoomx,0;zoomy,0;sleep,1.2;accelerate,0.3;zoomx,0.6;zoomy,0.6;sleep,1;decelerate,0.3;zoomx,0;zoomy,3"
+		        />
 			<Layer 
 					File="_uplight"
-					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
-					OnCommand="diffusealpha,0;sleep,1.8;linear,.4;diffusealpha,1;diffuse,#ff5454"
-					OffCommand=""
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#ff4c4c;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
 			/> 
 			
 			<Layer 	
@@ -106,7 +111,7 @@
 			/>
 			<Layer 
 					File="base"
-					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+36"
 					OffCommand=""
 			/> 
 				<Layer
@@ -118,6 +123,20 @@
 			<Layer
 					File="_neons"
 					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#ff4c4c;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+					
+					
+			/> 
+                        <Layer
+					File="_neon2"
+					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+36"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#4c0a0a;EffectColor2,#ff5454;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+			/>
+			<Layer
+					File="_neon2"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+36"
 					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#ff4c4c;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
 					
 					

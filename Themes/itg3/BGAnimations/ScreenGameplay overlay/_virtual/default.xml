@@ -1,4 +1,4 @@
-<ActorFrame> <children>
+﻿<ActorFrame> <children>
 <Layer 
 		Type="BitmapText"
 		Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
@@ -73,11 +73,25 @@
 		TweenOffCommand="accelerate,0.8;addy,-100"
 	> 
 	<children>
-			<Layer 
+		                        <Layer
+			                Type="BitmapText"
+			                File="_eurostile normal"
+			                Text="BPM"
+			                OnCommand="x,SCREEN_CENTER_X+3;y,SCREEN_CENTER_Y-175;zoomx,0;zoomy,0;sleep,1.2;accelerate,0.3;zoomx,0.6;zoomy,0.6;sleep,1;decelerate,0.3;zoomx,0;zoomy,3"
+		        />
+	<Layer
+					File="_uplight"
+					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#77777788;EffectColor2,#ffffff;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+			/>
+			<Layer
 					File="_uplight"
 					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
-					OnCommand="diffusealpha,0;sleep,1.8;linear,.4;diffusealpha,1;"
-					OffCommand=""
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#00000000;EffectColor2,#ffffff;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+					
+					
 			/> 
 			
 			<Layer 	
@@ -106,7 +120,7 @@
 			/>
 			<Layer 
 					File="base"
-					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+41"
 					OffCommand=""
 			/> 
 			<Layer
@@ -118,6 +132,20 @@
 			<Layer
 					File="_neons"
 					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#00000000;EffectColor2,#ffffff;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+					
+					
+			/>
+                        <Layer
+					File="_neon2"
+					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+41"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#77777788;EffectColor2,#ffffff;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+			/>
+			<Layer
+					File="_neon2"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+41"
 					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#00000000;EffectColor2,#ffffff;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
 					
 					

@@ -202,6 +202,15 @@
     and GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty() == GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()"
     File="_battlemeter"
     />
+    
+    <!-- bpm -->
+    <Layer
+    Font="_r bold shadow 30px"
+    Text=""
+    InitCommand="x,SCREEN_CENTER_X+4;y,SCREEN_CENTER_Y;"
+    OnCommand="queuecommand,Update;effectclock,bgm;effectperiod,1;effectoffset,0.2;effectmagnitude,1.2,1,0;horizalign,center;zoom,0.7;y,SCREEN_TOP+62;addy,3;zoom,0.7;shadowlength,2;zoomy,0;sleep,2.9;decelerate,0.3;zoomy,0.5"
+    UpdateCommand="%GameplayBPM"
+    />
 
     --FOR OFFSET PLOT AND ITS LIFE GRAPH: START
 

@@ -476,7 +476,7 @@
     
     <!--step artist-->
     
-    <Layer
+    <!--<Layer
         Type="BitmapText"
         Font="_r bold shadow 18px"
         Text=""
@@ -495,7 +495,7 @@
         OffCommand="accelerate,0.5;addy,300"
         CurrentSongChangedMessageCommand="queuecommand,Update"
         CurrentStepsP2ChangedMessageCommand="queuecommand,Update"
-        UpdateCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" />
+        UpdateCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" />-->
         
         
     <!--the gauges of the holds/jumps/mines/etc. in the pane display (P1)-->

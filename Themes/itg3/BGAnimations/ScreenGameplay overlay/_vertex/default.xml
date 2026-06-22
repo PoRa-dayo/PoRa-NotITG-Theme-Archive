@@ -1,4 +1,4 @@
-<ActorFrame> <children>
+﻿<ActorFrame> <children>
 <Layer 
 		Type="BitmapText"
 		Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_RAVE"
@@ -79,18 +79,39 @@
 				self:addy(-100)
 			end"> 	
 	<children>
-			<Layer 
-					File="_uplight"
-					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
-					OnCommand="diffusealpha,0;sleep,1.8;linear,.4;diffusealpha,1;diffuse,#356cbe"
-					OffCommand=""
-			/> 
-			
-			<Layer 
+						                            <Layer
+			                Type="BitmapText"
+			                File="_eurostile normal"
+			                Text="BPM"
+			                OnCommand="x,SCREEN_CENTER_X+3;y,SCREEN_CENTER_Y-175;zoomx,0;zoomy,0;sleep,1.2;accelerate,0.3;zoomx,0.6;zoomy,0.6;sleep,1;decelerate,0.3;zoomx,0;zoomy,3"
+		        />
+<Layer
 					File="_uplight"
 					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
-					OnCommand="diffusealpha,0;sleep,1.8;linear,.4;diffusealpha,1;diffuse,#356cbe"
-					OffCommand=""
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#007892;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+			/>
+			<Layer
+					File="_uplight"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+					
+					
+			/>
+                        <Layer
+					File="_uplight2"
+					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+41"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#007892;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+			/>
+			<Layer
+					File="_uplight2"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+41"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+					
+					
 			/> 
 			
 			<Layer 	
@@ -104,7 +125,7 @@
 					File="width"
 					InitCommand="x,SCREEN_CENTER_X+190;y,SCREEN_TOP+24;horizalign,left;zoomtowidth,3;playcommand,Color"
 		ColorCommand="@vertexcolor()"
-					OnCommand="sleep,1.5;linear,.1;zoomtowidth,SCREEN_WIDTH/2-206"
+					OnCommand="sleep,1.5;linear,.1;zoomtowidth,SCREEN_WIDTH/2-205"
 					OffCommand=""
 			/>
 			<Layer 	
@@ -123,7 +144,7 @@
 			/>
 			<Layer 
 					File="base"
-					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24;playcommand,Color"
+					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+41;playcommand,Color"
 		ColorCommand="@vertexcolor()"
 					OffCommand=""
 			/> 
@@ -136,6 +157,20 @@
 			<Layer
 					File="_neons"
 					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+					
+					
+			/>
+                        <Layer
+					File="_neon2"
+					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+41"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#007892;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+			/>
+			<Layer
+					File="_neon2"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+41"
 					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
 					
 					

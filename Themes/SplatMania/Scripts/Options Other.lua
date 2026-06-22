@@ -258,6 +258,8 @@ function CoinSystemOption()
     local saveFunc = function(self, list, pn)
         if list[1] then Profile().SplatManiaCoinDisabled = false; end
 		if list[2] then Profile().SplatManiaCoinDisabled = true; end
+        --you only need a couple of these on the same screen
+        --PROFILEMAN:SaveMachineProfile()
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)

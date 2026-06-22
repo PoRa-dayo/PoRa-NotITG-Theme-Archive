@@ -881,7 +881,7 @@ function GameplayOverlay()
 		return "_love" end
 	if string.find( CurrentSong:GetDisplayFullTitle(), "Disconnected Hardkore" ) then
 		return "_disconnect" end
-	return "_normal"
+	return ITG3GlobVar.GameplayOverlayFilenameList[PROFILEMAN:GetMachineProfile():GetSaved().ITG3GameplayOverlay or 1]
 end
 
 
@@ -899,10 +899,12 @@ end
 function StepartistHiddenSort( actor )
 local song = GAMESTATE:GetCurrentSong();
 	if not song then
-	actor:stoptweening()
-	actor:decelerate(.3)
-	actor:y(SCREEN_BOTTOM-109)
-	end
+        actor:stoptweening()
+        actor:decelerate(.3)
+        actor:y(SCREEN_BOTTOM-109)
+	elseif not PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+        actor:y(SCREEN_BOTTOM-127)
+    end
 
 end
 
@@ -1413,6 +1415,18 @@ function DisplayBPM(pn)
 	end
 
 	return "???"
+end
+
+function GameplayBPM(self)
+	local b = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
+	if b then b = b:GetChild('Text'):GetText() end
+	if b then 
+		bpm[3] = SCREENMAN:GetTopScreen():GetChild('BPMDisplay'):GetChild('Text'):GetText()
+		if not OPENITG then bpm[3] = math.floor(bpm[3] * modRate + 0.5) end
+		self:settext(bpm[3])
+		self:sleep(.05)
+		self:queuecommand('Update')
+	end
 end
 
 function GetTimer(screen)

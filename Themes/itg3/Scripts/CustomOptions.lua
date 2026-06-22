@@ -453,7 +453,8 @@ function JudgePaddingToggleRow()
 		for i=1,2 do
 			if list[i] then
 				PROFILEMAN:GetMachineProfile():GetSaved().JudgePaddingToggle = string.lower(Names[i])
-				PROFILEMAN:SaveMachineProfile()
+                --you only need a couple of these on the same screen
+				--PROFILEMAN:SaveMachineProfile()
 				return
 			end
 		end
@@ -576,7 +577,8 @@ function OptionsListToggleRow()
 		for i=1,2 do
 			if list[i] then
 				PROFILEMAN:GetMachineProfile():GetSaved().OptionsListToggle = string.lower(Names[i])
-				PROFILEMAN:SaveMachineProfile()
+				--you only need a couple of these on the same screen
+				--PROFILEMAN:SaveMachineProfile()
 				return
 			end
 		end
@@ -621,7 +623,8 @@ function ScoreComparisonToggleRow()
 		for i=1,2 do
 			if list[i] then
 				PROFILEMAN:GetMachineProfile():GetSaved().ScoreComparisonToggle = string.lower(Names[i])
-				PROFILEMAN:SaveMachineProfile()
+				--you only need a couple of these on the same screen
+				--PROFILEMAN:SaveMachineProfile()
 				return
 			end
 		end
@@ -665,4 +668,73 @@ function GetScoreComparison()
 	return "0" else
 	return "1"
 	end
+end
+
+function HideSongDetailsOption()
+	local modList = {'DISABLED', 'ENABLED'}
+    
+	local Params = {
+		Name = "Hide Song Details",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails == false then
+            list[1] = true
+        elseif PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails == true then
+            list[2] = true
+        else
+            list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        if list[1] then
+            PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails = false
+        elseif list[2] then
+            PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails = true
+        else
+            PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails = true
+        end
+        --you only need a couple of these each options screen
+        --PROFILEMAN:SaveMachineProfile()
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+
+ITG3GlobVar.GameplayOverlayFilenameList = {"_normal", "X_normal", "_bunnies", "_disconnect", "_energy", "_extreme", "_hasse", "_love", "_nightmare", "_pandy", "_smiley", "_vertex", "_virtual", "c_love"}
+ITG3GlobVar.GameplayOverlayFormalList = {"Default", "Default (Compact)", "Pink Fuzzy Bunnies", "Disconnected Hardkore", "Energizer", "DDR Extreme", "Hasse Mich", "Love Eternal", "Dream to Nightmare", "Pandemonium", "Summer ~Speedy Mix~", "VerTex", "Virtual Emotion", "Love Eternal (Alt)"}
+
+function GameplayOverlayOption()
+	local modList = ITG3GlobVar.GameplayOverlayFormalList
+    
+	local Params = {
+		Name = "Gameplay UI",
+		LayoutType = "ShowOneInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        if not PROFILEMAN:GetMachineProfile():GetSaved().ITG3GameplayOverlay then
+            list[1] = true
+        else
+            list[PROFILEMAN:GetMachineProfile():GetSaved().ITG3GameplayOverlay] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        for ind, val in ipairs(list) do
+            if val then
+                PROFILEMAN:GetMachineProfile():GetSaved().ITG3GameplayOverlay = ind
+            end
+        end
+        PROFILEMAN:SaveMachineProfile()
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
 end

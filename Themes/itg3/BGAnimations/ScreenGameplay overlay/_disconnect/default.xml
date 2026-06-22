@@ -77,6 +77,12 @@
 				self:addy(-100)
 			end"> 	
 	<children>
+                    <Layer
+                    Type="BitmapText"
+                    File="_eurostile normal"
+                    Text="BPM"
+                    OnCommand="x,SCREEN_CENTER_X+4;y,SCREEN_CENTER_Y-175;zoomx,0;zoomy,0;sleep,1.2;accelerate,0.3;zoomx,0.6;zoomy,0.6;sleep,1;decelerate,0.3;zoomx,0;zoomy,3"
+            />
 			<Layer 
 					File="_uplight"
 					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
@@ -89,6 +95,16 @@
 					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
 					OnCommand="diffusealpha,0;sleep,1.8;linear,.4;diffusealpha,1;diffuse,#356cbe"
 					OffCommand=""
+			/> 
+            <Layer 
+					File="_bpmupligt"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+46"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#007892;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+			/> 
+			<Layer 
+					File="_bpmupligt"
+					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+46"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
 			/> 
 			
 			<Layer 	
@@ -120,6 +136,11 @@
 					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
 					OffCommand=""
 			/> 
+            <Layer 
+					File="bpmbase"
+					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+60"
+					OffCommand=""
+			/>
 			<Layer
 					File="_neons"
 					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
@@ -130,7 +151,19 @@
 					File="_neons"
 					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
 					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#82f5ff;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+			/>		
+            <Layer
+					File="_bpmneons"
+					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+62"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#007892;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
 					
+					
+					
+			/>
+			<Layer
+					File="_bpmneons"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+62"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
 					
 					
 			/>

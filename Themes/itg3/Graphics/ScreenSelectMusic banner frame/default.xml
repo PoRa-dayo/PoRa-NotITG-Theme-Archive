@@ -23,77 +23,166 @@
 
 
 <Layer 
-File="../_pane elements/_length"
-Condition="OPENITG and not GAMESTATE:IsCourseMode()"
-InitCommand="diffusealpha,0;ztest,1;zoom,.6;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-34;vertalign,bottom"
-EnableSelectHelpMessageCommand="%function(self)
-if not GAMESTATE:GetCurrentSong() then
-self:queuecommand('SelectMenuOffMessage')
-else
-self:stoptweening()
-self:linear(0.2)
-self:diffusealpha(1) end
-end"
-SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;"
-CurrentSongChangedMessageCommand="%function(self)
-if not GAMESTATE:GetCurrentSong() then
-self:stoptweening()
-self:linear(0.2)
-self:diffusealpha(0)  end
-end"
+    File="../_pane elements/_length"
+    Condition="OPENITG and not GAMESTATE:IsCourseMode()"
+    InitCommand="diffusealpha,0;ztest,1;zoom,.6;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-34;vertalign,bottom"
+    OnCommand="addx,500;decelerate,0.5;addx,-500"
+    OffCommand="linear,0.2;diffusealpha,0"
+    EnableSelectHelpMessageCommand="%function(self)
+        if not GAMESTATE:GetCurrentSong() then
+            self:queuecommand('SelectMenuOffMessage')
+        else
+            self:stoptweening()
+            self:linear(0.2)
+            if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+                self:diffusealpha(1)
+            else
+                self:diffusealpha(0)
+            end
+        end
+    end"
+    SelectMenuOffMessageCommand="%function(self)
+        self:stoptweening()
+        self:linear(0.2)
+        if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+            self:diffusealpha(0)
+        elseif GAMESTATE:GetCurrentSong() then
+            self:diffusealpha(1)
+        end
+    end"
+    CurrentSongChangedMessageCommand="%function(self)
+        if not GAMESTATE:GetCurrentSong() then
+            self:stoptweening()
+            self:linear(0.2)
+            self:diffusealpha(0)
+        elseif not PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+            self:stoptweening()
+            self:linear(0.2)
+            self:diffusealpha(1)
+        end
+    end"
 />		
 <Layer Type="BitmapText"
-Font="_v 26px bold diffuse"
-Text="HELLO"
-Condition="OPENITG and not GAMESTATE:IsCourseMode()"
-InitCommand="diffusealpha,0;shadowlength,0.5;horizalign,left;zoom,.6;x,SCREEN_CENTER_X-14;y,SCREEN_CENTER_Y-44"
-OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
-CurrentSongChangedMessageCommand="playcommand,Set"
-SetCommand="%function(self)
-local song = GAMESTATE:GetCurrentSong()
-if not song then self:hidden(1) return end
-self:hidden(0)
-self:settext( GetSongLength() )
-end"
-EnableSelectHelpMessageCommand="stoptweening;playcommand,Set;linear,0.2;diffusealpha,1"
-SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;"
- OffCommand="linear,.12;diffusealpha,0;"/>
+    Font="_v 26px bold diffuse"
+    Text="HELLO"
+    Condition="OPENITG and not GAMESTATE:IsCourseMode()"
+    InitCommand="diffusealpha,0;shadowlength,0.5;horizalign,left;zoom,.6;x,SCREEN_CENTER_X-14;y,SCREEN_CENTER_Y-44"
+    OnCommand="%function(self)
+        self:addx(SCREEN_WIDTH)
+        self:decelerate(0.75)
+        self:addx(-SCREEN_WIDTH)
+        if not PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+            self:linear(0.2)
+            self:diffusealpha(1)
+        end
+    end"
+    CurrentSongChangedMessageCommand="playcommand,Set"
+    SetCommand="%function(self)
+        local song = GAMESTATE:GetCurrentSong()
+        if not song then self:hidden(1) return end
+        self:settext( GetSongLength() )
+        self:hidden(0)
+    end"
+    EnableSelectHelpMessageCommand="%function(self)
+        self:stoptweening()
+        self:linear(0.2)
+        if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+            self:diffusealpha(1)
+        else
+            self:diffusealpha(0)
+        end
+    end"
+    SelectMenuOffMessageCommand="%function(self)
+        self:stoptweening()
+        self:linear(0.2)
+        if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+            self:diffusealpha(0)
+        else
+            self:diffusealpha(1)
+        end
+    end"
+    OffCommand="linear,.12;diffusealpha,0;"
+/>
  <!--reflection-->
 <Layer 
-		File="../_pane elements/_length"
-		Condition="OPENITG and not GAMESTATE:IsCourseMode()"
-InitCommand="diffusealpha,0;ztest,1;zoomx,.6;zoomy,-.6;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-34;vertalign,bottom"
-EnableSelectHelpMessageCommand="%function(self)
-if not GAMESTATE:GetCurrentSong() then
-self:queuecommand('SelectMenuOffMessage')
-else
-self:stoptweening()
-self:linear(0.2)
-self:diffusealpha(.5) end
-end"
-SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;"
-CurrentSongChangedMessageCommand="%function(self)
-if not GAMESTATE:GetCurrentSong() then
-self:stoptweening()
-self:linear(0.2)
-self:diffusealpha(0) end
-end"
-		/>		
+    File="../_pane elements/_length"
+    Condition="OPENITG and not GAMESTATE:IsCourseMode()"
+    InitCommand="diffusealpha,0;ztest,1;zoomx,.6;zoomy,-.6;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-34;vertalign,bottom"
+    OnCommand="addx,500;decelerate,0.5;addx,-500"
+    OffCommand="linear,0.2;diffusealpha,0"
+    EnableSelectHelpMessageCommand="%function(self)
+        if not GAMESTATE:GetCurrentSong() then
+            self:queuecommand('SelectMenuOffMessage')
+        else
+            self:stoptweening()
+            self:linear(0.2)
+            if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+                self:diffusealpha(.5)
+            else
+                self:diffusealpha(0)
+            end
+        end
+    end"
+    SelectMenuOffMessageCommand="%function(self)
+        self:stoptweening()
+        self:linear(0.2)
+        if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+            self:diffusealpha(0)
+        elseif GAMESTATE:GetCurrentSong() then
+            self:diffusealpha(0.5)
+        end
+    end"
+    CurrentSongChangedMessageCommand="%function(self)
+        if not GAMESTATE:GetCurrentSong() then
+            self:stoptweening()
+            self:linear(0.2)
+            self:diffusealpha(0)
+        elseif not PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+            self:stoptweening()
+            self:linear(0.2)
+            self:diffusealpha(.5)
+        end
+    end"
+/>		
 <Layer Type="BitmapText"
-Font="_v 26px bold diffuse"
-Text="HELLO"
-Condition="OPENITG and not GAMESTATE:IsCourseMode()"
-InitCommand="diffusealpha,0;shadowlength,0;horizalign,left;zoomx,.6;zoomy,-.6;x,SCREEN_CENTER_X-14;y,SCREEN_CENTER_Y-23"
-OnCommand="addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH"
-CurrentSongChangedMessageCommand="playcommand,Set"
-SetCommand="%function(self)
-local song = GAMESTATE:GetCurrentSong()
-if not song then self:hidden(1) return end
-self:hidden(0)
-self:settext( GetSongLength() )
-end"
-EnableSelectHelpMessageCommand="stoptweening;playcommand,Set;linear,0.2;diffusealpha,.25"
-SelectMenuOffMessageCommand="stoptweening;linear,0.2;diffusealpha,0;"
+    Font="_v 26px bold diffuse"
+    Text="HELLO"
+    Condition="OPENITG and not GAMESTATE:IsCourseMode()"
+    InitCommand="diffusealpha,0;shadowlength,0;horizalign,left;zoomx,.6;zoomy,-.6;x,SCREEN_CENTER_X-14;y,SCREEN_CENTER_Y-23"
+    OnCommand="%function(self)
+        self:addx(SCREEN_WIDTH)
+        self:decelerate(0.75)
+        self:addx(-SCREEN_WIDTH)
+        if not PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+            self:linear(0.2)
+            self:diffusealpha(.25)
+        end
+    end"
+    CurrentSongChangedMessageCommand="playcommand,Set"
+    SetCommand="%function(self)
+        local song = GAMESTATE:GetCurrentSong()
+        if not song then self:hidden(1) return end
+        self:settext( GetSongLength() )
+        self:hidden(0)
+    end"
+    EnableSelectHelpMessageCommand="%function(self)
+        self:stoptweening()
+        self:linear(0.2)
+        if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+            self:diffusealpha(.25)
+        else
+            self:diffusealpha(0)
+        end
+    end"
+    SelectMenuOffMessageCommand="%function(self)
+        self:stoptweening()
+        self:linear(0.2)
+        if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+            self:diffusealpha(0)
+        else
+            self:diffusealpha(.25)
+        end
+    end"
 OffCommand="linear,.12;diffusealpha,0;"/>
 
 <Layer
@@ -130,8 +219,30 @@ OffCommand="linear,.12;diffusealpha,0;"/>
 <ActorFrame
 		InitCommand="x,SCREEN_LEFT;y,SCREEN_BOTTOM-109;addx,-SCREEN_WIDTH;decelerate,0.75;addx,SCREEN_WIDTH;"
 		OffCommand="accelerate,0.75;addx,-SCREEN_WIDTH"
-		SelectMenuOffMessageCommand="stoptweening;decelerate,.3;y,SCREEN_BOTTOM-109"
-		SelectMenuOnMessageCommand="%StepartistHiddenPress"
+        OnCommand="%function(self)
+            if not PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+                self:sleep(0.1)
+                self:y(SCREEN_BOTTOM-127)
+            end
+        end"
+		SelectMenuOffMessageCommand="%function(self)
+            if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+                self:stoptweening()
+                self:decelerate(.3)
+                self:y(SCREEN_BOTTOM-109)
+            else
+                StepartistHiddenPress(self)
+            end
+        end"
+		SelectMenuOnMessageCommand="%function(self)
+            if not PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+                self:stoptweening()
+                self:decelerate(.3)
+                self:y(SCREEN_BOTTOM-109)
+            else
+                StepartistHiddenPress(self)
+            end
+        end"
 		CurrentStepsP1ChangedMessageCommand="%StepartistHiddenSort"
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_1)">
 <children>
@@ -152,8 +263,30 @@ OffCommand="linear,.12;diffusealpha,0;"/>
 <ActorFrame
 		InitCommand="x,SCREEN_RIGHT;y,SCREEN_BOTTOM-109;addx,SCREEN_WIDTH;decelerate,0.75;addx,-SCREEN_WIDTH;"
 		OffCommand="accelerate,0.75;addx,SCREEN_WIDTH"
-		SelectMenuOffMessageCommand="stoptweening;decelerate,.3;y,SCREEN_BOTTOM-109"
-		SelectMenuOnMessageCommand="%StepartistHiddenPress"
+        OnCommand="%function(self)
+            if not PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+                self:sleep(0.1)
+                self:y(SCREEN_BOTTOM-127)
+            end
+        end"
+		SelectMenuOffMessageCommand="%function(self)
+            if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+                self:stoptweening()
+                self:decelerate(.3)
+                self:y(SCREEN_BOTTOM-109)
+            else
+                StepartistHiddenPress(self)
+            end
+        end"
+		SelectMenuOnMessageCommand="%function(self)
+            if not PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
+                self:stoptweening()
+                self:decelerate(.3)
+                self:y(SCREEN_BOTTOM-109)
+            else
+                StepartistHiddenPress(self)
+            end
+        end"
 		CurrentStepsP2ChangedMessageCommand="%StepartistHiddenSort"
 		Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)">
 <children>

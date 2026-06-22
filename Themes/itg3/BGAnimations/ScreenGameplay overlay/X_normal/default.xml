@@ -1,0 +1,141 @@
+<ActorFrame><children>
+<Layer 
+		Type="ActorFrame"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+26;addy,-100;sleep,0.5;queuecommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		TweenOnCommand="decelerate,0.8;addy,+100"
+		TweenOffCommand="accelerate,0.8;addy,-100"
+	> 	
+		<children>
+			<Layer 
+		Type="Quad" 
+		InitCommand="diffuse,#000000;diffusealpha,0.8;zoomtoheight,18;zoomtowidth,170;sleep,1.5;linear,0.1;zoomtowidth,294"
+		OnCommand=""
+		OffCommand="" 
+	/>
+			<Layer
+					Type="SongMeterDisplay"
+					StreamWidth="294"
+					StreamPath="meter stream"
+				>
+					<Tip
+							File="tip"
+							OnCommand="additiveblend,1;zoom,0;sleep,1.8;zoom,1"
+					/>
+			</Layer>
+			<Layer
+					Type="SongMeterDisplay"
+					StreamWidth="294"
+					StreamPath="_blank"
+				>
+					<Tip
+							File="2tip"
+							OnCommand="additiveblend,1;zoom,0;sleep,1.8;zoom,1"
+					/>
+			</Layer>
+		</children> 
+	</Layer>
+	
+	
+<Layer 
+		Type="ActorFrame"
+		OnCommand="addy,-100;sleep,0.5;queuecommand,TweenOn"
+		OffCommand="queuecommand,TweenOff"
+		ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+		HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+		TweenOnCommand="decelerate,0.8;addy,+100"
+		TweenOffCommand="accelerate,0.8;addy,-100"
+	> 
+	<children>
+			<Layer
+					File="left"
+					InitCommand="x,SCREEN_LEFT;y,SCREEN_TOP+24;horizalign,left"
+					OnCommand="addx,62;sleep,1.5;linear,0.1;addx,-62"
+			/>
+					<Layer
+					File="right"
+					InitCommand="x,SCREEN_RIGHT;y,SCREEN_TOP+24;horizalign,right"
+					OnCommand="addx,-62;sleep,1.5;linear,0.1;addx,62"
+			/>
+			<Layer
+					File="lcenter"
+					InitCommand="x,SCREEN_CENTER_X-105;y,SCREEN_TOP+24"
+					OnCommand="addx,62;sleep,1.5;linear,0.1;addx,-62"
+			/>
+			<Layer
+					File="rcenter"
+					InitCommand="x,SCREEN_CENTER_X+105;y,SCREEN_TOP+24"
+					OnCommand="addx,-62;sleep,1.5;linear,0.1;addx,62"
+			/> 
+			<Layer
+					File="centerwidth"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
+					OnCommand="zoomtowidth,0;sleep,1.5;linear,0.1;zoomtowidth,124"
+			/> 
+			<Layer
+					File="width"
+					InitCommand="stretchto,SCREEN_LEFT+172,SCREEN_TOP+2,SCREEN_CENTER_X-148,SCREEN_CENTER_Y-194"
+					OnCommand="addx,62;sleep,1.5;linear,0.1;addx,-62"
+			/>
+			<Layer
+					File="width"
+					InitCommand="stretchto,SCREEN_RIGHT-172,SCREEN_TOP+2,SCREEN_CENTER_X+148,SCREEN_CENTER_Y-194"
+					OnCommand="addx,-62;sleep,1.5;linear,0.1;addx,62"
+			/>
+            <Layer 
+					File="_bpmupligt"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+46"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#007892;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+			/> 
+			<Layer 
+					File="_bpmupligt"
+					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+46"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+			/> 
+						<Layer
+					File="lneon"
+					InitCommand="x,SCREEN_LEFT;y,SCREEN_TOP+24;horizalign,left"
+					OnCommand="diffusealpha,0;sleep,1.8;linear,.4;diffusealpha,1;diffuseshift;EffectColor1,#00EAFF;EffectColor2,#FFFFFF00;EffectClock,bgm"
+			/>	
+			<Layer
+					File="rneon"
+					InitCommand="x,SCREEN_RIGHT;y,SCREEN_TOP+24;horizalign,right"
+					OnCommand="diffusealpha,0;sleep,1.8;linear,.4;diffusealpha,1;diffuseshift;EffectColor1,#00EAFF;EffectColor2,#FFFFFF00;EffectClock,bgm"
+			/>
+            
+            <Layer
+					File="_bpmneons"
+					InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_TOP+62"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#007892;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+					
+					
+					
+			/>
+			<Layer
+					File="_bpmneons"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+62"
+					OnCommand="EffectClock,beat;DiffuseRamp;EffectColor1,#FFFFFF00;EffectColor2,#00EAFF;effectperiod,0.5;EffectDelay,0.5;EffectOffset,0.05;diffusealpha,0;linear,.4;diffusealpha,1;"
+			/>		
+			<Layer
+					Type="BitmapText"
+					Font="_r bold 30px"
+					InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24;maxwidth,540"
+					OnCommand="addy,3;zoom,.5;shadowlength,2;zoomy,0;sleep,2;decelerate,0.3;zoomy,.45;animate,0;playcommand,Update"
+					CurrentSongChangedMessageCommand="playcommand,Update"
+					UpdateCommand="%SetFromSongTitleAndCourseTitle"
+			/>
+            <Layer 
+					File="bpmbase"
+					OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+60"
+					OffCommand=""
+			/>
+                <Layer
+			                Type="BitmapText"
+			                File="_eurostile normal"
+			                Text="BPM"
+			                OnCommand="x,SCREEN_CENTER_X+4;y,SCREEN_CENTER_Y-175;zoomx,0;zoomy,0;sleep,1.2;accelerate,0.3;zoomx,0.6;zoomy,0.6;sleep,1;decelerate,0.3;zoomx,0;zoomy,3"
+		        />
+</children> </Layer>
+</children></ActorFrame>
