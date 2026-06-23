@@ -1,0 +1,16 @@
+﻿<ActorFrame><children>
+<Layer
+		File="_normaltop"	
+	/>
+<Layer
+		File="flare"
+		InitCommand="additiveblend,1;x,SCREEN_LEFT-128;y,+40"
+		DoOnCommand="x,SCREEN_LEFT-128;y,+40;sleep,0.6;RotationZ,0;Linear,1;x,SCREEN_RIGHT+128;RotationZ,+360"
+	/>
+<Layer
+		File="flare"
+		InitCommand="additiveblend,1;x,SCREEN_LEFT+128;y,+90"
+		DoOnCommand="x,SCREEN_RIGHT+128;y,+440;sleep,0.6;RotationZ,0;Linear,1;x,SCREEN_LEFT-128;RotationZ,+360"
+/>
+		</children>
+</ActorFrame>

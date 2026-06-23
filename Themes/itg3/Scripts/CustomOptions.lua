@@ -705,6 +705,52 @@ function HideSongDetailsOption()
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
 end
 
+function GeneralUIOption()
+	local modList = {'ORIGINAL', 'ENCORE', 'FINAL'}
+    
+	local Params = {
+		Name = "General UI",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        if not PROFILEMAN:GetMachineProfile():GetSaved().ITG3GeneralUI then
+            list[1] = true
+        else
+            list[PROFILEMAN:GetMachineProfile():GetSaved().ITG3GeneralUI] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        local cur = PROFILEMAN:GetMachineProfile():GetSaved().ITG3GeneralUI
+        for ind, val in ipairs(list) do
+            if val then
+                PROFILEMAN:GetMachineProfile():GetSaved().ITG3GeneralUI = ind
+            end
+        end
+        if (cur or 1) ~= PROFILEMAN:GetMachineProfile():GetSaved().ITG3GeneralUI then
+            GAMESTATE:DelayedGameCommand('reloadtheme')
+        end
+        --you only need a couple of these each options screen
+        --PROFILEMAN:SaveMachineProfile()
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+function ITG3IsOriginal()
+    return PROFILEMAN:GetMachineProfile():GetSaved().ITG3GeneralUI == 1
+end
+
+function ITG3IsEncore()
+    return PROFILEMAN:GetMachineProfile():GetSaved().ITG3GeneralUI == 2
+end
+
+function ITG3IsFinal()
+    return PROFILEMAN:GetMachineProfile():GetSaved().ITG3GeneralUI == 3
+end
 
 ITG3GlobVar.GameplayOverlayFilenameList = {"_normal", "X_normal", "_bunnies", "_disconnect", "_energy", "_hasse", "_love", "_nightmare", "_pandy", "_smiley", "_vertex", "_virtual", "c_love", "random"}
 ITG3GlobVar.GameplayOverlayFormalList = {"Default", "Default (Alt)", "Pink Fuzzy Bunnies", "Disconnected Hardkore", "Energizer", "Hasse Mich", "Love Eternal", "Dream to Nightmare", "Pandemonium", "Summer ~Speedy Mix~", "VerTex", "Virtual Emotion", "Love Eternal (Encore)", "Random"}

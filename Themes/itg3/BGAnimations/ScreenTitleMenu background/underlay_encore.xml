@@ -1,0 +1,58 @@
+<ActorFrame><children>
+<Layer
+		File="_lside"
+		InitCommand="horizalign,left;vertalign,bottom"
+		OnCommand="x,SCREEN_LEFT;y,SCREEN_BOTTOM+100;decelerate,0.4;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+		OffCommand="hidden,1"
+	/>
+<Layer
+		File="_rside"
+		InitCommand="horizalign,right;vertalign,bottom"
+		OnCommand="x,SCREEN_RIGHT;y,SCREEN_BOTTOM+100;decelerate,0.4;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+		OffCommand="hidden,1"
+	/>
+<Layer
+		File="width"
+		InitCommand="horizalign,left;vertalign,bottom;;zoomtowidth,SCREEN_WIDTH/2"
+		OnCommand="x,SCREEN_LEFT+48;y,SCREEN_BOTTOM+100;decelerate,0.4;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+		OffCommand="hidden,1"
+	/>
+<Layer
+		File="width"
+		InitCommand="horizalign,right;vertalign,bottom;zoomtowidth,SCREEN_WIDTH/2"
+		OnCommand="x,SCREEN_RIGHT-48;y,SCREEN_BOTTOM+100;decelerate,0.4;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+		OffCommand="hidden,1"
+	/>
+<Layer
+		File="encore/base"
+		InitCommand="vertalign,bottom"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM+100;decelerate,0.4;y,SCREEN_BOTTOM"
+		OffCommand="accelerate,0.5;addy,100"
+		OffCommand="hidden,1"
+	/>
+<Layer
+		File="encore/_upwidth"
+		InitCommand="vertalign,top;zoomtowidth,SCREEN_WIDTH/2-100"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP-100;decelerate,.4;y,SCREEN_TOP"
+		OffCommand="accelerate,.5;addy,-100"
+		OffCommand="hidden,1"
+	/>
+<Layer
+		File="encore/_upleft"
+		InitCommand="horizalign,left;vertalign,top"
+		OnCommand="x,SCREEN_LEFT;y,SCREEN_TOP-100;decelerate,.4;y,SCREEN_TOP"
+		OffCommand="accelerate,.5;addy,-100"
+		OffCommand="hidden,1"
+	/>
+<Layer
+		File="encore/_upright"
+		InitCommand="horizalign,right;vertalign,top"
+		OnCommand="x,SCREEN_RIGHT;y,SCREEN_TOP-100;decelerate,.4;y,SCREEN_TOP"
+		OffCommand="accelerate,.5;addy,-100"
+		OffCommand="hidden,1"
+	/>
+	</children></ActorFrame>

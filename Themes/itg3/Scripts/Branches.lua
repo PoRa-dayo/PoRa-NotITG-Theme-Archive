@@ -12,8 +12,6 @@ end
 function ScreenTitleBranch()
 	ScreenSelectMusicTimer = GetMusicSelectTime();
 	ScreenPlayerOptionsTimer = GetOptionsSelectTime();
-	if GAMESTATE:GetCoinMode() == COIN_MODE_HOME then return "ScreenTitleMenu" end
-	if GAMESTATE:IsEventMode() then return "ScreenEventMenu" end
 	return TitleScreen();
 end
 
@@ -71,6 +69,23 @@ function GetGameplayNextScreen()
 	end
 	
 	return "GetGameplayNextScreen: YOU SHOULD NEVER GET HERE"
+end
+
+function SelectEvaluationScreen()
+	if IsNetConnected() then return "ScreenNetEvaluation" end
+	Mode = PlayModeName()
+    local suffix = ""
+    if ITG3IsEncore() then
+        suffix = "Encore"
+    elseif ITG3IsFinal() then
+        suffix = "Final"
+    end
+	if( Mode == "Regular" ) then return "ScreenEvaluationStage"..suffix end
+	if( Mode == "Nonstop" ) then return "ScreenEvaluationNonstop"..suffix end
+	if( Mode == "Oni" ) then return "ScreenEvaluationOni"..suffix end
+	if( Mode == "Endless" ) then return "ScreenEvaluationEndless"..suffix end
+	if( Mode == "Rave" ) then return "ScreenEvaluationRave"..suffix end
+	if( Mode == "Battle" ) then return "ScreenEvaluationBattle"..suffix end
 end
 
 function SelectEndingScreen()
@@ -134,8 +149,11 @@ function ScreenSelectMusicPrevScreen()
 end
 
 function TitleScreen()
+    if DayOfMonth() == 1 and MonthOfYear() == 4 and GAMESTATE:GetCoinMode() == COIN_MODE_HOME then return "ScreenTitleAltHome" end
+    if DayOfMonth() == 1 and MonthOfYear() == 4 and GAMESTATE:IsEventMode() then return "ScreenTitleAltEvent" end
 	if DayOfMonth() == 1 and MonthOfYear() == 4 then return "ScreenTitleAlt" end
-return "ScreenTitleJoin"
+    if GAMESTATE:GetCoinMode() == COIN_MODE_HOME then return "ScreenTitleMenu" end
+	if GAMESTATE:IsEventMode() then return "ScreenEventMenu" end
 end
 
 function OptionsMenuAvailable()

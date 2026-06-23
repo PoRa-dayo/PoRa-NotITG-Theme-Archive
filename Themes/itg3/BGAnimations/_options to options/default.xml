@@ -1,0 +1,10 @@
+<ActorFrame><children>
+	<Layer Type="Quad" OnCommand="%function(self)
+        self:zoom(0) 
+        if ITG3IsEncore() or ITG3IsFinal() then
+            AudioPlay('_options_encore') 
+        else
+            AudioPlay('_options') 
+        end
+    end" />
+</children></ActorFrame>

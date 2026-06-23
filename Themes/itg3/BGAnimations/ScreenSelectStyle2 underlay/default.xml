@@ -27,9 +27,19 @@
 		</children>
 </Layer>
 
-<Layer Class="AutoActor" 
+    <Layer Class="AutoActor" 
 		File="../ScreenSelectPlayMode underlay/explanation frame" 
+        Condition="ITG3IsOriginal()"
 		OnCommand="horizalign,center;x,SCREEN_CENTER_X+100;y,SCREEN_CENTER_Y+138;diffusealpha,0;linear,0.5;diffusealpha,0.8" 
+		MadeChoiceP1MessageCommand="playcommand,GoOff"
+		MadeChoiceP2MessageCommand="playcommand,GoOff"
+		GoOffCommand="linear,0.5;diffusealpha,0" 
+	/>
+    
+    <Layer Class="AutoActor" 
+        Condition="ITG3IsEncore() or ITG3IsFinal()"
+		File="../ScreenSelectPlayMode underlay/explanation frame_encore" 
+		OnCommand="horizalign,center;x,SCREEN_CENTER_X+100;y,SCREEN_CENTER_Y+125;diffusealpha,0;linear,0.5;diffusealpha,1.0" 
 		MadeChoiceP1MessageCommand="playcommand,GoOff"
 		MadeChoiceP2MessageCommand="playcommand,GoOff"
 		GoOffCommand="linear,0.5;diffusealpha,0" 
@@ -44,6 +54,13 @@
 	<Layer
 		Class="AutoActor" 
 		File="../ScreenWithMenuElements underlay/_normaltop"
+	/>
+    
+    <Layer
+		Class="AutoActor" 
+        Condition="IsITG3Encore() or IsITG3Final()"
+		File="../ScreenWithMenuElements underlay/fore_encore"
+		OnCommand="playcommand,DoOn"
 	/>
 		</children>
 </ActorFrame>

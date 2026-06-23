@@ -1,0 +1,80 @@
+﻿<ActorFrame><children>
+
+    
+    
+    <AutoActor
+  File="../_overlay/joinin_2"
+  InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+123+50*0;zoom,0.65"
+  OnCommand="horizalign,right;addx,200;sleep,0.9;decelerate,0.25;addx,-200;PlayCommand,Fade"
+  FadeCommand="glow,1,1,1,0;sleep,2;linear,.3;glow,1,1,1,.25;sleep,.05;linear,.5;glow,1,1,1,0;sleep,1;QueueCommand,Fade"
+/>
+    
+    <Layer
+Font="_v profile"
+Text="REBIRTH"
+InitCommand="shadowlength,1;x,SCREEN_RIGHT-106;y,SCREEN_CENTER_Y+123+40*0"
+  OnCommand="horizalign,left;addx,200;sleep,0.9;decelerate,0.25;addx,-200;zoom,0.7"
+/> 
+    
+    
+        <Layer
+  File="../_overlay/joinin_2"
+  InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+113+41*1;zoom,0.65"
+  OnCommand="horizalign,right;addx,200;sleep,1.0;decelerate,0.25;addx,-200;PlayCommand,Fade"
+  FadeCommand="glow,1,1,1,0;sleep,2;linear,.3;glow,1,1,1,.25;sleep,.05;linear,.5;glow,1,1,1,0;sleep,1;QueueCommand,Fade"
+/>
+    
+    <Layer
+Font="_v profile"
+Text="REBIRTH +"
+InitCommand="shadowlength,1;x,SCREEN_RIGHT-106;y,SCREEN_CENTER_Y+113+41*1"
+  OnCommand="horizalign,left;addx,200;sleep,1.0;decelerate,0.25;addx,-200;zoom,0.7"
+/> 
+
+   
+    <Layer
+  File="../_overlay/joinin_2"
+  InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+185+32*0;zoom,0.65"
+  OnCommand="horizalign,right;addx,200;sleep,0.9;decelerate,0.25;addx,-200;PlayCommand,Fade"
+  FadeCommand="glow,1,1,1,0;sleep,2;linear,.3;glow,1,1,1,.25;sleep,.05;linear,.5;glow,1,1,1,0;sleep,1;QueueCommand,Fade"
+/>
+    
+    <Layer
+Font="_v profile"
+Text="REBIRTH 2"
+InitCommand="shadowlength,1;x,SCREEN_RIGHT-106;y,SCREEN_CENTER_Y+110+37*2"
+  OnCommand="horizalign,left;addx,200;sleep,0.9;decelerate,0.25;addx,-200;zoom,0.7"
+/>    
+    
+    <Layer
+  File="../_overlay/joinin_2"
+  InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+93+50*0;zoom,0.65"
+  OnCommand="horizalign,right;addx,200;sleep,1.0;decelerate,0.25;addx,-200;PlayCommand,Fade"
+  FadeCommand="glow,1,1,1,0;sleep,2;linear,.3;glow,1,1,1,.25;sleep,.05;linear,.5;glow,1,1,1,0;sleep,1;QueueCommand,Fade"
+/>
+    
+    <Layer
+Font="_v profile"
+Text="ITG3 UNLOCKS"
+InitCommand="shadowlength,1;x,SCREEN_RIGHT-106;y,SCREEN_CENTER_Y+93+50*0"
+  OnCommand="horizalign,left;addx,200;sleep,1.0;decelerate,0.25;addx,-200;zoom,0.7"
+/>
+
+    
+    
+    <AutoActor
+  File="../_overlay/joinin_2"
+  InitCommand="x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+62+50*0;zoom,0.65"
+  OnCommand="horizalign,right;addx,200;sleep,0.9;decelerate,0.250;addx,-200;PlayCommand,Fade"
+  FadeCommand="glow,1,1,1,0;sleep,2;linear,.3;glow,1,1,1,.25;sleep,.05;linear,.5;glow,1,1,1,0;sleep,1;QueueCommand,Fade"
+/>
+    
+    <Layer
+Font="_v profile"
+Text="ITG3 ADDONS"
+InitCommand="shadowlength,1;x,SCREEN_RIGHT-106;y,SCREEN_CENTER_Y+62+50*0"
+  OnCommand="horizalign,left;addx,200;sleep,0.9;decelerate,0.25;addx,-200;zoom,0.7"
+/> 
+    
+</children>
+</ActorFrame>

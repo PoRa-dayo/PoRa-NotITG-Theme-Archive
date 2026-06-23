@@ -327,10 +327,10 @@ Original theme by ITG3 Team, no longer maintained. Optimized for NotITG 4.9.1 by
 -Added a length indicator in Marathon mode.\
 -Added modernized noteskin, judgment font, and hold judgment customization.\
 -Fixed the error that happens in the player options menu when the song's BPM is negative.\
--Stole the BPM display during gameplay from ITG3 Encore 'cuz why the hell not.\
+-Most of the gameplay UI is fused with ITG3 Encore's because the UI of the original ITG3 is very unfinished.\
 -Step information now has numbers below their icons that are permanently visible. Thanks Ace of Arrows for this idea.\
 -Swapped the behavior of the stepartist, song length and step information popups by default. Now they'll normally show up and hide whenever you hold Select. There is now an option called Hide Song Details in Custom Song Options that swaps back this behavior.\
--ITG3 had special gameplay UI that gets triggered on certain special songs. Since this isn't ITG3, you can now switch between any UI you want in the Custom Song Options. Do note that the special songs (e.g. any VerTex song) will still force their own respective UI.\
+-ITG3 had special gameplay UI that gets triggered on certain special songs. Since this isn't ITG3, you can now switch between any UI you want in the Custom Song Options. Do note that the special songs (e.g. any VerTex song) will still force their own respective UI. It is now also enabled in Course Mode.\
 -Altered some of the UI of Edit mode to fit NotITG's settings.\
 -Added offset plot and spellcard viewer in results screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.

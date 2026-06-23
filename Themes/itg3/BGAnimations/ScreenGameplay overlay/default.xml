@@ -2,12 +2,12 @@
 
     <Layer
     File="@GameplayOverlay()"
-    Condition="not GAMESTATE:IsCourseMode() and not GAMESTATE:IsDemonstration()"
+    Condition="not GAMESTATE:IsDemonstration()"
     />
 
     <Layer
     File="_normal"
-    Condition="GAMESTATE:IsCourseMode() or GAMESTATE:IsDemonstration()"
+    Condition="GAMESTATE:IsDemonstration()"
     />
 
     <!-- Song info, background only fade -->

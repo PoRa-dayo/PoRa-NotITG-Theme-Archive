@@ -1477,3 +1477,30 @@ end
 function IsSongOrCourse()
     return (GAMESTATE:GetCurrentSong() or GAMESTATE:GetCurrentCourse())
 end
+
+-- This will play a file that is available on the SOUNDS folder.
+function AudioPlay( file ) return SOUND:PlayOnce( THEME:GetPath( EC_SOUNDS, '', file ) ) end
+
+function ScreenTitleSongsOnCmd(self)
+    if ITG3IsOriginal() then
+        if GAMESTATE:GetCoinMode() == COIN_MODE_HOME then
+            self:y(SCREEN_BOTTOM-47)
+        else 
+            self:y(SCREEN_BOTTOM-17)
+        end
+        self:x(SCREEN_CENTER_X)
+        self:zoom(0.5)
+        self:diffusealpha(0)
+        self:sleep(0.6)
+        self:linear(0.5)
+        self:diffusealpha(1)
+    else
+        self:x(SCREEN_CENTER_X-140)
+        self:y(SCREEN_CENTER_Y-169)
+        self:zoom(0.56)
+        self:diffusealpha(0)
+        self:sleep(0.10)
+        self:linear(0.4)
+        self:diffusealpha(1)
+    end
+end

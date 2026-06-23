@@ -1,10 +1,16 @@
 <ActorFrame><children>
-<Layer
-File="CJ113.mpg"
-Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
-/> 
-<Layer
-File="roxor logo.mpg"
-Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3;additiveblend,1;sleep,6;" />
+    <Layer
+    File="CJ113.mpg"
+    Condition="ITG3IsOriginal()"
+    Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+    /> 
+    <Layer
+    File="roxor logo.mpg"
+    Condition="ITG3IsOriginal()"
+    Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3;additiveblend,1;sleep,6;" />
 
+    <Layer
+    File="roxor logo.avi"
+    Condition="ITG3IsEncore()"
+    Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3" />
 </children></ActorFrame>

@@ -1,8 +1,20 @@
 <ActorFrame>
 		<children>
-<Layer
+    <Layer
 		File="ScreenSelectMusic background/CJ126.mpg"
+        Condition="ITG3IsOriginal()"
 		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3"
 	/>	
+    <Layer
+		File="ScreenSelectMusic background/CJ126_encore.mpg"
+        Condition="ITG3IsEncore()"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3"
+	/>	
+    <Layer
+        Condition="ITG3IsEncore() and (not GAMESTATE:IsCourseMode() and GAMESTATE:GetCurrentSong():GetBannerPath())"
+        File="songbackground"
+        InitCommand="Additiveblend,1"
+        OnCommand="fadeleft,.2;faderight,.2;diffuseshift;effectcolor1,#FFFFFF30;EffectColor2,#FFFFFF50;effectperiod,12;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/16*10;"
+    />
 		</children>
 </ActorFrame>

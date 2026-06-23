@@ -1,6 +1,6 @@
 [Actor]
 File=_ScreenTitleMenu choices
-Text=Arcade Modes
+Text=Arcade
 InitCommand=HorizAlign,right;ShadowLength,2;setstate,0;pause;StopTweening;DiffuseShift;EffectColor1,#DD0000;EffectColor2,#DD0000
 GainFocusCommand=StopTweening;Linear,0;Zoom,0.8;DiffuseShift;EffectPeriod,0.5;EffectColor1,#DD0000;EffectColor2,#FFBBBB
 LoseFocusCommand=StopTweening;StopEffect;DiffuseShift;EffectColor1,#DD0000;EffectColor2,#DD0000;Linear,0;Zoom,0.7

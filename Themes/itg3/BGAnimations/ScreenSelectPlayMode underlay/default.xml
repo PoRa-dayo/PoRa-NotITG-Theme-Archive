@@ -21,9 +21,20 @@
 			/>
 		</children></ActorFrame>
 	</children></Layer>
+    
 	<Layer Class="AutoActor" 
 		File="explanation frame" 
+        Condition="ITG3IsOriginal()"
 		OnCommand="horizalign,center;x,SCREEN_CENTER_X-88;y,SCREEN_CENTER_Y+95;diffusealpha,0;linear,0.5;diffusealpha,0.8" 
+		MadeChoiceP1MessageCommand="playcommand,GoOff"
+		MadeChoiceP2MessageCommand="playcommand,GoOff"
+		GoOffCommand="linear,0.5;diffusealpha,0" 
+	/>
+    
+    <Layer Class="AutoActor" 
+		File="explanation frame_encore" 
+        Condition="ITG3IsEncore() or ITG3IsFinal()"
+		OnCommand="horizalign,center;x,SCREEN_CENTER_X-85;y,SCREEN_CENTER_Y+90;diffusealpha,0;linear,0.5;diffusealpha,1.0" 
 		MadeChoiceP1MessageCommand="playcommand,GoOff"
 		MadeChoiceP2MessageCommand="playcommand,GoOff"
 		GoOffCommand="linear,0.5;diffusealpha,0" 
