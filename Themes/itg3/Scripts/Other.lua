@@ -794,8 +794,14 @@ end
 
 function GetSongLength()
 	local song = GAMESTATE:GetCurrentSong()
-	if not song then return "" end
-	return "Song Length: " .. SecondsToMMSS(song:MusicLengthSeconds())
+    local trail = GAMESTATE:GetCurrentTrail(0) or GAMESTATE:GetCurrentTrail(1)
+	if song then
+        return "Song Length: " .. SecondsToMMSS(song:MusicLengthSeconds())
+    elseif trail then
+        return "Total Length: " .. SecondsToMMSS(trail:GetLengthSeconds())
+    else 
+        return ""
+    end
 
 end
 
@@ -859,8 +865,8 @@ function GameplayOverlay()
 	
 	local dir = CurrentSong:GetSongDir()
 	
-	if string.find(dir,"/Dance Dance Revolution Extreme/") or string.find(dir,"8th Mix") then
-		return "_extreme"  end
+	--if string.find(dir,"/Dance Dance Revolution Extreme/") or string.find(dir,"8th Mix") then
+		--return "_extreme"  end
 	if  string.find( CurrentSong:GetDisplayFullTitle(), "VerTex" ) then
 		return "_vertex" end
 	if string.find( CurrentSong:GetDisplayFullTitle(), "Dream to Nightmare" ) then
@@ -881,7 +887,20 @@ function GameplayOverlay()
 		return "_love" end
 	if string.find( CurrentSong:GetDisplayFullTitle(), "Disconnected Hardkore" ) then
 		return "_disconnect" end
-	return ITG3GlobVar.GameplayOverlayFilenameList[PROFILEMAN:GetMachineProfile():GetSaved().ITG3GameplayOverlay or 1]
+    local val = ITG3GlobVar.GameplayOverlayFilenameList[PROFILEMAN:GetMachineProfile():GetSaved().ITG3GameplayOverlay or 1]
+    if val == "random" then
+        if ITG3GlobVar.GameplayOverlayRandTimes == 3 then
+            ITG3GlobVar.GameplayOverlayRandTimes = 0
+            ITG3GlobVar.GameplayOverlayRand = nil
+        end
+        if not ITG3GlobVar.GameplayOverlayRand then
+            ITG3GlobVar.GameplayOverlayRand = math.random(#ITG3GlobVar.GameplayOverlayFilenameList-1)
+        end
+        ITG3GlobVar.GameplayOverlayRandTimes = tonumber(ITG3GlobVar.GameplayOverlayRandTimes or 0) + 1
+        return ITG3GlobVar.GameplayOverlayFilenameList[ITG3GlobVar.GameplayOverlayRand]
+    else
+        return val or "_normal"
+    end
 end
 
 
@@ -928,7 +947,7 @@ function P1Stepartist( actor )
 	if course then
 		result = ""
 	end
-	if string.find(artist, "C. Foy") or string.find(artist, "Foy") then
+	if string.find(string.lower(artist), "c. foy") or string.find(string.lower(artist), "foy") then
 			actor:diffuseshift();
 			actor:effectclock("bgm");
 			actor:effectcolor1(1,.9,.9,1);
@@ -960,7 +979,7 @@ function P2Stepartist( actor )
 	if course then
 		result = ""
 	end
-	if string.find(artist, "C. Foy") or string.find(artist, "Foy") then
+	if string.find(string.lower(artist), "c. foy") or string.find(string.lower(artist), "foy") then
 			actor:diffuseshift();
 			actor:effectclock("bgm");
 			actor:effectcolor1(1,.9,.9,1);
@@ -1455,13 +1474,6 @@ function GetTimer(screen)
 	return 0;
 end
 
-function GetStepsDescriptionText(n)
-	local steps = GAMESTATE:GetCurrentSteps(n)
-	if not steps then
-		text = ''
-	else
-		text = steps:GetDescription()
-	end
-	if string.lower(text) == 'blank' then text = '' end
-	return text
+function IsSongOrCourse()
+    return (GAMESTATE:GetCurrentSong() or GAMESTATE:GetCurrentCourse())
 end

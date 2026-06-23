@@ -706,8 +706,8 @@ function HideSongDetailsOption()
 end
 
 
-ITG3GlobVar.GameplayOverlayFilenameList = {"_normal", "X_normal", "_bunnies", "_disconnect", "_energy", "_extreme", "_hasse", "_love", "_nightmare", "_pandy", "_smiley", "_vertex", "_virtual", "c_love"}
-ITG3GlobVar.GameplayOverlayFormalList = {"Default", "Default (Compact)", "Pink Fuzzy Bunnies", "Disconnected Hardkore", "Energizer", "DDR Extreme", "Hasse Mich", "Love Eternal", "Dream to Nightmare", "Pandemonium", "Summer ~Speedy Mix~", "VerTex", "Virtual Emotion", "Love Eternal (Alt)"}
+ITG3GlobVar.GameplayOverlayFilenameList = {"_normal", "X_normal", "_bunnies", "_disconnect", "_energy", "_hasse", "_love", "_nightmare", "_pandy", "_smiley", "_vertex", "_virtual", "c_love", "random"}
+ITG3GlobVar.GameplayOverlayFormalList = {"Default", "Default (Alt)", "Pink Fuzzy Bunnies", "Disconnected Hardkore", "Energizer", "Hasse Mich", "Love Eternal", "Dream to Nightmare", "Pandemonium", "Summer ~Speedy Mix~", "VerTex", "Virtual Emotion", "Love Eternal (Encore)", "Random"}
 
 function GameplayOverlayOption()
 	local modList = ITG3GlobVar.GameplayOverlayFormalList

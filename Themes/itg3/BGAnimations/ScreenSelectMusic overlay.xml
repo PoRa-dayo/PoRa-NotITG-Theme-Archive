@@ -202,17 +202,18 @@
     CurrentStepsP1ChangedMessageCommand="playcommand,Set"
     CurrentTrailP1ChangedMessageCommand="playcommand,Set"
     SetCommand="%function(self)
-    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_1);
+    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_1) or GAMESTATE:GetCurrentTrail(PLAYER_1);
+    local IsCourse = GAMESTATE:IsCourseMode()
     if not Selection then self:hidden(1) return end
     self:hidden(0)
     local numb = tonumber( Radar( Selection:GetRadarValues(),1 ) );
     self:settext( Radar( Selection:GetRadarValues(),1 ) )
     if numb == -01 then self:settext('???') end
         if numb == 0 then self:diffusecolor(.4,.4,.4,1)
-        elseif numb <= 24 then self:diffusecolor(0,1,0,1)
-        elseif numb <= 49 then self:diffusecolor(1,1,0,1)
-        elseif numb <= 99 then self:diffusecolor(1,.53,0,1)
-        elseif numb <= 199 then self:diffusecolor(1,0,0,1)
+        elseif numb <= (IsCourse and 48 or 24) then self:diffusecolor(0,1,0,1)
+        elseif numb <= (IsCourse and 98 or 49) then self:diffusecolor(1,1,0,1)
+        elseif numb <= (IsCourse and 148 or 99) then self:diffusecolor(1,.53,0,1)
+        elseif numb <= (IsCourse and 398 or 199) then self:diffusecolor(1,0,0,1)
         else self:diffusecolor(0,.75,1,1) 
         end
     end"
@@ -229,17 +230,18 @@
     CurrentStepsP1ChangedMessageCommand="playcommand,Set"
     CurrentTrailP1ChangedMessageCommand="playcommand,Set"
     SetCommand="%function(self)
-    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_1)
+    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_1) or GAMESTATE:GetCurrentTrail(PLAYER_1)
+    local IsCourse = GAMESTATE:IsCourseMode()
     if not Selection then self:hidden(1) return end
     self:hidden(0)
     self:settext( Radar( Selection:GetRadarValues(),2 ) )
     local numb = tonumber( Radar( Selection:GetRadarValues(),2 ) );
     if numb == -01 then self:settext('???') end
         if numb == 0 then self:diffusecolor(.4,.4,.4,1)
-        elseif numb <= 24 then self:diffusecolor(0,1,0,1)
-        elseif numb <= 49 then self:diffusecolor(1,1,0,1)
-        elseif numb <= 99 then self:diffusecolor(1,.53,0,1)
-        elseif numb <= 149 then self:diffusecolor(1,0,0,1)
+        elseif numb <= (IsCourse and 48 or 24) then self:diffusecolor(0,1,0,1)
+        elseif numb <= (IsCourse and 98 or 49) then self:diffusecolor(1,1,0,1)
+        elseif numb <= (IsCourse and 198 or 99) then self:diffusecolor(1,.53,0,1)
+        elseif numb <= (IsCourse and 398 or 149) then self:diffusecolor(1,0,0,1)
         else self:diffusecolor(0,.75,1,1) 
         end
     end"
@@ -256,17 +258,18 @@
     CurrentStepsP1ChangedMessageCommand="playcommand,Set"
     CurrentTrailP1ChangedMessageCommand="playcommand,Set"
     SetCommand="%function(self)
-    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_1)
+    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_1) or GAMESTATE:GetCurrentTrail(PLAYER_1)
+    local IsCourse = GAMESTATE:IsCourseMode()
     if not Selection then self:hidden(1) return end
     self:hidden(0)
     self:settext( Radar( Selection:GetRadarValues(),3 ) )
     local numb = tonumber( Radar( Selection:GetRadarValues(),3 ) );
     if numb == -01 then self:settext('???') end
         if numb == 0 then self:diffusecolor(.4,.4,.4,1)
-        elseif numb <= 24 then self:diffusecolor(0,1,0,1)
-        elseif numb <= 49 then self:diffusecolor(1,1,0,1)
-        elseif numb <= 89 then self:diffusecolor(1,.53,0,1)
-        elseif numb <= 139 then self:diffusecolor(1,0,0,1)
+        elseif numb <= (IsCourse and 48 or 24) then self:diffusecolor(0,1,0,1)
+        elseif numb <= (IsCourse and 98 or 49) then self:diffusecolor(1,1,0,1)
+        elseif numb <= (IsCourse and 198 or 89) then self:diffusecolor(1,.53,0,1)
+        elseif numb <= (IsCourse and 998 or 139) then self:diffusecolor(1,0,0,1)
         else self:diffusecolor(0,.75,1,1) 
         end
     end"
@@ -283,17 +286,18 @@
     CurrentStepsP1ChangedMessageCommand="playcommand,Set"
     CurrentTrailP1ChangedMessageCommand="playcommand,Set"
     SetCommand="%function(self)
-    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_1)
+    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_1) or GAMESTATE:GetCurrentTrail(PLAYER_1)
+    local IsCourse = GAMESTATE:IsCourseMode()
     if not Selection then self:hidden(1) return end
     self:hidden(0)
     self:settext( Radar( Selection:GetRadarValues(),4 ) )	
     local numb = tonumber( Radar( Selection:GetRadarValues(),4 ) );
     if numb == -01 then self:settext('???') end
         if numb == 0 then self:diffusecolor(.4,.4,.4,1)
-        elseif numb <= 14 then self:diffusecolor(0,1,0,1)
-        elseif numb <= 29 then self:diffusecolor(1,1,0,1)
-        elseif numb <= 39 then self:diffusecolor(1,.53,0,1)
-        elseif numb <= 51 then self:diffusecolor(1,0,0,1)
+        elseif numb <= (IsCourse and 13 or 14) then self:diffusecolor(0,1,0,1)
+        elseif numb <= (IsCourse and 33 or 29) then self:diffusecolor(1,1,0,1)
+        elseif numb <= (IsCourse and 98 or 39) then self:diffusecolor(1,.53,0,1)
+        elseif numb <= (IsCourse and 398 or 51) then self:diffusecolor(1,0,0,1)
         else self:diffusecolor(0,.75,1,1) 
         end
     end"
@@ -310,17 +314,18 @@
     CurrentStepsP1ChangedMessageCommand="playcommand,Set"
     CurrentTrailP1ChangedMessageCommand="playcommand,Set"
     SetCommand="%function(self)
-    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_1)
+    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_1) or GAMESTATE:GetCurrentTrail(PLAYER_1)
+    local IsCourse = GAMESTATE:IsCourseMode()
     if not Selection then self:hidden(1) return end
     self:hidden(0)
     self:settext( Radar( Selection:GetRadarValues(),5 ) )
     local numb = tonumber( Radar( Selection:GetRadarValues(),5 ) );
     if numb == -01 then self:settext('???') end
         if numb == 0 then self:diffusecolor(.4,.4,.4,1)
-        elseif numb <= 9 then self:diffusecolor(0,1,0,1)
-        elseif numb <= 19 then self:diffusecolor(1,1,0,1)
-        elseif numb <= 29 then self:diffusecolor(1,.53,0,1)
-        elseif numb <= 39 then self:diffusecolor(1,0,0,1)
+        elseif numb <= (IsCourse and 18 or 9) then self:diffusecolor(0,1,0,1)
+        elseif numb <= (IsCourse and 38 or 19) then self:diffusecolor(1,1,0,1)
+        elseif numb <= (IsCourse and 78 or 29) then self:diffusecolor(1,.53,0,1)
+        elseif numb <= (IsCourse and 398 or 39) then self:diffusecolor(1,0,0,1)
         else self:diffusecolor(0,.75,1,1) 
         end
     end"
@@ -339,17 +344,18 @@
     CurrentStepsP2ChangedMessageCommand="playcommand,Set"
     CurrentTrailP2ChangedMessageCommand="playcommand,Set"
     SetCommand="%function(self)
-    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_2);
+    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_2) or GAMESTATE:GetCurrentTrail(PLAYER_2);
+    local IsCourse = GAMESTATE:IsCourseMode()
     if not Selection then self:hidden(1) return end
     self:hidden(0)
     local numb = tonumber( Radar( Selection:GetRadarValues(),1 ) );
     if numb == -01 then self:settext('???') end
     self:settext( Radar( Selection:GetRadarValues(),1 ) )
         if numb == 0 then self:diffusecolor(.4,.4,.4,1)
-        elseif numb <= 24 then self:diffusecolor(0,1,0,1)
-        elseif numb <= 49 then self:diffusecolor(1,1,0,1)
-        elseif numb <= 99 then self:diffusecolor(1,.53,0,1)
-        elseif numb <= 199 then self:diffusecolor(1,0,0,1)
+        elseif numb <= (IsCourse and 48 or 24) then self:diffusecolor(0,1,0,1)
+        elseif numb <= (IsCourse and 98 or 49) then self:diffusecolor(1,1,0,1)
+        elseif numb <= (IsCourse and 148 or 99) then self:diffusecolor(1,.53,0,1)
+        elseif numb <= (IsCourse and 398 or 199) then self:diffusecolor(1,0,0,1)
         else self:diffusecolor(0,.75,1,1) 
         end
     end"
@@ -367,17 +373,18 @@
     CurrentStepsP2ChangedMessageCommand="playcommand,Set"
     CurrentTrailP2ChangedMessageCommand="playcommand,Set"
     SetCommand="%function(self)
-    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_2)
+    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_2) or GAMESTATE:GetCurrentTrail(PLAYER_2)
+    local IsCourse = GAMESTATE:IsCourseMode()
     if not Selection then self:hidden(1) return end
     self:hidden(0)
     self:settext( Radar( Selection:GetRadarValues(),2 ) )
     local numb = tonumber( Radar( Selection:GetRadarValues(),2 ) );
     if numb == -01 then self:settext('???') end
         if numb == 0 then self:diffusecolor(.4,.4,.4,1)
-        elseif numb <= 24 then self:diffusecolor(0,1,0,1)
-        elseif numb <= 49 then self:diffusecolor(1,1,0,1)
-        elseif numb <= 99 then self:diffusecolor(1,.53,0,1)
-        elseif numb <= 149 then self:diffusecolor(1,0,0,1)
+        elseif numb <= (IsCourse and 48 or 24) then self:diffusecolor(0,1,0,1)
+        elseif numb <= (IsCourse and 98 or 49) then self:diffusecolor(1,1,0,1)
+        elseif numb <= (IsCourse and 198 or 99) then self:diffusecolor(1,.53,0,1)
+        elseif numb <= (IsCourse and 398 or 149) then self:diffusecolor(1,0,0,1)
         else self:diffusecolor(0,.75,1,1) 
         end
     end"
@@ -394,17 +401,18 @@
     CurrentStepsP2ChangedMessageCommand="playcommand,Set"
     CurrentTrailP2ChangedMessageCommand="playcommand,Set"
     SetCommand="%function(self)
-    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_2)
+    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_2) or GAMESTATE:GetCurrentTrail(PLAYER_2)
+    local IsCourse = GAMESTATE:IsCourseMode()
     if not Selection then self:hidden(1) return end
     self:hidden(0)
     self:settext( Radar( Selection:GetRadarValues(),3 ) )
     local numb = tonumber( Radar( Selection:GetRadarValues(),3 ) );
     if numb == -01 then self:settext('???') end
         if numb == 0 then self:diffusecolor(.4,.4,.4,1)
-        elseif numb <= 24 then self:diffusecolor(0,1,0,1)
-        elseif numb <= 49 then self:diffusecolor(1,1,0,1)
-        elseif numb <= 89 then self:diffusecolor(1,.53,0,1)
-        elseif numb <= 139 then self:diffusecolor(1,0,0,1)
+        elseif numb <= (IsCourse and 48 or 24) then self:diffusecolor(0,1,0,1)
+        elseif numb <= (IsCourse and 98 or 49) then self:diffusecolor(1,1,0,1)
+        elseif numb <= (IsCourse and 198 or 89) then self:diffusecolor(1,.53,0,1)
+        elseif numb <= (IsCourse and 998 or 139) then self:diffusecolor(1,0,0,1)
         else self:diffusecolor(0,.75,1,1) 
         end
     end"
@@ -421,17 +429,18 @@
     CurrentStepsP2ChangedMessageCommand="playcommand,Set"
     CurrentTrailP2ChangedMessageCommand="playcommand,Set"
     SetCommand="%function(self)
-    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_2)
+    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_2) or GAMESTATE:GetCurrentTrail(PLAYER_2)
+    local IsCourse = GAMESTATE:IsCourseMode()
     if not Selection then self:hidden(1) return end
     self:hidden(0)
     self:settext( Radar( Selection:GetRadarValues(),4 ) )	
     local numb = tonumber( Radar( Selection:GetRadarValues(),4 ) );
     if numb == -01 then self:settext('???') end
         if numb == 0 then self:diffusecolor(.4,.4,.4,1)
-        elseif numb <= 14 then self:diffusecolor(0,1,0,1)
-        elseif numb <= 29 then self:diffusecolor(1,1,0,1)
-        elseif numb <= 39 then self:diffusecolor(1,.53,0,1)
-        elseif numb <= 51 then self:diffusecolor(1,0,0,1)
+        elseif numb <= (IsCourse and 13 or 14) then self:diffusecolor(0,1,0,1)
+        elseif numb <= (IsCourse and 33 or 29) then self:diffusecolor(1,1,0,1)
+        elseif numb <= (IsCourse and 98 or 39) then self:diffusecolor(1,.53,0,1)
+        elseif numb <= (IsCourse and 398 or 51) then self:diffusecolor(1,0,0,1)
         else self:diffusecolor(0,.75,1,1) 
         end
     end"
@@ -448,17 +457,18 @@
     CurrentStepsP2ChangedMessageCommand="playcommand,Set"
     CurrentTrailP2ChangedMessageCommand="playcommand,Set"
     SetCommand="%function(self)
-    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_2)
+    local Selection = GAMESTATE:GetCurrentSteps(PLAYER_2) or GAMESTATE:GetCurrentTrail(PLAYER_2)
+    local IsCourse = GAMESTATE:IsCourseMode()
     if not Selection then self:hidden(1) return end
     self:hidden(0)
     self:settext( Radar( Selection:GetRadarValues(),5 ) )
     local numb = tonumber( Radar( Selection:GetRadarValues(),5 ) );
     if numb == -01 then self:settext('???') end
         if numb == 0 then self:diffusecolor(.4,.4,.4,1)
-        elseif numb <= 9 then self:diffusecolor(0,1,0,1)
-        elseif numb <= 19 then self:diffusecolor(1,1,0,1)
-        elseif numb <= 29 then self:diffusecolor(1,.53,0,1)
-        elseif numb <= 39 then self:diffusecolor(1,0,0,1)
+        elseif numb <= (IsCourse and 18 or 9) then self:diffusecolor(0,1,0,1)
+        elseif numb <= (IsCourse and 38 or 19) then self:diffusecolor(1,1,0,1)
+        elseif numb <= (IsCourse and 78 or 29) then self:diffusecolor(1,.53,0,1)
+        elseif numb <= (IsCourse and 398 or 39) then self:diffusecolor(1,0,0,1)
         else self:diffusecolor(0,.75,1,1) 
         end
     end"
@@ -485,7 +495,7 @@
         OffCommand="accelerate,0.5;addy,300"
         CurrentSongChangedMessageCommand="queuecommand,Update"
         CurrentStepsP1ChangedMessageCommand="queuecommand,Update"
-        UpdateCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_1)) end" />
+        UpdateCommand="%function(self) self:settext(GetStepsDescriptionTextP1()) end" />
     <Layer
         Type="BitmapText"
         Font="_r bold shadow 18px"
@@ -495,7 +505,7 @@
         OffCommand="accelerate,0.5;addy,300"
         CurrentSongChangedMessageCommand="queuecommand,Update"
         CurrentStepsP2ChangedMessageCommand="queuecommand,Update"
-        UpdateCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" />-->
+        UpdateCommand="%function(self) self:settext(GetStepsDescriptionTextP2()) end" />-->
         
         
     <!--the gauges of the holds/jumps/mines/etc. in the pane display (P1)-->

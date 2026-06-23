@@ -24,12 +24,12 @@
 
 <Layer 
     File="../_pane elements/_length"
-    Condition="OPENITG and not GAMESTATE:IsCourseMode()"
+    Condition="OPENITG"
     InitCommand="diffusealpha,0;ztest,1;zoom,.6;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-34;vertalign,bottom"
     OnCommand="addx,500;decelerate,0.5;addx,-500"
     OffCommand="linear,0.2;diffusealpha,0"
     EnableSelectHelpMessageCommand="%function(self)
-        if not GAMESTATE:GetCurrentSong() then
+        if not IsSongOrCourse() then
             self:queuecommand('SelectMenuOffMessage')
         else
             self:stoptweening()
@@ -46,12 +46,12 @@
         self:linear(0.2)
         if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
             self:diffusealpha(0)
-        elseif GAMESTATE:GetCurrentSong() then
+        elseif IsSongOrCourse() then
             self:diffusealpha(1)
         end
     end"
     CurrentSongChangedMessageCommand="%function(self)
-        if not GAMESTATE:GetCurrentSong() then
+        if not IsSongOrCourse() then
             self:stoptweening()
             self:linear(0.2)
             self:diffusealpha(0)
@@ -65,7 +65,7 @@
 <Layer Type="BitmapText"
     Font="_v 26px bold diffuse"
     Text="HELLO"
-    Condition="OPENITG and not GAMESTATE:IsCourseMode()"
+    Condition="OPENITG"
     InitCommand="diffusealpha,0;shadowlength,0.5;horizalign,left;zoom,.6;x,SCREEN_CENTER_X-14;y,SCREEN_CENTER_Y-44"
     OnCommand="%function(self)
         self:addx(SCREEN_WIDTH)
@@ -76,9 +76,9 @@
             self:diffusealpha(1)
         end
     end"
-    CurrentSongChangedMessageCommand="playcommand,Set"
+    CurrentSongChangedMessageCommand="queuecommand,Set"
     SetCommand="%function(self)
-        local song = GAMESTATE:GetCurrentSong()
+        local song = IsSongOrCourse()
         if not song then self:hidden(1) return end
         self:settext( GetSongLength() )
         self:hidden(0)
@@ -106,12 +106,12 @@
  <!--reflection-->
 <Layer 
     File="../_pane elements/_length"
-    Condition="OPENITG and not GAMESTATE:IsCourseMode()"
+    Condition="OPENITG"
     InitCommand="diffusealpha,0;ztest,1;zoomx,.6;zoomy,-.6;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-34;vertalign,bottom"
     OnCommand="addx,500;decelerate,0.5;addx,-500"
     OffCommand="linear,0.2;diffusealpha,0"
     EnableSelectHelpMessageCommand="%function(self)
-        if not GAMESTATE:GetCurrentSong() then
+        if not IsSongOrCourse() then
             self:queuecommand('SelectMenuOffMessage')
         else
             self:stoptweening()
@@ -128,12 +128,12 @@
         self:linear(0.2)
         if PROFILEMAN:GetMachineProfile():GetSaved().ITG3HideSongDetails then
             self:diffusealpha(0)
-        elseif GAMESTATE:GetCurrentSong() then
+        elseif IsSongOrCourse() then
             self:diffusealpha(0.5)
         end
     end"
     CurrentSongChangedMessageCommand="%function(self)
-        if not GAMESTATE:GetCurrentSong() then
+        if not IsSongOrCourse() then
             self:stoptweening()
             self:linear(0.2)
             self:diffusealpha(0)
@@ -147,7 +147,7 @@
 <Layer Type="BitmapText"
     Font="_v 26px bold diffuse"
     Text="HELLO"
-    Condition="OPENITG and not GAMESTATE:IsCourseMode()"
+    Condition="OPENITG"
     InitCommand="diffusealpha,0;shadowlength,0;horizalign,left;zoomx,.6;zoomy,-.6;x,SCREEN_CENTER_X-14;y,SCREEN_CENTER_Y-23"
     OnCommand="%function(self)
         self:addx(SCREEN_WIDTH)
@@ -158,9 +158,9 @@
             self:diffusealpha(.25)
         end
     end"
-    CurrentSongChangedMessageCommand="playcommand,Set"
+    CurrentSongChangedMessageCommand="queuecommand,Set"
     SetCommand="%function(self)
-        local song = GAMESTATE:GetCurrentSong()
+        local song = IsSongOrCourse()
         if not song then self:hidden(1) return end
         self:settext( GetSongLength() )
         self:hidden(0)

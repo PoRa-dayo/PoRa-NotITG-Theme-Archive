@@ -61,7 +61,7 @@
 			                Type="BitmapText"
 			                File="_eurostile normal"
 			                Text="BPM"
-			                OnCommand="x,324;y,65;zoomx,0;zoomy,0;sleep,1.2;accelerate,0.3;zoomx,0.6;zoomy,0.6;sleep,1;decelerate,0.3;zoomx,0;zoomy,3"
+			                OnCommand="x,SCREEN_CENTER_X+4;y,SCREEN_CENTER_Y-175;zoomx,0;zoomy,0;sleep,1.2;accelerate,0.3;zoomx,0.6;zoomy,0.6;sleep,1;decelerate,0.3;zoomx,0;zoomy,3"
 		        />
             <Layer 
                     File="_uplight"
