@@ -1,0 +1,15 @@
+<ActorFrame><children>
+    <Layer
+		File="CJ126.mpg"
+        Condition="ITG3IsOriginal() or ITG3IsEncore()"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3"
+		Offcommand="sleep,1.9;linear,0.3;diffusealpha,0;"
+	/>
+    
+    <Layer
+		File="CJ126_Final"
+        Condition="ITG3IsFinal()"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3"
+		Offcommand="sleep,1.9;linear,0.3;diffusealpha,0;"
+	/>
+</children></ActorFrame>

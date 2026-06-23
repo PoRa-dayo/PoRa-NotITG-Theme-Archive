@@ -1,0 +1,234 @@
+function GetArcadeStartScreen()
+	-- If we havn't loaded the input driver, do that first; until this finishes, we have
+	-- no input or lights.
+	if GetInputType() == "" then return "ScreenArcadeStart" end
+
+	if not PROFILEMAN:GetMachineProfile():GetSaved().TimeIsSet then
+		return "ScreenSetTime"
+	end
+
+	return "ScreenCompany"
+end
+function ScreenTitleBranch()
+	ScreenSelectMusicTimer = GetMusicSelectTime();
+	ScreenPlayerOptionsTimer = GetOptionsSelectTime();
+	return TitleScreen();
+end
+
+function GetDiagnosticsScreen()
+	return "ScreenArcadeDiagnostics"
+end
+
+function GetUpdateScreen()
+	return "ScreenArcadePatch"
+end
+
+function EvaluationNextScreen()
+	Trace( "GetGameplayNextScreen: " )
+	Trace( " AllFailed = "..tostring(AllFailed()) )
+	Trace( " IsEventMode = "..tostring(GAMESTATE:IsEventMode()) )
+	Trace( " IsFinalStage = "..tostring(IsFinalStage()) )
+	if GAMESTATE:IsEventMode() then return NewSongScreen() end
+	if AllFailed() or IsFinalStage() or GAMESTATE:IsExtraStage() then return "ScreenNameEntryTraditional" end
+	return NewSongScreen();
+end
+
+function ScreenCleaning()
+	if GetCleanScreen() == true then
+		if Hour() >= GetCleanStartTime() and Hour() < GetCleanEndTime() then
+		return "ScreenNoise" end
+	end
+	return "ScreenCompany"
+end
+
+function GetGameplayNextScreen()
+	Trace( "GetGameplayNextScreen: " )
+	Trace( " AllFailed = "..tostring(AllFailed()) )
+	Trace( " IsEventMode = "..tostring(GAMESTATE:IsEventMode()) )
+	Trace( " IsSyncDataChanged = "..tostring(GAMESTATE:IsSyncDataChanged()) )
+
+	if GAMESTATE:IsSyncDataChanged() then 
+		return "ScreenSaveSync"
+	end
+		
+	-- Never show evaluation for training.
+	if GAMESTATE:GetCurrentSong():GetSongDir() == "Songs/In The Groove/Training1/" then 
+		if GAMESTATE:IsEventMode() then 
+			return NewSongScreen()
+		else
+			return EvaluationNextScreen()
+		end
+	elseif AllFailed() and not GAMESTATE:IsCourseMode() then 
+		if GAMESTATE:IsEventMode() then 
+			return SelectEvaluationScreen()
+		else
+			return SelectEvaluationScreen()
+		end
+	else 
+		return SelectEvaluationScreen() 
+	end
+	
+	return "GetGameplayNextScreen: YOU SHOULD NEVER GET HERE"
+end
+
+function SelectEvaluationScreen()
+	if IsNetConnected() then return "ScreenNetEvaluation" end
+	Mode = PlayModeName()
+    local suffix = ""
+    if ITG3IsEncore() then
+        suffix = "Encore"
+    elseif ITG3IsFinal() then
+        suffix = "Final"
+    end
+	if( Mode == "Regular" ) then return "ScreenEvaluationStage"..suffix end
+	if( Mode == "Nonstop" ) then return "ScreenEvaluationNonstop"..suffix end
+	if( Mode == "Oni" ) then return "ScreenEvaluationOni"..suffix end
+	if( Mode == "Endless" ) then return "ScreenEvaluationEndless"..suffix end
+	if( Mode == "Rave" ) then return "ScreenEvaluationRave"..suffix end
+	if( Mode == "Battle" ) then return "ScreenEvaluationBattle"..suffix end
+end
+
+function SelectEndingScreen()
+	if GAMESTATE:GetEnv("ForcePerfectEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER01 then
+	return "ScreenEndingPerfect"
+	elseif GAMESTATE:GetEnv("ForceGoodEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER04 then
+	return "ScreenEndingGood"
+	elseif GAMESTATE:GetEnv("ForceOkayEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER07 then
+	return "ScreenEndingOkay"
+	else
+	return "ScreenEndingNormal"
+	end
+end
+
+function ScreenAfterGameplayWorkout()
+	if GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP then return "ScreenEvaluationNonstopWorkout" end
+	if GAMESTATE:GetPlayMode() == PLAY_MODE_ENDLESS then return "ScreenEvaluationNonstopWorkout" end
+	return "ScreenEvaluationStageWorkout"
+end
+
+function GetScreenEvaluationNonstopWorkoutNextScreen()
+	if GAMESTATE:GetPlayMode() == PLAY_MODE_ENDLESS then return "ScreenWorkoutMenu" end
+	return "ScreenSelectMusicCourse"
+end
+
+function GetGameplayScreen()
+	local Song = GAMESTATE:GetCurrentSong();
+	if Song and Song:GetSongDir() == "Songs/In The Groove/Training1/" then
+		return "ScreenGameplayTraining"
+	end
+
+	return "ScreenGameplay"
+end
+
+--not used, using NewSongScreen now
+function SongSelectionScreen()
+	local s = "ScreenSelectMusic";
+	if GAMESTATE:IsCourseMode() then s = s.."Course" end
+	if IsNetSMOnline() then return SMOnlineScreen() end
+	if IsNetConnected() then return "ScreenNetSelectMusic" end
+	return s
+end
+
+function SMOnlineScreen()
+	if not IsSMOnlineLoggedIn(PLAYER_1) and GAMESTATE:IsPlayerEnabled(PLAYER_1) then return "ScreenSMOnlineLogin" end
+	if not IsSMOnlineLoggedIn(PLAYER_2) and GAMESTATE:IsPlayerEnabled(PLAYER_2) then return "ScreenSMOnlineLogin" end
+	return "ScreenNetRoom"
+end	
+
+
+
+function NewSongScreen()
+    local suffix = ''
+    if ITG3IsFinal() then suffix = 'Final' end
+	local s = "ScreenSelectMusic"..suffix;
+	if GAMESTATE:IsCourseMode() then s = "ScreenSelectMusicCourse"..suffix end
+	return s
+end
+
+
+function ScreenSelectMusicPrevScreen()
+	if GAMESTATE:GetEnv("Workout") then return "ScreenWorkoutMenu" end
+	return ScreenTitleBranch()
+end
+
+function TitleScreen()
+    if DayOfMonth() == 1 and MonthOfYear() == 4 and GAMESTATE:GetCoinMode() == COIN_MODE_HOME then return "ScreenTitleAltHome" end
+    if DayOfMonth() == 1 and MonthOfYear() == 4 and GAMESTATE:IsEventMode() then return "ScreenTitleAltEvent" end
+	if DayOfMonth() == 1 and MonthOfYear() == 4 then return "ScreenTitleAlt" end
+    local suffix = ''
+    if ITG3IsFinal() then suffix = 'Final' end
+    if GAMESTATE:GetCoinMode() == COIN_MODE_HOME then return "ScreenTitleMenu"..suffix end
+	if GAMESTATE:IsEventMode() then return "ScreenEventMenu"..suffix end
+    return "ScreenTitleJoin"..suffix
+end
+
+function OptionsMenuAvailable()
+	if GAMESTATE:GetPlayMode()==PLAY_MODE_ONI then return false end
+	return true
+end
+
+function GetSetTimeNextScreen()
+	-- This is called only when we move to the next screen, so we only mark the time set
+	-- when the screen is cleared.  That way, if the game is started by the operator and
+	-- powered down before setting the screen, we still go to ScreenSetTime on the next boot.
+	PROFILEMAN:GetMachineProfile():GetSaved().TimeIsSet = true
+	PROFILEMAN:SaveMachineProfile()
+
+	return "ScreenOptionsMenu"
+end
+
+function GetDiagnosticsScreen()
+	return "ScreenArcadeDiagnostics"
+end
+
+function GetUpdateScreen()
+	return "ScreenArcadePatch"
+end
+
+function GetRevision()
+	return "ITG3:RL1.1"
+end
+
+function GetLoadingDevice()
+	return "Loading Device Info ..."
+end
+
+function GetInputDeviceNamePad()
+	return "PIU I/O Control Device Manager [Input Control]"
+end
+
+function GetInputDeviceNameLights()
+	return "PIU I/O Control Device Manager [Lights Control]"
+end
+
+function GetManufacturerCompany()
+	return "Andamiro Corporation Inc."
+end
+
+function GetFirewireNumber()
+	return "Firmware Version #0368V785H547"
+end
+
+function GetPluggedPort()
+	return "Plugged In On USB Port <-- 1.4.4 -->"
+end
+
+function GetCheckingText()
+	return "Checking For Errors ..."
+end
+
+function GetCkeckTextDone()
+	return "No Errors!"
+end
+
+function GetWorkingText()
+	return "Status: Working at +2.8V ~ +5V OUT [Normal Parameter]"
+end
+
+
+--For branches that exist just for the sake of changing the music
+function BranchStyleSwitch(screen)
+    if ITG3IsEncore() then return screen..'Encore' end
+    if ITG3IsFinal() then return screen..'Final' end
+    return screen
+end

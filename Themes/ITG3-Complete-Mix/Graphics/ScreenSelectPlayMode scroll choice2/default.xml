@@ -1,0 +1,59 @@
+<ActorFrame
+   MadeChoiceP1MessageCommand="playcommand,GoOff"
+   MadeChoiceP2MessageCommand="playcommand,GoOff"
+   GoOffCommand="%function(self) 
+   if ITG3IsOriginal() then
+        self:linear(0.5);
+        local bHasFocus=math.abs(self:GetZoomZ()-1.1)<0.01;
+        if bHasFocus then
+            self:x(0);
+            self:y(0);
+            self:z(200);
+            self:diffuse(1,1,1,1);
+            self:zoom(1);
+            self:glowblink();
+            self:sleep(0.5);
+            self:linear(0.5);
+            self:zoom(0);
+        else
+            self:x(0);
+            self:y(0);
+            self:z(0);
+            self:zoom(0);
+        end
+        self:sleep(5)
+    end
+   end"
+   GainFocusCommand="zoom,1.0"
+   LoseFocusCommand="zoom,0.6"> <children>
+       <AutoActor 
+          File="title"
+          Condition="ITG3IsOriginal()"
+          InitCommand="x,-90;y,-70;zbuffer,1"
+       /> <ActorFrame
+          InitCommand="x,-224;y,-70;zoom,.7"
+          Condition="ITG3IsOriginal()"
+          GainFocusCommand="pulse;effectmagnitude,1.2,1,0;effectclock,bgm;effectperiod,.5;effectdelay,.5;effectoffset,0.6"
+          LoseFocusCommand="stopeffect"> <children>
+          <AutoActor 
+             File="fist"
+             InitCommand="zbuffer,1"/>
+       </children> </ActorFrame>
+       
+       
+       <AutoActor 
+        File="vid_encore"
+        Condition="not ITG3IsOriginal()"
+        InitCommand="x,-98;y,-117"
+        GainFocusCommand="finishtweening;zoom,0;bounceend,0.1;zoom,0.885"
+        LoseFocusCommand="bouncebegin,0.1;zoom,0"
+        OffCommand="finishtweening;accelerate,0.5;addx,-SCREEN_WIDTH"/>
+
+        <AutoActor 
+        File="../ScreenSelectPlayMode scroll choice1/frame"
+        Condition="not ITG3IsOriginal()"
+        InitCommand="x,-98;y,-80;"
+        GainFocusCommand="finishtweening;zoom,0;bounceend,0.1;zoom,1.1"
+        LoseFocusCommand="bouncebegin,0.1;zoom,0"
+        OffCommand="finishtweening;accelerate,0.5;addx,-SCREEN_WIDTH"/>
+</children> </ActorFrame>

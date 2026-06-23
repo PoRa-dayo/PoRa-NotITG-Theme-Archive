@@ -303,11 +303,13 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 <img width="200" alt="NotITG-v4 9 1_FneqyfElaC" src="https://github.com/user-attachments/assets/084a0e32-b386-401f-9402-956b66f62f1f" />
 <img width="200" alt="NotITG-v4 9 1_xTsWBdgqQz" src="https://github.com/user-attachments/assets/d0c7edf9-3166-4989-b3e5-4702a0bf9412" />
 
-# IN THE GROOVE 3
+# IN THE GROOVE 3: COMPLETE MIX
 A futuristic-looking theme made for In The Groove 3, the "supposedly" third installment in the In The Groove series by Roxor Games, hadn't it been for the Konami acquisition.
 
+This Complete Mix bundle allows you to switch between the interfaces of the original In The Groove 3, In The Groove 3: Encore, and the pre-release of In The Groove 3: Encore Final on the fly!
+
 ## Credits:
-Original theme by ITG3 Team, no longer maintained. Optimized for NotITG 4.9.1 by PoRa.
+Original theme by LightningXCE and the ITG3 Team, no longer maintained (except for ITG3 Encore Final which they're still working on and there hasn't even been an actual release yet). The ITG3 Final interface in this theme is based on the SM5 port by AJ Kelly and DarkBahamut162. Optimized for NotITG 4.9.1 by PoRa.
 
 ## Changelogs:
 -Now falls back on NotITG's fallback theme instead of ITG3's fallback3 theme, though there are barely any differences between the two anyway.\
@@ -329,8 +331,9 @@ Original theme by ITG3 Team, no longer maintained. Optimized for NotITG 4.9.1 by
 -Fixed the error that happens in the player options menu when the song's BPM is negative.\
 -Most of the gameplay UI is fused with ITG3 Encore's because the UI of the original ITG3 is very unfinished.\
 -Step information now has numbers below their icons that are permanently visible. Thanks Ace of Arrows for this idea.\
--Swapped the behavior of the stepartist, song length and step information popups by default. Now they'll normally show up and hide whenever you hold Select. There is now an option called Hide Song Details in Custom Song Options that swaps back this behavior.\
--ITG3 had special gameplay UI that gets triggered on certain special songs. Since this isn't ITG3, you can now switch between any UI you want in the Custom Song Options. Do note that the special songs (e.g. any VerTex song) will still force their own respective UI. It is now also enabled in Course Mode.\
+-Swapped the behavior of the stepartist, song length and step information popups by default. Now they'll normally show up and hide whenever you hold Select. There is now an option called Hide Song Details in Theme Options that swaps back this behavior.\
+-ITG3 had special gameplay UI that gets triggered on certain special songs. Since this isn't ITG3, you can now switch between any UI you want in Theme Options. Do note that the special songs (e.g. any VerTex song) will still force their own respective UI. It is now also enabled in Course Mode.\
+-Added the UI of ITG3 Encore and ITG3 Encore Final. You can switch between these interfaces via Theme Options.\
 -Altered some of the UI of Edit mode to fit NotITG's settings.\
 -Added offset plot and spellcard viewer in results screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.

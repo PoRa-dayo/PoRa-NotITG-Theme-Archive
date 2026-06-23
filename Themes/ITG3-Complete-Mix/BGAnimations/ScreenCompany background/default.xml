@@ -1,0 +1,32 @@
+<ActorFrame><children>
+    <Layer
+    File="CJ113.mpg"
+    Condition="ITG3IsOriginal()"
+    Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+    /> 
+    <Layer
+    File="roxor logo.mpg"
+    Condition="ITG3IsOriginal()"
+    Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3;additiveblend,1;sleep,6;" />
+
+
+
+    <Layer
+    File="roxor logo_encore.avi"
+    Condition="ITG3IsEncore()"
+    Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3" />
+    
+    
+    <Layer
+    File="bga"
+    Condition="ITG3IsFinal()"
+    Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3" />
+    <Layer
+    File="particle"
+    Condition="ITG3IsFinal()"
+    Command="blend,add;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3" />
+    <Layer
+    File="roxor logo_final.png"
+    Condition="ITG3IsFinal()"
+    Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-80;zoomtowidth,SCREEN_WIDTH/5*4;zoomtoheight,SCREEN_HEIGHT/2" />
+</children></ActorFrame>
