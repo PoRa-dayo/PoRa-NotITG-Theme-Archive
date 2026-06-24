@@ -153,6 +153,14 @@ OnCommand="%function(self)
     />
     
     
+    <Layer
+        File="add"
+    OnCommand="sleep,8;queuecommand,Off"
+	OffCommand="accelerate,0.3;addx,100"
+
+    /> 
+    
+    
     
 <!-- initial overlay quad (kung)-->	
 <Layer

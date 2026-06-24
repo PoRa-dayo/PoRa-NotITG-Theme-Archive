@@ -1,0 +1,11 @@
+<ActorFrame> <children>
+        
+    <Layer
+        File="ScreenTitleMenu background"
+        Condition="not ITG3IsFinal()"
+    />
+    <Layer
+        File="ScreenTitleJoinFinal background"
+        Condition="ITG3IsFinal()"
+    />
+</children></ActorFrame>

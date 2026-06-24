@@ -31,13 +31,13 @@ OnCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffuseal
 /> 
 
 <Layer
-File="_stage text"
+File="@ITG3IsFinal() and '_stage text_final' or '_stage text'"
 			InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+75;zoom,.6"
 			OnCommand="diffusealpha,0;y,SCREEN_CENTER_Y-75;addy,-30;sleep,0.3;linear,.3;diffusealpha,1;addy,30"
 />
 			
 <Layer
-File="_cleared bottom"
+File="@ITG3IsFinal() and '_cleared bottom_final' or '_cleared bottom'"
 InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+15;zoom,.9"
 OnCommand="diffusealpha,0;addx,100;sleep,0.6;decelerate,0.3;diffusealpha,1;addx,-100;sleep,0.5"
 
@@ -45,7 +45,7 @@ OnCommand="diffusealpha,0;addx,100;sleep,0.6;decelerate,0.3;diffusealpha,1;addx,
 
 
 		<Layer
-				File="_cleared top"
+				File="@ITG3IsFinal() and '_cleared top_final' or '_cleared top'"
 				InitCommand="additiveblend,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+10;zoom,.9"
 			    OnCommand="diffusealpha,0;addx,-100;sleep,0.6;decelerate,0.3;diffusealpha,1;addx,100;sleep,0.5"
 />

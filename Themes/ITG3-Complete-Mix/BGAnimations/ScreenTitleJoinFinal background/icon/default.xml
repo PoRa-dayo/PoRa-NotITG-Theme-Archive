@@ -57,43 +57,43 @@
 	<Quad
 		Condition="LifeDifficultylevel1()"
 		InitCommand="x,-5*3;vertalign,bottom"
-		OnCommand="zoomtowidth,4;zoomtoheight,3;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+		OnCommand="zoomtowidth,4;zoomtoheight,3;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#6fff00"
 	/>
 	<!-- 2 -->
 	<Quad
 		Condition="LifeDifficultylevel2()"
 		InitCommand="x,-5*2;vertalign,bottom"
-		OnCommand="zoomtowidth,4;zoomtoheight,6;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+		OnCommand="zoomtowidth,4;zoomtoheight,6;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#6fff00"
 	/>
 	<!-- 3 -->
 	<Quad
 		Condition="LifeDifficultylevel3()"
 		InitCommand="x,-5*1;vertalign,bottom"
-		OnCommand="zoomtowidth,4;zoomtoheight,9;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+		OnCommand="zoomtowidth,4;zoomtoheight,9;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#fff700"
 	/>
 	<!-- 4 -->
 	<Quad
 		Condition="LifeDifficultylevel4()"
 		InitCommand="x,0;vertalign,bottom"
-		OnCommand="zoomtowidth,4;zoomtoheight,12;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+		OnCommand="zoomtowidth,4;zoomtoheight,12;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#fff700"
 	/>
 	<!-- 5 -->
 	<Quad
 		Condition="LifeDifficultylevel5()"		
 		InitCommand="x,5*1;vertalign,bottom"
-		OnCommand="zoomtowidth,4;zoomtoheight,15;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+		OnCommand="zoomtowidth,4;zoomtoheight,15;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#fff700"
 	/>
 	<!-- 6 -->
 	<Quad
 		Condition="LifeDifficultylevel6()"			
 		InitCommand="x,5*2;vertalign,bottom"
-		OnCommand="zoomtowidth,4;zoomtoheight,18;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+		OnCommand="zoomtowidth,4;zoomtoheight,18;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#ff3300"
 	/>
 	<!-- 7 -->
 	<Quad
 		Condition="LifeDifficultylevel7()"	
 		InitCommand="x,5*3;vertalign,bottom"
-		OnCommand="zoomtowidth,4;zoomtoheight,21;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#000000"
+		OnCommand="zoomtowidth,4;zoomtoheight,21;diffusealpha,0;sleep,.7;linear,.4;diffusealpha,1;diffuse,#ff3300"
 	/>
 	
 	<Layer

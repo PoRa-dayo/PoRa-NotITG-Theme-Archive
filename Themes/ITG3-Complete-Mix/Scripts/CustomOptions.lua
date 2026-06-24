@@ -554,19 +554,20 @@ function Get2PlayerJoinMessage()
 end
 
 function OptionsListToggleRow()
-	local Names = { "Disabled", "Enabled" }
+	--local Names = { "Disabled", "Enabled" }
+    local Names = { "Unsupported" }
 
 	local type = PROFILEMAN:GetMachineProfile():GetSaved().OptionsListToggle
 
 	-- called on construction, must set exactly one list member true
 	local function Load(self, list, pn)
 		-- short-circuit to 'disabled' if no option is set
-		if not type then list[1] = true return end
+		--if not type then list[1] = true return end
 
 		-- do any of the options match the given type?
-		for i=1,2 do
-			if type == string.lower(Names[i]) then list[i] = true return end
-		end
+		--for i=1,2 do
+			--if type == string.lower(Names[i]) then list[i] = true return end
+		--end
 
 		-- none of the above worked. fallback on standard
 		list[1] = true
@@ -574,14 +575,14 @@ function OptionsListToggleRow()
 
 	-- called as the screen destructs, to save the selected option in list
 	local function Save(self, list, pn)
-		for i=1,2 do
-			if list[i] then
-				PROFILEMAN:GetMachineProfile():GetSaved().OptionsListToggle = string.lower(Names[i])
+		--for i=1,2 do
+			--if list[i] then
+				--PROFILEMAN:GetMachineProfile():GetSaved().OptionsListToggle = string.lower(Names[i])
 				--you only need a couple of these on the same screen
 				--PROFILEMAN:SaveMachineProfile()
-				return
-			end
-		end
+				--return
+			--end
+		--end
 	end
 
 	
@@ -731,7 +732,7 @@ function GeneralUIOption()
             end
         end
         if (cur or 1) ~= PROFILEMAN:GetMachineProfile():GetSaved().ITG3GeneralUI then
-            GAMESTATE:DelayedGameCommand('reloadtheme')
+            --GAMESTATE:DelayedGameCommand('reloadtheme')
         end
         --you only need a couple of these each options screen
         --PROFILEMAN:SaveMachineProfile()

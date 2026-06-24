@@ -6,12 +6,17 @@
 		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3"
 	/>	
     <Layer
-		File="ScreenSelectMusic background/CJ126_encore.mpg"
+		File="ScreenSelectMusic background/CJ126_encore"
         Condition="ITG3IsEncore()"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3"
+	/>
+    <Layer
+		File="ScreenSelectMusic background/CJ126_Eval_Final"
+        Condition="ITG3IsFinal()"
 		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3"
 	/>	
     <Layer
-        Condition="ITG3IsEncore() and (not GAMESTATE:IsCourseMode() and GAMESTATE:GetCurrentSong():GetBannerPath())"
+        Condition="(not ITG3IsOriginal()) and (not GAMESTATE:IsCourseMode() and GAMESTATE:GetCurrentSong():GetBannerPath())"
         File="songbackground"
         InitCommand="Additiveblend,1"
         OnCommand="fadeleft,.2;faderight,.2;diffuseshift;effectcolor1,#FFFFFF30;EffectColor2,#FFFFFF50;effectperiod,12;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/16*10;"

@@ -28,7 +28,7 @@ OffCommand="stoptweening;linear,0.2;diffusealpha,0"
 />
 <Layer
 Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
-File="modsframe"
+File="@ITG3IsFinal() and 'final_modsframe' or 'modsframe'"
 InitCommand="shadowlength,2"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-34;diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
 OffCommand="stoptweening;linear,0.2;diffusealpha,0"
@@ -36,7 +36,7 @@ OffCommand="stoptweening;linear,0.2;diffusealpha,0"
 
 <Layer
 Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
-File="modsframe"
+File="@ITG3IsFinal() and 'final_modsframe' or 'modsframe'"
 InitCommand="shadowlength,2"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-34;diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
 OffCommand="stoptweening;linear,0.2;diffusealpha,0"
@@ -49,7 +49,7 @@ OffCommand="stoptweening;linear,0.2;diffusealpha,0"
 
 <Layer
 Condition="GAMESTATE:GetPlayMode() == PLAY_MODE_REGULAR or GAMESTATE:GetPlayMode() == PLAY_MODE_NONSTOP or GAMESTATE:GetPlayMode() == PLAY_MODE_ONI"
-File="trapezoid"
+File="@ITG3IsFinal() and 'final_trapezoid' or 'trapezoid'"
 InitCommand="shadowlength,2"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-109;diffusealpha,0;sleep,3;linear,0.8;diffusealpha,1"
 OffCommand="stoptweening;linear,0.2;diffusealpha,0"

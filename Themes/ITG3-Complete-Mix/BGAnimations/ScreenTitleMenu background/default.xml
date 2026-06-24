@@ -166,6 +166,7 @@ OnCommand="%function(self)
     <Layer
         File="add_encore"
         Condition="ITG3IsEncore()"
+        OnCommand="sleep,8;queuecommand,Off"
         OffCommand="accelerate,0.3;addx,100"
     /> 
     <!--Encore exclusives END-->
@@ -255,6 +256,7 @@ OnCommand="%function(self)
 <Layer
         File="add"
         Condition="ITG3IsOriginal()"
+    OnCommand="sleep,8;queuecommand,Off"
 	OffCommand="accelerate,0.3;addx,100"
 
     /> 

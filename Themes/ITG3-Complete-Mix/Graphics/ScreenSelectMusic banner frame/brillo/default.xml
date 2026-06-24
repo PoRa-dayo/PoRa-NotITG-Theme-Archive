@@ -1,0 +1,16 @@
+<ActorFrame>
+		<children>
+
+<Layer
+		File="flare"
+		InitCommand="additiveblend,1"
+		OnCommand="playcommand,Refresh"
+		RefreshCommand="%function(self)
+				self:stoptweening(5); self:zoom(1); self:diffusealpha(1); self:sleep(0.1); 
+				self: accelerate(0.2); self:zoom(1.2) self:diffusealpha(0); end" 
+		CurrentSongChangedMessageCommand="PlayCommand,Refresh"
+		OffCommand=""/> 
+		
+		
+		</children>
+</ActorFrame>

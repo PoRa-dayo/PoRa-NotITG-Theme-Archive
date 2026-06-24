@@ -1,0 +1,3 @@
+[Sprite]
+Texture=MWI song
+InitCommand=%function(self) self:animate(0) if ITG3IsFinal() then self:setstate(1) else self:setstate(0) end end
