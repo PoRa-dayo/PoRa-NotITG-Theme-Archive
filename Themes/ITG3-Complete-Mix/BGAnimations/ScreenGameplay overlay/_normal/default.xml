@@ -195,7 +195,7 @@
 		>
 <children>
 <Actor
-File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons'..(ITG3IsEncore() and '_encore' or '')..(ITG3IsFinal() and '_final' or ''))"
 OnCommand="animate,0;playcommand,Update"
 CurrentStepsP1ChangedMessageCommand="playcommand,Update"
 CurrentStepsP2ChangedMessageCommand="playcommand,Update"
@@ -220,7 +220,7 @@ UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYE
 		>
 <children>
 <Actor
-File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons'..(ITG3IsEncore() and '_encore' or '')..(ITG3IsFinal() and '_final' or ''))"
 OnCommand="zoomx,-1;animate,0;playcommand,Update"
 CurrentStepsP1ChangedMessageCommand="playcommand,Update"
 CurrentStepsP2ChangedMessageCommand="playcommand,Update"

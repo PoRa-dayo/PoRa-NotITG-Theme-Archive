@@ -1,0 +1,3 @@
+[Sprite]
+Texture=Comb_mis
+InitCommand=%function(self) self:animate(0) if ITG3IsOriginal() then self:setstate(0) else self:setstate(1) end end

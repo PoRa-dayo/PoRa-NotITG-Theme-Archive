@@ -6,7 +6,7 @@
     OnCommand="x,SCREEN_CENTER_X-240+EvalX();y,SCREEN_CENTER_Y+10;difficultyoffset;addx,-SCREEN_WIDTH/1;sleep,3;decelerate,0.3;addx,+SCREEN_WIDTH/1"
     OffCommand="accelerate,0.3;addx,-SCREEN_WIDTH/1"> <children>
         <Actor
-        File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+        File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons'..(ITG3IsEncore() and '_encore' or '')..(ITG3IsFinal() and '_final' or ''))"
         OnCommand="zoom,.8;animate,0;playcommand,Update"
         UpdateCommand="%function(self,parent) SetDifficultyFrameFromGameState(self, PLAYER_1) end"
         />
@@ -32,7 +32,7 @@
     OnCommand="x,SCREEN_CENTER_X+238+EvalX();y,SCREEN_CENTER_Y+10;difficultyoffset;addx,+SCREEN_WIDTH/1;sleep,3;decelerate,0.3;addx,-SCREEN_WIDTH/1"
     OffCommand="accelerate,0.3;addx,+SCREEN_WIDTH/1"> <children>
         <Actor
-        File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+        File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons'..(ITG3IsEncore() and '_encore' or '')..(ITG3IsFinal() and '_final' or ''))"
         OnCommand="zoomx,-0.8;zoomy,0.8;animate,0;playcommand,Update"
         UpdateCommand="%function(self,parent) SetDifficultyFrameFromGameState(self, PLAYER_2) end"
         />
@@ -62,7 +62,7 @@
     OnCommand="x,SCREEN_CENTER_X-225+EvalX();y,SCREEN_CENTER_Y-146;difficultyoffset;addx,-SCREEN_WIDTH/1;sleep,3;decelerate,0.3;addx,+SCREEN_WIDTH/1"
     OffCommand="accelerate,0.3;addx,-SCREEN_WIDTH/1"> <children>
         <Actor
-        File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+        File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons'..(ITG3IsEncore() and '_encore' or '')..(ITG3IsFinal() and '_final' or ''))"
         OnCommand="animate,0;playcommand,Update"
         UpdateCommand="%function(self,parent) SetDifficultyFrameFromGameState(self, PLAYER_1) end"
         />
@@ -88,7 +88,7 @@
     OnCommand="x,SCREEN_CENTER_X+223+EvalX();y,SCREEN_CENTER_Y-146;difficultyoffset;addx,+SCREEN_WIDTH/1;sleep,3;decelerate,0.3;addx,-SCREEN_WIDTH/1"
     OffCommand="accelerate,0.3;addx,+SCREEN_WIDTH/1"> <children>
         <Actor
-        File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
+        File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons'..(ITG3IsEncore() and '_encore' or '')..(ITG3IsFinal() and '_final' or ''))"
         OnCommand="zoomx,-1;animate,0;playcommand,Update"
         UpdateCommand="%function(self,parent) SetDifficultyFrameFromGameState(self, PLAYER_2) end"
         />

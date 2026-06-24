@@ -15,7 +15,7 @@ OnCommand="diffusealpha,0;addy,-30;sleep,0.1;linear,.3;diffusealpha,1;addy,30"
 
 
 <Layer
-File="@ITG3IsOriginal() and '_failedOG' or '_failed text"
+File="@ITG3IsOriginal() and '_failedOG' or '_failed text'"
 
 InitCommand="x,SCREEN_CENTER_X+2;y,SCREEN_CENTER_Y+30"
 OnCommand="diffusealpha,0;addx,-500;sleep,0.4;decelerate,.7;addx,500;diffusealpha,1"

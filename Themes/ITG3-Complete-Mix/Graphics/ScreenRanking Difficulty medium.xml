@@ -7,6 +7,14 @@
 			OnCommand="diffusealpha,0;sleep,0.1;linear,0.3;diffusealpha,1" 
 			OffCommand="sleep,0.0;linear,0.3;diffusealpha,0" 
 		/>
+        <Layer 
+			Type="AutoActor" 
+			File="_ScreenRanking difficulty icon glow" 
+            Condition="not ITG3IsOriginal()"
+			InitCommand="pause;setstate,DIFFICULTY_MEDIUM;additiveblend,1;diffuseshift" 
+			OnCommand="diffusealpha,0;sleep,0.1;linear,0.3;diffusealpha,1" 
+			OffCommand="sleep,0.0;linear,0.3;diffusealpha,0" 
+		/>
 		<Layer 
 			Type="BitmapText" 
 			Text="@DifficultyToThemedString(DIFFICULTY_MEDIUM)" 
