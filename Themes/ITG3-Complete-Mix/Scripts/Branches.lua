@@ -139,6 +139,7 @@ end
 
 function NewSongScreen()
     local suffix = ''
+    if ITG3IsEncore() then suffix = 'Encore' end
     if ITG3IsFinal() then suffix = 'Final' end
 	local s = "ScreenSelectMusic"..suffix;
 	if GAMESTATE:IsCourseMode() then s = "ScreenSelectMusicCourse"..suffix end

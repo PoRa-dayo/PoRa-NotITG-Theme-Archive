@@ -148,7 +148,7 @@ OnCommand="%function(self)
     /> 
     <Layer
         File="icon"
-        OnCommand="addx,60;addy,-5"
+        OnCommand="addy,-5"
         OffCommand="accelerate,0.5;addy,-500"
     />
     

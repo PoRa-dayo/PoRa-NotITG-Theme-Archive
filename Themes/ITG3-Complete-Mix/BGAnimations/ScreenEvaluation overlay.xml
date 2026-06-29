@@ -166,7 +166,16 @@
 
     -->
      <!-- NotITG Offset Plot -->
-    <Layer File="OffsetPlot" OffCommand="%function(self)
+    <Layer File="OffsetPlot" InitCommand="%function(self)
+        if PlayModeName() == 'Rave' or PlayModeName() == 'Endless' then
+            self:addy(20)
+            BX_CurCustomLife = {0.5, 0.5}
+			BX_DispCustomLife = {0.5, 0.5}
+			BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
+			BX_DisplayedGraph = 'Life'
+        end
+    end"
+    OffCommand="%function(self)
         BX_SaltyResets = 0
         BX_SaltyResetPos = {}
         self:accelerate(0.5)

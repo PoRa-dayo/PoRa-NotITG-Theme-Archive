@@ -119,7 +119,7 @@ function OptionNextScreen()
 		Name = "NextScreen",
 		LayoutType = "ShowAllInRow",
 		SelectType = "SelectMultiple",
-		OneChoiceForAllPlayers = false,
+		OneChoiceForAllPlayers = true,
 		ExportOnChange = false,
 		Choices = { 'Music Selection', 'More Options' },
 		
@@ -127,10 +127,12 @@ function OptionNextScreen()
 		end,
 		
 		SaveSelections = function(self, list, pn)
-			if ( ( list[1] or list[2] ) and ScreenPlayerOptionsTimer < 5 ) then
-			SCREENMAN:SystemMessage('Not Enough Time Left!')
-			elseif list[1] then SCREENMAN:SetNewScreen('ScreenSelectMusic2')
-			elseif list[2] then GetMoreOptionsScreen()
+			if ( PREFSMAN:GetPreference('MenuTimer') and ( list[1] or list[2] ) and ScreenPlayerOptionsTimer < 5 ) then
+                SCREENMAN:SystemMessage('Not Enough Time Left!')
+			elseif list[1] then
+                SCREENMAN:SetNewScreen('ScreenSelectMusic2')
+			elseif list[2] then
+                GetMoreOptionsScreen()
 			end
 		end
 	}
@@ -142,8 +144,9 @@ function GetMoreOptionsScreen()
 	--Give players a bit of buffer when switching between More Options.
 	ScreenPlayerOptionsTimer = (ScreenPlayerOptionsTimer + 5)
 	if ModsScreen == 'PlayerOptions' then
-	return SCREENMAN:SetNewScreen('ScreenSongOptions') else
-	return SCREENMAN:SetNewScreen('ScreenPlayerOptions')
+        return SCREENMAN:SetNewScreen('ScreenSongOptions')
+    else
+        return SCREENMAN:SetNewScreen('ScreenPlayerOptions')
 	end
 end
 

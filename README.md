@@ -328,6 +328,7 @@ Original theme by LightningXCE and the ITG3 Team, no longer maintained (except f
 -F grades are shown in the song selection screen.\
 -Added a length indicator in Marathon mode.\
 -Added modernized noteskin, judgment font, and hold judgment customization.\
+-Timer-related restrictions are now disabled when Menu Timer is Off.\
 -Fixed the error that happens in the player options menu when the song's BPM is negative.\
 -Most of the gameplay UI is fused with ITG3 Encore's because the UI of the original ITG3 is very unfinished.\
 -Step information now has numbers below their icons that are permanently visible. Thanks Ace of Arrows for this idea.\
