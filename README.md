@@ -339,6 +339,12 @@ Original theme by LightningXCE and the ITG3 Team, no longer maintained (except f
 -Added offset plot and spellcard viewer in results screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
+<img width="200" alt="NotITG-v4 9 1_CBnvbNxFh3" src="https://github.com/user-attachments/assets/8e89f0b1-f10f-49b1-8d23-2bba332ac7a8" />
+<img width="200" alt="NotITG-v4 9 1_OvgLJY1wGj" src="https://github.com/user-attachments/assets/56a20cf9-d4a3-4d90-890d-7dab2044ab69" />
+<img width="200" alt="NotITG-v4 9 1_ZaDX4Z6FzO" src="https://github.com/user-attachments/assets/c3fc6cb3-0ad1-4f20-a12c-e841e0ca1af3" />
+<img width="200" alt="NotITG-v4 9 1_3k7t9OViez" src="https://github.com/user-attachments/assets/caebef17-fdb5-4918-bddc-1c7b0768e2cb" />
+<img width="200" alt="NotITG-v4 9 1_4SbJSLvXq1" src="https://github.com/user-attachments/assets/04909583-8d27-4c31-95d5-f4f991e25ab5" />
+
 
 # BEATMANIA IIDX 14: GOLD
 ***NOTE: This theme requires you to have the theme OITGThemerFallback for it to work!!! And just like any other fallback theme, do not actually use OITGThemerFallback.***
