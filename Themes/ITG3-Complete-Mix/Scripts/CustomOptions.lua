@@ -127,7 +127,8 @@ function CleanScreen()
 		for i=1,2 do
 			if list[i] then
 				PROFILEMAN:GetMachineProfile():GetSaved().CleanScreen = string.lower(Names[i])
-				PROFILEMAN:SaveMachineProfile()
+				--you only need a couple of these each options screen
+                --PROFILEMAN:SaveMachineProfile()
 				return
 			end
 		end
@@ -175,7 +176,8 @@ function CleanStartTime()
 		for i=1,47 do
 			if list[i] then
 				PROFILEMAN:GetMachineProfile():GetSaved().CleanStartTime = Values[i]
-				PROFILEMAN:SaveMachineProfile()
+				--you only need a couple of these each options screen
+                --PROFILEMAN:SaveMachineProfile()
 				return
 			end
 		end
@@ -269,7 +271,8 @@ function MusicSelectTime()
 		for i=1,13 do
 			if list[i] then
 				PROFILEMAN:GetMachineProfile():GetSaved().MusicSelectTime = string.lower(Names[i])
-				PROFILEMAN:SaveMachineProfile()
+				--you only need a couple of these each options screen
+                --PROFILEMAN:SaveMachineProfile()
 				return
 			end
 		end
@@ -315,7 +318,8 @@ function OptionsSelectTime()
 		for i=1,13 do
 			if list[i] then
 				PROFILEMAN:GetMachineProfile():GetSaved().OptionsSelectTime = string.lower(Names[i])
-				PROFILEMAN:SaveMachineProfile()
+				--you only need a couple of these each options screen
+                --PROFILEMAN:SaveMachineProfile()
 				return
 			end
 		end
@@ -499,7 +503,8 @@ function FailTypeOptions()
 		for i=1,3 do
 			if list[i] then
 				PROFILEMAN:GetMachineProfile():GetSaved().FailType = Names[i]
-				PROFILEMAN:SaveMachineProfile()
+				--you only need a couple of these each options screen
+                --PROFILEMAN:SaveMachineProfile()
 				return
 			end
 		end

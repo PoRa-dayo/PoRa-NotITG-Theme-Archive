@@ -56,7 +56,7 @@ function ThemeSwitcher( next_screen )
 	local amt = table.getn(Names)
 
 	local function Load(self, list, pn)
-		local theme = THEME:GetCurThemeName()
+		local theme = string.lower(THEME:GetCurThemeName())
 		for i=1,amt do
 			if string.lower(Names[i]) == theme then list[i] = true return end
 		end
