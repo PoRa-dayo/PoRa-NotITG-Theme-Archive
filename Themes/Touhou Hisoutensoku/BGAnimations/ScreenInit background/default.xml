@@ -1,0 +1,14 @@
+<ActorFrame>
+	<children>
+    <Layer
+       File="../_Intro/0000.png"
+       InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_CENTER_Y"
+       OnCommand="diffusealpha,0;linear,1;diffusealpha,1;sleep,3;linear,1;diffusealpha,0"
+    />
+    <Layer
+       Text="INSERT COIN(S)"
+       Condition="GAMESTATE:GetCoinMode() == 1 and GAMESTATE:GetCoinsNeededToJoin()>0"
+       InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_BOTTOM-30;diffuseblink;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0"
+    />
+	</children>
+</ActorFrame>

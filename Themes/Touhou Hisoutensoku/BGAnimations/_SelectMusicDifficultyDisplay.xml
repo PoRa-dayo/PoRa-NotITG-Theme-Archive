@@ -1,0 +1,160 @@
+<ActorFrame
+    OnCommand="%function(self) self:sleep(0.1) MESSAGEMAN:Broadcast('DiffUpdate') end;"
+	CurrentSongChangedMessageCommand="%function(self) MESSAGEMAN:Broadcast('DiffUpdate') MESSAGEMAN:Broadcast('TextUpdate') end"
+	CurrentStepsP1ChangedMessageCommand="%function(self) MESSAGEMAN:Broadcast('TextUpdate') end"
+	CurrentStepsP2ChangedMessageCommand="%function(self) MESSAGEMAN:Broadcast('TextUpdate') end"
+> <children>
+    <Layer
+       Type="Quad"
+       InitCommand="hidden,1"
+       DiffUpdateMessageCommand="%function(self)
+            local songg = GAMESTATE:GetCurrentSong()
+            if songg then
+                local StepsList = songg:GetStepsByStepsType(GAMESTATE:PlayerUsingBothSides() and 1 or 0)
+                local DiffList = {}
+                for index, steps in ipairs(StepsList) do
+                    DiffList[steps:GetDifficulty()] = steps:GetMeter()
+                end
+                ToHoSokuGlob.CurDiffList = DiffList
+            else
+                ToHoSokuGlob.CurDiffList = {}
+            end
+       end"
+    />
+    <Layer
+       Text=""
+       Font="_aldine721 bt-black 20px"
+       InitCommand="x,-137;y,-75;zoom,0.5;shadowlength,0;horizalign,left;maxwidth,370"
+       TextUpdateMessageCommand="%function(self)
+            local songg = GAMESTATE:GetCurrentSong()
+            if songg then
+                self:settext(GetStepsDescriptionText(PLAYER_1))
+            else
+                self:settext('')
+            end
+       end"
+    />
+    <Layer
+       Text=""
+       Font="_aldine721 bt-black 20px"
+       InitCommand="x,-137;y,-65;zoom,0.7;shadowlength,0;horizalign,left"
+       TextUpdateMessageCommand="%function(self)
+            local stepp = GAMESTATE:GetCurrentSteps(PLAYER_1)
+            if stepp then
+                self:settext(DifficultyToThemedString(stepp:GetDifficulty())..' '..stepp:GetMeter())
+            else
+                self:settext('')
+            end
+       end"
+    />
+    <Layer
+       Text=""
+       Font="_aldine721 bt-black 20px"
+       InitCommand="x,-137;y,-28;zoom,0.5;shadowlength,0;horizalign,left;maxwidth,370"
+       TextUpdateMessageCommand="%function(self)
+            local songg = GAMESTATE:GetCurrentSong()
+            if songg then
+                self:settext(GetStepsDescriptionText(PLAYER_2))
+            else
+                self:settext('')
+            end
+       end"
+    />
+    <Layer
+       Text=""
+       Font="_aldine721 bt-black 20px"
+       InitCommand="x,-137;y,-18;zoom,0.7;shadowlength,0;horizalign,left"
+       TextUpdateMessageCommand="%function(self)
+            local stepp = GAMESTATE:GetCurrentSteps(PLAYER_2)
+            if stepp then
+                self:settext(DifficultyToThemedString(stepp:GetDifficulty())..' '..stepp:GetMeter())
+            else
+                self:settext('')
+            end
+       end"
+    />
+    <Layer
+       Text=""
+       Font="../Numbers/_futurist normal"
+       InitCommand="x,-143+32*0.40;y,-45;shadowlength,1;zoomx,0.8;maxwidth,50"
+       DiffUpdateMessageCommand="%function(self)
+            local TheList = ToHoSokuGlob.CurDiffList
+            if TheList and TheList[0] then
+                self:settext(TheList[0])
+                self:diffuse(0.04,1,0.06,1)
+            else
+                self:settext('')
+            end
+       end"
+    />
+    <Layer
+       Text=""
+       Font="../Numbers/_futurist normal"
+       InitCommand="x,-143+32*1.46;y,-45;shadowlength,1;zoomx,0.8;maxwidth,50"
+       DiffUpdateMessageCommand="%function(self)
+            local TheList = ToHoSokuGlob.CurDiffList
+            if TheList and TheList[1] then
+                self:settext(TheList[1])
+                self:diffuse(0.09,0.69,0.95,1)
+            else
+                self:settext('')
+            end
+       end"
+    />
+    <Layer
+       Text=""
+       Font="../Numbers/_futurist normal"
+       InitCommand="x,-143+32*2.52;y,-45;shadowlength,1;zoomx,0.8;maxwidth,50"
+       DiffUpdateMessageCommand="%function(self)
+            local TheList = ToHoSokuGlob.CurDiffList
+            if TheList and TheList[2] then
+                self:settext(TheList[2])
+                self:diffuse(0.95,0.95,0.07,1)
+            else
+                self:settext('')
+            end
+       end"
+    />
+    <Layer
+       Text=""
+       Font="../Numbers/_futurist normal"
+       InitCommand="x,-143+32*3.58;y,-45;shadowlength,1;zoomx,0.8;maxwidth,50"
+       DiffUpdateMessageCommand="%function(self)
+            local TheList = ToHoSokuGlob.CurDiffList
+            if TheList and TheList[3] then
+                self:settext(TheList[3])
+                self:diffuse(0.82,0.36,0.96,1)
+            else
+                self:settext('')
+            end
+       end"
+    />
+    <Layer
+       Text=""
+       Font="../Numbers/_futurist normal"
+       InitCommand="x,-143+32*4.64;y,-45;shadowlength,1;zoomx,0.8;maxwidth,50"
+       DiffUpdateMessageCommand="%function(self)
+            local TheList = ToHoSokuGlob.CurDiffList
+            if TheList and TheList[4] then
+                self:settext(TheList[4])
+                self:diffuse(0.92,0.21,0.28,1)
+            else
+                self:settext('')
+            end
+       end"
+    />
+    <Layer
+       Text=""
+       Font="../Numbers/_futurist normal"
+       InitCommand="x,-143+32*5.70;y,-45;shadowlength,1;zoomx,0.8;maxwidth,50"
+       DiffUpdateMessageCommand="%function(self)
+            local TheList = ToHoSokuGlob.CurDiffList
+            if TheList and TheList[5] then
+                self:settext(TheList[5])
+                self:diffuse(0.97,0.97,0.97,1)
+            else
+                self:settext('')
+            end
+       end"
+    />
+</children></ActorFrame>

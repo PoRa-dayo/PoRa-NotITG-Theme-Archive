@@ -1,0 +1,13 @@
+<ActorFrame><children>
+    <Layer
+       File="../_Title/kitou"
+       InitCommand="zoom,-1;y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X-640;sleep,15;queuecommand,Poo"
+       PooCommand="%function(self)
+        print('bruh')
+        end"
+    />
+    <Layer
+       File="../_Title/kitou"
+       InitCommand="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+640"
+    />
+</children></ActorFrame>

@@ -1,0 +1,30 @@
+<ActorFrame><children>
+    <Layer
+       File="../Config/Config"
+       InitCommand="x,SCREEN_CENTER_X-198;y,SCREEN_CENTER_Y-192"
+    />
+    <Layer
+       Text="Will disqualify from ranking"
+       Font="_aldine721 bt-black 20px"
+       OnCommand="hidden,1;x,SCREEN_CENTER_X-180;y,SCREEN_CENTER_Y+115;zoom,0.6;diffuseshift;EffectColor1,#FFFFFF;EffectColor2,#FF2200;EffectPeriod,1;shadowlength,0"
+       SpeedModChangedMessageCommand="%function(self)
+            if modType and modType[1] == 'C' then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+       end"
+    />
+    <Layer
+       Text="Will disqualify from ranking"
+       Font="_aldine721 bt-black 20px"
+       OnCommand="hidden,1;x,SCREEN_CENTER_X+180;y,SCREEN_CENTER_Y+115;zoom,0.6;diffuseshift;EffectColor1,#FFFFFF;EffectColor2,#FF2200;EffectPeriod,1;shadowlength,0"
+       SpeedModChangedMessageCommand="%function(self)
+            if modType and modType[2] == 'C' then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+       end"
+    />
+</children></ActorFrame>

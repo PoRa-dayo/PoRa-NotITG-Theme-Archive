@@ -1,0 +1,280 @@
+<ActorFrame> <children>
+	<ActorFrame OnCommand="addy,-300;decelerate,1;addy,300"
+    CurrentSongChangedMessageCommand="addy,-300;decelerate,1;addy,300"
+    OffCommand="accelerate,0.8;addy,-300"> <children>
+        <Layer
+            File="../Gameplay/centerObjectB"
+            InitCommand="y,SCREEN_TOP+36;x,SCREEN_CENTER_X;queuecommand,RandomizeBG"
+            RandomizeBGCommand="%function(self)
+                local BGList = {'_Core','_DollHouse','_Geyser','_Library','_Mansion','_MouthGeyser','_Shore'}
+                ToHoSokuGlob.RandomBG = BGList[math.random(#BGList)]
+            end"
+        />
+        <Layer
+            Text="Event"
+            Font="_mdgaesung 20px"
+            InitCommand="y,SCREEN_TOP+10;x,SCREEN_CENTER_X;zoomx,0.8;shadowlength,0"
+            OnCommand="queuecommand,Update"
+            CurrentStepsP1ChangedMessageCommand="playcommand,Update"
+            CurrentStepsP2ChangedMessageCommand="playcommand,Update"
+            CurrentSongChangedMessageCommand="playcommand,Update"
+            UpdateCommand="%function(self)
+                if GAMESTATE:IsCourseMode() then
+                    local songind = GAMESTATE:GetCourseSongIndex()
+                    if songind then
+                        self:settext('Song ' .. songind+1)
+                    else
+                        self:settext('Course')
+                    end
+                elseif not GAMESTATE:IsEventMode() then
+                    if IsExtraStage() or IsExtraStage2() then
+                        self:settext('Stage Extra')
+                    elseif IsFinalStage() then
+                        self:settext('Stage Final')
+                    else
+                        self:settext('Stage ' .. GAMESTATE:StageIndex()+1)
+                    end
+                end
+            end"
+        />
+        <Layer
+            Text="00.0"
+            Font="../Numbers/_xenotron metal"
+            OnCommand="y,SCREEN_TOP+32;x,SCREEN_CENTER_X;shadowlength,0;queuecommand,Update"
+            CurrentSongChangedMessageCommand="queuecommand,Update"
+            UpdateCommand="%function(self)
+                local timeintimer = self:GetSecsIntoEffect();
+                self:effectclock('music')
+                if GAMESTATE:GetCurrentSong() then
+                    local totaltimer = GAMESTATE:GetCurrentSong():StepsLengthSeconds()
+                    if timeintimer >= totaltimer then
+                        self:settext('00.0')
+                    else
+                        self:settext(string.format('%04.1f', totaltimer-timeintimer))
+                        self:sleep(0.1)
+                        self:queuecommand('Update')
+                    end
+                end
+            end"
+        />
+        
+        <Layer
+            File="../Gameplay/spellcard"
+            Condition="FUCK_EXE"
+            OnCommand="y,SCREEN_TOP+60;x,SCREEN_CENTER_X-230"
+        />
+        <Layer
+            Text="Difficulty"
+            Font="_orator 15 pitch 40px"
+            OnCommand="horizalign,left;y,SCREEN_TOP+55;x,SCREEN_CENTER_X-300;zoom,0.4;diffusebottomedge,0.84,0.37,0.41,1;shadowlength,0;queuecommand,UpdateText"
+            CurrentSongChangedMessageCommand="queuecommand,UpdateText"
+            UpdateTextCommand="%function(self)
+                local stepp = GAMESTATE:GetCurrentSteps(PLAYER_2) or GAMESTATE:GetCurrentTrail(PLAYER_2)
+                if stepp then
+                    self:settext(DifficultyToThemedString(stepp:GetDifficulty())..' '..stepp:GetMeter())
+                else
+                    self:settext('')
+                end
+            end"
+        />
+        <Layer
+            File="../Gameplay/spellcard"
+            Condition="FUCK_EXE"
+            OnCommand="y,SCREEN_TOP+60;x,SCREEN_CENTER_X+230"
+        />
+        <Layer
+            Text="Difficulty"
+            Font="_orator 15 pitch 40px"
+            OnCommand="horizalign,right;y,SCREEN_TOP+55;x,SCREEN_CENTER_X+300;zoom,0.4;diffusebottomedge,0.84,0.37,0.41,1;shadowlength,0;queuecommand,UpdateText"
+            CurrentSongChangedMessageCommand="queuecommand,UpdateText"
+            UpdateTextCommand="%function(self)
+                local stepp = GAMESTATE:GetCurrentSteps(PLAYER_2) or GAMESTATE:GetCurrentTrail(PLAYER_2)
+                if stepp then
+                    self:settext(DifficultyToThemedString(stepp:GetDifficulty())..' '..stepp:GetMeter())
+                else
+                    self:settext('')
+                end
+            end"
+        />
+        
+        <Layer
+            Text="Song Title"
+            Font="_orator 15 pitch 40px"
+            OnCommand="horizalign,right;y,SCREEN_TOP+8;x,SCREEN_CENTER_X-100;zoom,0.41;diffusebottomedge,0.7,0.7,1,1;shadowlength,0;maxwidth,500;queuecommand,UpdateText"
+            CurrentSongChangedMessageCommand="queuecommand,UpdateText"
+            UpdateTextCommand="%function(self)
+                local songg = GAMESTATE:GetCurrentSong()
+                if songg then
+                    self:settext(songg:GetDisplayMainTitle())
+                end
+            end"
+        />
+        <Layer
+            Text="Song Title"
+            Font="_orator 15 pitch 40px"
+            OnCommand="horizalign,left;y,SCREEN_TOP+8;x,SCREEN_CENTER_X+100;zoom,0.41;diffusebottomedge,0.7,0.7,1,1;shadowlength,0;maxwidth,500;queuecommand,UpdateText"
+            CurrentSongChangedMessageCommand="queuecommand,UpdateText"
+            UpdateTextCommand="%function(self)
+                local songg = GAMESTATE:GetCurrentSong()
+                if songg then
+                    self:settext(songg:GetDisplaySubTitle())
+                end
+            end"
+        />
+        
+        <Layer
+            File="../Gameplay/1PlifeGageB"
+            Condition="FUCK_EXE"
+            OnCommand="y,SCREEN_TOP+52;x,SCREEN_CENTER_X-176"
+        />
+        <Layer
+            File="../Gameplay/1PlifeGageB"
+            Condition="FUCK_EXE"
+            OnCommand="y,SCREEN_TOP+52;x,SCREEN_CENTER_X+193"
+        />
+        --when HP drops, the lifebarA (red) will wait for a while, storing the HP it's supposed to go to in NextLX
+        --while waiting it'll start counting ShowLostLXTimes every update, when it reaches 30, lifebarA will drop
+        --if HP drops again while waiting (LX smaller than NextLX), reset ShowLostHealthTimes
+        <Layer
+            File="../Gameplay/1PlifeBarA"
+            Condition="FUCK_EXE"
+            InitCommand="%function(self)
+                ToHoSokuGlob.CurL1 = nil
+            end"
+            OnCommand="y,SCREEN_TOP+32.5;x,SCREEN_CENTER_X-184;queuecommand,Update"
+            UpdateCommand="%function(self)
+                if not GAMESTATE:IsPlayerEnabled(PLAYER_1) then return end
+                local L1 = SCREENMAN:GetTopScreen():GetLife(PLAYER_1)
+                if not ToHoSokuGlob.CurL1 then
+                    self:cropleft(1-L1)
+                    self:sleep(0.05)
+                    ToHoSokuGlob.CurL1 = L1
+                    ToHoSokuGlob.NextL1 = L1
+                    ToHoSokuGlob.ShowLostL1Times = 30
+                elseif L1 > ToHoSokuGlob.CurL1 then
+                    self:cropleft(1-L1)
+                    ToHoSokuGlob.CurL1 = L1
+                    ToHoSokuGlob.NextL1 = L1
+                    ToHoSokuGlob.ShowLostL1Times = 30
+                    self:sleep(0.05)
+                elseif ToHoSokuGlob.NextL1 and L1 < ToHoSokuGlob.NextL1 then
+                    ToHoSokuGlob.NextL1 = L1
+                    ToHoSokuGlob.ShowLostL1Times = 0
+                    self:sleep(0.05)
+                else
+                    ToHoSokuGlob.ShowLostL1Times = (ToHoSokuGlob.ShowLostL1Times or 0) + 1
+                    if ToHoSokuGlob.ShowLostL1Times > 30 then
+                        ToHoSokuGlob.ShowLostL1Times = 0
+                        self:linear(0.2)
+                        self:cropleft(1-L1)
+                        ToHoSokuGlob.CurL1 = L1
+                        ToHoSokuGlob.NextL1 = nil
+                    else
+                        ToHoSokuGlob.NextL1 = L1
+                        self:sleep(0.05)
+                    end
+                end
+                self:queuecommand('Update')
+            end"
+        />
+        <Layer
+            File="../Gameplay/1PlifeBarB"
+            Condition="FUCK_EXE"
+            OnCommand="y,SCREEN_TOP+32.5;x,SCREEN_CENTER_X-184;queuecommand,Update"
+            UpdateCommand="%function(self)
+                if not GAMESTATE:IsPlayerEnabled(PLAYER_1) then return end
+                local L1 = 1-SCREENMAN:GetTopScreen():GetLife(PLAYER_1)
+                self:cropleft(L1)
+                self:sleep(0.05)
+                self:queuecommand('Update')
+            end"
+        />
+        <Layer
+            File="../Gameplay/1PlifeBarA"
+            Condition="FUCK_EXE"
+            InitCommand="%function(self)
+                ToHoSokuGlob.CurL2 = nil
+            end"
+            OnCommand="y,SCREEN_TOP+32.5;x,SCREEN_CENTER_X+184;queuecommand,Update"
+            UpdateCommand="%function(self)
+                if not GAMESTATE:IsPlayerEnabled(PLAYER_2) then return end
+                local L2 = SCREENMAN:GetTopScreen():GetLife(PLAYER_2)
+                if not ToHoSokuGlob.CurL2 then
+                    self:cropright(1-L2)
+                    self:sleep(0.05)
+                    ToHoSokuGlob.CurL2 = L2
+                    ToHoSokuGlob.NextL2 = L2
+                    ToHoSokuGlob.ShowLostL2Times = 30
+                elseif L2 > ToHoSokuGlob.CurL2 then
+                    self:cropright(1-L2)
+                    ToHoSokuGlob.CurL2 = L2
+                    ToHoSokuGlob.NextL2 = L2
+                    ToHoSokuGlob.ShowLostL2Times = 30
+                    self:sleep(0.05)
+                elseif ToHoSokuGlob.NextL2 and L2 < ToHoSokuGlob.NextL2 then
+                    ToHoSokuGlob.NextL2 = L2
+                    ToHoSokuGlob.ShowLostL2Times = 0
+                    self:sleep(0.05)
+                else
+                    ToHoSokuGlob.ShowLostL2Times = (ToHoSokuGlob.ShowLostL2Times or 0) + 1
+                    if ToHoSokuGlob.ShowLostL2Times > 30 then
+                        ToHoSokuGlob.ShowLostL2Times = 0
+                        self:linear(0.2)
+                        self:cropright(1-L2)
+                        ToHoSokuGlob.CurL2 = L2
+                        ToHoSokuGlob.NextL2 = nil
+                    else
+                        ToHoSokuGlob.NextL2 = L2
+                        self:sleep(0.05)
+                    end
+                end
+                self:queuecommand('Update')
+            end"
+        />
+        <Layer
+            File="../Gameplay/1PlifeBarB"
+            Condition="FUCK_EXE"
+            OnCommand="y,SCREEN_TOP+32.5;x,SCREEN_CENTER_X+184;queuecommand,Update"
+            UpdateCommand="%function(self)
+                if not GAMESTATE:IsPlayerEnabled(PLAYER_2) then return end
+                local L2 = 1-SCREENMAN:GetTopScreen():GetLife(PLAYER_2)
+                self:cropright(L2)
+                self:sleep(0.05)
+                self:queuecommand('Update')
+            end"
+        />
+        
+        
+    </children> </ActorFrame>
+    
+    
+    <!--The BPM since that got disabled in the metrics-->
+    <Layer Class="ActorFrame"
+	OnCommand="addy,300;decelerate,1;addy,-300"
+    CurrentSongChangedMessageCommand="addy,300;decelerate,1;addy,-300"
+    OffCommand="accelerate,0.8;addy,300"><children>
+        <Layer
+            File="../Gameplay/BPM"
+            OnCommand="zoom,1;y,SCREEN_CENTER_Y+225;x,SCREEN_CENTER_X-2"
+        />
+        <Layer
+            Font="_standard"
+            Text=""
+            InitCommand="%function(self) self:zoom(0.7) self:horizalign('center') self:x(SCREEN_CENTER_X); self:y(SCREEN_CENTER_Y+221); self:shadowlength(0) end"
+            OnCommand="queuecommand,Update"
+            UpdateCommand="%GameplayBPM"
+        />
+    </children></Layer>
+
+    <ActorFrame Command="%GameplayInit" CurrentSongChangedMessageCommand="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
+    <ActorFrame
+		OnCommand="%function(self)
+			self:stopeffect()
+			if FUCK_EXE then
+				stitch('lua.death').Start()
+			end
+		end" 
+	/>
+
+</children> </ActorFrame>
+

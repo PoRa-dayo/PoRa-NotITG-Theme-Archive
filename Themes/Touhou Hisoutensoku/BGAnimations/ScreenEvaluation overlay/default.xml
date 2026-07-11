@@ -1,0 +1,200 @@
+<ActorFrame> <children>
+        <Layer
+           File="../Config/Result"
+           InitCommand="x,SCREEN_CENTER_X-198;y,SCREEN_CENTER_Y-192"
+        />
+        
+        <Layer 
+            Text=""
+            Font="_aldine721 bt-black 20px"
+            OnCommand="%function(self)
+                self:x(SCREEN_CENTER_X)
+                self:y(SCREEN_CENTER_Y-160)
+                self:zoom(0.8)
+                SongTitle(self)
+            end"
+        />
+        
+        <Layer 
+            Text=""
+            Font="_aldine721 bt-black 20px"
+            OnCommand="%function(self)
+                self:x(SCREEN_CENTER_X)
+                self:y(SCREEN_CENTER_Y-65)
+                self:zoom(0.6)
+                if GAMESTATE:IsCourseMode() then
+                    RateModText(self)
+                else
+                    BPMlabelRate(self)
+                end
+            end"
+        />
+        
+        <!-- P1 Labels -->
+        <Layer 
+            Text=""
+            Font="_aldine721 bt-black 20px"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="horizalign,left;zoom,0.7;shadowlength,0;x,SCREEN_CENTER_X-280+EvalX();y,SCREEN_CENTER_Y-70;queuecommand,DiffUpdate"
+            DiffUpdateCommand="%function(self)
+                local stepp = GAMESTATE:GetCurrentSteps(PLAYER_1)
+                if stepp then
+                    self:settext(DifficultyToThemedString(stepp:GetDifficulty())..' '..stepp:GetMeter())
+                else
+                    self:settext('')
+                end
+           end"
+        />
+        <Layer 
+            Text="Fantastic:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X-280+EvalX();y,SCREEN_CENTER_Y-30+20*0"
+        />
+        <Layer 
+            Text="Excellent:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X-280+EvalX();y,SCREEN_CENTER_Y-30+20*1"
+        />
+        <Layer 
+            Text="Great:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X-280+EvalX();y,SCREEN_CENTER_Y-30+20*2"
+        />
+        <Layer 
+            Text="Decent:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X-280+EvalX();y,SCREEN_CENTER_Y-30+20*3"
+        />
+        <Layer 
+            Text="Bad:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X-280+EvalX();y,SCREEN_CENTER_Y-30+20*4"
+        />
+        <Layer 
+            Text="Miss:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X-280+EvalX();y,SCREEN_CENTER_Y-30+20*5"
+        />
+        <Layer 
+            Text="Holds:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X-280+EvalX();y,SCREEN_CENTER_Y-20+20*6"
+        />
+        <Layer 
+            Text="Rolls:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X-280+EvalX();y,SCREEN_CENTER_Y-20+20*7"
+        />
+        <Layer 
+            Text="Mines:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X-280+EvalX();y,SCREEN_CENTER_Y-20+20*8"
+        />
+        <Layer 
+            Text="FINAL SCORE:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            Font="_aldine721 bt-black 40px"
+            OnCommand="horizalign,left;zoom,0.5;shadowlength,0;x,SCREEN_CENTER_X-280+EvalX();y,SCREEN_CENTER_Y+170"
+        />
+        
+        
+        <!-- P2 Labels -->
+        <Layer 
+            Text=""
+            Font="_aldine721 bt-black 20px"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            OnCommand="horizalign,right;zoom,0.7;shadowlength,0;x,SCREEN_CENTER_X+275+EvalX();y,SCREEN_CENTER_Y-70;queuecommand,DiffUpdate"
+            DiffUpdateCommand="%function(self)
+                local stepp = GAMESTATE:GetCurrentSteps(PLAYER_2)
+                if stepp then
+                    self:settext(DifficultyToThemedString(stepp:GetDifficulty())..' '..stepp:GetMeter())
+                else
+                    self:settext('')
+                end
+           end"
+        />
+        <Layer 
+            Text="Fantastic:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X+56+EvalX();y,SCREEN_CENTER_Y-30+20*0"
+        />
+        <Layer 
+            Text="Excellent:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X+56+EvalX();y,SCREEN_CENTER_Y-30+20*1"
+        />
+        <Layer 
+            Text="Great:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X+56+EvalX();y,SCREEN_CENTER_Y-30+20*2"
+        />
+        <Layer 
+            Text="Decent:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X+56+EvalX();y,SCREEN_CENTER_Y-30+20*3"
+        />
+        <Layer 
+            Text="Bad:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X+56+EvalX();y,SCREEN_CENTER_Y-30+20*4"
+        />
+        <Layer 
+            Text="Miss:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X+56+EvalX();y,SCREEN_CENTER_Y-30+20*5"
+        />
+        <Layer 
+            Text="Holds:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X+56+EvalX();y,SCREEN_CENTER_Y-20+20*6"
+        />
+        <Layer 
+            Text="Rolls:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X+56+EvalX();y,SCREEN_CENTER_Y-20+20*7"
+        />
+        <Layer 
+            Text="Mines:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            Font="_aldine721 bt-black 20px"
+            OnCommand="horizalign,left;zoom,0.8;shadowlength,0;x,SCREEN_CENTER_X+56+EvalX();y,SCREEN_CENTER_Y-20+20*8"
+        />
+        <Layer 
+            Text="FINAL SCORE:"
+            Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            Font="_aldine721 bt-black 40px"
+            OnCommand="horizalign,left;zoom,0.5;shadowlength,0;x,SCREEN_CENTER_X+56+EvalX();y,SCREEN_CENTER_Y+170"
+        />
+        
+        <Layer
+           File="../_EvalHelp"
+           InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-8"
+        />
+        
+        <!-- NotITG Offset Plot -->
+        <Layer File="../OffsetPlot" OffCommand="%function(self)
+            BX_SaltyResets = 0
+            BX_SaltyResetPos = {}
+        end"/>
+        <Layer File="../_ScreenEvaluationPlayersBest"/>
+        
+        <ActorFrame InitCommand="%EvaluationInit" FirstUpdateCommand="%Evaluation" />
+	</children>
+</ActorFrame>

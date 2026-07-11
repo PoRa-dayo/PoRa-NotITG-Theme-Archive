@@ -1,0 +1,17 @@
+<ActorFrame><children>
+    <Layer
+       File="../_prompt background"
+    />
+    <Layer
+       Type="Quad"
+       OnCommand="queuecommand,Instruct"
+       InstructCommand="%function(self)
+            self:hidden(1)
+            local scren = SCREENMAN:GetTopScreen():GetChild('Instructions')
+            if scren then
+                scren:zoom(0.45)
+                scren:diffusebottomedge(0.58,0.58,0.78,1)
+            end
+       end"
+    />
+</children></ActorFrame>

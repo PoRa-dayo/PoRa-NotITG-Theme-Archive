@@ -1,0 +1,35 @@
+<ActorFrame><children>
+    <Layer
+       File="MusicWheel/00"
+    />
+    <Layer
+       Text="Change Song"
+       Font="_aldine721 bt 20px"
+       InitCommand="zoom,0.5;x,-52"
+    />
+    <Layer
+       Text="Change Difficulty"
+       Font="_aldine721 bt 20px"
+       InitCommand="zoom,0.5;x,-186"
+    />
+    <Layer
+       Text="Enter"
+       Font="_aldine721 bt 20px"
+       InitCommand="zoom,0.5;x,42;diffuse,0.98,0.8,0.54,1"
+    />
+    <Layer
+       Text="Select Song"
+       Font="_aldine721 bt 20px"
+       InitCommand="zoom,0.5;x,92"
+    />
+    <Layer
+       Text="Escape"
+       Font="_aldine721 bt 20px"
+       InitCommand="zoom,0.5;x,180;diffuse,0.49,0.81,0.96,1"
+    />
+    <Layer
+       Text="Go Back"
+       Font="_aldine721 bt 20px"
+       InitCommand="zoom,0.5;x,222"
+    />
+</children></ActorFrame>

@@ -1,0 +1,132 @@
+<ActorFrame
+    OnCommand="%function(self)
+        if ToHoSokuGlob.FromOption ~= 1 then
+            MESSAGEMAN:Broadcast('StartNormal')
+        else
+            MESSAGEMAN:Broadcast('StartOption')
+            ToHoSokuGlob.FromOption = 0
+        end
+        ToHoSokuGlob.ScrollStart = 0
+        ToHoSokuGlob.FromScreenEdit = 0
+        self:sleep(0.66)
+        self:queuecommand('Start')
+    end"
+    StartCommand="%function(self)
+        ToHoSokuGlob.ScrollStart = 1
+    end"
+    UpdateGearMessageCommand="%function(self)
+        if ToHoSokuGlob.ScrollerPos and (ToHoSokuGlob.ScrollerPos == ToHoSokuGlob.ScrollerCheck) then
+            if ToHoSokuGlob.ScrollStart == 1 then
+                self:GetChild('Gear'):finishtweening();
+                self:GetChild('GearShad'):finishtweening();
+                self:GetChild('ScrollerArm'):finishtweening();
+            end;
+            self:GetChild('Gear'):decelerate(0.25);
+            self:GetChild('Gear'):rotationz(ToHoSokuGlob.ScrollerPos*29);
+            self:GetChild('Gear'):y((SCREEN_CENTER_Y-180)+(ToHoSokuGlob.ScrollerPos*23.8));
+            self:GetChild('GearShad'):decelerate(0.25);
+            self:GetChild('GearShad'):rotationz(ToHoSokuGlob.ScrollerPos*29);
+            self:GetChild('GearShad'):y((SCREEN_CENTER_Y-176)+(ToHoSokuGlob.ScrollerPos*23.8));
+            self:GetChild('ScrollerArm'):decelerate(0.25);
+            self:GetChild('ScrollerArm'):y((SCREEN_CENTER_Y-164)+(ToHoSokuGlob.ScrollerPos*24));		
+            ToHoSokuGlob.ScrollerCheck = 999;
+        end;
+    end"
+><children>
+    <Layer
+       File="../_Title/2_title"
+       Name="Title"
+       InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-80"
+       StartOptionMessageCommand="diffusealpha,1;addx,80"
+       StartNormalMessageCommand="diffusealpha,1;linear,0.20;addx,80"
+    />
+    <Layer
+       File="../_Title/2_copyright"
+       Name="Copy"
+       InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-14"
+       StartOptionMessageCommand="diffusealpha,1;addx,80"
+       StartNormalMessageCommand="diffusealpha,1;linear,0.20;addx,80"
+    />
+    <Layer
+       File="../_Title/2_menu_black"
+       Name="Black"
+       InitCommand="x,SCREEN_CENTER_X-400;y,SCREEN_CENTER_Y"
+       StartOptionMessageCommand="diffusealpha,1;addx,160"
+       StartNormalMessageCommand="diffusealpha,1;linear,0.20;addx,160"
+    />
+    
+    <Layer
+       File="../_Title Scroller/2_menu_gear"
+       Name="GearShad"
+       InitCommand="y,SCREEN_CENTER_Y+304;x,SCREEN_CENTER_X-316;rotationz,240"
+       StartOptionMessageCommand="diffuse,0,0,0,1;addy,-480;rotationz,0"
+       StartNormalMessageCommand="diffuse,0,0,0,1;sleep,0.30;linear,0.02;addy,-240;
+						linear,0.02;addrotationz,-30;addy,-30;
+						linear,0.02;addrotationz,-28;addy,-28;
+						linear,0.02;addrotationz,-26;addy,-26;
+						linear,0.02;addrotationz,-24;addy,-24;
+						linear,0.02;addrotationz,-22;addy,-22;
+						linear,0.02;addrotationz,-20;addy,-20;
+						linear,0.02;addrotationz,-18;addy,-18;
+						linear,0.02;addrotationz,-16;addy,-16;
+						linear,0.02;addrotationz,-14;addy,-14;
+						linear,0.03;addrotationz,-12;addy,-12;
+						linear,0.04;addrotationz,-10;addy,-10;
+						linear,0.05;addrotationz,-8;addy,-8;
+						linear,0.06;addrotationz,-6;addy,-6;
+						linear,0.07;addrotationz,-4;addy,-4;
+						linear,0.08;addrotationz,-2;addy,-2"
+    />
+    <Layer
+       File="../_Title Scroller/2_menu_gear"
+       Name="Gear"
+       InitCommand="y,SCREEN_CENTER_Y+300;x,SCREEN_CENTER_X-320;rotationz,240"
+       StartOptionMessageCommand="diffuse,0.5,0.5,0.5,1;addy,-480;rotationz,0"
+       StartNormalMessageCommand="diffuse,0.5,0.5,0.5,1;sleep,0.30;linear,0.02;addy,-240;
+						linear,0.02;addrotationz,-30;addy,-30;
+						linear,0.02;addrotationz,-28;addy,-28;
+						linear,0.02;addrotationz,-26;addy,-26;
+						linear,0.02;addrotationz,-24;addy,-24;
+						linear,0.02;addrotationz,-22;addy,-22;
+						linear,0.02;addrotationz,-20;addy,-20;
+						linear,0.02;addrotationz,-18;addy,-18;
+						linear,0.02;addrotationz,-16;addy,-16;
+						linear,0.02;addrotationz,-14;addy,-14;
+						linear,0.03;addrotationz,-12;addy,-12;
+						linear,0.04;addrotationz,-10;addy,-10;
+						linear,0.05;addrotationz,-8;addy,-8;
+						linear,0.06;addrotationz,-6;addy,-6;
+						linear,0.07;addrotationz,-4;addy,-4;
+						linear,0.08;addrotationz,-2;addy,-2"
+    />
+    <Layer
+       File="../_Title Scroller/2_menu_hari"
+       Name="ScrollerArm"
+       InitCommand="y,SCREEN_CENTER_Y+316;x,SCREEN_CENTER_X-290"
+       StartOptionMessageCommand="diffuse,0.95,0.95,0.95,1;addy,-480;rotationz,0"
+       StartNormalMessageCommand="diffuse,0.95,0.95,0.95,1;sleep,0.30;linear,0.02;addy,-240;
+						linear,0.02;addy,-30;
+						linear,0.02;addy,-28;
+						linear,0.02;addy,-26;
+						linear,0.02;addy,-24;
+						linear,0.02;addy,-22;
+						linear,0.02;addy,-20;
+						linear,0.02;addy,-18;
+						linear,0.02;addy,-16;
+						linear,0.02;addy,-14;
+						linear,0.03;addy,-12;
+						linear,0.04;addy,-10;
+						linear,0.05;addy,-8;
+						linear,0.06;addy,-6;
+						linear,0.07;addy,-4;
+						linear,0.08;addy,-2"
+    />
+    <Layer
+       Type="Quad"
+       InitCommand="%function(self)
+            if ToHoSokuGlob.PlayTitleEffect == 1 then
+				ToHoSokuGlob.PlayTitleEffect = 0
+			end;
+       end"
+    />
+</children></ActorFrame>

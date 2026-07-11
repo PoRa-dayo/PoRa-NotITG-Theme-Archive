@@ -1,0 +1,15 @@
+<ActorFrame> <children>
+    <Layer
+        File="background"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;scaletocover,0,0,SCREEN_WIDTH,SCREEN_HEIGHT"
+	/>
+    <Layer
+        File="core"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-32;zoom,2;blend,add"
+	/>
+    <Layer
+        File="floor"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;scaletocover,0,0,SCREEN_WIDTH,SCREEN_HEIGHT"
+	/>
+
+</children> </ActorFrame>

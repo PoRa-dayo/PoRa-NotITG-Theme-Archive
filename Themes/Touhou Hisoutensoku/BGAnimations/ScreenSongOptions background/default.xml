@@ -1,0 +1,24 @@
+<ActorFrame> <children>
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+            ToHoSokuGlob.OptionsScreen = 'SongOptions'
+            self:queuecommand('StartCapture')
+        end"
+        StartCaptureCommand="%function(self)
+            CaptureOptionRows()
+            self:sleep(0.1)
+            self:queuecommand('PostCapture')
+        end"
+        PostCaptureCommand="%function(self)
+            PostModCaptureInit()
+        end"
+        OffCommand="%function(self)
+            --otherwise if anything tries to access ToHoSokuGlob.OptionTextEle it will cause AV because the elements are no longer there
+            ToHoSokuGlob.OptionTextEle = nil
+            ToHoSokuGlob.OptionCursorEle = nil
+            ToHoSokuGlob.OptionRows = nil
+        end"
+	/>
+</children> </ActorFrame>
+

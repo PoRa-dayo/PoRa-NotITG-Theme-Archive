@@ -1,0 +1,62 @@
+<ActorFrame
+><children>
+    <Layer
+        Type="Quad"
+        InitCommand="%function(self)
+            self:hidden(1)
+            ToHoSokuGlob.Vol = 1
+            self:queuecommand('DimVol')
+        end"
+        DimVolCommand="%function(self)
+            if ToHoSokuGlob.Vol > 0 then
+                ToHoSokuGlob.Vol = ToHoSokuGlob.Vol - 0.1
+                SOUND:DimMusic(ToHoSokuGlob.Vol, 1)
+                self:sleep(0.1)
+                self:queuecommand('DimVol')
+            else
+                ToHoSokuGlob.Vol = 0
+            end
+        end"
+    />
+    <Layer
+       File="../_Title/2_title"
+       InitCommand="y,SCREEN_CENTER_Y-80;x,SCREEN_CENTER_X+80"
+    />
+    <Layer
+       File="../_Title/2_copyright"
+       InitCommand="y,SCREEN_BOTTOM-14;x,SCREEN_CENTER_X+80"
+    />
+    <Layer
+       File="../_Title/2_menu_black"
+       InitCommand="x,SCREEN_CENTER_X-240;y,SCREEN_CENTER_Y"
+    />
+    
+    <Layer
+       File="../_Title Scroller/2_menu_gear"
+       InitCommand="diffuse,0,0,0,1;y,SCREEN_CENTER_Y-176+23.8*(ToHoSokuGlob.ScrollerPos or 0);x,SCREEN_CENTER_X-316;rotationz,29"
+    />
+    <Layer
+       File="../_Title Scroller/2_menu_gear"
+       InitCommand="diffuse,0.5,0.5,0.5,1;y,SCREEN_CENTER_Y-180+23.8*(ToHoSokuGlob.ScrollerPos or 0);x,SCREEN_CENTER_X-320;rotationz,29"
+    />
+    <Layer
+       File="../_Title Scroller/2_menu_hari"
+       InitCommand="diffuse,0.95,0.95,0.95,1;y,SCREEN_CENTER_Y-164+23.8*(ToHoSokuGlob.ScrollerPos or 0);x,SCREEN_CENTER_X-290"
+    />
+    
+    <Layer
+       Type="Quad"
+       InitCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,0;linear,0.5;diffuse,0,0,0,1"
+    />
+    
+    <Layer
+       File="../_kitou"
+       InitCommand="hidden,1;sleep,0.5;queuecommand,Appear"
+       AppearCommand="hidden,0"
+    />
+    
+    <Layer
+       Type="Quad"
+       InitCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,0;linear,0.5;diffuse,0,0,0,1;linear,0.5;diffuse,0,0,0,0"
+    />
+</children></ActorFrame>

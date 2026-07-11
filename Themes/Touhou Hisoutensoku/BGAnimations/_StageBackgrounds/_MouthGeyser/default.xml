@@ -1,0 +1,11 @@
+<ActorFrame> <children>
+    <Layer
+        File="../_Skies/cloudy_gold"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;scaletocover,0,0,SCREEN_WIDTH,SCREEN_HEIGHT"
+	/>
+    <Layer
+        File="mouth"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;scaletocover,0,0,SCREEN_WIDTH,SCREEN_HEIGHT"
+	/>
+
+</children> </ActorFrame>

@@ -1,0 +1,39 @@
+<ActorFrame><children>
+    <Layer
+        Type="Quad"
+        OnCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,1;sleep,7;linear,1;diffuse,0,0,0,0"
+    />
+    <Layer
+        Type="Quad"
+        OnCommand="%function(self)
+            self:hidden(1)
+            ToHoSokuGlob.PlayTitleEffect = 1
+            ToHoSokuGlob.TitleOverlay = 1
+        end"
+    />
+    <Layer
+        File="../_Intro/01_123th.png"
+        InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_CENTER_Y;diffusealpha,0"
+        OnCommand="diffusealpha,0;zoom,0.7;linear,1.333;diffusealpha,1;zoom,0.8;linear,1.333;diffusealpha,1;zoom,0.9;linear,1.333;diffusealpha,0;zoom,1"
+    />
+    <Layer
+        File="../_Intro/02_cerclename.png"
+        InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_CENTER_Y"
+        OnCommand="diffusealpha,0;sleep,4;zoom,0.85;linear,1.333;diffusealpha,1;zoom,0.9;linear,1.333;diffusealpha,1;zoom,0.95;linear,1.333;diffusealpha,0;zoom,1"
+    />
+    <Layer
+        File="../_Title/2_title.png"
+        InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_CENTER_Y-80"
+        OnCommand="diffusealpha,0;sleep,9;linear,0.5;diffusealpha,1"
+    />
+    <Layer
+        File="../_Intro/1_titlel.png"
+        InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_CENTER_Y-80"
+        OnCommand="diffusealpha,0;sleep,8.5;linear,0.5;diffusealpha,1;linear,2;diffusealpha,0"
+    />
+    <Layer
+        File="../_Title/2_copyright.png"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-14"
+        OnCommand="diffusealpha,0;sleep,10;linear,0.5;diffusealpha,1"
+    />
+</children></ActorFrame>

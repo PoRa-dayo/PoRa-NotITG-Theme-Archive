@@ -1,0 +1,66 @@
+<ActorFrame>
+	<children>
+
+<!-- SONG NAME PANE -->
+    <Layer
+       Type="Quad"
+       OnCommand="%function(self)
+            ToHoSokuGlob.FromScreenEdit=1
+       end"
+    />
+
+	<Layer Type="ActorFrame"
+		InitCommand="X,SCREEN_CENTER_X-210;Y,SCREEN_TOP+125;shadowlength,2"
+		> <children>
+
+		<Layer
+			Type="BitmapText"
+			Font="_aldine721 bt-black 40px"
+			InitCommand="animate,0;playcommand,Update"
+			OnCommand="Y,10;zoom,.55;shadowlength,0;maxwidth,300"
+			OffCommand="linear,0.3;diffusealpha,0"
+			CurrentSongChangedMessageCommand="playcommand,Update"
+			UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentSong():GetDisplayFullTitle()) end"
+		/>
+	</children> </Layer>
+
+	<Layer Type="ActorFrame"
+		InitCommand="X,SCREEN_CENTER_X-210;Y,SCREEN_TOP+137;shadowlength,2"
+		> <children>
+
+		<Layer
+			Type="BitmapText"
+			Font="_aldine721 bt-black 40px"
+			InitCommand="animate,0;playcommand,Update"
+			OnCommand="Y,-20;zoom,.3;shadowlength,0;maxwidth,520"
+			OffCommand="linear,0.3;diffusealpha,0"
+			UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentSong():GetDisplayArtist()) end"
+		/>
+
+</children> </Layer>
+
+<!-- BANNER -->
+
+		<Layer
+   File="songbanner"
+   InitCommand="X,SCREEN_CENTER_X-210;Y,SCREEN_TOP+190;ScaleToClipped,208,82;Zoom,0.9"
+/>
+
+<!-- DIFFICULTY -->
+		<BitmapText 
+			Font="_aldine721 bt-black 20px"
+			OnCommand="DiffuseAlpha,1;maxwidth,300;x,SCREEN_CENTER_X-210;y,SCREEN_TOP+244;Zoom,0.7;ShadowLength,1;PlayCommand,Refresh"
+			RefreshCommand="%function(self) self:settext(GetEditStepsText() .. ' ' .. GAMESTATE:PlayerMeter(0)) self:sleep(0.5); self:queuecommand('Refresh') end"
+		/>
+
+<!-- ASSISTANCE TEXT --->
+		<BitmapText
+			Text="Press [Esc]::for the Edit Menu.::::Press [Enter]::for the Area Menu.::::Press [F1]::for command help."
+			Font="_aldine721 bt-black 20px"
+			InitCommand="ShadowLength,2;zoom,0.6;horizalign,left;x,SCREEN_CENTER_X-240;y,SCREEN_BOTTOM-110"
+			OnCommand=""
+			OffCommand=""
+		/>
+
+	</children>
+</ActorFrame>

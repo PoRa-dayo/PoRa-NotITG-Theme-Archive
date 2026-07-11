@@ -1,0 +1,77 @@
+<ActorFrame
+    OnCommand="%function(self)
+        self:queuecommand('DefaultCursor')
+        ToHoSokuGlob.FromOption = 1
+        ToHoSokuGlob.TitleOverlay = 2
+    end"
+    DefaultCursorCommand="%function(self)
+        local HighlightY = 137
+        self:GetChild('Cursor1'):y(HighlightY);
+        self:GetChild('Cursor3'):y(HighlightY);
+        self:GetChild('Cursor4'):y(HighlightY-10);
+    end"
+    OptionCursorChangeMessageCommand="%function(self)
+        local HighlightY = SCREENMAN:GetTopScreen():GetChild('Frame')
+        if HighlightY then
+            HighlightY = HighlightY:GetChild('LineHighlight'):GetY()
+            if HighlightY > 6969 then
+                HighlightY = HighlightY-6969
+            end
+        else
+            HighlightY = 137
+        end
+        self:GetChild('Cursor1'):y(HighlightY);
+        self:GetChild('Cursor3'):y(HighlightY);
+        self:GetChild('Cursor4'):y(HighlightY-10);
+    end"
+><children>
+    <Layer
+       File="../_Gears/door_l"
+       Name="DoorLeft"
+       InitCommand="diffuse,0.5,0.5,0.5,1;x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y"
+    />
+    <Layer
+       File="../_Gears/door_r"
+       Name="DoorRight"
+       InitCommand="diffuse,0.5,0.5,0.5,1;x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y"
+    />
+    <Layer
+       Type="Quad"
+       Name="Black"
+       InitCommand="x,SCREEN_CENTER_X;stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,0"
+    />
+    
+    <Layer
+       File="../_GearTop"
+       Name="GearTop"
+       InitCommand="y,-192"
+    />
+    <Layer
+       File="../_GearBottom"
+       Name="GearBottom"
+       InitCommand="y,208"
+    />
+    
+    
+    <Layer
+       File="../Config/Cursor1"
+       Name="Cursor1"
+       InitCommand="zoomx,0.5;x,SCREEN_CENTER_X-164+170+25"
+    />
+    <Layer
+       File="../Config/Cursor3"
+       Name="Cursor3"
+       InitCommand="x,SCREEN_CENTER_X-266+170;spin;effectmagnitude,0,0,100"
+    />
+    <Layer
+       File="../Config/Cursor4"
+       Name="Cursor4"
+       InitCommand="x,SCREEN_CENTER_X-280+170;spin;effectmagnitude,0,0,-100"
+    />
+    
+    
+    <Layer
+       File="../_OptionsHelp"
+       InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-8"
+    />
+</children></ActorFrame>

@@ -1,0 +1,51 @@
+<ActorFrame
+    OnCommand="%function(self)
+        if ToHoSokuGlob.FromOption ~= 1 then
+            MESSAGEMAN:Broadcast('Scroller6StartNormal')
+        else
+            MESSAGEMAN:Broadcast('Scroller6StartOption')
+            ToHoSokuGlob.FromOption = 0
+        end
+    end"
+> <children>
+
+    <Layer
+        Name="Shadow"
+        Text="Double Marathon"
+        Font="_peignot bold 20px"
+        InitCommand="y,-68;zoomy,0.8;zoomx,0.8;halign,1;diffuse,0,0,0.0,1;shadowlength,1"
+        Scroller6StartOptionMessageCommand="x,-210-160;addx,160"
+        Scroller6StartNormalMessageCommand="x,-210-160;linear,0.20;addx,160"
+    />
+    <Layer
+        Name="Bold"
+        Text="Double Marathon"
+        Font="_peignot bold 20px"
+        InitCommand="y,-70;zoomy,0.8;zoomx,0.8;halign,1;diffuse,1,1,0.894,1;shadowlength,1"
+        Scroller6StartOptionMessageCommand="x,-212-160;addx,160"
+        Scroller6StartNormalMessageCommand="x,-212-160;linear,0.20;addx,160"
+    />
+    <Layer
+        Name="Text"
+        Text="Double Marathon"
+        Font="_peignot bold 20px"
+        InitCommand="y,-70;zoomy,0.8;zoomx,0.8;halign,1;diffuse,1,1,0.894,1;shadowlength,1"
+        Scroller6StartOptionMessageCommand="x,-212-160;addx,160"
+        Scroller6StartNormalMessageCommand="x,-212-160;linear,0.20;addx,160"
+    />
+    <Layer
+        Name="Glow"
+        Text="Double Marathon"
+        Font="_peignot glow 20px"
+        InitCommand="y,-70;zoomy,0.8;zoomx,0.8;halign,1;diffuse,0,1,0,0.8;shadowlength,0"
+        GainFocusCommand="%function(self)
+            self:visible(1)
+            ToHoSokuGlob.ScrollerPos = 5
+            ToHoSokuGlob.ScrollerCheck = 5
+            MESSAGEMAN:Broadcast('UpdateGear')
+        end"
+        LoseFocusCommand="visible,0"
+        Scroller6StartOptionMessageCommand="x,-199-160;addx,160"
+        Scroller6StartNormalMessageCommand="x,-199-160;linear,0.20;addx,160"
+    />
+</children> </ActorFrame>

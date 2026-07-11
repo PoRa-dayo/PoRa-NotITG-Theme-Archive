@@ -1,0 +1,12 @@
+<ActorFrame><children>
+    <Layer
+       File="../Config/Edit"
+       InitCommand="x,SCREEN_CENTER_X-198;y,SCREEN_CENTER_Y-192"
+    />
+    <Layer
+       File="../_black"
+       Condition="ToHoSokuGlob.FromScreenEdit and ToHoSokuGlob.FromScreenEdit > 0"
+       InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,1;linear,0.5;diffusealpha,0"
+    />
+    <ActorFrame InitCommand="%SelectMusicInit" FirstUpdateCommand="%SelectMusic" />
+</children></ActorFrame>

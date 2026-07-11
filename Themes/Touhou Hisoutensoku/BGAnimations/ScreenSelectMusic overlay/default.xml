@@ -1,0 +1,166 @@
+<ActorFrame
+    OnCommand="%function(self)
+        self:sleep(0.1)
+        ToHoSokuGlob.SelectMusicHasFirstLoaded = false
+        self:queuecommand('Fix')
+    end;"
+	CurrentSongChangedMessageCommand="%function(self) self:queuecommand('Fix') end"
+	CurrentStepsP1ChangedMessageCommand="%function(self) self:queuecommand('Fix') end"
+	CurrentStepsP2ChangedMessageCommand="%function(self) self:queuecommand('Fix') end"
+	FixCommand="%function(self)
+        CaptureBPM()
+        modRate=1
+        ScreenSelectMusicUpdate(self)
+    end;"
+> <children>
+    
+    <ActorFrame
+        Name="Container"
+		OnCommand="x,SCREEN_CENTER_X-160;y,SCREEN_CENTER_Y+100"
+    > <children>
+        
+        
+        --Banner uses in-game one (metrics.ini)
+        --Song Title above Banner
+        <Layer
+           Text=""
+           Name="title"
+           Font="_aldine721 bt-black 40px"
+           InitCommand="y,-218;zoom,0.3;maxwidth,830;shadowlength,0"
+        />
+        --CDTitle uses in-game one (metrics.ini)
+        
+        --NPS Calculator/Display
+        <Layer
+           Text="NPS"
+           Condition="not GAMESTATE:IsCourseMode()"
+           Font="_aldine721 bt-black 40px"
+           InitCommand="x,70;y,-98;zoom,0.375;diffuse,1,1,1,1;shadowlength,0"
+        />
+        <Layer
+           Text=""
+           Name="P1NPS"
+           Font="_aldine721 bt-black 40px"
+           InitCommand="y,-98;zoom,0.375;diffuse,0.94,0.25,0.24,1;shadowlength,0;shadowlength,0"
+        />
+        <Layer
+           Text=""
+           Name="P2NPS"
+           Font="_aldine721 bt-black 40px"
+           InitCommand="y,-98;zoom,0.375;diffuse,0,0.54,0.81,1;shadowlength,0;shadowlength,0"
+        />
+        
+        
+        --No. of songs (Course Mode)
+        <Layer
+           Text="Songs"
+           Condition="GAMESTATE:IsCourseMode()"
+           Font="_aldine721 bt-black 40px"
+           InitCommand="x,70;y,-98;zoom,0.375;diffuse,1,1,1,1;shadowlength,0"
+        />
+        
+        
+        --BPM 
+        <Layer
+           Text="BPM"
+           Font="_aldine721 bt-black 40px"
+           InitCommand="x,-25;y,-98;zoom,0.375;diffuse,1,1,1,1;shadowlength,0"
+        />
+        
+        --Song Length
+        <Layer
+           Text=""
+           Name="length"
+           Font="_aldine721 bt-black 40px"
+           InitCommand="x,-95;y,-98;zoom,0.375;diffuse,0.94,0.25,0.24,1;shadowlength,0"
+        />
+        
+        --difficulty selector
+        <Layer
+           File="../MusicWheel/11b_back_red1p"
+           Condition="not GAMESTATE:IsCourseMode()"
+           InitCommand="x,-45;y,-56;zoomto,200,45;texcoordvelocity,0.05,0"
+        />
+        <Layer
+           File="../MusicWheel/10b_back_blue2p"
+           Condition="not GAMESTATE:IsCourseMode()"
+           InitCommand="x,-45;y,-36;zoomto,200,45;texcoordvelocity,-0.05,0"
+        />
+        <Layer
+           File="../MusicWheel/06b_wheel2p"
+           Name="p2curB"
+           InitCommand="y,-30.5;zoom,0.5"
+        />
+        <Layer
+           File="../MusicWheel/06b_wheel1p"
+           Name="p1curB"
+           InitCommand="y,-60.5;zoom,0.5"
+        />
+        <Layer
+           File="../MusicWheel/back_door"
+           Condition="not GAMESTATE:IsCourseMode()"
+           InitCommand="x,-45;y,-46;zoomto,200,29"
+        />
+        <Layer
+           File="../MusicWheel/back_door"
+           Condition="not GAMESTATE:IsCourseMode()"
+           InitCommand="x,-45;y,-46;zoomto,200,29"
+        />
+        
+        <Layer
+           File="../_SelectMusicDifficultyDisplay"
+           Condition="not GAMESTATE:IsCourseMode()"
+        />
+        
+        <Layer
+           File="../MusicWheel/04b_cursor2p"
+           Name="p2curA"
+           InitCommand="y,-39;zoom,0.5"
+        />
+        <Layer
+           File="../MusicWheel/04b_cursor1p"
+           Name="p1curA"
+           InitCommand="y,-52;zoom,0.5"
+        />
+        
+        
+        --song stats panel is in underlay now
+        
+    </children></ActorFrame>
+    
+    <Layer
+       File="../MusicWheel/Shade"
+       InitCommand="diffuse,0.5,0.5,0.5,1;x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y"
+    />
+    
+    <Layer
+       File="../_GearTop"
+       InitCommand="y,-192"
+    />
+    
+    <Layer
+       File="../_GearBottom"
+       InitCommand="y,208"
+    />
+    
+    
+    <Layer
+       File="../MusicWheel/ScenarioSelect"
+       InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+8"
+    />
+    
+    <Layer
+       File="../_SelectMusicHelp"
+       Condition="not GAMESTATE:IsCourseMode()"
+       InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-8"
+    />
+    
+    <Layer
+       File="../_SelectCourseHelp"
+       Condition="GAMESTATE:IsCourseMode()"
+       InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-8"
+    />
+    
+    <ActorFrame InitCommand="%SelectMusicInit" FirstUpdateCommand="%SelectMusic"/>
+</children> </ActorFrame>
+

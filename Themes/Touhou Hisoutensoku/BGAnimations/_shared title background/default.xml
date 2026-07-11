@@ -1,0 +1,41 @@
+<ActorFrame><children>
+    <Layer
+        File="../_Title/15_back"
+        InitCommand="X,SCREEN_CENTER_X;Y,SCREEN_CENTER_Y;stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT"
+    />
+    --Mountain 3 Behind Char
+    <Layer
+        Type="Sprite"
+        Texture="../_Background Items/14_back"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-64"
+        OnCommand="texcoordvelocity,-0.002,0;croptop,0.01"
+    />
+    --Walking Char
+    --if we use ActorFrame here, it'll be rendered first because it sorts the layer tag alphabetically
+    --so we use Layer Type="ActorFrame" instead
+    <Layer
+        Type="ActorFrame"
+        InitCommand="queuecommand,MoveBitchGetOutTheWay"
+        MoveBitchGetOutTheWayCommand="linear,1.5;addy,4;linear,1.5;addy,-4;queuecommand,MoveBitchGetOutTheWay"
+    ><children>
+        <Layer
+            File="../_Background Items/13_back"
+            InitCommand="y,SCREEN_CENTER_Y+180;x,SCREEN_CENTER_X+146"
+            OnCommand="wag;effectmagnitude,0,0,4;effectperiod,6"
+        />
+    </children></Layer>
+    --Mountain 2 Before Char
+    <Layer
+        Type="Sprite"
+        Texture="../_Background Items/12_back"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-36"
+        OnCommand="texcoordvelocity,-0.004,0;croptop,0.01"
+    />
+    --Mountain 1 Infront Char
+    <Layer
+        Type="Sprite"
+        Texture="../_Background Items/11_back"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-80"
+        OnCommand="texcoordvelocity,-0.006,0;croptop,0.01"
+    />
+</children></ActorFrame>

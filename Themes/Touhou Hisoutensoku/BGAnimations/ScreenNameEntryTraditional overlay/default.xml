@@ -1,0 +1,6 @@
+<ActorFrame><children>
+    <Layer
+       File="../Config/Result"
+       InitCommand="x,SCREEN_CENTER_X-198;y,SCREEN_CENTER_Y-192"
+    />
+</children></ActorFrame>

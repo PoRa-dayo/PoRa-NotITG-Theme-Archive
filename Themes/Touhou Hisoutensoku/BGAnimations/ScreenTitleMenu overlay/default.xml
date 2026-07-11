@@ -1,0 +1,54 @@
+<ActorFrame
+    OnCommand="%function(self)
+        if ToHoSokuGlob.TitleOverlay == 2 then
+			self:GetChild('DoorLeft'):x(SCREEN_CENTER_X-80);
+			self:GetChild('DoorRight'):x(SCREEN_CENTER_X+80);
+			self:GetChild('GearTop'):y(-192);
+			self:GetChild('GearBottom'):y(208);
+			self:GetChild('DoorLeft'):accelerate(0.3);
+			self:GetChild('DoorRight'):accelerate(0.3);
+			self:GetChild('GearTop'):accelerate(0.3);
+			self:GetChild('GearBottom'):accelerate(0.3);
+			self:GetChild('DoorLeft'):x(SCREEN_CENTER_X-480);
+			self:GetChild('DoorRight'):x(SCREEN_CENTER_X+480);
+			self:GetChild('GearTop'):y(-320);
+			self:GetChild('GearBottom'):y(320);
+			Sound('040')
+			ToHoSokuGlob.TitleOverlay = 0;
+		elseif ToHoSokuGlob.TitleOverlay ~= 1 then
+			self:GetChild('Black'):diffuse(0,0,0,1);
+			self:GetChild('Black'):linear(1);
+			self:GetChild('Black'):diffuse(0,0,0,0);
+		else
+			self:GetChild('Black'):diffuse(1,1,1,0);
+			ToHoSokuGlob.TitleOverlay = 0;
+		end;
+    end"
+><children>
+    <Layer
+       File="../_Gears/door_l"
+       Name="DoorLeft"
+       InitCommand="diffuse,0.5,0.5,0.5,1;x,-999;y,SCREEN_CENTER_Y"
+    />
+    <Layer
+       File="../_Gears/door_r"
+       Name="DoorRight"
+       InitCommand="diffuse,0.5,0.5,0.5,1;x,999;y,SCREEN_CENTER_Y"
+    />
+    <Layer
+       Type="Quad"
+       Name="Black"
+       InitCommand="x,SCREEN_CENTER_X;stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,0"
+    />
+    
+    <Layer
+       File="../_GearTop"
+       Name="GearTop"
+       InitCommand="y,-320"
+    />
+    <Layer
+       File="../_GearBottom"
+       Name="GearBottom"
+       InitCommand="y,320"
+    />
+</children></ActorFrame>

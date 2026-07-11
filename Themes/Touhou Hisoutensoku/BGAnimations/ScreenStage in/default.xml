@@ -1,0 +1,6 @@
+<ActorFrame><children>
+    <Layer
+       File="_fade in normal"
+    />
+    <ActorFrame Command="%ApplyNoteskin"/>
+</children></ActorFrame>

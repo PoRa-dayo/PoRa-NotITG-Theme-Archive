@@ -1,0 +1,83 @@
+<ActorFrame> <children>
+
+    <Layer
+       File="../MusicWheel/bg_cursor2"
+       InitCommand="zoomy,0.8;x,SCREEN_CENTER_X+240-78;y,SCREEN_CENTER_Y-8"
+    />
+    <Layer
+       File="../MusicWheel/c_ScenarioSelect1"
+       InitCommand="x,SCREEN_CENTER_X+312;y,SCREEN_CENTER_Y-8"
+    />
+    
+    <ActorFrame
+        Name="Container"
+		OnCommand="x,SCREEN_CENTER_X-160;y,SCREEN_CENTER_Y+100"
+    > <children>
+        <Layer
+           File="../MusicWheel/17"
+           InitCommand="y,-150;zoomto,290,156"
+        />
+        --No Banner Text
+        <Layer
+           Text="No Banner"
+           Font="_aldine721 bt-black 20px"
+           InitCommand="y,-160;diffuse,1,1,1,0.5"
+        />
+    </children> </ActorFrame>
+    
+    <ActorFrame
+		OnCommand="x,SCREEN_CENTER_X-160;y,SCREEN_CENTER_Y+100"
+    > <children>
+        --song stats panel
+        <Layer
+           File="../MusicWheel/bg_pict99"
+           Condition="not GAMESTATE:IsCourseMode()"
+           InitCommand="y,30;x,-73;zoomto,143,70;diffuse,0.5,0.5,0.5,1"
+        />
+        <Layer
+           Font="_aldine721 bt-black 20px"
+           Text="Not Present"
+           Condition="(not GAMESTATE:IsPlayerEnabled(PLAYER_1)) and (not GAMESTATE:IsCourseMode())"
+           InitCommand="y,25;x,-73;zoom,0.7;diffuse,1,1,1,0.5;shadowlength,0"
+        />
+        
+        <Layer
+           File="../MusicWheel/bg_pict99"
+           Condition="not GAMESTATE:IsCourseMode()"
+           InitCommand="y,30;x,73;zoomto,143,70;diffuse,0.5,0.5,0.5,1"
+        />
+        <Layer
+           Font="_aldine721 bt-black 20px"
+           Text="Not Present"
+           Condition="(not GAMESTATE:IsPlayerEnabled(PLAYER_2)) and (not GAMESTATE:IsCourseMode())"
+           InitCommand="y,25;x,73;zoom,0.7;diffuse,1,1,1,0.5;shadowlength,0"
+        />
+        
+        
+        --stats panel (course mode)
+        <Layer
+           File="../MusicWheel/bg_pict99"
+           Condition="GAMESTATE:IsCourseMode()"
+           InitCommand="y,65;x,-73;zoomto,143,20;diffuse,0.5,0.5,0.5,1"
+        />
+        <Layer
+           Font="_aldine721 bt-black 20px"
+           Text="Not Present"
+           Condition="(not GAMESTATE:IsPlayerEnabled(PLAYER_1)) and GAMESTATE:IsCourseMode()"
+           InitCommand="y,62;x,-73;zoom,0.6;diffuse,1,1,1,0.5;shadowlength,0"
+        />
+        
+        <Layer
+           File="../MusicWheel/bg_pict99"
+           Condition="GAMESTATE:IsCourseMode()"
+           InitCommand="y,65;x,73;zoomto,143,20;diffuse,0.5,0.5,0.5,1"
+        />
+        <Layer
+           Font="_aldine721 bt-black 20px"
+           Text="Not Present"
+           Condition="(not GAMESTATE:IsPlayerEnabled(PLAYER_2)) and GAMESTATE:IsCourseMode()"
+           InitCommand="y,62;x,73;zoom,0.6;diffuse,1,1,1,0.5;shadowlength,0"
+        />
+    </children> </ActorFrame>
+</children> </ActorFrame>
+

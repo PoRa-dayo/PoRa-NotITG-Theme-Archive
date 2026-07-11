@@ -1,0 +1,6 @@
+<ActorFrame> <children>
+	<Layer
+        File="@'../_StageBackgrounds/' .. (ToHoSokuGlob.RandomBG or '_Shore')"
+	/>
+
+</children> </ActorFrame>

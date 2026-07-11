@@ -1,0 +1,53 @@
+<ActorFrame> <children>
+	<Layer
+        File="@'../_StageBackgrounds/' .. (ToHoSokuGlob.RandomBG or '_Shore')"
+	/>
+    
+    
+    <Layer
+        File="../Gameplay/StageCard"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-30;diffusealpha,0;linear,0.5;diffusealpha,1;linear,1.4;diffusealpha,1;linear,0.5;diffusealpha,0"
+	/>
+    
+    <Layer
+        Text="Title"
+        Font="_aldine721 bt-black 40px"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-30;zoom,0.9;horizalign,center;diffusebottomedge,0.93,0.71,0.35,1;shadowlength,0;diffusealpha,0;maxwidth,550;maxheight,300"
+        OnCommand="queuecommand,Update;diffusealpha,0;linear,0.5;diffusealpha,1;linear,1.4;diffusealpha,1;linear,0.5;diffusealpha,0"
+        UpdateCommand="%function(self)
+            local songg = GAMESTATE:GetCurrentSong()
+            local coursee = GAMESTATE:GetCurrentCourse()
+            if songg then
+                self:settext(ReplaceSpaceWithLineBreaks(songg:GetDisplayMainTitle(), 12))
+            elseif coursee then
+                self:settext(ReplaceSpaceWithLineBreaks(coursee:GetDisplayFullTitle(), 12))
+            end
+        end"
+	/>
+    
+    <Layer
+        Text="- EVENT MODE -"
+        Font="_aldine721 bt-black 40px"
+        InitCommand="x,SCREEN_CENTER_X-10;y,SCREEN_CENTER_Y+155;zoom,0.4;diffusebottomedge,0.93,0.71,0.35,1;shadowlength,0;diffusealpha,0"
+        OnCommand="queuecommand,Update;linear,0.8;addx,10;diffusealpha,1;linear,0.8;addx,10;linear,0.8;addx,10;diffusealpha,0"
+        UpdateCommand="%function(self)
+            if GAMESTATE:IsCourseMode() then
+                self:settext('- SONG 1 -')
+            elseif not GAMESTATE:IsEventMode() then
+                if IsExtraStage() or IsExtraStage2() then
+                    self:settext('- STAGE EXTRA -')
+                elseif IsFinalStage() then
+                    self:settext('- STAGE FINAL -')
+                else
+                    self:settext('- STAGE ' .. GAMESTATE:StageIndex()+1 .. ' -')
+                end
+            end
+        end"
+	/>
+    
+    <Layer
+        File="../_black"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,1;linear,0.5;diffusealpha,0"
+	/>
+
+</children> </ActorFrame>

@@ -1,0 +1,19 @@
+<ActorFrame> <children>
+    <Layer
+        Type="Quad"
+		OnCommand="queuecommand,Sound"
+        SoundCommand="%function(self)
+            self:hidden(1)
+            Sound('044')
+        end"
+	/>
+    <Layer
+        File="../Gameplay/cleared_effect"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,1.1;diffusealpha,1;linear,0.2;zoom,5;diffusealpha,0;sleep,1"
+	/>
+    <Layer
+        File="../Gameplay/failed"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;linear,0.2;zoom,1.7;linear,1;zoom,1.75;linear,0.2;zoom,5;diffusealpha,0"
+	/>
+
+</children> </ActorFrame>

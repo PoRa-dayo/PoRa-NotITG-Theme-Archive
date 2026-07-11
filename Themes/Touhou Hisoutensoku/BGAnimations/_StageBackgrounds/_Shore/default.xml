@@ -1,0 +1,11 @@
+<ActorFrame> <children>
+    <Layer
+        File="../_Skies/day_no_clouds"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;scaletocover,0,0,SCREEN_WIDTH,SCREEN_HEIGHT"
+	/>
+    <Layer
+        File="shore"
+		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;scaletocover,0,0,SCREEN_WIDTH,SCREEN_HEIGHT"
+	/>
+
+</children> </ActorFrame>

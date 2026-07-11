@@ -1,0 +1,43 @@
+<ActorFrame> <children>
+	<Layer
+        File="@'../_StageBackgrounds/' .. (ToHoSokuGlob.RandomBG or '_Shore')"
+	/>
+    
+    
+    <Layer
+        File="../Gameplay/StageCard"
+        NextCourseSongMessageCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-30;diffusealpha,0;linear,0.5;diffusealpha,1;linear,1.4;diffusealpha,1;linear,0.5;diffusealpha,0"
+	/>
+    
+    <Layer
+        Text="Title"
+        Font="_aldine721 bt-black 40px"
+        InitCommand="zoom,0.9;horizalign,center;diffusebottomedge,0.93,0.71,0.35,1;shadowlength,0;diffusealpha,0;maxwidth,550;maxheight,300"
+        NextCourseSongMessageCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-30;queuecommand,Update;diffusealpha,0;linear,0.5;diffusealpha,1;linear,1.4;diffusealpha,1;linear,0.5;diffusealpha,0"
+        UpdateCommand="%function(self)
+            local songg = GAMESTATE:GetCurrentSong()
+            local coursee = GAMESTATE:GetCurrentCourse()
+            if coursee then
+                self:settext(ReplaceSpaceWithLineBreaks(coursee:GetDisplayFullTitle(), 12))
+            elseif songg then
+                self:settext(ReplaceSpaceWithLineBreaks(songg:GetDisplayMainTitle(), 12))
+            end
+        end"
+	/>
+    
+    <Layer
+        Text="- EVENT MODE -"
+        Font="_aldine721 bt-black 40px"
+        InitCommand="zoom,0.4;diffusebottomedge,0.93,0.71,0.35,1;shadowlength,0;diffusealpha,0"
+        NextCourseSongMessageCommand="x,SCREEN_CENTER_X-10;y,SCREEN_CENTER_Y+155;queuecommand,Update;linear,0.8;addx,10;diffusealpha,1;linear,0.8;addx,10;linear,0.8;addx,10;diffusealpha,0"
+        UpdateCommand="%function(self)
+            self:settext('- SONG ' .. (GAMESTATE:GetCourseSongIndex()+2) .. ' -')
+        end"
+	/>
+    
+    <Layer
+        File="../_black"
+        NextCourseSongMessageCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,1;linear,0.5;diffusealpha,0"
+	/>
+
+</children> </ActorFrame>

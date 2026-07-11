@@ -1,0 +1,35 @@
+<ActorFrame><children>
+    <Layer
+       File="../_Gears/door_l"
+       Name="DoorLeft"
+       InitCommand="diffuse,0.5,0.5,0.5,1;x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y"
+    />
+    <Layer
+       File="../_Gears/door_r"
+       Name="DoorRight"
+       InitCommand="diffuse,0.5,0.5,0.5,1;x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y"
+    />
+    <Layer
+       Type="Quad"
+       Name="Black"
+       InitCommand="x,SCREEN_CENTER_X;stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,0"
+    />
+    
+    <Layer
+       File="../_GearTop"
+       Name="GearTop"
+       InitCommand="y,-192"
+    />
+    <Layer
+       File="../_GearBottom"
+       Name="GearBottom"
+       InitCommand="y,208"
+    />
+    
+    
+    
+    <Layer
+       File="../_OptionsHelp"
+       InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-8"
+    />
+</children></ActorFrame>

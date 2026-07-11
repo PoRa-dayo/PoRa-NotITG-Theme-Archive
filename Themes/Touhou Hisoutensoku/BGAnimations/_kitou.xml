@@ -1,0 +1,14 @@
+<ActorFrame><children>
+    <Layer
+       File="_Title/kitou"
+       InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+    />
+    <Layer
+       File="_Gears/2U-front_S"
+       InitCommand="y,SCREEN_BOTTOM-48;x,SCREEN_CENTER_X+287;spin;effectmagnitude,0,0,100"
+    />
+    <Layer
+       File="_Gears/2U-front_S"
+       InitCommand="rotationz,10;y,SCREEN_BOTTOM-33;x,SCREEN_CENTER_X+263;spin;effectmagnitude,0,0,-100"
+    />
+</children></ActorFrame>

@@ -1,0 +1,28 @@
+<ActorFrame> <children>
+    <Layer
+       File="../Config/Config"
+       InitCommand="x,SCREEN_CENTER_X-198;y,SCREEN_CENTER_Y-192"
+    />
+	<Layer
+		Type="Quad"
+		OnCommand="%function(self)
+            ToHoSokuGlob.OptionsScreen = 'PlayerOptions'
+            self:queuecommand('StartCapture')
+        end"
+        StartCaptureCommand="%function(self)
+            CaptureOptionRows()
+            self:sleep(0.05)
+            self:queuecommand('PostCapture')
+        end"
+        PostCaptureCommand="%function(self)
+            PostModCaptureInit()
+        end"
+        OffCommand="%function(self)
+            --otherwise if anything tries to access ToHoSokuGlob.OptionTextEle it will cause AV because the elements are no longer there
+            ToHoSokuGlob.OptionTextEle = nil
+            ToHoSokuGlob.OptionCursorEle = nil
+            ToHoSokuGlob.OptionRows = nil
+        end"
+	/>
+</children> </ActorFrame>
+

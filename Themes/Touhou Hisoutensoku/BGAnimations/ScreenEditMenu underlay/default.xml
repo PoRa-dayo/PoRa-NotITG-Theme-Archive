@@ -1,0 +1,79 @@
+<ActorFrame
+    OnCommand="%function(self)
+        self:queuecommand('DefaultCursor')
+    end"
+    DefaultCursorCommand="%function(self)
+        local EMenu = SCREENMAN:GetTopScreen():GetChild('EditMenu')
+        if EMenu then
+            EMenu:GetChild('SongTextBanner'):zoom(0.6)
+        end
+        local HighlightY = 9999
+        self:GetChild('Cursor1'):y(HighlightY);
+        self:GetChild('Cursor3'):y(HighlightY);
+        self:GetChild('Cursor4'):y(HighlightY-10);
+        self:queuecommand('CursorUpdate')
+    end"
+    CursorUpdateCommand="%function(self)
+        local HighlightY = SCREENMAN:GetTopScreen():GetChild('EditMenu')
+        if HighlightY then
+            HighlightY = HighlightY:GetChild(''):GetY()
+            self:sleep(0.1)
+            self:queuecommand('CursorUpdate')
+        else
+            HighlightY = 9999
+        end
+        self:GetChild('Cursor1'):y(HighlightY);
+        self:GetChild('Cursor3'):y(HighlightY);
+        self:GetChild('Cursor4'):y(HighlightY-10);
+    end"
+><children>
+    <Layer
+       File="../_Gears/door_l"
+       Name="DoorLeft"
+       InitCommand="diffuse,0.5,0.5,0.5,1;x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y"
+    />
+    <Layer
+       File="../_Gears/door_r"
+       Name="DoorRight"
+       InitCommand="diffuse,0.5,0.5,0.5,1;x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y"
+    />
+    <Layer
+       Type="Quad"
+       Name="Black"
+       InitCommand="x,SCREEN_CENTER_X;stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,0"
+    />
+    
+    <Layer
+       File="../_GearTop"
+       Name="GearTop"
+       InitCommand="y,-192"
+    />
+    <Layer
+       File="../_GearBottom"
+       Name="GearBottom"
+       InitCommand="y,208"
+    />
+    
+    
+    <Layer
+       File="../Config/Cursor1"
+       Name="Cursor1"
+       InitCommand="zoomx,0.4;x,SCREEN_CENTER_X-164"
+    />
+    <Layer
+       File="../Config/Cursor3"
+       Name="Cursor3"
+       InitCommand="x,SCREEN_CENTER_X-266;spin;effectmagnitude,0,0,100"
+    />
+    <Layer
+       File="../Config/Cursor4"
+       Name="Cursor4"
+       InitCommand="x,SCREEN_CENTER_X-280;spin;effectmagnitude,0,0,-100"
+    />
+    
+    
+    <Layer
+       File="../_OptionsHelp"
+       InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-8"
+    />
+</children></ActorFrame>

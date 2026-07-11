@@ -1,0 +1,57 @@
+<ActorFrame
+><children>
+    <Layer
+        InitCommand="%function(self)
+            self:hidden(1)
+            self:queuecommand('UpdateVar')
+        end"
+        UpdateVarCommand="%function(self)
+            ToHoSokuGlob.FromOption = 1
+            ToHoSokuGlob.TitleOverlay = 2
+        end"
+    />
+    <Layer
+       File="../_Title/2_title"
+       InitCommand="y,SCREEN_CENTER_Y-80;x,SCREEN_CENTER_X+80"
+    />
+    <Layer
+       File="../_Title/2_copyright"
+       InitCommand="y,SCREEN_BOTTOM-14;x,SCREEN_CENTER_X+80"
+    />
+    <Layer
+       File="../_Title/2_menu_black"
+       InitCommand="x,SCREEN_CENTER_X-240;y,SCREEN_CENTER_Y"
+    />
+    
+    <Layer
+       File="../_Title Scroller/2_menu_gear"
+       InitCommand="diffuse,0,0,0,1;y,SCREEN_CENTER_Y-176+23.8*(ToHoSokuGlob.ScrollerPos or 7);x,SCREEN_CENTER_X-316;rotationz,29"
+    />
+    <Layer
+       File="../_Title Scroller/2_menu_gear"
+       InitCommand="diffuse,0.5,0.5,0.5,1;y,SCREEN_CENTER_Y-180+23.8*(ToHoSokuGlob.ScrollerPos or 7);x,SCREEN_CENTER_X-320;rotationz,29"
+    />
+    <Layer
+       File="../_Title Scroller/2_menu_hari"
+       InitCommand="diffuse,0.95,0.95,0.95,1;y,SCREEN_CENTER_Y-164+23.8*(ToHoSokuGlob.ScrollerPos or 7);x,SCREEN_CENTER_X-290"
+    />
+    
+    
+    
+    <Layer
+       File="../_Gears/door_l"
+       InitCommand="diffuse,0.5,0.5,0.5,1;y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X-480;decelerate,0.3;x,SCREEN_CENTER_X-80"
+    />
+    <Layer
+       File="../_Gears/door_r"
+       InitCommand="diffuse,0.5,0.5,0.5,1;y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+480;decelerate,0.3;x,SCREEN_CENTER_X+80"
+    />
+    <Layer
+       File="../_GearTop"
+       InitCommand="y,-320;decelerate,0.3;y,-192"
+    />
+    <Layer
+       File="../_GearBottom"
+       InitCommand="y,320;decelerate,0.3;y,208"
+    />
+</children></ActorFrame>
