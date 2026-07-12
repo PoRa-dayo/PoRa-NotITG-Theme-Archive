@@ -1,4 +1,8 @@
-<ActorFrame><children>
+<ActorFrame OnCommand="sleep,0.2;queuecommand,ShowTheOverlay"
+    ShowTheOverlayCommand="%function(self)
+        MESSAGEMAN:Broadcast('ShowWideOverlay')
+    end"
+><children>
     <Layer
        File="../Config/Edit"
        InitCommand="x,SCREEN_CENTER_X-198;y,SCREEN_CENTER_Y-192"

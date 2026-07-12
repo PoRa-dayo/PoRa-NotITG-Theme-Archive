@@ -1,4 +1,8 @@
-<ActorFrame>
+<ActorFrame OnCommand="sleep,0.2;queuecommand,HideTheOverlay"
+    HideTheOverlayCommand="%function(self)
+        MESSAGEMAN:Broadcast('HideWideOverlay')
+    end"
+>
 	<children>
 
 <!-- SONG NAME PANE -->

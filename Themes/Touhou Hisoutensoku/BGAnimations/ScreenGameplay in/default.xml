@@ -1,7 +1,8 @@
 <ActorFrame OnCommand="sleep,0.2;queuecommand,HideTheOverlay"
     HideTheOverlayCommand="%function(self)
         MESSAGEMAN:Broadcast('HideWideOverlay')
-end"> <children>
+    end"
+> <children>
 	<Layer
         File="../Gameplay/Intro1_effect"
 		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;linear,1;zoom,1.1;sleep,0;diffusealpha,0"
