@@ -1,13 +1,22 @@
 <ActorFrame> <children>
+    <Layer
+       File="../Config/Config"
+       InitCommand="x,SCREEN_CENTER_X-198;y,SCREEN_CENTER_Y-192"
+    />
+    <Layer
+       File="../_black"
+       Condition="ToHoSokuGlob.OptionsScreen ~= 'SongOptions'"
+       InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,1;linear,0.5;diffusealpha,0"
+    />
 	<Layer
 		Type="Quad"
 		OnCommand="%function(self)
-            ToHoSokuGlob.OptionsScreen = 'SongOptions'
+            ToHoSokuGlob.OptionsScreen = 'PlayerOptions'
             self:queuecommand('StartCapture')
         end"
         StartCaptureCommand="%function(self)
             CaptureOptionRows()
-            self:sleep(0.1)
+            self:sleep(0.05)
             self:queuecommand('PostCapture')
         end"
         PostCaptureCommand="%function(self)
@@ -18,6 +27,7 @@
             ToHoSokuGlob.OptionTextEle = nil
             ToHoSokuGlob.OptionCursorEle = nil
             ToHoSokuGlob.OptionRows = nil
+            ToHoSokuGlob.OptionsScreen = nil
         end"
 	/>
 </children> </ActorFrame>

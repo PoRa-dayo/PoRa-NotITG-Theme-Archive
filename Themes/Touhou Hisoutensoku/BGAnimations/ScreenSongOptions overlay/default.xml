@@ -1,13 +1,17 @@
 <ActorFrame> <children>
+    <Layer
+       File="../Config/Config"
+       InitCommand="x,SCREEN_CENTER_X-198;y,SCREEN_CENTER_Y-192"
+    />
 	<Layer
 		Type="Quad"
 		OnCommand="%function(self)
-            ToHoSokuGlob.OptionsScreen = 'PlayerOptions'
+            ToHoSokuGlob.OptionsScreen = 'SongOptions'
             self:queuecommand('StartCapture')
         end"
         StartCaptureCommand="%function(self)
             CaptureOptionRows()
-            self:sleep(0.05)
+            self:sleep(0.1)
             self:queuecommand('PostCapture')
         end"
         PostCaptureCommand="%function(self)
@@ -18,6 +22,7 @@
             ToHoSokuGlob.OptionTextEle = nil
             ToHoSokuGlob.OptionCursorEle = nil
             ToHoSokuGlob.OptionRows = nil
+            ToHoSokuGlob.OptionsScreen = nil
         end"
 	/>
 </children> </ActorFrame>

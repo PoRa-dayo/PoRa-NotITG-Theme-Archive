@@ -254,7 +254,7 @@ function JudgmentOption()
 		LayoutType = "ShowAllInRow",
 		SelectType = "SelectOne",
 		OneChoiceForAllPlayers = false,
-		ExportOnChange = false
+		ExportOnChange = true
     }
 	   
     local loadFunc = function(self, list, pn)
@@ -277,7 +277,7 @@ function HoldJudgmentOption()
 		LayoutType = "ShowAllInRow",
 		SelectType = "SelectOne",
 		OneChoiceForAllPlayers = false,
-		ExportOnChange = false
+		ExportOnChange = true
     }
 	   
     local loadFunc = function(self, list, pn)
@@ -300,7 +300,7 @@ function NoteSkinOption()
 		LayoutType = "ShowAllInRow",
 		SelectType = "SelectOne",
 		OneChoiceForAllPlayers = false,
-		ExportOnChange = false
+		ExportOnChange = true
 	}
     
     local loadFunc = function(self, list, pn)

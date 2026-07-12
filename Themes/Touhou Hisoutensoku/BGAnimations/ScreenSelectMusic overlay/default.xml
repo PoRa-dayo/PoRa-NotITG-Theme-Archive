@@ -10,6 +10,7 @@
 	FixCommand="%function(self)
         CaptureBPM()
         modRate=1
+        ToHoSokuGlob.OptionsScreen = nil
         ScreenSelectMusicUpdate(self)
     end;"
 > <children>

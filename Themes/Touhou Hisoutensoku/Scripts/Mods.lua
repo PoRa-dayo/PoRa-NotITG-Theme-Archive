@@ -215,7 +215,7 @@ function CaptureBPM()
     end
 end
 
---activated in ScreenPlayerOptions background and ScreenPlayerOptionsEdit overlay because it has to call AFTER all the elements have been rendered
+--activated in ScreenPlayerOptions overlay and ScreenPlayerOptionsEdit overlay because it has to call AFTER all the elements have been rendered
 --gives a OptionTextEle table that contains the BitmapText elements of all the option rows on the options screen
 --and an OptionCursorEle that has the ActorFrames of the cursors
 --it's the same thing as Simply Love's Frame Capture, except here I'm too lazy to capture the underlines
