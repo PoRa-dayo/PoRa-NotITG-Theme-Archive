@@ -196,6 +196,7 @@ OITGThemerFallback is a fallback theme that's made to make it easier to port SM3
 -Changed the background of the results screen to one of the unused backgrounds when you get an E grade.\
 -Little triangles are shown in song selection screen whenever there's an easier or harder difficulty available.\
 -Machine Percentage High Score is now shown in song selection screen.\
+-Judgment and combo positions no longer get messed up when moved in modfiles.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.\
 -Added offset plot and spellcard viewer in results screen.\
@@ -371,6 +372,7 @@ Original theme by DJ.Tony. Ported and optimized for NotITG 4.9.1 by PoRa.
 -Converted the grade system to a 17-tier one.\
 -Noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options.\
 -The Full Combo animation is no longer unused.\
+-Judgment and combo positions no longer get messed up when moved in modfiles.\
 -The animation for the PERFECT judgment being 3 frames caused a bunch of problems in NotITG as well as compatibility with other judgment fonts, so it is changed to just the cyan-white PERFECT with different diffuse colors. It doesn't look accurate anymore, but it still sorta works.\
 -Toasties now use cropping instead of masking to avoid messing with the playfields. They will not show up in modfiles. The Toasties in 2-player modes now appear behind the playfield of the corresponding player.\
 -Finished Edit Mode's UI.\
