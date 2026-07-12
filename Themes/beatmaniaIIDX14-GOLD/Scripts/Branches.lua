@@ -75,3 +75,9 @@ function GetGameplayNextScreen()
 	
 	return "GetGameplayNextScreen: YOU SHOULD NEVER GET HERE"
 end
+
+function OptionsMenuAvailable()
+	-- Determines if players can use the Mod Menu (the usual one).
+    -- In this theme you can always use it, even in Survival.
+	return true
+end

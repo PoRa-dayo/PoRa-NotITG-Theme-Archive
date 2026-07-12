@@ -33,11 +33,18 @@ BMIIDX14Glob.AllSongs = SONGMAN:GetAllSongs()
 BMIIDX14Glob.TotalSongNum = #BMIIDX14Glob.AllSongs
 
 function GetDiffList(songg)
+    --this is used as the index of the DiffList: https://craftedcart.gitlab.io/notitg_docs/lua_api/enumerations.html#difficulty
+    --If a song has charts at Easy 1, Medium 3, Challenge 8, Hard (Doubles) 10, then its DiffList will be
+    --{1 = 1, 2 = 3, 4 = 8, 13 = 10}
     --GetStepsByStepsType only shows unlocked difficulties, and that's what we want.
     local StepsList = songg:GetStepsByStepsType(0)
+    local DoubleStepsList = songg:GetStepsByStepsType(1)
     local DiffList = {}
     for index, steps in ipairs(StepsList) do
         DiffList[steps:GetDifficulty()] = steps:GetMeter()
+    end
+    for index, steps in ipairs(DoubleStepsList) do
+        DiffList[steps:GetDifficulty()+10] = steps:GetMeter()
     end
     return DiffList
 end
@@ -79,7 +86,7 @@ for index, songg in ipairs(BMIIDX14Glob.AllSongs) do
         BMIIDX14Glob.GroupSongNum[GroupName] = BMIIDX14Glob.GroupSongNum[GroupName] + 1
     end
     
-    --Create a SongDiffs table that stores all the difficulties of each song by MainTitle, Subtitle, and the Artist
+    --Create a SongDiffs table that stores the DiffList of each song by MainTitle, Subtitle, and the Artist
     --Which is obviously flawed because some songs have the exact same MainTitle and SubTitle and Artist,
     --but the MusicWheel only contains those. Ass.
     local DiffList = GetDiffList(songg)
@@ -110,18 +117,20 @@ for index, songg in ipairs(BMIIDX14Glob.AllSongs) do
 end
 
 --these are only for getting stuff from the music wheel
-function GetSubtitle(ind)
+function GetWheelSubtitle(ind)
     if not BMIIDX14Glob.MusicWheelList[ind] then
         return ''
     end
     return BMIIDX14Glob.MusicWheelList[ind]:GetChildAt(8):GetChild('Subtitle'):GetText()
 end
 
-function GetLongTitle(index)
+--e.g. GetWheelLongTitle(CurWheelIndex()) in console gives you the LongTitle of the current selected song on the wheel
+--BMIIDX14Glob.SongDiffs[GetWheelLongTitle(CurWheelIndex())] gives you the DiffList of that song
+function GetWheelLongTitle(index)
     if not (BMIIDX14Glob.SongTitles and BMIIDX14Glob.ArtistTitles) then
         return ''
     end
-    return (BMIIDX14Glob.SongTitles[index] or '').." "..GetSubtitle(index).." "..(BMIIDX14Glob.ArtistTitles[index] or '')
+    return (BMIIDX14Glob.SongTitles[index] or '').." "..GetWheelSubtitle(index).." "..(BMIIDX14Glob.ArtistTitles[index] or '')
 end
 
 function IsRoulette(ind)
@@ -198,9 +207,9 @@ function UpdateWheelTitles(FirstUpdate)
         
         if BMIIDX14Glob.ArtistTitles[index] then
             --assemble the full title
-            local FullTitl = GetLongTitle(index)
+            local FullTitl = GetWheelLongTitle(index)
             if CSong and GAMESTATE:GetSortOrder() == 1 then
-                FullTitl = CSong:GetGroupName().." "..GetLongTitle(index)
+                FullTitl = CSong:GetGroupName().." "..GetWheelLongTitle(index)
             end
             
             --if the title was used before, add a number behind the title, and keep increasing that number until an unused title is found
@@ -232,6 +241,9 @@ function UpdateWheelTitles(FirstUpdate)
             if SonggDiff and item:GetChildAt(8):GetChild('Artist') ~= '' then
                 local ClosestDiff = GetClosestDiff(SonggDiff, BMIIDX14Glob.CurDiff)
                 BMIIDX14Glob.DiffNumTitles[index] = DiffMeterConvert(SonggDiff[ClosestDiff])
+                if GAMESTATE:PlayerUsingBothSides() then
+                    ClosestDiff = ClosestDiff - 10
+                end
                 ArtistDisp:settext( BMIIDX14Glob.DiffNumTitles[index] )
                 local ColorStr = DifficultyColor(ClosestDiff)
                 local tb = {}
@@ -249,6 +261,7 @@ function CurWheelIndex()
     --so as far as I can tell there's no way to tell which MusicWheelItem is the selected one, other than it being the one with Y = 0
     --but lo and behold, scrolling animations exist which mess up all the Y coordinates grrrrr
     --so this will just be returning the index with the smallest absolute Y position, aka smallest abs
+    --which means, avoid detecting with this immediately when switching songs
     local smallestAbs = 999
     local returnInd = 1
     for index, item in ipairs(BMIIDX14Glob.MusicWheelList) do
@@ -261,13 +274,19 @@ function CurWheelIndex()
     return returnInd
 end
 
---get the difficulty slot closest to CDiff if SonggDiff[CDiff] doesn't exist
+--SonggDiff is the DiffList of a song.
+--Get the difficulty slot closest to CDiff if SonggDiff[CDiff] doesn't exist
 function GetClosestDiff(SonggDiff, CDiff)
+    local doub = GAMESTATE:PlayerUsingBothSides()
+    --if it's Doubles mode
+    if doub then
+        CDiff = CDiff + 10
+    end
     if SonggDiff[CDiff] == nil then
         local BestDiff = nil
         local BestDistance = 999
 
-        for i = 0, 5 do
+        for i = (doub and 10 or 0), (doub and 15 or 5) do
             if SonggDiff[i] ~= nil then
                 local Distance = math.abs(i - CDiff)
 
@@ -304,14 +323,14 @@ end
 --This function checks if the first and last titles are the same. If they aren't just return 1.
 --If they are then check from the bottom for where that bunch of duplicates started.
 function FindStartPoint()
-    local FirstTitl = GetLongTitle(1)
-    local LastTitl = GetLongTitle(#BMIIDX14Glob.MusicWheelList)
+    local FirstTitl = GetWheelLongTitle(1)
+    local LastTitl = GetWheelLongTitle(#BMIIDX14Glob.MusicWheelList)
     if FirstTitl ~= LastTitl then
         return 1
     end
     
     local StartPt = #BMIIDX14Glob.MusicWheelList
-    while StartPt > 1 and GetLongTitle(StartPt-1) == FirstTitl do
+    while StartPt > 1 and GetWheelLongTitle(StartPt-1) == FirstTitl do
         StartPt = StartPt - 1
     end
     return StartPt
