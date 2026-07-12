@@ -357,7 +357,6 @@ function SetSpeedMod(pn)
     ApplyMod('1x',pn)
     ApplyRateAdjust()
     --ApplyMod(modSpeed[pn],pn)
-    --there is an extra Disqualification Message in ScreenOptions overlay for speed mod changes
     MESSAGEMAN:Broadcast('SpeedModChanged')
 end
 
