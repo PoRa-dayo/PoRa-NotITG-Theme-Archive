@@ -20,7 +20,12 @@
 			OnCommand="Y,10;zoom,.55;shadowlength,0;maxwidth,300"
 			OffCommand="linear,0.3;diffusealpha,0"
 			CurrentSongChangedMessageCommand="playcommand,Update"
-			UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentSong():GetDisplayFullTitle()) end"
+			UpdateCommand="%function(self)
+                local songg = GAMESTATE:GetCurrentSong()
+                if songg then
+                    self:settext(songg:GetDisplayFullTitle())
+                end
+            end"
 		/>
 	</children> </Layer>
 
@@ -34,7 +39,12 @@
 			InitCommand="animate,0;playcommand,Update"
 			OnCommand="Y,-20;zoom,.3;shadowlength,0;maxwidth,520"
 			OffCommand="linear,0.3;diffusealpha,0"
-			UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentSong():GetDisplayArtist()) end"
+			UpdateCommand="%function(self)
+                local songg = GAMESTATE:GetCurrentSong()
+                if songg then
+                    self:settext(songg:GetDisplayArtist())
+                end
+            end"
 		/>
 
 </children> </Layer>

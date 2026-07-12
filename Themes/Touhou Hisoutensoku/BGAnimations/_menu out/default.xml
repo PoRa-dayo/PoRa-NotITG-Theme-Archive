@@ -2,8 +2,11 @@
     
     <Layer
        File="../_kitou"
-       InitCommand="hidden,1;sleep,0.5;queuecommand,Appear"
+       InitCommand="queuecommand,The;hidden,1;sleep,0.5;queuecommand,Appear"
        AppearCommand="hidden,0"
+       TheCommand="%function(self)
+            MESSAGEMAN:Broadcast('ShowWideOverlay')
+        end"
     />
     
     <Layer

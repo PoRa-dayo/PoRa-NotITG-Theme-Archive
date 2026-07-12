@@ -4,6 +4,7 @@
         InitCommand="%function(self)
             self:hidden(1)
             Sound('061')
+            MESSAGEMAN:Broadcast('ShowWideOverlay')
         end"
     />
     <Layer

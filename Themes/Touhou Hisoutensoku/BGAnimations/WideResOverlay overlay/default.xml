@@ -1,13 +1,30 @@
 <ActorFrame><children>
     <Layer
        File="../_Title/kitou"
-       InitCommand="zoom,-1;y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X-640;sleep,15;queuecommand,Poo"
-       PooCommand="%function(self)
-        print('bruh')
-        end"
+       InitCommand="zoom,-1;y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X-640;diffusealpha,0;linear,0.2;diffusealpha,1"
+       HideWideOverlayMessageCommand="%function(self)
+            self:stoptweening()
+            self:linear(0.2)
+            self:diffusealpha(0)
+       end"
+       ShowWideOverlayMessageCommand="%function(self)
+            self:stoptweening()
+            self:linear(0.2)
+            self:diffusealpha(1)
+       end"
     />
     <Layer
        File="../_Title/kitou"
-       InitCommand="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+640"
+       InitCommand="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+640;diffusealpha,0;linear,0.2;diffusealpha,1"
+       HideWideOverlayMessageCommand="%function(self)
+            self:stoptweening()
+            self:linear(0.2)
+            self:diffusealpha(0)
+       end"
+       ShowWideOverlayMessageCommand="%function(self)
+            self:stoptweening()
+            self:linear(0.2)
+            self:diffusealpha(1)
+       end"
     />
 </children></ActorFrame>
