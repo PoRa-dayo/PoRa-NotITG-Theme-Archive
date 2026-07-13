@@ -12,15 +12,15 @@
     <Layer
         Text="Title"
         Font="_aldine721 bt-black 40px"
-        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-30;zoom,0.9;horizalign,center;diffusebottomedge,0.93,0.71,0.35,1;shadowlength,0;diffusealpha,0;maxwidth,550;maxheight,300"
+        InitCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-20;zoom,0.9;horizalign,center;diffusebottomedge,0.93,0.71,0.35,1;shadowlength,0;diffusealpha,0;maxwidth,550;maxheight,470"
         OnCommand="queuecommand,Update;diffusealpha,0;linear,0.5;diffusealpha,1;linear,1.4;diffusealpha,1;linear,0.5;diffusealpha,0"
         UpdateCommand="%function(self)
             local songg = GAMESTATE:GetCurrentSong()
             local coursee = GAMESTATE:GetCurrentCourse()
             if songg then
-                self:settext(ReplaceSpaceWithLineBreaks(songg:GetDisplayMainTitle(), 12))
+                self:settext(ReplaceSpaceWithLineBreaks(songg:GetDisplayMainTitle(), 10))
             elseif coursee then
-                self:settext(ReplaceSpaceWithLineBreaks(coursee:GetDisplayFullTitle(), 12))
+                self:settext(ReplaceSpaceWithLineBreaks(coursee:GetDisplayFullTitle(), 10))
             end
         end"
 	/>
@@ -28,7 +28,7 @@
     <Layer
         Text="- EVENT MODE -"
         Font="_aldine721 bt-black 40px"
-        InitCommand="x,SCREEN_CENTER_X-10;y,SCREEN_CENTER_Y+155;zoom,0.4;diffusebottomedge,0.93,0.71,0.35,1;shadowlength,0;diffusealpha,0"
+        InitCommand="x,SCREEN_CENTER_X-10;y,SCREEN_CENTER_Y+185;zoom,0.4;diffusebottomedge,0.93,0.71,0.35,1;shadowlength,0;diffusealpha,0"
         OnCommand="queuecommand,Update;linear,0.8;addx,10;diffusealpha,1;linear,0.8;addx,10;linear,0.8;addx,10;diffusealpha,0"
         UpdateCommand="%function(self)
             if GAMESTATE:IsCourseMode() then

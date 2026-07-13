@@ -1,4 +1,6 @@
+---------------------------------------------
 -- LUA OPTION ROWS (BASE)
+---------------------------------------------
 
 --change the text of a BitmapText element on the OptionRow with ModName, and change the x coordinate of the cursor accordingly
 function SetOptionRow(ModName,id,text,pn)
@@ -65,8 +67,11 @@ function CreateOptionRow( Params, Names, LoadFctn, SaveFctn )
 	return t
 end
 
--- LUA OPTION ROWS
 
+
+---------------------------------------------
+-- LUA OPTION ROWS
+---------------------------------------------
 
 --the SpeedModOption option row goes from 5 to 2000, increasing 5 for each option (so 5, 10, 15, 20, 25, etc.)
 local speedMin = 5
@@ -315,7 +320,10 @@ function NoteSkinOption()
 end
 
 
--- Lua Option Row support functions
+
+---------------------------------------------
+-- LUA OPTION ROWS (SUPPORT FUNCTIONS)
+---------------------------------------------
 	   
 function InitSpeedMod()
     --define these tables, examples of their format are also shown here (DIFFERENT FROM SIMPLY LOVE)
@@ -411,4 +419,71 @@ function ApplyNoteskin()
     end
 end
 
+
+
+---------------------------------------------
+--LUA OPTION ROWS (NON-GAMEPLAY)
+---------------------------------------------
+
+function SoundVolumeOption()
+	local modList = {'0%','10%','20%','30%','40%','50%','60%','70%','80%','90%','100%'}
+	local t = {
+		Name = "Sound Volume",
+		LayoutType = "ShowOneInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true,
+		ExportOnChange = true,
+		Choices = modList,
+	   
+		LoadSelections = function(self, list, pn)
+			local vol = PREFSMAN:GetPreference('SoundVolume')
+            --lua doesnt have math.round but ig math.floor(n+0.5) can replace it
+            list[math.floor(vol * 10 + 0.5) + 1] = true
+		end,
+
+		SaveSelections = function(self, list, pn)
+			for n = 1, table.getn(modList) do
+				if list[n] then
+                    PREFSMAN:SetPreference('SoundVolume', (n-1)/10)
+                end
+			end
+			MESSAGEMAN:Broadcast('VolChange')
+		end
+	   
+	}
+	setmetatable(t, t)
+	return t
+end
+function BGBrightnessOption()
+	local modList = {'0%','10%','20%','30%','40%','50%','60%','70%','80%','90%','100%'}
+	local t = {
+		Name = "Brightness",
+		LayoutType = "ShowOneInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true,
+		ExportOnChange = true,
+		Choices = modList,
+	   
+		LoadSelections = function(self, list, pn)
+			local bri = PREFSMAN:GetPreference('BGBrightness')
+            --lua doesnt have math.round but ig math.floor(n+0.5) can replace it
+            list[math.floor(bri * 10 + 0.5) + 1] = true
+		end,
+
+		SaveSelections = function(self, list, pn)
+			for n = 1, table.getn(modList) do
+				if list[n] then
+                    PREFSMAN:SetPreference('BGBrightness', (n-1)/10)
+                end
+			end
+			MESSAGEMAN:Broadcast('BrightnessChange')
+		end
+	   
+	}
+	setmetatable(t, t)
+	return t
+end
+
+
+---------------------------------------------
 InitSpeedMod()

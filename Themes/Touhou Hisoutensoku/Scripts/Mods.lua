@@ -4,6 +4,11 @@ ToHoSokuGlob = {}
 function Sound(str) SOUND:PlayOnce( Path("sounds",str )) end
 function Path(ec,str) return THEME:GetPath( _G['EC_'..string.upper(ec)] , '' , str ) end
 
+
+---------------------------------------------
+-- NOTESKIN AND JUDGMENT LIST INITIALIZATION
+---------------------------------------------
+
 -- Judgment Font List
 judgmentFontList = { 'Bebas2', 'Chromatic', 'Code2', 'Comic Sans2', 'Deco', 'DDR A', 'DDR Extreme', 'ECFA', 'ECFA No Quotes', 'Emoji', 'FP', 'GrooveNights', 'ITG2', 'Japanese', 'Lobster2', 'Love', 'Love Chroma', 'Miso2', 'mute', 'Optimus Dark', 'Rainbowmatic', 'Roboto', 'Roboto ITG', 'Tactics', 'VHS', 'Vision', 'Vision Dark', 'Wendy2' }
 if FUCK_EXE then -- Auto load on NotITG
@@ -95,7 +100,11 @@ for pn=0,1 do
     end
 end
 
--- BGAnimation Screen Functions
+
+
+---------------------------------------------
+-- BGANIMATION SCREEN FUNCTIONS
+---------------------------------------------
 
 -- SCREEN SELECT MUSIC (and also ScreenEditMenu)
 --<ActorFrame InitCommand="%SelectMusicInit" FirstUpdateCommand="%SelectMusic" CaptureCommand="%SongInfo" CurrentSongChangedMessageCommand="queuecommand,Capture" CurrentStepsP1ChangedMessageCommand="queuecommand,Capture" CurrentStepsP2ChangedMessageCommand="queuecommand,Capture" />
@@ -112,7 +121,11 @@ function Evaluation() end
 function GameplayInit(self)	Combo = {} self:queuecommand('FirstUpdate') end
 function Gameplay() JudgmentInit() end
 
+
+
+---------------------------------------------
 -- MOD CHANGING FUNCTIONS
+---------------------------------------------
 
 modRate = 1
 --in this theme i set InitializeMods to activate the first time you open ScreenSelectMusic
@@ -147,7 +160,6 @@ function RevertRateAdjust()
 	end
 end
 
--- JUDGMENT TRACKING
 
 function JudgmentInit()
 	judgeP1 = {0,0,0,0,0,0,0,0,0}
@@ -187,7 +199,10 @@ function JudgmentInit()
 end
 
 
+
+---------------------------------------------
 -- CAPTURING FUNCTIONS
+---------------------------------------------
 
 function GetSongName()
 	if GAMESTATE:GetCurrentCourse() then return GAMESTATE:GetCurrentCourse():GetDisplayFullTitle() end
@@ -220,6 +235,10 @@ end
 --and an OptionCursorEle that has the ActorFrames of the cursors
 --it's the same thing as Simply Love's Frame Capture, except here I'm too lazy to capture the underlines
 --this theme also uses a custom line highlight so no need to capture that here either
+
+--btw everything here except for OptionNumIndex absolutely needs to be cleared once you exit the corresponding option menu
+--else the game will crash when accessing those tables as it contains elements that no longer exist,
+--and will either give a "A BitmapText needs a font" error or an AV
 function CaptureOptionRows()
     ToHoSokuGlob.OptionRows = {}
     ToHoSokuGlob.OptionTextEle = {}
@@ -233,7 +252,7 @@ function CaptureOptionRows()
     --holy shit propagate is confusing
     --so FrameEle here has like twenty something children,
     --the first ones each have like 3 grandchildren of their own, while the rest only have 1 grandchild each
-    --all of FrameEle's children will call GiveChildren, IN ORDER BASED ON THEIR INDEX
+    --all of FrameEle's children will call GiveChildren, IN ORDER BASED ON THEIR ACTORFRAME INDEX
     FrameEle:propagate(1)
     FrameEle:addcommand('GiveChildren',function(self)
         --pick the children with 1 grandchild cuz those are the option rows
@@ -241,45 +260,48 @@ function CaptureOptionRows()
             local OptionRow = self
             --grab that 1 grandchild
             local OptionRowEle = self:GetChild('')
-            OptionRowEle:propagate(1)
-            
-            --and make that grandchild give its components as well.
-            local ModName
-            OptionRowEle:addcommand('GiveChildren',function(self)
-                if IsType(self,'BitmapText') then
-                    --first bitmaptext found in each OptionRowEle is the mod name, I want to use that as the index (so it's easier to view in console lol)
-                    if not ModName then
-                        ModName = self:GetText()
-                        ToHoSokuGlob.OptionTextEle[ModName] = {}
-                        ToHoSokuGlob.OptionRows[ModName] = OptionRow
-                        
-                        --and so i store the number index in another table
-                        optionInd = optionInd +1
-                        ToHoSokuGlob.OptionNumIndex[ModName] = optionInd
-                        
-                        --save stuff related to the speed mod in variables that we can use later
-                        if string.find(ModName, "^(Speed %()") then
-                            ToHoSokuGlob.SpeedModName = ModName
+            if IsType(OptionRowEle,'ActorFrame') then
+                OptionRowEle:propagate(1)
+                
+                --and make that grandchild give its components as well.
+                local ModName
+                OptionRowEle:addcommand('GiveChildren',function(self)
+                    if IsType(self,'BitmapText') then
+                        --first bitmaptext found in each OptionRowEle is the mod name, I want to use that as the index
+                        --(so it's easier to view in console lol)
+                        if not ModName then
+                            ModName = self:GetText()
+                            ToHoSokuGlob.OptionTextEle[ModName] = {}
+                            ToHoSokuGlob.OptionRows[ModName] = OptionRow
                             
-                            local s = ModName
-                            bpm = {}
-                            s = string.sub(s,8,string.len(s)-1)
-                            bpm[1] = string.gsub(s,'^(-?%d+)-?[-%d]*$','%1')
-                            bpm[2] = string.gsub(s,'^'..bpm[1]..'%-?','')
-                        elseif ModName == 'Speed' then
-                            ToHoSokuGlob.SpeedModName = ModName
-                            bpm[1] = ''
-                            bpm[2] = ''
+                            --and so i store the number index in another table
+                            optionInd = optionInd +1
+                            ToHoSokuGlob.OptionNumIndex[ModName] = optionInd
+                            
+                            --save stuff related to the speed mod in variables that we can use later
+                            if string.find(ModName, "^(Speed %()") then
+                                ToHoSokuGlob.SpeedModName = ModName
+                                
+                                local s = ModName
+                                bpm = {}
+                                s = string.sub(s,8,string.len(s)-1)
+                                bpm[1] = string.gsub(s,'^(-?%d+)-?[-%d]*$','%1')
+                                bpm[2] = string.gsub(s,'^'..bpm[1]..'%-?','')
+                            elseif ModName == 'Speed' then
+                                ToHoSokuGlob.SpeedModName = ModName
+                                bpm[1] = ''
+                                bpm[2] = ''
+                            end
                         end
+                        --now for each index we have a bunch of BitmapText we can mess with
+                        --note that the bitmaptext of the mod name itself is at index 1
+                        table.insert(ToHoSokuGlob.OptionTextEle[ModName],self)
+                        
                     end
-                    --now for each index we have a bunch of BitmapText we can mess with
-                    --note that the bitmaptext of the mod name itself is at index 1
-                    table.insert(ToHoSokuGlob.OptionTextEle[ModName],self)
-                    
-                end
-            end)
-            
-            OptionRowEle:queuecommand('GiveChildren')
+                end)
+                
+                OptionRowEle:queuecommand('GiveChildren')
+            end
             
         --also grab the ones with 3 grandchildren cuz those are the cursors
         elseif IsType(self,'ActorFrame') and self:GetNumChildren() == 3 then
@@ -309,7 +331,11 @@ function PostModCaptureInit()
     SetOptionRow(ToHoSokuGlob.SpeedModName,3,DisplaySpeedMod(2),2)
 end
 
+
+
+---------------------------------------------
 -- BPM FORMAT AND DISPLAY FUNCTIONS
+---------------------------------------------
 
 function BPMlabelRate(self)
     if not bpm then return RateModText() end

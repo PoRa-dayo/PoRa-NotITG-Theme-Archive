@@ -173,11 +173,7 @@ function GetPaneX( player )
 end
 
 function EvalX()
-   if not GAMESTATE:PlayerUsingBothSides() then return 0 end
-
-   local Offset = 147
-   if GAMESTATE:GetMasterPlayerNumber() == PLAYER_2 then Offset = Offset * -1 end
-   return Offset;
+   return 0
 end
 
 function EvalTweenDistance()
@@ -222,6 +218,9 @@ function Radar(pn,cat)
     local GetRadar = GAMESTATE:GetCurrentSteps(pn):GetRadarValues(pn);
     return GetRadar:GetValue(cat);
 end
+
+
+-- TOUHOU SOKU EXCLUSIVES
 
 function ScreenSelectMusicUpdate(self)
 	local song = GAMESTATE:GetCurrentSong();
@@ -375,6 +374,79 @@ function ScreenSelectMusicUpdate(self)
     ToHoSokuGlob.SelectMusicHasFirstLoaded = true
 end
 
+
+--give char's code point
+local function Utf8Codepoint(char)
+    local b1 = string.byte(char, 1)
+    if not b1 then
+        return nil
+    end
+
+    if b1 < 0x80 then
+        return b1
+    elseif b1 < 0xE0 then
+        local b2 = string.byte(char, 2)
+        return (b1 - 0xC0) * 0x40 + (b2 - 0x80)
+    elseif b1 < 0xF0 then
+        local b2 = string.byte(char, 2)
+        local b3 = string.byte(char, 3)
+        return (b1 - 0xE0) * 0x1000
+             + (b2 - 0x80) * 0x40
+             + (b3 - 0x80)
+    else
+        local b2 = string.byte(char, 2)
+        local b3 = string.byte(char, 3)
+        local b4 = string.byte(char, 4)
+        return (b1 - 0xF0) * 0x40000
+             + (b2 - 0x80) * 0x1000
+             + (b3 - 0x80) * 0x40
+             + (b4 - 0x80)
+    end
+end
+--Check Chinese/Japanese
+local function IsJapaneseOrChinese(char)
+    local code = Utf8Codepoint(char)
+    if not code then
+        return false
+    end
+
+    return
+        (code >= 0x3040 and code <= 0x309F) or -- Hiragana
+        (code >= 0x30A0 and code <= 0x30FF) or -- Katakana
+        (code >= 0x31F0 and code <= 0x31FF) or -- Katakana Extensions
+        (code >= 0x3400 and code <= 0x4DBF) or -- CJK Extension A
+        (code >= 0x4E00 and code <= 0x9FFF) or -- CJK Unified Ideographs
+        (code >= 0x20000 and code <= 0x323AF)
+end
+
+--separate the characters in the string, except now it also works with Japanese/Chinese
+local function Utf8Chars(str)
+    local i = 1
+    return function()
+        if i > #str then
+            return nil
+        end
+
+        local b = string.byte(str, i)
+        local len
+
+        if b < 0x80 then
+            len = 1
+        elseif b < 0xE0 then
+            len = 2
+        elseif b < 0xF0 then
+            len = 3
+        else
+            len = 4
+        end
+
+        local char = string.sub(str, i, i + len - 1)
+        i = i + len
+        return char
+    end
+end
+
+--the line break thingy in ScreenStage
 function ReplaceSpaceWithLineBreaks(str, WordLimit)
     local words = {}
     for word in string.gfind(str,"%S+") do
@@ -384,8 +456,32 @@ function ReplaceSpaceWithLineBreaks(str, WordLimit)
     if #words == 0 then
         return str
     end
+    
+    --immediately line breaks if it detects japanese or chinese
+    local function ProcessWord(word)
+        local newWord = ""
+        local lastWasCJK = false
 
-    local result = words[1]
+        for ch in Utf8Chars(word) do
+            local isCJK = IsJapaneseOrChinese(ch)
+
+            if isCJK and not lastWasCJK and #newWord > 0 then
+                newWord = newWord .. "\n"
+            end
+
+            newWord = newWord .. ch
+
+            if isCJK then
+                newWord = newWord .. "\n"
+            end
+
+            lastWasCJK = isCJK
+        end
+
+        return newWord
+    end
+
+    local result = ProcessWord(words[1])
 
     for i = 2, #words do
         local _, last = string.find(result, ".*\n")
@@ -397,10 +493,18 @@ function ReplaceSpaceWithLineBreaks(str, WordLimit)
             lastGroup = result
         end
 
-        if #lastGroup + 1 + #words[i] > WordLimit then
-            result = result .. "\n" .. words[i]
+        local processedWord = ProcessWord(words[i])
+
+        local firstLine = processedWord
+        local firstBreak = string.find(processedWord, "\n", 1, true)
+        if firstBreak then
+            firstLine = string.sub(processedWord, 1, firstBreak - 1)
+        end
+
+        if #lastGroup + 1 + #firstLine > WordLimit then
+            result = result .. "\n" .. processedWord
         else
-            result = result .. " " .. words[i]
+            result = result .. " " .. processedWord
         end
     end
 
