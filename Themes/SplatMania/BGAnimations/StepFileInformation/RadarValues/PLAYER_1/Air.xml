@@ -1,7 +1,7 @@
 <ActorFrame><children>
 
             <Layer
-            Font="Common Normal"
+            Font="Paintball"
             Text="@THEME:GetMetric('PaneDisplay', 'Air')"
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
             OnCommand="%function(self)
