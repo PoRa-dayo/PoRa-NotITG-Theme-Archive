@@ -5,31 +5,31 @@
     <Layer
        Text="Change Course"
        Font="_aldine721 bt 20px"
-       InitCommand="zoom,0.5;x,-48"
+       InitCommand="zoom,0.5;x,-48+2"
     />
     <Layer
        Text="Change Difficulty"
        Font="_aldine721 bt 20px"
-       InitCommand="zoom,0.5;x,-186"
+       InitCommand="zoom,0.5;x,-185+2"
     />
     <Layer
        Text="Enter"
        Font="_aldine721 bt 20px"
-       InitCommand="zoom,0.5;x,42;diffuse,0.98,0.8,0.54,1"
+       InitCommand="zoom,0.5;x,42+2;diffuse,0.98,0.8,0.54,1"
     />
     <Layer
        Text="Select Course"
        Font="_aldine721 bt 20px"
-       InitCommand="zoom,0.5;x,95"
+       InitCommand="zoom,0.5;x,95+2"
     />
     <Layer
        Text="Escape"
        Font="_aldine721 bt 20px"
-       InitCommand="zoom,0.5;x,180;diffuse,0.49,0.81,0.96,1"
+       InitCommand="zoom,0.5;x,180+2;diffuse,0.49,0.81,0.96,1"
     />
     <Layer
        Text="Go Back"
        Font="_aldine721 bt 20px"
-       InitCommand="zoom,0.5;x,222"
+       InitCommand="zoom,0.5;x,222+2"
     />
 </children></ActorFrame>
