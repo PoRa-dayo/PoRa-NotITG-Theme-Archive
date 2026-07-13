@@ -374,6 +374,9 @@ function ScreenSelectMusicUpdate(self)
     ToHoSokuGlob.SelectMusicHasFirstLoaded = true
 end
 
+--so that math.random actually gives different things
+math.randomseed(os.time())
+
 
 --give char's code point
 local function Utf8Codepoint(char)

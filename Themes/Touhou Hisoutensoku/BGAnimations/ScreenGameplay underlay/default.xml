@@ -6,8 +6,11 @@
             File="../Gameplay/centerObjectB"
             InitCommand="y,SCREEN_TOP+36;x,SCREEN_CENTER_X;queuecommand,RandomizeBG"
             RandomizeBGCommand="%function(self)
-                local BGList = {'_Core','_DollHouse','_Geyser','_Library','_Mansion','_MouthGeyser','_Shore'}
+                local BGList = {'_DollHouse','_Geyser','_Library','_Mansion','_Shore','_Core','_MouthGeyser'}
                 ToHoSokuGlob.RandomBG = BGList[math.random(#BGList)]
+                ToHoSokuGlob.RandomBG = BGList[math.random(#BGList)]
+                ToHoSokuGlob.RandomBG = BGList[math.random(#BGList)]
+                print(ToHoSokuGlob.RandomBG)
             end"
         />
         <Layer
