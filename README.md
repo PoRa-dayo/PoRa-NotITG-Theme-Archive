@@ -354,7 +354,7 @@ A very animated and flashy theme based on the game Beatmania IIDX 14: Gold, the 
 Now, it's party time! Ready to relive your hypest moments with IIDX GOOOOOOOOOOOOOOOOLD!!!!!
 
 ## Credits:
-Original theme by DJ.Tony. Ported and optimized for NotITG 4.9.1 by PoRa.
+Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa.
 
 ## Changelogs: (compared to the SM3.9 ver)
 -This was a big theme. The original theme had a custom .exe that came along with it that allowed you to customize some things like the Common BGM, Decide SFX, Toasties, Screen Filter, Explosions of the Beatmania skins that came along with it, the Lane Covers, and even options to make the UI become an actual Beatmania simulator.:\
@@ -387,6 +387,50 @@ Original theme by DJ.Tony. Ported and optimized for NotITG 4.9.1 by PoRa.
 <img width="200" alt="NotITG-v4 9 1_KgNbzFQ4b8" src="https://github.com/user-attachments/assets/52a98074-2a19-460e-9b54-1ae5277349fe" />
 <img width="200" alt="NotITG-v4 9 1_UnfWajcjL7" src="https://github.com/user-attachments/assets/f04a3188-6999-4781-90ed-dc1b4c006535" />
 <img width="200" alt="NotITG-v4 9 1_WynyrU45bV" src="https://github.com/user-attachments/assets/db5daea4-0fe4-41db-90b2-19d67a210ed5" />
+
+
+# TOUHOU HISOUTENSOKU
+A steampunk-like theme made as a love letter to the fighting game Touhou Hisoutensoku, made by Twilight Frontier and Team Shanghai Alice.
+
+
+This is also my first port of a SM5 theme, and the original SM5 theme is a rather simple one. Unfortunately NotITG themes have to have a load of files, but I tried organizing them to the best of my ability.\
+It was built with PrismRhythm as a base, so its metrics documentation is still there. Hope this theme can be a good base for making new ones in the future.
+
+## Credits:
+Original theme by Jousway (SM5). Ported and optimized for NotITG 4.9.1 by PoRa with permission.
+
+Thanks to DarkOverord for posting most of the game's assets on spriters-resource.com.
+
+## Changelogs: (compared to the SM5 ver.)
+-Added Touhou Hisoutensoku's window icon.\
+-Buttons in the title screen are changed to have NotITG's common game modes, including "VS Dance", acting as this theme's "Play Mods".\
+-Marathon mode is now accessible. Doubles charts can now be played.\
+-Added "Memory of Forgathering Dream" that plays at certain parts such as Marathon Mode, Edit menu, etc.\
+-Added a bunch of sound effects from the original game that play in various places. The timeout sound however was from the mainline bullet hell Touhou games lol.\
+-Option menus are revamped to be more like what SM3.95 themes usually have. Added custom option cursors and underlines.\
+-Player option menus are revamped to be more like what NotITG Simply Love has. Speedmod customization is changed to be in the style of Simply Love. Added MetaMods.\
+-Added judgment font and hold judgment customization.\
+-Added a "Press Start to enter options menu" popup.\
+-Pane contents (stepchart data on song select) changed to what ITG usually has.\
+-Added a custom default judgment font and hold judgment, and custom combo font.\
+-Folder names and Roulette/Random on the song select screen now have different colors to be less confusing.\
+-Difficulty list now uses its own number font, and also shows the difficulty name and number as well as the stepartist of the currently selected chart.\
+-Grades now use assets from the original game, with custom-made grade sprites for D and F. The grade system is similar to A.O.I's.\
+-Added ScreenStage (intro before the gameplay) that shows the song title and current stage in a similar manner to the original game.\
+-The default background is now picked randomly from the 7 main backgrounds that appeared in the original game's Story Mode.\
+-Added custom Ready and Cleared animations based on the original game.\
+-The lifebar now has an extra red part that shows up when life is lost, and is animated like in the original game.\
+-Current song title, subtitle and difficulty are now displayed in the gameplay UI.\
+-The top middle part of the gameplay UI now displays the current stage, as well as a countdown to the end of the song.\
+-Added a small BPM counter at the bottom.\
+-Added a fanfare to the results screen. (being the ending of "The Eternal Theme Engine")\
+-Results screen now display stats in a similar manner to ITG, except Hands and Jumps counters are removed. BPM and Music Rate are also displayed on this screen.\
+-Added a name entry screen at the end of a game session (when Event Mode is off).\
+-Added Edit menu and finished its UI.\
+-The prompts (pop-ups that ask a question that you have to answer) are also customized.\
+-Added offset plot and spellcard viewer in results screen.\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.
+
 
 # Special thanks
 [MattMayuga](https://github.com/Tiny-Foxes/JudgeFonts-by-MattMayuga/) - Judgment fonts.\
