@@ -432,6 +432,13 @@ Thanks to DarkOverord for posting most of the game's assets on spriters-resource
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 
+<img width="200" alt="NotITG-v4 9 1_gCfGWOw5qg" src="https://github.com/user-attachments/assets/a9d96874-4b2d-4a66-a6e6-fa1b43557533" />
+<img width="200" alt="NotITG-v4 9 1_bo2xtRpaIA" src="https://github.com/user-attachments/assets/56d70423-45f5-45e5-9b7a-794f0e55115e" />
+<img width="200" alt="NotITG-v4 9 1_dUJ6RcpCBl" src="https://github.com/user-attachments/assets/256c4d61-7e78-4a29-88ed-840aeae849fb" />
+<img width="200" alt="KFm6BinoKl" src="https://github.com/user-attachments/assets/917315a1-b0f2-4cb1-a71a-c235503c60ca" />
+<img width="200" height="450" alt="NotITG-v4 9 1_I5qMfjsspj" src="https://github.com/user-attachments/assets/b55607af-4b78-4563-89cc-0581a57b9351" />
+
+
 # Special thanks
 [MattMayuga](https://github.com/Tiny-Foxes/JudgeFonts-by-MattMayuga/) - Judgment fonts.\
 [HURG-IIDX](https://github.com/HURG-IIDX/Simply-Love-Judgefonts) - Judgment fonts.\
