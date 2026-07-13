@@ -10,6 +10,7 @@
             OnCommand="%function(self)
                 self:x(SCREEN_CENTER_X)
                 self:y(SCREEN_CENTER_Y-160)
+                self:maxwidth(1400)
                 self:zoom(0.4)
                 SongTitle(self)
             end"
