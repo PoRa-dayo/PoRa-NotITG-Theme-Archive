@@ -56,17 +56,17 @@
     <Layer
        File="../Config/Cursor1"
        Name="Cursor1"
-       InitCommand="zoomx,0.5;x,SCREEN_CENTER_X-164+180+25"
+       InitCommand="zoomx,0.5;x,SCREEN_CENTER_X-164+170+25"
     />
     <Layer
        File="../Config/Cursor3"
        Name="Cursor3"
-       InitCommand="x,SCREEN_CENTER_X-266+180;spin;effectmagnitude,0,0,100"
+       InitCommand="x,SCREEN_CENTER_X-266+170;spin;effectmagnitude,0,0,100"
     />
     <Layer
        File="../Config/Cursor4"
        Name="Cursor4"
-       InitCommand="x,SCREEN_CENTER_X-280+180;spin;effectmagnitude,0,0,-100"
+       InitCommand="x,SCREEN_CENTER_X-280+170;spin;effectmagnitude,0,0,-100"
     />
     
     
