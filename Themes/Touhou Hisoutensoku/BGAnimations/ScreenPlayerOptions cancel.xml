@@ -1,5 +1,5 @@
 <ActorFrame> <children>
-	<Actor
+	<Layer
 		Type="Quad"
 		StartTransitioningCommand="%function(self) SCREENMAN:GetTopScreen():playcommand('Off') end"
         OffCommand="%function(self)
@@ -9,7 +9,7 @@
             ToHoSokuGlob.OptionRows = nil
         end"
 	/>
-	<Actor
+	<Layer
 		File="_menu out"
 	/>
 </children> </ActorFrame>
