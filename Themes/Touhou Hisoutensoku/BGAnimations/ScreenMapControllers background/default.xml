@@ -1,4 +1,9 @@
-<ActorFrame
+<ActorFrame OnCommand="%function(self)
+        MESSAGEMAN:Broadcast('HideWideOverlay')
+    end"
+    OffCommand="%function(self)
+        MESSAGEMAN:Broadcast('ShowWideOverlay')
+    end"
 ><children>
     <Layer
        File="../_Gears/door_l"
