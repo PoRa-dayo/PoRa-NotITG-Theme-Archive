@@ -177,6 +177,7 @@ OITGThemerFallback is a fallback theme that's made to make it easier to port SM3
 -Edit Courses changed to Courses. Finished the UI of Courses.\
 -Default sort option is set to Group.\
 -Changed all the .gif files into .png files.\
+-Changed the roulette and chance banners to the SM3.9 default ones that the original used.\
 -Redirected more fonts into using the _shared1 font.\
 -Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options, added Music Rate customization option\
 -Replaced the "Loading..." sprite with an original one.\
