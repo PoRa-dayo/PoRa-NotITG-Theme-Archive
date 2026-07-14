@@ -76,7 +76,7 @@
     <Layer
        Text=""
        Font="../Numbers/_futurist normal"
-       InitCommand="x,-143+32*0.40;y,-45;shadowlength,1;zoomx,0.8;maxwidth,50"
+       InitCommand="x,-143+32*0.40;y,-45;shadowlength,1;zoomx,0.8;maxwidth,40"
        DiffUpdateMessageCommand="%function(self)
             local TheList = ToHoSokuGlob.CurDiffList
             if TheList and TheList[0] then
@@ -90,7 +90,7 @@
     <Layer
        Text=""
        Font="../Numbers/_futurist normal"
-       InitCommand="x,-143+32*1.46;y,-45;shadowlength,1;zoomx,0.8;maxwidth,50"
+       InitCommand="x,-143+32*1.46;y,-45;shadowlength,1;zoomx,0.8;maxwidth,40"
        DiffUpdateMessageCommand="%function(self)
             local TheList = ToHoSokuGlob.CurDiffList
             if TheList and TheList[1] then
@@ -104,7 +104,7 @@
     <Layer
        Text=""
        Font="../Numbers/_futurist normal"
-       InitCommand="x,-143+32*2.52;y,-45;shadowlength,1;zoomx,0.8;maxwidth,50"
+       InitCommand="x,-143+32*2.52;y,-45;shadowlength,1;zoomx,0.8;maxwidth,40"
        DiffUpdateMessageCommand="%function(self)
             local TheList = ToHoSokuGlob.CurDiffList
             if TheList and TheList[2] then
@@ -118,7 +118,7 @@
     <Layer
        Text=""
        Font="../Numbers/_futurist normal"
-       InitCommand="x,-143+32*3.58;y,-45;shadowlength,1;zoomx,0.8;maxwidth,50"
+       InitCommand="x,-143+32*3.58;y,-45;shadowlength,1;zoomx,0.8;maxwidth,40"
        DiffUpdateMessageCommand="%function(self)
             local TheList = ToHoSokuGlob.CurDiffList
             if TheList and TheList[3] then
@@ -132,7 +132,7 @@
     <Layer
        Text=""
        Font="../Numbers/_futurist normal"
-       InitCommand="x,-143+32*4.64;y,-45;shadowlength,1;zoomx,0.8;maxwidth,50"
+       InitCommand="x,-143+32*4.64;y,-45;shadowlength,1;zoomx,0.8;maxwidth,40"
        DiffUpdateMessageCommand="%function(self)
             local TheList = ToHoSokuGlob.CurDiffList
             if TheList and TheList[4] then
@@ -146,7 +146,7 @@
     <Layer
        Text=""
        Font="../Numbers/_futurist normal"
-       InitCommand="x,-143+32*5.70;y,-45;shadowlength,1;zoomx,0.8;maxwidth,50"
+       InitCommand="x,-143+32*5.70;y,-45;shadowlength,1;zoomx,0.8;maxwidth,40"
        DiffUpdateMessageCommand="%function(self)
             local TheList = ToHoSokuGlob.CurDiffList
             if TheList and TheList[5] then
