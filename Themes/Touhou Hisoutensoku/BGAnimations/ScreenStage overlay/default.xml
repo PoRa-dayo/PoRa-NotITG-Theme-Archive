@@ -12,20 +12,20 @@
     <Layer
         Text="Title"
         Font="_aldine721 bt-black 40px"
-        InitCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-20;zoom,0.95;horizalign,center;diffusebottomedge,0.93,0.71,0.35,1;shadowlength,1;diffusealpha,0;maxwidth,550;"
+        InitCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-20;zoom,0.95;horizalign,center;diffusebottomedge,0.93,0.71,0.35,1;shadowlength,1;diffusealpha,0;maxwidth,550;wrapwidthpixels,250"
         OnCommand="queuecommand,Update"
         AnimCommand="diffusealpha,0;linear,0.5;diffusealpha,1;linear,1.4;diffusealpha,1;linear,0.5;diffusealpha,0"
         UpdateCommand="%function(self)
             local songg = GAMESTATE:GetCurrentSong()
             local coursee = GAMESTATE:GetCurrentCourse()
             if songg then
-                self:settext(ReplaceSpaceWithLineBreaks(songg:GetDisplayMainTitle(), 10))
+                self:settext(CJKVertical(songg:GetDisplayMainTitle()))
                 local Theight = self:GetHeight()
                 if Theight > 400 then
                     self:zoom(0.95*(400/Theight))
                 end
             elseif coursee then
-                self:settext(ReplaceSpaceWithLineBreaks(coursee:GetDisplayFullTitle(), 10))
+                self:settext(CJKVertical(coursee:GetDisplayFullTitle()))
             end
             self:queuecommand('Anim')
         end"

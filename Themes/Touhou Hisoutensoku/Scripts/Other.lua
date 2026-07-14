@@ -449,66 +449,27 @@ local function Utf8Chars(str)
     end
 end
 
---the line break thingy in ScreenStage
-function ReplaceSpaceWithLineBreaks(str, WordLimit)
-    local words = {}
-    for word in string.gfind(str,"%S+") do
-        table.insert(words, word)
-    end
+--the line break for japanese/chinese thing in ScreenStage
+function CJKVertical(str)
+    local result = ""
+    local lastWasCJK = false
 
-    if #words == 0 then
-        return str
-    end
-    
-    --immediately line breaks if it detects japanese or chinese
-    local function ProcessWord(word)
-        local newWord = ""
-        local lastWasCJK = false
+    for ch in Utf8Chars(str) do
+        local isCJK = IsJapaneseOrChinese(ch)
 
-        for ch in Utf8Chars(word) do
-            local isCJK = IsJapaneseOrChinese(ch)
-
-            if isCJK and not lastWasCJK and #newWord > 0 then
-                newWord = newWord .. "\n"
-            end
-
-            newWord = newWord .. ch
-
-            if isCJK then
-                newWord = newWord .. "\n"
-            end
-
-            lastWasCJK = isCJK
+        -- Put a line break before the first CJK character in a run.
+        if isCJK and not lastWasCJK and #result > 0 then
+            result = result .. "\n"
         end
 
-        return newWord
-    end
+        result = result .. ch
 
-    local result = ProcessWord(words[1])
-
-    for i = 2, #words do
-        local _, last = string.find(result, ".*\n")
-
-        local lastGroup
-        if last then
-            lastGroup = string.sub(result, last + 1)
-        else
-            lastGroup = result
+        -- Put a line break after every CJK character.
+        if isCJK then
+            result = result .. "\n"
         end
 
-        local processedWord = ProcessWord(words[i])
-
-        local firstLine = processedWord
-        local firstBreak = string.find(processedWord, "\n", 1, true)
-        if firstBreak then
-            firstLine = string.sub(processedWord, 1, firstBreak - 1)
-        end
-
-        if #lastGroup + 1 + #firstLine > WordLimit then
-            result = result .. "\n" .. processedWord
-        else
-            result = result .. " " .. processedWord
-        end
+        lastWasCJK = isCJK
     end
 
     return result
