@@ -47,9 +47,9 @@ function TechnoPrefs()
 end
 
 function StyleIcon()
-	s = "icon " .. game .. " " .. CurStyleName()
-	path = THEME:GetPath( EC_GRAPHICS, "MenuElements" , s)
-	i = SCREENMAN:GetTopScreen():GetChild('StyleIcon')
+	local s = "icon " .. game .. " " .. CurStyleName()
+	local path = THEME:GetPath( EC_GRAPHICS, "MenuElements" , s)
+	local i = SCREENMAN:GetTopScreen():GetChild('StyleIcon')
 	i:Load(path)
 end
 	
@@ -256,10 +256,10 @@ function Get2PlayerJoinMessage()
 end
 
 function Spin(self) 
-	r = math.min(math.random(3,51),36)
-	s = math.random()*7+1 
-	z = self:GetZ();  
-	l = r/36; 
+	local r = math.min(math.random(3,51),36)
+	local s = math.random()*7+1 
+	local z = self:GetZ();  
+	local l = r/36; 
 	if z >= 36 then  
 		z = z-36
 		self:z(z)
@@ -290,44 +290,44 @@ function Decents() if math.abs(PREFSMAN:GetPreference('JudgeWindowSecondsGood') 
 function WayOffs() if math.abs(PREFSMAN:GetPreference('JudgeWindowSecondsBoo') - 0.180) < .001 then return true end end
 
 function Radar( Values, Cat )
-if not Values then return "" end
-local str = ""
+    if not Values then return "" end
+    local str = ""
 
-local CategoryDef = {
-RADAR_CATEGORY_JUMPS,
-RADAR_CATEGORY_HOLDS,
-RADAR_CATEGORY_MINES,
-RADAR_CATEGORY_HANDS,
-RADAR_CATEGORY_ROLLS,
-RADAR_CATEGORY_TAPS,
-}
+    local CategoryDef = {
+    RADAR_CATEGORY_JUMPS,
+    RADAR_CATEGORY_HOLDS,
+    RADAR_CATEGORY_MINES,
+    RADAR_CATEGORY_HANDS,
+    RADAR_CATEGORY_ROLLS,
+    RADAR_CATEGORY_TAPS,
+    }
 
-str = string.format("%03d", Values:GetValue( CategoryDef[Cat] ) )
+    str = string.format("%03d", Values:GetValue( CategoryDef[Cat] ) )
 
-return str
+    return str
 
 end
 
 
 function ColorRadar( player, Cat )
-if not player then return "" end
+    if not player then return "" end
 
-local val = ""
+    local val = ""
 
-local CategoryDef = {
-RADAR_CATEGORY_JUMPS,
-RADAR_CATEGORY_HOLDS,
-RADAR_CATEGORY_MINES,
-RADAR_CATEGORY_HANDS,
-RADAR_CATEGORY_ROLLS,
-RADAR_CATEGORY_TAPS
-}
+    local CategoryDef = {
+    RADAR_CATEGORY_JUMPS,
+    RADAR_CATEGORY_HOLDS,
+    RADAR_CATEGORY_MINES,
+    RADAR_CATEGORY_HANDS,
+    RADAR_CATEGORY_ROLLS,
+    RADAR_CATEGORY_TAPS
+    }
 
-local Selection = GAMESTATE:GetCurrentSteps( player ) or GAMESTATE:GetCurrentTrail( player )
+    local Selection = GAMESTATE:GetCurrentSteps( player ) or GAMESTATE:GetCurrentTrail( player )
 
-val = Selection:GetRadarValues():GetValue( CategoryDef[1] )
+    val = Selection:GetRadarValues():GetValue( CategoryDef[1] )
 
-if val <= 20 then return "diffuse,#FF0000" end
-if val < 20 then return "diffuse,#FFFF00" end
-return "diffuse,#FFFF00"
+    if val <= 20 then return "diffuse,#FF0000" end
+    if val < 20 then return "diffuse,#FFFF00" end
+    return "diffuse,#FFFF00"
 end
