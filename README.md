@@ -78,6 +78,7 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Replay Song? screen now takes you to evaluation screen if No is selected.\
 -Removed Marathon Mode and Battle Mode buttons on title screen, select those inside Dance Mode instead.\
 -F grades are now shown in song selection screen.\
+-Changed some nasty global variables that were set accidentally into local variables again.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.\
 -Added offset plot and spellcard viewer in results screen.
