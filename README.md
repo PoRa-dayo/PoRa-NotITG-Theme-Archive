@@ -13,9 +13,9 @@ Head on to the [releases](https://github.com/PoRa-dayo/PoRa-NotITG-Theme-Archive
 
 **NOTE: The game might give errors if you try to play files immediately after switching themes. Restarting the game fixes the problem.**
 
-An archive by PoRa that hosts old NotITG-compatible themes, slightly edited to ensure a smooth experience on NotITG v4.9.1. Hopefully this will allow for more long-term usage with these themes.
+An archive by PoRa that hosts old NotITG-compatible themes, slightly edited to ensure a smooth experience on NotITG v4.9.1; as well as a few SM3.9/SM5 theme ports to NotITG 4.9.1. Hopefully this will allow for more long-term usage with these themes.
 
-These were only tested on NotITG v4.9.1 Coin Mode Home + Event Mode.
+These were only tested on NotITG v4.9.1 Coin Mode Home, with Event Mode on and off.
 
 All themes here are ensured to have: modern noteskin customization, modern judgment font customization, modern judgment hold customization (except DWI theme), proper difficulty number, step artist, song length indicator (can just be Long/Marathon indicator, but Course Mode must have the total time), available difficulties indicator (can be a difficulty list, or show whether easier/harder difficulties are available) and result indicator (percentage score and Failed grades must be visible) on song selection screen, hold (OK and NG) and mine counter as well as offset plot/spellcard viewer on results screen, Stitch.lua stuff (FailOverlay, in-game console, etc.), a "Play Mods" button (takes you to 2P Regular immediately), Course (Marathon) Mode being accessible, a Select Theme option, and a Display Resolution option.
 
@@ -131,7 +131,7 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 
 
 # IN THE GROOVE: TACTICS
-A minimal theme based on the game Final Fantasy Tactics by Square, featuring a whole... class system?
+A minimal theme based on the game Final Fantasy Tactics by Square, featuring a whole... class system? Despite being a Mad Matt theme, it's a really old one so it doesn't even use the Mad Matt's Lua Hacks (Mods.lua) at all.
 ## Credits:
 -Original theme by Mad Matt, no longer maintained. Optimized for NotITG 4.9.1 by PoRa
 
