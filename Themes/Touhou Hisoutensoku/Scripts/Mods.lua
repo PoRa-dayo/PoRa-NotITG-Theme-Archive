@@ -233,8 +233,9 @@ end
 --activated in ScreenPlayerOptions overlay and ScreenPlayerOptionsEdit overlay because it has to call AFTER all the elements have been rendered
 --gives a OptionTextEle table that contains the BitmapText elements of all the option rows on the options screen
 --and an OptionCursorEle that has the ActorFrames of the cursors
---it's the same thing as Simply Love's Frame Capture, except here I'm too lazy to capture the underlines
---this theme also uses a custom line highlight so no need to capture that here either
+--and an OptionUnderlineEle that has the Underline sprites
+--it's basically the same thing as Simply Love's Frame Capture
+--this theme also uses a custom line highlight so no need to capture that here
 
 --btw everything here except for OptionNumIndex absolutely needs to be cleared once you exit the corresponding option menu
 --else the game will crash when accessing those tables as it contains elements that no longer exist,
@@ -244,17 +245,23 @@ function CaptureOptionRows()
     ToHoSokuGlob.OptionTextEle = {}
     ToHoSokuGlob.OptionNumIndex = {}
     ToHoSokuGlob.OptionCursorEle = {{},{}}
+    ToHoSokuGlob.OptionUnderlineEle = {}
     local optionInd = 0
+    
     local cursorInd = 0
     local cursorFramePn = 1
     local cursorPn = 1
+    
+    local underlineInd = 0
+    local underlineFramePn = 1
+    local underlinePn = 1
     local FrameEle = SCREENMAN:GetTopScreen():GetChild('Frame')
     --holy shit propagate is confusing
     --so FrameEle here has like twenty something children,
     --the first ones each have like 3 grandchildren of their own, while the rest only have 1 grandchild each
     --all of FrameEle's children will call GiveChildren, IN ORDER BASED ON THEIR ACTORFRAME INDEX
     FrameEle:propagate(1)
-    FrameEle:addcommand('GiveChildren',function(self)
+    FrameEle:addcommand('FrameGiveChildren',function(self)
         --pick the children with 1 grandchild cuz those are the option rows
         if IsType(self,'ActorFrame') and self:GetNumChildren() == 1 then
             local OptionRow = self
@@ -265,7 +272,7 @@ function CaptureOptionRows()
                 
                 --and make that grandchild give its components as well.
                 local ModName
-                OptionRowEle:addcommand('GiveChildren',function(self)
+                OptionRowEle:addcommand('RowGiveChildren',function(self)
                     if IsType(self,'BitmapText') then
                         --first bitmaptext found in each OptionRowEle is the mod name, I want to use that as the index
                         --(so it's easier to view in console lol)
@@ -297,32 +304,61 @@ function CaptureOptionRows()
                         --note that the bitmaptext of the mod name itself is at index 1
                         table.insert(ToHoSokuGlob.OptionTextEle[ModName],self)
                         
+                    elseif IsType(self,'ActorFrame') and self:GetNumChildren() == 3 then
+                        underlineInd = 0
+                        underlinePn = 1
+                        --inside each OptionRowEle, the ActorFrames with 3 children are the underlines
+                        --here the mod name is also used as the index
+                        --and inside each mod name, the player number is the index
+                        local UnderlineFrame = self
+                        if not ToHoSokuGlob.OptionUnderlineEle[ModName] then
+                            ToHoSokuGlob.OptionUnderlineEle[ModName] = {{},{}}
+                        end
+                        --for each player, the ActorFrame itself is placed at index 1
+                        table.insert(ToHoSokuGlob.OptionUnderlineEle[ModName][underlineFramePn],UnderlineFrame)
+                        underlineFramePn = underlineFramePn == 1 and 2 or 1
+                        UnderlineFrame:propagate(1)
+                        
+                        --for index 2 onwards we place the ActorFrame's children
+                        UnderlineFrame:addcommand('UnderlineGiveChildren',function(self)
+                            underlineInd = underlineInd +1
+                            table.insert(ToHoSokuGlob.OptionUnderlineEle[ModName][underlinePn],self)
+                            if underlineInd >= 3 then underlinePn = 2 end
+                        end)
+                        UnderlineFrame:queuecommand('UnderlineGiveChildren')
                     end
+                    
                 end)
                 
-                OptionRowEle:queuecommand('GiveChildren')
+                OptionRowEle:queuecommand('RowGiveChildren')
             end
             
         --also grab the ones with 3 grandchildren cuz those are the cursors
+        --here the index will be the player number
         elseif IsType(self,'ActorFrame') and self:GetNumChildren() == 3 then
-            --the ActorFrame themselves are placed at index 1
+            --for each player, the ActorFrame itself is placed at index 1
             table.insert(ToHoSokuGlob.OptionCursorEle[cursorFramePn],self)
-            cursorFramePn = cursorFramePn + 1
+            cursorFramePn = cursorFramePn == 1 and 2 or 1
             self:propagate(1)
             
             --for index 2 onwards we place the ActorFrame's children
-            self:addcommand('GiveChildren',function(self)
+            self:addcommand('CursorGiveChildren',function(self)
                 cursorInd = cursorInd +1
-                if cursorInd <= 6 then 
-                    table.insert(ToHoSokuGlob.OptionCursorEle[cursorPn],self)
-                end
+                table.insert(ToHoSokuGlob.OptionCursorEle[cursorPn],self)
                 if cursorInd >= 3 then cursorPn = 2 end
             end)
             
-            self:queuecommand('GiveChildren')
+            self:queuecommand('CursorGiveChildren')
         end
     end)
-    FrameEle:queuecommand('GiveChildren')
+    FrameEle:queuecommand('FrameGiveChildren')
+end
+
+function ClearOptionCaptures()
+    ToHoSokuGlob.OptionTextEle = nil
+    ToHoSokuGlob.OptionCursorEle = nil
+    ToHoSokuGlob.OptionRows = nil
+    ToHoSokuGlob.OptionUnderlineEle = nil
 end
 
 --what to do right after the capturing above

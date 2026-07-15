@@ -3,10 +3,8 @@
 		Type="Quad"
 		StartTransitioningCommand="%function(self) SCREENMAN:GetTopScreen():playcommand('Off') end"
         OffCommand="%function(self)
-            --otherwise if anything tries to access ToHoSokuGlob.OptionTextEle it will cause AV because the elements are no longer there
-            ToHoSokuGlob.OptionTextEle = nil
-            ToHoSokuGlob.OptionCursorEle = nil
-            ToHoSokuGlob.OptionRows = nil
+            --otherwise if anything tries to access these, it will cause AV because the elements are no longer there
+            ClearOptionCaptures()
         end"
 	/>
 </children> </ActorFrame>

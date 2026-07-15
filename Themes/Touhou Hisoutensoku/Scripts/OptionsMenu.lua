@@ -6,11 +6,11 @@
 function SetOptionRow(ModName,id,text,pn)
     if not GAMESTATE:IsPlayerEnabled(pn-1) then return end
     --in Simply Love this function is called Size, placed inside SetOptionRow
-    local function CursorXBasedOnTextSize(cursor,txt)
+    local function CursorAndUnderlineSpriteBasedOnTextSize(SpriteTable,txt)
         local z = txt:GetWidth()*txt:GetZoom()
-        cursor[pn][2]:zoomtowidth(z)
-        cursor[pn][3]:x(-(z + cursor[pn][2]:GetWidth())/2)
-        cursor[pn][4]:x((z + cursor[pn][2]:GetWidth())/2)
+        SpriteTable[pn][2]:zoomtowidth(z)
+        SpriteTable[pn][3]:x(-(z + SpriteTable[pn][2]:GetWidth())/2)
+        SpriteTable[pn][4]:x((z + SpriteTable[pn][2]:GetWidth())/2)
     end
     
     if not ToHoSokuGlob.OptionTextEle then return end
@@ -21,9 +21,11 @@ function SetOptionRow(ModName,id,text,pn)
         --this Y coordinate magic number has to be changed according to what's set in metrics.ini
         local MagicY = SCREEN_CENTER_Y-103+32*(ToHoSokuGlob.OptionNumIndex[ModName]-1)
         if ToHoSokuGlob.OptionCursorEle and ToHoSokuGlob.OptionCursorEle[pn][1]:GetY() == math.floor(MagicY) then
-            CursorXBasedOnTextSize(ToHoSokuGlob.OptionCursorEle, ModValEle)
+            CursorAndUnderlineSpriteBasedOnTextSize(ToHoSokuGlob.OptionCursorEle, ModValEle)
         end
-        
+        if ToHoSokuGlob.OptionUnderlineEle and ToHoSokuGlob.OptionUnderlineEle[ModName] then
+            CursorAndUnderlineSpriteBasedOnTextSize(ToHoSokuGlob.OptionUnderlineEle[ModName], ModValEle)
+        end
     end
 end
 
@@ -87,6 +89,13 @@ function SpeedModOption(name)
     --(counts is for the cnt that will be used in the move function and AddSnap function, it increases when saveFunc is triggered too often)
     local function move(pn,dir,cnt)
         modBase[pn+1] = clamp( AddSnap(modBase[pn+1] , dir , cnt , { 5 , 25 , 100 } ) , speedMin , speedMax );
+        
+        --temporary solution to deal with the BothAtOnce desyncing bug until that gets fixed START
+        if PREFSMAN:GetPreference('InputDuplication') then
+            modBase[2] = modBase[1]
+        end
+        --temporary solution to deal with the BothAtOnce desyncing bug until that gets fixed END
+        
         ModTypeAndBaseToModSpeed(pn+1)
         SetSpeedMod(pn+1)
     end
@@ -96,6 +105,7 @@ function SpeedModOption(name)
 		SelectType = "SelectOne",
 		OneChoiceForAllPlayers = false,
 		--ExportOnChange true makes it save immediately after the player changes the value
+        --(more details in metrics.ini comments)
 		ExportOnChange = true
     }
         
@@ -230,10 +240,8 @@ function BackButton()
 		Choices = modList,
 		LoadSelections = function(self, list, pn) end,
 		SaveSelections = function(self, list, pn)
-            --otherwise if anything tries to access ToHoSokuGlob.OptionTextEle it will cause AV because the elements are no longer there
-            ToHoSokuGlob.OptionTextEle = nil
-            ToHoSokuGlob.OptionCursorEle = nil
-            ToHoSokuGlob.OptionRows = nil
+            --otherwise if anything tries to access these, it will cause AV because the elements are no longer there
+            ClearOptionCaptures()
             if list[1] then
                 if (not ToHoSokuGlob.OptionsScreen) or ToHoSokuGlob.OptionsScreen == 'PlayerOptions' then
                     SCREENMAN:SetNewScreen('ScreenSongOptions')
