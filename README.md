@@ -392,7 +392,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 
 
 # TOUHOU HISOUTENSOKU
-A steampunk-like theme made as a love letter to the fighting game Touhou Hisoutensoku, made by Twilight Frontier and Team Shanghai Alice.
+A fancy steampunk-like theme made as a love letter to the fighting game Touhou Hisoutensoku, made by Twilight Frontier and Team Shanghai Alice.
 
 
 This is also my first port of a SM5 theme, and the original SM5 theme is a rather simple one, without too many extra lua features. Unfortunately NotITG themes have to have a load of files, but I tried organizing them to the best of my ability.\
