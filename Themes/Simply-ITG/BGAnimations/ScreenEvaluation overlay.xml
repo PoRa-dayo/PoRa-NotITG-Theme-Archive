@@ -86,9 +86,13 @@
     <!-- NotITG Offset Plot -->
             
     <Layer File="OffsetPlot" OffCommand="%function(self)
-        self:diffusealpha(0)
-        BX_SaltyResets = 0
-        BX_SaltyResetPos = {}
+        if PlayModeName() == 'Rave' or PlayModeName() == 'Endless' then
+            self:addy(20)
+            BX_CurCustomLife = {0.5, 0.5}
+            BX_DispCustomLife = {0.5, 0.5}
+            BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
+            BX_DisplayedGraph = 'Life'
+        end
     end"/>
 </children></ActorFrame>
 	

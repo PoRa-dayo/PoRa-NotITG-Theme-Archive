@@ -1,0 +1,3 @@
+[Sprite]
+Texture=ScreenGamepl course song 5
+InitCommand=%function(self) self:animate(0) self:setstate(Color()-1) end

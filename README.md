@@ -75,10 +75,15 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Changed the values of the Lifebar Adjustment option, so you don't need to go to metrics.ini to change the lifebars for widescreen anymore. Lifebar Adjustment is now set to 0 by default.\
 -Changed the help text in Edit Mode to reflect NotITG edit mode functions.\
 -Removed Reset Menu button in Options as it screws up the game real badly. (not so surprising isn't it)\
+-Removed Fill Machine Stats (shit feature).\
 -Replay Song? screen now takes you to evaluation screen if No is selected.\
 -Removed Marathon Mode and Battle Mode buttons on title screen, select those inside Dance Mode instead.\
 -F grades are now shown in song selection screen.\
 -Changed some nasty global variables that were set accidentally into local variables again.\
+-Recolored the preview arrows at the PICK A COLOR screen to be more accurate.\
+-Fixed the appearing animations of the option message and stage name that show up before the song begins.\
+-The cancel flash, the SELECT A COURSE header and the song numbers during courses are now colored based on the color you chose.\
+-Added the custom player options that disappeared only in NotITG but not OpenITG for some reason, and fixed their functionality.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.\
 -Added offset plot and spellcard viewer in results screen.

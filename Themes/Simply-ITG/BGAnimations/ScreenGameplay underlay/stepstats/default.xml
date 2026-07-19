@@ -27,9 +27,9 @@ OnCommand="%function(self)
 		<ActorFrame
 			Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats2(PLAYER_1) == 1"
 			OnCommand="%function(self)
-					self:x(SCREEN_WIDTH/4+(CustomMods[PLAYER_1].solo and 64 or 0));
-					self:y(CustomMods[PLAYER_1].solo and 34 or 0);
-					self:zoom(CustomMods[PLAYER_1].solo and .75 or 1)
+					self:x(SCREEN_WIDTH/4+(gnPlayerPositioning == 2 and 64 or 0));
+					self:y(gnPlayerPositioning == 2 and 34 or 0);
+					self:zoom(gnPlayerPositioning == 2 and .75 or 1)
 					self:addx(SCREEN_WIDTH/2);
 					self:decelerate(1);
 					self:addx(-SCREEN_WIDTH/2);
@@ -66,9 +66,9 @@ OnCommand="%function(self)
 			<BitmapText OnCommand="zoom,0.5;addy,96;addx,73*1;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesOtherHit(self,PLAYER_1)) end" />
 				<!--Show what each collumn is, only on stage 1 -->
 				<ActorFrame Condition="GAMESTATE:StageIndex() == 0 "><children>
-				<BitmapText OnCommand="rotationz,-90;addx,73*-1;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Fantastics" FadeOnCommand="%function(self) self:sleep(2) self:linear(1) self:diffusealpha(0) end" />
-				<BitmapText OnCommand="rotationz,-90;addx,73*-0;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Excellents" FadeOnCommand="%function(self) self:sleep(2.25) self:linear(1) self:diffusealpha(0) end" />
-				<BitmapText OnCommand="rotationz,-90;zoom,.8;addx,73*1;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Greats, Decents::Way-Offs" FadeOnCommand="%function(self) self:sleep(2.5) self:linear(1) self:diffusealpha(0) end" />
+				<BitmapText Condition="(not GAMESTATE:IsHumanPlayer(PLAYER_2)) and ShowStats2(PLAYER_1) == 1" OnCommand="rotationz,-90;addx,73*-1;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Fantastics" FadeOnCommand="%function(self) self:sleep(2) self:linear(1) self:diffusealpha(0) end" />
+				<BitmapText Condition="(not GAMESTATE:IsHumanPlayer(PLAYER_2)) and ShowStats2(PLAYER_1) == 1" OnCommand="rotationz,-90;addx,73*-0;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Excellents" FadeOnCommand="%function(self) self:sleep(2.25) self:linear(1) self:diffusealpha(0) end" />
+				<BitmapText Condition="(not GAMESTATE:IsHumanPlayer(PLAYER_2)) and ShowStats2(PLAYER_1) == 1" OnCommand="rotationz,-90;zoom,.8;addx,73*1;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Greats, Decents::Way-Offs" FadeOnCommand="%function(self) self:sleep(2.5) self:linear(1) self:diffusealpha(0) end" />
 				</children></ActorFrame>	
 			<Actor File="bar_fantastic" OnCommand="vertalign,bottom;addx,73*-1;addy,86;zoomy,0;"
 				StepP1MessageCommand="playcommand,Update"
@@ -83,11 +83,11 @@ OnCommand="%function(self)
 		
 		<!-- Player 2 judgment pane -->
 		<ActorFrame
-			Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1"
+			Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats2(PLAYER_2) == 1"
 			OnCommand="%function(self)
-					self:x(-SCREEN_WIDTH/4-(CustomMods[PLAYER_2].solo and 64 or 0));
-					self:y(CustomMods[PLAYER_2].solo and 34 or 0);
-					self:zoom(CustomMods[PLAYER_2].solo and .75 or 1)
+					self:x(-SCREEN_WIDTH/4-(gnPlayerPositioning == 2 and 64 or 0));
+					self:y(gnPlayerPositioning == 2 and 34 or 0);
+					self:zoom(gnPlayerPositioning == 2 and .75 or 1)
 					self:addx(-SCREEN_WIDTH/2);
 					self:decelerate(1);
 					self:addx(SCREEN_WIDTH/2);
@@ -110,9 +110,9 @@ OnCommand="%function(self)
 			<BitmapText OnCommand="zoom,0.5;addy,96;addx,73*-1;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesOtherHit(self,PLAYER_2)) end" />
 			<!--Show what each collumn is, only on stage 1 -->
 				<ActorFrame Condition="GAMESTATE:StageIndex() == 0 "><children>
-				<BitmapText OnCommand="rotationz,-90;addx,73*1;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Fantastics" FadeOnCommand="%function(self) self:sleep(2) self:linear(1) self:diffusealpha(0) end" />
-				<BitmapText OnCommand="rotationz,-90;addx,73*0;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Excellents" FadeOnCommand="%function(self) self:sleep(2.25) self:linear(1) self:diffusealpha(0) end" />
-				<BitmapText OnCommand="rotationz,-90;zoom,.8;addx,73*-1;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Greats, Decents::Way-Offs" FadeOnCommand="%function(self) self:sleep(2.5) self:linear(1) self:diffusealpha(0) end" />
+				<BitmapText Condition="(not GAMESTATE:IsHumanPlayer(PLAYER_1)) and ShowStats2(PLAYER_2) == 1" OnCommand="rotationz,-90;addx,73*1;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Fantastics" FadeOnCommand="%function(self) self:sleep(2) self:linear(1) self:diffusealpha(0) end" />
+				<BitmapText Condition="(not GAMESTATE:IsHumanPlayer(PLAYER_1)) and ShowStats2(PLAYER_2) == 1" OnCommand="rotationz,-90;addx,73*0;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Excellents" FadeOnCommand="%function(self) self:sleep(2.25) self:linear(1) self:diffusealpha(0) end" />
+				<BitmapText Condition="(not GAMESTATE:IsHumanPlayer(PLAYER_1)) and ShowStats2(PLAYER_2) == 1" OnCommand="rotationz,-90;zoom,.8;addx,73*-1;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Greats, Decents::Way-Offs" FadeOnCommand="%function(self) self:sleep(2.5) self:linear(1) self:diffusealpha(0) end" />
 				</children></ActorFrame>
 			<Actor File="bar_fantastic" OnCommand="vertalign,bottom;addx,73*1;addy,86;zoomy,0;"
 				StepP2MessageCommand="playcommand,Update"
@@ -182,22 +182,22 @@ OnCommand="%function(self)
 				UpdateCommand="%function(self) self:zoomy(GetNotesOtherHit(self,PLAYER_2) / P2TotalSteps) end" />
 		</children></ActorFrame>
 		
-	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats(PLAYER_1) == 1" OnCommand="horizalign,right;zoom,0.5;maxwidth,SCREEN_WIDTH/4.5;y,SCREEN_TOP+54+16*0-SCREEN_HEIGHT/2;addx,-10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesFantasticHit(self,PLAYER_1)) end" />
-	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats(PLAYER_1) == 1" OnCommand="horizalign,right;zoom,0.5;maxwidth,SCREEN_WIDTH/5;y,SCREEN_TOP+54+16*1-SCREEN_HEIGHT/2;addx,-10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesExcellentHit(self,PLAYER_1)) end" />
+	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats(PLAYER_1) == 1" OnCommand="horizalign,right;zoom,0.5;maxwidth,SCREEN_WIDTH/4.5;y,SCREEN_TOP+64+16*0-SCREEN_HEIGHT/2;addx,-10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesFantasticHit(self,PLAYER_1)) end" />
+	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats(PLAYER_1) == 1" OnCommand="horizalign,right;zoom,0.5;maxwidth,SCREEN_WIDTH/5;y,SCREEN_TOP+64+16*1-SCREEN_HEIGHT/2;addx,-10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesExcellentHit(self,PLAYER_1)) end" />
 	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats(PLAYER_1) == 1 and not (GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()==DIFFICULTY_BEGINNER or GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()==DIFFICULTY_BEGINNER)"
-	OnCommand="horizalign,right;zoom,0.5;maxwidth,SCREEN_WIDTH/7;y,SCREEN_TOP+54+16*2-SCREEN_HEIGHT/2;addx,-10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesOtherHit(self,PLAYER_1)) end" />
+	OnCommand="horizalign,right;zoom,0.5;maxwidth,SCREEN_WIDTH/7;y,SCREEN_TOP+64+16*2-SCREEN_HEIGHT/2;addx,-10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesOtherHit(self,PLAYER_1)) end" />
 	
-	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1" OnCommand="horizalign,left;zoom,0.5;maxwidth,SCREEN_WIDTH/4.5;y,SCREEN_TOP+54+16*0-SCREEN_HEIGHT/2;addx,10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesFantasticHit(self,PLAYER_2)) end" />
-	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1" OnCommand="horizalign,left;zoom,0.5;maxwidth,SCREEN_WIDTH/5;y,SCREEN_TOP+54+16*1-SCREEN_HEIGHT/2;addx,10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesExcellentHit(self,PLAYER_2)) end" />
+	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1" OnCommand="horizalign,left;zoom,0.5;maxwidth,SCREEN_WIDTH/4.5;y,SCREEN_TOP+64+16*0-SCREEN_HEIGHT/2;addx,10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesFantasticHit(self,PLAYER_2)) end" />
+	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1" OnCommand="horizalign,left;zoom,0.5;maxwidth,SCREEN_WIDTH/5;y,SCREEN_TOP+64+16*1-SCREEN_HEIGHT/2;addx,10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesExcellentHit(self,PLAYER_2)) end" />
 	<BitmapText Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1 and not (GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()==DIFFICULTY_BEGINNER or GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()==DIFFICULTY_BEGINNER)"
-	OnCommand="horizalign,left;zoom,0.5;maxwidth,SCREEN_WIDTH/7;y,SCREEN_TOP+54+16*2-SCREEN_HEIGHT/2;addx,10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesOtherHit(self,PLAYER_2)) end" />
+	OnCommand="horizalign,left;zoom,0.5;maxwidth,SCREEN_WIDTH/7;y,SCREEN_TOP+64+16*2-SCREEN_HEIGHT/2;addx,10;shadowlength,0" File="ScreenGameplay judgment" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesOtherHit(self,PLAYER_2)) end" />
 	
-	<BitmapText Condition="ShowStats(PLAYER_1) == 1 or ShowStats(PLAYER_2) == 1" OnCommand="zoom,0.5;y,SCREEN_TOP+54+16*0-SCREEN_HEIGHT/2;shadowlength,0;diffuse,#b2f9ff" File="ScreenGameplay judgment" Text="F" />
-	<BitmapText Condition="ShowStats(PLAYER_1) == 1 or ShowStats(PLAYER_2) == 1" OnCommand="zoom,0.5;y,SCREEN_TOP+54+16*1-SCREEN_HEIGHT/2;shadowlength,0;diffuse,#ffe2bd" File="ScreenGameplay judgment" Text="E" />
+	<BitmapText Condition="ShowStats(PLAYER_1) == 1 or ShowStats(PLAYER_2) == 1" OnCommand="zoom,0.5;y,SCREEN_TOP+64+16*0-SCREEN_HEIGHT/2;shadowlength,0;diffuse,#b2f9ff" File="ScreenGameplay judgment" Text="F" />
+	<BitmapText Condition="ShowStats(PLAYER_1) == 1 or ShowStats(PLAYER_2) == 1" OnCommand="zoom,0.5;y,SCREEN_TOP+64+16*1-SCREEN_HEIGHT/2;shadowlength,0;diffuse,#ffe2bd" File="ScreenGameplay judgment" Text="E" />
 	<ActorFrame Condition="ShowStats(PLAYER_1) == 1 or ShowStats(PLAYER_2) == 1">
 			<children>
 	<BitmapText Condition="GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()~=DIFFICULTY_BEGINNER and GAMESTATE:GetCurrentSteps(PLAYER_2):GetDifficulty()~=DIFFICULTY_BEGINNER"
-	OnCommand="zoom,0.5;y,SCREEN_TOP+54+16*2-SCREEN_HEIGHT/2;shadowlength,0;diffuse,#c9fb9f" File="ScreenGameplay judgment" Text="O" />
+	OnCommand="zoom,0.5;y,SCREEN_TOP+64+16*2-SCREEN_HEIGHT/2;shadowlength,0;diffuse,#c9fb9f" File="ScreenGameplay judgment" Text="O" />
 
 	</children></ActorFrame>
 	</children></ActorFrame>
@@ -269,16 +269,17 @@ OnCommand="%function(self)
 			<BitmapText OnCommand="zoom,0.5;y,-204+15*2;x,-4;shadowlength,0;horizalign,left" File="ScreenGameplay judgment" Text="0" UpdateCommand="%function(self) self:settext(GetNotesOtherHit(self,PLAYER_2)) end" />
 		</children></ActorFrame>
 	</children></ActorFrame>
-			<!-- Player 1 judgment pane -->
+    
+    
+    
+    
+    <!-- Player 1 judgment pane (small) -->
 		<ActorFrame
 			Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and ShowStats(PLAYER_1) == 1"
 			OnCommand="%function(self)
-					self:x(SCREEN_WIDTH/4+(CustomMods[PLAYER_1].solo and 64 or 0));
-					self:y(CustomMods[PLAYER_1].solo and 34 or 0);
-					self:zoom(CustomMods[PLAYER_1].solo and .75 or 1)
-					self:addx(SCREEN_WIDTH/2);
-					self:decelerate(1);
-					self:addx(-SCREEN_WIDTH/2);
+					self:x(SCREEN_WIDTH/4+(gnPlayerPositioning == 2 and 64 or 0));
+					self:y(gnPlayerPositioning == 2 and 34 or 0);
+					self:zoom(gnPlayerPositioning == 2 and .75 or 1)
 					end" >
 			<children>
 
@@ -288,17 +289,34 @@ OnCommand="%function(self)
 				StepP1MessageCommand="%function(self) SetJudgmentFrameForPlayer(self, PLAYER_1) end">
 				<children>
 				
-			<BitmapText OnCommand="zoom,0.5;addy,265;addx,40;shadowlength,0;halign,0" File="_eurostile blue" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesFantasticHit(self,PLAYER_1)) end" />
-			<BitmapText OnCommand="zoom,0.5;addy,277;addx,40;shadowlength,0;halign,0" File="_eurostile gold" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesExcellentHit(self,PLAYER_1)) end" />
-			<BitmapText OnCommand="zoom,0.5;addy,289;addx,40;shadowlength,0;halign,0" File="_eurostile green" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesOtherHit(self,PLAYER_1)) end" />
-				<!--Show what each collumn is, only on stage 1 -->
-				<ActorFrame Condition="GAMESTATE:StageIndex() == 0 "><children>
-				<BitmapText OnCommand="rotationz,-90;addx,73*-1;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Fantastics" FadeOnCommand="%function(self) self:sleep(2) self:linear(1) self:diffusealpha(0) end" />
-				<BitmapText OnCommand="rotationz,-90;addx,73*-0;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Excellents" FadeOnCommand="%function(self) self:sleep(2.25) self:linear(1) self:diffusealpha(0) end" />
-				<BitmapText OnCommand="rotationz,-90;zoom,.8;addx,73*1;addy,-20;shadowlength,0;queuecommand,FadeOn" File="_v 26px bold black" Text="Greats, Decents::Way-Offs" FadeOnCommand="%function(self) self:sleep(2.5) self:linear(1) self:diffusealpha(0) end" />
-				</children></ActorFrame>	
-		
+			<BitmapText OnCommand="zoom,0.5;addy,265;addx,40;shadowlength,0;horizalign,0" File="_eurostile blue" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesFantasticHit(self,PLAYER_1)) end" />
+			<BitmapText OnCommand="zoom,0.5;addy,277;addx,40;shadowlength,0;horizalign,0" File="_eurostile gold" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesExcellentHit(self,PLAYER_1)) end" />
+			<BitmapText OnCommand="zoom,0.5;addy,289;addx,40;shadowlength,0;horizalign,0" File="_eurostile green" Text="0" StepP1MessageCommand="%function(self) self:settext(GetNotesOtherHit(self,PLAYER_1)) end" />
 			</children></ActorFrame>	
+        </children></ActorFrame>	
+            
+            
+            
+    <!-- Player 2 judgment pane (small) -->
+		<ActorFrame
+			Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and ShowStats(PLAYER_2) == 1"
+			OnCommand="%function(self)
+					self:x(SCREEN_WIDTH*3/4-(gnPlayerPositioning == 2 and 64 or 0));
+					self:y(gnPlayerPositioning == 2 and 34 or 0);
+					self:zoom(gnPlayerPositioning == 2 and .75 or 1)
+					end" >
+			<children>
+						<!-- Draw the text -->
+			<ActorFrame Condition="GAMESTATE:IsHumanPlayer(PLAYER_2)"
+				OnCommand="addx,10"
+				StepP1MessageCommand="%function(self) SetJudgmentFrameForPlayer(self, PLAYER_2) end">
+				<children>
+				
+			<BitmapText OnCommand="zoom,0.5;addy,265;addx,40;shadowlength,0;horizalign,0" File="_eurostile blue" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesFantasticHit(self,PLAYER_2)) end" />
+			<BitmapText OnCommand="zoom,0.5;addy,277;addx,40;shadowlength,0;horizalign,0" File="_eurostile gold" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesExcellentHit(self,PLAYER_2)) end" />
+			<BitmapText OnCommand="zoom,0.5;addy,289;addx,40;shadowlength,0;horizalign,0" File="_eurostile green" Text="0" StepP2MessageCommand="%function(self) self:settext(GetNotesOtherHit(self,PLAYER_2)) end" />
+			</children></ActorFrame>	
+	</children></ActorFrame>
 
 			
 </children></ActorFrame>

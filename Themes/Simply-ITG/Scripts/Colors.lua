@@ -59,8 +59,8 @@ function ColorRGB ( n )
 	local color = n + Color() + 12
 	color = math.mod(color-1,12)+1
 	if color == 1 then return 1,0.49,0,1 end
-	if color == 2 then return 1,0.24,0.14,1 end
-	if color == 3 then return 1,0,0.24,1 end
+	if color == 2 then return 1,0.24,0.24,1 end
+	if color == 3 then return 1,0,0.4,1 end
 	if color == 4 then return 0.76,0,0.44,1 end
 	if color == 5 then return 0.51,0,0.63,1 end
 	if color == 6 then return 0.25,0.23,0.82,1 end

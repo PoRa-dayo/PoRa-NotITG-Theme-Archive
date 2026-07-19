@@ -1,0 +1,19 @@
+<ActorFrame><children>
+
+    <Layer
+        File="main"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-32"
+    />
+
+    <Layer
+        File="explanation"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+138"
+    />
+
+    <Layer
+        File="../ScreenWithMenuElements underlay"
+    />
+    
+    <ActorFrame Command="%ScreenEditInit" FirstUpdateCommand="%ScreenEdit" />
+
+</children></ActorFrame>

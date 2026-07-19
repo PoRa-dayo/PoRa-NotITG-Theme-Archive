@@ -4,7 +4,11 @@
         OnCommand="animate,0;x,SCREEN_CENTER_X;y,240;hidden,1"
         SongChosenMessageCommand="stoptweening;queuecommand,B"
         BCommand="@'hidden,0;'..THEME:GetMetric('ScreenSelectMusic','OptionsMessageOnCommand')"
-        EnterModsMenuMessageCommand="@'setstate,1;sleep,0.7;'..THEME:GetMetric('ScreenSelectMusic','OptionsMessageOffCommand')"
+        EnterModsMenuMessageCommand="setstate,1"
+        OptionsOffMessageCommand="%function(self)
+            self:linear(0.3)
+            self:cropleft(1.3)
+        end"
     />
     
     

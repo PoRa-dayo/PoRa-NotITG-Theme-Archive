@@ -166,9 +166,9 @@ end
 	playerOptions = {}
 	playerOptions[1] = { 'SpeedType','SpeedNumber','Mini','Perspective','Centered','NoteSkin','JudgmentFont','HoldJudgment','Turn','LifeBar','Compare','Rate' }
 	if FUCK_EXE and tonumber(GAMESTATE:GetVersionDate()) >= 20210420 then -- v4.2.0
-		playerOptions[2] = { 'MetaMods1','MetaMods2','MetaMods3','Turn','Accel','Scroll','Effect','Appearance','Handicap','InsertTaps','InsertOther','Hide','Ghost' }
+		playerOptions[2] = { 'MetaMods1','MetaMods2','MetaMods3','Turn','Accel','Scroll','Effect','Appearance','Handicap','Handicap2','InsertTaps','InsertOther','Hide','Ghost','Measure','PlayerPos','Stats','JudgePos' }
 	else
-		playerOptions[2] = { 'Turn','Accel','Scroll','Effect','Appearance','Handicap','InsertTaps','InsertOther','Hide','Ghost' }
+		playerOptions[2] = { 'Turn','Accel','Scroll','Effect','Appearance','Handicap','Handicap2','InsertTaps','InsertOther','Hide','Ghost' }
 	end
 	playerOptions.Edit = { 'SpeedType','SpeedNumber','Mini','Perspective','Centered','NoteSkin','Turn','PlayerPos','Stats','JudgePos' }
 	ShowAllInRow = false
@@ -954,7 +954,7 @@ extraSpeed = { "0", "+C10", "+C20", "+C30", "+C40", "+C50", "+C60", "+C70", "+C8
 
 metaModsRows = {
 	{
-		modlist = {'MetaFlip', 'MetaInvert', 'MetaVideogames', 'MetaMonocolumn'},
+		modlist = {'MetaFlip', 'MetaInvert', 'MetaVGames', 'MetaMonocol'},
 		default = 'no metaflip, no metainvert, no metavideogames, no metamonocolumn',
 		mods = {'metaflip', 'metainvert', 'metavideogames', 'metamonocolumn'}
 	},
@@ -985,7 +985,8 @@ ModsMaster.Accel =			{ modlist = {'Accel','Decel','Wave','Boomerang','Expand','B
 ModsMaster.Scroll = 		{ modlist = {'Reverse','Split','Alternate','Cross','Centered'}, default = 'no reverse,no split,no alternate,no cross,no centered' }
 ModsMaster.Effect = 		{ modlist = {'Drunk','Dizzy','Flip','Invert';'Tornado','Tipsy','Beat'}, default = 'no drunk,no dizzy,no flip,no invert,no tornado,no tipsy,no beat, no big', mods = {'drunk','dizzy','flip','invert','60% tornado','tipsy','beat'} }
 ModsMaster.Appearance = 	{ modlist = {'Sudden','Hidden','Blink','Stealth'}, default ='no hidden,no sudden,no blink,no stealth' }
-ModsMaster.Handicap = 		{ modlist = {'No Mines','No Rolls','No Holds','No Hands','No Jumps','No Stretch'}, default ='no nomines,no noholds,no norolls,no nohands,no nojumps,no nostretch', mods = {'nomines','norolls','noholds','nohands','nojumps','nostretch'} } 
+ModsMaster.Handicap = 		{ modlist = {'No Mines','No Rolls','No Holds'}, default ='no nomines,no noholds,no norolls', mods = {'nomines','norolls','noholds'} } 
+ModsMaster.Handicap2 = 		{ modlist = {'No Hands','No Jumps','No Stretch'}, default ='no nohands,no nojumps,no nostretch', mods = {'nohands','nojumps','nostretch'} } 
 ModsMaster.InsertTaps =		{ name = 'Insert', modlist = {'Little','Big','Quick','Skippy','Echo','Wide','Stomp'}, default = 'no little,no big,no quick,no skippy,no echo,no stomp,no wide', mods = {'Little','Big','Quick','Skippy','Echo','Wide','Stomp'} }
 ModsMaster.InsertOther =	{ name = 'Other', modlist = {'Planted','Floored','Twister','Mines'}, default = 'no planted,no floored,no twister,no mines' }
 
@@ -1747,12 +1748,12 @@ end
 function PlayerPositioning()
 	-- hide 4:3 option when using a 4:3 aspect ratio
 	local choices = {}
-	if gnZoomRatio == 1 then 
+	if string.format("%.2f", SCREEN_WIDTH/SCREEN_HEIGHT) == string.format("%.2f", 4/3) then 
 		choices = { "Regular", "Centered"}
 	else
 		choices = { "Regular", "4:3", "Centered"}
 	end
-	local t = OptionRowBase('PlayerPositioning')
+	local t = OptionRowBase('Player Position')
 	t.LayoutType = 'ShowAllInRow'
 	t.OneChoiceForAllPlayers = true
 	t.Choices = choices
@@ -1763,8 +1764,10 @@ function PlayerPositioning()
 		elseif table.getn(choices) == 3 then
 			list[gnPlayerPositioning + 1] = true
 		elseif gnPlayerPositioning == 2 then 
-			list[3] = true
-		end
+			list[2] = true
+		else
+            list[1] = true 
+        end
 	end
 	t.SaveSelections = function(self, list)
 		if list[1] then gnPlayerPositioning = 0
@@ -1809,12 +1812,13 @@ end
 -- Do initial reset
 ResetCustomMods()
 
-
+--the small stats
 function ShowStats(pn)
 	if CustomMods[pn].showstats == true then return 1
 	else return 0 end
 end
 
+--the big stats
 function ShowStats2(pn)
 	if CustomMods[pn].showstats2 == true then return 1
 	else return 0 end
@@ -1822,7 +1826,7 @@ end
 
 function OptionShowStats()
 	local t = {
-		Name = "InGameStats",
+		Name = "In-Game Stats",
 		LayoutType = "ShowAllInRow",
 		SelectType = "SelectMultiple",
 		OneChoiceForAllPlayers = false,
@@ -1859,7 +1863,7 @@ end
 
 function OptionJudgmentPosition()
 	local t = {
-		Name = "JudgmentPosition",
+		Name = "Judgment Position",
 		LayoutType = "ShowAllInRow",
 		SelectType = "SelectMultiple",
 		OneChoiceForAllPlayers = false,
@@ -2048,10 +2052,10 @@ local SoloOffset = 0
 	if GAMESTATE:PlayerUsingBothSides() then return "hidden,1" end
 
 	if GAMESTATE:IsPlayerEnabled(PLAYER_1) and not GAMESTATE:IsPlayerEnabled(PLAYER_2) and ShowStats(PLAYER_1) == 1 then 
-		if CustomMods[PLAYER_1].solo then SoloOffset = 46 end
+		if gnPlayerPositioning == 2 then SoloOffset = 46 end
 	return "HorizAlign,Center;x,SCREEN_CENTER_X+SCREEN_WIDTH/4+100;addx,SCREEN_WIDTH/2+" .. SoloOffset .. ";decelerate,1;addx,-SCREEN_WIDTH/2" end
 	if GAMESTATE:IsPlayerEnabled(PLAYER_2) and not GAMESTATE:IsPlayerEnabled(PLAYER_1) and ShowStats(PLAYER_2) == 1 then
-		if CustomMods[PLAYER_2].solo then SoloOffset = 80 end
+		if gnPlayerPositioning == 2 then SoloOffset = 80 end
 	return "HorizAlign,Center;x,SCREEN_CENTER_X-SCREEN_WIDTH/4+100;addx,-SCREEN_WIDTH/2-" .. SoloOffset .. ";decelerate,1;addx,SCREEN_WIDTH/2" end
 	
 	return "hidden,1"
