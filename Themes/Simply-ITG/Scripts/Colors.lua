@@ -1,5 +1,5 @@
 function PlayerColor( pn )
-	if pn == PLAYER_1 then return DifficultyColor(3) end
+	if pn == PLAYER_1 then return DifficultyColor(2) end
 	if pn == PLAYER_2 then return DifficultyColor(1) end
 	return "1,1,1,1"
 end

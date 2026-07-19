@@ -84,7 +84,9 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Altered the UI of the summary screen.\
 -Slightly changed the first and second colors, so that the first color is more accurate to the original ITG2 theme, and the second color differs from the first and third color more.\
 -Recolored the preview arrows at the PICK A COLOR screen to be more accurate.\
+-Changed player 1's color back to yellow like in the original ITG2 theme, instead of red for some reason.\
 -Fixed the appearing animations of the option message and stage name that show up before the song begins.\
+-Fixed the animations of the top-left header in the ScreenRanking screen.\
 -The cancel flash, the SELECT A COURSE header and the song numbers during courses are now colored based on the color you chose.\
 -Added the custom player options that disappeared only in NotITG but not OpenITG for some reason, and fixed their functionality.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
