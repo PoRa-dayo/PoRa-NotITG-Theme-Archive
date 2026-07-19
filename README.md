@@ -80,6 +80,7 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Removed Marathon Mode and Battle Mode buttons on title screen, select those inside Dance Mode instead.\
 -F grades are now shown in song selection screen.\
 -Changed some nasty global variables that were set accidentally into local variables again.\
+-Slightly changed the first and second colors, so that the first color is more accurate to the original ITG2 theme, and the second color differs from the first and third color more.\
 -Recolored the preview arrows at the PICK A COLOR screen to be more accurate.\
 -Fixed the appearing animations of the option message and stage name that show up before the song begins.\
 -The cancel flash, the SELECT A COURSE header and the song numbers during courses are now colored based on the color you chose.\
@@ -88,11 +89,12 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Added step artist display in song selection screen.\
 -Added offset plot and spellcard viewer in results screen.
 
-<img width="200" height="150" alt="NotITG-v4 9 1_aSZEkP7Qqw" src="https://github.com/user-attachments/assets/cafa07e5-a603-408a-b327-56bc7472d54b" />
+<img width="200" alt="NotITG-v4 9 1_2IUFQ0hoR4" src="https://github.com/user-attachments/assets/2db886d3-1749-44eb-a139-6eea878bcc21" />
 <img width="200" height="150" alt="NotITG-v4 9 1_WEXP4fVbKx" src="https://github.com/user-attachments/assets/be3345b4-037c-4ee0-9865-b69f5daab26f" />
 <img width="200" height="150" alt="NotITG-v4 9 1_v6voTYf2em" src="https://github.com/user-attachments/assets/706c3bda-f26f-4f8b-adf0-24b610bd1f22" />
 <img width="200" height="150" alt="NotITG-v4 9 1_8OMtk3BqCK" src="https://github.com/user-attachments/assets/2a9fb97b-316c-4e47-8764-f35eacc6d315" />
-<img width="200" height="150" alt="NotITG-v4 9 1_TO6OPIpG9X" src="https://github.com/user-attachments/assets/3e73d16f-4af4-4da7-8acf-810da2296895" />
+<img width="200" alt="NotITG-v4 9 1_b8YQTAUGMN" src="https://github.com/user-attachments/assets/715939e3-547d-4f25-bdac-b81972571795" />
+
 
 
 # DANCE WITH INTENSITY
