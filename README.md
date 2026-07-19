@@ -78,8 +78,10 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Removed Fill Machine Stats (shit feature).\
 -Replay Song? screen now takes you to evaluation screen if No is selected.\
 -Removed Marathon Mode and Battle Mode buttons on title screen, select those inside Dance Mode instead.\
+-Fixed the bug where judgment font gets reset back to default starting from the second song in a course.\
 -F grades are now shown in song selection screen.\
 -Changed some nasty global variables that were set accidentally into local variables again.\
+-Altered the UI of the summary screen.\
 -Slightly changed the first and second colors, so that the first color is more accurate to the original ITG2 theme, and the second color differs from the first and third color more.\
 -Recolored the preview arrows at the PICK A COLOR screen to be more accurate.\
 -Fixed the appearing animations of the option message and stage name that show up before the song begins.\

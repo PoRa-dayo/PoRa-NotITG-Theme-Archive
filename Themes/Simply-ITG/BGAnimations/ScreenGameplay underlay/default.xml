@@ -173,7 +173,7 @@
 	</children></ActorFrame>
 	
 	<ActorFrame Command="%function() loadMusic = 1 end" />
-	<ActorFrame Command="%GameplayInit" FirstUpdateCommand="%Gameplay" UpdateCommand="%GameplayUpdate"/>
+	<ActorFrame Command="%GameplayInit" CurrentSongChangedMessageCommand="%GameplayInit" FirstUpdateCommand="%Gameplay" UpdateCommand="%GameplayUpdate"/>
 
 	<Layer Type="ActorFrame"
 		OnCommand="sleep,0.5;queuecommand,TweenOn"

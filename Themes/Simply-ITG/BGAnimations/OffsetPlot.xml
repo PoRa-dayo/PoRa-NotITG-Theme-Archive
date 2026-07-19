@@ -19,14 +19,14 @@
     -- SC Info refers to the SC Title, Diff, Percent, Judgments, and its background.
     -- Early and Late refers to the Early (-180ms)/Late (+180ms) markers.
 	
-    P1AddX = 12
+    P1AddX = GAMESTATE:PlayerUsingBothSides() and -(SCREEN_WIDTH*0.5-157) + SCREEN_CENTER_X+2 or 12
     P1AddY = 71
     P1Zoom = 0.8
     SCHighlightAddHeightP1 = -76
     SCHighlightYP1 = -141
     SCScrollBarAddXP1 = -18
     
-    P2AddX = -12
+    P2AddX = GAMESTATE:PlayerUsingBothSides() and -(SCREEN_WIDTH*0.5+157) + SCREEN_CENTER_X+2 or -12
     P2AddY = 71
     P2Zoom = 0.8
     SCHighlightAddHeightP2 = -76
