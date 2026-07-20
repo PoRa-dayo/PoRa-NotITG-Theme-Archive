@@ -542,7 +542,7 @@ function UpdateMeasureText(pn)
 					str = math.floor((z[table.getn(z)][2] - z[table.getn(z)][1])/4) if str < 2 then str = '' end
 				end
 			end
-			if tonumber(str) and k and k[k[0]] and k[k[0]][1] <= GAMESTATE:GetSongBeat() then
+			if tonumber(str) and k and k[k[0]] and k[k[0]][1] <= GAMESTATE:GetSongBeat() and z[table.getn(z)] then
 				str = str .. '/' .. math.max(math.floor((k[k[0]][2] - z[table.getn(z)][1])/4),str) -- If current stream is longer than recorded, use current length.
 			end
 		end end
