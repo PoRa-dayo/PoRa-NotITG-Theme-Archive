@@ -81,7 +81,7 @@
     OffCommand="accelerate,0.4;addx,SCREEN_WIDTH*.5"	/>
 
     <Layer
-    File="_join icons/gameglow"
+    File="_join icons/encore/gameglow"
     Condition="ITG3IsEncore() or ITG3IsFinal()"
     InitCommand="x,SCREEN_RIGHT-20;y,SCREEN_CENTER_Y+155-180;horizalign,right;additiveblend,1"		
     GainFocusCommand="finishtweening;accelerate,0.1;diffusealpha,1;x,SCREEN_RIGHT-40;sleep,.07;linear,.2;diffusealpha,0"
