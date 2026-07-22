@@ -178,7 +178,10 @@ end
 --where the diff numbers on wheel magic begins
 function UpdateWheelTitles(FirstUpdate)
     if not FUCK_EXE then return end
-    if GAMESTATE:IsCourseMode() then return end
+    if GAMESTATE:IsCourseMode() or (not SCREENMAN:GetTopScreen():GetChild('MusicWheel')) then
+        BMIIDX14Glob.MusicWheelList = {}
+        return
+    end
     --some of the stuff is defined in ScreenSelectMusic overlay, depending on when I want it to reset
     BMIIDX14Glob.SongTitles={}
     BMIIDX14Glob.GroupTitles={}
