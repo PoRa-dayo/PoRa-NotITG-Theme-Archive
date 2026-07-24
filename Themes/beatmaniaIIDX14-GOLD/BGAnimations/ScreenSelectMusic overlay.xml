@@ -24,18 +24,10 @@
     end"
     ><children>
     
-    <!--To minimize the amount of times UpdateWheelTitles gets called-->
-    <Layer
-        Type="Quad"
-        CurrentStepsP1ChangedMessageCommand="%function(self)
-            BMIIDX14Glob.YouShouldChangeThatShitNOW=true
-        end"
-        CurrentStepsP2ChangedMessageCommand="%function(self)
-            BMIIDX14Glob.YouShouldChangeThatShitNOW=true
-        end"/>
         
     <!--CurrentSongChanged is not used here because the Artist commands in [TextBanner] in metrics.ini do a better job. -->
     <!--As CurrentSongChanged is not activated when the player opens a group. -->
+    <!--The YouShouldChangeThatShitNOW is to minimize the amount of times UpdateWheelTitles gets called-->
     <Layer
         Type="Quad"
         OnCommand="%function(self)
@@ -52,14 +44,18 @@
         DisallowCommand="%function(self)
             BMIIDX14Glob.FirstTweening=false
         end"
+        FirstUpdateCommand="%function(self)
+            UpdateWheelTitles(true)
+        end"
         CurrentStepsP1ChangedMessageCommand="%function(self)
+            if BMIIDX14Glob.YouShouldChangeThatShitNOW then return end
+            BMIIDX14Glob.YouShouldChangeThatShitNOW=true
             self:queuecommand('Wheel')
         end"
         CurrentStepsP2ChangedMessageCommand="%function(self)
+            if BMIIDX14Glob.YouShouldChangeThatShitNOW then return end
+            BMIIDX14Glob.YouShouldChangeThatShitNOW=true
             self:queuecommand('Wheel')
-        end"
-        FirstUpdateCommand="%function(self)
-            UpdateWheelTitles(true)
         end"
         WheelCommand="%function(self)
             if BMIIDX14Glob.YouShouldChangeThatShitNOW then
