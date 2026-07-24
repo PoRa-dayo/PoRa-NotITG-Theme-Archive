@@ -42,15 +42,15 @@
             BMIIDX14Glob.MusicWheelList = {}
             BMIIDX14Glob.ArtistTitles = {}
             BMIIDX14Glob.DiffNumTitles = {}
-            FirstTweenOver=true
-            Rand=1
+            BMIIDX14Glob.FirstTweening=true
+            BMIIDX14Glob.Rand=1
             self:sleep(0.1)
             self:queuecommand('FirstUpdate')
             self:sleep(0.5)
             self:queuecommand('Disallow')
         end"
         DisallowCommand="%function(self)
-            FirstTweenOver=false
+            BMIIDX14Glob.FirstTweening=false
         end"
         CurrentStepsP1ChangedMessageCommand="%function(self)
             self:queuecommand('Wheel')
@@ -85,20 +85,20 @@
         OnCommand="zoom,0.8;zoomx,0.7;maxwidth,460;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-80;horizalign,right;shadowlength,0;addx,-24;decelerate,0.3;addx,24"
         OffCommand=""
         SongUpdateMessageCommand="%function(self) 
-            if not FirstTweenOver then self:finishtweening() end
+            if not BMIIDX14Glob.FirstTweening then self:finishtweening() end
 
             local song = GAMESTATE:GetCurrentSong()
             local course = GAMESTATE:GetCurrentCourse()
             local ind = CurWheelIndex()
             if song then
-                if not FirstTweenOver then
+                if not BMIIDX14Glob.FirstTweening then
                     self:diffusealpha(0)
                     self:addx(-24)
                 end
                 
                 self:settext(song:GetDisplayMainTitle())
                 
-                if not FirstTweenOver then
+                if not BMIIDX14Glob.FirstTweening then
                     self:decelerate(0.2)
                     self:diffusealpha(1)
                     self:addx(24)
@@ -106,8 +106,8 @@
             elseif course then
                 self:settext(course:GetDisplayFullTitle())
             elseif IsRoulette(ind) then
-                Rand = math.random(BMIIDX14Glob.TotalSongNum)
-                self:settext(BMIIDX14Glob.AllSongs[Rand]:GetDisplayMainTitle())
+                BMIIDX14Glob.Rand = math.random(BMIIDX14Glob.TotalSongNum)
+                self:settext(BMIIDX14Glob.AllSongs[BMIIDX14Glob.Rand]:GetDisplayMainTitle())
                 self:sleep(0.05)
                 self:queuecommand('SongUpdate')
             else
@@ -124,24 +124,24 @@
         OnCommand="zoom,0.6;maxwidth,550;draworder,34;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-100;horizalign,right;shadowlength,0;addx,24;decelerate,0.3;addx,-24"
         OffCommand=""
         SongUpdateMessageCommand="%function(self)
-            if not FirstTweenOver then self:finishtweening() end
+            if not BMIIDX14Glob.FirstTweening then self:finishtweening() end
             local ind = CurWheelIndex()
             local song = GAMESTATE:GetCurrentSong()
             if song then
-                if not FirstTweenOver then
+                if not BMIIDX14Glob.FirstTweening then
                     self:diffusealpha(0)
                     self:addx(24)
                 end
                 
                 self:settext(song:GetDisplaySubTitle())
                 
-                if not FirstTweenOver then
+                if not BMIIDX14Glob.FirstTweening then
                     self:decelerate(0.2)
                     self:diffusealpha(1)
                     self:addx(-24)
                 end
             elseif IsRoulette(ind) then
-                self:settext(BMIIDX14Glob.AllSongs[Rand]:GetDisplaySubTitle())
+                self:settext(BMIIDX14Glob.AllSongs[BMIIDX14Glob.Rand]:GetDisplaySubTitle())
                 self:sleep(0.05)
                 self:queuecommand('SongUpdate')
             else
@@ -158,25 +158,25 @@
         OnCommand="x,SCREEN_CENTER_X+(340-320);y,SCREEN_CENTER_Y+(180-240);maxwidth,550;zoom,0.6;draworder,34;shadowlength,0;horizalign,right;addy,-12;decelerate,0.3;addy,12"
         OffCommand=""
         SongUpdateMessageCommand="%function(self)
-            if not FirstTweenOver then self:finishtweening() end
+            if not BMIIDX14Glob.FirstTweening then self:finishtweening() end
             
             local ind = CurWheelIndex()
             local song = GAMESTATE:GetCurrentSong()
             if song then
-                if not FirstTweenOver then
+                if not BMIIDX14Glob.FirstTweening then
                     self:diffusealpha(0)
                     self:addy(-12)
                 end
                 
                 self:settext(song:GetDisplayArtist())
                 
-                if not FirstTweenOver then
+                if not BMIIDX14Glob.FirstTweening then
                     self:decelerate(0.2)
                     self:diffusealpha(1)
                     self:addy(12)
                 end
             elseif IsRoulette(ind) then
-                self:settext(BMIIDX14Glob.AllSongs[Rand]:GetDisplayArtist())
+                self:settext(BMIIDX14Glob.AllSongs[BMIIDX14Glob.Rand]:GetDisplayArtist())
                 self:sleep(0.05)
                 self:queuecommand('SongUpdate')
             else
@@ -197,7 +197,7 @@
             local ind = CurWheelIndex()
             local song = GAMESTATE:GetCurrentSong()
             if (not song) and IsRoulette(ind) then
-                self:settext(string.format('%03d', math.floor(BMIIDX14Glob.AllSongs[Rand]:GetMinBPM())))
+                self:settext(string.format('%03d', math.floor(BMIIDX14Glob.AllSongs[BMIIDX14Glob.Rand]:GetMinBPM())))
                 self:sleep(0.05)
                 self:queuecommand('SongUpdate')
             else

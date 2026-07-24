@@ -215,14 +215,17 @@ function UpdateWheelTitles(FirstUpdate)
                 FullTitl = CSong:GetGroupName().." "..GetWheelLongTitle(index)
             end
             
-            --if the title was used before, add a number behind the title, and keep increasing that number until an unused title is found
+            --if the title was used before, and the next duplicate of that title actually has a SongDiffs table,
+            --check that next duplicate (add a number behind the title, and keep increasing that number)
+            --do this until an unused title is found
             local KeyTitl = FullTitl
-            if UsedTitles[KeyTitl] then
+            local SDff = BMIIDX14Glob.SongDiffs
+            if UsedTitles[KeyTitl] or (not IsHaveSongDiffOfCurrentMode(SDff[KeyTitl])) then
                 local n = 2
-                while UsedTitles[FullTitl .. n] and BMIIDX14Glob.SongDiffs[FullTitl .. n] do
+                while UsedTitles[FullTitl .. n] and IsHaveSongDiffOfCurrentMode(SDff[FullTitl .. n+1]) do
                     n = n + 1
                 end
-                if BMIIDX14Glob.SongDiffs[FullTitl .. n] then
+                if IsHaveSongDiffOfCurrentMode(SDff[FullTitl .. n]) then
                     KeyTitl = FullTitl .. n
                 else
                     KeyTitl = FullTitl
@@ -244,6 +247,9 @@ function UpdateWheelTitles(FirstUpdate)
             if SonggDiff and item:GetChildAt(8):GetChild('Artist') ~= '' then
                 local ClosestDiff = GetClosestDiff(SonggDiff, BMIIDX14Glob.CurDiff)
                 BMIIDX14Glob.DiffNumTitles[index] = DiffMeterConvert(SonggDiff[ClosestDiff])
+                if not ClosestDiff then
+                    ClosestDiff = BMIIDX14Glob.CurDiff
+                end
                 if GAMESTATE:PlayerUsingBothSides() then
                     ClosestDiff = ClosestDiff - 10
                 end
@@ -303,6 +309,19 @@ function GetClosestDiff(SonggDiff, CDiff)
         return BestDiff
     end
     return CDiff
+end
+
+function IsHaveSongDiffOfCurrentMode(SonggDiff)
+    if not SonggDiff then
+        return false
+    end
+    local doub = GAMESTATE:PlayerUsingBothSides()
+    for i = (doub and 10 or 0), (doub and 15 or 5) do
+        if SonggDiff[i] ~= nil then
+            return true
+        end
+    end
+    return false
 end
 
 --So as mentioned above, all the duplicates need to be in order.
