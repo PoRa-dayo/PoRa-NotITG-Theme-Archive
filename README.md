@@ -9,10 +9,6 @@ So here's a list of usable themes that do have NotITG forks and are still curren
 
 # Welcome to my NotITG theme archive!
 
-Head on to the [releases](https://github.com/PoRa-dayo/PoRa-NotITG-Theme-Archive/releases/tag/v1.0.0) to download!
-
-**NOTE: The game might give errors if you try to play files immediately after switching themes. Restarting the game fixes the problem.**
-
 An archive by PoRa that hosts old NotITG-compatible themes, slightly edited to ensure a smooth experience on NotITG v4.9.1; as well as a few SM3.9/SM5 theme ports to NotITG 4.9.1. Hopefully this will allow for more long-term usage with these themes.
 
 These were only tested on NotITG v4.9.1 Coin Mode Home, with Event Mode on and off.
@@ -22,6 +18,17 @@ All themes here are ensured to have: modern noteskin customization, modern judgm
 Other modern features are not necessarily added, mainly for either the sake of keeping it true to the original, or because of UI issues. I also want to keep these themes at a 'frozen in time' state as much as possible, which means the themes' version numbers stay the same, the credits stay the same, the tips and birthdays stay the same no matter how outdated they are, and some menus remain lacking in features, to show that they're products of their time.
 
 I'm still new to theming so there are a lot of things I have no clue about. All the fixes were done purely by copying stuff from other themes until I figure out what works. I just want there to be a bunch of working themes to make theming easier in the future. Maybe I'll try making my own theme some day? But until then, back to noteskin hole I go.
+
+# A few notes about using themes
+Head on to the [releases](https://github.com/PoRa-dayo/PoRa-NotITG-Theme-Archive/releases/tag/v1.0.0) to download!
+
+**NOTE: The game might give errors if you try to play files immediately after switching themes. Restarting the game fixes the problem.**
+
+<img height="68" alt="NotITG-v4 9 1_FY27oJHBrF" src="https://github.com/user-attachments/assets/6d2f3318-23cd-491a-abff-55814cae10d0" />
+
+**NOTE: When selecting modifiers after selecting a song, in some themes, you might see a special symbol appearing in some options (usually a triangle pointing down). This means** ***you have to press the Start button to select an option,*** **then your cursor will be redirected back to the symbol.**
+
+
 
 # IN THE GROOVE: MEAT
 A very animated theme based on the game Super Meat Boy by Team Meat, with world selection and a whole auto platformer for some visuals!\
