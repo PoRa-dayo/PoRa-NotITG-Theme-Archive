@@ -1,15 +1,15 @@
 <ActorFrame> <children>
 
-<Layer
-   File="Song Name Pane"
-InitCommand="diffusealpha,1"
-   OnCommand="X,SCREEN_CENTER_X;y,SCREEN_TOP-20;sleep,3;y,SCREEN_TOP+68;addy,-100;sleep,0.5;queuecommand,TweenOn"
-   OffCommand="y,-80;queuecommand,TweenOff"
-ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
-HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
-TweenOnCommand="decelerate,0.8;addy,+100"
-TweenOffCommand="accelerate,0.8;addy,-100"
-/>
+    <Layer
+       File="Song Name Pane"
+    InitCommand="diffusealpha,1"
+       OnCommand="X,SCREEN_CENTER_X;y,SCREEN_TOP-20;sleep,3;y,SCREEN_TOP+68;addy,-100;sleep,0.5;queuecommand,TweenOn"
+       OffCommand="y,-80;queuecommand,TweenOff"
+    ShowGameplayTopFrameMessageCommand="playcommand,TweenOn"
+    HideGameplayTopFrameMessageCommand="playcommand,TweenOff"
+    TweenOnCommand="decelerate,0.8;addy,+100"
+    TweenOffCommand="accelerate,0.8;addy,-100"
+    />
 	
 
 	<Layer Type="ActorFrame"
@@ -78,10 +78,9 @@ TweenOffCommand="accelerate,0.8;addy,-100"
 			Text="(Marathon Course)"
 		/>
 
-</children> </Layer>
+    </children> </Layer>
 
-<ActorFrame>
-	<children>
+    <ActorFrame><children>
 		<ActorFrame
 			Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
 			OnCommand="x,SCREEN_CENTER_X-240;y,SCREEN_CENTER_Y-95;difficultyoffset;addx,-SCREEN_WIDTH/2;sleep,3;decelerate,0.3;addx,+SCREEN_WIDTH/2"
@@ -166,4 +165,5 @@ TweenOffCommand="accelerate,0.8;addy,-100"
             self:accelerate(0.5)
             self:y(500)
         end"/>
-</ActorFrame>
+    </children> </ActorFrame>
+</children></ActorFrame>
