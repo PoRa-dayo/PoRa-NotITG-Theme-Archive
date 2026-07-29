@@ -5,16 +5,16 @@
 			<Layer File="@Meatboy() .. '/Animate splash.xml'" />
 			<Layer 
 				File="@Meatboy() .. '/Animate.xml'"
-				InitCommand="x,SCREEN_CENTER_X-285;y,SCREEN_CENTER_Y-126;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:sleep(.1) self:queuecommand('Move4') end" GoCommand="%function(self) MeatboyGo(self,0,.1) end"
-				Move1Command="%function(self) Move(self,-.2,-.3,-.01,0,'Vy','>',.1,2) end" 
-				Move2Command="%function(self) Move(self,.3,-.55,-.04,0,'Vy','>',.1,3) end" 
-				Move3Command="%function(self) Move(self,.2,-.5,.02,0) end" 
+				InitCommand="x,SCREEN_CENTER_X-285;y,SCREEN_CENTER_Y-126;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(ITGMeatGlob.n); ITGMeatPlat.Dx[ITGMeatGlob.n] = self:GetX(); ITGMeatPlat.Dy[ITGMeatGlob.n] = self:GetY(); ITGMeatPlat.Object[ITGMeatGlob.n] = self; self:sleep(.1) self:queuecommand('Move4') end" GoCommand="%function(self) MeatboyGo(self,0,.1) end"
+				Move1Command="%function(self) MoveITGMeat(self,-.2,-.3,-.01,0,'Vy','>',.1,2) end" 
+				Move2Command="%function(self) MoveITGMeat(self,.3,-.55,-.04,0,'Vy','>',.1,3) end" 
+				Move3Command="%function(self) MoveITGMeat(self,.2,-.5,.02,0) end" 
 
-				Move4Command="%function(self) Move(self,0,0,0,0,'state','<',4,5) end" 
-				Move5Command="%function(self) Move(self,.2,0,.025,0,'Dx','>',SCREEN_CENTER_X-150,6) end" 
-				Move6Command="%function(self) Move(self,'',-.2,0,0) end" 
+				Move4Command="%function(self) MoveITGMeat(self,0,0,0,0,'state','<',4,5) end" 
+				Move5Command="%function(self) MoveITGMeat(self,.2,0,.025,0,'ITGMeatPlat.Dx','>',SCREEN_CENTER_X-150,6) end" 
+				Move6Command="%function(self) MoveITGMeat(self,'',-.2,0,0) end" 
 
-				MoveCommand="%function(self) Update(self) end"
+				MoveCommand="%function(self) UpdateITGMeat(self) end"
 				GoalCommand="%function(self) MeatboyGoal(self) end"
 				ObstacleCommand="%function(self) MeatboyObstacle(self) end"
 			/>
@@ -26,13 +26,13 @@
 			<Layer File="@Meatboy() .. '/Animate splash.xml'" />
 			<Layer 
 				File="@Meatboy() .. '/Animate.xml'"
-				InitCommand="x,SCREEN_CENTER_X-285;y,SCREEN_CENTER_Y-126;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:sleep(.1) self:queuecommand('Move4') end" GoCommand="%function(self) MeatboyGo(self,.5,2) end"
-				Move1Command="%function(self) Move(self,0,0,.02,0) end" 
+				InitCommand="x,SCREEN_CENTER_X-285;y,SCREEN_CENTER_Y-126;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(ITGMeatGlob.n); ITGMeatPlat.Dx[ITGMeatGlob.n] = self:GetX(); ITGMeatPlat.Dy[ITGMeatGlob.n] = self:GetY(); ITGMeatPlat.Object[ITGMeatGlob.n] = self; self:sleep(.1) self:queuecommand('Move4') end" GoCommand="%function(self) MeatboyGo(self,.5,2) end"
+				Move1Command="%function(self) MoveITGMeat(self,0,0,.02,0) end" 
 
-				Move4Command="%function(self) Move(self,0,0,0,0,'state','<',4,5) end" 
-				Move5Command="%function(self) Move(self,.2,0,.025,0) end" 
+				Move4Command="%function(self) MoveITGMeat(self,0,0,0,0,'state','<',4,5) end" 
+				Move5Command="%function(self) MoveITGMeat(self,.2,0,.025,0) end" 
 
-				MoveCommand="%function(self) Update(self) end"
+				MoveCommand="%function(self) UpdateITGMeat(self) end"
 				GoalCommand="%function(self) MeatboyGoal(self) end"
 				ObstacleCommand="%function(self) MeatboyObstacle(self) end"
 			/>
@@ -44,17 +44,17 @@
 			<Layer File="@Meatboy() .. '/Animate splash.xml'" />
 			<Layer 
 				File="@Meatboy() .. '/Animate.xml'"
-				InitCommand="x,SCREEN_CENTER_X+285;y,SCREEN_CENTER_Y-126;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:sleep(.1) self:queuecommand('Move4') end" GoCommand="%function(self) MeatboyGo(self,0,.1) end"
-				Move1Command="%function(self) Move(self,.2,-.3,.01,0,'Vy','>',.1,2) end" 
-				Move2Command="%function(self) Move(self,-.3,-.55,.04,0,'Vy','>',.1,3) end" 
-				Move3Command="%function(self) Move(self,-.2,-.5,-.02,0) end" 
+				InitCommand="x,SCREEN_CENTER_X+285;y,SCREEN_CENTER_Y-126;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(ITGMeatGlob.n); ITGMeatPlat.Dx[ITGMeatGlob.n] = self:GetX(); ITGMeatPlat.Dy[ITGMeatGlob.n] = self:GetY(); ITGMeatPlat.Object[ITGMeatGlob.n] = self; self:sleep(.1) self:queuecommand('Move4') end" GoCommand="%function(self) MeatboyGo(self,0,.1) end"
+				Move1Command="%function(self) MoveITGMeat(self,.2,-.3,.01,0,'Vy','>',.1,2) end" 
+				Move2Command="%function(self) MoveITGMeat(self,-.3,-.55,.04,0,'Vy','>',.1,3) end" 
+				Move3Command="%function(self) MoveITGMeat(self,-.2,-.5,-.02,0) end" 
 
 
-				Move4Command="%function(self) Move(self,0,0,-.0001,0,'state','<',4,5) end" 
-				Move5Command="%function(self) Move(self,-.2,0,-.025,0,'Dx','<',SCREEN_CENTER_X+150,6) end" 
-				Move6Command="%function(self) Move(self,'',-.2,0,0) end" 
+				Move4Command="%function(self) MoveITGMeat(self,0,0,-.0001,0,'state','<',4,5) end" 
+				Move5Command="%function(self) MoveITGMeat(self,-.2,0,-.025,0,'ITGMeatPlat.Dx','<',SCREEN_CENTER_X+150,6) end" 
+				Move6Command="%function(self) MoveITGMeat(self,'',-.2,0,0) end" 
 
-				MoveCommand="%function(self) Update(self) end"
+				MoveCommand="%function(self) UpdateITGMeat(self) end"
 				GoalCommand="%function(self) MeatboyGoal(self) end"
 				ObstacleCommand="%function(self) MeatboyObstacle(self) end"
 			/>
@@ -66,13 +66,13 @@
 			<Layer File="@Meatboy() .. '/Animate splash.xml'" />
 			<Layer 
 				File="@Meatboy() .. '/Animate.xml'"
-				InitCommand="x,SCREEN_CENTER_X+285;y,SCREEN_CENTER_Y-126;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:sleep(.1) self:queuecommand('Move4') end" GoCommand="%function(self) MeatboyGo(self,.5,2) end"
-				Move1Command="%function(self) Move(self,0,0,-.02,0) end" 
+				InitCommand="x,SCREEN_CENTER_X+285;y,SCREEN_CENTER_Y-126;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(ITGMeatGlob.n); ITGMeatPlat.Dx[ITGMeatGlob.n] = self:GetX(); ITGMeatPlat.Dy[ITGMeatGlob.n] = self:GetY(); ITGMeatPlat.Object[ITGMeatGlob.n] = self; self:sleep(.1) self:queuecommand('Move4') end" GoCommand="%function(self) MeatboyGo(self,.5,2) end"
+				Move1Command="%function(self) MoveITGMeat(self,0,0,-.02,0) end" 
 
-				Move4Command="%function(self) Move(self,0,0,-.0001,0,'state','<',4,5) end" 
-				Move5Command="%function(self) Move(self,-.2,0,-.025,0) end" 
+				Move4Command="%function(self) MoveITGMeat(self,0,0,-.0001,0,'state','<',4,5) end" 
+				Move5Command="%function(self) MoveITGMeat(self,-.2,0,-.025,0) end" 
 				
-				MoveCommand="%function(self) Update(self) end"
+				MoveCommand="%function(self) UpdateITGMeat(self) end"
 				GoalCommand="%function(self) MeatboyGoal(self) end"
 				ObstacleCommand="%function(self) MeatboyObstacle(self) end"
 			/>
@@ -82,10 +82,10 @@
 		<Layer File="@Meatboy() .. '/Animate splash.xml'" />
 		<Layer 
 			File="@Meatboy() .. '/Animate.xml'"
-			InitCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:queuecommand('Gone') end" GoCommand="%function(self)  MeatboyGo(self,2,.5) end"
-			Move1Command="%function(self) Move(self,-.2,-.3,-.01,0,'Vy','>',0,2) end" 
-			Move2Command="%function(self) i = math.random()/10 Move(self,.4,-.5-i,-0.03,0,'Dy','>',SCREEN_CENTER_Y+100,2) end" 
-			MoveCommand="%function(self) Update(self) end"
+			InitCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(ITGMeatGlob.n); ITGMeatPlat.Dx[ITGMeatGlob.n] = self:GetX(); ITGMeatPlat.Dy[ITGMeatGlob.n] = self:GetY(); ITGMeatPlat.Object[ITGMeatGlob.n] = self; self:queuecommand('Gone') end" GoCommand="%function(self)  MeatboyGo(self,2,.5) end"
+			Move1Command="%function(self) MoveITGMeat(self,-.2,-.3,-.01,0,'Vy','>',0,2) end" 
+			Move2Command="%function(self) ITGMeatGlob.i = math.random()/10 MoveITGMeat(self,.4,-.5-ITGMeatGlob.i,-0.03,0,'Dy','>',SCREEN_CENTER_Y+100,2) end" 
+			MoveCommand="%function(self) UpdateITGMeat(self) end"
 			ObstacleCommand="%function(self) MeatboyObstacle(self) end"
 		/>
 	</children></Layer>
@@ -93,9 +93,9 @@
 		<Layer File="@Meatboy() .. '/Animate splash.xml'" />
 		<Layer 
 			File="@Meatboy() .. '/Animate.xml'"
-			InitCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:queuecommand('Gone') end" GoCommand="%function(self) MeatboyGo(self,2,.5) end"
-			Move1Command="%function(self) Move(self,0,-.55,.01,0) end" 
-			MoveCommand="%function(self) Update(self) end"
+			InitCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(ITGMeatGlob.n); ITGMeatPlat.Dx[ITGMeatGlob.n] = self:GetX(); ITGMeatPlat.Dy[ITGMeatGlob.n] = self:GetY(); ITGMeatPlat.Object[ITGMeatGlob.n] = self; self:queuecommand('Gone') end" GoCommand="%function(self) MeatboyGo(self,2,.5) end"
+			Move1Command="%function(self) MoveITGMeat(self,0,-.55,.01,0) end" 
+			MoveCommand="%function(self) UpdateITGMeat(self) end"
 			ObstacleCommand="%function(self) MeatboyObstacle(self) end"
 		/>
 	</children></Layer>
@@ -103,11 +103,11 @@
 		<Layer File="@Meatboy() .. '/Animate splash.xml'" />
 		<Layer 
 			File="@Meatboy() .. '/Animate.xml'"
-			InitCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:queuecommand('Gone') end" GoCommand="%function(self) MeatboyGo(self,2,.5) end"
-			Move1Command="%function(self) Move(self,0.01,0,.02,0,'Vx','=',0,2) end" 
-			Move2Command="%function(self) i = math.random()/10 Move(self,0,-.35+i,0,0,'Vy','>',.04,3) end" 
-			Move3Command="%function(self) Move(self,-.4,-.2,0,0) end" 
-			MoveCommand="%function(self) Update(self) end"
+			InitCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(ITGMeatGlob.n); ITGMeatPlat.Dx[ITGMeatGlob.n] = self:GetX(); ITGMeatPlat.Dy[ITGMeatGlob.n] = self:GetY(); ITGMeatPlat.Object[ITGMeatGlob.n] = self; self:queuecommand('Gone') end" GoCommand="%function(self) MeatboyGo(self,2,.5) end"
+			Move1Command="%function(self) MoveITGMeat(self,0.01,0,.02,0,'Vx','=',0,2) end" 
+			Move2Command="%function(self) ITGMeatGlob.i = math.random()/10 MoveITGMeat(self,0,-.35+ITGMeatGlob.i,0,0,'Vy','>',.04,3) end" 
+			Move3Command="%function(self) MoveITGMeat(self,-.4,-.2,0,0) end" 
+			MoveCommand="%function(self) UpdateITGMeat(self) end"
 			ObstacleCommand="%function(self) MeatboyObstacle(self) end"
 		/>
 	</children></Layer>
@@ -115,13 +115,13 @@
 		<Layer File="@Meatboy() .. '/Animate splash.xml'" />
 		<Layer 
 			File="@Meatboy() .. '/Animate.xml'"
-			InitCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(n); Dx[n] = self:GetX(); Dy[n] = self:GetY(); Object[n] = self; self:queuecommand('Gone') end" GoCommand="%function(self) MeatboyGo(self,2,.5) end"
-				Move1Command="%function(self) Move(self,.2,-.3,.01,0,'Vy','>',.1,2) end" 
-				Move2Command="%function(self) i = math.random()/20  Move(self,-.3,-.55-i,.04,0,'Vy','>',.1,3) end" 
-				Move3Command="%function(self) Move(self,-.5,-.2,.015,0,'Vx','>',0,4) end" 
-				Move4Command="%function(self) Move(self,'','','',0,'Dx','>',SCREEN_CENTER_X+30,5) end" 
-				Move5Command="%function(self) Move(self,'','','',0,'state','<',4,1) end" 
-			MoveCommand="%function(self) Update(self) end"
+			InitCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;playcommand,Stand" ResetCommand="x,SCREEN_CENTER_X+80;y,SCREEN_CENTER_Y+136;rotationy,0" SetCommand="%function(self) self:z(ITGMeatGlob.n); ITGMeatPlat.Dx[ITGMeatGlob.n] = self:GetX(); ITGMeatPlat.Dy[ITGMeatGlob.n] = self:GetY(); ITGMeatPlat.Object[ITGMeatGlob.n] = self; self:queuecommand('Gone') end" GoCommand="%function(self) MeatboyGo(self,2,.5) end"
+				Move1Command="%function(self) MoveITGMeat(self,.2,-.3,.01,0,'Vy','>',.1,2) end" 
+				Move2Command="%function(self) ITGMeatGlob.i = math.random()/20  MoveITGMeat(self,-.3,-.55-ITGMeatGlob.i,.04,0,'Vy','>',.1,3) end" 
+				Move3Command="%function(self) MoveITGMeat(self,-.5,-.2,.015,0,'Vx','>',0,4) end" 
+				Move4Command="%function(self) MoveITGMeat(self,'','','',0,'ITGMeatPlat.Dx','>',SCREEN_CENTER_X+30,5) end" 
+				Move5Command="%function(self) MoveITGMeat(self,'','','',0,'state','<',4,1) end" 
+			MoveCommand="%function(self) UpdateITGMeat(self) end"
 			ObstacleCommand="%function(self) MeatboyObstacle(self) end"
 		/>
 	</children></Layer>

@@ -15,7 +15,7 @@
 		CurrentStepsP2ChangedMessageCommand="queuecommand,Set" 
 	/>
 	<Layer
-		File="@'PaneDisplay under p1/Frame'..world..dark..'.png'"
+		File="@'PaneDisplay under p1/Frame'..ITGMeatGlob.world..ITGMeatGlob.dark..'.png'"
 		Command="y,-2;zoom,.46;zoomx,.6"
 	/>
 </children></ActorFrame>

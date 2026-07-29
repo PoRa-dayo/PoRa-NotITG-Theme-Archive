@@ -17,8 +17,8 @@
 		<Layer Type="Quad" OnCommand="stretchto,180,-20,80,7;zwrite,1;blend,noeffect" />
 		<Layer Type="Quad" OnCommand="stretchto,180,-35,130,7;zwrite,1;blend,noeffect" />
 		<Layer Type="Quad" OnCommand="stretchto,-200,-52,200,-200;zwrite,1;blend,noeffect" />
-		<Layer File="@'block'..world..'.png'" Command="x,40;y,3;zoom,.5" />
-		<Layer File="@'block'..world..'.png'" Command="x,-40;y,3;zoom,.5" KillCommand="zoom,0"/>
+		<Layer File="@'block'..ITGMeatGlob.world..'.png'" Command="x,40;y,3;zoom,.5" />
+		<Layer File="@'block'..ITGMeatGlob.world..'.png'" Command="x,-40;y,3;zoom,.5" KillCommand="zoom,0"/>
 		<Layer
 			Type="ActorFrame"
 			InitCommand="rotationz,-180;y,4"

@@ -6,7 +6,7 @@
 			PulseCommand="%function(self) ModPulse(self,'shuffle') end"
 			ModCommand="%function(self)
 				self:queuecommand('Start')
-				banner = 0
+				ITGMeatGlob.banner = 0
 				self:zoom(1)
 				self:sleep(.6)
 				self:queuecommand('Out')
@@ -18,8 +18,8 @@
 			Command="zoom,0;queuecommand,Pulse"
 			PulseCommand="%function(self) ModPulse(self,'dark') end"
 			ModCommand="%function(self) if not GAMESTATE:IsCourseMode() then
-				if dark == '' then dark = 'D' else dark = '' end
-				banner = world; musicload = 3; warp = 0
+				if ITGMeatGlob.dark == '' then ITGMeatGlob.dark = 'D' else ITGMeatGlob.dark = '' end
+				ITGMeatGlob.banner = ITGMeatGlob.world; musicload = 3; ITGMeatGlob.warp = 0
 				self:queuecommand('Start')
 				self:zoom(1)
 				self:sleep(.5)
@@ -32,12 +32,12 @@
 			OnCommand="queuecommand,Pulse"
 			PulseCommand="%function(self) ModPulse(self,'randomvanish') end"
 			ModCommand="%function(self)
-					if world < 6 then warp = math.mod(warp + 1,4)
-				elseif world == 6 then warp = math.mod(warp + 1 + ((warp == 1 and 1) or 0),4);
-				else warp = 0 end
-					if warp == 1 then Sound('chapterend.ogg')
-				elseif warp == 2 then Sound('WarpZone.ogg')
-				elseif warp == 3 then self:queuecommand('Glitch')
+					if ITGMeatGlob.world < 6 then ITGMeatGlob.warp = math.mod(ITGMeatGlob.warp + 1,4)
+				elseif ITGMeatGlob.world == 6 then ITGMeatGlob.warp = math.mod(ITGMeatGlob.warp + 1 + ((ITGMeatGlob.warp == 1 and 1) or 0),4);
+				else ITGMeatGlob.warp = 0 end
+					if ITGMeatGlob.warp == 1 then Sound('chapterend.ogg')
+				elseif ITGMeatGlob.warp == 2 then Sound('WarpZone.ogg')
+				elseif ITGMeatGlob.warp == 3 then self:queuecommand('Glitch')
 				else Sound('dundundun') end
 			end"
 		/> 

@@ -1,7 +1,7 @@
 <ActorFrame><children>
 	<Layer
 		File="animate.sprite"
-		OnCommand="%function(self) self:zoom(blockSize/50) end"
+		OnCommand="%function(self) self:zoom(ITGMeatPlat.blockSize/50) end"
 		ResetCommand="queuecommand,Stand"
 		SprintCommand="animate,1"
 		WalkCommand="queuecommand,Sprint"
@@ -16,6 +16,6 @@
 	/>
 	<Layer
 		File="splode.xml"
-		OnCommand="%function(self) self:zoom(2.85*blockSize/50) end"
+		OnCommand="%function(self) self:zoom(2.85*ITGMeatPlat.blockSize/50) end"
 	/>
 </children></ActorFrame>

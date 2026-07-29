@@ -1,64 +1,64 @@
 <ActorFrame><children>
 	<Layer
 		File="Sprint trail.sprite"
-		SetCommand="%function(self) self:z(n); self:zoom(blockSize/50) end"
-		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(splash[z]) == 1 and trail[z] == 1 then self:playcommand('Animate') end end"
-		AnimateCommand="%function(self) z = self:GetZ() if splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; splash[z] = 0; trail[z] = 0; z = self:GetZ(); self:x(Object[z]:GetX()); self:y(Object[z]:GetY()) self:setstate(1) t = 5; self:linear(t*.03) self:queuecommand('Update') end"
-		UpdateCommand="%function(self) trail[self:GetZ()] = 2; t = 19; self:linear(t*.03) end"
+		SetCommand="%function(self) self:z(ITGMeatGlob.n); self:zoom(ITGMeatPlat.blockSize/50) end"
+		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(ITGMeatPlat.splash[z]) == 1 and ITGMeatPlat.trail[z] == 1 then self:playcommand('Animate') end end"
+		AnimateCommand="%function(self) z = self:GetZ() if ITGMeatPlat.splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; ITGMeatPlat.splash[z] = 0; ITGMeatPlat.trail[z] = 0; z = self:GetZ(); self:x(ITGMeatPlat.Object[z]:GetX()); self:y(ITGMeatPlat.Object[z]:GetY()) self:setstate(1) t = 5; self:linear(t*.03) self:queuecommand('Update') end"
+		UpdateCommand="%function(self) ITGMeatPlat.trail[self:GetZ()] = 2; t = 19; self:linear(t*.03) end"
 	/>
 	<Layer
 		File="Sprint trail.sprite"
-		SetCommand="%function(self) self:z(n); self:zoom(blockSize/50) end"
-		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(splash[z]) == 1 and trail[z] == 2 then self:playcommand('Animate') end end"
-		AnimateCommand="%function(self) z = self:GetZ() if splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; splash[z] = 0; trail[z] = 0; z = self:GetZ(); self:x(Object[z]:GetX()); self:y(Object[z]:GetY()) self:setstate(1)  t = 5; self:linear(t*.03) self:queuecommand('Update') end"
-		UpdateCommand="%function(self) trail[self:GetZ()] = 3; t = 19; self:linear(t*.03) end"
+		SetCommand="%function(self) self:z(ITGMeatGlob.n); self:zoom(ITGMeatPlat.blockSize/50) end"
+		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(ITGMeatPlat.splash[z]) == 1 and ITGMeatPlat.trail[z] == 2 then self:playcommand('Animate') end end"
+		AnimateCommand="%function(self) z = self:GetZ() if ITGMeatPlat.splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; ITGMeatPlat.splash[z] = 0; ITGMeatPlat.trail[z] = 0; z = self:GetZ(); self:x(ITGMeatPlat.Object[z]:GetX()); self:y(ITGMeatPlat.Object[z]:GetY()) self:setstate(1)  t = 5; self:linear(t*.03) self:queuecommand('Update') end"
+		UpdateCommand="%function(self) ITGMeatPlat.trail[self:GetZ()] = 3; t = 19; self:linear(t*.03) end"
 	/>
 	<Layer
 		File="Sprint trail.sprite"
-		SetCommand="%function(self) self:z(n); self:zoom(blockSize/50) end"
-		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(splash[z]) == 1 and trail[z] == 3 then self:playcommand('Animate') end end"
-		AnimateCommand="%function(self) z = self:GetZ() if splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; splash[z] = 0; trail[z] = 0; z = self:GetZ(); self:x(Object[z]:GetX()); self:y(Object[z]:GetY()) self:setstate(1)  t = 5; self:linear(t*.03) self:queuecommand('Update') end"
-		UpdateCommand="%function(self) trail[self:GetZ()] = 4; t = 19; self:linear(t*.03) end"
+		SetCommand="%function(self) self:z(ITGMeatGlob.n); self:zoom(ITGMeatPlat.blockSize/50) end"
+		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(ITGMeatPlat.splash[z]) == 1 and ITGMeatPlat.trail[z] == 3 then self:playcommand('Animate') end end"
+		AnimateCommand="%function(self) z = self:GetZ() if ITGMeatPlat.splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; ITGMeatPlat.splash[z] = 0; ITGMeatPlat.trail[z] = 0; z = self:GetZ(); self:x(ITGMeatPlat.Object[z]:GetX()); self:y(ITGMeatPlat.Object[z]:GetY()) self:setstate(1)  t = 5; self:linear(t*.03) self:queuecommand('Update') end"
+		UpdateCommand="%function(self) ITGMeatPlat.trail[self:GetZ()] = 4; t = 19; self:linear(t*.03) end"
 	/>
 	<Layer
 		File="Sprint trail.sprite"
-		SetCommand="%function(self) self:z(n); self:zoom(blockSize/50) end"
-		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(splash[z]) == 1 and trail[z] == 4 then self:playcommand('Animate') end end"
-		AnimateCommand="%function(self) z = self:GetZ() if splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; splash[z] = 0; trail[z] = 0; z = self:GetZ(); self:x(Object[z]:GetX()); self:y(Object[z]:GetY()) self:setstate(1)  t = 5; self:linear(t*.03) self:queuecommand('Update') end"
-		UpdateCommand="%function(self) trail[self:GetZ()] = 5; t = 19; self:linear(t*.03) end"
+		SetCommand="%function(self) self:z(ITGMeatGlob.n); self:zoom(ITGMeatPlat.blockSize/50) end"
+		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(ITGMeatPlat.splash[z]) == 1 and ITGMeatPlat.trail[z] == 4 then self:playcommand('Animate') end end"
+		AnimateCommand="%function(self) z = self:GetZ() if ITGMeatPlat.splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; ITGMeatPlat.splash[z] = 0; ITGMeatPlat.trail[z] = 0; z = self:GetZ(); self:x(ITGMeatPlat.Object[z]:GetX()); self:y(ITGMeatPlat.Object[z]:GetY()) self:setstate(1)  t = 5; self:linear(t*.03) self:queuecommand('Update') end"
+		UpdateCommand="%function(self) ITGMeatPlat.trail[self:GetZ()] = 5; t = 19; self:linear(t*.03) end"
 	/>
 	<Layer
 		File="Sprint trail.sprite"
-		SetCommand="%function(self) self:z(n); self:zoom(blockSize/50) end"
-		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(splash[z]) == 1 and trail[z] == 5 then self:playcommand('Animate') end end"
-		AnimateCommand="%function(self) z = self:GetZ() if splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; splash[z] = 0; trail[z] = 0; z = self:GetZ(); self:x(Object[z]:GetX()); self:y(Object[z]:GetY()) self:setstate(1)  t = 5; self:linear(t*.03) self:queuecommand('Update') end"
-		UpdateCommand="%function(self) trail[self:GetZ()] = 1; t = 19; self:linear(t*.03) end"
+		SetCommand="%function(self) self:z(ITGMeatGlob.n); self:zoom(ITGMeatPlat.blockSize/50) end"
+		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(ITGMeatPlat.splash[z]) == 1 and ITGMeatPlat.trail[z] == 5 then self:playcommand('Animate') end end"
+		AnimateCommand="%function(self) z = self:GetZ() if ITGMeatPlat.splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; ITGMeatPlat.splash[z] = 0; ITGMeatPlat.trail[z] = 0; z = self:GetZ(); self:x(ITGMeatPlat.Object[z]:GetX()); self:y(ITGMeatPlat.Object[z]:GetY()) self:setstate(1)  t = 5; self:linear(t*.03) self:queuecommand('Update') end"
+		UpdateCommand="%function(self) ITGMeatPlat.trail[self:GetZ()] = 1; t = 19; self:linear(t*.03) end"
 	/>
 	<Layer
 		File="jump trail.sprite"
-		SetCommand="%function(self) self:z(n); self:zoom(blockSize/50) end"
-		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(splash[z]) == 3 then self:playcommand('Animate') end end"
-		AnimateCommand="%function(self) z = self:GetZ() if splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; splash[z] = 0; z = self:GetZ(); self:x(Object[z]:GetX()); self:y(Object[z]:GetY()-Vy[z]) self:setstate(1) t = 11; self:linear(t*.03) end"
+		SetCommand="%function(self) self:z(ITGMeatGlob.n); self:zoom(ITGMeatPlat.blockSize/50) end"
+		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(ITGMeatPlat.splash[z]) == 3 then self:playcommand('Animate') end end"
+		AnimateCommand="%function(self) z = self:GetZ() if ITGMeatPlat.splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; ITGMeatPlat.splash[z] = 0; z = self:GetZ(); self:x(ITGMeatPlat.Object[z]:GetX()); self:y(ITGMeatPlat.Object[z]:GetY()-ITGMeatPlat.Vy[z]) self:setstate(1) t = 11; self:linear(t*.03) end"
 	/>
 
 	<Layer
 		File="wall trail.sprite"
-		SetCommand="%function(self) self:z(n); self:zoom(blockSize/50) end"
-		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(splash[z]) == 4 then self:playcommand('Animate') end end"
-		AnimateCommand="%function(self) z = self:GetZ() if splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; splash[z] = 0; z = self:GetZ(); self:x(Object[z]:GetX()); self:y(Object[z]:GetY()-Vy[z]) self:setstate(1) t = 10; self:linear(t*.03) end"
+		SetCommand="%function(self) self:z(ITGMeatGlob.n); self:zoom(ITGMeatPlat.blockSize/50) end"
+		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(ITGMeatPlat.splash[z]) == 4 then self:playcommand('Animate') end end"
+		AnimateCommand="%function(self) z = self:GetZ() if ITGMeatPlat.splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; ITGMeatPlat.splash[z] = 0; z = self:GetZ(); self:x(ITGMeatPlat.Object[z]:GetX()); self:y(ITGMeatPlat.Object[z]:GetY()-ITGMeatPlat.Vy[z]) self:setstate(1) t = 10; self:linear(t*.03) end"
 	/>
 
 	<Layer
 		File="splash.sprite"
-		SetCommand="%function(self) self:z(n); self:zoomx(1.08*blockSize/50) self:zoomy(.44*blockSize/50) end"
-		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(splash[z]) == 5 then self:playcommand('Animate') end end"
-		AnimateCommand="%function(self) z = self:GetZ() if splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; splash[z] = 0; z = self:GetZ(); self:x(Dx[z]); self:y(Dy[z]+6) self:setstate(1) t = 12; self:linear(t*.03) end"
+		SetCommand="%function(self) self:z(ITGMeatGlob.n); self:zoomx(1.08*ITGMeatPlat.blockSize/50) self:zoomy(.44*ITGMeatPlat.blockSize/50) end"
+		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(ITGMeatPlat.splash[z]) == 5 then self:playcommand('Animate') end end"
+		AnimateCommand="%function(self) z = self:GetZ() if ITGMeatPlat.splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; ITGMeatPlat.splash[z] = 0; z = self:GetZ(); self:x(ITGMeatPlat.Dx[z]); self:y(ITGMeatPlat.Dy[z]+6) self:setstate(1) t = 12; self:linear(t*.03) end"
 	/>
 
 	<Layer
 		File="wall splash.sprite"
-		SetCommand="%function(self) self:z(n); self:zoom(blockSize/50) end"
-		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(splash[z]) == 6 then self:playcommand('Animate') end end"
-		AnimateCommand="%function(self) z = self:GetZ() if splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; splash[z] = 0; z = self:GetZ(); self:x(Dx[z]); self:y(Dy[z]) self:setstate(1) t = 11; self:linear(t*.03) end"
+		SetCommand="%function(self) self:z(ITGMeatGlob.n); self:zoom(ITGMeatPlat.blockSize/50) end"
+		SplashMessageCommand="%function(self) z = self:GetZ() if math.abs(ITGMeatPlat.splash[z]) == 6 then self:playcommand('Animate') end end"
+		AnimateCommand="%function(self) z = self:GetZ() if ITGMeatPlat.splash[z] < 0 then self:rotationy(180) else self:rotationy(0) end; ITGMeatPlat.splash[z] = 0; z = self:GetZ(); self:x(ITGMeatPlat.Dx[z]); self:y(ITGMeatPlat.Dy[z]) self:setstate(1) t = 11; self:linear(t*.03) end"
 	/>
 </children></ActorFrame>

@@ -20,7 +20,7 @@ wraps = {
 FailOverlay = 2
 
 -- Used by OpenITG only; see NotITGPrefs.ini for the NotITG variant
--- Hides song title and banner in ScreenEdit
+-- Hides song title and ITGMeatGlob.banner in ScreenEdit
 EditorShowSongTitle=true
 
 -- Debug: Lua heap viewer

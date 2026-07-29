@@ -21,7 +21,7 @@
 		<Tip
 			File="Tip"
 			Command="queuecommand,Loop"
-			ClearedMessageCommand="%function(self) xTip = self:GetX() if warp < 12 and goal == 0 and not IsFinalStage() then _G['lvlCount'..dark][world] = _G['lvlCount'..dark][world] + 1 end if goal ~= 0 then warp = goal end self:queuemessage('X') self:queuecommand('Pass1') self:linear(.5) self:zoom(3) self:addy(223) self:sleep(.5) self:queuecommand('Pass2') self:queuecommand('Finished') end"
+			ClearedMessageCommand="%function(self) xTip = self:GetX() if ITGMeatGlob.warp < 12 and ITGMeatGlob.goal == 0 and not IsFinalStage() then ITGMeatGlob['lvlCount'..ITGMeatGlob.dark][ITGMeatGlob.world] = ITGMeatGlob['lvlCount'..ITGMeatGlob.dark][ITGMeatGlob.world] + 1 end if ITGMeatGlob.goal ~= 0 then ITGMeatGlob.warp = ITGMeatGlob.goal end self:queuemessage('X') self:queuecommand('Pass1') self:linear(.5) self:zoom(3) self:addy(223) self:sleep(.5) self:queuecommand('Pass2') self:queuecommand('Finished') end"
 			FailedMessageCommand="%function(self) xTip = self:GetX() self:queuemessage('X') self:queuecommand('Fail1') self:linear(.5) self:zoom(3) self:addy(223) self:sleep(.5) self:queuecommand('Fail2') self:queuecommand('Finished') end"
 		/>
 	</Layer>

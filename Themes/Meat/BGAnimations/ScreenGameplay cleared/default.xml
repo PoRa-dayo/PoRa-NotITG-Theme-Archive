@@ -1,7 +1,7 @@
 <ActorFrame><children>
 	<ActorFrame
 		Command="queuecommand,Done;sleep,.1"
-		DoneCommand="%function(self) self:queuemessage('Cleared') banner = 9; self:sleep(3) end"
+		DoneCommand="%function(self) self:queuemessage('Cleared') ITGMeatGlob.banner = 9; self:sleep(3) end"
 	/>
 	<Layer
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"

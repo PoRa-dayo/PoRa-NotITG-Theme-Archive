@@ -28,7 +28,7 @@
 		<Layer File="dsplode.sprite" Command="diffuse,#000000;y,-39;x,-23;rotationy,180" Splode1Command="setstate,1" />
 		<Layer File="dsplode.sprite" Command="diffuse,#000000;y,39;x,-23;rotationx,180;rotationy,180" Splode1Command="setstate,1" />
 	</children></Layer>
-	<Layer File="@'block'..world..'.png'" Command="x,8.4;y,3;zoom,.5" Fail3Command="zoom,0"/>
+	<Layer File="@'block'..ITGMeatGlob.world..'.png'" Command="x,8.4;y,3;zoom,.5" Fail3Command="zoom,0"/>
 	
 <!-- Masking Layer -->
 	<Layer 

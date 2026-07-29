@@ -23,7 +23,7 @@
 			if jump == 5 then self:sleep(.3) self:queuecommand('Jump3') self:sleep(.2) self:queuecommand('Jump1') self:sleep(.2) self:queuecommand('Jump3') end
 		end"
 		FinishedCommand="stoptweening"
-		Fail4Command="%function(self) FailMove(self) end"
+		Fail4Command="%function(self) FailMoveITGMeat(self) end"
 		Pass1Command="%function(self) if float == 1 then self:sleep(.8) self:queuecommand('Win') end end"
 		Fail1Command="%function(self) if float == 1 then self:sleep(.6) self:queuecommand('Fall') end end"
 	><children>

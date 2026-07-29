@@ -1,5 +1,5 @@
 <ActorFrame InitCommand="%AspectScale" ><children>
-	<ActorFrame OnCommand="queuecommand,First" FirstCommand="%function(self) timerSound = 'pushbuttons' title=1 s = SCREENMAN:GetTopScreen() s:x(1000) s:sleep(1.5) s:x(0) banner = 0 end" />
+	<ActorFrame OnCommand="queuecommand,First" FirstCommand="%function(self) timerSound = 'pushbuttons' title=1 s = SCREENMAN:GetTopScreen() s:x(1000) s:sleep(1.5) s:x(0) ITGMeatGlob.banner = 0 end" />
 	<ActorFrame
 		OnCommand="queuecommand,Sound1;sleep,.1;queuecommand,Sound2;sleep,.4;queuecommand,Sound3;sleep,.4;queuecommand,Sound4" 
 		Sound1Command="%function() Sound('SMB-Test') Sound('CharacterSelect_Curtain') end" 

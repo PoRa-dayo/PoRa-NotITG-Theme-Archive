@@ -31,7 +31,7 @@
 	/>
 	<ActorFrame
 		InitCommand="%function() MapSplodeSound = 0 end"
-		OffCommand="%function(self) if MapSplodeSound == 0 and world == 7 then MapSplodeSound = 1; self:queuecommand('Sound1') self:sleep(.3) self:queuecommand('Sound2') self:sleep(.3) self:queuecommand('Sound1') self:sleep(.5) end end" 
+		OffCommand="%function(self) if MapSplodeSound == 0 and ITGMeatGlob.world == 7 then MapSplodeSound = 1; self:queuecommand('Sound1') self:sleep(.3) self:queuecommand('Sound2') self:sleep(.3) self:queuecommand('Sound1') self:sleep(.5) end end" 
 		Sound1Command="%function() Sound('meat_impacts_3') end" 
 		Sound2Command="%function() Sound('meat_death4') end"
 	/>

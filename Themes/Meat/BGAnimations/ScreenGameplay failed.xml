@@ -2,7 +2,7 @@
 	<Layer
 		Type="Quad"
 		Command="queuecommand,Done;sleep,.01"
-		DoneCommand="%function(self) self:queuemessage('Failed') banner = 9; self:sleep(2) end"
+		DoneCommand="%function(self) self:queuemessage('Failed') ITGMeatGlob.banner = 9; self:sleep(2) end"
 	/>
 	<Layer
 		Type="Quad"

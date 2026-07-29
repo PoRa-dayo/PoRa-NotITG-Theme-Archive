@@ -7,7 +7,7 @@ lvlSpd = SCREEN_WIDTH/650
 
 lifeBarSizeAdd = { Width = 0, Height = -70, OffsetX = 0, OffsetY = 35 }
 
-screenList = { Gameplay = 'ScreenStage' , SelectMusic = SongSelectionScreen , PlayerOptions = SelectFirstOptionsScreen , Summary = function() banner = 9 return 'Summary' end , TitleMenu = ScreenTitleBranch ,  Ending = 'ScreenIntro' }
+screenList = { Gameplay = 'ScreenStage' , SelectMusic = SongSelectionScreen , PlayerOptions = SelectFirstOptionsScreen , Summary = function() ITGMeatGlob.banner = 9 return 'Summary' end , TitleMenu = ScreenTitleBranch ,  Ending = 'ScreenIntro' }
 
 if not FUCK_EXE then judgmentFontList = { 'Meat' , 'Love' , 'Tactics', 'Chromatic', 'Deco', 'GrooveNights', 'FP', 'ITG2' } end
 

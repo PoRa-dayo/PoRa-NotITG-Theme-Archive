@@ -30,7 +30,7 @@
 
 	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y-290,SCREEN_RIGHT,SCREEN_CENTER_Y-210" />
 	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y+290,SCREEN_RIGHT,SCREEN_CENTER_Y+210" />
-	<Layer Type="ActorFrame" InitCommand="%function() if selectMusic then Sound('CharacterSelect_Curtain') end banner = world end" Command="queuecommand,Z" ZCommand="%function() selectMusic = nil end" />
+	<Layer Type="ActorFrame" InitCommand="%function() if selectMusic then Sound('CharacterSelect_Curtain') end ITGMeatGlob.banner = ITGMeatGlob.world end" Command="queuecommand,Z" ZCommand="%function() selectMusic = nil end" />
 	<Layer
 		Type="ActorFrame"
 		OnCommand="x,SCREEN_CENTER_X-120;y,SCREEN_CENTER_Y-94"

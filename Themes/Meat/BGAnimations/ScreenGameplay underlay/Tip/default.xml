@@ -1,5 +1,5 @@
 <ActorFrame> <children>
-	<ActorFrame InitCommand="%function(self) warp = warp + 10 end" />
+	<ActorFrame InitCommand="%function(self) ITGMeatGlob.warp = ITGMeatGlob.warp + 10 end" />
 	<ActorFrame InitCommand="%function() SetGameplayBlocks() Initialize(blockSizeGameplay,blockXOffsetGameplay,blockYOffsetGameplay,-8,0) end" />
 	<Layer File="BG/bg.xml" />
 	<Layer
@@ -9,7 +9,7 @@
 	<Layer File="BG/ground.xml"	/>
 	<Layer File="../Obstacles/Mask" />
 	<Layer
-		Condition="warp == 10 and GAMESTATE:GetNumPlayersEnabled() == 2"
+		Condition="ITGMeatGlob.warp == 10 and GAMESTATE:GetNumPlayersEnabled() == 2"
 		File="Brownie.xml"
 		InitCommand="%ColorSilhouette"
 		OnCommand="bob;effectmagnitude,20,0,0"
@@ -27,9 +27,9 @@
 		Command="%ColorSilhouette"
 		Pass1Command="sleep,.5;x,16;addx,128*lvlSpd;linear,.5;x,16;queuecommand,Animate;queuecommand,Sound"
 	><children>
-		<Layer Condition="goal==0" File="@Bandage()" />
-		<Layer Condition="goal==2" File="@Bandage()..'/warp.xml'" />
-		<Layer Condition="goal==3" File="@Bandage()..'/glitch.xml'" Pass1Command="queuecommand,Glitch" />
+		<Layer Condition="ITGMeatGlob.goal==0" File="@Bandage()" />
+		<Layer Condition="ITGMeatGlob.goal==2" File="@Bandage()..'/warp.xml'" />
+		<Layer Condition="ITGMeatGlob.goal==3" File="@Bandage()..'/glitch.xml'" Pass1Command="queuecommand,Glitch" />
 	</children> </Layer>
 </children> </ActorFrame>
 

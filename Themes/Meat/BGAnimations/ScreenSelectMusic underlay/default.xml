@@ -1,5 +1,5 @@
 <ActorFrame><children>
-	<Layer File="@'World'..world..dark" Command="queuecommand,Aspect" AspectCommand="%function(self) TransitionAspectScale(self) self:zoomy(1) self:y(0) end" />
+	<Layer File="@'World'..ITGMeatGlob.world..ITGMeatGlob.dark" Command="queuecommand,Aspect" AspectCommand="%function(self) TransitionAspectScale(self) self:zoomy(1) self:y(0) end" />
 <!--Black Quads-->
 	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y-240,SCREEN_RIGHT,SCREEN_CENTER_Y-180" />
 	<Layer Type="Quad" Command="diffuse,#000000;stretchto,SCREEN_LEFT,SCREEN_CENTER_Y+154,SCREEN_RIGHT,SCREEN_CENTER_Y+240" />
@@ -7,7 +7,7 @@
 	<Layer
 		Type="ActorFrame"
 		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-140;queuecommand,Check"
-		CheckCommand="%function(self) if world == 8 then self:diffuse(.62,0,0,1) end end"
+		CheckCommand="%function(self) if ITGMeatGlob.world == 8 then self:diffuse(.62,0,0,1) end end"
 	><children>
 		<Layer Type="ActorFrame" Command="x,-249;y,-13;Rotationz,80"><children>
 		<Layer 
@@ -95,7 +95,7 @@
 	<Layer
 		Type="ActorFrame"
 		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+155;queuecommand,Check"
-		CheckCommand="%function(self) if world == 8 then self:diffuse(.62,0,0,1) end end"
+		CheckCommand="%function(self) if ITGMeatGlob.world == 8 then self:diffuse(.62,0,0,1) end end"
 	><children>
 		<Layer Type="ActorFrame" Command="x,-268;y,-4;Rotationz,-99"><children>
 		<Layer 

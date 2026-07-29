@@ -1,11 +1,11 @@
 <ActorFrame><children>
 	<ActorFrame InitCommand="%function() SetEvalBlocks() Initialize(blockSizeEval,blockXOffsetEval,blockYOffsetEval) end" />
-	<Layer File="@LevelType()..'/World'..world..'/Level' .. level .. '/level map.xml'" />
-	<Layer File="@LevelType()..'/World'..world..'/Level' .. level .. '/wide map.xml'" />
-	<Layer File="@LevelType()..'/World'..world..'/Underground'" OnCommand="%ColorSilhouette" />
+	<Layer File="@LevelType()..'/World'..ITGMeatGlob.world..'/Level' .. ITGMeatGlob.level .. '/level map.xml'" />
+	<Layer File="@LevelType()..'/World'..ITGMeatGlob.world..'/Level' .. ITGMeatGlob.level .. '/wide map.xml'" />
+	<Layer File="@LevelType()..'/World'..ITGMeatGlob.world..'/Underground'" OnCommand="%ColorSilhouette" />
 	<Layer Condition="SCREEN_WIDTH > 640" File="Level Wide.xml" /> 
 	<Layer File="Level Ground.xml" />
-	<Layer File="@LevelType()..'/World'..world..'/Overground'" OnCommand="%ColorSilhouette" />
+	<Layer File="@LevelType()..'/World'..ITGMeatGlob.world..'/Overground'" OnCommand="%ColorSilhouette" />
 	<Layer Type="Quad" OnCommand="Stretchto,SCREEN_LEFT,SCREEN_CENTER_Y+240,SCREEN_RIGHT,SCREEN_CENTER_Y+210;diffuse,#000000" />
 	<Layer Type="Quad" OnCommand="Stretchto,SCREEN_LEFT,SCREEN_CENTER_Y-240,SCREEN_RIGHT,SCREEN_CENTER_Y-160;diffuse,#000000" />
 	<Layer File="crumble.xml" OnCommand="%ColorSilhouette" />

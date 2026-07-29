@@ -49,6 +49,6 @@
 			<Layer Type="ActorFrame" Command="rotationz,270"><children> <Layer File="cannon.png" Command="y,-20" ShootCommand="linear,.1;zoomy,.7;linear,.1;zoomy,1.5;linear,.1;zoomy,.3;linear,.1;zoomy,1" /> </children></Layer>
 			<Layer File="cannon over.png" />
 		</children></Layer>
-	<Layer File="@'blocks'..world..'.png'" Command="x,128" />
+	<Layer File="@'blocks'..ITGMeatGlob.world..'.png'" Command="x,128" />
 	</children></Layer>
 </children></ActorFrame>

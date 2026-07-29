@@ -1,7 +1,7 @@
 <ActorFrame><children>
 	<Layer
 		Type="ActorFrame"
-		Command="%function(self) self:zoom(1.7*blockSize/50) end"
+		Command="%function(self) self:zoom(1.7*ITGMeatPlat.blockSize/50) end"
 	><children>
 		<Layer
 			File="fetus.sprite"

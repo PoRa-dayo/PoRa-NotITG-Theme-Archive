@@ -127,7 +127,7 @@ local function update()
     event.Call("update", dt, time)
 end
 
-function event:Update()
+function event:UpdateITGMeat()
     clock = self
     pt = self:GetSecsIntoEffect()-0.01
     event.Update = update
