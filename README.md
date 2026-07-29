@@ -38,6 +38,7 @@ Pretty insane how functional this theme still is even on NotITG current version
 
 ## Changelogs:
 -Added "Play Mods" (takes you to 2P Regular immediately, also note that this will always pick The Forest since this theme doesn't save the world you picked last session)\
+-The theme now uses less arbitrarily named global variables to avoid conflicts with modfiles.\
 -Fixed the issue that made the speedmod set at setdefault in modfiles get overwritten by player's speedmod.\
 -Made noteskins use the entire NoteSkins folder, judgment fonts use the _Judgments folder, added Hold Judgment customizations, and moved around some options.\
 -Mods now affect players 1-8\
@@ -46,6 +47,7 @@ Pretty insane how functional this theme still is even on NotITG current version
 -Added fullscreen/windowed and resolution options\
 -Removed the duplicated text in Options menu\
 -Added some files in Graphics/_Bandages to prevent errors when restarting a song\
+-Prevented some errors that can occur depending on the selected world and current stage\
 -_missing font now redirects to Common title font as the Meat font is too big for the debug menu\
 -Common normal font is now an edited version of Common title (instead of an edited version of Meat) so that the UI that use it fit the game\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
