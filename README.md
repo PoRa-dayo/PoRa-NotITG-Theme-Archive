@@ -26,7 +26,7 @@ Head on to the [releases](https://github.com/PoRa-dayo/PoRa-NotITG-Theme-Archive
 
 <img height="68" alt="NotITG-v4 9 1_FY27oJHBrF" src="https://github.com/user-attachments/assets/6d2f3318-23cd-491a-abff-55814cae10d0" />
 
-**NOTE: When selecting modifiers after selecting a song, in some themes, you might see a special symbol appearing in some options (usually a triangle pointing down). This means** ***you have to press the Start button to select an option,*** **then your cursor will be redirected back to the symbol.**
+**NOTE: When selecting modifiers after selecting a song, in some themes, you might see a special symbol appearing in some options (usually a triangle pointing down). This means** ***you have to press the Start button to select an option.*** **Your cursor will then be redirected back to the symbol, which means the game has saved your selection.**
 
 
 
