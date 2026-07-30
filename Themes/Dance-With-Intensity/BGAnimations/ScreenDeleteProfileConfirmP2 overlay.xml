@@ -79,7 +79,7 @@
             end"
             UpdateCommand="%function(self)
 
-            if IsUsingMemoryCard( PLAYER_1 )  then
+            if IsUsingMemoryCard( PLAYER_2 )  then
                 self:settext( 'Using MemoryCard' )
                 self:diffuse(230/255,142/255,27/255,1)
             else

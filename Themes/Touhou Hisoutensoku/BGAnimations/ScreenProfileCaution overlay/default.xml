@@ -1,0 +1,4 @@
+<ActorFrame><children>
+    <Layer File="petah"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,0.8"/>
+</children></ActorFrame>

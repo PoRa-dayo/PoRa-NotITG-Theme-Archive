@@ -650,6 +650,31 @@ function StarCheck()
     end
 end
 
+function SelectMusicCheckScores()
+    local p1pane = SCREENMAN:GetTopScreen():GetChild('PaneDisplayP1')
+    local p2pane = SCREENMAN:GetTopScreen():GetChild('PaneDisplayP2')
+    if p1pane then
+        p1pane = p1pane:GetChild('')
+        if PROFILEMAN:IsPersistentProfile(PLAYER_1) then
+            p1pane:GetChild('MachineHighScoreText'):hidden(1)
+            p1pane:GetChild('CourseMachineHighScoreText'):hidden(1)
+        else
+            p1pane:GetChild('ProfileHighScoreText'):hidden(1)
+            p1pane:GetChild('CourseProfileHighScoreText'):hidden(1)
+        end
+    end
+    if p2pane then
+        p2pane = p2pane:GetChild('')
+        if PROFILEMAN:IsPersistentProfile(PLAYER_2) then
+            p2pane:GetChild('MachineHighScoreText'):hidden(1)
+            p2pane:GetChild('CourseMachineHighScoreText'):hidden(1)
+        else
+            p2pane:GetChild('ProfileHighScoreText'):hidden(1)
+            p2pane:GetChild('CourseProfileHighScoreText'):hidden(1)
+        end
+    end
+end
+
 
 --[[
 Lua Theme Switcher, OpenITG beta 1, version 1.5

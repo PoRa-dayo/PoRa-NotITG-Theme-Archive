@@ -47,21 +47,16 @@
         FirstUpdateCommand="%function(self)
             UpdateWheelTitles(true)
         end"
-        CurrentStepsP1ChangedMessageCommand="%function(self)
-            if BMIIDX14Glob.YouShouldChangeThatShitNOW then return end
-            BMIIDX14Glob.YouShouldChangeThatShitNOW=true
-            self:queuecommand('Wheel')
-        end"
-        CurrentStepsP2ChangedMessageCommand="%function(self)
+        UpdateMessageCommand="%function(self)
             if BMIIDX14Glob.YouShouldChangeThatShitNOW then return end
             BMIIDX14Glob.YouShouldChangeThatShitNOW=true
             self:queuecommand('Wheel')
         end"
         WheelCommand="%function(self)
             if BMIIDX14Glob.YouShouldChangeThatShitNOW then
-                BMIIDX14Glob.YouShouldChangeThatShitNOW = false
                 UpdateWheelTitles()
             end
+            BMIIDX14Glob.YouShouldChangeThatShitNOW = false
         end"/>
         
     <Layer
@@ -296,8 +291,9 @@
             GroupCommand="%function(self)
                 local ind = CurWheelIndex()
                 local group = BMIIDX14Glob.GroupTitles[ind]
-                if (not GAMESTATE:GetCurrentSong()) and BMIIDX14Glob.GroupSongNum[group] then
-                    self:settext(BMIIDX14Glob.GroupSongNum[group])
+                local SongNum = GAMESTATE:PlayerUsingBothSides() and BMIIDX14Glob.GroupSongNumDoubles[group] or BMIIDX14Glob.GroupSongNum[group]
+                if (not GAMESTATE:GetCurrentSong()) and SongNum then
+                    self:settext(SongNum)
                 else
                     self:settext('')
                 end

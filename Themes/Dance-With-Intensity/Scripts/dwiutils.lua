@@ -67,7 +67,7 @@ function AccumProfileScore(self, pn)
             if PStage(pn)+1 == 1 then
                 self:settext(GetProfileName(1)..': 0.00%')
             else
-                if act/poss <= 0 then
+                if act/poss <= 0 or (act == 0 and poss == 0) then
                     self:settext(GetProfileName(1)..': 0.00%')
                 else
                     self:settext(GetProfileName(1)..': '.. FormatPercentScore(act/poss))
@@ -169,7 +169,14 @@ function CalculatePercentage(self, pn, name)
 
     if (FUCK_EXE or OPENITG) and CalcPerNames[name] and GAMESTATE:IsPlayerEnabled(pn) then
         local GPSS = CalcPerNames[name]:GetPlayerStageStats(pn);
-        self:settext( FormatPercentScore( GPSS:GetActualDancePoints()/GPSS:GetPossibleDancePoints() ) )
+        local ADP = GPSS:GetActualDancePoints()
+        local PDP = GPSS:GetPossibleDancePoints()
+        if ADP == 0 and PDP == 0 then
+            self:settext( '0.00%' )
+        else
+            self:settext( FormatPercentScore( ADP/PDP ) )
+        end
+        
     else
         self:settext(' ')
     end
@@ -407,7 +414,7 @@ end
 
 function ProfileNamesWarningCheck(self)
 	if GetProfileName(1) == 'Player 1' and GetProfileName(2) == 'Player 2' then
-        self:settext('You can change the Profile names in:\nDance With Intensity/Scripts/Profile Information.lua')
+        self:settext('You can change the Machine Profile names in:\nDance With Intensity/Scripts/Profile Information.lua')
     else
         self:settext(' ')
     end
@@ -1197,6 +1204,9 @@ function EditorHelpText()
 		text = text ..'\n'
 		text = text ..'ESC\n'
 		text = text ..'Main Menu\n'
+        text = text ..'\n'
+        text = text ..'F1\n'
+		text = text ..'Help Menu\n'
 
 	return text
 end
@@ -1257,6 +1267,31 @@ function IsHarderDifficulty( pn )
     local CurrentDiff = GAMESTATE:PlayerDifficulty(pn)
     local IsHarderDiff = HardestDiff > CurrentDiff
     return IsHarderDiff
+end
+
+function SelectMusicCheckScores()
+    local p1pane = SCREENMAN:GetTopScreen():GetChild('PaneDisplayP1')
+    local p2pane = SCREENMAN:GetTopScreen():GetChild('PaneDisplayP2')
+    if p1pane then
+        p1pane = p1pane:GetChild('')
+        if PROFILEMAN:IsPersistentProfile(PLAYER_1) then
+            p1pane:GetChild('MachineHighScoreText'):hidden(1)
+            p1pane:GetChild('CourseMachineHighScoreText'):hidden(1)
+        else
+            p1pane:GetChild('ProfileHighScoreText'):hidden(1)
+            p1pane:GetChild('CourseProfileHighScoreText'):hidden(1)
+        end
+    end
+    if p2pane then
+        p2pane = p2pane:GetChild('')
+        if PROFILEMAN:IsPersistentProfile(PLAYER_2) then
+            p2pane:GetChild('MachineHighScoreText'):hidden(1)
+            p2pane:GetChild('CourseMachineHighScoreText'):hidden(1)
+        else
+            p2pane:GetChild('ProfileHighScoreText'):hidden(1)
+            p2pane:GetChild('CourseProfileHighScoreText'):hidden(1)
+        end
+    end
 end
 
 

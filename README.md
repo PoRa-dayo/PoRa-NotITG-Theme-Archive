@@ -134,13 +134,15 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Course entries' titles are now properly left-aligned like in the original DWI.\
 -Course mode's music now properly loops.\
 -Little triangles are shown in song selection screen whenever there's an easier or harder difficulty available.\
--Machine Percentage High Score is now shown in song selection screen when Show Score in Select Music option is enabled.\
+-Machine/Profile Percentage High Score is now shown in song selection screen when Show Score in Select Music option is enabled.\
 -Added the song title in the evaluation screen to account for charts with no text in their banners.\
--The CLEARED screen now takes 3 seconds instead of 5.\
+-The CLEARED screen is now only 3 seconds long instead of 5.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.\
 -Added back the percentage in results screen of course mode.\
 -Added mod icons for custom noteskins.\
+-Edit Mode now accessible and its UI is now complete.\
+-The profile name now prioritizes your local profile's if you're using one.\
 -Added offset plot and spellcard viewer in results screen.\
 -Added back OK counter, as well as an N.G. counter next to it, and a mine counter next to the misses counter in results screen.
 
@@ -213,7 +215,7 @@ OITGThemerFallback is a fallback theme that's made to make it easier to port SM3
 -Revamped the entire grading system because every port of A.O.I. uses a different one and it was really inconsistent. E is now the failing grade. The spinning grades in the evaluation screen are now manually implemented as the built-in one is hardcoded to 7 tiers.\
 -Fixed the error where the length indicator in music selection screen never changes.\
 -Added the song title in the evaluation screen to account for charts with no banners. Also fixed the timer bar sprite in the evaluation screen.\
--Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that) and Profile Options (NotITG's built-in profile system is broken). Removed Show Caution, Show Song Options and Show Instructions options as it doesn't really affect anything in A.O.I., it just causes other themes to break.\
+-Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that). Removed Show Caution, Show Song Options and Show Instructions options as it doesn't really affect anything in A.O.I., it just causes other themes to break.\
 -Finished the UI in Edit Mode.\
 -Changed the background of the results screen to one of the unused backgrounds when you get an E grade.\
 -Little triangles are shown in song selection screen whenever there's an easier or harder difficulty available.\
@@ -315,6 +317,7 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 -Resized the default judgment textures and changed the judgment tween accordingly so that it scales well with most other judgments out there.\
 -Made the music wheel highlight in song selection screen clearer, and made it not disappear when entering sort mode.\
 -No more long wait after pressing start to enter song options.\
+-Local profile name is displayed on song selection screen.\
 -Added options to disable the Countdown near the end of the song, as well as the Coin System.\
 -Removed the custom Language Settings menu as it doesn't work, so the built-in Language options is used now. I don't know if it's even possible to make it keep picking the language you last used by default every time you start the game though.\
 -The song progress timer now uses NotITG's StepsLengthSeconds instead of MusicLengthSeconds for more accuracy.\
@@ -449,6 +452,7 @@ Thanks to DarkOverord for posting most of the game's assets on spriters-resource
 -Results screen now display stats in a similar manner to ITG, except Hands and Jumps counters are removed. BPM and Music Rate are also displayed on this screen.\
 -Added a name entry screen at the end of a game session (when Event Mode is off).\
 -Added Edit menu and finished its UI.\
+-Local profile name is displayed on song selection screen.\
 -The prompts (pop-ups that ask a question that you have to answer) are also customized.\
 -Added offset plot and spellcard viewer in results screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.

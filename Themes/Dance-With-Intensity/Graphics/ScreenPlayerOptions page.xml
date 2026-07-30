@@ -39,7 +39,7 @@
                     if PStage(PLAYER_1)+1 == 1 then
                         self:settext(GetProfileName(1)..': 0.00%')
                     else
-                        if act/poss <= 0 then
+                        if act/poss <= 0 or (act == 0 and poss == 0) then
                             self:settext(GetProfileName(1)..': 0.00%')
                         else
                             self:settext(GetProfileName(1)..': '.. FormatPercentScore(act/poss))
@@ -90,7 +90,7 @@
                     if PStage(PLAYER_2)+1 == 1 then
                         self:settext(GetProfileName(2)..': 0.00%')
                     else
-                        if act/poss <= 0 then
+                        if act/poss <= 0 or (act == 0 and poss == 0) then
                             self:settext(GetProfileName(2)..': 0.00%')
                         else
                             self:settext(GetProfileName(2)..': '.. FormatPercentScore(act/poss))

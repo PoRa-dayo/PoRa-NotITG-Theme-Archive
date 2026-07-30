@@ -23,6 +23,7 @@ BMIIDX14Glob={
     SongTitles = {},
     GroupTitles = {},
     GroupSongNum = {},
+    GroupSongNumDoubles = {},
     SongDiffs = {},
     MusicWheelList = {},
     CurDiff = 7,
@@ -80,10 +81,21 @@ for index, songg in ipairs(BMIIDX14Glob.AllSongs) do
     --calculate all the song amounts each song folder (group) has
     --obviously this is sometimes wrong because of all those hidden songs but whatever
     local GroupName = songg:GetGroupName()
-    if not BMIIDX14Glob.GroupSongNum[GroupName] then
-        BMIIDX14Glob.GroupSongNum[GroupName] = 1
-    else
-        BMIIDX14Glob.GroupSongNum[GroupName] = BMIIDX14Glob.GroupSongNum[GroupName] + 1
+    local StepsList = songg:GetStepsByStepsType(0)
+    local DoubleStepsList = songg:GetStepsByStepsType(1)
+    if StepsList and #StepsList > 0 then
+        if not BMIIDX14Glob.GroupSongNum[GroupName] then
+            BMIIDX14Glob.GroupSongNum[GroupName] = 1
+        else
+            BMIIDX14Glob.GroupSongNum[GroupName] = BMIIDX14Glob.GroupSongNum[GroupName] + 1
+        end
+    end
+    if DoubleStepsList and #DoubleStepsList > 0 then
+        if not BMIIDX14Glob.GroupSongNumDoubles[GroupName] then
+            BMIIDX14Glob.GroupSongNumDoubles[GroupName] = 1
+        else
+            BMIIDX14Glob.GroupSongNumDoubles[GroupName] = BMIIDX14Glob.GroupSongNumDoubles[GroupName] + 1
+        end
     end
     
     --Create a SongDiffs table that stores the DiffList of each song by MainTitle, Subtitle, and the Artist

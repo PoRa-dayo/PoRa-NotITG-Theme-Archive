@@ -315,13 +315,58 @@
 		end"
 		/>
 --high score
+        
+        <Layer
+		Font="Paintball"
+		Text="Record: "
+		OnCommand="%function(self)
+		
+		self:x(140)
+		self:y(-10)
+		self:zoom(.2)
+		self:horizalign('left')
+		self:shadowlength(1)
+		self:maxwidth(SCREEN_WIDTH/1.5)
+		self:rotationy(-4.5)
+		self:rotationz(-1)
+		end"
+		OffCommand="linear,0.3;diffusealpha,0"
+		InitCommand="animate,0;playcommand,UpdateStart"
+		CurrentSongChangedMessageCommand="playcommand,UpdateStart"
+		UpdateStartCommand="%function(self)
+				self:finishtweening()
+				self:accelerate(0.1)
+				self:zoom(0.18)
+				self:diffusealpha(0)
+				self:sleep(0.001)
+				self:queuecommand('Update')
+		end"
+		UpdateCommand="%function(self)
+			self:zoom(0.18)
+			if GAMESTATE:GetCurrentSong() or GAMESTATE:GetCurrentCourse() then
+				self:hidden(0)
+				self:diffuse(1,1,1,0)
+                if GAMESTATE:GetNumPlayersEnabled() > 1 then
+                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore') .. '            /')
+                else
+                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore'))
+                end
+				self:decelerate(0.1)
+			else
+				self:hidden(1)
+			end
+			self:zoom(0.3)
+			self:diffusealpha(1)
+		end"
+		/>
+        
         <Layer
             Font="Paintball"
-            Text="Song name"
+            Text="?"
             OnCommand="%function(self)
             
-            self:x(140)
-            self:y(-10)
+            self:x(183)
+            self:y(-7)
             self:zoom(.2)
             self:horizalign('left')
             self:shadowlength(1)
@@ -331,8 +376,9 @@
             end"
             OffCommand="linear,0.3;diffusealpha,0"
             InitCommand="animate,0;playcommand,UpdateStart"
-            CurrentStepsP1ChangedMessageCommand="playcommand,UpdateStart"
-            CurrentStepsP2ChangedMessageCommand="playcommand,UpdateStart"
+            CurrentSongChangedMessageCommand="playcommand,UpdateStart"
+            CurrentStepsP1ChangedMessageCommand="queuecommand,UpdateText"
+            CurrentStepsP2ChangedMessageCommand="queuecommand,UpdateText"
             UpdateStartCommand="%function(self)
                     self:finishtweening()
                     self:accelerate(0.1)
@@ -343,42 +389,109 @@
             end"
             UpdateCommand="%function(self)
                 self:zoom(0.18)
+                self:decelerate(0.1)
+                self:zoom(0.3)
+                self:diffusealpha(1)
+            end"
+            UpdateTextCommand="%function(self)
                 local panep1=SCREENMAN:GetTopScreen():GetChild('PaneDisplayP1')
                 local panep2=SCREENMAN:GetTopScreen():GetChild('PaneDisplayP2')
                 local scoretxt1 = '?'
                 local scoretxt2 = '?'
-                if panep1 or panep2 then
-                    if GAMESTATE:GetCurrentSong() then
-                        if panep1 then scoretxt1 = panep1:GetChild(''):GetChild('MachineHighScoreText'):GetText() end
-                        if panep2 then scoretxt2 = panep2:GetChild(''):GetChild('MachineHighScoreText'):GetText() end
+                local IsCourse = GAMESTATE:GetCurrentCourse()
+                self:hidden(1)
+                if GAMESTATE:GetCurrentSong() or IsCourse then
+                    if panep1 then
+                        if PROFILEMAN:IsPersistentProfile(PLAYER_1) then
+                            scoretxt1 = panep1:GetChild(''):GetChild(IsCourse and 'CourseProfileHighScoreText' or 'ProfileHighScoreText'):GetText()
+                            self:diffuse(1,0.5,0.5,1)
+                        else
+                            scoretxt1 = panep1:GetChild(''):GetChild(IsCourse and 'CourseMachineHighScoreText' or 'MachineHighScoreText'):GetText()
+                            self:diffuse(1,1,1,1)
+                        end
                         self:hidden(0)
-                    elseif GAMESTATE:GetCurrentCourse() then
-                        if panep1 then scoretxt1 = panep1:GetChild(''):GetChild('CourseMachineHighScoreText'):GetText() end
-                        if panep2 then scoretxt2 = panep2:GetChild(''):GetChild('CourseMachineHighScoreText'):GetText() end
+                    end
+                    if panep2 and (not panep1) then
+                        if PROFILEMAN:IsPersistentProfile(PLAYER_2) then
+                            scoretxt2 = panep2:GetChild(''):GetChild(IsCourse and 'CourseProfileHighScoreText' or 'ProfileHighScoreText'):GetText()
+                            self:diffuse(1,0.5,0.5,1)
+                        else
+                            scoretxt2 = panep2:GetChild(''):GetChild(IsCourse and 'CourseMachineHighScoreText' or 'MachineHighScoreText'):GetText()
+                            self:diffuse(1,1,1,1)
+                        end
+                        self:hidden(0)
+                    end
+                end
+                if panep1 then
+                    self:settext( scoretxt1)
+                elseif panep2 then
+                    self:settext( scoretxt2)
+                end
+            end"
+		/>
+
+        <Layer
+            Font="Paintball"
+            Text="?"
+            OnCommand="%function(self)
+            
+            self:x(230)
+            self:y(-3)
+            self:zoom(.2)
+            self:horizalign('left')
+            self:shadowlength(1)
+            self:maxwidth(SCREEN_WIDTH/1.5)
+            self:rotationy(-4.5)
+            self:rotationz(-1)
+            end"
+            OffCommand="linear,0.3;diffusealpha,0"
+            InitCommand="animate,0;playcommand,UpdateStart"
+            CurrentSongChangedMessageCommand="playcommand,UpdateStart"
+            CurrentStepsP1ChangedMessageCommand="queuecommand,UpdateText"
+            CurrentStepsP2ChangedMessageCommand="queuecommand,UpdateText"
+            UpdateStartCommand="%function(self)
+                    self:finishtweening()
+                    self:accelerate(0.1)
+                    self:zoom(0.18)
+                    self:diffusealpha(0)
+                    self:sleep(0.001)
+                    self:queuecommand('Update')
+            end"
+            UpdateCommand="%function(self)
+                self:zoom(0.18)
+                self:decelerate(0.1)
+                self:zoom(0.3)
+                self:diffusealpha(1)
+            end"
+            UpdateTextCommand="%function(self)
+                local panep1=SCREENMAN:GetTopScreen():GetChild('PaneDisplayP1')
+                local panep2=SCREENMAN:GetTopScreen():GetChild('PaneDisplayP2')
+                local scoretxt2 = '?'
+                local IsCourse = GAMESTATE:GetCurrentCourse()
+                if panep1 and panep2 then
+                    if GAMESTATE:GetCurrentSong() or IsCourse then
+                        if PROFILEMAN:IsPersistentProfile(PLAYER_2) then
+                            scoretxt2 = panep2:GetChild(''):GetChild(IsCourse and 'CourseProfileHighScoreText' or 'ProfileHighScoreText'):GetText()
+                            self:diffuse(1,0.5,0.5,1)
+                        else
+                            scoretxt2 = panep2:GetChild(''):GetChild(IsCourse and 'CourseMachineHighScoreText' or 'MachineHighScoreText'):GetText()
+                            self:diffuse(1,1,1,1)
+                        end
                         self:hidden(0)
                     else
                         self:hidden(1)
                     end
-                    self:diffuse(1,1,1,0)
-                    self:decelerate(0.1)
+                    
                 else
                     self:hidden(1)
                 end
                 if panep1 and panep2 then
-                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore')..scoretxt1..' / '..scoretxt2 )
-                elseif panep1 and not panep2 then
-                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore')..scoretxt1)
-                elseif panep1 and not panep2 then
-                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore')..scoretxt2)
+                    self:settext( scoretxt2 )
                 else
-                    self:settext( THEME:GetMetric('PaneDisplay', 'HighScore')..'?')
+                    self:settext( '')
                 end
-                self:zoom(0.3)
-                self:diffusealpha(1)
             end"
 		/>
-
-
 
 
 

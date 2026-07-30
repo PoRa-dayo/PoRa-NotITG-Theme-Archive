@@ -162,6 +162,46 @@
        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-8"
     />
     
+    <Layer
+       File="../MusicWheel/chr_profile1"
+       Condition="PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+       InitCommand="x,SCREEN_LEFT+110;y,SCREEN_BOTTOM-65"
+    />
+    
+    <Layer
+		Font="_orator 15 pitch 40px"
+		Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_1)"
+        Condition="PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+		OnCommand="%function(self)
+            self:x(SCREEN_LEFT+100)
+            self:y(SCREEN_BOTTOM-63)
+            self:zoom(0.4)
+            self:shadowlength(1)
+            self:horizalign('left')
+            self:diffusebottomedge(0.7,0.7,1,1)
+		end"
+    />
+    
+    <Layer
+       File="../MusicWheel/chr_profile2"
+       Condition="PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+       InitCommand="x,SCREEN_LEFT+110;y,SCREEN_BOTTOM-40"
+    />
+    
+    <Layer
+		Font="_orator 15 pitch 40px"
+		Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_2)"
+        Condition="PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+		OnCommand="%function(self)
+            self:x(SCREEN_LEFT+100)
+            self:y(SCREEN_BOTTOM-38)
+            self:zoom(0.4)
+            self:shadowlength(1)
+            self:horizalign('left')
+            self:diffusebottomedge(0.84,0.37,0.41,1)
+		end"
+    />
+    
     <ActorFrame InitCommand="%SelectMusicInit" FirstUpdateCommand="%SelectMusic"/>
 </children> </ActorFrame>
 

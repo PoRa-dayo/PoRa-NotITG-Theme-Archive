@@ -107,5 +107,39 @@
         self:queuecommand('PlayTween')
 		end"
     />
+    
+    <Layer
+		Font="Paintball"
+		Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_1)"
+        Condition="PROFILEMAN:IsPersistentProfile(PLAYER_1)"
+		OnCommand="%function(self)
+            self:x(SCREEN_LEFT+10)
+            self:y(SCREEN_BOTTOM-23)
+            self:zoom(0.5)
+            self:shadowlength(1)
+            self:horizalign('left')
+            self:diffusealpha(0)
+            self:decelerate(0.5)
+            self:diffusealpha(1)
+		end"
+		OffCommand="accelerate,0.5;diffusealpha,0"
+    />
+    
+    <Layer
+		Font="Paintball"
+		Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_2)"
+        Condition="PROFILEMAN:IsPersistentProfile(PLAYER_2)"
+		OnCommand="%function(self)
+            self:x(SCREEN_RIGHT-10)
+            self:y(SCREEN_BOTTOM-23)
+            self:zoom(0.5)
+            self:shadowlength(1)
+            self:horizalign('right')
+            self:diffusealpha(0)
+            self:decelerate(0.5)
+            self:diffusealpha(1)
+		end"
+		OffCommand="accelerate,0.5;diffusealpha,0"
+    />
 
 </children></ActorFrame>

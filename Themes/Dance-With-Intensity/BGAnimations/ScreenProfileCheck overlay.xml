@@ -69,6 +69,9 @@
             if IsUsingMemoryCard( PLAYER_1 )  then
                 self:settext( 'Using MemoryCard' )
                 self:diffuse(230/255,142/255,27/255,1)
+            elseif PROFILEMAN:IsPersistentProfile(PLAYER_1) then
+                self:settext( 'Local Profile' )
+                self:diffuse(230/255,142/255,27/255,1)
             else
                 self:settext(' ')
             end
@@ -88,7 +91,7 @@
                 USBRemoved = true;
             end
 
-            if not IsUsingMemoryCard( PLAYER_1 ) and not USBState == false and not USBRemoved == true then
+            if (not IsUsingMemoryCard( PLAYER_1 ) and not USBState == false and not USBRemoved == true) and (not PROFILEMAN:IsPersistentProfile(PLAYER_1)) then
                 self:settext(' ')
             end
             ]]
@@ -281,6 +284,9 @@
 
             if IsUsingMemoryCard( PLAYER_2 )  then
                 self:settext( 'Using MemoryCard' )
+                self:diffuse(230/255,142/255,27/255,1)
+            elseif PROFILEMAN:IsPersistentProfile(PLAYER_2) then
+                self:settext( 'Local Profile' )
                 self:diffuse(230/255,142/255,27/255,1)
             else
                 self:settext(' ')

@@ -10,5 +10,12 @@ local ProfileNames = {
 }
 
 function GetProfileName(n)
+    --prioritize stepmania's built-in local profile names
+    if PROFILEMAN:IsPersistentProfile(n-1) then
+        local Naem = GAMESTATE:GetPlayerDisplayName(n-1)
+        if Naem ~= '' then
+            return GAMESTATE:GetPlayerDisplayName(n-1)
+        end
+    end
 	return ProfileNames[n]
 end
