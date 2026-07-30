@@ -150,7 +150,7 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 <img width="200" height="150" alt="NotITG-v4 9 1_Odd72sXTZe" src="https://github.com/user-attachments/assets/6b90feff-2ba1-4053-b787-ab8c8ec3daad" />
 <img width="200" height="150" alt="NotITG-v4 9 1_emRLmGJCsw" src="https://github.com/user-attachments/assets/509b91eb-c5d7-401d-ad51-5069370aafef" />
 <img width="200" height="150" alt="NotITG-v4 9 1_jTjLyQS3jd" src="https://github.com/user-attachments/assets/1b7b3857-42e2-4062-89d1-a8b4d8c7b432" />
-<img width="200" height="150" alt="NotITG-v4 9 1_FgkErb8ypD" src="https://github.com/user-attachments/assets/38283b56-7547-4437-8b7c-a4a8180158f0" />
+<img width="200" alt="NotITG-v4 9 1_sL99x1X4WB" src="https://github.com/user-attachments/assets/6d3f729b-790c-47a5-bd7f-2b9fc549c636" />
 
 
 # IN THE GROOVE: TACTICS
