@@ -46,8 +46,8 @@
     EarlyAddY = 4
     LateAddX = 0
     LateAddY = 4
-    PlayNumZoom = 0.8*0.7
-    ResetNumZoom = 0.5*0.7
+    PlayNumZoom = 0.8*0.6
+    ResetNumZoom = 0.5*0.6
     
     LifeP1AddY = 0
     LifeP1ZoomY = 1

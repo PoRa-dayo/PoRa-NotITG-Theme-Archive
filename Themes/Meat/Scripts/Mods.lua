@@ -183,7 +183,7 @@ function BM(str) MESSAGEMAN:Broadcast(str) end
 function Screen() return SCREENMAN:GetTopScreen() end
 function Sound(str) SOUND:PlayOnce( Path("sounds",str )) end
 function Path(ec,str) return THEME:GetPath( _G['EC_'..string.upper(ec)] , '' , str ) end
-function Player(pn) return GAMESTATE:IsPlayerEnabled(pn-1) end
+local function Player(pn) return GAMESTATE:IsPlayerEnabled(pn-1) end
 function PlayerIndex(pn) if pn == GAMESTATE:GetNumPlayersEnabled() then return pn end return 1 end
 function Profile(pn) if not PROFILEMAN then return {} end if pn == 0 then return PROFILEMAN:GetMachineProfile():GetSaved() else return PROFILEMAN:GetProfile(pn-1):GetSaved() end end
 function GetPref(str) return PREFSMAN:GetPreference(str) end
@@ -720,7 +720,15 @@ end
 
 function LoadFromProfile()
 	for pn = 1,2 do if Player(pn) then local t = Profile(pn) if not t.Mods then t.Mods = {} end
-		for s,v in pairs(ModCustom) do v[pn] = tonumber(t.Mods[s]) or 1 end
+		for s,v in pairs(ModCustom) do
+            local DFValue = 1
+            if s == 'JudgmentFont' then
+                DFValue = PROFILEMAN:GetMachineProfile():GetSaved().ITGMeatDefaultJudgment or 1
+            elseif s == 'HoldJudgment' then
+                DFValue = PROFILEMAN:GetMachineProfile():GetSaved().ITGMeatDefaultHoldJudgment or 1
+            end
+            v[pn] = tonumber(t.Mods[s]) or DFValue
+        end
 		for i,v in ipairs(judgmentFontList) do if t.Mods.JudgmentFont == v then ModCustom.JudgmentFont[pn] = i end end
         for i,v in ipairs(holdJudgmentList) do if t.Mods.HoldJudgment == v then ModCustom.HoldJudgment[pn] = i end end
 		if vocalize and Profile(pn).Voice then vocalize[pn] = Profile(pn).Voice end
@@ -850,6 +858,7 @@ function GetSongName()
 end
 
 function GetScore(pn)
+    if EditMode or GAMESTATE:IsCourseMode() then return 0 end
 	local s = 0
 	if Screen():GetChild('PercentP'..pn) then s = Screen():GetChild('PercentP'..pn):GetChild('PercentP'..pn):GetText() end
 	if Screen():GetChild('ScoreP'..pn) then s = Screen():GetChild('ScoreP'..pn):GetChild('ScoreDisplayPercentage Percent'):GetChild('PercentP'..pn):GetText() end
@@ -1371,7 +1380,7 @@ function CalculateSpeedMod()
 	modSpeed = {700,700}
 	for pn=1,2 do if Player(pn) then
 		for i=speedMin,speedMax,speedSpread do
-			if CheckMod(pn-1,'C'..i) then modType[pn] = 'C'; modSpeed[pn] = i elseif CheckMod(pn-1,(i/100)..'x') then modType[pn] = 'x'; modSpeed[pn] = i end
+			if CheckMod(pn-1,'C'..i) then modType[pn] = 'C'; modSpeed[pn] = i elseif CheckMod(pn-1,(i/100)..'x') then modType[pn] = 'x'; modSpeed[pn] = i elseif CheckMod(pn - 1, 'm' .. i) then modType[pn] = 'm'; modSpeed[pn] = i end
 		end
 	end end
 end
