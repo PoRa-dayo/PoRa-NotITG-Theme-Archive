@@ -449,7 +449,7 @@ Thanks to DarkOverord for posting most of the game's assets on spriters-resource
 -The top middle part of the gameplay UI now displays the current stage, as well as a countdown to the end of the song.\
 -Added a small BPM counter at the bottom.\
 -Added a fanfare to the results screen. (being the ending of "The Eternal Theme Engine")\
--Results screen now display stats in a similar manner to ITG, except Hands and Jumps counters are removed. BPM and Music Rate are also displayed on this screen.\
+-Results screen now display stats in a similar manner to ITG, except Hands and Jumps counters are removed. The text at the bottom of the banner on this screen now only displays Music Rate and BPM.\
 -Added a name entry screen at the end of a game session (when Event Mode is off).\
 -Added Edit menu and finished its UI.\
 -Local profile name is displayed on song selection screen.\
