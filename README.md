@@ -479,6 +479,11 @@ Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
 -Machine/Profile Percentage High Score and Step Artist are now shown in song selection screen.\
 -Maximum feet shown is now 12 instead of 14. A number is shown on the song selection screen if the difficulty surpasses 12.\
 -Grading system is now similar to A.O.I.'s.\
+-Added a mine counter next to the misses counter, and a N.G. counter next to the freeze counter in results screen.\
+-Added offset plot and spellcard viewer.\
+-Added the song title in the evaluation screen to account for charts with no banners.\
+-Added percentage score display that always shows up in evaluation screen.\
+-Changed the position of some elements in evaluation screen.\
 -Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options, moved Music Rate customization option to first options page, removed the song options page.\
 -Changed some metrics settings and the layering of some elements during gameplay to comply with modfiles' requirements.\
 -The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\

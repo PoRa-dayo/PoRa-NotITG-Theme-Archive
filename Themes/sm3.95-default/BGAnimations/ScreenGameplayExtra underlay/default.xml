@@ -24,7 +24,7 @@
         end"
         CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
         UpdateCommand="%function(self) GameplayDiffIcon(self,1) end"
-        OffCommand="linear,1;addy,100"
+        OffCommand="linear,0.5;addx,-150"
 	/>
     <Layer
 		File="ScreenGameplay difficulty icons"
@@ -41,7 +41,7 @@
         end"
         CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
         UpdateCommand="%function(self) GameplayDiffIcon(self,2) end"
-        OffCommand="linear,1;addy,100"
+        OffCommand="linear,0.5;addx,150"
 	/>
     <ActorFrame
 		OnCommand="%function(self)

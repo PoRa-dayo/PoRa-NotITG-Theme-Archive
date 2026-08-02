@@ -103,6 +103,25 @@ end
 
 function PDiff( pn ) return GAMESTATE:GetCurrentSteps(pn):GetDifficulty() end
 function PMeter( pn ) return GAMESTATE:GetCurrentSteps(pn):GetMeter() end
+-- Get Specific Tap Note Score for Summary Screen
+function GetPSStats( pn ) return STATSMAN:GetAccumStageStats():GetPlayerStageStats(pn) end
+-- Get Specific Tap Note Score for Normal Evaluation
+function GetPSStageStats( pn ) return STATSMAN:GetCurStageStats():GetPlayerStageStats(pn) end
+
+function SongTitle(self)
+    self:settext(' ')
+    if GAMESTATE:IsCourseMode() then
+        local course = GAMESTATE:GetCurrentCourse()
+        if course then
+            self:settext( course:GetDisplayFullTitle() )
+        end
+    else
+        local songg = GAMESTATE:GetCurrentSong()
+        if songg then
+            self:settext( songg:GetDisplayMainTitle() )
+        end
+    end
+end
 
 function GameplayDiffIcon(self, pn)
     if pn==1 and not GAMESTATE:IsPlayerEnabled(PLAYER_1) then
@@ -117,6 +136,22 @@ function GameplayDiffIcon(self, pn)
         self:setstate(PDiff(pn-1)*2+(pn-1))
     else
         self:hidden(1)
+    end
+end
+
+function DiffFrameBonus(self, pn)
+	self:finishtweening()
+    if GAMESTATE:GetCurrentSong() then
+        if PMeter(pn) > 12 then
+            self:hidden(0)
+        else
+            self:hidden(1)
+        end
+    else
+        self:hidden(1)
+        if GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsPlayerEnabled(PLAYER_2) then
+            self:hidden(1)
+        end
     end
 end
 
@@ -175,6 +210,28 @@ function SelectMusicCheckScores()
             p2pane:GetChild('ProfileHighScoreText'):hidden(1)
             p2pane:GetChild('CourseProfileHighScoreText'):hidden(1)
         end
+    end
+end
+
+-- Calculates the percentage that you see in ScreenEvaluation.
+function CalculatePercentage(self, pn, name)
+	local CalcPerNames = {
+    	["Cur"] = STATSMAN:GetCurStageStats(),
+    	["Accum"] = STATSMAN:GetAccumStageStats(),
+	}
+
+    if (FUCK_EXE or OPENITG) and CalcPerNames[name] and GAMESTATE:IsPlayerEnabled(pn) then
+        local GPSS = CalcPerNames[name]:GetPlayerStageStats(pn);
+        local ADP = GPSS:GetActualDancePoints()
+        local PDP = GPSS:GetPossibleDancePoints()
+        if (ADP == 0 and PDP == 0) or ADP/PDP < 0 then
+            self:settext( '0.00%' )
+        else
+            self:settext( FormatPercentScore( ADP/PDP ) )
+        end
+        
+    else
+        self:settext(' ')
     end
 end
 

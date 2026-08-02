@@ -1,22 +1,4 @@
 <ActorFrame> <children>
-    <!--Song title-->
-    <Layer
-        Font="_shared2"
-        Text="Song"
-        OnCommand="%function(self)
-            self:diffusealpha(0)
-            SongTitle(self)
-            self:zoom(0.5)
-            self:x(SCREEN_CENTER_X)
-            self:y(SCREEN_CENTER_Y-190)
-            self:shadowlength(0)
-            self:accelerate(0.5)
-            self:diffusealpha(1)
-            self:maxwidth(800)
-        end"
-        OffCommand="accelerate,0.25;diffusealpha,0"
-    />
-    
     <!-- Mines -->
     <Layer Type="BitmapText" Text="" Font="_Arial 14 shadow" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
         self:horizalign('right')
@@ -86,7 +68,7 @@
     end"
     OffCommand="sleep,0.1;accelerate,0.3;addx,-SCREEN_WIDTH/2"
     CalcNGCommand="%function(self)
-        local NGTxt = GetPSStageStats(PLAYER_1):GetHoldNoteScores(1)
+        local NGTxt = GetPSStats(PLAYER_1):GetHoldNoteScores(1)
         if NGTxt > 0 then
             self:settext('N.G. '..NGTxt)
         end
@@ -107,7 +89,7 @@
     end"
     OffCommand="sleep,0.1;accelerate,0.3;addx,SCREEN_WIDTH/2"
     CalcNGCommand="%function(self)
-        local NGTxt = GetPSStageStats(PLAYER_2):GetHoldNoteScores(1)
+        local NGTxt = GetPSStats(PLAYER_2):GetHoldNoteScores(1)
         if NGTxt > 0 then
             self:settext('N.G. '..NGTxt)
         end
@@ -129,7 +111,7 @@
     end"
     OffCommand="sleep,0.0;accelerate,0.3;addx,-SCREEN_WIDTH/2"
     CalcPercentCommand="%function(self)
-        CalculatePercentage(self,PLAYER_1,'Cur')
+        CalculatePercentage(self,PLAYER_1,'Accum')
     end"/>
     
     <Layer Type="BitmapText" Text="" Font="../Numbers/ScreenEvaluation percent text" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
@@ -146,24 +128,6 @@
     end"
     OffCommand="sleep,0.0;accelerate,0.3;addx,SCREEN_WIDTH/2"
     CalcPercentCommand="%function(self)
-        CalculatePercentage(self,PLAYER_2,'Cur')
-    end"/>
-    
-    
-    <!-- NotITG Offset Plot -->
-    <Layer File="OffsetPlot" InitCommand="%function(self)
-        if PlayModeName() == 'Rave' or PlayModeName() == 'Endless' then
-            BX_CurCustomLife = {0.5, 0.5}
-			BX_DispCustomLife = {0.5, 0.5}
-			BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
-			BX_DisplayedGraph = 'Life'
-        end
-    end"
-    OffCommand="%function(self)
-        BX_SaltyResets = 0
-        BX_SaltyResetPos = {}
-        self:sleep(0.5)
-        self:accelerate(0.5)
-        self:addy(500)
+        CalculatePercentage(self,PLAYER_2,'Accum')
     end"/>
 </children> </ActorFrame>
