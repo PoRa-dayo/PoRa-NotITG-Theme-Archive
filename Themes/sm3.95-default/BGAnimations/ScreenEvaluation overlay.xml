@@ -1,0 +1,95 @@
+<ActorFrame> <children>
+    <!-- NotITG Offset Plot -->
+    <Layer File="OffsetPlot" OffCommand="%function(self)
+        BX_SaltyResets = 0
+        BX_SaltyResetPos = {}
+    end"/>
+    
+    <!-- Mines -->
+    <Layer Type="BitmapText" Text="" Font="_shared2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X+(155-320-55))
+        self:y(SCREEN_CENTER_Y+(367-240))
+        self:zoom(0.8)
+        self:zoomx(0.6)
+        self:diffuse(1,0,0,1)
+        self:addx(-SCREEN_WIDTH/2)
+        self:sleep(0.6)
+        self:queuecommand('CalcMine')
+        self:decelerate(0.3)
+        self:addx(SCREEN_WIDTH/2)
+    end"
+    CalcMineCommand="%function(self)
+        local MineTxt = SCREENMAN:GetTopScreen():GetChild('MinesTextP1'):GetText()
+        local MinePass = string.gsub(MineTxt, '/.*', '')
+        MinePass = string.gsub(MinePass,' ','')
+        local MineTotal = string.gsub(MineTxt, '^.*/', '')
+        MineTotal = string.gsub(MineTotal,' ','')
+        local MineHit = tostring(tonumber(MineTotal) - tonumber(MinePass))
+        if tonumber(MineHit) > 0 then
+            self:settext('+'..MineHit)
+        end
+    end"/>
+    
+    <Layer Type="BitmapText" Text="" Font="_shared2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X+(485-320+55))
+        self:y(SCREEN_CENTER_Y+(367-240))
+        self:zoom(0.8)
+        self:zoomx(0.6)
+        self:diffuse(1,0,0,1)
+        self:addx(SCREEN_WIDTH/2)
+        self:sleep(0.6)
+        self:queuecommand('CalcMine')
+        self:decelerate(0.3)
+        self:addx(-SCREEN_WIDTH/2)
+    end"
+    CalcMineCommand="%function(self)
+        local MineTxt = SCREENMAN:GetTopScreen():GetChild('MinesTextP2'):GetText()
+        local MinePass = string.gsub(MineTxt, '/.*', '')
+        MinePass = string.gsub(MinePass,' ','')
+        local MineTotal = string.gsub(MineTxt, '^.*/', '')
+        MineTotal = string.gsub(MineTotal,' ','')
+        local MineHit = tostring(tonumber(MineTotal) - tonumber(MinePass))
+        if tonumber(MineHit) > 0 then
+            self:settext('+'..MineHit)
+        end
+    end"/>
+    
+    <!-- NG -->
+    <Layer Type="BitmapText" Text="" Font="_shared2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X+(155-320-55))
+        self:y(SCREEN_CENTER_Y+(382-240))
+        self:zoom(0.8)
+        self:zoomx(0.6)
+        self:diffuse(1,0,0,1)
+        self:addx(-SCREEN_WIDTH/2)
+        self:sleep(0.7)
+        self:queuecommand('CalcNG')
+        self:decelerate(0.3)
+        self:addx(SCREEN_WIDTH/2)
+    end"
+    CalcNGCommand="%function(self)
+        local NGTxt = GetPSStageStats(PLAYER_1):GetHoldNoteScores(1)
+        if NGTxt > 0 then
+            self:settext('N.G. '..NGTxt)
+        end
+    end"/>
+    
+    <Layer Type="BitmapText" Text="" Font="_shared2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
+        self:x(SCREEN_CENTER_X+(485-320+55))
+        self:y(SCREEN_CENTER_Y+(382-240))
+        self:zoom(0.8)
+        self:zoomx(0.6)
+        self:diffuse(1,0,0,1)
+        self:addx(SCREEN_WIDTH/2)
+        self:sleep(0.7)
+        self:queuecommand('CalcNG')
+        self:decelerate(0.3)
+        self:addx(-SCREEN_WIDTH/2)
+    end"
+    CalcNGCommand="%function(self)
+        local NGTxt = GetPSStageStats(PLAYER_2):GetHoldNoteScores(1)
+        if NGTxt > 0 then
+            self:settext('N.G. '..NGTxt)
+        end
+    end"/>
+</children> </ActorFrame>

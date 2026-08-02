@@ -219,7 +219,7 @@ OITGThemerFallback is a fallback theme that's made to make it easier to port SM3
 -Finished the UI in Edit Mode.\
 -Changed the background of the results screen to one of the unused backgrounds when you get an E grade.\
 -Little triangles are shown in song selection screen whenever there's an easier or harder difficulty available.\
--Machine Percentage High Score is now shown in song selection screen.\
+-Machine/Profile Percentage High Score is now shown in song selection screen.\
 -Judgment and combo positions no longer get messed up when moved in modfiles.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.\
@@ -463,6 +463,26 @@ Thanks to DarkOverord for posting most of the game's assets on spriters-resource
 <img width="200" alt="NotITG-v4 9 1_dUJ6RcpCBl" src="https://github.com/user-attachments/assets/256c4d61-7e78-4a29-88ed-840aeae849fb" />
 <img width="200" alt="KFm6BinoKl" src="https://github.com/user-attachments/assets/917315a1-b0f2-4cb1-a71a-c235503c60ca" />
 <img width="200" alt="NotITG-v4 9 1_I5qMfjsspj" src="https://github.com/user-attachments/assets/b55607af-4b78-4563-89cc-0581a57b9351" />
+
+
+# STEPMANIA 3.95 DEFAULT THEME
+These ***themes*** are ***Pissing*** me off...
+I'm the original                               ***Stepmania***
+
+## Credits:
+Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
+
+## Changelogs:
+-On the title screen, SELECT GAME is removed. GAME START is now OTHER MODES. Added PLAY MODS (takes you to 2P Versus Dance immediately).\
+-Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that). Removed Show Caution, Show Song Options and Show Instructions options as it just causes other themes to break.\
+-Default sort mode is set to Group.\
+-Machine/Profile Percentage High Score and Step Artist are now shown in song selection screen.\
+-Maximum feet shown is now 12 instead of 14. A number is shown on the song selection screen if the difficulty surpasses 12.\
+-Grading system is now similar to A.O.I.'s.\
+-Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options, moved Music Rate customization option to first options page, removed the song options page.\
+-Changed some metrics settings and the layering of some elements during gameplay to comply with modfiles' requirements.\
+-The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 
 # Special thanks

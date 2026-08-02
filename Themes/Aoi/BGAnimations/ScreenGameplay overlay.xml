@@ -16,7 +16,7 @@
 		end"
         OffCommand="diffusealpha,1;accelerate,0.5;diffusealpha,0"
 		GetModTextCommand="%function(self)
-		self:settext( string.gsub(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP1'):GetText(), 'Overhead, metal', ' ' ) )
+		self:settext( string.gsub(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP1'):GetText(), 'Overhead,', ' ' ) )
 		self:sleep(0.1)
 		self:queuecommand('GetModText')
 		end"
@@ -39,7 +39,7 @@
 		end"
         OffCommand="diffusealpha,1;accelerate,0.5;diffusealpha,0"
 		GetModTextCommand="%function(self)
-		self:settext( string.gsub(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP2'):GetText(), 'Overhead, metal', ' ' ) )
+		self:settext( string.gsub(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP2'):GetText(), 'Overhead,', ' ' ) )
 		self:sleep(0.1)
 		self:queuecommand('GetModText')
 		end"

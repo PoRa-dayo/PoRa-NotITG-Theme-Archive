@@ -22,6 +22,16 @@
     TimerOnCommand=hidden,1
     DevicesOnCommand=hidden,1
     
+    In BGAnimations folder, somewhere in ScreenGameplay (here it's in ScreenGameplay underlay), put:
+    <ActorFrame
+		OnCommand="%function(self)
+			self:stopeffect()
+			if FUCK_EXE then
+				stitch('lua.death').Start()
+			end
+		end" 
+	/>
+    
 *Offset Plot: (This is done entirely in the BGAnimations folder)
     -Copy OffsetPlot.xml over.
     -Put the corresponding offset plot codes in their corresponding screens. In Aoi they're at ScreenStage overlay, ScreenGameplay overlay,
