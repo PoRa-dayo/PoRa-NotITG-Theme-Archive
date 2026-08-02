@@ -466,8 +466,8 @@ Thanks to DarkOverord for posting most of the game's assets on spriters-resource
 
 
 # STEPMANIA 3.95 DEFAULT THEME
-These ***themes*** are ***Pissing*** me off...
-I'm the original                               ***Stepmania***
+These ***themes*** are ***Pissing*** me off...\
+I'm the original &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;***Stepmania***
 
 ## Credits:
 Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
