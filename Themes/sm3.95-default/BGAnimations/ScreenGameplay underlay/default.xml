@@ -12,36 +12,34 @@
     <Layer
 		File="ScreenGameplay difficulty icons"
 		OnCommand="%function(self)
-            self:sleep(0.1)
+            self:x(SCREEN_CENTER_X-259)
+            self:y(SCREEN_CENTER_Y+170)
+            self:addy(100)
+            self:sleep(0.5)
             self:queuecommand('Update')
-            self:x(SCREEN_CENTER_X-260)
-            self:y(SCREEN_CENTER_Y-183)
-            self:addx(-150)
-            self:sleep(0.9)
-            self:linear(0.5)
-            self:addx(150)
+            self:linear(1)
+            self:addy(-100)
             self:animate(0)
         end"
         CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
         UpdateCommand="%function(self) GameplayDiffIcon(self,1) end"
-        OffCommand="linear,0.5;addx,-150"
+        OffCommand="linear,1;addy,100"
 	/>
     <Layer
 		File="ScreenGameplay difficulty icons"
 		OnCommand="%function(self)
-            self:sleep(0.1)
+            self:x(SCREEN_CENTER_X+259)
+            self:y(SCREEN_CENTER_Y+170)
+            self:addy(100)
+            self:sleep(0.5)
             self:queuecommand('Update')
-            self:x(SCREEN_CENTER_X+260)
-            self:y(SCREEN_CENTER_Y-183)
-            self:addx(150)
-            self:sleep(0.9)
-            self:linear(0.5)
-            self:addx(-150)
+            self:linear(1)
+            self:addy(-100)
             self:animate(0)
         end"
         CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
         UpdateCommand="%function(self) GameplayDiffIcon(self,2) end"
-        OffCommand="linear,0.5;addx,150"
+        OffCommand="linear,1;addy,100"
 	/>
     <ActorFrame
 		OnCommand="%function(self)
