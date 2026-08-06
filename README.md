@@ -475,6 +475,7 @@ Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
 ## Changelogs:
 -On the title screen, SELECT GAME is removed. GAME START is now OTHER MODES. Added PLAY MODS (takes you to 2P Versus Dance immediately).\
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that). Removed Show Caution, Show Song Options and Show Instructions options as it just causes other themes to break.\
+-Fixed a bunch of visual errors on widescreen on the music selection and gameplay screens.\
 -Default sort mode is set to Group.\
 -Machine/Profile Percentage High Score and Step Artist are now shown in song selection screen.\
 -Maximum feet shown is now 12 instead of 14. A number is shown on the song selection screen if the difficulty surpasses 12.\
