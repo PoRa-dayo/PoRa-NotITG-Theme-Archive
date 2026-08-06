@@ -484,6 +484,7 @@ Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
 -Added the song title in the evaluation screen to account for charts with no banners.\
 -Added percentage score display that always shows up in evaluation screen.\
 -Changed the position of some elements in evaluation screen.\
+-The spinning grades in the evaluation screen are now manually implemented as the built-in one is hardcoded to 7 tiers.\
 -Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options, moved Music Rate customization option to first options page, removed the song options page.\
 -Changed some metrics settings and the layering of some elements during gameplay to comply with modfiles' requirements.\
 -The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
