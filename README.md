@@ -388,6 +388,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 -Added "Play Mods" (takes you to 2P Versus Dance immediately)\
 -No longer possible to select Solo (6K) mode (the button is replaced with Doubles mode).\
 -The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
+-FailImmediate is now automatically applied for Challenge and Endless Modes.\
 -Added roll counter and steps description (step artist) to the pane display.\
 -Added more sort icons.\
 -Added the banner frame and total time counter in course selection screen.\
@@ -474,7 +475,7 @@ Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
 
 ## Changelogs:
 -On the title screen, SELECT GAME is removed. GAME START is now OTHER MODES. Added PLAY MODS (takes you to 2P Versus Dance immediately).\
--Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that). Removed Show Caution, Show Song Options and Show Instructions options as it just causes other themes to break.\
+-Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that). Removed Show Caution and Show Instructions options as it just causes other themes to break.\
 -Fixed a bunch of visual errors on widescreen on the music selection and gameplay screens.\
 -Default sort mode is set to Group.\
 -Machine/Profile Percentage High Score and Step Artist are now shown in song selection screen.\
@@ -486,9 +487,12 @@ Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
 -Added percentage score display that always shows up in evaluation screen.\
 -Changed the position of some elements in evaluation screen.\
 -The spinning grades in the evaluation screen are now manually implemented as the built-in one is hardcoded to 7 tiers.\
--Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options, moved Music Rate customization option to first options page, removed the song options page.\
+-Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options, moved Music Rate customization option to first options page, removed some options that don't work in NotITG from the song options page.\
 -Changed some metrics settings and the layering of some elements during gameplay to comply with modfiles' requirements.\
+-Added maxwidth to the modifier lists in the course selection screen.\
+-Replaced Sprite.lua with the modern one so that song transitions in courses don't give errors.\
 -The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
+-FailImmediate is now automatically applied for Challenge and Endless Modes.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 

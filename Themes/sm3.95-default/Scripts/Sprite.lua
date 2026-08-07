@@ -1,22 +1,27 @@
 function Sprite:LoadFromSongBanner(song)
-	local Path = song:GetBannerPath()
-	if not Path then
-		Path = THEME:GetPath(ELEMENT_CATEGORY_GRAPHICS,"Common","fallback banner")
+	local path = song:GetBannerPath()
+	if not path then
+		path = THEME:GetPath(EC_GRAPHICS,'Common','fallback banner')
 	end
 
-	self:LoadBanner( Path )
+	self:LoadBanner( path )
 end
 
 function Sprite:LoadFromSongBackground(song)
-	local Path = song:GetBackgroundPath()
-	if not Path then
-		Path = THEME:GetPath(ELEMENT_CATEGORY_GRAPHICS,"Common","fallback background")
+	local path = song:GetBackgroundPath()
+	if not path then
+		path = THEME:GetPath( EC_GRAPHICS,'Common','fallback background')
 	end
-
-	self:LoadBackground( Path )
+	self:LoadBackground( path )
 end
 
-
+function GetBanner(song)
+	local path = GAMESTATE:GetCurrentSong():GetBannerPath()
+	if not path then
+		return THEME:GetPath(EC_GRAPHICS,'Common','fallback banner')
+	end
+	return path			
+end
 
 -- (c) 2005 Glenn Maynard
 -- All rights reserved.

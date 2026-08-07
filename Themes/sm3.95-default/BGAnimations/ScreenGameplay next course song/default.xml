@@ -2,8 +2,8 @@
 	<Layer
 		Type="ActorFrame"
 		InitCommand="addx,-64"
-		StartCommand="sleep,1;linear,1;addx,1088"
-		FinishCommand="sleep,1;addy,16;linear,1;addx,-1088"
+		StartCommand="sleep,1;linear,1;addx,SCREEN_WIDTH+448"
+		FinishCommand="sleep,1;addy,16;linear,1;addx,-(SCREEN_WIDTH+448)"
 	> <children>
 		<Layer File="left to right with trail" OnCommand="x,-0;y,64" />
 		<Layer File="left to right with trail" OnCommand="x,-64;y,128" />
@@ -15,9 +15,9 @@
 
 	<Layer
 		Type="ActorFrame"
-		InitCommand="addx,-64;addy,32;addx,1088"
-		StartCommand="sleep,1;linear,1;addx,-1088"
-		FinishCommand="sleep,1;addy,16;linear,1;addx,+1088"
+		InitCommand="addx,-64;addy,32;addx,SCREEN_WIDTH+448"
+		StartCommand="sleep,1;linear,1;addx,-(SCREEN_WIDTH+448)"
+		FinishCommand="sleep,1;addy,16;linear,1;addx,SCREEN_WIDTH+448"
 	> <children>
 		<Layer File="right to left with trail" OnCommand="x,-0;y,64" />
 		<Layer File="right to left with trail" OnCommand="x,-64;y,128" />

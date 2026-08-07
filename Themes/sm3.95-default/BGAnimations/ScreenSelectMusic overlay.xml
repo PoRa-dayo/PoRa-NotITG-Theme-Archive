@@ -9,14 +9,14 @@
     <!-- The extra difficulty number for diffs above 12 -->
     <Layer
         File="bonus diff frame"
-        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsHumanPlayer(PLAYER_1)"
         OnCommand="x,SCREEN_CENTER_X-230;y,SCREEN_CENTER_Y+191;hidden,1;"
         OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
         UpdateMessageCommand="%function(self) DiffFrameBonus(self, PLAYER_1) end"
     />
     <Layer
         File="bonus diff frame"
-        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsHumanPlayer(PLAYER_2)"
         OnCommand="x,SCREEN_CENTER_X-90;y,SCREEN_CENTER_Y+191;hidden,1;"
         OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
         UpdateMessageCommand="%function(self) DiffFrameBonus(self, PLAYER_2) end"
@@ -25,7 +25,7 @@
     <Layer
         Font="../Numbers/ScreenSelectMusic total time"
         Text=""
-        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsHumanPlayer(PLAYER_1)"
         OnCommand="zoom,0.5;x,SCREEN_CENTER_X-230;y,SCREEN_CENTER_Y+191;rainbow;effectperiod,2;horizalign,center;shadowlength,2;"
         OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
         UpdateMessageCommand="%function(self) LevelNum(self, PLAYER_1) end"
@@ -34,7 +34,7 @@
     <Layer
         Font="../Numbers/ScreenSelectMusic total time"
         Text=""
-        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsHumanPlayer(PLAYER_2)"
         OnCommand="zoom,0.5;x,SCREEN_CENTER_X-90;y,SCREEN_CENTER_Y+191;rainbow;effectperiod,2;horizalign,center;shadowlength,2;"
         OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
         UpdateMessageCommand="%function(self) LevelNum(self, PLAYER_2) end" />
@@ -44,7 +44,7 @@
         Type="BitmapText"
         Font="_shared2"
         Text=""
-        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsHumanPlayer(PLAYER_1)"
         OnCommand="draworder,102;zoom,0.5;x,SCREEN_CENTER_X-320;y,SCREEN_CENTER_Y-20;horizalign,left;shadowlength,0;maxwidth,300"
         OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
         UpdateMessageCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_1)) end" />
@@ -52,7 +52,7 @@
         Type="BitmapText"
         Font="_shared2"
         Text=""
-        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsHumanPlayer(PLAYER_2)"
         OnCommand="draworder,102;zoom,0.5;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-20;horizalign,right;shadowlength,0;maxwidth,300"
         OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
         UpdateMessageCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" />
