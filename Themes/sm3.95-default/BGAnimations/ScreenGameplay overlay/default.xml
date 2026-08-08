@@ -1,5 +1,48 @@
-<ActorFrame><children>
+<ActorFrame> <children>
 	<Layer
+		File="ScreenGameplay life frame"
+		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y-204;addy,-100;sleep,0.5;linear,1;addy,100"
+        OffCommand="linear,1;addy,-100"
+	/>
+	<Layer
+		File="ScreenGameplay score frame"
+		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+208;addy,100;sleep,0.5;linear,1;addy,-100"
+        OffCommand="linear,1;addy,100"
+	/>
+    <Layer
+		File="ScreenGameplay difficulty icons"
+		OnCommand="%function(self)
+            self:x(SCREEN_CENTER_X-259)
+            self:y(SCREEN_CENTER_Y+170)
+            self:addy(100)
+            self:sleep(0.5)
+            self:queuecommand('Update')
+            self:linear(1)
+            self:addy(-100)
+            self:animate(0)
+        end"
+        CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
+        UpdateCommand="%function(self) GameplayDiffIcon(self,1) end"
+        OffCommand="linear,1;addy,100"
+	/>
+    <Layer
+		File="ScreenGameplay difficulty icons"
+		OnCommand="%function(self)
+            self:x(SCREEN_CENTER_X+259)
+            self:y(SCREEN_CENTER_Y+170)
+            self:addy(100)
+            self:sleep(0.5)
+            self:queuecommand('Update')
+            self:linear(1)
+            self:addy(-100)
+            self:animate(0)
+        end"
+        CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
+        UpdateCommand="%function(self) GameplayDiffIcon(self,2) end"
+        OffCommand="linear,1;addy,100"
+	/>
+    
+    <Layer
 		Font="Common normal"
 		Text="Loading mods..."
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
@@ -133,4 +176,13 @@
 	/>
     --FOR OFFSET PLOT AND ITS LIFE GRAPH: END
     <ActorFrame Command="%GameplayInit" CurrentSongChangedMessageCommand="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
-</children></ActorFrame>
+    <ActorFrame
+		OnCommand="%function(self)
+			self:stopeffect()
+			if FUCK_EXE then
+				stitch('lua.death').Start()
+			end
+		end" 
+	/>
+</children> </ActorFrame>
+
