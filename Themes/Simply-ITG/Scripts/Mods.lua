@@ -182,7 +182,7 @@ function BM(str) MESSAGEMAN:Broadcast(str) end
 function Screen() return SCREENMAN:GetTopScreen() end
 function Sound(str) SOUND:PlayOnce( Path("sounds",str )) end
 function Path(ec,str) return THEME:GetPath( _G['EC_'..string.upper(ec)] , '' , str ) end
-function Player(pn) return GAMESTATE:IsPlayerEnabled(pn-1) end
+local function Player(pn) return GAMESTATE:IsPlayerEnabled(pn-1) end
 function PlayerIndex(pn) if pn == GAMESTATE:GetNumPlayersEnabled() then return pn end return 1 end
 function Profile(pn) if not PROFILEMAN then return {} end if pn == 0 then return PROFILEMAN:GetMachineProfile():GetSaved() else return PROFILEMAN:GetProfile(pn-1):GetSaved() end end
 function GetPref(str) return PREFSMAN:GetPreference(str) end
@@ -938,7 +938,7 @@ end
 function GameplayBPM(self)
 	local b = Screen():GetChild('BPMDisplay')
 	if b then b = b:GetChild('Text'):GetText() end
-	if b then 
+	if b and bpm then
 		bpm[3] = Screen():GetChild('BPMDisplay'):GetChild('Text'):GetText()
 		if not OPENITG then bpm[3] = math.floor(bpm[3] * modRate + 0.5) end
 		self:settext(bpm[3])
@@ -1371,37 +1371,45 @@ function Merciful() return BoolPrefRow('Merciful','MercifulBeginner',{'FailOffIn
 --------------------------
 
 function CalculateSpeedMod()
-	modType = {'C','M'}
+	modType = {'C','C'}
 	modSpeed = {700,700}
-	for pn=1,2,3 do if Player(pn) then
+	for pn=1,2 do if Player(pn) then
 		for i=speedMin,speedMax,speedSpread do
-			if CheckMod(pn-1,'C'..i) then 
-				modType[pn] = 'C'; 
-				modSpeed[pn] = i
-			elseif CheckMod(pn-1,'M'..i) then 
-				modType[pn] = 'M'; 
-				modSpeed[pn] = i  
-			elseif CheckMod(pn-1,(i/100)..'x') then 
-				modType[pn] = 'x'; 
-				modSpeed[pn] = i 
-			end
+			if CheckMod(pn-1,'C'..i) then
+                modType[pn] = 'C';
+                modSpeed[pn] = i
+            elseif CheckMod(pn-1,(i/100)..'x') then
+                modType[pn] = 'x';
+                modSpeed[pn] = i
+            elseif CheckMod(pn - 1, 'm' .. i) then
+                modType[pn] = 'm';
+                modSpeed[pn] = i
+            end
 		end
 	end end
 end
 
-function SpeedString(pn,speed) 
-	local s = speed or modSpeed[pn] or ''; 
-	if modType[pn] == 'x' then 
-		return string.format('%g',s/100) .. 'x' 
-	elseif modType[pn] == 'C' then  
-		return 'C' .. s 
-	elseif modType[pn] == 'M' then 
-		return 'M' .. s 
-	end 
+function SpeedString(pn,speed)
+    local s = speed or modSpeed[pn] or '';
+    if modType[pn] == 'x' then
+        return string.format('%g',math.floor(s)/100) .. 'x'
+    else
+        return modType[pn] .. math.floor(s)
+    end
 end
 function SetSpeedMod(pn) ApplyMod('1x',pn) ApplyMod(SpeedString(pn),pn) BM('SpeedModChanged') end
 
-function ApplyRateAdjust() for pn=1,2 do if Player(pn) then ApplyMod(SpeedString(pn,math.ceil(modSpeed[pn]/modRate)),pn) end end end
+function ApplyRateAdjust()
+	for pn=1,2 do
+		if Player(pn) and modSpeed then
+			if modType[pn] == 'x' then
+				ApplyMod(SpeedString(pn,math.ceil(modSpeed[pn])),pn)
+			else
+				ApplyMod(SpeedString(pn,math.ceil(modSpeed[pn]/modRate)),pn)
+			end
+		end
+	end
+end
 function RevertRateAdjust() for pn=1,2 do if modSpeed then ApplyMod(SpeedString(pn),pn) end end end
 
 function SurroundLife()
