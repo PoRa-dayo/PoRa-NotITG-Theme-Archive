@@ -46,6 +46,10 @@ function InitDefaultModOptions()
         if string.find(part, "reverse") then
             DFScroll = "Reverse"
         end
+        
+        if string.find(part, "% mini") then
+            DFMini = part
+        end
     end
 
     --these 3 variables are defined in Mods.lua, we use them again to check every single speed mod this theme can use
@@ -66,6 +70,19 @@ function InitDefaultModOptions()
         end
         ListInd = ListInd+1
     end
+end
+
+
+function ListWithWarnings(list, exception)
+    local newList = {}
+    for i=1,table.getn(list) do
+        if list[i] == exception then
+            table.insert(newList,list[i])
+        else
+            table.insert(newList,list[i]..' (!)')
+        end
+    end
+    return newList
 end
 
 
@@ -190,7 +207,7 @@ function DefaultPerspectiveOption()
 		end
     end
     
-	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+	return CreateOptionRow(Params, ListWithWarnings(modList,'Overhead'), loadFunc, saveFunc)
 end
 
 
@@ -221,7 +238,7 @@ function DefaultScrollOption()
 		end
     end
     
-	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+	return CreateOptionRow(Params, ListWithWarnings(modList,'Normal'), loadFunc, saveFunc)
 end
 
 
@@ -252,7 +269,7 @@ function DefaultMiniOption()
 		end
     end
     
-	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+	return CreateOptionRow(Params, ListWithWarnings(modList,'0%'), loadFunc, saveFunc)
 end
 
 

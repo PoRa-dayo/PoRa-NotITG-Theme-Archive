@@ -475,6 +475,7 @@ Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
 
 ## Changelogs:
 -On the title screen, SELECT GAME is moved to Options. GAME START is now OTHER MODES. Added PLAY MODS (takes you to 2P Versus Dance immediately).\
+-Removed the Solo game mode.\
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that). Removed Show Caution and Show Instructions options as it just causes other themes to break.\
 -Fixed a bunch of visual errors on widescreen on the music selection and gameplay screens.\
 -Default sort mode is set to Group.\
