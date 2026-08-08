@@ -26,6 +26,10 @@
                 end
             elseif coursee then
                 self:settext(CJKVertical(coursee:GetDisplayFullTitle()))
+                local Theight = self:GetHeight()
+                if Theight > 400 then
+                    self:zoom(0.95*(400/Theight))
+                end
             end
             self:queuecommand('Anim')
         end"
