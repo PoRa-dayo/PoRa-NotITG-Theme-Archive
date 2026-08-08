@@ -499,6 +499,13 @@ Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 
+<img width="200" alt="NotITG-v4 9 1_EbZPdE8RkZ" src="https://github.com/user-attachments/assets/5d31f99a-1c4b-4a05-80d4-041c534b63a1" />
+<img width="200" alt="NotITG-v4 9 1_ajItghY4FG" src="https://github.com/user-attachments/assets/31d9fb87-feda-4cf8-ab51-5edddea7159e" />
+<img width="200" alt="NotITG-v4 9 1_9BTP0gOJx2" src="https://github.com/user-attachments/assets/66a064d5-8eb1-4a20-85de-aed33a4f04ee" />
+<img width="200" alt="NotITG-v4 9 1_948vBkzmqZ" src="https://github.com/user-attachments/assets/7ff871dc-99a9-4830-a234-798e26c19573" />
+<img width="200" alt="NotITG-v4 9 1_xjCUA6yVKb" src="https://github.com/user-attachments/assets/75550a4b-0ef2-450c-a56b-932b7dd01622" />
+
+
 # Special thanks
 [MattMayuga](https://github.com/Tiny-Foxes/JudgeFonts-by-MattMayuga/) - Judgment fonts.\
 [HURG-IIDX](https://github.com/HURG-IIDX/Simply-Love-Judgefonts) - Judgment fonts.\
