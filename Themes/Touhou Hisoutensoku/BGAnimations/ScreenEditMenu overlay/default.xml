@@ -13,4 +13,5 @@
        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,1;linear,0.5;diffusealpha,0"
     />
     <ActorFrame InitCommand="%SelectMusicInit" FirstUpdateCommand="%SelectMusic" />
+    <ActorFrame Command="%ApplyNoteskin"/>
 </children></ActorFrame>

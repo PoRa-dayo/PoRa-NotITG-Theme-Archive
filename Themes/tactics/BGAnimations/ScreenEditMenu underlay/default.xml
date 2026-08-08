@@ -66,4 +66,5 @@
 		OnCommand="x,SCREEN_CENTER_X-250;y,SCREEN_CENTER_Y+170;shadowlength,0;horizalign,left;zoom,0;sleep,.2;zoom,1;zoomx,1.25;diffusealpha,.66"
 		OffCommand="zoom,0"
 	/>
+    <ActorFrame Command="%ApplyNoteskin"/>
 </children> </ActorFrame>

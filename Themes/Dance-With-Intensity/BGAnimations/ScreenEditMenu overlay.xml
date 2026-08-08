@@ -31,4 +31,5 @@
         end
     end"
 	/>
+    <ActorFrame Command="%ApplyNoteskin"/>
 </children></ActorFrame>

@@ -493,6 +493,8 @@ Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
 -Replaced Sprite.lua with the modern one so that song transitions in courses don't give errors.\
 -The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
 -FailImmediate is now automatically applied for Challenge and Endless Modes.\
+-Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
+-Limited the modifier list in Edit Mode.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 

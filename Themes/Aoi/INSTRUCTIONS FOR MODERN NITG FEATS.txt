@@ -47,7 +47,8 @@
     -In BGAnimations folder, call the Gameplay function somewhere in ScreenGameplay, here it's at ScreenGameplay overlay:
     <ActorFrame Command="%GameplayInit" CurrentSongChangedMessageCommand="%GameplayInit" FirstUpdateCommand="%Gameplay"/>
     
-    -In BGAnimations folder, call the ApplyNoteskin function somewhere in ScreenStage, here it's at ScreenStage in:
+    -In BGAnimations folder, call the ApplyNoteskin function somewhere in ScreenStage and ScreenEditMenu,
+    here it's at ScreenStage in and ScreenEditMenu underlay:
     <ActorFrame Command="%ApplyNoteskin"/>
     
     -In Graphics folder, copy the _Judgments and _HoldJudgments folders.
