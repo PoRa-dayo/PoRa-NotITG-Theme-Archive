@@ -142,7 +142,7 @@ InitCommand="shadowlength,0;zoom,.7"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-100;diffuseshift;effectcolor1,#555555FF;effectcolor2,#000000FF;effectclock,beat"
 /> -->
 <Layer
-File="_common base start button"
+File="@ITG3IsFinal() and '_final_common base start button' or '_common base start button'"
 InitCommand="hidden,1;shadowlength,0;zoom,.7;PlayCommand,Refresh"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-75"
 		CoinModeChangedMessageCommand="PlayCommand,Refresh"		
@@ -167,7 +167,7 @@ RefreshCommand="%
 			
 />/>
 <Layer
-File="_common start button"
+File="@ITG3IsFinal() and '_final_common start button' or '_common start button'"
 InitCommand="hidden,1;shadowlength,0;diffuseshift;effectcolor1,#FFFFFF;effectcolor2,#858585;zoom,.7;effectclock,bgm;PlayCommand,Refresh"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-75"
 		CoinModeChangedMessageCommand="PlayCommand,Refresh"		
@@ -192,7 +192,7 @@ RefreshCommand="%
 			
 />/>
 <Layer
-File="_common glow start button"
+File="@ITG3IsFinal() and '_final_common glow start button' or '_common glow start button'"
 InitCommand="hidden,1;additiveblend,1;shadowlength,0;diffuseshift;effectcolor1,#6BFF75;effectcolor2,#FFFFFF00;zoom,.7;effectclock,bgm;PlayCommand,Refresh"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-75"
 		CoinModeChangedMessageCommand="PlayCommand,Refresh"		

@@ -1,0 +1,7 @@
+<ActorFrame>
+		<children>
+    <Layer
+        File="@ITG3IsFinal() and 'final_song_frame' or 'normal_song_frame'"
+    />
+		</children>
+</ActorFrame>

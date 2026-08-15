@@ -17,7 +17,7 @@
 		</children>
 		</ActorFrame>
 		<AutoActor
-		File="../lolhi"
+		File="@ITG3IsFinal() and '../lolhi_final' or '../lolhi'"
 	OnCommand="zoom,0.3;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-80;fadeleft,0.3;faderight,0.3;cropleft,1.3;cropright,-0.3;linear,1;cropleft,-0.3;zoom,2;linear,15;zoom,1.2;"
 	OffCommand="stoptweening;linear,0.5;cropright,1.3;zoom,0.5"
 
@@ -74,7 +74,7 @@ OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+155;croptop,.5;cropbottom,.5;slee
 />
 
 <AutoActor
-File="../_overlay/p1card.png"
+File="@ITG3IsFinal() and '../_overlay/final/p1card.png' or '../_overlay/p1card.png'"
 OnCommand="x,SCREEN_LEFT+60;y,SCREEN_CENTER_Y+165;diffusealpha,0;sleep,5.5;linear,.3;diffusealpha,.6;sleep,4.4;linear,.5;diffusealpha,0;"
 />
 

@@ -9,17 +9,17 @@ InitCommand="shadowlength,0;zoomx,.8;zoomy,.7"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-100"
 />
 <Layer
-File="..\_common base start button"
+File="@ITG3IsFinal() and '../_final_common base start button' or '../_common base start button'"
 InitCommand="shadowlength,0;zoom,.7"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-75"
 />
 <Layer
-File="..\_common start button"
+File="@ITG3IsFinal() and '../_final_common start button' or '../_common start button'"
 InitCommand="shadowlength,0;diffuseshift;effectcolor1,#FFFFFF;effectcolor2,#858585;zoom,.7;effectclock,bgm"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-75"
 />
 <Layer
-File="..\_common glow start button"
+File="@ITG3IsFinal() and '../_final_common glow start button' or '../_common glow start button'"
 InitCommand="additiveblend,1;shadowlength,0;diffuseshift;effectcolor1,#6BFF75;effectcolor2,#FFFFFF00;zoom,.7;effectclock,bgm"
 OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-75"
 />

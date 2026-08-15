@@ -1,6 +1,6 @@
 <ActorFrame><children>
 	<Layer
-		File="Intro by Angel.avi"
+		File="Intro by Angel"
 		Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_WIDTH/4*3;rate,.92;sleep,35;diffusealpha,0"
 	/>
 	
@@ -20,7 +20,7 @@
 	><children>
 		<Layer
 			Class="AutoActor"
-			File="swoosh"
+			File="@ITG3IsFinal() and 'final/swoosh' or 'swoosh'"
 			Command="y,20;zoomtowidth,SCREEN_WIDTH;additiveblend,1;cropright,1;faderight,1;linear,0.5;cropright,0;faderight,0;sleep,4;linear,0.5;diffusealpha,0.0;addx,50;cropleft,1;fadeleft,1;"
 		/>
 	</children></Layer>
@@ -96,13 +96,13 @@
 	><children>
 	<Layer
 		Class="AutoActor"
-		File="blue"
+		File="@ITG3IsFinal() and 'final/blue' or 'blue'"
 		Command="x,SCREEN_RIGHT+SCREEN_WIDTH*2;zoomtowidth,SCREEN_WIDTH*1.5;zoomtoheight,100;sleep,11;linear,0.5;fadeleft,0.3;faderight,0.3;x,50;linear,4;addx,-100;accelerate,0.5;addx,-SCREEN_WIDTH*2"
 	/> 
 	
 	<Layer
 		Class="AutoActor"
-		File="songs"
+		File="@ITG3IsFinal() and 'final/songs' or 'songs'"
 		InitCommand="zoom,.8;x,-100;diffusealpha,0;sleep,11.5;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
 	/>
 	
@@ -118,7 +118,7 @@
 	><children>
 		<Layer
 			Class="AutoActor"
-			File="swoosh"
+			File="@ITG3IsFinal() and 'final/swoosh' or 'swoosh'"
 			Command="zoomtowidth,SCREEN_WIDTH;additiveblend,1;cropright,1;faderight,1;sleep,11;linear,0.5;cropright,0;faderight,0;sleep,4;linear,0.5;diffusealpha,0.0;addx,50;cropleft,1;fadeleft,1;"
 		/>
 		
@@ -129,7 +129,7 @@
 	><children>
 		<Layer
 			Class="AutoActor"
-			File="200"
+			File="@ITG3IsFinal() and 'final/200' or '200'"
 			Command="x,-75;y,-80;diffusealpha,0;sleep,11.5;linear,0.5;diffusealpha,1;sleep,4;linear,0.5;diffusealpha,0.0"
 		/>
 	</children></Layer>
@@ -195,13 +195,13 @@
 	><children>
 	<Layer
 		Class="AutoActor"
-		File="green"
+		File="@ITG3IsFinal() and 'final/green' or 'green'"
 		Command="x,SCREEN_LEFT-SCREEN_WIDTH*2;zoomtowidth,SCREEN_WIDTH*1.5;zoomtoheight,100;sleep,16;linear,0.5;fadeleft,0.3;faderight,0.3;x,50;linear,4;addx,100;accelerate,0.5;addx,SCREEN_WIDTH*2"
 	/> 
 	
 	<Layer
 		Class="AutoActor"
-		File="charts"
+		File="@ITG3IsFinal() and 'final/charts' or 'charts'"
 		InitCommand="zoom,.8;x,-100;diffusealpha,0;sleep,16.5;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
 	/>
 	
@@ -217,7 +217,7 @@
 	><children>
 		<Layer
 			Class="AutoActor"
-			File="swoosh"
+			File="@ITG3IsFinal() and 'final/swoosh' or 'swoosh'"
 			Command="zoomtowidth,SCREEN_WIDTH;zoomy,-1;y,-10;additiveblend,1;cropleft,1;fadeleft,1;sleep,16;linear,0.5;cropleft,0;fadeleft,0;sleep,4;linear,0.5;addx,-50;diffusealpha,0.0;cropright,1;faderight,1;"
 		/>
 		
@@ -228,7 +228,7 @@
 	><children>
 		<Layer
 			Class="AutoActor"
-			File="1500"
+			File="@ITG3IsFinal() and 'final/1500' or '1500'"
 			Command="x,-75;y,-80;diffusealpha,0;sleep,16.5;linear,0.5;diffusealpha,1;sleep,4;linear,0.5;diffusealpha,0.0"
 		/>
 	</children></Layer>
@@ -279,13 +279,13 @@
 	><children>
 	<Layer
 		Class="AutoActor"
-		File="orange"
+		File="@ITG3IsFinal() and 'final/orange' or 'orange'"
 		Command="x,SCREEN_RIGHT+SCREEN_WIDTH*2;zoomtowidth,SCREEN_WIDTH*1.5;zoomtoheight,100;sleep,21;linear,0.5;fadeleft,0.3;faderight,0.3;x,50;linear,4;addx,-100;accelerate,0.5;addx,-SCREEN_WIDTH*2"
 	/> 
 	
 	<Layer
 		Class="AutoActor"
-		File="courses"
+		File="@ITG3IsFinal() and 'final/courses' or 'courses'"
 		InitCommand="zoom,.8;x,-100;diffusealpha,0;sleep,21.5;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
 	/>
 	
@@ -301,7 +301,7 @@
 	><children>
 		<Layer
 			Class="AutoActor"
-			File="swoosh"
+			File="@ITG3IsFinal() and 'final/swoosh' or 'swoosh'"
 			Command="zoomtowidth,SCREEN_WIDTH;additiveblend,1;cropright,1;faderight,1;sleep,21;linear,0.5;cropright,0;faderight,0;sleep,4;linear,0.5;diffusealpha,0.0;addx,50;cropleft,1;fadeleft,1;"
 		/>
 		
@@ -312,7 +312,7 @@
 	><children>
 		<Layer
 			Class="AutoActor"
-			File="70"
+			File="@ITG3IsFinal() and 'final/70' or '70'"
 			Command="x,-75;y,-80;diffusealpha,0;sleep,21.5;linear,0.5;diffusealpha,1;sleep,4;linear,0.5;diffusealpha,0.0"
 		/>
 	</children></Layer>
@@ -367,13 +367,13 @@
 	><children>
 	<Layer
 		Class="AutoActor"
-		File="red"
+		File="@ITG3IsFinal() and 'final/red' or 'red'"
 		Command="x,SCREEN_LEFT-SCREEN_WIDTH*2;zoomtowidth,SCREEN_WIDTH*1.5;zoomtoheight,100;sleep,26;linear,0.5;fadeleft,0.3;faderight,0.3;x,50;linear,4;addx,100;accelerate,0.5;addx,SCREEN_WIDTH*2"
 	/> 
 	
 	<Layer
 		Class="AutoActor"
-		File="mods"
+		File="@ITG3IsFinal() and 'final/mods' or 'mods'"
 		InitCommand="zoom,.8;x,-100;diffusealpha,0;sleep,26.5;linear,0.3;diffusealpha,1;sleep,4;linear,0.3;diffusealpha,0"
 	/>
 	
@@ -389,7 +389,7 @@
 	><children>
 		<Layer
 			Class="AutoActor"
-			File="swoosh"
+			File="@ITG3IsFinal() and 'final/swoosh' or 'swoosh'"
 			Command="zoomtowidth,SCREEN_WIDTH;zoomy,-1;y,-10;additiveblend,1;cropleft,1;fadeleft,1;sleep,26;linear,0.5;cropleft,0;fadeleft,0;sleep,4;linear,0.5;addx,-50;diffusealpha,0.0;cropright,1;faderight,1;"
 		/>
 		
@@ -400,7 +400,7 @@
 	><children>
 		<Layer
 			Class="AutoActor"
-			File="60"
+			File="@ITG3IsFinal() and 'final/60' or '60'"
 			Command="x,-75;y,-80;diffusealpha,0;sleep,26.5;linear,0.5;diffusealpha,1;sleep,4;linear,0.5;diffusealpha,0.0"
 		/>
 	</children></Layer>

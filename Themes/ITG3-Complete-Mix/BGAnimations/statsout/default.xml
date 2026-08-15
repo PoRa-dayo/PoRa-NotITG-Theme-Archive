@@ -7,7 +7,7 @@ OnCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+155;sleep,2;accelerate,.3;addx,3
 />
 
 <Layer
-File="../_overlay/p2card.png"
+File="@ITG3IsFinal() and '../_overlay/final/p2card.png' or '../_overlay/p2card.png'"
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2) and PROFILEMAN:IsPersistentProfile(PLAYER_2)"
 OnCommand="x,SCREEN_RIGHT-60;y,SCREEN_CENTER_Y+165;diffusealpha,.6;sleep,2;accelerate,.3;addx,300;"
 />
@@ -20,7 +20,7 @@ OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+155;sleep,2;accelerate,.3;addx,-3
 />
 
 <Layer
-File="../_overlay/p1card.png"
+File="@ITG3IsFinal() and '../_overlay/final/p1card.png' or '../_overlay/p1card.png'"
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1) and PROFILEMAN:IsPersistentProfile(PLAYER_1)"
 OnCommand="x,SCREEN_LEFT+60;y,SCREEN_CENTER_Y+165;diffusealpha,.6;sleep,2;accelerate,.3;addx,-300;"
 />

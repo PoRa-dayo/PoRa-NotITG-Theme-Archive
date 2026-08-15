@@ -1,0 +1,7 @@
+<ActorFrame>
+		<children>
+    <Layer
+        File="@ITG3IsFinal() and 'final_course_frame' or 'normal_course_frame'"
+    />
+		</children>
+</ActorFrame>

@@ -24,7 +24,7 @@ OnCommand="x,SCREEN_RIGHT-120;y,SCREEN_CENTER_Y+155;cropleft,.5;cropright,.5;sle
 
 
 <Layer
-File="../../_overlay/p2card.png"
+File="@ITG3IsFinal() and '../../_overlay/final/p2card.png' or '../../_overlay/p2card.png'"
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)and IsAnyPlayerUsingMemoryCard()"
 OnCommand="x,SCREEN_RIGHT-60;y,SCREEN_CENTER_Y+165;diffusealpha,0;sleep,1.5;linear,.3;diffusealpha,.6;"
 />
@@ -43,7 +43,7 @@ OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+155;croptop,.5;cropbottom,.5;slee
 />
 
 <Layer
-File="../../_overlay/p1card.png"
+File="@ITG3IsFinal() and '../../_overlay/final/p1card.png' or '../../_overlay/p1card.png'"
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)and IsAnyPlayerUsingMemoryCard()"
 OnCommand="x,SCREEN_LEFT+60;y,SCREEN_CENTER_Y+165;diffusealpha,0;sleep,1.5;linear,.3;diffusealpha,.6;"
 />
@@ -70,14 +70,14 @@ OnCommand="x,SCREEN_LEFT+120;y,SCREEN_CENTER_Y+155;cropleft,.5;cropright,.5;slee
 
 
 <Layer
-File="../../_disk"
+File="@ITG3IsFinal() and '../../_final_disk' or '../../_disk'"
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)and IsAnyPlayerUsingMemoryCard()"
 Command="diffusealpha,0;x,SCREEN_LEFT+60;y,SCREEN_CENTER_Y+165;sleep,1.5;spin;diffusealpha,1;"
 
 />
 
 <Layer
-File="../../_disk"
+File="@ITG3IsFinal() and '../../_final_disk' or '../../_disk'"
 Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)and IsAnyPlayerUsingMemoryCard()"
 Command="diffusealpha,0;x,SCREEN_RIGHT-60;y,SCREEN_CENTER_Y+165;sleep,1.5;spin;diffusealpha,1;"
 

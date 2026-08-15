@@ -1,30 +1,30 @@
 <ActorFrame><children>
 <Layer
-		File="_jump"
+		File="@ITG3IsFinal() and '_final_jump' or '_jump'"
 		InitCommand="shadowlength,2"
 		OnCommand="x,-127+100;y,225+5;decelerate,0.3;y,125+5"
 		OffCommand="linear,0.4;diffusealpha,0"
 	/>
 <Layer
-		File="_hold"
+		File="@ITG3IsFinal() and '_final_hold' or '_hold'"
 		InitCommand="shadowlength,2"
 		OnCommand="x,-102+100;y,225+5;sleep,0.1;decelerate,0.3;y,125+5"
 		OffCommand="linear,0.4;diffusealpha,0"
 	/>
 <Layer
-		File="_mine"
+		File="@ITG3IsFinal() and '_final_mine' or '_mine'"
 		InitCommand="shadowlength,2"
 		OnCommand="x,-77+100;y,225+5;sleep,0.2;decelerate,0.3;y,125+5"
 		OffCommand="linear,0.4;diffusealpha,0"
 	/>
 <Layer
-		File="_hand"
+		File="@ITG3IsFinal() and '_final_hand' or '_hand'"
 		InitCommand="shadowlength,2"
 		OnCommand="x,-52+100;y,225+5;sleep,0.3;decelerate,0.3;y,125+5"
 		OffCommand="linear,0.4;diffusealpha,0"
 	/>
 <Layer
-		File="_roll"
+		File="@ITG3IsFinal() and '_final_roll' or '_roll'"
 		InitCommand="shadowlength,2"
 		OnCommand="x,-27+100;y,225+5;sleep,0.4;decelerate,0.3;y,125+5"
 		OffCommand="linear,0.4;diffusealpha,0"

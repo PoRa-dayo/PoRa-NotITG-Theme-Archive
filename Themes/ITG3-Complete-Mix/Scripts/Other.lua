@@ -254,29 +254,66 @@ function GetCreditsText()
 		GetStepsDescriptionTextP2()
 end
 
+function IsVertex1()
+    local song = GAMESTATE:GetCurrentSong()
+    if song then
+        local title = song:GetDisplayFullTitle()
+        if title == "VerTex" then return true end
+    end
+    return false
+end
+function IsVertex2()
+    local song = GAMESTATE:GetCurrentSong()
+    if song then
+        local title = song:GetDisplayFullTitle()
+        if title == "VerTex²" or title == "VerTex^2" or title == "VerTex2" or title == "VV" then return true end
+    end
+    return false
+end
+function IsVertex3()
+    local song = GAMESTATE:GetCurrentSong()
+    if song then
+        local title = song:GetDisplayFullTitle()
+        if title == "VerTex³" or title == "VerTex^3" or title == "VerTex3" or title == "VVV" then return true end
+    end
+    return false
+end
+
 
 function vertexcolor()
-	if GAMESTATE:GetCurrentSong() and GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove/VerTex') then return "diffusecolor,0,1,0,1" end
-	if GAMESTATE:GetCurrentSong() and  GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove 2/VerTex²') then return "diffusecolor,1,0,0,1" end
-	if GAMESTATE:GetCurrentSong() and  GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove 3/VerTex^3') then return "diffusecolor,1,0,1,1" end
+    local song = GAMESTATE:GetCurrentSong()
+    if song then
+        local title = song:GetDisplayFullTitle()
+        if IsVertex1() then return "diffusecolor,0,1,0,1" end
+        if IsVertex2() then return "diffusecolor,1,0,0,1" end
+        if IsVertex3() then return "diffusecolor,1,0,1,1" end
+    end
 
 	return ""
 end
 
 
 function songfail()
-	if GAMESTATE:GetCurrentSong() and GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove/VerTex') then return false end
-	if GAMESTATE:GetCurrentSong() and  GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove 2/VerTex²') then return false end
-	if GAMESTATE:GetCurrentSong() and  GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove 3/VerTex^3') then return false end
+    local song = GAMESTATE:GetCurrentSong()
+    if song then
+        local title = song:GetDisplayFullTitle()
+        if IsVertex1() then return false end
+        if IsVertex2() then return false end
+        if IsVertex3() then return false end
+    end
 
 	return true
 end
 
 
 function songfail2()
-	if GAMESTATE:GetCurrentSong() and GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove/VerTex') then return true end
-	if GAMESTATE:GetCurrentSong() and GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove 2/VerTex²') then return true end
-	if GAMESTATE:GetCurrentSong() and GAMESTATE:GetCurrentSong() == SONGMAN:FindSong('In The Groove 3/VerTex^3') then return true end
+    local song = GAMESTATE:GetCurrentSong()
+    if song then
+        local title = song:GetDisplayFullTitle()
+        if IsVertex1() then return true end
+        if IsVertex2() then return true end
+        if IsVertex3() then return true end
+    end
 
 	return false
 end

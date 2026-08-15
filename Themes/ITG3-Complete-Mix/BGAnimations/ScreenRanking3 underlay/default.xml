@@ -23,23 +23,23 @@
 	
 	
 	<Layer
-		File="../ScreenRanking underlay/center"
+		File="@ITG3IsFinal() and '../ScreenRanking underlay/final/center' or '../ScreenRanking underlay/center'"
 		InitCommand="vertalign,top;x,SCREEN_CENTER_X-120;y,SCREEN_TOP+4;"
 		/> 
 	
 
 
 <Layer
-		File="../ScreenRanking underlay/left"
+		File="@ITG3IsFinal() and '../ScreenRanking underlay/final/left' or '../ScreenRanking underlay/left'"
 		InitCommand="vertalign,top;horizalign,right;x,SCREEN_CENTER_X-120-17;y,SCREEN_TOP+4;zoomtowidth,SCREEN_WIDTH"
 		/> 
 		<Layer
-		File="../ScreenRanking underlay/right"
+		File="@ITG3IsFinal() and '../ScreenRanking underlay/final/right' or '../ScreenRanking underlay/right'"
 		InitCommand="vertalign,top;horizalign,left;x,SCREEN_CENTER_X-120+14;y,SCREEN_TOP+4;zoomtowidth,SCREEN_WIDTH"
 		/>
 
 <Layer
-		File="dgrades"
+		File="@ITG3IsFinal() and 'final/dgrades' or 'dgrades'"
 		InitCommand="x,SCREEN_CENTER_X+100;y,SCREEN_TOP+56;"
 		/> 
 
