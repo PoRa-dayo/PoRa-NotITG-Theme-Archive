@@ -1332,22 +1332,48 @@ function RateMods(name)
 	return t
 end
 
---why was all this inside a function again
+--called at the title screens
+--now also called at the end of this .lua file (so that it's called every time the theme is opened/reloaded)
 function InitializeSpeedMods()
+    ITG3GlobVar.modBase = { "1", "1" }
+    ITG3GlobVar.modExtra = { "+.5", "+.5" }
+    ITG3GlobVar.modType = { "x-mod", "x-mod" }
+    ITG3GlobVar.modSpeed = { "1.5x", "1.5x" }
 
-end
-ITG3GlobVar.modBase = { "1", "1" }
-ITG3GlobVar.modExtra = { "+.5", "+.5" }
-ITG3GlobVar.modType = { "x-mod", "x-mod" }
-ITG3GlobVar.modSpeed = { "1.5x", "1.5x" }
+    ITG3GlobVar.baseSpeed = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19" }
+    ITG3GlobVar.extraSpeed = { "0", "+.25", "+.5", "+.75", "+.1", "+.2", "+.3", "+.4", "+.6", "+.7", "+.8", "+.9" }
 
-ITG3GlobVar.baseSpeed = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19" }
-ITG3GlobVar.extraSpeed = { "0", "+.25", "+.5", "+.75", "+.1", "+.2", "+.3", "+.4", "+.6", "+.7", "+.8", "+.9" }
-
-if OPENITG then
-ITG3GlobVar.typeSpeed = { "x-mod", "c-mod", "m-mod" }
-else
-ITG3GlobVar.typeSpeed = { "x-mod", "c-mod" }
+    if OPENITG then
+    ITG3GlobVar.typeSpeed = { "x-mod", "c-mod", "m-mod" }
+    else
+    ITG3GlobVar.typeSpeed = { "x-mod", "c-mod" }
+    end
+    
+    local extraSpeedNum = {0, 0.25, 0.5, 0.75, 0.1, 0.2, 0.3, 0.4, 0.6, 0.7, 0.8, 0.9}
+    for pn=1,2 do
+        for baseNum=0, 19, 1 do
+            for xtraInd, xtraNum in ipairs(extraSpeedNum) do
+                if GAMESTATE:PlayerIsUsingModifier(pn-1,baseNum + xtraNum .. 'x') then
+                    ITG3GlobVar.modBase[pn] = baseNum .. '';
+                    ITG3GlobVar.modExtra[pn] = ITG3GlobVar.extraSpeed[xtraInd];
+                    ITG3GlobVar.modType[pn] = 'x-mod'
+                    ITG3GlobVar.modSpeed[pn] = baseNum + xtraNum .. 'x'
+                end
+                if GAMESTATE:PlayerIsUsingModifier(pn-1,'C' .. (baseNum + xtraNum)*100) then
+                    ITG3GlobVar.modBase[pn] = baseNum .. '';
+                    ITG3GlobVar.modExtra[pn] = ITG3GlobVar.extraSpeed[xtraInd];
+                    ITG3GlobVar.modType[pn] = 'c-mod'
+                    ITG3GlobVar.modSpeed[pn] = 'c' .. (baseNum + xtraNum)*100
+                end
+                if GAMESTATE:PlayerIsUsingModifier(pn-1,'m' .. (baseNum + xtraNum)*100) then
+                    ITG3GlobVar.modBase[pn] = baseNum .. '';
+                    ITG3GlobVar.modExtra[pn] = ITG3GlobVar.extraSpeed[xtraInd];
+                    ITG3GlobVar.modType[pn] = 'm-mod'
+                    ITG3GlobVar.modSpeed[pn] = 'm' .. (baseNum + xtraNum)*100
+                end
+            end
+        end
+    end
 end
 
 function ApplyRateAdjust()
@@ -1541,3 +1567,5 @@ function ScreenTitleSongsOnCmd(self)
         self:diffusealpha(1)
     end
 end
+
+InitializeSpeedMods()
