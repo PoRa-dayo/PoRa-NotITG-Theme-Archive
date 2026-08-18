@@ -4,6 +4,7 @@
 	CurrentStepsP1ChangedMessageCommand="%function(self) MESSAGEMAN:Broadcast('TextUpdate') end"
 	CurrentStepsP2ChangedMessageCommand="%function(self) MESSAGEMAN:Broadcast('TextUpdate') end"
 > <children>
+    --note: there can be multiple Edit difficulties in one song
     <Layer
        Type="Quad"
        InitCommand="hidden,1"
@@ -12,8 +13,14 @@
             if songg then
                 local StepsList = songg:GetStepsByStepsType(GAMESTATE:PlayerUsingBothSides() and 1 or 0)
                 local DiffList = {}
+                DiffList[5] = {}
                 for index, steps in ipairs(StepsList) do
-                    DiffList[steps:GetDifficulty()] = steps:GetMeter()
+                    local DiffSlot = steps:GetDifficulty()
+                    if DiffSlot ~=5 then
+                        DiffList[steps:GetDifficulty()] = steps:GetMeter()
+                    else
+                        table.insert(DiffList[5],steps:GetMeter())
+                    end
                 end
                 ToHoSokuGlob.CurDiffList = DiffList
             else
@@ -149,9 +156,14 @@
        InitCommand="x,-143+32*5.70;y,-45;shadowlength,1;zoomx,0.8;maxwidth,40"
        DiffUpdateMessageCommand="%function(self)
             local TheList = ToHoSokuGlob.CurDiffList
-            if TheList and TheList[5] then
-                self:settext(TheList[5])
+            if TheList and TheList[5] and TheList[5][1] then
+                self:settext(TheList[5][1])
                 self:diffuse(0.97,0.97,0.97,1)
+                if (TheList[5][2]) then
+                    self:rainbow()
+                else
+                    self:stopeffect()
+                end
             else
                 self:settext('')
             end
