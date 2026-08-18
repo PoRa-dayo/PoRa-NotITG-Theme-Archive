@@ -1268,7 +1268,7 @@ function SpeedMods(name)
 					if s == ITG3GlobVar.modExtra[pn+1] or modList[n] == ITG3GlobVar.modExtra[pn+1] then list[n] = true; list[1] = false else list[n] = false end
 				end
 				if name == "Type" then
-					s = modList[n]; s = string.gsub(s,'-Mod','')
+					s = modList[n];
 					if s == ITG3GlobVar.modType[pn+1] then list[n] = true; list[1] = false else list[n] = false end
 				end
 			end
@@ -1379,10 +1379,6 @@ end
 function ApplyRateAdjust()
 	for pn=1, 2 do
 		if GAMESTATE:IsPlayerEnabled( pn - 1 ) then
-			speed = string.gsub(ITG3GlobVar.modSpeed[pn],ITG3GlobVar.modType[pn],"")
-			if ITG3GlobVar.modType[pn] == "x" then speed = math.ceil(100*speed/modRate)/100 .. "x" end
-			if ITG3GlobVar.modType[pn] == "c" then speed = "c" .. math.ceil(speed/modRate) end
-			if ITG3GlobVar.modType[pn] == "m" then speed = "m" .. math.ceil(speed/modRate) end
 			GAMESTATE:ApplyGameCommand('mod,' .. speed,pn)
 		end
 	end
