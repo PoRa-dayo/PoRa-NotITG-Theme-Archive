@@ -2,10 +2,14 @@
 -- LUA OPTION ROWS (BASE)
 ---------------------------------------------
 
---change the text of a BitmapText element on the OptionRow with ModName, and change the x coordinate of the cursor accordingly
+--change the text of a BitmapText element on the OptionRow with ModName, and resize the cursor and underline sprites accordingly
 function SetOptionRow(ModName,id,text,pn)
     if not GAMESTATE:IsPlayerEnabled(pn-1) then return end
-    --in Simply Love this function is called Size, placed inside SetOptionRow
+    -- each cursor/underline is seperated into three sprites, which within each actorframe is sorted as such:
+    -- center portion, this portion is what needs to be resized in accordance to the text associated with it
+    -- left side, this needs to be shifted to the left by half the new width of the center portion
+    -- right side, this needs to be shifted to the right by half the new width of the center portion
+    -- (in Simply Love this function is called Size, placed inside SetOptionRow)
     local function CursorAndUnderlineSpriteBasedOnTextSize(SpriteTable,txt)
         local z = txt:GetWidth()*txt:GetZoom()
         SpriteTable[pn][2]:zoomtowidth(z)
@@ -86,6 +90,8 @@ local speedSpread = 5
 function SpeedModOption(name)
 	local modList = {"   ","   ","   "}
     local slider = {{1,1,0},{1,1,0}} -- {position, counts, clock}
+    --the counts and clock are just here for the feature where the slider "moves faster"
+    --(as in the speed value increases more) if you hold long enough
     --(counts is for the cnt that will be used in the move function and AddSnap function, it increases when saveFunc is triggered too often)
     local function move(pn,dir,cnt)
         modBase[pn+1] = clamp( AddSnap(modBase[pn+1] , dir , cnt , { 5 , 25 , 100 } ) , speedMin , speedMax );
@@ -110,6 +116,7 @@ function SpeedModOption(name)
     }
         
     local loadFunc = function(self, list, pn)
+        --select the middle choice
         list[1] = true
         --InitSpeedMod will set the initial modType, modBase and modSpeed
         slider[pn+1][1] = 1
