@@ -1,2 +1,0 @@
-Put whatever hold judgment fonts you want into the theme's Graphics/_HoldJudgments folder.
-* They must be 1x2 and do require the "1x2" suffix.

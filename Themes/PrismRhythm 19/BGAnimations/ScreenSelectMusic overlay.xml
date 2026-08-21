@@ -316,6 +316,19 @@ end end"
 			CurrentSongChangedMessageCommand="playcommand,Set"
 			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
 		/>
+        
+        		
+        <ActorFrame InitCommand="%SelectMusicInit" FirstUpdateCommand="%SelectMusic" CaptureCommand="%function(self)
+            bpm = {}
+            local s = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
+            if s then
+                s = s:GetChild('Text'):GetText()
+                bpm[1] = string.gsub(s,'^(-?%d+)-?[-%d]*$','%1')
+                bpm[2] = string.gsub(s,'^'..bpm[1]..'%-?','')
+                ApplyRateAdjust()
+            end
+        end"
+        CurrentSongChangedMessageCommand="queuecommand,Capture" CurrentStepsP1ChangedMessageCommand="queuecommand,Capture" CurrentStepsP2ChangedMessageCommand="queuecommand,Capture" />
 
 </children> </ActorFrame>
 

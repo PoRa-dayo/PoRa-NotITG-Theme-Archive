@@ -8,7 +8,7 @@ function Path(ec,str) return THEME:GetPath( _G['EC_'..string.upper(ec)] , '' , s
 function TableToString(t) local s = '' for i,v in ipairs(t) do s = s .. v end return s end
 
 -- Judgment Font List
-judgmentFontList = { 'Default', 'DDR 1st', 'DDR 2nd', 'DDR 3rd & 4th', 'DDR 5th', 'DDR Max 1 & 2', 'DDR Extreme 1', 'DDR Extreme 2', 'DDR Supernova 1', 'DDR Supernova 2', 'DDR X1', 'DDR X2', 'DDR X3', 'DDR A1', 'DDR A2', 'DDR A3', 'DDR World', 'ITG1', 'Chroma ITG1', 'ITG2', 'Chroma ITG2', 'ITG3', 'Chroma ITG3', 'ITG Simply Love', 'ITG GrooveNights', 'ITG Velocity', 'ITG Deco', 'ITG Empress', 'ITG Gold', 'ITG Tactics SD', 'ITG Tactics HD', 'PrismRhythm Ver1', 'PrismRhythm Ver2', 'PrismRhythm Ver3', 'CyberiaStyle', 'Focus', 'Sliced', 'Reptilian', 'Glowstone', 'Obsidian', 'Tron', 'Powerpuff', 'VHS', 'StepMania 4', 'StepMania 5' }
+judgmentFontList = { 'Default', 'AcePro', 'DDR 1st', 'DDR 2nd', 'DDR 3rd & 4th', 'DDR 5th', 'DDR Max 1 & 2', 'DDR Extreme 1', 'DDR Extreme 2', 'DDR Supernova 1', 'DDR Supernova 2', 'DDR X1', 'DDR X2', 'DDR X3', 'DDR A1', 'DDR A2', 'DDR A3', 'DDR World', 'ITG1', 'Chroma ITG1', 'ITG2', 'Chroma ITG2', 'ITG3', 'Chroma ITG3', 'ITG Simply Love', 'ITG GrooveNights', 'ITG Velocity', 'ITG Deco', 'ITG Empress', 'ITG Gold', 'ITG Tactics SD', 'ITG Tactics HD', 'PrismRhythm Ver1', 'PrismRhythm Ver2', 'PrismRhythm Ver3', 'CyberiaStyle', 'Focus', 'Sliced', 'Reptilian', 'Glowstone', 'Obsidian', 'Tron', 'Powerpuff', 'VHS', 'StepMania 4', 'StepMania 5' }
 if FUCK_EXE then -- Auto load on NotITG
     local list = { 'Default' }
     
@@ -25,20 +25,20 @@ if FUCK_EXE then -- Auto load on NotITG
 end
 
 -- Hold Judgment List
-holdJudgmentList = { 'PrismRhythm Ver1', 'PrismRhythm Ver2', 'PrismRhythm Ver3' }
+tailFontList = { 'Default', 'AcePro', 'DDR 1st', 'DDR 2nd', 'DDR 3rd & 4th', 'DDR 5th', 'DDR Max 1 & 2', 'DDR Extreme 1', 'DDR Extreme 2', 'DDR Supernova 1', 'DDR Supernova 2', 'DDR X1', 'DDR X2', 'DDR X3', 'DDR A1', 'DDR A2', 'DDR A3', 'DDR World', 'ITG1', 'ITG2', 'ITG3', 'ITG Simply Love', 'PrismRhythm V1', 'PrismRhythm V2', 'PrismRhythm V3' }
 if FUCK_EXE then -- Auto load on NotITG
     local list = { 'Default' }
     
     local dir = string.sub(THEME:GetPath(2,'','_blank.png'),9)
     dir = string.sub(dir,1,string.find(dir,'/')-1)
-    for _,v in pairs({ GAMESTATE:GetFileStructure('Themes/'.. dir ..'/Graphics/_HoldJudgments/') }) do
+    for _,v in pairs({ GAMESTATE:GetFileStructure('Themes/'.. dir ..'/Graphics/_JudgeTails/') }) do
         local t, _, name = string.find(v, "(.+) %dx%d")
         if t then table.insert( list, name )
         else print('[Hold Judgment] Error in loading ' .. v)
         end
     end
 
-    holdJudgmentList = list
+    tailFontList = list
 end
 
 --NoteSkin list
@@ -86,7 +86,7 @@ function GetDefaultNoteSkinFromGamePrefsIni()
 end
 
 modJudgmentFont = {1,1}
-modHoldJudgment = {1,1}
+modTailJudgmentFont = {1,1}
 modNoteSkin = {1,1}
 local defaultSkin = GetDefaultNoteSkinFromGamePrefsIni()
 --look for the player's current noteskin
@@ -120,9 +120,6 @@ function Gameplay() JudgmentInit() end
 function InitializeMods()
 	if GAMESTATE:GetEnv('Mods') then return end
 	modRate = 1
-	modJudgmentFont = {1,1}
-    modNoteSkin = {1,1}
-	CalculateSpeedMod()
 	GAMESTATE:SetEnv('Mods',1)
 end
 
@@ -132,21 +129,46 @@ function ModPulse(self,mod)
 	self:queuecommand('Pulse')
 end
 
+--FinalizeSpeedName is a function where you put the speedmod name in it (e.g. FinalizeSpeedName('M500'))
+--and if its an M-Mod it'll return an X-Mod conversion of it based on the current song's highest bpm
+--if it can't grab the bpm then it'll just assume the BPM is 150
+--(For OpenITG we won't use this function, we'll just use the M-Mods that are now built into the engine)
+function FinalizeSpeedName(SpeedName)
+    if OPENITG then return SpeedName end
+    if string.find(string.lower(SpeedName), "m") then
+        --remove letters from the speed name
+        SpeedName = string.gsub(SpeedName, "%a", "")
+        --grab highest bpm
+        if not bpm then
+            return SpeedName/150 .. 'x'
+        end
+        s = bpm[2]
+        if (not s) or s == '' or s == 'Various' or s == '...' then
+            s = bpm[1]
+        end
+        --convert m-mod to x-mod
+        if s and s ~= 'Various' and s ~= '...' and tonumber(s) then
+            return SpeedName/s .. 'x'
+        else
+            return SpeedName/150 .. 'x'
+        end
+    else
+        return SpeedName
+    end
+end
+
 function ApplyRateAdjust()
-	for pn=1, 2 do
-		if GAMESTATE:IsPlayerEnabled( pn - 1 ) then
-			speed = string.gsub(modSpeed[pn],modType[pn],"")
-			if modType[pn] == "x" then speed = math.ceil(100*speed/modRate)/100 .. "x" end
-			if modType[pn] == "C" then speed = "C" .. math.ceil(speed/modRate) end
-			GAMESTATE:ApplyGameCommand('mod,' .. speed,pn)
-		end
-	end
+    for pn=1, 2 do
+        if GAMESTATE:IsPlayerEnabled( pn - 1 ) then
+            GAMESTATE:ApplyGameCommand('mod,' .. FinalizeSpeedName(modSpeed[pn]),pn)
+        end
+    end
 end
 
 function RevertRateAdjust()
-	for pn=1, 2 do
-		if modSpeed and modSpeed[pn] then GAMESTATE:ApplyGameCommand('mod,' .. modSpeed[pn],pn) end
-	end
+    for pn=1, 2 do
+        if modSpeed and modSpeed[pn] then GAMESTATE:ApplyGameCommand('mod,' .. FinalizeSpeedName(modSpeed[pn]),pn) end
+    end
 end
 
 -- Removes Cover on ScreenEvaluation InitCommand to prevent disqualification, reapplies it immediately after.
@@ -180,16 +202,36 @@ function JudgmentInit()
             if FUCK_EXE then
                 for col=0,15 do
                     local PHold = PL:GetChild('HoldJudgmentCol'..col):GetChild('')
-                    k = modHoldJudgment[pn%2 == 1 and 1 or 2]
+                    k = modTailJudgmentFont[pn%2 == 1 and 1 or 2]
                     PHold:aux(pn%2 == 1 and 1 or 2)
                     
                     if k ~= 1 then 
-                        PHold:Load( THEME:GetPath( EC_GRAPHICS, '', '_HoldJudgments/'..holdJudgmentList[k] ))
+                        PHold:Load( THEME:GetPath( EC_GRAPHICS, '', '_JudgeTails/'..tailFontList[k] ))
                     end
                 end
             end
         end
     end
+end
+
+--these were what the original theme used to change the hold judgment fonts before QoL features for them were made in NotITG
+--it is not ideal because it changes both players' hold judgment fonts
+--not used in NotITG
+function TailJudgeOKCommand(self)
+	k = modTailJudgmentFont[1]
+	if k~=1 then
+		self:Load( THEME:GetPath( EC_GRAPHICS, '', '_JudgeTails/'..tailFontList[k] ))
+	end
+	self:setstate(0)
+end
+
+--not used in NotITG
+function TailJudgeNGCommand(self)
+	k = modTailJudgmentFont[1]
+	if k~=1 then
+		self:Load( THEME:GetPath( EC_GRAPHICS, '', '_JudgeTails/'..tailFontList[k] ))
+	end
+	self:setstate(1)
 end
 
 function JudgmentTween(self) self:zoom(.8) self:decelerate(.1) self:zoom(.75) self:sleep(.6) self:accelerate(.2) self:zoom(0) end
@@ -316,15 +358,17 @@ function CaptureSteps()
 	end
 end
 
+bpm = {'150',''}
+
 function CaptureBPM()
-	bpm = {}
-	s = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
-	if s then
-		s = s:GetChild('Text'):GetText()
-		bpm[1] = string.gsub(s,'-%d+','')
-		bpm[2] = string.gsub(s,'%d+-','-')
-		if bpm[2] == bpm[1] then bpm[2] = '' end
-	end
+    bpm = {}
+    local s = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
+    if s then
+        s = s:GetChild('Text'):GetText()
+        bpm[1] = string.gsub(s,'^(-?%d+)-?[-%d]*$','%1')
+        bpm[2] = string.gsub(s,'^'..bpm[1]..'%-?','')
+        ApplyRateAdjust()
+    end
 end
 
 function GetSongName()
@@ -349,18 +393,6 @@ function AdjustedBPM(self)
 		if bpm[2] ~= '' then s = s .. math.floor(bpm[2] * modRate + 0.5) end
 	end
 	if self then self:settext(s) else return s end
-end   
-
-function DisplaySpeedMod(pn)
-	speed = string.gsub(modSpeed[pn],modType[pn],"")
-	s = ''
-	if modType[pn] == "x" and bpm and bpm[1] ~= 'Various' and bpm[1] ~= '...'  then
-		s = math.floor(speed * bpm[1] + 0.5)
-		if bpm[2] ~= '' then s = s .. math.floor(speed * bpm[2] + 0.5) end
-		s = ' (' .. s .. ')'
-	end   
-	s = modSpeed[pn] .. s
-	return s
 end
 
 function GameplayBPM(self)
@@ -372,15 +404,35 @@ function GameplayBPM(self)
 	self:queuecommand('Update')
 end
 
+--not used in NotITG
+function PlayerOptionsEval(self, pn)
+    if OPENITG then return end
+    if modType[pn] == "M-Mod" then
+        local ModStr = self:GetText()
+        for part in string.gfind(ModStr, "[^,]+") do
+            
+            part = string.gsub(part, "^%s+", "") -- Remove leading whitespace
+            part = string.gsub(part, "%s+$", "") -- Remove trailing whitespace
+
+            if string.find(part, "^%d+%.?%d*[x]$") -- 2x, 2.5x
+            or string.find(part, "^[x]%d+%.?%d*$") -- x2, x5.25
+            then
+                ModStr = string.gsub(ModStr, part, DisplaySpeedMod(pn))
+            end
+        end
+        self:settext(ModStr)
+    end
+end
 
 -- Lua Option Rows
 
 function SpeedMods(name)
 	local modList = baseSpeed; s = "Speed"
 	if name == "Extra" then modList = extraSpeed; s = "Extra " .. s end
+	if name == "Type" then modList = typeSpeed; s = s .. " Type" end
 	local t = {
 		Name = s,
-		LayoutType = "ShowOneInRow",
+		LayoutType = "ShowAllInRow",
 		SelectType = "SelectOne",
 		OneChoiceForAllPlayers = false,
 		ExportOnChange = false,
@@ -390,13 +442,14 @@ function SpeedMods(name)
 			list[1] = true
 			for n = 2, table.getn(modList) do
 				if name == "Base" then
-					if modList[n] == modType[pn+1]..modBase[pn+1] or modList[n] == modBase[pn+1]..modType[pn+1] then list[n] = true; list[1] = false else list[n] = false end
+					if modList[n] == modBase[pn+1] then list[n] = true; list[1] = false else list[n] = false end
 				end
 				if name == "Extra" then
-					s = modList[n]; s = string.gsub(s,'C',''); s = string.gsub(s,'x',''); s = string.gsub(s,'+',''); s = string.gsub(s,'%.','') s = tonumber(s)
-					if s == modExtra[pn+1] or modList[n] == modExtra[pn+1]/100 then list[n] = true; list[1] = false else list[n] = false end
-					if modType[pn+1] == 'x' and modList[n] == '+C50' then list[n] = false end   
-					if modType[pn+1] == 'C' and modList[n] == '+.50x' then list[n] = false end
+					if s == modExtra[pn+1] or modList[n] == modExtra[pn+1] then list[n] = true; list[1] = false else list[n] = false end
+				end
+				if name == "Type" then
+					s = modList[n]
+					if s == modType[pn+1] then list[n] = true; list[1] = false else list[n] = false end
 				end
 			end
 		end,
@@ -406,23 +459,90 @@ function SpeedMods(name)
 				if list[n] then s = modList[n] end
 			end
 			p = pn+1
-			if name == "Base" then if s == string.gsub(s,'x','') then modType[p] = 'C' else modType[p] = 'x' end end
-			s = string.gsub(s,'C',''); s = string.gsub(s,'x',''); s = string.gsub(s,'+',''); s = string.gsub(s,'%.','') s = tonumber(s)
+			if name == "Type" then modType[p] = s end
 			if name == "Base" then modBase[p] = s end
 			if name == "Extra" then modExtra[p] = s end
-			if modType[p] == 'x' then modSpeed[p] = modBase[p] + modExtra[p]/100 .. 'x' else modSpeed[p] = 'C' .. modBase[p] + modExtra[p] end
+
+			if modType[p] == 'X-Mod' then modSpeed[p] = modBase[p] + modExtra[p] .. 'x' end
+			if modType[p] == 'C-Mod' then modSpeed[p] = 'c' .. modBase[p]*100 + modExtra[p]*100 end
+			if modType[p] == 'M-Mod' then modSpeed[p] = 'm' .. modBase[p]*100 + modExtra[p]*100 end
 			GAMESTATE:ApplyGameCommand('mod,1x',p)
 			ApplyRateAdjust()
 			MESSAGEMAN:Broadcast('SpeedModChanged')
 		end
-	   
 	}
 	setmetatable(t, t)
 	return t
 end
 
+modBase = { "1", "1" }
+modExtra = { "+.5", "+.5" }
+modType = { "X-Mod", "X-Mod" }
+modSpeed = { "1.5x", "1.5x" }
+
+baseSpeed = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" }
+extraSpeed = { "+.00", "+.05", "+.10", "+.15", "+.20", "+.25", "+.30", "+.35", "+.40", "+.45", "+.50", "+.55", "+.60", "+.65", "+.70", "+.75", "+.80", "+.85", "+.90", "+.95" }
+
+typeSpeed = { "X-Mod", "C-Mod", "M-Mod" }
+
+--grab player's default speedmod from Data/GamePrefs.ini
+local ModStr = string.lower(PREFSMAN:GetPreference('DefaultModifiers'))
+local DFSpeed = '1.5x'
+for part in string.gfind(ModStr, "[^,]+") do
+    
+    part = string.gsub(part, "^%s+", "") -- Remove leading whitespace
+    part = string.gsub(part, "%s+$", "") -- Remove trailing whitespace
+
+    if string.find(part, "^%d+%.?%d*[x]$") -- 2x, 2.5x
+    or string.find(part, "^[x]%d+%.?%d*$") -- x2, x5.25
+    or string.find(part, "^[c]%d+$") -- C640
+    or string.find(part, "^[m]%d+$") then -- M255
+        DFSpeed = string.lower(part)
+    end
+end
+
+local extraSpeedNum = {0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95}
+for pn=1,2 do
+    for baseNum=0, 15, 1 do
+        for xtraInd, xtraNum in ipairs(extraSpeedNum) do
+            if DFSpeed == baseNum + xtraNum .. 'x' then
+                modBase[pn] = baseNum .. '';
+                modExtra[pn] = extraSpeed[xtraInd];
+                modType[pn] = 'X-Mod'
+                modSpeed[pn] = baseNum + xtraNum .. 'x'
+            end
+            if DFSpeed == 'c' .. (baseNum + xtraNum)*100 then
+                modBase[pn] = baseNum .. '';
+                modExtra[pn] = extraSpeed[xtraInd];
+                modType[pn] = 'C-Mod'
+                modSpeed[pn] = 'C' .. (baseNum + xtraNum)*100
+            end
+            if DFSpeed == 'm' .. (baseNum + xtraNum)*100 then
+                modBase[pn] = baseNum .. '';
+                modExtra[pn] = extraSpeed[xtraInd];
+                modType[pn] = 'M-Mod'
+                modSpeed[pn] = 'M' .. (baseNum + xtraNum)*100
+            end
+        end
+    end
+end
+
 rateMods = { "1.0x", "1.1x", "1.2x", "1.3x", "1.4x", "1.5x", "1.6x", "1.7x", "1.8x", "1.9x", "2.0x" }
 rateModsEdit = { "1.0x", "1.1x", "1.2x", "1.3x", "1.4x", "1.5x", "1.6x", "1.7x", "1.8x", "1.9x", "2.0x", "0.3x", "0.4x", "0.5x", "0.6x", "0.7x", "0.8x", "0.9x" }
+
+function DisplaySpeedMod(pn)
+	local s = modSpeed[pn]
+	if modType[pn] == "X-Mod" then
+		s = modBase[pn] + modExtra[pn] .. "x"
+	end
+	if modType[pn] == "C-Mod" then
+		s = string.upper(s)
+	end
+	if modType[pn] == "M-Mod" then
+		s = string.upper(s)
+	end
+	return s
+end
 
 function RateMods( s )
 	local modList = rateMods
@@ -572,7 +692,7 @@ function CreateOptionRow( Params, Names, LoadFctn, SaveFctn )
 end
 
 
--- Must put the list "judgmentFontList" in another lua so it doesn't get overwritten whenever this file is updated from the master copy.
+-- No longer put "judgmentFontList" in another lua, it's defined somewhere in Mods.lua as well.
 function JudgmentOption()
 	local modList = judgmentFontList
     
@@ -596,11 +716,11 @@ function JudgmentOption()
 end
 
 
-function HoldJudgmentOption()
-	local modList = holdJudgmentList
+function TailJudgmentOption()
+	local modList = tailFontList
     
 	local Params = {
-		Name = "Hold Judgment",
+		Name = "Tail Judge Font",
 		LayoutType = "ShowAllInRow",
 		SelectType = "SelectOne",
 		OneChoiceForAllPlayers = false,
@@ -608,11 +728,11 @@ function HoldJudgmentOption()
     }
 	   
     local loadFunc = function(self, list, pn)
-        list[modHoldJudgment[pn+1]] = true
+        list[modTailJudgmentFont[pn+1]] = true
     end
 
     local saveFunc = function(self, list, pn)
-        for i=1,table.getn(modList) do if list[i] then modHoldJudgment[pn+1] = i end end
+        for i=1,table.getn(modList) do if list[i] then modTailJudgmentFont[pn+1] = i end end
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
@@ -642,36 +762,7 @@ function NoteSkinOption()
 end
 
 -- Lua Option Row support functions
-	   
-function CalculateSpeedMod()
-	modBase = {}
-	modExtra = {}
-	modType = {}
-	modSpeed = {}
-	for pn=1, 2 do
-		if GAMESTATE:IsPlayerEnabled( pn - 1 ) then
-			modBase[pn] = 700
-			modExtra[pn] = 0
-			modType[pn] = 'C'
-			for j=0, 90, 10 do CalculateSpeedLoop(j,pn) end
-			for j=25, 75, 25 do CalculateSpeedLoop(j,pn) end
-			if modType[pn] == 'C' then modSpeed[pn] = 'C' .. modBase[pn] + modExtra[pn] end
-			if modType[pn] == 'x' then modSpeed[pn] = modBase[pn] + modExtra[pn]/100 ..'x' end
-		end   
-	end
-end
 
-function CalculateSpeedLoop(j,pn)
-	for i=1, 8, 1 do
-		if GAMESTATE:PlayerIsUsingModifier(pn-1,i + j/100 .. 'x') then modBase[pn] = i; modExtra[pn] = j; modType[pn] = 'x' end
-	end
-	for i=400, 1400, 100 do
-		if GAMESTATE:PlayerIsUsingModifier(pn-1,'C' .. i + j) then modBase[pn] = i; modExtra[pn] = j; modType[pn] = 'C' end
-	end
-end
-
-baseSpeed = { "1x", "2x", "3x", "4x", "5x", "6x", "7x", "C1400", "C1300", "C1200", "C1100", "C1000", "C900", "C800", "C700", "C600", "C500", "C400" }
-extraSpeed = { "0", "+.25x", "+.50x", "+.75x", "+C90", "+C80", "+C70", "+C60", "+C50", "+C40", "+C30", "+C20", "+C10" }
 modRate = 1
 
 function Decents() if math.abs(PREFSMAN:GetPreference('JudgeWindowSecondsGood') - 0.135) < .001 then return true end end

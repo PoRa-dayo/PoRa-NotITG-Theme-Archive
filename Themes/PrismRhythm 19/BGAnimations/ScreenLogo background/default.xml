@@ -31,13 +31,13 @@
 <Layer
    Type="BitmapText"
    Font="_v profile"
-   Text="Theme Version 19"
+   Text="Theme Version 20"
    OnCommand="X,SCREEN_RIGHT-5;Y,SCREEN_TOP+10;zoom,0.5;shadowlength,2;horizalign,right;diffusealpha,1;DiffuseShift;EffectColor1,#33FFFF;EffectColor2,#33FFFF"
 />
 <Layer
    Type="BitmapText"
    Font="_v profile"
-   Text="(August 2024.  New grade, some changed grade thresholds, new judgment fonts, new song wheel item containers.)"
+   Text="(August 2026.  M-Mods, speed mod compositing, tail judgment fonts (joint, but they're there).)"
    OnCommand="X,SCREEN_RIGHT-5;Y,SCREEN_TOP+19;zoom,0.3;shadowlength,2;horizalign,right;diffusealpha,1"
 />
 <Layer

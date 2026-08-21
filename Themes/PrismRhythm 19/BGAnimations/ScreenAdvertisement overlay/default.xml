@@ -55,7 +55,7 @@
 />
 
 		<Layer Type="BitmapText"
-			Text="PrismRhythm 19 [ScreenAdvertisement] (Demo Loop 9/9)"
+			Text="PrismRhythm 20 [ScreenAdvertisement] (Demo Loop 9/9)"
 			File="_eurostile blue glow"
 			InitCommand="X,SCREEN_LEFT+17;Y,SCREEN_TOP+20;shadowlength,0"
 			OnCommand="horizalign,left;Zoom,.4"

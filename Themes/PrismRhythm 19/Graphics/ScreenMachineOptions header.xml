@@ -8,7 +8,7 @@
 />
 
 		<Layer Type="BitmapText"
-			Text="PrismRhythm 19 [ScreenMachineOptions]"
+			Text="PrismRhythm 20 [ScreenMachineOptions]"
 			File="_eurostile blue glow"
 			InitCommand="X,SCREEN_LEFT+1;Y,SCREEN_TOP;shadowlength,0"
 			OnCommand="horizalign,left;Zoom,.4"

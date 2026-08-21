@@ -15,7 +15,7 @@
 		InitCommand="animate,0;playcommand,Update"
 		OnCommand="X,SCREEN_LEFT+120;Y,SCREEN_TOP+62;HorizAlign,Left;Zoom,.5;shadowlength,0;maxwidth,600"
 		CurrentSongChangedMessageCommand="playcommand,Update"
-		UpdateCommand="%function(self) self:settext(GetGroup(GAMESTATE:GetCurrentSong():GetSongDir())) end"
+		UpdateCommand="%function(self) if GAMESTATE:GetCurrentSong() then self:settext(GetGroup(GAMESTATE:GetCurrentSong():GetSongDir())) end end"
 	/>
 
 	<Layer
@@ -24,7 +24,7 @@
 		InitCommand="animate,0;playcommand,Update"
 		OnCommand="X,SCREEN_LEFT+119;Y,SCREEN_TOP+75;HorizAlign,Left;Zoom,.5;shadowlength,0;maxwidth,600"
 		CurrentSongChangedMessageCommand="playcommand,Update"
-		UpdateCommand="%function(self) self:settext(GAMESTATE:GetCurrentSong():GetDisplayFullTitle()) end"
+		UpdateCommand="%function(self) if GAMESTATE:GetCurrentSong() then  self:settext(GAMESTATE:GetCurrentSong():GetDisplayFullTitle()) end end"
 	/>
 
 			<!-- DIFFICULTY ICON -->
@@ -252,7 +252,7 @@
 />
 
 		<Layer Type="BitmapText"
-			Text="PrismRhythm 19 [ScreenDemonstration2] (Demo Loop 5/8)"
+			Text="PrismRhythm 20 [ScreenDemonstration2] (Demo Loop 5/8)"
 			File="_eurostile blue glow"
 			InitCommand="X,SCREEN_LEFT+16;Y,SCREEN_TOP+20;shadowlength,0"
 			OnCommand="horizalign,left;Zoom,.4"

@@ -153,5 +153,5 @@ function GetUpdateScreen()
 end
 
 function GetSerialNumber()
-	return "ITG2-PR-19"
+	return "ITG2-PR-20"
 end
