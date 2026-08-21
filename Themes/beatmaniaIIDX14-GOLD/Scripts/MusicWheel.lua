@@ -50,6 +50,11 @@ function GetDiffList(songg)
     return DiffList
 end
 
+--from a Song, get a string that combines its MainTitle, SubTitle and the Artist, separated by a space.
+--I call this LongTitle. It will be what we use to compare with the LongTitles we grabbed from the music wheel.
+--though the MainTitle, SubTitle and Artist can each be in Display (native language) form or Translit form.
+--so this function will check all combinations of Display and Translit and store all possible LongTitles of the Song in a list
+--we also make a version of it that also adds the Group name to the LongTitles, to compare better in Group sort mode.
 function GetLongTitleList(songg)
     local MainT = {songg:GetDisplayMainTitle(), songg:GetTranslitMainTitle()}
     local SubT = {songg:GetDisplaySubTitle(), songg:GetTranslitSubTitle()}
@@ -129,6 +134,7 @@ for index, songg in ipairs(BMIIDX14Glob.AllSongs) do
 end
 
 --these are only for getting stuff from the music wheel
+--this one gives the Subtitle of the MusicWheelItem at the specified index
 function GetWheelSubtitle(ind)
     if not BMIIDX14Glob.MusicWheelList[ind] then
         return ''
@@ -136,6 +142,7 @@ function GetWheelSubtitle(ind)
     return BMIIDX14Glob.MusicWheelList[ind]:GetChildAt(8):GetChild('Subtitle'):GetText()
 end
 
+--gives the LongTitle of the MusicWheelItem at the specified index
 --e.g. GetWheelLongTitle(CurWheelIndex()) in console gives you the LongTitle of the current selected song on the wheel
 --BMIIDX14Glob.SongDiffs[GetWheelLongTitle(CurWheelIndex())] gives you the DiffList of that song
 function GetWheelLongTitle(index)
@@ -145,6 +152,7 @@ function GetWheelLongTitle(index)
     return (BMIIDX14Glob.SongTitles[index] or '').." "..GetWheelSubtitle(index).." "..(BMIIDX14Glob.ArtistTitles[index] or '')
 end
 
+--check whether the MusicWheelItem at the specified index is roulette-type
 function IsRoulette(ind)
     if not BMIIDX14Glob.MusicWheelList[ind] then
         return false
@@ -153,7 +161,8 @@ function IsRoulette(ind)
 end
 
 --so since the TextBanner only lets you use one font, I had to resort to... this
---it successfully splits up here so
+--check the [lv] section of TextBanner text in the Fonts folder and you'll see how this converts to a diff number
+--it successfully splits up here so it should recognize them as separate characters
 --https://earthlingsoft.net/unicode/split-up
 function DiffMeterConvert(diff)
     if not diff then return '' end
@@ -210,7 +219,7 @@ function UpdateWheelTitles(FirstUpdate)
         local index = ((StartIndex - 1 + i) % Count) + 1
         local item = BMIIDX14Glob.MusicWheelList[index]
         
-        --grab the titles and subtitles and store them in their corresponding tables
+        --grab the titles and subtitles on the music wheel and store them in their corresponding tables
         BMIIDX14Glob.SongTitles[index] = item:GetChildAt(8):GetChild('Title'):GetText()
         BMIIDX14Glob.GroupTitles[index] = item:GetChildAt(9):GetText()
 
@@ -223,6 +232,7 @@ function UpdateWheelTitles(FirstUpdate)
         if BMIIDX14Glob.ArtistTitles[index] then
             --assemble the full title
             local FullTitl = GetWheelLongTitle(index)
+            --if the sort order is Group, add the Group name in front
             if CSong and GAMESTATE:GetSortOrder() == 1 then
                 FullTitl = CSong:GetGroupName().." "..GetWheelLongTitle(index)
             end
