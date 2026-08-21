@@ -46,6 +46,7 @@
         end"
         FirstUpdateCommand="%function(self)
             UpdateWheelTitles(true)
+            BMIIDX14Glob.YouShouldChangeThatShitNOW = false
         end"
         UpdateMessageCommand="%function(self)
             if BMIIDX14Glob.YouShouldChangeThatShitNOW then return end
