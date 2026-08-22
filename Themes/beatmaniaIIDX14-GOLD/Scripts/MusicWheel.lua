@@ -276,12 +276,8 @@ function UpdateWheelTitles(FirstUpdate)
                     ClosestDiff = ClosestDiff - 10
                 end
                 ArtistDisp:settext( BMIIDX14Glob.DiffNumTitles[index] )
-                local ColorStr = DifficultyColor(ClosestDiff)
-                local tb = {}
-                for v in string.gfind(ColorStr, "[^,]+") do
-                    tb[#tb + 1] = tonumber(v)
-                end
-                ArtistDisp:diffuse(unpack(tb))
+                DiffuseDifficultyTopGradient(ArtistDisp, ClosestDiff)
+                DiffuseDifficultyBottomGradient(ArtistDisp, ClosestDiff)
                 ArtistDisp:zoom(1)
             end
         end
