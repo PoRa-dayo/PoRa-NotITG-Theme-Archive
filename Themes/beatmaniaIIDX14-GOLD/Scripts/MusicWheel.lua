@@ -84,18 +84,20 @@ end
 
 for index, songg in ipairs(BMIIDX14Glob.AllSongs) do
     --calculate all the song amounts each song folder (group) has
-    --obviously this is sometimes wrong because of all those hidden songs but whatever
+    --check if the song is locked or not with the new NotITG 4.9.0 feature as well
+    --it can't detect songs being unlocked mid-session but whatever
     local GroupName = songg:GetGroupName()
     local StepsList = songg:GetStepsByStepsType(0)
     local DoubleStepsList = songg:GetStepsByStepsType(1)
-    if StepsList and #StepsList > 0 then
+    local IsSongUnlocked = (not FUCK_EXE) or (not UNLOCKMAN:SongIsLocked(songg))
+    if IsSongUnlocked and StepsList and #StepsList > 0 then
         if not BMIIDX14Glob.GroupSongNum[GroupName] then
             BMIIDX14Glob.GroupSongNum[GroupName] = 1
         else
             BMIIDX14Glob.GroupSongNum[GroupName] = BMIIDX14Glob.GroupSongNum[GroupName] + 1
         end
     end
-    if DoubleStepsList and #DoubleStepsList > 0 then
+    if IsSongUnlocked and DoubleStepsList and #DoubleStepsList > 0 then
         if not BMIIDX14Glob.GroupSongNumDoubles[GroupName] then
             BMIIDX14Glob.GroupSongNumDoubles[GroupName] = 1
         else
