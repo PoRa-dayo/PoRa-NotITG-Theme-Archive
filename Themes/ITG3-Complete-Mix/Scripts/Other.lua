@@ -1379,7 +1379,7 @@ end
 function ApplyRateAdjust()
 	for pn=1, 2 do
 		if GAMESTATE:IsPlayerEnabled( pn - 1 ) then
-			GAMESTATE:ApplyGameCommand('mod,' .. speed,pn)
+			GAMESTATE:ApplyGameCommand('mod,' .. ITG3GlobVar.modSpeed[pn],pn)
 		end
 	end
 end
