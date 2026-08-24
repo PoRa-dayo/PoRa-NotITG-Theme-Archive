@@ -141,13 +141,14 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Added step artist display in song selection screen.\
 -Added back the percentage in results screen of course mode.\
 -Added mod icons for custom noteskins.\
+-Changed the layering of the score frame to be below the arrows for the sake of old modfiles.\
 -Edit Mode now accessible and its UI is now complete.\
 -The profile name now prioritizes your local profile's if you're using one.\
 -Added offset plot and spellcard viewer in results screen.\
 -Added back OK counter, as well as an N.G. counter next to it, and a mine counter next to the misses counter in results screen.
 
 <img width="200" height="150" alt="NotITG-v4 9 1_AHPX1eOta3" src="https://github.com/user-attachments/assets/873f8787-f810-48cd-ae25-193a1293accc" />
-<img width="200" height="150" alt="NotITG-v4 9 1_Odd72sXTZe" src="https://github.com/user-attachments/assets/6b90feff-2ba1-4053-b787-ab8c8ec3daad" />
+<img width="200" height="150" alt="NotITG-v4 9 1_eTD2xbfxKg" src="https://github.com/user-attachments/assets/5d7798fc-b9f2-47ea-918f-1c8aaf357760" />
 <img width="200" height="150" alt="NotITG-v4 9 1_emRLmGJCsw" src="https://github.com/user-attachments/assets/509b91eb-c5d7-401d-ad51-5069370aafef" />
 <img width="200" height="150" alt="NotITG-v4 9 1_jTjLyQS3jd" src="https://github.com/user-attachments/assets/1b7b3857-42e2-4062-89d1-a8b4d8c7b432" />
 <img width="200" alt="NotITG-v4 9 1_sL99x1X4WB" src="https://github.com/user-attachments/assets/6d3f729b-790c-47a5-bd7f-2b9fc549c636" />
