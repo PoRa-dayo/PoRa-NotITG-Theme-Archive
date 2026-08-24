@@ -1,0 +1,23 @@
+Here are some top "Theme designed for specific modfiles" moments that might need attention while theming:
+
+1. hardcore will never die / 909 (rebane2001) - This file uses a shader called "crack.frag", which somehow shits a bunch of red pixels all over
+the screen if your ScreenStage background has any 3D models in it. And guess what, if you don't have ScreenStage background in your theme files,
+it will use the default one which has a 3D arrow. Luckily, just making your ScreenStage background be 2D or hiding the 3D models after the
+ScreenStage's duration seems to solve the issue.
+
+2. Ripples (DivineElegy's 3rd Annual Gimmick Competition) - The file's main gimmick only works properly when your LifeP1 and LifeP2 at
+ScreenGameplay has zorder,-1. Easy to comply, well unless you use some custom masking effects for your lifebar then r.i.p.
+
+3. SRT9 - Dying Breath of Stokesia (UKSRT9) - There's a section where it directly uses the theme's score and judgment elements as notes. Judgment
+is mostly fine, the problem is the score which a lot of themes like to modify. In order for it to be readable as notes:
+-The score elements should not be hidden and its font must not be blank. You can move it offscreen if necessary, the modfile will alter the X and
+Y coordinates for its own use.
+-The font that the score elements use should not have a Baseline too high or too low, which makes it fail to center in the modfile. Best to set
+it somewhere around 0 to 30.
+Later updates of this modfile will apply a multiplier on the current zoom instead of a flat zoom value, so you don't need to bother with the zoom.
+
+HONORABLE MENTIONS:
+1. Time to beat the odds (NotITG Collabs) - If your ScreenGameplay has any elements that utilize 3D models and masks, you might need to use
+clearzbuffer. Otherwise you might see some noticeable weird effects in this modfile.
+2. Mod Jam Kusoge's lobby, Fourth Genesis' lab, or any modfile that really likes to make changes to your profile - If your theme also makes
+changes to the profile frequently, something like SplatMania's coin system, it might cause an AV when combined with these files.
