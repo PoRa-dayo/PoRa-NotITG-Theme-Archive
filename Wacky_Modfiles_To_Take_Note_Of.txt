@@ -6,7 +6,7 @@ it will use the default one which has a 3D arrow. Luckily, just making your Scre
 ScreenStage's duration seems to solve the issue.
 
 2. Ripples (DivineElegy's 3rd Annual Gimmick Competition) - The file's main gimmick only works properly when your LifeP1 and LifeP2 at
-ScreenGameplay has zorder,-1. Easy to comply, well unless you use some custom masking effects for your lifebar then r.i.p.
+ScreenGameplay has draworder,-1. Easy to comply, well unless you use some custom masking effects for your lifebar then r.i.p.
 
 3. SRT9 - Dying Breath of Stokesia (UKSRT9) - There's a section where it directly uses the theme's score and judgment elements as notes. Judgment
 is mostly fine, the problem is the score which a lot of themes like to modify. In order for it to be readable as notes:

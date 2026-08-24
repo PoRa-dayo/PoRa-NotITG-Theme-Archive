@@ -56,6 +56,12 @@
 		end"
 		/>
         
+        <Layer
+		File="@ThemeFile('dwi2-scoreframe')"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-30;z,-1"
+		OnCommand="%function(self) self:queuecommand('CutCheck') end"
+		CutCheckCommand="%function(self) CutCheck(self) end" />
+        
     <ActorFrame FirstUpdateCommand="%Gameplay" CurrentSongChangedMessageCommand="%GameplayInit" Command="%function(self)
         GameplayInit(self)
         self:stopeffect()

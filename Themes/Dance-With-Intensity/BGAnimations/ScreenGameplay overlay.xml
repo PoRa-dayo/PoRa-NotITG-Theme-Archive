@@ -28,11 +28,6 @@ oh and this approach means I can use accurate fonts too.
 		/>
 
 	<Layer
-		File="@ThemeFile('dwi2-scoreframe')"
-		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-30;z,-1"
-		OnCommand="%function(self) self:queuecommand('CutCheck') end"
-		CutCheckCommand="%function(self) CutCheck(self) end" />
-	<Layer
 		File="@ThemeFile('dwi2-lifeframe')"
 		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+25;z,-1;cropbottom,0.848"
 		OnCommand="%function(self) self:queuecommand('CutCheck') end"
