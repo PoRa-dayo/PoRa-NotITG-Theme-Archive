@@ -384,6 +384,9 @@ function UpdateDiffOfCSong(KeyTitl)
         --if it matches, and there's no information about one of the difficulties, then it's probably a new difficulty
         --that the player unlocked. If that's the case, update the SongDiffs.
         local SonggDiff = BMIIDX14Glob.SongDiffs[KeyTitl]
+        if not SonggDiff then
+            return
+        end
         local DList = GetDiffList(CSong)
         if next(DList) ~= nil then
             for ind,val in pairs(DList) do
