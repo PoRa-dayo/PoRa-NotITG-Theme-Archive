@@ -234,7 +234,7 @@ OITGThemerFallback is a fallback theme that's made to make it easier to port SM3
 <img width="200" height="150" alt="NotITG-v4 9 1_nV1CXnBpCu" src="https://github.com/user-attachments/assets/96dd0d70-1574-4480-b898-58e9e1306d97" />
 
 
-# PRISMRHYTHM 19
+# PRISMRHYTHM 20
 
 A kawaii theme based on the visual novel Prism Rhythm published by Lump of Sugar.\
 This theme already has almost every feature you can ask for, so there are very few things I need to edit. It also has loads of documentation in the metrics that you can use as a reference to make your own theme.
@@ -246,10 +246,11 @@ This theme already has almost every feature you can ask for, so there are very f
 -Placed Dance Mode, Battle Mode and Survival Mode inside Arcade Modes option.\
 -Changed the layering of the BPM number and the player icons during gameplay so they stay hidden in modfiles.\
 -Moved the help text in the Config Keys screen to the top.\
--Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Profile Options (broken in NotITG). Removed Show Caution and Show Instructions options, they don't do anything in this theme and break other themes.\
+-Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Show Caution and Show Instructions options, they don't do anything in this theme and break other themes.\
 -Removed Reset Menu button in Options as it screws up the game real badly. (not so surprising isn't it)\
 -Noteskins now affect players 1-8.\
--Added Hold Judgment and Vocalize customization.\
+-The Hold Tail Font (Hold Judgment) customization is now separate for each player (it was a joint option in the original because of SM3.9's limitation).\
+-M-Mods now use the built-in system for consistency.\
 -F grades now show up in song selection screen.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
