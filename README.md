@@ -256,11 +256,13 @@ This theme already has almost every feature you can ask for, so there are very f
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added offset plot and spellcard viewer in results screen.
 
-<img width="200" height="150" alt="NotITG-v4 9 1_fYdoivIhTT" src="https://github.com/user-attachments/assets/4eb11608-3b2b-4e31-8a99-8fa6aaaaa1a6" />
-<img width="200" height="150" alt="NotITG-v4 9 1_oXfyWZ7KUg" src="https://github.com/user-attachments/assets/9957c377-345c-4fcb-8e87-a04bf5488d72" />
-<img width="200" height="150" alt="NotITG-v4 9 1_g9UbaofFZq" src="https://github.com/user-attachments/assets/74586bce-9d40-4946-b980-ce41527bc132" />
-<img width="200" height="150" alt="NotITG-v4 9 1_W6ivwVRoeT" src="https://github.com/user-attachments/assets/9fcada5c-edc2-4c9d-b406-a7dc334d24e6" />
-<img width="200" height="150" alt="NotITG-v4 9 1_AnneehDTt7" src="https://github.com/user-attachments/assets/b8037208-3117-4324-941b-0229eee88d94" />
+<img width="200" alt="NotITG-v4 9 1_HX8A5azI4T" src="https://github.com/user-attachments/assets/18657a99-3292-49fb-bb96-71d38fe411fa" />
+<img width="200" alt="NotITG-v4 9 1_mBXcHGPU31" src="https://github.com/user-attachments/assets/8b9bb851-e622-4ba0-956f-5fdfdfa54327" />
+<img width="200" alt="NotITG-v4 9 1_4xIrX2x8f4" src="https://github.com/user-attachments/assets/3bde6243-6155-465b-bff7-85c77c4c23a4" />
+<img width="200" alt="NotITG-v4 9 1_uG6TgTJsOM" src="https://github.com/user-attachments/assets/c9627624-84ed-4a1b-b70c-dd7d6d114b3d" />
+<img width="200" alt="NotITG-v4 9 1_UL8yNfsUPn" src="https://github.com/user-attachments/assets/aa31294b-531f-42cf-b68c-82a0c2d39517" />
+
+
 
 # SIMPLY LOVE GOODER (Jose's Unofficial Visual Modification)
 A custom fork of NotITG's Simply Love, with loads of new features.
