@@ -355,7 +355,6 @@ Original theme by LightningXCE and the ITG3 Team, no longer maintained (except f
 -Lowered the max width of the artist display, course titles and course contents in the song/course selection screen.\
 -Increased the spacing between the difficulties and the course entries' titles.\
 -F grades are shown in the song selection screen.\
--Added a length indicator in Marathon mode.\
 -Added modernized noteskin, judgment font, and hold judgment customization.\
 -The theme can now detect what default speedmod (set in Data/GamePrefs.ini) you're using.\
 -Timer-related restrictions are now disabled when Menu Timer is Off.\
