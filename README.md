@@ -249,7 +249,7 @@ This theme already has almost every feature you can ask for, so there are very f
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Show Caution and Show Instructions options, they don't do anything in this theme and break other themes.\
 -Removed Reset Menu button in Options as it screws up the game real badly. (not so surprising isn't it)\
 -Noteskins now affect players 1-8.\
--The Hold Tail Font (Hold Judgment) customization is now separate for each player (it was a joint option in the original because of SM3.9's limitation).\
+-The Tail Judge Font (Hold Judgment) customization is now separate for each player (it was a joint option in the original because of SM3.9's limitation).\
 -M-Mods now use the built-in system for consistency.\
 -F grades now show up in song selection screen.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
