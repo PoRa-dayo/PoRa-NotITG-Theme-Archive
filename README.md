@@ -352,12 +352,12 @@ Original theme by LightningXCE and the ITG3 Team, no longer maintained (except f
 -Added fullscreen/windowed option.\
 -Added the ability to set the resolution alongside the ratio. All ratios except for 4:3, 16:10, 16:9, 3:2 and 5:4 are removed.\
 -Moved the Clean Screen options to Arcade Option.\
--Added step artist display in song selection screen.\
 -Lowered the max width of the artist display, course titles and course contents in the song/course selection screen.\
 -Increased the spacing between the difficulties and the course entries' titles.\
 -F grades are shown in the song selection screen.\
 -Added a length indicator in Marathon mode.\
 -Added modernized noteskin, judgment font, and hold judgment customization.\
+-The theme can now detect what default speedmod (set in Data/GamePrefs.ini) you're using.\
 -Timer-related restrictions are now disabled when Menu Timer is Off.\
 -Fixed the error that happens in the player options menu when the song's BPM is negative.\
 -Most of the gameplay UI is fused with ITG3 Encore's because the UI of the original ITG3 is very unfinished.\
