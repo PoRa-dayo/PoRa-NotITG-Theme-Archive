@@ -395,6 +395,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 -Added roll counter and steps description (step artist) to the pane display.\
 -Added more sort icons.\
 -Added the banner frame and total time counter in course selection screen.\
+-Added back the up/down arrow hints in song/course selection screen.\
 -Above the banner in the song selection screen is now the song title, song subtitle and song artist, instead of just the song artist.\
 -The difficulties on the music wheel are now more like in the original IIDX.\
 -Added group name display and number of songs in the group like the original IIDX.\
