@@ -109,8 +109,6 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 <img width="200" alt="NotITG-v4 9 1_WoxQrrzFi7" src="https://github.com/user-attachments/assets/9397b962-769e-4afa-af9a-d1b037d01111" />
 
 
-
-
 # DANCE WITH INTENSITY
 A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHorse.
 ## Credits:
@@ -345,7 +343,6 @@ Original theme by LightningXCE and the ITG3 Team, no longer maintained (except f
 ## Changelogs:
 -Now falls back on NotITG's fallback theme instead of ITG3's fallback3 theme, though there are barely any differences between the two anyway.\
 -Added "Play Mods" (takes you to 2P Dance immediately). All the other modes except Fitness Mode are now in Arcade Modes.\
--Removed the labels in Records.\
 -Moved Select Theme to the main options screen because it's too important to be in freaking "Custom Song Options".\
 -Moved Map Inputs to the main options screen to make the title screen less cluttery.\
 -Removed Reset To Factory Defaults because it messes up the game real badly.\
