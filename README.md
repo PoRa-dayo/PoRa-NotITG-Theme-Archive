@@ -103,11 +103,10 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 -Added offset plot and spellcard viewer in results screen.
 
 <img width="200" alt="NotITG-v4 9 1_2IUFQ0hoR4" src="https://github.com/user-attachments/assets/2db886d3-1749-44eb-a139-6eea878bcc21" />
-<img width="200" height="150" alt="NotITG-v4 9 1_WEXP4fVbKx" src="https://github.com/user-attachments/assets/be3345b4-037c-4ee0-9865-b69f5daab26f" />
-<img width="200" height="150" alt="NotITG-v4 9 1_v6voTYf2em" src="https://github.com/user-attachments/assets/706c3bda-f26f-4f8b-adf0-24b610bd1f22" />
-<img width="200" height="150" alt="NotITG-v4 9 1_8OMtk3BqCK" src="https://github.com/user-attachments/assets/2a9fb97b-316c-4e47-8764-f35eacc6d315" />
+<img width="200" alt="NotITG-v4 9 1_v6voTYf2em" src="https://github.com/user-attachments/assets/706c3bda-f26f-4f8b-adf0-24b610bd1f22" />
+<img width="200" alt="NotITG-v4 9 1_8OMtk3BqCK" src="https://github.com/user-attachments/assets/2a9fb97b-316c-4e47-8764-f35eacc6d315" />
 <img width="200" alt="NotITG-v4 9 1_b8YQTAUGMN" src="https://github.com/user-attachments/assets/715939e3-547d-4f25-bdac-b81972571795" />
-
+<img width="200" alt="NotITG-v4 9 1_WoxQrrzFi7" src="https://github.com/user-attachments/assets/9397b962-769e-4afa-af9a-d1b037d01111" />
 
 
 # DANCE WITH INTENSITY
@@ -344,7 +343,6 @@ Original theme by LightningXCE and the ITG3 Team, no longer maintained (except f
 ## Changelogs:
 -Now falls back on NotITG's fallback theme instead of ITG3's fallback3 theme, though there are barely any differences between the two anyway.\
 -Added "Play Mods" (takes you to 2P Dance immediately). All the other modes except Fitness Mode are now in Arcade Modes.\
--Removed the labels in Records.\
 -Moved Select Theme to the main options screen because it's too important to be in freaking "Custom Song Options".\
 -Moved Map Inputs to the main options screen to make the title screen less cluttery.\
 -Removed Reset To Factory Defaults because it messes up the game real badly.\
