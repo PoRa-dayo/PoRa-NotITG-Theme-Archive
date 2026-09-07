@@ -230,7 +230,7 @@ function CaptureBPM()
     end
 end
 
---activated in ScreenPlayerOptions overlay and ScreenPlayerOptionsEdit overlay because it has to call AFTER all the elements have been rendered
+--activated via the Frame commands in [ScreenPlayerOptions] in the metrics, that's apparently the safest way to do it
 --gives a OptionTextEle table that contains the BitmapText elements of all the option rows on the options screen
 --and an OptionCursorEle that has the ActorFrames of the cursors
 --and an OptionUnderlineEle that has the Underline sprites
@@ -240,13 +240,15 @@ end
 --btw everything here except for OptionNumIndex absolutely needs to be cleared once you exit the corresponding option menu
 --else the game will crash when accessing those tables as it contains elements that no longer exist,
 --and will either give a "A BitmapText needs a font" error or an AV
-function CaptureOptionRows()
+function CaptureOptionRows(FrameEle)
     ToHoSokuGlob.OptionRows = {}
     ToHoSokuGlob.OptionTextEle = {}
     ToHoSokuGlob.OptionNumIndex = {}
     ToHoSokuGlob.OptionCursorEle = {{},{}}
     ToHoSokuGlob.OptionUnderlineEle = {}
+    if not FrameEle then return end
     local optionInd = 0
+    local optionTotal = 0
     
     local cursorInd = 0
     local cursorFramePn = 1
@@ -255,7 +257,6 @@ function CaptureOptionRows()
     local underlineInd = 0
     local underlineFramePn = 1
     local underlinePn = 1
-    local FrameEle = SCREENMAN:GetTopScreen():GetChild('Frame')
     --holy shit propagate is confusing
     --so FrameEle here has like twenty something children,
     --the first ones each have like 3 grandchildren of their own, while the rest only have 1 grandchild each
@@ -267,6 +268,8 @@ function CaptureOptionRows()
             local OptionRow = self
             --grab that 1 grandchild
             local OptionRowEle = self:GetChild('')
+            --add to the total number of option rows
+            optionTotal = optionTotal+1
             if IsType(OptionRowEle,'ActorFrame') then
                 OptionRowEle:propagate(1)
                 
@@ -328,6 +331,10 @@ function CaptureOptionRows()
                         UnderlineFrame:queuecommand('UnderlineGiveChildren')
                     end
                     
+                    --when all option rows are captured, trigger the PostModCaptureInit function
+                    if optionInd >= optionTotal-1 then
+                        PostModCaptureInit()
+                    end
                 end)
                 
                 OptionRowEle:queuecommand('RowGiveChildren')
