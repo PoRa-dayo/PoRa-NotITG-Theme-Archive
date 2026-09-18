@@ -319,7 +319,11 @@ function CaptureOptionRows(FrameEle)
                         end
                         --for each player, the ActorFrame itself is placed at index 1
                         table.insert(ToHoSokuGlob.OptionUnderlineEle[ModName][underlineFramePn],UnderlineFrame)
-                        underlineFramePn = underlineFramePn == 1 and 2 or 1
+                        if (not GAMESTATE:IsPlayerEnabled(1)) or (not GAMESTATE:IsHumanPlayer(1)) then
+                            underlineFramePn = 1
+                        else
+                            underlineFramePn = underlineFramePn == 1 and 2 or 1
+                        end
                         UnderlineFrame:propagate(1)
                         
                         --for index 2 onwards we place the ActorFrame's children

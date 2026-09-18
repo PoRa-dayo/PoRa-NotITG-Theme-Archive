@@ -4,7 +4,7 @@
 
 --change the text of a BitmapText element on the OptionRow with ModName, and resize the cursor and underline sprites accordingly
 function SetOptionRow(ModName,id,text,pn)
-    if not GAMESTATE:IsPlayerEnabled(pn-1) then return end
+    if (not GAMESTATE:IsPlayerEnabled(pn-1)) or (not GAMESTATE:IsHumanPlayer(pn-1)) then return end
     -- each cursor/underline is seperated into three sprites, which within each actorframe is sorted as such:
     -- center portion, this portion is what needs to be resized in accordance to the text associated with it
     -- left side, this needs to be shifted to the left by half the new width of the center portion

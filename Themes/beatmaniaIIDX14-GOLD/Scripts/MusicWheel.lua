@@ -239,14 +239,15 @@ function UpdateWheelTitles(FirstUpdate)
                 FullTitl = CSong:GetGroupName().." "..GetWheelLongTitle(index)
             end
             
-            --if the title was used before, and the next duplicate of that title actually has a SongDiffs table,
+            --(if the title was used before OR a SongDiffs table of that title does not exist)
+            --AND the next duplicate of that title actually has a SongDiffs table,
             --check that next duplicate (add a number behind the title, and keep increasing that number)
             --do this until an unused title is found
             local KeyTitl = FullTitl
             local SDff = BMIIDX14Glob.SongDiffs
             if UsedTitles[KeyTitl] or (not IsHaveSongDiffOfCurrentMode(SDff[KeyTitl])) then
                 local n = 2
-                while UsedTitles[FullTitl .. n] and IsHaveSongDiffOfCurrentMode(SDff[FullTitl .. n+1]) do
+                while ( UsedTitles[FullTitl .. n] or (not IsHaveSongDiffOfCurrentMode(SDff[FullTitl .. n])) ) and IsHaveSongDiffOfCurrentMode(SDff[FullTitl .. n+1]) do
                     n = n + 1
                 end
                 if IsHaveSongDiffOfCurrentMode(SDff[FullTitl .. n]) then
