@@ -3,12 +3,20 @@
 ---------------------------------------------
 
 --change the text of a BitmapText element on the OptionRow with ModName, and resize the cursor and underline sprites accordingly
+--the id is the index of the element you want to change in ToHoSokuGlob.OptionTextEle[ModName],
+--though if the option row is a slider (ShowAllInRow) then leave id as 'Slider' and it'll automatically pick
 function SetOptionRow(ModName,id,text,pn)
     if (not GAMESTATE:IsPlayerEnabled(pn-1)) or (not GAMESTATE:IsHumanPlayer(pn-1)) then return end
+    if (not GAMESTATE:IsPlayerEnabled(0)) or (not GAMESTATE:IsHumanPlayer(0)) then
+        pn = 1
+    end
+    if id == 'Slider' then
+        id = pn+1
+    end
     -- each cursor/underline is seperated into three sprites, which within each actorframe is sorted as such:
-    -- center portion, this portion is what needs to be resized in accordance to the text associated with it
-    -- left side, this needs to be shifted to the left by half the new width of the center portion
-    -- right side, this needs to be shifted to the right by half the new width of the center portion
+    -- center portion (SpriteTable[pn][2]), this portion is what needs to be resized in accordance to the text associated with it
+    -- left side (SpriteTable[pn][3]), this needs to be shifted to the left by half the new width of the center portion
+    -- right side (SpriteTable[pn][4]), this needs to be shifted to the right by half the new width of the center portion
     -- (in Simply Love this function is called Size, placed inside SetOptionRow)
     local function CursorAndUnderlineSpriteBasedOnTextSize(SpriteTable,txt)
         local z = txt:GetWidth()*txt:GetZoom()
@@ -97,7 +105,7 @@ function SpeedModOption(name)
         modBase[pn+1] = clamp( AddSnap(modBase[pn+1] , dir , cnt , { 5 , 25 , 100 } ) , speedMin , speedMax );
         
         --temporary solution to deal with the BothAtOnce desyncing bug until that gets fixed START
-        if PREFSMAN:GetPreference('InputDuplication') then
+        if PREFSMAN:GetPreference('InputDuplication') and GAMESTATE:IsPlayerEnabled(0) and GAMESTATE:IsHumanPlayer(0) then
             modBase[2] = modBase[1]
         end
         --temporary solution to deal with the BothAtOnce desyncing bug until that gets fixed END
@@ -136,13 +144,13 @@ function SpeedModOption(name)
                 --every time any player changes option, BOTH players' option texts get updated, so SetOptionRow has to be done on both
                 if slider[pn+1][1] == math.mod(i+2,3) then
                     move(pn, 1,slider[pn+1][2])
-                    SetOptionRow(ToHoSokuGlob.SpeedModName,2,DisplaySpeedMod(1),1)
-                    SetOptionRow(ToHoSokuGlob.SpeedModName,3,DisplaySpeedMod(2),2)
+                    SetOptionRow(ToHoSokuGlob.SpeedModName,'Slider',DisplaySpeedMod(1),1)
+                    SetOptionRow(ToHoSokuGlob.SpeedModName,'Slider',DisplaySpeedMod(2),2)
                 end
                 if slider[pn+1][1] == math.mod(i+1,3) then
                     move(pn,-1,slider[pn+1][2])
-                    SetOptionRow(ToHoSokuGlob.SpeedModName,2,DisplaySpeedMod(1),1)
-                    SetOptionRow(ToHoSokuGlob.SpeedModName,3,DisplaySpeedMod(2),2)
+                    SetOptionRow(ToHoSokuGlob.SpeedModName,'Slider',DisplaySpeedMod(1),1)
+                    SetOptionRow(ToHoSokuGlob.SpeedModName,'Slider',DisplaySpeedMod(2),2)
                 end
                 slider[pn+1][1] = math.mod(i,3)
             end
@@ -179,7 +187,7 @@ function SpeedTypeOption()
                 modType[pn+1] = TypeList[modInd]
                 ModTypeAndBaseToModSpeed(pn+1)
                 SetSpeedMod(pn+1)
-                SetOptionRow(ToHoSokuGlob.SpeedModName,pn+2,DisplaySpeedMod(pn+1),pn+1)
+                SetOptionRow(ToHoSokuGlob.SpeedModName,'Slider',DisplaySpeedMod(pn+1),pn+1)
             end
         end
     end
@@ -346,21 +354,19 @@ function InitSpeedMod()
 	modSpeed = {'3.5x','3.5x'}
     modBase = {350,350}
 	for pn=1,2 do
-        if GAMESTATE:IsPlayerEnabled(pn-1) then
-            for i=speedMin,speedMax,speedSpread do
-                if GAMESTATE:PlayerIsUsingModifier(pn-1,'C'..i) then
-                    modType[pn] = 'C';
-                    modBase[pn] = i
-                    modSpeed[pn] = 'C' .. modBase[pn]
-                elseif GAMESTATE:PlayerIsUsingModifier(pn-1,(i/100)..'x') then
-                    modType[pn] = 'x';
-                    modBase[pn] = i
-                    modSpeed[pn] = i/100 .. 'x'
-                elseif GAMESTATE:PlayerIsUsingModifier(pn - 1, 'm' .. i) then
-                    modType[pn] = 'm';
-                    modBase[pn] = i
-                    modSpeed[pn] = 'm' .. modBase[pn]
-                end
+        for i=speedMin,speedMax,speedSpread do
+            if GAMESTATE:PlayerIsUsingModifier(pn-1,'C'..i) then
+                modType[pn] = 'C';
+                modBase[pn] = i
+                modSpeed[pn] = 'C' .. modBase[pn]
+            elseif GAMESTATE:PlayerIsUsingModifier(pn-1,(i/100)..'x') then
+                modType[pn] = 'x';
+                modBase[pn] = i
+                modSpeed[pn] = i/100 .. 'x'
+            elseif GAMESTATE:PlayerIsUsingModifier(pn - 1, 'm' .. i) then
+                modType[pn] = 'm';
+                modBase[pn] = i
+                modSpeed[pn] = 'm' .. modBase[pn]
             end
         end
     end

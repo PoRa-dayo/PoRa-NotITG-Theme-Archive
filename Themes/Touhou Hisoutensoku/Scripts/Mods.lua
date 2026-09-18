@@ -147,7 +147,7 @@ function ApplyRateAdjust()
                 AdjustedSpeed = modType[pn] .. math.ceil(AdjustedSpeed/modRate)
             end
 			ApplyMod(AdjustedSpeed,pn)
-            SetOptionRow(ToHoSokuGlob.SpeedModName,pn+1,DisplaySpeedMod(pn),pn)
+            SetOptionRow(ToHoSokuGlob.SpeedModName,'Slider',DisplaySpeedMod(pn),pn)
 		end
 	end
 end
@@ -319,7 +319,7 @@ function CaptureOptionRows(FrameEle)
                         end
                         --for each player, the ActorFrame itself is placed at index 1
                         table.insert(ToHoSokuGlob.OptionUnderlineEle[ModName][underlineFramePn],UnderlineFrame)
-                        if (not GAMESTATE:IsPlayerEnabled(1)) or (not GAMESTATE:IsHumanPlayer(1)) then
+                        if not (GAMESTATE:IsPlayerEnabled(0) and GAMESTATE:IsHumanPlayer(0) and GAMESTATE:IsPlayerEnabled(1) and GAMESTATE:IsHumanPlayer(1)) then
                             underlineFramePn = 1
                         else
                             underlineFramePn = underlineFramePn == 1 and 2 or 1
@@ -349,7 +349,11 @@ function CaptureOptionRows(FrameEle)
         elseif IsType(self,'ActorFrame') and self:GetNumChildren() == 3 then
             --for each player, the ActorFrame itself is placed at index 1
             table.insert(ToHoSokuGlob.OptionCursorEle[cursorFramePn],self)
-            cursorFramePn = cursorFramePn == 1 and 2 or 1
+            if not (GAMESTATE:IsPlayerEnabled(0) and GAMESTATE:IsHumanPlayer(0) and GAMESTATE:IsPlayerEnabled(1) and GAMESTATE:IsHumanPlayer(1)) then
+                cursorFramePn = 1
+            else
+                cursorFramePn = cursorFramePn == 1 and 2 or 1
+            end
             self:propagate(1)
             
             --for index 2 onwards we place the ActorFrame's children
@@ -374,8 +378,8 @@ end
 
 --what to do right after the capturing above
 function PostModCaptureInit()
-    SetOptionRow(ToHoSokuGlob.SpeedModName,2,DisplaySpeedMod(1),1)
-    SetOptionRow(ToHoSokuGlob.SpeedModName,3,DisplaySpeedMod(2),2)
+    SetOptionRow(ToHoSokuGlob.SpeedModName,'Slider',DisplaySpeedMod(1),1)
+    SetOptionRow(ToHoSokuGlob.SpeedModName,'Slider',DisplaySpeedMod(2),2)
 end
 
 
