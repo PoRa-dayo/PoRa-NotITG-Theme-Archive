@@ -231,11 +231,13 @@ function CaptureBPM()
 end
 
 --activated via the Frame commands in [ScreenPlayerOptions] in the metrics, that's apparently the safest way to do it
---gives a OptionTextEle table that contains the BitmapText elements of all the option rows on the options screen
---and an OptionCursorEle that has the ActorFrames of the cursors
---and an OptionUnderlineEle that has the Underline sprites
+--gives an OptionTextEle table that contains the BitmapText elements of all the option rows on the options screen
+--and an OptionCursorEle table that has the ActorFrames of the cursors
+--and an OptionUnderlineEle table that has the Underline sprites
 --it's basically the same thing as Simply Love's Frame Capture
 --this theme also uses a custom line highlight so no need to capture that here
+--(NOTE: When only Player 2 has joined (and player 1 is absent), the elements in the tables above will be in the position
+--of Player 1)
 
 --btw everything here except for OptionNumIndex absolutely needs to be cleared once you exit the corresponding option menu
 --else the game will crash when accessing those tables as it contains elements that no longer exist,
@@ -299,8 +301,6 @@ function CaptureOptionRows(FrameEle)
                                 bpm[2] = string.gsub(s,'^'..bpm[1]..'%-?','')
                             elseif ModName == 'Speed' then
                                 ToHoSokuGlob.SpeedModName = ModName
-                                bpm[1] = ''
-                                bpm[2] = ''
                             end
                         end
                         --now for each index we have a bunch of BitmapText we can mess with

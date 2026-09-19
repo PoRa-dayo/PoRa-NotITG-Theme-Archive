@@ -5,8 +5,11 @@
 --change the text of a BitmapText element on the OptionRow with ModName, and resize the cursor and underline sprites accordingly
 --the id is the index of the element you want to change in ToHoSokuGlob.OptionTextEle[ModName],
 --though if the option row is a slider (ShowAllInRow) then leave id as 'Slider' and it'll automatically pick
+--pn is the player number, put 1 for PLAYER_1, and 2 for PLAYER_2.
 function SetOptionRow(ModName,id,text,pn)
     if (not GAMESTATE:IsPlayerEnabled(pn-1)) or (not GAMESTATE:IsHumanPlayer(pn-1)) then return end
+    --When only Player 2 has joined (and player 1 is absent), the elements in the tables captured via CaptureOptionRows
+    --will be in the position of Player 1, so do this to account for that
     if (not GAMESTATE:IsPlayerEnabled(0)) or (not GAMESTATE:IsHumanPlayer(0)) then
         pn = 1
     end
