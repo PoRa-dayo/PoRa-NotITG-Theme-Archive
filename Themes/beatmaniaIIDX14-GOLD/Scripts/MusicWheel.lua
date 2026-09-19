@@ -264,14 +264,14 @@ function UpdateWheelTitles(FirstUpdate)
             end
             
             --grab the song's diff table
-            local SonggDiff = BMIIDX14Glob.SongDiffs[KeyTitl]
+            local DifffList = BMIIDX14Glob.SongDiffs[KeyTitl]
             UsedTitles[KeyTitl] = true
 
             
             -- change the Artist to a diff number
-            if SonggDiff and item:GetChildAt(8):GetChild('Artist') ~= '' then
-                local ClosestDiff = GetClosestDiff(SonggDiff, BMIIDX14Glob.CurDiff)
-                BMIIDX14Glob.DiffNumTitles[index] = DiffMeterConvert(SonggDiff[ClosestDiff])
+            if DifffList and item:GetChildAt(8):GetChild('Artist') ~= '' then
+                local ClosestDiff = GetClosestDiff(DifffList, BMIIDX14Glob.CurDiff)
+                BMIIDX14Glob.DiffNumTitles[index] = DiffMeterConvert(DifffList[ClosestDiff])
                 if not ClosestDiff then
                     ClosestDiff = BMIIDX14Glob.CurDiff
                 end
@@ -304,20 +304,19 @@ function CurWheelIndex()
     return returnInd
 end
 
---SonggDiff is the DiffList of a song.
---Get the difficulty slot closest to CDiff if SonggDiff[CDiff] doesn't exist
-function GetClosestDiff(SonggDiff, CDiff)
+--Get the difficulty slot closest to CDiff if DifffList[CDiff] doesn't exist
+function GetClosestDiff(DifffList, CDiff)
     local doub = GAMESTATE:PlayerUsingBothSides()
     --if it's Doubles mode
     if doub then
         CDiff = CDiff + 10
     end
-    if SonggDiff[CDiff] == nil then
+    if DifffList[CDiff] == nil then
         local BestDiff = nil
         local BestDistance = 999
 
         for i = (doub and 10 or 0), (doub and 15 or 5) do
-            if SonggDiff[i] ~= nil then
+            if DifffList[i] ~= nil then
                 local Distance = math.abs(i - CDiff)
 
                 if Distance < BestDistance then
@@ -332,13 +331,13 @@ function GetClosestDiff(SonggDiff, CDiff)
     return CDiff
 end
 
-function IsHaveSongDiffOfCurrentMode(SonggDiff)
-    if not SonggDiff then
+function IsHaveSongDiffOfCurrentMode(DifffList)
+    if not DifffList then
         return false
     end
     local doub = GAMESTATE:PlayerUsingBothSides()
     for i = (doub and 10 or 0), (doub and 15 or 5) do
-        if SonggDiff[i] ~= nil then
+        if DifffList[i] ~= nil then
             return true
         end
     end
@@ -384,14 +383,14 @@ function UpdateDiffOfCSong(KeyTitl)
     if CSong then
         --if it matches, and there's no information about one of the difficulties, then it's probably a new difficulty
         --that the player unlocked. If that's the case, update the SongDiffs.
-        local SonggDiff = BMIIDX14Glob.SongDiffs[KeyTitl]
-        if not SonggDiff then
+        local DifffList = BMIIDX14Glob.SongDiffs[KeyTitl]
+        if not DifffList then
             return
         end
         local DList = GetDiffList(CSong)
         if next(DList) ~= nil then
             for ind,val in pairs(DList) do
-                if DList[ind] and (not SonggDiff[ind]) then
+                if DList[ind] and (not DifffList[ind]) then
                     BMIIDX14Glob.SongDiffs[KeyTitl][ind] = DList[ind]
                 end
             end
