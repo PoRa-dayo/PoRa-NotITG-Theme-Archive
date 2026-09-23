@@ -9,7 +9,7 @@ import os
 INPUT_FILE = "BGAnimation.ini"
 
 # Output file
-OUTPUT_FILE = "BGAnimation.ini"
+OUTPUT_FILE = "default.xml"
 
 # ------------------------------------------------------------------
 # Helper functions
