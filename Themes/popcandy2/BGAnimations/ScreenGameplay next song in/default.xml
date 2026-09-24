@@ -1,0 +1,68 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,3"
+    />
+
+    <Layer
+        File="songbackground"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c0u.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(112-240);sleep,2.7;linear,0.2;addy,-224"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c0d.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(368-240);sleep,2.7;linear,0.2;addy,224"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c1u.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(92-240);sleep,2.7;bounceend,0.3;addy,-184"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c1d.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(388-240);sleep,2.7;bounceend,0.3;addy,184"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c3u.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(32-240);sleep,2.7;bounceend,0.3;addy,-64"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c3d.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(448-240);sleep,2.7;bounceend,0.3;addy,64"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c2u.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(128-240);sleep,2.7;linear,0.3;zoomy,0;addx,-640"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c2d.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(352-240);sleep,2.7;linear,0.3;zoomy,0;addx,640"
+    />
+
+    <Layer
+        File="../stagetemp/box.model"
+        Command="effectmagnitude,0,100,0;x,SCREEN_CENTER_X+(184-320);y,SCREEN_CENTER_Y;z,16;linear,2.7;rotationy,-720;linear,0.3;zoom,0"
+    />
+
+    <Layer
+        File="../stagetemp/box.model"
+        Command="effectmagnitude,0,100,0;x,SCREEN_CENTER_X+(456-320);y,SCREEN_CENTER_Y;z,16;linear,2.7;rotationy,-720;linear,0.3;zoom,0"
+    />
+
+    <Layer
+        File="songbanner"
+        Command="sleep,2.7;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,18 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,10"
+    />
+
+    <Layer
+        File="back.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,2.9;diffuse,0,0,0,1"
+    />
+
+    <Layer
+        File="birdsprite.png"
+        Command="diffusealpha,0.5;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;z,0;decelerate,2.4;rotationy,45;linear,10;z,150"
+    />
+
+</children></ActorFrame>

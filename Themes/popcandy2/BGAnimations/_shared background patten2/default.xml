@@ -1,0 +1,48 @@
+<ActorFrame><children>
+
+    <Layer
+        File="back1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+    />
+
+    <Layer
+        File="back3.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y+(420-240),1024,32;diffuse,0.8,1.0,0.8,1;customtexturerect,0,0,8,1;texcoordvelocity,0.2,0"
+    />
+
+    <Layer
+        File="back3.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y+(60-240),1024,32;diffuse,0.8,1.0,0.8,1;customtexturerect,0,0,8,1;texcoordvelocity,-0.2,0"
+    />
+
+    <Layer
+        File="back8.png"
+        Command="zoom,1.5;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);spin;effectmagnitude,0,0,50"
+    />
+
+    <Layer
+        File="back7.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);spin;effectmagnitude,0,0,-5"
+    />
+
+    <Layer
+        File="back6.png"
+        Command="diffuse,0.6,0.6,0.6,1;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);spin;effectmagnitude,0,0,10"
+    />
+
+    <Layer
+        File="back6.png"
+        Command="zoom,1.49;diffuse,0.8,0.8,0.8,1;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);spin;effectmagnitude,0,0,-20"
+    />
+
+    <Layer
+        File="back6.png"
+        Command="zoom,2.2;diffuse,1.2,1.2,1.2,1;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);spin;effectmagnitude,0,0,40"
+    />
+
+    <Layer
+        File="../_popcandymodel/popcandy_none.model"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);zoom,8.0;spin;effectmagnitude,0,-50,0"
+    />
+
+</children></ActorFrame>

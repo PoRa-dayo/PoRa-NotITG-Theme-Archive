@@ -1,0 +1,16 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,0.5"
+    />
+
+    <Layer
+        File="../_shared background patten2"
+    />
+
+    <Layer
+        File="../_fade in"
+    />
+
+</children></ActorFrame>

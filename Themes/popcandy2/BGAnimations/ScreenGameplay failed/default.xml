@@ -1,0 +1,43 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,6"
+    />
+
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.2;diffusealpha,1"
+    />
+
+    <Layer
+        File="failed1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(132-240);addy,-240;linear,0.2;addy,240;vibrate;effectmagnitude,4,8,8;sleep,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="failed1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(132-240);diffusealpha,0;sleep,0.7;diffusealpha,1"
+    />
+
+    <Layer
+        File="failed2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(348-240);addy,240;linear,0.2;addy,-240;vibrate;effectmagnitude,4,8,8;sleep,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="failed2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(348-240);diffusealpha,0;sleep,0.7;diffusealpha,1"
+    />
+
+    <Layer
+        File="../star.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffuse,0,0,0,0;sleep,4;diffuse,0,0,0,1;zoom,0;rotationz,0;linear,0.3;rotationz,-1000;zoom,3"
+    />
+
+    <Layer
+        File="failed3.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2;linear,2;diffusealpha,1;sleep,1;linear,0.5;diffusealpha,0"
+    />
+
+</children></ActorFrame>

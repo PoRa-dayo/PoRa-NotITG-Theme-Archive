@@ -1,0 +1,23 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,1.5"
+    />
+
+    <Layer
+        File="go.png"
+        Command="rotationx,90;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(240-240);diffusealpha,0;linear,0.3;diffusealpha,.5;rotationx,0;sleep,0.9;linear,0.3;diffusealpha,0;rotationx,90"
+    />
+
+    <Layer
+        File="go.png"
+        Command="rotationx,90;rotationz,90;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(140-240);diffusealpha,0;linear,0.3;diffusealpha,.5;rotationz,0;rotationx,0;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);sleep,0.9;linear,0.3;diffusealpha,0;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(140-240);rotationx,90;rotationz,-90"
+    />
+
+    <Layer
+        File="go.png"
+        Command="rotationx,-90;rotationz,90;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(340-240);diffusealpha,0;linear,0.3;diffusealpha,.5;rotationz,0;rotationx,0;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);sleep,0.9;linear,0.3;diffusealpha,0;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(340-240);rotationx,-90;rotationz,-90"
+    />
+
+</children></ActorFrame>

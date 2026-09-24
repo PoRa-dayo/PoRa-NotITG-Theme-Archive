@@ -1,0 +1,17 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../black.png"
+    />
+
+    <Layer
+        File="danger2.png"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffuse,1,1,1,0.0;diffuseblink"
+    />
+
+    <Layer
+        File="danger1.png"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;vibrate;effectmagnitude,4,8,8"
+    />
+
+</children></ActorFrame>

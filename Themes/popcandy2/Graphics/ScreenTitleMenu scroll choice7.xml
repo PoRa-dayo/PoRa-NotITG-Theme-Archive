@@ -1,0 +1,11 @@
+<ActorFrame><children>
+	<BitmapText
+		Text="EXIT"
+		File="_shared1"
+		OnCommand="ShadowLength,1;horizalign,left"
+		GainFocusCommand="StopTweening;DiffuseShift;EffectPeriod,0.5;EffectColor1,0.5,1,0.5,1;EffectColor2,0.25,0.5,0.25,1;Linear,0.3;Zoom,0.6"
+		LoseFocusCommand="StopTweening;StopEffect;Linear,0.3;Zoom,0.5"
+		EnabledCommand=""
+		DisabledCommand="Diffuse,0.5,0.5,0.5,1"
+	/>
+</children></ActorFrame>

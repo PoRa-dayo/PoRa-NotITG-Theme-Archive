@@ -1,0 +1,69 @@
+<ActorFrame><children>
+    <Layer
+        File="../_shared background patten2"
+    />
+	<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"><children>
+		<!-- This will be the good chunk, as the Bg characters are loaded depending on the best grade. -->
+        <Layer File="AAAA_bg.png" Condition="STATSMAN:GetBestGrade() <= 1" />
+		<Layer File="AAA_bg.png" Condition="STATSMAN:GetBestGrade() <= 6 and STATSMAN:GetBestGrade() > 1" />
+        <Layer
+            File="AAA.png"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(375-240)"
+            Condition="STATSMAN:GetBestGrade() <= 6"
+        />
+		<Layer File="AA_bg.png"  Condition="STATSMAN:GetBestGrade() <= 8 and STATSMAN:GetBestGrade() > 6"  />
+        <Layer
+            File="AA.png"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(375-240)"
+            Condition="STATSMAN:GetBestGrade() <= 8 and STATSMAN:GetBestGrade() > 6"
+        />
+		<Layer File="A_bg.png"   Condition="STATSMAN:GetBestGrade() <= 10 and STATSMAN:GetBestGrade() > 8"   />
+        <Layer
+            File="A.png"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(375-240)"
+            Condition="STATSMAN:GetBestGrade() <= 10 and STATSMAN:GetBestGrade() > 8"
+        />
+		<Layer File="B_bg.png"   Condition="STATSMAN:GetBestGrade() <= 12 and STATSMAN:GetBestGrade() > 10"   />
+        <Layer
+            File="B.png"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(375-240)"
+            Condition="STATSMAN:GetBestGrade() <= 12 and STATSMAN:GetBestGrade() > 10"
+        />
+		<Layer File="C_bg.png"   Condition="STATSMAN:GetBestGrade() <= 14 and STATSMAN:GetBestGrade() > 12"   />
+        <Layer
+            File="C.png"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(375-240)"
+            Condition="STATSMAN:GetBestGrade() <= 14 and STATSMAN:GetBestGrade() > 12"
+        />
+		<Layer File="D_bg.png"   Condition="STATSMAN:GetBestGrade() >= 15 and STATSMAN:GetBestGrade() < 20"   />
+        <Layer File="D_bg.png"   Condition="STATSMAN:GetBestGrade() >= 20"   />
+        <Layer
+            File="D.png"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(375-240)"
+            Condition="STATSMAN:GetBestGrade() >= 15"
+        />
+	</children></Layer>
+    
+    <!--song title-->
+    <Layer
+        Font="_shared1"
+        Text="Song"
+        OnCommand="%function(self)
+            self:diffusealpha(0)
+            SongTitle(self)
+            self:zoom(0.5)
+            self:x(SCREEN_CENTER_X)
+            self:y(SCREEN_CENTER_Y+(368-240)+40)
+            self:shadowlength(0)
+            self:accelerate(0.5)
+            self:diffusealpha(1)
+        end"
+        OffCommand="accelerate,0.25;diffusealpha,0"
+    />
+    
+    --A fade in
+    <Layer
+        File="../star.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffuse,0,0,0,1;zoom,3;rotationz,0;linear,0.3;rotationz,-1000;zoom,0"
+    />
+</children></ActorFrame>

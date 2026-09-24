@@ -1,0 +1,28 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,16"
+    />
+
+    <Layer
+        File="white.png"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT"
+    />
+
+    <Layer
+        File="logo1.png"
+        Command="diffusealpha,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,1;linear,0.5;diffusealpha,1;sleep,4;linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="logo2.png"
+        Command="diffusealpha,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,6;linear,0.5;diffusealpha,1;sleep,4;linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="logo3.png"
+        Command="diffusealpha,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,11;linear,0.5;diffusealpha,1;sleep,4;linear,0.5;diffusealpha,0"
+    />
+
+</children></ActorFrame>

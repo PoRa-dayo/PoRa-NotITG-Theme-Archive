@@ -1,0 +1,12 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,1.5"
+    />
+
+    <Layer
+        File="../_fade out normal"
+    />
+
+</children></ActorFrame>

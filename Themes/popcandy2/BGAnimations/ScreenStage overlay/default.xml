@@ -1,0 +1,78 @@
+<ActorFrame><children>
+
+    <Layer
+        File="ScreenStage1"
+        Condition="GetStageText() == '1'"
+    />
+
+    <Layer
+        File="ScreenStage2"
+        Condition="GetStageText() == '2'"
+    />
+
+    <Layer
+        File="ScreenStage3"
+        Condition="GetStageText() == '3'"
+    />
+
+    <Layer
+        File="ScreenStage4"
+        Condition="GetStageText() == '4'"
+    />
+
+    <Layer
+        File="ScreenStage5"
+        Condition="GetStageText() == '5'"
+    />
+
+    <Layer
+        File="ScreenStage6"
+        Condition="GetStageText() == '6'"
+    />
+
+    <Layer
+        File="ScreenStageFinal"
+        Condition="GetStageText() == 'final'"
+    />
+
+    <Layer
+        File="ScreenStageExtra1"
+        Condition="GetStageText() == 'extra1'"
+    />
+
+    <Layer
+        File="ScreenStageExtra2"
+        Condition="GetStageText() == 'extra2'"
+    />
+
+    <Layer
+        File="ScreenStageEvent"
+        Condition="GetStageText() == 'event'"
+    />
+
+    <Layer
+        File="ScreenStageNonstop"
+        Condition="GetStageText() == 'nonstop'"
+    />
+
+    <Layer
+        File="ScreenStageOni"
+        Condition="GetStageText() == 'oni'"
+    />
+
+    <Layer
+        File="ScreenStageEndless"
+        Condition="GetStageText() == 'endless'"
+    />
+    
+    --FOR OFFSET PLOT AND ITS LIFE GRAPH
+	<Layer Type="Quad"
+		OnCommand="%function(self)
+			BX_SaltyResets = 0
+			BX_SaltyResetPos = {}
+		end"
+	/>
+    
+    <ActorFrame Command="%ApplyNoteskin"/>
+
+</children></ActorFrame>

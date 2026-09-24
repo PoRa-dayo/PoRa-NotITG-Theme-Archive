@@ -1,0 +1,64 @@
+<ActorFrame><children>
+
+    <Layer
+        File="back1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+    />
+
+    <!-- Tiles cannot be converted via this script. Please manually convert using customtexturerect and texcoordvelocity, and making sure that the source image's dimensions are powers of 2. -->
+    <Layer
+        TilesStartY="420"
+        TilesSpacingY="700"
+        TileVelocityX="-30"
+        File="back3.png"
+    />
+
+    <!-- Tiles cannot be converted via this script. Please manually convert using customtexturerect and texcoordvelocity, and making sure that the source image's dimensions are powers of 2. -->
+    <Layer
+        TilesStartY="60"
+        TilesSpacingY="700"
+        TileVelocityX="30"
+        File="back3.png"
+    />
+
+    <Layer
+        File="back2.png"
+        Command="x,SCREEN_CENTER_X+(0-320);y,SCREEN_CENTER_Y+(0-240);spin;effectmagnitude,0,0,-40"
+    />
+
+    <Layer
+        File="back2.png"
+        Command="x,SCREEN_CENTER_X+(640-320);y,SCREEN_CENTER_Y+(480-240);spin;effectmagnitude,0,0,-40"
+    />
+
+    <Layer
+        File="back5.png"
+        Command="zoom,1.25;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);spin;effectmagnitude,0,0,-5"
+    />
+
+    <Layer
+        File="../_popcandymodel/popcandy_green.model"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);zoom,8.0;spin;effectmagnitude,0,75,0"
+    />
+
+    <Layer
+        File="../_object1model/object1_green.model"
+        Command="x,SCREEN_CENTER_X+(64-320);y,SCREEN_CENTER_Y+(64-240);zoom,4.0;spin;effectmagnitude,-75,0,-75"
+    />
+
+    <Layer
+        File="../_object1model/object1_green.model"
+        Command="x,SCREEN_CENTER_X+(576-320);y,SCREEN_CENTER_Y+(416-240);zoom,4.0;spin;effectmagnitude,75,0,75"
+    />
+
+    <Layer
+        File="../_object1model/object1_green.model"
+        Command="x,SCREEN_CENTER_X+(64-320);y,SCREEN_CENTER_Y+(416-240);zoom,4.0;spin;effectmagnitude,-75,0,75"
+    />
+
+    <Layer
+        File="../_object1model/object1_green.model"
+        Command="x,SCREEN_CENTER_X+(576-320);y,SCREEN_CENTER_Y+(64-240);zoom,4.0;spin;effectmagnitude,75,0,-75"
+    />
+
+</children></ActorFrame>

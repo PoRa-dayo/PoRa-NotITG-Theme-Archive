@@ -1,0 +1,127 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,0.5"
+    />
+
+    <Layer
+        File="back.avi"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,1"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage 2.png"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,2048,1024;customtexturerect,0,0,2,1;texcoordvelocity,-0.06,0;diffusealpha,0.5"
+        Condition="GAMESTATE:StageIndex() == 1"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage 3.png"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,2048,1024;customtexturerect,0,0,2,1;texcoordvelocity,-0.06,0;diffusealpha,0.5"
+        Condition="GAMESTATE:StageIndex() == 2"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage 4.png"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,2048,1024;customtexturerect,0,0,2,1;texcoordvelocity,-0.06,0;diffusealpha,0.5"
+        Condition="GAMESTATE:StageIndex() == 3"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage 5.png"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,2048,1024;customtexturerect,0,0,2,1;texcoordvelocity,-0.06,0;diffusealpha,0.5"
+        Condition="GAMESTATE:StageIndex() == 4"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage 6.png"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,2048,1024;customtexturerect,0,0,2,1;texcoordvelocity,-0.06,0;diffusealpha,0.5"
+        Condition="GAMESTATE:StageIndex() == 5"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage final.png"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,2048,1024;customtexturerect,0,0,2,1;texcoordvelocity,-0.06,0;diffusealpha,0.5"
+        Condition="GAMESTATE:StageIndex() == 6"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage final.png"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,2048,1024;customtexturerect,0,0,2,1;texcoordvelocity,-0.06,0;diffusealpha,0.5"
+        Condition="GAMESTATE:StageIndex() >= 7"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage event.png"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,2048,1024;customtexturerect,0,0,2,1;texcoordvelocity,-0.06,0;diffusealpha,0.5"
+        Condition="GAMESTATE:StageIndex() == 0"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage extra1.png"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,2048,1024;customtexturerect,0,0,2,1;texcoordvelocity,-0.12,0;diffusealpha,0.5"
+        Condition="IsExtraStage() and PlayModeName() == 'Regular'"
+    />
+
+    <Layer
+        File="../_popcandymodel/popcandy_green.model"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(350-240);zoom,4.0;spin;effectmagnitude,0,75,0"
+        Condition="IsExtraStage() == false and IsExtraStage2() == false and GAMESTATE:StageIndex() == 0 and PlayModeName() == 'Regular'"
+    />
+
+    <Layer
+        File="../_popcandymodel/popcandy_blue.model"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(350-240);zoom,4.0;spin;effectmagnitude,0,75,0"
+        Condition="IsExtraStage() == false and IsExtraStage2() == false and GAMESTATE:StageIndex() == 1 and PlayModeName() == 'Regular'"
+    />
+
+    <Layer
+        File="../_popcandymodel/popcandy_pink.model"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(350-240);zoom,4.0;spin;effectmagnitude,0,75,0"
+        Condition="IsExtraStage() == false and IsExtraStage2() == false and GAMESTATE:StageIndex() == 2 and PlayModeName() == 'Regular'"
+    />
+
+    <Layer
+        File="../_popcandymodel/popcandy_orange.model"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(350-240);zoom,4.0;spin;effectmagnitude,0,75,0"
+        Condition="IsExtraStage() == false and IsExtraStage2() == false and GAMESTATE:StageIndex() == 3 and PlayModeName() == 'Regular'"
+    />
+
+    <Layer
+        File="../_popcandymodel/popcandy_red.model"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(350-240);zoom,4.0;spin;effectmagnitude,0,300,0"
+        Condition="IsExtraStage() == true and IsExtraStage2() == false and PlayModeName() == 'Regular'"
+    />
+
+    <Layer
+        File="../_popcandymodel/popcandy_red.model"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(350-240);zoom,4.0;spin;effectmagnitude,100,300,50"
+        Condition="IsExtraStage2() == true and IsExtraStage() == false and PlayModeName() == 'Regular'"
+    />
+
+    <Layer
+        File="../_popcandymodel/popcandy_yellow.model"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(350-240);zoom,4.0;spin;effectmagnitude,0,75,0"
+        Condition="IsExtraStage() == false and IsExtraStage2() == false and GAMESTATE:StageIndex() == 4 and PlayModeName() == 'Regular'"
+    />
+
+    <Layer
+        File="../_popcandymodel/popcandy_purple.model"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(350-240);zoom,4.0;spin;effectmagnitude,0,75,0"
+        Condition="IsExtraStage() == false and IsExtraStage2() == false and GAMESTATE:StageIndex() == 5 and PlayModeName() == 'Regular'"
+    />
+
+    <Layer
+        File="../_popcandymodel/popcandy_lightblue.model"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(350-240);zoom,4.0;spin;effectmagnitude,0,75,0"
+        Condition="IsExtraStage() == false and IsExtraStage2() == false and GAMESTATE:StageIndex() == 6 and PlayModeName() == 'Regular'"
+    />
+
+    <Layer
+        File="../_popcandymodel/popcandy_green.model"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(350-240);zoom,4.0;spin;effectmagnitude,0,75,0"
+        Condition="IsExtraStage() == false and IsExtraStage2() == false and GAMESTATE:StageIndex() >= 7 and PlayModeName() == 'Regular'"
+    />
+
+</children></ActorFrame>

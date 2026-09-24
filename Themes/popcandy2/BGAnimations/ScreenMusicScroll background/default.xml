@@ -1,0 +1,28 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,20"
+    />
+
+    <Layer
+        File="back1.png"
+        OnCommand="xywh,0,0,2048,2048;customtexturerect,0,0,8,8;texcoordvelocity,-0.1,-0.1"
+    />
+
+    <Layer
+        File="../star.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);spin;diffuse,1.0,0.9,0.9,1;effectmagnitude,0,0,-5"
+    />
+
+    <Layer
+        File="back2.png"
+        Command="x,SCREEN_CENTER_X+(500-320);y,SCREEN_CENTER_Y+(420-240);bob;effectmagnitude,0,20,0"
+    />
+
+    <Layer
+        File="../../Graphics/ScreenLogo dance (dither).png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;spin;effectmagnitude,0,125,0"
+    />
+
+</children></ActorFrame>

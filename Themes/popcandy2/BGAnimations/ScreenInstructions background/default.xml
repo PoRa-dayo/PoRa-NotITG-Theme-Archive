@@ -1,0 +1,68 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,0.5"
+    />
+
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240)"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_0u.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(112-240)"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_0d.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(368-240)"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_1u.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(92-240)"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_1d.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(388-240)"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_3u.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(32-240)"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_3d.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(448-240)"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_2u.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(128-240)"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_2d.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(352-240)"
+    />
+
+    <Layer
+        File="../stagetemp/box.model"
+        Command="effectmagnitude,0,100,0;x,SCREEN_CENTER_X+(184-320);y,SCREEN_CENTER_Y+(240-240);z,16"
+    />
+
+    <Layer
+        File="../stagetemp/box.model"
+        Command="effectmagnitude,0,100,0;x,SCREEN_CENTER_X+(456-320);y,SCREEN_CENTER_Y+(240-240);z,16"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_4c.png"
+        Command="rainbow;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240)"
+    />
+
+</children></ActorFrame>

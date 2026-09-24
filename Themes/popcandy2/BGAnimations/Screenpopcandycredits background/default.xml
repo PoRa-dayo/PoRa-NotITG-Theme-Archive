@@ -1,0 +1,172 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,70"
+    />
+
+    <Layer
+        File="ending.avi"
+    />
+
+    <Layer
+        File="01.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(-100-240);sleep,2;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="02.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(200-320);y,SCREEN_CENTER_Y+(-100-240);sleep,4;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="03.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(-100-240);sleep,6;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="04.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(230-320);y,SCREEN_CENTER_Y+(-100-240);sleep,8;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="05.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(160-320);y,SCREEN_CENTER_Y+(-100-240);sleep,10;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="06.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(64-320);y,SCREEN_CENTER_Y+(-100-240);sleep,12;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="07.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(300-320);y,SCREEN_CENTER_Y+(-100-240);sleep,14;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="08.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(220-320);y,SCREEN_CENTER_Y+(-100-240);sleep,16;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="09.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(-100-240);sleep,18;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="10.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(150-320);y,SCREEN_CENTER_Y+(-100-240);sleep,20;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="11.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(250-320);y,SCREEN_CENTER_Y+(-100-240);sleep,22;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="12.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(200-320);y,SCREEN_CENTER_Y+(-100-240);sleep,24;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="13.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(-100-240);sleep,26;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="14.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(230-320);y,SCREEN_CENTER_Y+(-100-240);sleep,28;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="15.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(160-320);y,SCREEN_CENTER_Y+(-100-240);sleep,30;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="16.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(64-320);y,SCREEN_CENTER_Y+(-100-240);sleep,32;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="17.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(300-320);y,SCREEN_CENTER_Y+(-100-240);sleep,34;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="18.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(220-320);y,SCREEN_CENTER_Y+(-100-240);sleep,36;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="19.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(-100-240);sleep,38;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="20.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(150-320);y,SCREEN_CENTER_Y+(-100-240);sleep,40;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="21.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(150-320);y,SCREEN_CENTER_Y+(-100-240);sleep,42;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="22.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(200-320);y,SCREEN_CENTER_Y+(-100-240);sleep,44;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="23.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(-100-240);sleep,46;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="24.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(230-320);y,SCREEN_CENTER_Y+(-100-240);sleep,48;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="25.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(160-320);y,SCREEN_CENTER_Y+(-100-240);sleep,50;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="26.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(64-320);y,SCREEN_CENTER_Y+(-100-240);sleep,52;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="27.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(300-320);y,SCREEN_CENTER_Y+(-100-240);sleep,54;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="28.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(220-320);y,SCREEN_CENTER_Y+(-100-240);sleep,56;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="29.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(-100-240);sleep,58;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="30.png"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(150-320);y,SCREEN_CENTER_Y+(-100-240);sleep,60;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+    />
+
+    <Layer
+        File="credit.png"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(1300-240);sleep,2;linear,60;addy,-2100;sleep,1;diffusealpha,0"
+    />
+
+    <Layer
+        File="end.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0.0;sleep,60;linear,3.5;diffusealpha,1.0"
+    />
+
+</children></ActorFrame>

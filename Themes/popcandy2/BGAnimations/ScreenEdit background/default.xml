@@ -1,0 +1,8 @@
+<ActorFrame><children>
+
+    <Layer
+        File="background.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT"
+    />
+
+</children></ActorFrame>

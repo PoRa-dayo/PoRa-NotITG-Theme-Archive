@@ -1,0 +1,20 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,1"
+    />
+
+    --A fade in
+    <Layer
+        File="../star.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,10;rotationz,0;linear,1;rotationz,-1280;zoom,0"
+    />
+
+    --Invisible.  "Ready" was here.
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0"
+    />
+
+</children></ActorFrame>

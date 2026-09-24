@@ -1,0 +1,38 @@
+<ActorFrame><children>
+
+    <Layer
+        File="..\_shared background\back1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+    />
+    
+    <Layer
+        File="..\_shared background\back3.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y+(420-240),1024,32;diffuse,0.8,1.0,0.8,1;customtexturerect,0,0,8,1;texcoordvelocity,0.2,0"
+    />
+
+    <Layer
+        File="..\_shared background\back3.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y+(60-240),1024,32;diffuse,0.8,1.0,0.8,1;customtexturerect,0,0,8,1;texcoordvelocity,-0.2,0"
+    />
+
+    <Layer
+        File="..\_shared background\back2.png"
+        Command="x,SCREEN_CENTER_X+(0-320);y,SCREEN_CENTER_Y+(0-240);spin;effectmagnitude,0,0,-40"
+    />
+
+    <Layer
+        File="..\_shared background\back2.png"
+        Command="x,SCREEN_CENTER_X+(640-320);y,SCREEN_CENTER_Y+(480-240);spin;effectmagnitude,0,0,-40"
+    />
+
+    <Layer
+        File="..\_shared background\back5.png"
+        Command="zoom,1.25;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;spin;effectmagnitude,0,0,-5"
+    />
+
+    <Layer
+        File="..\_panel_texture\versus.model"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;spin;effectmagnitude,90,0,90;zoom,5"
+    />
+
+</children></ActorFrame>

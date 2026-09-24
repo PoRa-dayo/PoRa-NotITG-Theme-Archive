@@ -1,0 +1,27 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,0.5"
+    />
+
+    <Layer
+        File="../_shared background patten2"
+    />
+    
+    <Layer
+        File="back1.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,2048,2048;customtexturerect,0,0,8,8;texcoordvelocity,0,0.2;diffusealpha,0.9"
+    />
+
+    <Layer
+        File="rank1.png"
+        Command="x,SCREEN_CENTER_X+(512-320);y,SCREEN_CENTER_Y+(92-240);bob;effectmagnitude,0,5,0"
+    />
+
+    <Layer
+        File="rank2.png"
+        Command="x,SCREEN_CENTER_X+(92-320);y,SCREEN_CENTER_Y+(420-240);bob;effectmagnitude,0,5,0"
+    />
+
+</children></ActorFrame>

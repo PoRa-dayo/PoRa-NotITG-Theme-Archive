@@ -1,0 +1,68 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,0.3"
+    />
+
+    <Layer
+        File="../_black.png"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;linear,0.3;diffusealpha,1"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_0u.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(112-240);addy,-224;linear,0.2;addy,224"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_0d.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(368-240);addy,224;linear,0.2;addy,-224"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_1u.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(92-240);addy,-184;bounceend,0.3;addy,184"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_1d.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(388-240);addy,184;bounceend,0.3;addy,-184"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_3u.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(32-240);addy,-64;bounceend,0.3;addy,64"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_3d.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(448-240);addy,64;bounceend,0.3;addy,-64"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_2u.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(128-240);addx,-640;zoomy,0;linear,0.2;zoomy,1;addx,640"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_2d.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(352-240);addx,640;zoomy,0;linear,0.2;zoomy,1;addx,-640"
+    />
+
+    <Layer
+        File="../stagetemp/box.model"
+        Command="effectmagnitude,0,100,0;x,SCREEN_CENTER_X+(184-320);y,SCREEN_CENTER_Y+(240-240);z,16;rotationy,-360;zoom,0;linear,0.2;zoom,1;rotationy,0"
+    />
+
+    <Layer
+        File="../stagetemp/box.model"
+        Command="effectmagnitude,0,100,0;x,SCREEN_CENTER_X+(456-320);y,SCREEN_CENTER_Y+(240-240);z,16;rotationy,-360;zoom,0;linear,0.2;zoom,1;rotationy,0"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_4c.png"
+        Command="rainbow;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);diffusealpha,0;linear,0.2;diffusealpha,1"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,48 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,3"
+    />
+
+    <Layer
+        File="songbackground"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240)"
+    />
+
+    <Layer
+        File="../../_black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,30;zoomy,20.0;diffusealpha,1;linear,0.3;zoomy,5.0;diffusealpha,0.25;sleep,2.4;linear,0.3;zoomy,0"
+    />
+
+    <Layer
+        File="../../_starmodel/star_yellow.model"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);zoom,8.0;decelerate,2.4;rotationy,720;linear,0.3;zoom,0"
+    />
+
+    <Layer
+        File="../../stagetemp/stageframe2.png"
+        Command="diffuse,0.8,0.8,1.0,1;y,SCREEN_CENTER_Y+(240-240);x,SCREEN_CENTER_X+(76-320);diffusealpha,0;linear,0.3;diffusealpha,1;sleep,2.4;linear,0.3;zoomx,0"
+    />
+
+    <Layer
+        File="../../stagetemp/stageframe2.png"
+        Command="diffuse,0.8,0.8,1.0,1;x,SCREEN_CENTER_X+(564-320);y,SCREEN_CENTER_Y+(240-240);diffusealpha,0;linear,0.3;diffusealpha,1;sleep,2.4;linear,0.3;zoomx,0"
+    />
+
+    <Layer
+        File="num.png"
+        Command="diffuse,0.8,0.8,1.0,1;zoom,0;spin;y,SCREEN_CENTER_Y+(240-240);x,SCREEN_CENTER_X+(76-320);diffusealpha,0;linear,0.3;zoom,0.8;diffusealpha,1;linear,2.4;rotationz,-360;linear,0.3;zoomx,0"
+    />
+
+    <Layer
+        File="num.png"
+        Command="diffuse,0.8,0.8,1.0,1;zoom,0;spin;x,SCREEN_CENTER_X+(564-320);y,SCREEN_CENTER_Y+(240-240);diffusealpha,0;linear,0.3;zoom,0.8;diffusealpha,1;linear,2.4;rotationz,-360;linear,0.3;zoomx,0"
+    />
+
+    <Layer
+        File="stage.png"
+        Command="ShadowLength,5;diffuse,1.0,0.8,0.5,1;y,SCREEN_CENTER_Y+(240-240);x,SCREEN_CENTER_X+(320-320);diffusealpha,0;linear,0.3;diffusealpha,1;sleep,2.4;linear,0.3;zoomy,0"
+    />
+
+</children></ActorFrame>

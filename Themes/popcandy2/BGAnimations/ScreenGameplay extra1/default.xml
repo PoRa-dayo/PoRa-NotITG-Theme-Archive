@@ -1,0 +1,33 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,4"
+    />
+
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0"
+    />
+
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0"
+    />
+
+    <Layer
+        File="../star.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffuse,1.0,0.8,0.8,1;zoom,0;sleep,1;rotationz,0;linear,1;rotationz,-1280;zoom,10"
+    />
+
+    <Layer
+        File="extra.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);diffusealpha,0;zoom,10;linear,0.5;rotationz,1800;zoom,1;diffusealpha,1;sleep,2;linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="../star.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffuse,0,0,0,1;zoom,0;sleep,3.7;rotationz,0;linear,0.3;rotationz,-1000;zoom,3"
+    />
+
+</children></ActorFrame>

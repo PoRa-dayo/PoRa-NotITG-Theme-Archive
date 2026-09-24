@@ -1,0 +1,68 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,3"
+    />
+
+    <Layer
+        File="songbackground"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,0.3;linear,0.3;diffusealpha,1"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c0u.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(112-240);addy,-224;sleep,0.5;linear,0.2;addy,224"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c0d.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(368-240);addy,224;sleep,0.5;linear,0.2;addy,-224"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c1u.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(92-240);addy,-184;sleep,0.5;bounceend,0.3;addy,184"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c1d.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(388-240);addy,184;sleep,0.5;bounceend,0.3;addy,-184"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c3u.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(32-240);addy,-64;sleep,0.5;bounceend,0.3;addy,64"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c3d.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(448-240);addy,64;sleep,0.5;bounceend,0.3;addy,-64"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c2u.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(128-240);addx,-640;zoomy,0;sleep,0.5;linear,0.2;zoomy,1;addx,640"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c2d.png"
+        Command="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(352-240);addx,640;zoomy,0;sleep,0.5;linear,0.2;zoomy,1;addx,-640"
+    />
+
+    <Layer
+        File="../stagetemp/box.model"
+        Command="effectmagnitude,0,100,0;x,SCREEN_CENTER_X+(184-320);y,SCREEN_CENTER_Y;z,16;zoom,0;sleep,0.5;linear,0.2;zoom,1;rotationy,0;linear,2.3;rotationy,-720"
+    />
+
+    <Layer
+        File="../stagetemp/box.model"
+        Command="effectmagnitude,0,100,0;x,SCREEN_CENTER_X+(456-320);y,SCREEN_CENTER_Y;z,16;zoom,0;sleep,0.5;linear,0.2;zoom,1;rotationy,0;linear,2.3;rotationy,-720"
+    />
+
+    <Layer
+        File="songbanner"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.2;diffusealpha,1"
+    />
+
+</children></ActorFrame>

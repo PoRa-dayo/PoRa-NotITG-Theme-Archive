@@ -1,0 +1,160 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,28"
+    />
+
+    <Layer
+        File="back1.png"
+        OnCommand="xywh,0,0,2048,2048;customtexturerect,0,0,8,8;texcoordvelocity,-0.1,-0.1"
+    />
+
+    <Layer
+        File="chr.png"
+        Command="zoom,1;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);diffusealpha,0.5;bob;effectmagnitude,0,10,0"
+    />
+
+    <Layer
+        File="../_white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,1.0;diffusealpha,1;linear,1.0;diffusealpha,0"
+    />
+
+    <Layer
+        File="pat01.png"
+        Command="diffusealpha,0;linear,0.3;diffusealpha,1;xywh,SCREEN_CENTER_X+(16-320),0,30,1920;customtexturerect,0,0,1,4;texcoordvelocity,0,-0.05"
+    />
+    
+    <Layer
+        File="pat01.png"
+        Command="diffusealpha,0;linear,0.3;diffusealpha,1;xywh,SCREEN_CENTER_X+(624-320),0,30,1920;customtexturerect,0,0,1,4;texcoordvelocity,0,0.05"
+    />
+
+    
+
+    <Layer
+        File="../_starmodel/star_green.model"
+        Command="x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(240-240);zoom,0;sleep,0.8;bounceend,0.3;zoom,4.0;spin;diffuse,1.0,0.9,0.9,1;effectmagnitude,0,90,0"
+    />
+
+    <Layer
+        File="logo.png"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(240-240);zoom,0;sleep,0.8;bounceend,0.3;zoom,0.45;pulse;effectperiod,5;effectmagnitude,0.9,1,1"
+    />
+
+    <Layer
+        File="frame_u.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(68-240);addy,-136;sleep,0.2;bouncebegin,0.2;addy,136"
+    />
+
+    <Layer
+        File="frame_d.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(412-240);addy,136;sleep,0.2;bouncebegin,0.2;addy,-136"
+    />
+
+    <Layer
+        File="pat02.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(104-240);zoomy,0;addx,-640;sleep,0.4;linear,0.2;zoomy,1;addx,640"
+    />
+
+    <Layer
+        File="pat02.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(376-240);zoomy,0;addx,640;sleep,0.4;linear,0.2;zoomy,1;addx,-640"
+    />
+
+    <Layer
+        File="pat03.png"
+        Command="x,SCREEN_CENTER_X+(575-320);y,SCREEN_CENTER_Y+(415-240);zoom,0;sleep,0.6;bounceend,0.2;zoom,1.0;spin;effectmagnitude,0,0,80"
+    />
+
+    <Layer
+        File="pat03.png"
+        Command="x,SCREEN_CENTER_X+(64-320);y,SCREEN_CENTER_Y+(64-240);zoom,0;sleep,0.6;bounceend,0.2;zoom,1.0;spin;effectmagnitude,0,0,-80"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(152-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,0.1;bounceend,0.5;addy,92;bob;effectperiod,2;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(176-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,0.2;bounceend,0.5;addy,92;bob;effectperiod,2.1;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(200-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,0.3;bounceend,0.5;addy,92;bob;effectperiod,2.2;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(224-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,0.4;bounceend,0.5;addy,92;bob;effectperiod,2.3;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(248-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,0.5;bounceend,0.5;addy,92;bob;effectperiod,2.4;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(272-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,0.6;bounceend,0.5;addy,92;bob;effectperiod,2.3;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(296-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,0.7;bounceend,0.5;addy,92;bob;effectperiod,2.2;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,0.8;bounceend,0.5;addy,92;bob;effectperiod,2.1;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(344-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,0.9;bounceend,0.5;addy,92;bob;effectperiod,2;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(368-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,1.0;bounceend,0.5;addy,92;bob;effectperiod,2.1;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(392-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,1.1;bounceend,0.5;addy,92;bob;effectperiod,2.2;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(416-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,1.2;bounceend,0.5;addy,92;bob;effectperiod,2.3;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(440-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,1.3;bounceend,0.5;addy,92;bob;effectperiod,2.4;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(464-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,1.4;bounceend,0.5;addy,92;bob;effectperiod,2.3;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(488-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,1.5;bounceend,0.5;addy,92;bob;effectperiod,2.2;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(512-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,1.6;bounceend,0.5;addy,92;bob;effectperiod,2.1;effectmagnitude,0,8,0"
+    />
+
+    <Layer
+        File="ball.png"
+        Command="zoom,0.75;x,SCREEN_CENTER_X+(536-320);y,SCREEN_CENTER_Y+(64-240);addy,-92;sleep,1.7;bounceend,0.5;addy,92;bob;effectperiod,2;effectmagnitude,0,8,0"
+    />
+
+</children></ActorFrame>
