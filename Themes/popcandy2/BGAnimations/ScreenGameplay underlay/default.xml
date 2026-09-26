@@ -11,16 +11,28 @@
 	/>
     <Layer
 		File="ScreenGameplay difficulty icons"
-		OnCommand="%function(self)
+        OnCommand="x,10000"
+		DiffP1NormalMessageCommand="%function(self)
             self:x(SCREEN_CENTER_X+(-12-320))
             self:y(SCREEN_CENTER_Y+(422-240))
-            self:addx(-200)
             self:rotationz(-180)
             
             self:sleep(0.5)
             self:queuecommand('Update')
             self:sleep(0.5)
-            self:addx(200)
+            
+            self:linear(0.5)
+            self:rotationz(0)
+            self:animate(0)
+        end"
+        DiffP1ReverseMessageCommand="%function(self)
+            self:x(SCREEN_CENTER_X+(-12-320))
+            self:y(SCREEN_CENTER_Y+(35-240))
+            self:rotationz(180)
+            
+            self:sleep(0.5)
+            self:queuecommand('Update')
+            self:sleep(0.5)
             
             self:linear(0.5)
             self:rotationz(0)
@@ -28,20 +40,33 @@
         end"
         CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
         UpdateCommand="%function(self) GameplayDiffIcon(self,1) end"
-        OffCommand="linear,1;rotationz,-180;"
+        DiffP1NormalOffMessageCommand="linear,1;rotationz,-180;"
+        DiffP1ReverseOffMessageCommand="linear,1;rotationz,-180;"
 	/>
     <Layer
 		File="ScreenGameplay difficulty icons"
-		OnCommand="%function(self)
+        OnCommand="x,10000"
+		DiffP2NormalMessageCommand="%function(self)
             self:x(SCREEN_CENTER_X+(652-320))
             self:y(SCREEN_CENTER_Y+(422-240))
-            self:addx(200)
             self:rotationz(180)
             
             self:sleep(0.5)
             self:queuecommand('Update')
             self:sleep(0.5)
-            self:addx(-200)
+            
+            self:linear(0.5)
+            self:rotationz(0)
+            self:animate(0)
+        end"
+        DiffP2ReverseMessageCommand="%function(self)
+            self:x(SCREEN_CENTER_X+(652-320))
+            self:y(SCREEN_CENTER_Y+(35-240))
+            self:rotationz(-180)
+            
+            self:sleep(0.5)
+            self:queuecommand('Update')
+            self:sleep(0.5)
             
             self:linear(0.5)
             self:rotationz(0)
@@ -49,7 +74,8 @@
         end"
         CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
         UpdateCommand="%function(self) GameplayDiffIcon(self,2) end"
-        OffCommand="linear,1;rotationz,180;"
+        DiffP2NormalOffMessageCommand="linear,1;rotationz,180;"
+        DiffP2ReverseOffMessageCommand="linear,1;rotationz,180;"
 	/>
     
     <Layer 

@@ -12,7 +12,7 @@
         Font="_shared2"
         Text=""
         Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-        OnCommand="zoom,0.5;draworder,102;x,SCREEN_CENTER_X+10;y,SCREEN_CENTER_Y+33;horizalign,left;shadowlength,0;maxwidth,200"
+        OnCommand="zoom,0.5;draworder,102;x,SCREEN_CENTER_X+10;y,SCREEN_CENTER_Y+33;horizalign,left;shadowlength,0;maxwidth,225"
         OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
         UpdateMessageCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_1)) end" />
     <Layer
@@ -20,7 +20,7 @@
         Font="_shared2"
         Text=""
         Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-        OnCommand="zoom,0.5;draworder,102;x,SCREEN_CENTER_X+303;y,SCREEN_CENTER_Y+33;horizalign,right;shadowlength,0;maxwidth,200"
+        OnCommand="zoom,0.5;draworder,102;x,SCREEN_CENTER_X+303;y,SCREEN_CENTER_Y+33;horizalign,right;shadowlength,0;maxwidth,225"
         OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
         UpdateMessageCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" />
 </children></ActorFrame>

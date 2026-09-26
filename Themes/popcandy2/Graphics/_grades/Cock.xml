@@ -3,15 +3,15 @@
 	<children>
 		<Actor
 			File="Cock roulette"
-			OnCommand="glowshift;effectperiod,2;    zoom,4;xywh,0,262,150,600;customtexturerect,0,0,1,1;cropbottom,0.875;texcoordvelocity,0,-1;sleep,3;diffusealpha,0;"
+			OnCommand="glowshift;effectperiod,2;    zoom,4;xywh,0,225,256,512;customtexturerect,0,0,1,1;cropbottom,0.875;texcoordvelocity,0,-1;sleep,3;diffusealpha,0;"
         />
         <Actor
 			File="Cock roulette"
-			OnCommand="glowshift;effectperiod,2;    zoom,4;xywh,0,262,150,600;customtexturerect,0,0,1,1;cropbottom,0.875;diffusealpha,0;sleep,3;diffusealpha,1;sleep,1;diffusealpha,0;"
+			OnCommand="glowshift;effectperiod,2;    zoom,4;xywh,0,225,256,512;customtexturerect,0,0,1,1;cropbottom,0.875;diffusealpha,0;sleep,3;diffusealpha,1;sleep,1;diffusealpha,0;"
         />
         <Actor
 			File="Cock roulette"
-			OnCommand="glowshift;effectperiod,2;    zoom,4;xywh,0,262,150,600;customtexturerect,0,0,1,1;cropbottom,0.875;texcoordvelocity,0,1;diffusealpha,0;sleep,4;diffusealpha,1;sleep,0.75;diffusealpha,0;"
+			OnCommand="glowshift;effectperiod,2;    zoom,4;xywh,0,225,256,512;customtexturerect,0,0,1,1;cropbottom,0.875;texcoordvelocity,0,1;diffusealpha,0;sleep,4;diffusealpha,1;sleep,0.75;diffusealpha,0;"
         />
         <Actor
 			File="final grades"

@@ -1,23 +1,37 @@
 <ActorFrame> <children>
-    <!-- NotITG Offset Plot -->
-    <Layer File="OffsetPlot" OffCommand="%function(self)
-        BX_SaltyResets = 0
-        BX_SaltyResetPos = {}
-    end"/>
+    <!--Song title-->
+    <Layer
+        Font="_shared2"
+        Text="Song"
+        OnCommand="%function(self)
+            self:diffusealpha(0)
+            SongTitle(self)
+            self:zoom(0.5)
+            self:x(SCREEN_CENTER_X)
+            self:y(SCREEN_CENTER_Y-165)
+            self:shadowlength(0)
+            self:accelerate(0.5)
+            self:diffusealpha(1)
+            self:maxwidth(800)
+        end"
+        OffCommand="accelerate,0.25;diffusealpha,0"
+    />
     
     <!-- Mines -->
-    <Layer Type="BitmapText" Text="" Font="ScreenManager credits" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
-        self:x(SCREEN_CENTER_X+(155-320-55))
-        self:y(SCREEN_CENTER_Y+(367-240))
-        self:zoom(0.8)
-        self:zoomx(0.6)
+    <Layer Type="BitmapText" Text="" Font="_Arial 14 shadow" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+        self:horizalign('right')
+        self:x(SCREEN_CENTER_X-90+35)
+        self:y(SCREEN_CENTER_Y+80+17)
+        self:zoom(0.6)
         self:diffuse(1,0,0,1)
         self:addx(-SCREEN_WIDTH/2)
         self:sleep(0.6)
         self:queuecommand('CalcMine')
         self:decelerate(0.3)
         self:addx(SCREEN_WIDTH/2)
+        self:shadowlength(0)
     end"
+    OffCommand="sleep,0.2;accelerate,0.3;addx,-SCREEN_WIDTH/2"
     CalcMineCommand="%function(self)
         local MineTxt = SCREENMAN:GetTopScreen():GetChild('MinesTextP1'):GetText()
         local MinePass = string.gsub(MineTxt, '/.*', '')
@@ -30,18 +44,20 @@
         end
     end"/>
     
-    <Layer Type="BitmapText" Text="" Font="ScreenManager credits" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
-        self:x(SCREEN_CENTER_X+(485-320+55))
-        self:y(SCREEN_CENTER_Y+(367-240))
-        self:zoom(0.8)
-        self:zoomx(0.6)
+    <Layer Type="BitmapText" Text="" Font="_Arial 14 shadow" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
+        self:horizalign('left')
+        self:x(SCREEN_CENTER_X+90-35)
+        self:y(SCREEN_CENTER_Y+80+17)
+        self:zoom(0.6)
         self:diffuse(1,0,0,1)
         self:addx(SCREEN_WIDTH/2)
         self:sleep(0.6)
         self:queuecommand('CalcMine')
         self:decelerate(0.3)
         self:addx(-SCREEN_WIDTH/2)
+        self:shadowlength(0)
     end"
+    OffCommand="sleep,0.2;accelerate,0.3;addx,SCREEN_WIDTH/2"
     CalcMineCommand="%function(self)
         local MineTxt = SCREENMAN:GetTopScreen():GetChild('MinesTextP2'):GetText()
         local MinePass = string.gsub(MineTxt, '/.*', '')
@@ -55,41 +71,96 @@
     end"/>
     
     <!-- NG -->
-    <Layer Type="BitmapText" Text="" Font="ScreenManager credits" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
-        self:x(SCREEN_CENTER_X+(155-320-55))
-        self:y(SCREEN_CENTER_Y+(382-240))
-        self:zoom(0.8)
-        self:zoomx(0.6)
+    <Layer Type="BitmapText" Text="" Font="_Arial 14 shadow" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+        self:horizalign('right')
+        self:x(SCREEN_CENTER_X-90+35)
+        self:y(SCREEN_CENTER_Y+112+17)
+        self:zoom(0.6)
         self:diffuse(1,0,0,1)
         self:addx(-SCREEN_WIDTH/2)
         self:sleep(0.7)
         self:queuecommand('CalcNG')
         self:decelerate(0.3)
         self:addx(SCREEN_WIDTH/2)
+        self:shadowlength(0)
     end"
+    OffCommand="sleep,0.1;accelerate,0.3;addx,-SCREEN_WIDTH/2"
     CalcNGCommand="%function(self)
         local NGTxt = GetPSStageStats(PLAYER_1):GetHoldNoteScores(1)
         if NGTxt > 0 then
-            self:settext('+'..NGTxt)
+            self:settext('N.G. '..NGTxt)
         end
     end"/>
     
-    <Layer Type="BitmapText" Text="" Font="ScreenManager credits" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
-        self:x(SCREEN_CENTER_X+(485-320+55))
-        self:y(SCREEN_CENTER_Y+(382-240))
-        self:zoom(0.8)
-        self:zoomx(0.6)
+    <Layer Type="BitmapText" Text="" Font="_Arial 14 shadow" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
+        self:horizalign('left')
+        self:x(SCREEN_CENTER_X+90-35)
+        self:y(SCREEN_CENTER_Y+112+17)
+        self:zoom(0.6)
         self:diffuse(1,0,0,1)
         self:addx(SCREEN_WIDTH/2)
         self:sleep(0.7)
         self:queuecommand('CalcNG')
         self:decelerate(0.3)
         self:addx(-SCREEN_WIDTH/2)
+        self:shadowlength(0)
     end"
+    OffCommand="sleep,0.1;accelerate,0.3;addx,SCREEN_WIDTH/2"
     CalcNGCommand="%function(self)
         local NGTxt = GetPSStageStats(PLAYER_2):GetHoldNoteScores(1)
         if NGTxt > 0 then
-            self:settext('+'..NGTxt)
+            self:settext('N.G. '..NGTxt)
         end
+    end"/>
+    
+    
+    <!-- Percentage Score -->
+    <Layer Type="BitmapText" Text="" Font="../Numbers/ScreenEvaluation percent text" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+        self:horizalign('right')
+        self:x(SCREEN_CENTER_X-190)
+        self:y(SCREEN_CENTER_Y+190)
+        self:zoom(0.4)
+        self:addx(-SCREEN_WIDTH/2)
+        self:sleep(0.8)
+        self:queuecommand('CalcPercent')
+        self:decelerate(0.3)
+        self:addx(SCREEN_WIDTH/2)
+        self:shadowlength(0)
+    end"
+    OffCommand="sleep,0.0;accelerate,0.3;addx,-SCREEN_WIDTH/2"
+    CalcPercentCommand="%function(self)
+        CalculatePercentage(self,PLAYER_1,'Cur')
+    end"/>
+    
+    <Layer Type="BitmapText" Text="" Font="../Numbers/ScreenEvaluation percent text" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
+        self:horizalign('left')
+        self:x(SCREEN_CENTER_X+150)
+        self:y(SCREEN_CENTER_Y+190)
+        self:zoom(0.4)
+        self:addx(SCREEN_WIDTH/2)
+        self:sleep(0.8)
+        self:queuecommand('CalcPercent')
+        self:decelerate(0.3)
+        self:addx(-SCREEN_WIDTH/2)
+        self:shadowlength(0)
+    end"
+    OffCommand="sleep,0.0;accelerate,0.3;addx,SCREEN_WIDTH/2"
+    CalcPercentCommand="%function(self)
+        CalculatePercentage(self,PLAYER_2,'Cur')
+    end"/>
+    
+    
+    <!-- NotITG Offset Plot -->
+    <Layer File="OffsetPlot" InitCommand="%function(self)
+        if PlayModeName() == 'Rave' or PlayModeName() == 'Endless' then
+            BX_CurCustomLife = {0.5, 0.5}
+			BX_DispCustomLife = {0.5, 0.5}
+			BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
+			BX_DisplayedGraph = 'Life'
+        end
+    end"
+    OffCommand="%function(self)
+        BX_SaltyResets = 0
+        BX_SaltyResetPos = {}
     end"/>
 </children> </ActorFrame>

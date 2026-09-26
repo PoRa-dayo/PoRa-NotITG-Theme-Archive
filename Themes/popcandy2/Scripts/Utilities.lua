@@ -540,11 +540,6 @@ function GameplayDiffIcon(self, pn)
     end
 end
 
-function SongSelectionScreen()
-	local s = "ScreenSelectMusic";
-	if GAMESTATE:IsCourseMode() then s = "ScreenSelectCourse" end
-	return s
-end
 function GetStartScreen() PREFSMAN:SetPreference("DelayedScreenLoad",false) if PREFSMAN:GetPreference('BreakComboToGetItem') and GetInputType and GetInputType() == "" then return "ScreenArcadeStart" end return THEME:GetMetric('Common','FirstAttractScreen') end
 function GetStepsDescriptionText(n)
 	local steps = GAMESTATE:GetCurrentSteps(n)
@@ -555,6 +550,28 @@ function GetStepsDescriptionText(n)
 	end
 	if string.lower(text) == 'blank' then text = '' end
 	return text
+end
+
+-- Calculates the percentage that you see in ScreenEvaluation.
+function CalculatePercentage(self, pn, name)
+	local CalcPerNames = {
+    	["Cur"] = STATSMAN:GetCurStageStats(),
+    	["Accum"] = STATSMAN:GetAccumStageStats(),
+	}
+
+    if (FUCK_EXE or OPENITG) and CalcPerNames[name] and GAMESTATE:IsPlayerEnabled(pn) then
+        local GPSS = CalcPerNames[name]:GetPlayerStageStats(pn);
+        local ADP = GPSS:GetActualDancePoints()
+        local PDP = GPSS:GetPossibleDancePoints()
+        if (ADP == 0 and PDP == 0) or ADP/PDP < 0 then
+            self:settext( '0.00%' )
+        else
+            self:settext( FormatPercentScore( ADP/PDP ) )
+        end
+        
+    else
+        self:settext(' ')
+    end
 end
 
 
