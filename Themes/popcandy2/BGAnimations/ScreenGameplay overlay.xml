@@ -53,6 +53,44 @@
             self:queuecommand('GetModText')
 		end"
     />
+    
+    <Layer
+		Font="../Numbers/ScreenGameplay max combo"
+		Text="0"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(450-240);zoom,0.3;shadowlength,1;draworder,12;addy,100"
+		OnCommand="%function(self)
+            self:queuecommand('Update')
+            self:decelerate(1)
+            self:addy(-100)
+		end"
+        OffCommand="accelerate,0.7;addy,120"
+		UpdateCommand="%function(self)
+            GameplayMaxCombo(self)
+        end"
+    />
+    
+    <!--song title for course-->
+    <Layer
+		Font="_shared2"
+		Text=""
+        Condition="GAMESTATE:IsCourseMode()"
+		InitCommand="x,SCREEN_CENTER_X;y,40;shadowlength,0;zoom,0.5;addy,-100;"
+		OnCommand="%function(self)
+            self:queuecommand('GetSongTitle')
+            self:decelerate(1.2)
+            self:addy(100)
+		end"
+        OffCommand="decelerate,0.3;addy,20;accelerate,0.7;addy,-120"
+        CurrentStepsP1ChangedMessageCommand="playcommand,GetSongTitle"
+        CurrentStepsP2ChangedMessageCommand="playcommand,GetSongTitle"
+        CurrentSongChangedMessageCommand="playcommand,GetSongTitle"
+		GetSongTitleCommand="%function(self)
+            local songg = GAMESTATE:GetCurrentSong()
+            if songg then
+                self:settext( songg:GetDisplayMainTitle() )
+            end
+		end"
+    />
 
 
     --FOR OFFSET PLOT AND ITS LIFE GRAPH: START

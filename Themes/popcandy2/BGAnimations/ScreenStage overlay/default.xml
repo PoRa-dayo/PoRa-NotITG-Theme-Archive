@@ -2,67 +2,67 @@
 
     <Layer
         File="ScreenStage1"
-        Condition="GetStageText() == '1'"
+        Condition="GetStageText() == '1' and PlayModeName() == 'Regular'"
     />
 
     <Layer
         File="ScreenStage2"
-        Condition="GetStageText() == '2'"
+        Condition="GetStageText() == '2' and PlayModeName() == 'Regular'"
     />
 
     <Layer
         File="ScreenStage3"
-        Condition="GetStageText() == '3'"
+        Condition="GetStageText() == '3' and PlayModeName() == 'Regular'"
     />
 
     <Layer
         File="ScreenStage4"
-        Condition="GetStageText() == '4'"
+        Condition="GetStageText() == '4' and PlayModeName() == 'Regular'"
     />
 
     <Layer
         File="ScreenStage5"
-        Condition="GetStageText() == '5'"
+        Condition="GetStageText() == '5' and PlayModeName() == 'Regular'"
     />
 
     <Layer
         File="ScreenStage6"
-        Condition="GetStageText() == '6'"
+        Condition="GetStageText() == '6' and PlayModeName() == 'Regular'"
     />
 
     <Layer
         File="ScreenStageFinal"
-        Condition="GetStageText() == 'final'"
+        Condition="GetStageText() == 'final' and PlayModeName() == 'Regular'"
     />
 
     <Layer
         File="ScreenStageExtra1"
-        Condition="GetStageText() == 'extra1'"
+        Condition="GetStageText() == 'extra1' and PlayModeName() == 'Regular'"
     />
 
     <Layer
         File="ScreenStageExtra2"
-        Condition="GetStageText() == 'extra2'"
+        Condition="GetStageText() == 'extra2' and PlayModeName() == 'Regular'"
     />
 
     <Layer
         File="ScreenStageEvent"
-        Condition="GetStageText() == 'event'"
+        Condition="GetStageText() == 'event' and PlayModeName() == 'Regular'"
     />
 
     <Layer
         File="ScreenStageNonstop"
-        Condition="GetStageText() == 'nonstop'"
+        Condition="PlayModeName() == 'Nonstop'"
     />
 
     <Layer
         File="ScreenStageOni"
-        Condition="GetStageText() == 'oni'"
+        Condition="PlayModeName() == 'Oni'"
     />
 
     <Layer
         File="ScreenStageEndless"
-        Condition="GetStageText() == 'endless'"
+        Condition="PlayModeName() == 'Endless'"
     />
     
     --FOR OFFSET PLOT AND ITS LIFE GRAPH

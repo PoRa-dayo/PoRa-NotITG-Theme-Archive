@@ -19,16 +19,16 @@
     -- SC Info refers to the SC Title, Diff, Percent, Judgments, and its background.
     -- Early and Late refers to the Early (-180ms)/Late (+180ms) markers.
 	
-    P1AddX = -29
-    P1AddY = -4
-    P1Zoom = 0.94
+    P1AddX = -27
+    P1AddY = 3
+    P1Zoom = 0.95
     SCHighlightAddHeightP1 = -13
     SCHighlightYP1 = -67
     SCScrollBarAddXP1 = 11
     
-    P2AddX = 29
-    P2AddY = -4
-    P2Zoom = 0.94
+    P2AddX = 27
+    P2AddY = 3
+    P2Zoom = 0.95
     SCHighlightAddHeightP2 = -13
     SCHighlightYP2 = -67
     SCScrollBarAddXP2 = 11
@@ -54,14 +54,14 @@
     LifeP2AddY = 0
     LifeP2ZoomY = 1
     
-    BGColorP1 = {0,0,0.35,1}
-    BGColorP2 = {0,0,0.35,1}
-    PlotBGColorP1 = {0,0.1,0.22,0.8}
-    PlotBGColorP2 = {0,0.1,0.22,0.8}
-    BGSCScrollBarColorP1 = {0,0.1,0.22,1}
-    BGSCScrollBarColorP2 = {0,0.1,0.22,1}
-    SCScrollBarThumbColorP1 = {.15,.87,.83,1}
-    SCScrollBarThumbColorP2 = {.15,.87,.83,1}
+    BGColorP1 = {0,0,0.5,1}
+    BGColorP2 = {0.13,0.5,0,1}
+    PlotBGColorP1 = {0,0,0.1,0.8}
+    PlotBGColorP2 = {0,0.1,0,0.8}
+    BGSCScrollBarColorP1 = {0,0,0.3,1}
+    BGSCScrollBarColorP2 = {0,0.3,0,1}
+    SCScrollBarThumbColorP1 = {.6,.6,1,1}
+    SCScrollBarThumbColorP2 = {.7,1,.6,1}
     BGWidth = 285
     
     --change oplot_plotWidth here for the plot itself to match the BGWidth
@@ -697,15 +697,15 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Var="oplot_s1_title" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s1_diff" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s1_perc" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s1_1" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s1_2" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s1_3" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s1_4" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s1_5" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s1_6" File="_Arial 14 shadow" Text="" />
+		<Layer Var="oplot_s1_title" File="_shared2" Text="" />
+		<Layer Var="oplot_s1_diff" File="_shared2" Text="" />
+		<Layer Var="oplot_s1_perc" File="_shared2" Text="" />
+		<Layer Var="oplot_s1_1" File="_shared2" Text="" />
+		<Layer Var="oplot_s1_2" File="_shared2" Text="" />
+		<Layer Var="oplot_s1_3" File="_shared2" Text="" />
+		<Layer Var="oplot_s1_4" File="_shared2" Text="" />
+		<Layer Var="oplot_s1_5" File="_shared2" Text="" />
+		<Layer Var="oplot_s1_6" File="_shared2" Text="" />
 		
 		<!-- Convert noterows to timestamps and plot dots -->
 		<Layer Type="Polygon" DrawMode="Quads" OnCommand="sleep,0.02;queuecommand,Make"
@@ -982,24 +982,24 @@ end"><children>
 		end"
 		UpdateSpellDisplayP1MessageCommand="hidden,curcard[1]"><children>
 			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight-4;diffusealpha,.2"/>
-			<Layer Type="BitmapText" File="_Arial 14 shadow" Text="R" InitCommand="xy,2,-oplot_plotHeight/3-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
+			<Layer Type="BitmapText" File="_shared2" Text="R" InitCommand="xy,2,-oplot_plotHeight/3-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
 		</children></Layer>
 
 		<!-- Early/late markers -->
-		<Layer Type="BitmapText" File="_Arial 14 shadow"
+		<Layer Type="BitmapText" File="_shared2"
 			OnCommand="xy,oplot_plotWidth/2+EarlyAddX,-oplot_plotHeight/2-6+EarlyAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
-		<Layer Type="BitmapText" File="_Arial 14 shadow"
+		<Layer Type="BitmapText" File="_shared2"
 			OnCommand="xy,oplot_plotWidth/2+LateAddX,oplot_plotHeight/2-6+LateAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		
-		<Layer Type="BitmapText" Text="" Font="_Arial 14 shadow"
+		<Layer Type="BitmapText" Text="" Font="_shared2"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
@@ -1027,7 +1027,7 @@ end"><children>
 			
 		end" />
 		
-		<Layer Type="BitmapText" Text="" Font="_Arial 14 shadow"
+		<Layer Type="BitmapText" Text="" Font="_shared2"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
@@ -1479,7 +1479,7 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Type="Quad" InitCommand="zoomto,BGWidth,999;diffuse,BGColorP2[1],BGColorP1[2],BGColorP1[3],BGColorP1[4]"
+		<Layer Type="Quad" InitCommand="zoomto,BGWidth,999;diffuse,BGColorP2[1],BGColorP2[2],BGColorP2[3],BGColorP2[4]"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
@@ -1521,15 +1521,15 @@ end"><children>
 		end"
 		/>
 		
-		<Layer Var="oplot_s2_title" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s2_diff" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s2_perc" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s2_1" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s2_2" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s2_3" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s2_4" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s2_5" File="_Arial 14 shadow" Text="" />
-		<Layer Var="oplot_s2_6" File="_Arial 14 shadow" Text="" />
+		<Layer Var="oplot_s2_title" File="_shared2" Text="" />
+		<Layer Var="oplot_s2_diff" File="_shared2" Text="" />
+		<Layer Var="oplot_s2_perc" File="_shared2" Text="" />
+		<Layer Var="oplot_s2_1" File="_shared2" Text="" />
+		<Layer Var="oplot_s2_2" File="_shared2" Text="" />
+		<Layer Var="oplot_s2_3" File="_shared2" Text="" />
+		<Layer Var="oplot_s2_4" File="_shared2" Text="" />
+		<Layer Var="oplot_s2_5" File="_shared2" Text="" />
+		<Layer Var="oplot_s2_6" File="_shared2" Text="" />
 		
 		<!-- Convert noterows to timestamps and plot dots -->
 		<Layer Type="Polygon" DrawMode="Quads" OnCommand="sleep,0.02;queuecommand,Make"
@@ -1796,24 +1796,24 @@ end"><children>
 		end"
 		UpdateSpellDisplayP2MessageCommand="hidden,curcard[2]"><children>
 			<Layer Type="Quad" InitCommand="xywh,0,0,2,oplot_plotHeight;diffusealpha,.2"/>
-			<Layer Type="BitmapText" File="_Arial 14 shadow" Text="R" InitCommand="xy,2,-oplot_plotHeight/2-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
+			<Layer Type="BitmapText" File="_shared2" Text="R" InitCommand="xy,2,-oplot_plotHeight/2-6;diffusealpha,.2;vertalign,top;zoom,0.5;horizalign,left"/>
 		</children></Layer>
 
 		<!-- Early/late markers -->
-		<Layer Type="BitmapText" File="_Arial 14 shadow"
+		<Layer Type="BitmapText" File="_shared2"
 			OnCommand="xy,oplot_plotWidth/2+EarlyAddX,-oplot_plotHeight/2-6+EarlyAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
-		<Layer Type="BitmapText" File="_Arial 14 shadow"
+		<Layer Type="BitmapText" File="_shared2"
 			OnCommand="xy,oplot_plotWidth/2+LateAddX,oplot_plotHeight/2-6+LateAddY;shadowlength,0;zoom,EarlyLateZoom;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		
-		<Layer Type="BitmapText" Text="" Font="_Arial 14 shadow"
+		<Layer Type="BitmapText" Text="" Font="_shared2"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
@@ -1841,7 +1841,7 @@ end"><children>
 			
 		end" />
 		
-		<Layer Type="BitmapText" Text="" Font="_Arial 14 shadow"
+		<Layer Type="BitmapText" Text="" Font="_shared2"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then

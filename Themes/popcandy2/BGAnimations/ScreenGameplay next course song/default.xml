@@ -1,8 +1,82 @@
-<ActorFrame> <children>
-    <Layer File="songbackground"
-        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
-		StartCommand="hibernate,1.5;zoomtowidth,700;zoomtoheight,0;diffusealpha,0;accelerate,0.25;diffusealpha,1;zoomtoheight,480;zoomtowidth,640"
-        FinishCommand="sleep,0.3;linear,0.3;diffusealpha,0"
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,4"
     />
 
-</children> </ActorFrame>
+    <Layer
+        File="songbackground"
+        NextCourseSongMessageCommand="%function(self) self:LoadFromSongBackground( GAMESTATE:Env().NextSong ) end"
+        StartCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,0.3;linear,0.3;diffusealpha,1"
+        FinishCommand="linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c0u.png"
+        StartCommand="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(112-240);addy,-224;sleep,0.5;linear,0.2;addy,224"
+        FinishCommand="sleep,0.7;linear,0.2;addy,-224"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c0d.png"
+        StartCommand="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(368-240);addy,224;sleep,0.5;linear,0.2;addy,-224"
+        FinishCommand="sleep,0.7;linear,0.2;addy,224"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c1u.png"
+        StartCommand="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(92-240);addy,-184;sleep,0.5;bounceend,0.3;addy,184"
+        FinishCommand="sleep,0.7;bounceend,0.3;addy,-184"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c1d.png"
+        StartCommand="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(388-240);addy,184;sleep,0.5;bounceend,0.3;addy,-184"
+        FinishCommand="sleep,0.7;bounceend,0.3;addy,184"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c3u.png"
+        StartCommand="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(32-240);addy,-64;sleep,0.5;bounceend,0.3;addy,64"
+        FinishCommand="sleep,0.7;bounceend,0.3;addy,-64"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c3d.png"
+        StartCommand="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(448-240);addy,64;sleep,0.5;bounceend,0.3;addy,-64"
+        FinishCommand="sleep,0.7;bounceend,0.3;addy,64"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c2u.png"
+        StartCommand="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(128-240);addx,-640;zoomy,0;sleep,0.5;linear,0.2;zoomy,1;addx,640"
+        FinishCommand="sleep,0.7;linear,0.3;zoomy,0;addx,-640"
+    />
+
+    <Layer
+        File="../stagetemp/loadf_c2d.png"
+        StartCommand="diffuse,2.0,1.0,1.0,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(352-240);addx,640;zoomy,0;sleep,0.5;linear,0.2;zoomy,1;addx,-640"
+        FinishCommand="sleep,0.7;linear,0.3;zoomy,0;addx,640"
+    />
+
+    <Layer
+        File="../stagetemp/box.model"
+        StartCommand="effectmagnitude,0,100,0;x,SCREEN_CENTER_X+(184-320);y,SCREEN_CENTER_Y;z,16;zoom,0;sleep,0.5;linear,0.2;zoom,1;rotationy,0;linear,2.3;rotationy,-720"
+        FinishCommand="z,16;linear,0.7;rotationy,-720;linear,0.3;zoom,0"
+    />
+
+    <Layer
+        File="../stagetemp/box.model"
+        StartCommand="effectmagnitude,0,100,0;x,SCREEN_CENTER_X+(456-320);y,SCREEN_CENTER_Y;z,16;zoom,0;sleep,0.5;linear,0.2;zoom,1;rotationy,0;linear,2.3;rotationy,-720"
+        FinishCommand="z,16;linear,0.7;rotationy,-720;linear,0.3;zoom,0"
+    />
+
+    <Layer
+        File="songbanner"
+        NextCourseSongMessageCommand="%function(self) self:LoadFromSongBanner( GAMESTATE:Env().NextSong ) end"
+        StartCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.2;diffusealpha,1"
+        FinishCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+</children></ActorFrame>

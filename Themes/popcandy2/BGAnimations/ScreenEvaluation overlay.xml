@@ -18,10 +18,10 @@
     />
     
     <!-- Mines -->
-    <Layer Type="BitmapText" Text="" Font="_Arial 14 shadow" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+    <Layer Type="BitmapText" Text="" Font="_shared2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
         self:horizalign('right')
-        self:x(SCREEN_CENTER_X-90+35)
-        self:y(SCREEN_CENTER_Y+80+17)
+        self:x(SCREEN_CENTER_X-80+35)
+        self:y(SCREEN_CENTER_Y+50)
         self:zoom(0.6)
         self:diffuse(1,0,0,1)
         self:addx(-SCREEN_WIDTH/2)
@@ -40,14 +40,14 @@
         MineTotal = string.gsub(MineTotal,' ','')
         local MineHit = tostring(tonumber(MineTotal) - tonumber(MinePass))
         if tonumber(MineHit) > 0 then
-            self:settext('+'..MineHit)
+            self:settext('MINES '..MineHit)
         end
     end"/>
     
-    <Layer Type="BitmapText" Text="" Font="_Arial 14 shadow" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
+    <Layer Type="BitmapText" Text="" Font="_shared2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
         self:horizalign('left')
-        self:x(SCREEN_CENTER_X+90-35)
-        self:y(SCREEN_CENTER_Y+80+17)
+        self:x(SCREEN_CENTER_X+80-35)
+        self:y(SCREEN_CENTER_Y+50)
         self:zoom(0.6)
         self:diffuse(1,0,0,1)
         self:addx(SCREEN_WIDTH/2)
@@ -66,15 +66,15 @@
         MineTotal = string.gsub(MineTotal,' ','')
         local MineHit = tostring(tonumber(MineTotal) - tonumber(MinePass))
         if tonumber(MineHit) > 0 then
-            self:settext('+'..MineHit)
+            self:settext('MINES '..MineHit)
         end
     end"/>
     
     <!-- NG -->
-    <Layer Type="BitmapText" Text="" Font="_Arial 14 shadow" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+    <Layer Type="BitmapText" Text="" Font="_shared2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
         self:horizalign('right')
-        self:x(SCREEN_CENTER_X-90+35)
-        self:y(SCREEN_CENTER_Y+112+17)
+        self:x(SCREEN_CENTER_X-80+35)
+        self:y(SCREEN_CENTER_Y+67)
         self:zoom(0.6)
         self:diffuse(1,0,0,1)
         self:addx(-SCREEN_WIDTH/2)
@@ -92,10 +92,10 @@
         end
     end"/>
     
-    <Layer Type="BitmapText" Text="" Font="_Arial 14 shadow" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
+    <Layer Type="BitmapText" Text="" Font="_shared2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
         self:horizalign('left')
-        self:x(SCREEN_CENTER_X+90-35)
-        self:y(SCREEN_CENTER_Y+112+17)
+        self:x(SCREEN_CENTER_X+80-35)
+        self:y(SCREEN_CENTER_Y+67)
         self:zoom(0.6)
         self:diffuse(1,0,0,1)
         self:addx(SCREEN_WIDTH/2)

@@ -349,12 +349,6 @@ function TitleMusicRedirect()
 	end
 end
 
-function SongSelectionScreen()
-	local s = "ScreenSelectMusic";
-	if GAMESTATE:IsCourseMode() then s = s.."Course" end
-	return s
-end
-
 -- Set the next screen for Evaluation.
 function SetEvaluationNextScreen()
 	Trace( "GetGameplayNextScreen: " )
@@ -572,6 +566,17 @@ function CalculatePercentage(self, pn, name)
     else
         self:settext(' ')
     end
+end
+
+--update the Max Combo counter during gameplay
+function GameplayMaxCombo(self)
+    local MComb = SCREENMAN:GetTopScreen():GetChild('MaxCombo')
+    if MComb then
+        local GameMaxCombo = MComb:GetText()
+        self:settext(GameMaxCombo)
+    end
+    self:sleep(.05)
+    self:queuecommand('Update')
 end
 
 
