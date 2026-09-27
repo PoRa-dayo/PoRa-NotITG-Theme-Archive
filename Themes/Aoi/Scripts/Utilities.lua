@@ -351,7 +351,7 @@ end
 
 function SongSelectionScreen()
 	local s = "ScreenSelectMusic";
-	if GAMESTATE:IsCourseMode() then s = s.."Course" end
+	if GAMESTATE:IsCourseMode() then s = "ScreenSelectCourse" end
 	return s
 end
 
@@ -574,11 +574,6 @@ function GameplayDiffIcon(self, pn)
     end
 end
 
-function SongSelectionScreen()
-	local s = "ScreenSelectMusic";
-	if GAMESTATE:IsCourseMode() then s = "ScreenSelectCourse" end
-	return s
-end
 function GetStartScreen() PREFSMAN:SetPreference("DelayedScreenLoad",false) if PREFSMAN:GetPreference('BreakComboToGetItem') and GetInputType and GetInputType() == "" then return "ScreenArcadeStart" end return THEME:GetMetric('Common','FirstAttractScreen') end
 function GetStepsDescriptionText(n)
 	local steps = GAMESTATE:GetCurrentSteps(n)
