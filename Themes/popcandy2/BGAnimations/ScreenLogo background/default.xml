@@ -44,22 +44,22 @@
 
     <Layer
         File="frame_u.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(68-240);addy,-136;sleep,0.2;bouncebegin,0.2;addy,136"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(68-240);zoomtowidth,SCREEN_WIDTH;addy,-136;sleep,0.2;bouncebegin,0.2;addy,136"
     />
 
     <Layer
         File="frame_d.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(412-240);addy,136;sleep,0.2;bouncebegin,0.2;addy,-136"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(412-240);zoomtowidth,SCREEN_WIDTH;addy,136;sleep,0.2;bouncebegin,0.2;addy,-136"
     />
 
     <Layer
         File="pat02.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(104-240);zoomy,0;addx,-640;sleep,0.4;linear,0.2;zoomy,1;addx,640"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(104-240);zoomtowidth,SCREEN_WIDTH;zoomy,0;addx,-640;sleep,0.4;linear,0.2;zoomy,1;addx,640"
     />
 
     <Layer
         File="pat02.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(376-240);zoomy,0;addx,640;sleep,0.4;linear,0.2;zoomy,1;addx,-640"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(376-240);zoomtowidth,SCREEN_WIDTH;zoomy,0;addx,640;sleep,0.4;linear,0.2;zoomy,1;addx,-640"
     />
 
     <Layer

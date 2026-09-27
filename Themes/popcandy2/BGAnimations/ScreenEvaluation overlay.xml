@@ -19,8 +19,8 @@
     
     <!-- Mines -->
     <Layer Type="BitmapText" Text="" Font="_shared2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
-        self:horizalign('right')
-        self:x(SCREEN_CENTER_X-80+35)
+        self:horizalign('left')
+        self:x(SCREEN_CENTER_X-120)
         self:y(SCREEN_CENTER_Y+50)
         self:zoom(0.6)
         self:diffuse(1,0,0,1)
@@ -45,8 +45,8 @@
     end"/>
     
     <Layer Type="BitmapText" Text="" Font="_shared2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
-        self:horizalign('left')
-        self:x(SCREEN_CENTER_X+80-35)
+        self:horizalign('right')
+        self:x(SCREEN_CENTER_X+120)
         self:y(SCREEN_CENTER_Y+50)
         self:zoom(0.6)
         self:diffuse(1,0,0,1)
@@ -72,8 +72,8 @@
     
     <!-- NG -->
     <Layer Type="BitmapText" Text="" Font="_shared2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
-        self:horizalign('right')
-        self:x(SCREEN_CENTER_X-80+35)
+        self:horizalign('left')
+        self:x(SCREEN_CENTER_X-120)
         self:y(SCREEN_CENTER_Y+67)
         self:zoom(0.6)
         self:diffuse(1,0,0,1)
@@ -93,8 +93,8 @@
     end"/>
     
     <Layer Type="BitmapText" Text="" Font="_shared2" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
-        self:horizalign('left')
-        self:x(SCREEN_CENTER_X+80-35)
+        self:horizalign('right')
+        self:x(SCREEN_CENTER_X+120)
         self:y(SCREEN_CENTER_Y+67)
         self:zoom(0.6)
         self:diffuse(1,0,0,1)

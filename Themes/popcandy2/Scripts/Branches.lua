@@ -30,7 +30,8 @@ function SelectFirstOptionsScreen()
 end
 
 function GetGameplayScreen()
-	if IsExtraStage() or IsExtraStage2() then return "ScreenGameplay" end
+	if IsExtraStage() or IsExtraStage2() then return "ScreenGameplayExtra" end
+    if GAMESTATE:IsCourseMode() then return "ScreenGameplayCourse" end
 	return "ScreenGameplay"
 end
 

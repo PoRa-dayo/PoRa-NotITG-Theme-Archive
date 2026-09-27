@@ -12,22 +12,22 @@
 
     <Layer
         File="../stagetemp/loadf_0u.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(112-240);addy,-224;linear,0.2;addy,224"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(112-240);zoomtowidth,SCREEN_WIDTH;addy,-224;linear,0.2;addy,224"
     />
 
     <Layer
         File="../stagetemp/loadf_0d.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(368-240);addy,224;linear,0.2;addy,-224"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(368-240);zoomtowidth,SCREEN_WIDTH;addy,224;linear,0.2;addy,-224"
     />
 
     <Layer
         File="../stagetemp/loadf_1u.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(92-240);addy,-184;bounceend,0.3;addy,184"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(92-240);zoomtowidth,SCREEN_WIDTH;addy,-184;bounceend,0.3;addy,184"
     />
 
     <Layer
         File="../stagetemp/loadf_1d.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(388-240);addy,184;bounceend,0.3;addy,-184"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(388-240);zoomtowidth,SCREEN_WIDTH;addy,184;bounceend,0.3;addy,-184"
     />
 
     <Layer

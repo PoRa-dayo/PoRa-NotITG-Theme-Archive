@@ -2,23 +2,17 @@
 
     <Layer
         File="back1.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT"
     />
 
-    <!-- Tiles cannot be converted via this script. Please manually convert using customtexturerect and texcoordvelocity, and making sure that the source image's dimensions are powers of 2. -->
     <Layer
-        TilesStartY="420"
-        TilesSpacingY="700"
-        TileVelocityX="-30"
         File="back3.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y+(420-240),1024,32;diffuse,0.8,1.0,0.8,1;customtexturerect,0,0,8,1;texcoordvelocity,0.2,0"
     />
 
-    <!-- Tiles cannot be converted via this script. Please manually convert using customtexturerect and texcoordvelocity, and making sure that the source image's dimensions are powers of 2. -->
     <Layer
-        TilesStartY="60"
-        TilesSpacingY="700"
-        TileVelocityX="30"
         File="back3.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y+(60-240),1024,32;diffuse,0.8,1.0,0.8,1;customtexturerect,0,0,8,1;texcoordvelocity,-0.2,0"
     />
 
     <Layer

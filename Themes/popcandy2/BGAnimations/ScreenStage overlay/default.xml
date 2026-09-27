@@ -2,52 +2,52 @@
 
     <Layer
         File="ScreenStage1"
-        Condition="GetStageText() == '1' and PlayModeName() == 'Regular'"
+        Condition="GetStageText() == '1' and (PlayModeName() == 'Regular' or PlayModeName() == 'Rave')"
     />
 
     <Layer
         File="ScreenStage2"
-        Condition="GetStageText() == '2' and PlayModeName() == 'Regular'"
+        Condition="GetStageText() == '2' and (PlayModeName() == 'Regular' or PlayModeName() == 'Rave')"
     />
 
     <Layer
         File="ScreenStage3"
-        Condition="GetStageText() == '3' and PlayModeName() == 'Regular'"
+        Condition="GetStageText() == '3' and (PlayModeName() == 'Regular' or PlayModeName() == 'Rave')"
     />
 
     <Layer
         File="ScreenStage4"
-        Condition="GetStageText() == '4' and PlayModeName() == 'Regular'"
+        Condition="GetStageText() == '4' and (PlayModeName() == 'Regular' or PlayModeName() == 'Rave')"
     />
 
     <Layer
         File="ScreenStage5"
-        Condition="GetStageText() == '5' and PlayModeName() == 'Regular'"
+        Condition="GetStageText() == '5' and (PlayModeName() == 'Regular' or PlayModeName() == 'Rave')"
     />
 
     <Layer
         File="ScreenStage6"
-        Condition="GetStageText() == '6' and PlayModeName() == 'Regular'"
+        Condition="GetStageText() == '6' and (PlayModeName() == 'Regular' or PlayModeName() == 'Rave')"
     />
 
     <Layer
         File="ScreenStageFinal"
-        Condition="GetStageText() == 'final' and PlayModeName() == 'Regular'"
+        Condition="GetStageText() == 'final' and (PlayModeName() == 'Regular' or PlayModeName() == 'Rave')"
     />
 
     <Layer
         File="ScreenStageExtra1"
-        Condition="GetStageText() == 'extra1' and PlayModeName() == 'Regular'"
+        Condition="GetStageText() == 'extra1' and (PlayModeName() == 'Regular' or PlayModeName() == 'Rave')"
     />
 
     <Layer
         File="ScreenStageExtra2"
-        Condition="GetStageText() == 'extra2' and PlayModeName() == 'Regular'"
+        Condition="GetStageText() == 'extra2' and (PlayModeName() == 'Regular' or PlayModeName() == 'Rave')"
     />
 
     <Layer
         File="ScreenStageEvent"
-        Condition="GetStageText() == 'event' and PlayModeName() == 'Regular'"
+        Condition="GetStageText() == 'event' and PlayModeName() ~= 'Nonstop' and PlayModeName() ~= 'Oni' and PlayModeName() ~= 'Endless'"
     />
 
     <Layer
