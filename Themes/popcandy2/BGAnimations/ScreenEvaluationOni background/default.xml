@@ -2,10 +2,18 @@
     <Layer
         File="../_shared background patten2"
     />
-	<Layer Type="ActorFrame"><children>
+	<Layer Type="ActorFrame" Condition="not AllFailed()"><children>
 		<Layer File="../ScreenEvaluationStage background/AAA_bg.png" OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT"/>
         <Layer
             File="../ScreenEvaluationStage background/AAA.png"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(375-240);zoom,1"
+        />
+	</children></Layer>
+    
+    <Layer Type="ActorFrame" Condition="AllFailed()"><children>
+		<Layer File="../ScreenEvaluationStage background/D_bg.png" OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT"/>
+        <Layer
+            File="../ScreenEvaluationStage background/D.png"
             Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(375-240);zoom,1"
         />
 	</children></Layer>

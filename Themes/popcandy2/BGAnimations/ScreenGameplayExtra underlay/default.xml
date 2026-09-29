@@ -1,18 +1,20 @@
 <ActorFrame> <children>
 	<Layer
 		File="ScreenGameplayExtra life frame"
-		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(36-240);addy,-100;decelerate,0.8;addy,100"
+		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(444-240);addy,-100;decelerate,0.8;addy,100"
         OffCommand="decelerate,0.3;addy,20;accelerate,0.7;addy,-120"
 	/>
 	<Layer
 		File="ScreenGameplayExtra score frame"
-		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(448-240);addy,100;decelerate,1;addy,-100"
+		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(32-240);addy,100;decelerate,1;addy,-100"
         OffCommand="accelerate,0.7;addy,120"
 	/>
+    
     <Layer
 		File="ScreenGameplay difficulty icons"
-		OnCommand="%function(self)
-            self:x(SCREEN_CENTER_X+(-12-320))
+        OnCommand="x,10000"
+		DiffP1NormalMessageCommand="%function(self)
+            self:x(-12)
             self:y(SCREEN_CENTER_Y+(422-240))
             self:rotationz(-180)
             
@@ -24,15 +26,9 @@
             self:rotationz(0)
             self:animate(0)
         end"
-        CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
-        UpdateCommand="%function(self) GameplayDiffIcon(self,1) end"
-        OffCommand="linear,1;rotationz,-180;"
-	/>
-    <Layer
-		File="ScreenGameplay difficulty icons"
-		OnCommand="%function(self)
-            self:x(SCREEN_CENTER_X+(652-320))
-            self:y(SCREEN_CENTER_Y+(422-240))
+        DiffP1ReverseMessageCommand="%function(self)
+            self:x(-12)
+            self:y(SCREEN_CENTER_Y+(35-240))
             self:rotationz(180)
             
             self:sleep(0.5)
@@ -44,8 +40,43 @@
             self:animate(0)
         end"
         CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
+        UpdateCommand="%function(self) GameplayDiffIcon(self,1) end"
+        DiffP1NormalOffMessageCommand="linear,1;rotationz,-180;"
+        DiffP1ReverseOffMessageCommand="linear,1;rotationz,-180;"
+	/>
+    <Layer
+		File="ScreenGameplay difficulty icons"
+        OnCommand="x,10000"
+		DiffP2NormalMessageCommand="%function(self)
+            self:x(SCREEN_WIDTH-(640-652))
+            self:y(SCREEN_CENTER_Y+(422-240))
+            self:rotationz(180)
+            
+            self:sleep(0.5)
+            self:queuecommand('Update')
+            self:sleep(0.5)
+            
+            self:linear(0.5)
+            self:rotationz(0)
+            self:animate(0)
+        end"
+        DiffP2ReverseMessageCommand="%function(self)
+            self:x(SCREEN_WIDTH-(640-652))
+            self:y(SCREEN_CENTER_Y+(35-240))
+            self:rotationz(-180)
+            
+            self:sleep(0.5)
+            self:queuecommand('Update')
+            self:sleep(0.5)
+            
+            self:linear(0.5)
+            self:rotationz(0)
+            self:animate(0)
+        end"
+        CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
         UpdateCommand="%function(self) GameplayDiffIcon(self,2) end"
-        OffCommand="linear,1;rotationz,180;"
+        DiffP2NormalOffMessageCommand="linear,1;rotationz,180;"
+        DiffP2ReverseOffMessageCommand="linear,1;rotationz,180;"
 	/>
     
     <Layer 

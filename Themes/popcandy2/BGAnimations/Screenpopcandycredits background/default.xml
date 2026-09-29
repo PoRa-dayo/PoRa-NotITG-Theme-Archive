@@ -7,11 +7,12 @@
 
     <Layer
         File="ending.avi"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT"
     />
 
     <Layer
         File="01.png"
-        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(-100-240);sleep,2;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
+        Command="rotationy,180;diffusealpha,0.5;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(-100-240);sleep,2;linear,10;y,SCREEN_CENTER_Y+(600-240);rotationy,540"
     />
 
     <Layer
@@ -166,7 +167,7 @@
 
     <Layer
         File="end.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0.0;sleep,60;linear,3.5;diffusealpha,1.0"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0.0;sleep,60;linear,3.5;diffusealpha,1.0"
     />
 
 </children></ActorFrame>

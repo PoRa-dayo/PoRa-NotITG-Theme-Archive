@@ -7,7 +7,7 @@
     
     <Layer
         File="../ScreenLogo background/back1.png"
-        OnCommand="xywh,0,0,2048,2048;customtexturerect,0,0,8,8;texcoordvelocity,-0.1,-0.1"
+        OnCommand="xywh,0,0,2048,2048;customtexturerect,0,0,8,8;texcoordvelocity,0,0.1"
     />
 
     <Layer

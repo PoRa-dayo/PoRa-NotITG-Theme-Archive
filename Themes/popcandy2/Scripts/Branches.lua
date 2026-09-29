@@ -67,6 +67,51 @@ function IsEventMode()
 	return PREFSMAN:GetPreference( "EventMode" )
 end
 
+-- Checks if the player is available to access the extra stage.
+-- Current System works like this:
+-- To obtain the Extra Stage, all players must have an accumulated score of 93% or higher.
+-- Failing to obtain these will result just sending you back to the final evaluation screen.
+function AbleToEnterExtraStage()
+
+	local ValueToPass = 0.93
+	local function PEnabled(pn)
+		return GAMESTATE:IsPlayerEnabled(pn)
+	end
+
+	local function StatsCombined(pn, n1, n2, n3)
+		return GetPSStageStats(pn):GetTapNoteScores(n1) + GetPSStageStats(pn):GetTapNoteScores(n2) + GetPSStageStats(pn):GetTapNoteScores(n3)
+	end
+
+	if IsFinalStage() then
+		
+		if PEnabled(PLAYER_1) and not PEnabled(PLAYER_2) then
+			if ( AccumScoreActual(PLAYER_1) / AccumScorePossible(PLAYER_1) ) >= ValueToPass then
+				return true
+			else
+				return false
+			end
+		end
+
+		if PEnabled(PLAYER_2) and not PEnabled(PLAYER_1) then
+			if ( AccumScoreActual(PLAYER_2) / AccumScorePossible(PLAYER_2) ) >= ValueToPass then
+				return true
+			else
+				return false
+			end
+		end
+
+		if PEnabled(PLAYER_1) and PEnabled(PLAYER_2) then
+			if ( AccumScoreActual(PLAYER_1) / AccumScorePossible(PLAYER_1) ) >= ValueToPass and ( AccumScoreActual(PLAYER_2) / AccumScorePossible(PLAYER_2) ) >= ValueToPass then
+				return true
+			else
+				return false
+			end
+		end
+
+	end
+
+end
+
 -- For "EvalOnFail", do:
 -- function GetGameplayNextScreen() return SelectEvaluationScreen() end
 

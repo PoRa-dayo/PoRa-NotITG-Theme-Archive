@@ -1,3 +1,5 @@
+PopCandyGlobVar = {}
+
 -- Grab Judgment, Combo and Hold NG/OK.
 function ComboCommand(self) ComboTween(self) end
 function JudgmentCommand(self,n) JudgmentTween(self) end
@@ -61,6 +63,9 @@ function ScorePossible( pn ) return STATSMAN:GetCurStageStats():GetPlayerStageSt
 -- Get Actual/Current Dance Points.
 function ScoreActual( pn ) return STATSMAN:GetCurStageStats():GetPlayerStageStats(pn):GetActualDancePoints() end
 
+function AccumScorePossible( pn ) return STATSMAN:GetAccumStageStats():GetPlayerStageStats(pn):GetPossibleDancePoints() end
+function AccumScoreActual( pn ) return STATSMAN:GetAccumStageStats():GetPlayerStageStats(pn):GetActualDancePoints() end
+
 -- Get Player Score
 function GetScore( pn ) return STATSMAN:GetCurStageStats():GetPlayerStageStats(pn):GetScore() end
 
@@ -70,47 +75,6 @@ function MaxComboGlow(pn)
 	if not bMaxComboObtained then return
 	else return "glowshift"
 	end
-end
-
--- Checks if the player is available to access the extra stage.
--- Current System works like this:
--- To obtain the Extra Stage, you must get higher than 93% as a Full Combo.
--- Failing to obtain these will result just sending you back to the final evaluation screen.
-function AbleToEnterExtraStage()
-
-	local ValueToPass = 0.93
-	local function PEnabled(pn)
-		return GAMESTATE:IsPlayerEnabled(pn)
-	end
-
-	local function StatsCombined(pn, n1, n2, n3)
-		return GetPSStageStats(pn):GetTapNoteScores(n1) + GetPSStageStats(pn):GetTapNoteScores(n2) + GetPSStageStats(pn):GetTapNoteScores(n3)
-	end
-
-	if IsFinalStage() then
-		
-		if PEnabled(PLAYER_1) and not PEnabled(PLAYER_2) then
-			if ( ScoreActual(PLAYER_1) / ScorePossible(PLAYER_1) ) >= ValueToPass and StatsCombined(PLAYER_1, 5, 4, 3) == 0 then
-				return true
-			else
-				return false
-			end
-		end
-
-		if PEnabled(PLAYER_2) and not PEnabled(PLAYER_1) then
-			if ( ScoreActual(PLAYER_2) / ScorePossible(PLAYER_2) ) >= ValueToPass and StatsCombined(PLAYER_2, 5, 4, 3) == 0 then
-				return true
-			else
-				return false
-			end
-		end
-
-		if PEnabled(PLAYER_1) and PEnabled(PLAYER_2) then
-			return false
-		end
-
-	end
-
 end
 
 -- Checks if the game is being run at Widescreen.
@@ -349,53 +313,6 @@ function TitleMusicRedirect()
 	end
 end
 
--- Set the next screen for Evaluation.
-function SetEvaluationNextScreen()
-	Trace( "GetGameplayNextScreen: " )
-	-- If all failed the song
-	Trace( " AllFailed = "..tostring(AllFailed()) )
-	-- If the game is in Event Mode.
-	Trace( " IsEventMode = "..tostring(GAMESTATE:IsEventMode()) )
-	-- If it's the Final Stage.
-	Trace( " IsFinalStage = "..tostring(IsFinalStage()) )
-
-	if GAMESTATE:IsEventMode() then return SongSelectionScreen() end
-	if AllFailed() or IsFinalStage() and not AbleToEnterExtraStage() then return "ScreenEvaluationSummary" end
-	if IsFinalStage() and AbleToEnterExtraStage() then return SongSelectionScreen() end
-	return SongSelectionScreen();
-end
-
-function GetGameplayNextScreen()
-	Trace( "GetGameplayNextScreen: " )
-	Trace( " AllFailed = "..tostring(AllFailed()) )
-	Trace( " IsEventMode = "..tostring(GAMESTATE:IsEventMode()) )
-	Trace( " IsSyncDataChanged = "..tostring(GAMESTATE:IsSyncDataChanged()) )
-
-	if GAMESTATE:IsSyncDataChanged() then 
-		return "ScreenSaveSync"
-	end
-		
-	-- Never show evaluation for training.
-	-- Since it's not really neccesary.
-	if GAMESTATE:GetCurrentSong():GetSongDir() == "Songs/In The Groove/Training1/" then 
-		if GAMESTATE:IsEventMode() then 
-			return SongSelectionScreen()
-		else
-			return EvaluationNextScreen()
-		end
-	elseif AllFailed() and not GAMESTATE:IsCourseMode() then 
-		if GAMESTATE:IsEventMode() then 
-			return SelectEvaluationScreen()
-		else
-			return "ScreenEvaluationStage"
-		end
-	else
-		return SelectEvaluationScreen() 
-	end
-	
-	return "GetGameplayNextScreen: YOU SHOULD NEVER GET HERE"
-end
-
 function DangerSize()
 	if IsUsingWideScreen() then 
 		return 0.75
@@ -577,6 +494,27 @@ function GameplayMaxCombo(self)
     end
     self:sleep(.05)
     self:queuecommand('Update')
+end
+
+function GetRandomBackgrounds(num)
+    local PathList = {}
+    local CheckList = {}
+    for ind=1,num,1 do
+        local BGPath = nil
+        local songg
+        local times = 1
+        while ((not BGPath) or CheckList[BGPath]) and times < 10 do
+            songg = SONGMAN:GetRandomSong()
+            BGPath = songg:GetBackgroundPath()
+            times = times+1
+        end
+        if not BGPath then
+            BGPath = THEME:GetPath(EC_GRAPHICS,"Common","fallback background")
+        end
+        table.insert(PathList,BGPath)
+        CheckList[BGPath] = 1
+    end
+    return PathList
 end
 
 

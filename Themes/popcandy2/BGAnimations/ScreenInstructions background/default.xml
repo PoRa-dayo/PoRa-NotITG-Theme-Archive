@@ -7,47 +7,47 @@
 
     <Layer
         File="../_black.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(240-240)"
     />
 
     <Layer
         File="../stagetemp/loadf_0u.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(112-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(112-240);zoomtowidth,SCREEN_WIDTH"
     />
 
     <Layer
         File="../stagetemp/loadf_0d.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(368-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(368-240);zoomtowidth,SCREEN_WIDTH"
     />
 
     <Layer
         File="../stagetemp/loadf_1u.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(92-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(92-240);zoomtowidth,SCREEN_WIDTH"
     />
 
     <Layer
         File="../stagetemp/loadf_1d.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(388-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(388-240);zoomtowidth,SCREEN_WIDTH"
     />
 
     <Layer
         File="../stagetemp/loadf_3u.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(32-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(32-240)"
     />
 
     <Layer
         File="../stagetemp/loadf_3d.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(448-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(448-240)"
     />
 
     <Layer
         File="../stagetemp/loadf_2u.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(128-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(128-240)"
     />
 
     <Layer
         File="../stagetemp/loadf_2d.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(352-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(352-240)"
     />
 
     <Layer
@@ -62,7 +62,7 @@
 
     <Layer
         File="../stagetemp/loadf_4c.png"
-        Command="rainbow;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240)"
+        Command="rainbow;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(240-240)"
     />
 
 </children></ActorFrame>

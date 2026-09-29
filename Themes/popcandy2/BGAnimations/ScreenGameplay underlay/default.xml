@@ -9,11 +9,12 @@
 		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(448-240);addy,100;decelerate,1;addy,-100"
         OffCommand="accelerate,0.7;addy,120"
 	/>
+    
     <Layer
 		File="ScreenGameplay difficulty icons"
         OnCommand="x,10000"
 		DiffP1NormalMessageCommand="%function(self)
-            self:x(SCREEN_CENTER_X+(-12-320))
+            self:x(-12)
             self:y(SCREEN_CENTER_Y+(422-240))
             self:rotationz(-180)
             
@@ -26,7 +27,7 @@
             self:animate(0)
         end"
         DiffP1ReverseMessageCommand="%function(self)
-            self:x(SCREEN_CENTER_X+(-12-320))
+            self:x(-12)
             self:y(SCREEN_CENTER_Y+(35-240))
             self:rotationz(180)
             
@@ -47,7 +48,7 @@
 		File="ScreenGameplay difficulty icons"
         OnCommand="x,10000"
 		DiffP2NormalMessageCommand="%function(self)
-            self:x(SCREEN_CENTER_X+(652-320))
+            self:x(SCREEN_WIDTH-(640-652))
             self:y(SCREEN_CENTER_Y+(422-240))
             self:rotationz(180)
             
@@ -60,7 +61,7 @@
             self:animate(0)
         end"
         DiffP2ReverseMessageCommand="%function(self)
-            self:x(SCREEN_CENTER_X+(652-320))
+            self:x(SCREEN_WIDTH-(640-652))
             self:y(SCREEN_CENTER_Y+(35-240))
             self:rotationz(-180)
             
