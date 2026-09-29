@@ -1,0 +1,5 @@
+<ActorFrame><children>
+	<Layer File="@THEME:GetPath(EC_GRAPHICS,'ScreenSelectCourse','explanation')"
+	OnCommand="x,SCREEN_WIDTH-(640-656);y,SCREEN_CENTER_Y+(68-240);rotationz,90;sleep,0.5;bounceend,0.5;rotationz,0"
+    OffCommand="bouncebegin,0.5;rotationz,90;"/>
+</children></ActorFrame>
