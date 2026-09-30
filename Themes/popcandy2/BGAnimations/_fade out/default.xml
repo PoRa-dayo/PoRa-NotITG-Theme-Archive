@@ -7,12 +7,20 @@
 
     <Layer
         File="../_fadetest.png"
+        Condition="not PopCandyIsOriginal()"
         Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;rotationz,0;zoom,0;linear,0.3;rotationz,90;zoom,150"
     />
 
     <Layer
         File="../star.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffuse,0.5,0.5,0.5,1;zoom,0;rotationz,0;linear,0.3;zoom,3;rotationz,360;diffuse,0,0,0,1"
+        Condition="not PopCandyIsOriginal()"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffuse,0.5,0.5,0.5,1;zoom,0;rotationz,0;linear,0.3;zoom,3.5;rotationz,360;diffuse,0,0,0,1"
+    />
+    
+    <Layer
+        File="../star.png"
+        Condition="PopCandyIsOriginal()"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffuse,0,0,0,1;zoom,0;rotationz,0;linear,0.3;rotationz,-1000;zoom,3.5;"
     />
 
 </children></ActorFrame>

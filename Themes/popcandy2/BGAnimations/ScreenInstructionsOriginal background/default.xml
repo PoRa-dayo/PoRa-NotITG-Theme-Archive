@@ -1,0 +1,18 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,0.5"
+    />
+
+    <Layer
+        File="../stagetemp/loadingframe2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(300-240);zoomtowidth,SCREEN_WIDTH"
+    />
+    
+    <Layer
+        File="../stagetemp/loadingframe1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(82-240);zoomtowidth,SCREEN_WIDTH"
+    />
+
+</children></ActorFrame>

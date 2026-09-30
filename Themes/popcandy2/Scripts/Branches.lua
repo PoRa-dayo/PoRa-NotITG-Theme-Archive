@@ -1,28 +1,26 @@
+function ScrAddSuffix(ScreenName)
+    local suffix = ""
+    if PopCandyIsOriginal() then
+        suffix = "Original"
+    end
+    return ScreenName..suffix
+end
+
 function ScreenTitleBranch()
-	if GAMESTATE:GetCoinMode() == COIN_MODE_HOME then return "ScreenTitleMenu" end
-	return "ScreenTitleJoin"
+	if GAMESTATE:GetCoinMode() == COIN_MODE_HOME then return ScrAddSuffix("ScreenTitleMenu") end
+	return ScrAddSuffix("ScreenTitleJoin")
 end
 
 function ScreenCautionBranch()
-	if PREFSMAN:GetPreference("ShowCaution") then return "ScreenCaution" end
-	return "ScreenSelectStyle"
+	return ScrAddSuffix("ScreenCaution")
 end
 
 function SongSelectionScreen()
-	if PlayModeName() == "Nonstop" then return "ScreenSelectCourseNonstop" end
-	if PlayModeName() == "Oni" then return "ScreenSelectCourseOni" end
-	if PlayModeName() == "Endless" then return "ScreenSelectCourseEndless" end
-	if IsNetConnected() then ReportStyle() end
-	if IsNetSMOnline() then return SMOnlineScreen() end
-	if IsNetConnected() then return "ScreenNetSelectMusic" end
-	return "ScreenSelectMusic"
+	if PlayModeName() == "Nonstop" then return ScrAddSuffix("ScreenSelectCourseNonstop") end
+	if PlayModeName() == "Oni" then return ScrAddSuffix("ScreenSelectCourseOni") end
+	if PlayModeName() == "Endless" then return ScrAddSuffix("ScreenSelectCourseEndless") end
+	return ScrAddSuffix("ScreenSelectMusic")
 end
-
-function SMOnlineScreen()
-	if not IsSMOnlineLoggedIn(PLAYER_1) and GAMESTATE:IsPlayerEnabled(PLAYER_1) then return "ScreenSMOnlineLogin" end
-	if not IsSMOnlineLoggedIn(PLAYER_2) and GAMESTATE:IsPlayerEnabled(PLAYER_2) then return "ScreenSMOnlineLogin" end
-	return "ScreenNetRoom"
-end	
 
 function SelectFirstOptionsScreen()
 	if PlayModeName() == "Rave" then return "ScreenRaveOptions" end
@@ -46,23 +44,6 @@ function SelectEvaluationScreen()
 	if( Mode == "Battle" ) then return "ScreenEvaluationBattle" end
 end
 
-function ScreenEvaluationExitBranch()
-	if( IsNetSMOnline() ) then return "ScreenNetRoom" end
-	if( IsNetConnected() ) then return "ScreenNetSelectMusic" end
-	return "ScreenSelectMusic"
-end
-
-function ScreenBranchNetAfterEval()
-	if IsNetSMOnline() then return "ScreenSMOnlineSelectMusic" end
-	if IsNetConnected() then return "ScreenNetSelectMusic" end
-	return "ScreenSelectMusic"
-end	
-
-function SelectEndingScreen()
-	if GetBestFinalGrade() >= GRADE_TIER03 then return "ScreenMusicScroll" end
-	return "ScreenCredits"
-end	
-
 function IsEventMode()
 	return PREFSMAN:GetPreference( "EventMode" )
 end
@@ -71,6 +52,7 @@ end
 -- Current System works like this:
 -- To obtain the Extra Stage, all players must have an accumulated score of 93% or higher.
 -- Failing to obtain these will result just sending you back to the final evaluation screen.
+--NOT USED (Extra stages seem to be broken in NotITG)
 function AbleToEnterExtraStage()
 
 	local ValueToPass = 0.93
@@ -173,7 +155,7 @@ function GetScreenInstructions()
 	if not ShowScreenInstructions() then
 		return THEME:GetMetric("ScreenInstructions","NextScreen")
 	else
-		return "ScreenInstructions"
+		return ScrAddSuffix("ScreenInstructions")
 	end
 end
 

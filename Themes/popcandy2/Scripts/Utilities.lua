@@ -1,4 +1,4 @@
-PopCandyGlobVar = {}
+POPCANDYGlobVar = {}
 
 -- Grab Judgment, Combo and Hold NG/OK.
 function ComboCommand(self) ComboTween(self) end
@@ -601,4 +601,131 @@ function ThemeSwitcher( next_screen )
 	local Params = { Name = "Theme" }
 
 	return CreateOptionRow( Params, Names, Load, Save )
+end
+
+
+
+
+-- Other custom option rows
+
+function StepsDetailsIsFrameless()
+    return PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYStepsDetails ~= 1
+end
+
+function StepsDetailsIsHidden()
+    return PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYStepsDetails == 3
+end
+
+function PopCandyIsOriginal()
+    return PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYUIOption == 2
+end
+
+function PopCandyGameplayIsOriginal()
+    return PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYGameplayUIOption == 2
+end
+
+function StepsDetailsOption()
+	local modList = {"SHOW","SHOW FRAMELESS","HIDE"}
+    
+	local Params = {
+		Name = "Steps Details",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        if not PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYStepsDetails then
+            list[1] = true
+        elseif PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYStepsDetails then 
+            for ind, val in ipairs(modList) do
+                if ind == PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYStepsDetails then
+                    list[ind] = true
+                end
+            end
+        else
+            list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        for ind, val in ipairs(list) do
+            if val then
+                PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYStepsDetails = ind
+            end
+        end
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+function GeneralUIOption()
+	local modList = {"pop * candy 2", "pop * candy"}
+    
+	local Params = {
+		Name = "General UI",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        if not PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYUIOption then
+            list[1] = true
+        elseif PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYUIOption then 
+            for ind, val in ipairs(modList) do
+                if ind == PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYUIOption then
+                    list[ind] = true
+                end
+            end
+        else
+            list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        for ind, val in ipairs(list) do
+            if val then
+                PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYUIOption = ind
+            end
+        end
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+function GameplayUIOption()
+	local modList = {"pop * candy 2", "pop * candy"}
+    
+	local Params = {
+		Name = "Gameplay UI",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        if not PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYGameplayUIOption then
+            list[1] = true
+        elseif PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYGameplayUIOption then 
+            for ind, val in ipairs(modList) do
+                if ind == PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYGameplayUIOption then
+                    list[ind] = true
+                end
+            end
+        else
+            list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        for ind, val in ipairs(list) do
+            if val then
+                PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYGameplayUIOption = ind
+            end
+        end
+        PROFILEMAN:SaveMachineProfile()
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
 end

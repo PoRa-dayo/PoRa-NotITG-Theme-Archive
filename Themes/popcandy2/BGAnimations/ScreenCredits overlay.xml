@@ -1,6 +1,6 @@
 <!--Yeah OpenITG fucking broke this screen so this is a recreation. Have fun with the stupid repetitive xml code and the long ass credits string.-->
 <ActorFrame OnCommand="%function(self)
-    PopCandyGlobVar.BGPathList = GetRandomBackgrounds(20)
+    POPCANDYGlobVar.BGPathList = GetRandomBackgrounds(20)
 end"> <children>
     <!--background scroller-->
     
@@ -10,7 +10,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[1]
+                    local Path = POPCANDYGlobVar.BGPathList[1]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -32,7 +32,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[2]
+                    local Path = POPCANDYGlobVar.BGPathList[2]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -54,7 +54,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[3]
+                    local Path = POPCANDYGlobVar.BGPathList[3]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -76,7 +76,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[4]
+                    local Path = POPCANDYGlobVar.BGPathList[4]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -98,7 +98,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[5]
+                    local Path = POPCANDYGlobVar.BGPathList[5]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -120,7 +120,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[6]
+                    local Path = POPCANDYGlobVar.BGPathList[6]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -142,7 +142,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[7]
+                    local Path = POPCANDYGlobVar.BGPathList[7]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -164,7 +164,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[8]
+                    local Path = POPCANDYGlobVar.BGPathList[8]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -186,7 +186,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[9]
+                    local Path = POPCANDYGlobVar.BGPathList[9]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -208,7 +208,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[10]
+                    local Path = POPCANDYGlobVar.BGPathList[10]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -230,7 +230,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[11]
+                    local Path = POPCANDYGlobVar.BGPathList[11]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -252,7 +252,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[12]
+                    local Path = POPCANDYGlobVar.BGPathList[12]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -274,7 +274,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[13]
+                    local Path = POPCANDYGlobVar.BGPathList[13]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -296,7 +296,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[14]
+                    local Path = POPCANDYGlobVar.BGPathList[14]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -318,7 +318,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[15]
+                    local Path = POPCANDYGlobVar.BGPathList[15]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -340,7 +340,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[16]
+                    local Path = POPCANDYGlobVar.BGPathList[16]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -362,7 +362,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[17]
+                    local Path = POPCANDYGlobVar.BGPathList[17]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -384,7 +384,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[18]
+                    local Path = POPCANDYGlobVar.BGPathList[18]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -406,7 +406,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[19]
+                    local Path = POPCANDYGlobVar.BGPathList[19]
                     if not Path then
                         self:diffusealpha(0)
                     else 
@@ -428,7 +428,7 @@ end"> <children>
             <Layer
                 Type="Sprite"
                 OnCommand="%function(self)
-                    local Path = PopCandyGlobVar.BGPathList[20]
+                    local Path = POPCANDYGlobVar.BGPathList[20]
                     if not Path then
                         self:diffusealpha(0)
                     else 

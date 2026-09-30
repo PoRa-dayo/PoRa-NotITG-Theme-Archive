@@ -6,13 +6,7 @@
     />
 
     <Layer
-        File="../_fadetest.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;rotationz,90;zoom,150;linear,0.3;rotationz,0;zoom,0"
-    />
-
-    <Layer
-        File="../star.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffuse,0.5,0.5,0.5,1;zoom,1;rotationz,360;linear,0.3;zoom,0;rotationz,0;diffuse,0,0,0,1"
+        File="../_fade in"
     />
 
 </children></ActorFrame>

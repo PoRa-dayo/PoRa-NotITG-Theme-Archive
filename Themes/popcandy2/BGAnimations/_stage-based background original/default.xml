@@ -1,0 +1,73 @@
+<ActorFrame><children>
+
+    <Layer
+        File="ScreenSelectMusic stage 1.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;linear,0.3;diffusealpha,1;"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0;"
+        Condition="GAMESTATE:StageIndex() == 1 and (not GAMESTATE:IsEventMode())"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage 2.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;linear,0.3;diffusealpha,1;"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0;"
+        Condition="GAMESTATE:StageIndex() == 2 and (not GAMESTATE:IsEventMode())"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage 3.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;linear,0.3;diffusealpha,1;"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0;"
+        Condition="GAMESTATE:StageIndex() == 3 and (not GAMESTATE:IsEventMode())"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage 4.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;linear,0.3;diffusealpha,1;"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0;"
+        Condition="GAMESTATE:StageIndex() == 4 and (not GAMESTATE:IsEventMode())"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage 5.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;linear,0.3;diffusealpha,1;"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0;"
+        Condition="GAMESTATE:StageIndex() == 5 and (not GAMESTATE:IsEventMode())"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage 6.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;linear,0.3;diffusealpha,1;"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0;"
+        Condition="GAMESTATE:StageIndex() == 6 and (not GAMESTATE:IsEventMode())"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage final.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;linear,0.3;diffusealpha,1;"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0;"
+        Condition="GAMESTATE:StageIndex() >= 7 and (not GAMESTATE:IsEventMode())"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage event.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;linear,0.3;diffusealpha,1;"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0;"
+        Condition="GAMESTATE:StageIndex() == 0 or GAMESTATE:IsEventMode()"
+    />
+
+    <Layer
+        File="ScreenSelectMusic stage extra1.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;linear,0.3;diffusealpha,1;"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0;"
+        Condition="IsExtraStage() and PlayModeName() == 'Regular'"
+    />
+    
+    <Layer
+        File="ScreenSelectMusic stage extra2.png"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;linear,0.3;diffusealpha,1;"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0;"
+        Condition="IsExtraStage2() and PlayModeName() == 'Regular'"
+    />
+
+</children></ActorFrame>

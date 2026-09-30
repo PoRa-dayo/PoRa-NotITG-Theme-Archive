@@ -4,16 +4,33 @@
         File="back1.png"
         Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT"
     />
+    
 
     <Layer
         File="back3.png"
+        Condition="not PopCandyIsOriginal()"
         OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y+(420-240),1024,32;diffuse,0.8,1.0,0.8,1;customtexturerect,0,0,8,1;texcoordvelocity,0.2,0"
     />
 
     <Layer
         File="back3.png"
+        Condition="not PopCandyIsOriginal()"
         OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y+(60-240),1024,32;diffuse,0.8,1.0,0.8,1;customtexturerect,0,0,8,1;texcoordvelocity,-0.2,0"
     />
+    
+    
+    <Layer
+        File="back3.png"
+        Condition="PopCandyIsOriginal()"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y+(420-240),1024,32;customtexturerect,0,0,8,1;texcoordvelocity,0.2,0"
+    />
+
+    <Layer
+        File="back3.png"
+        Condition="PopCandyIsOriginal()"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y+(60-240),1024,32;customtexturerect,0,0,8,1;texcoordvelocity,-0.2,0"
+    />
+    
 
     <Layer
         File="back8.png"
@@ -42,6 +59,7 @@
 
     <Layer
         File="../_popcandymodel/popcandy_none.model"
+        Condition="not PopCandyIsOriginal()"
         Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,8.0;spin;effectmagnitude,0,-50,0"
     />
 

@@ -1,0 +1,3 @@
+[Sprite]
+Texture=_CommonBanner
+InitCommand=%function(self) if PopCandyIsOriginal() then self:Load(THEME:GetPath(EC_GRAPHICS,'','_CmmnBnnr')) end end

@@ -1,0 +1,13 @@
+<ActorFrame><children>
+
+    <Layer
+        File="instruct"
+        Condition="not PopCandyIsOriginal()"
+    />
+
+    <Layer
+        File="instructORIGINAL"
+        Condition="PopCandyIsOriginal()"
+    />
+
+</children></ActorFrame>
