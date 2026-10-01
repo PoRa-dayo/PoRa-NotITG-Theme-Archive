@@ -74,7 +74,7 @@
         end"
         DiffP1ReverseMessageCommand="%function(self)
             self:x(-12)
-            self:y(SCREEN_CENTER_Y+(35-240))
+            self:y(SCREEN_CENTER_Y+(58-240))
             self:rotationz(180)
             
             self:sleep(0.5)
@@ -108,7 +108,7 @@
         end"
         DiffP2ReverseMessageCommand="%function(self)
             self:x(SCREEN_WIDTH-(640-652))
-            self:y(SCREEN_CENTER_Y+(35-240))
+            self:y(SCREEN_CENTER_Y+(58-240))
             self:rotationz(-180)
             
             self:sleep(0.5)
