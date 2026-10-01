@@ -48,26 +48,26 @@
 	<Layer
 		File="ScreenGameplayCourse life frame"
         Condition="PlayModeName() ~= 'Oni'"
-		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(36-240);addy,-100;decelerate,0.8;addy,100"
+		OnCommand="x,SCREEN_CENTER_X+0;y,36;addy,-100;decelerate,0.8;addy,100"
         OffCommand="decelerate,0.3;addy,20;accelerate,0.7;addy,-120"
 	/>
 	<Layer
-		File="ScreenGameplay score frame"
+		File="../ScreenGameplayOriginal underlay/ScreenGameplay score frame"
         Condition="PlayModeName() ~= 'Oni'"
-		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(448-240);addy,100;decelerate,1;addy,-100"
+		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_HEIGHT-(480-448);addy,100;decelerate,1;addy,-100"
         OffCommand="accelerate,0.7;addy,120"
 	/>
     
     <Layer
 		File="ScreenGameplayCourse oni life frame"
         Condition="PlayModeName() == 'Oni'"
-		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(36-240);addy,-100;decelerate,0.8;addy,100"
+		OnCommand="x,SCREEN_CENTER_X+0;y,36;addy,-100;decelerate,0.8;addy,100"
         OffCommand="decelerate,0.3;addy,20;accelerate,0.7;addy,-120"
 	/>
 	<Layer
 		File="ScreenGameplay oni score frame"
         Condition="PlayModeName() == 'Oni'"
-		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(448-240);addy,100;decelerate,1;addy,-100"
+		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_HEIGHT-(480-448);addy,100;decelerate,1;addy,-100"
         OffCommand="accelerate,0.7;addy,120"
 	/>
     
@@ -76,7 +76,7 @@
         OnCommand="x,10000"
 		DiffP1NormalMessageCommand="%function(self)
             self:x(-12)
-            self:y(SCREEN_CENTER_Y+(422-240))
+            self:y(SCREEN_HEIGHT-(480-422))
             self:rotationz(-180)
             
             self:sleep(0.5)
@@ -89,7 +89,7 @@
         end"
         DiffP1ReverseMessageCommand="%function(self)
             self:x(-12)
-            self:y(SCREEN_CENTER_Y+(35-240))
+            self:y(58)
             self:rotationz(180)
             
             self:sleep(0.5)
@@ -110,7 +110,7 @@
         OnCommand="x,10000"
 		DiffP2NormalMessageCommand="%function(self)
             self:x(SCREEN_WIDTH-(640-652))
-            self:y(SCREEN_CENTER_Y+(422-240))
+            self:y(SCREEN_HEIGHT-(480-422))
             self:rotationz(180)
             
             self:sleep(0.5)
@@ -123,7 +123,7 @@
         end"
         DiffP2ReverseMessageCommand="%function(self)
             self:x(SCREEN_WIDTH-(640-652))
-            self:y(SCREEN_CENTER_Y+(35-240))
+            self:y(58)
             self:rotationz(-180)
             
             self:sleep(0.5)

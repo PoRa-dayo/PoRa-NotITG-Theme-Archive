@@ -1,0 +1,23 @@
+<ActorFrame> <children>
+    <Layer
+		File="ScreenGameplayExtra score frame_EXLEFT"
+		OnCommand="x,-160;zoomx,SCREEN_CENTER_X-320;horizalign,right"
+	/>
+    <Layer
+		File="ScreenGameplayExtra score frame_EXRIGHT"
+		OnCommand="x,160;zoomx,SCREEN_CENTER_X-320;horizalign,left"
+	/>
+	<Layer
+		File="ScreenGameplayExtra score frame_CENTER"
+		OnCommand="x,0"
+	/>
+	<Layer
+		File="ScreenGameplayExtra score frame_LEFT"
+		OnCommand="x,-SCREEN_CENTER_X+80"
+	/>
+    <Layer
+		File="ScreenGameplayExtra score frame_RIGHT"
+		OnCommand="x,SCREEN_CENTER_X-80"
+	/>
+</children> </ActorFrame>
+

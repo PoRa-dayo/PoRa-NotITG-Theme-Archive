@@ -3,7 +3,7 @@
 		Font="ScreenGameplay player options"
 		Text="Loading mods..."
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-		InitCommand="x,SCREEN_CENTER_X+(12-320);y,SCREEN_CENTER_Y+(19-240);horizalign,left;draworder,12;zoom,0.75;addy,-100;maxwidth,450;shadowlength,0"
+		InitCommand="x,SCREEN_CENTER_X+(12-320);y,19;horizalign,left;draworder,12;zoom,0.75;addy,-100;maxwidth,450;shadowlength,0"
 		OnCommand="%function(self)
             self:sleep(0.5)
             self:queuecommand('GetModText')
@@ -22,7 +22,7 @@
 		Font="ScreenGameplay player options"
 		Text="Loading mods..."
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-		InitCommand="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(19-240);horizalign,right;draworder,12;zoom,0.75;addy,-100;maxwidth,450;shadowlength,0"
+		InitCommand="x,SCREEN_CENTER_X+(628-320);y,19;horizalign,right;draworder,12;zoom,0.75;addy,-100;maxwidth,450;shadowlength,0"
 		OnCommand="%function(self)
             self:sleep(0.5)
             self:queuecommand('GetModText')
@@ -57,7 +57,7 @@
     <Layer
 		Font="../Numbers/BPMDisplay bpm"
 		Text="0"
-		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(45-240);horizalign,right;shadowlength,0;diffuse,1.0,1.0,0.0,1;addy,-100"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_HEIGHT-(480-45);horizalign,right;shadowlength,0;diffuse,1.0,1.0,0.0,1;addy,-100"
 		OnCommand="%function(self)
             self:queuecommand('Update')
             self:decelerate(1)
@@ -71,7 +71,7 @@
     
     <Layer
 		File="@THEME:GetPath(EC_GRAPHICS,'BPMDisplay','label')"
-		InitCommand="x,SCREEN_CENTER_X+18;y,SCREEN_CENTER_Y+(45-240);shadowlength,0;diffuse,1.0,1.0,0.0,1;draworder,12;addy,-100"
+		InitCommand="x,SCREEN_CENTER_X+18;y,SCREEN_HEIGHT-(480-45);shadowlength,0;diffuse,1.0,1.0,0.0,1;addy,-100"
 		OnCommand="%function(self)
             self:decelerate(1)
             self:addy(100)

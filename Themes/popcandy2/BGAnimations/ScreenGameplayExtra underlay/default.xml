@@ -46,13 +46,13 @@
     --SHOWDANGER RECREATION END
     
 	<Layer
-		File="ScreenGameplayExtra life frame"
-		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(444-240);addy,100;decelerate,0.8;addy,-100"
+		File="@(FinalGrade(0) <= 6 or FinalGrade(1) <= 6) and 'ScreenGameplayExtra oni life frame' or 'ScreenGameplayExtra life frame'"
+		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_HEIGHT-(480-444);addy,100;decelerate,0.8;addy,-100"
         OffCommand="decelerate,0.3;addy,-20;accelerate,0.7;addy,120"
 	/>
 	<Layer
-		File="ScreenGameplayExtra score frame"
-		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(32-240);addy,-100;decelerate,1;addy,100"
+		File="@(FinalGrade(0) <= 6 or FinalGrade(1) <= 6) and 'ScreenGameplayExtra oni score frame' or 'ScreenGameplayExtra score frame'"
+		OnCommand="x,SCREEN_CENTER_X+0;y,32;addy,-100;decelerate,1;addy,100"
         OffCommand="decelerate,0.3;addy,20;accelerate,0.7;addy,-120"
 	/>
     
@@ -61,7 +61,7 @@
         OnCommand="x,10000"
 		DiffP1NormalMessageCommand="%function(self)
             self:x(-12)
-            self:y(SCREEN_CENTER_Y+(422-240))
+            self:y(SCREEN_HEIGHT-(480-422))
             self:rotationz(-180)
             
             self:sleep(0.5)
@@ -74,7 +74,7 @@
         end"
         DiffP1ReverseMessageCommand="%function(self)
             self:x(-12)
-            self:y(SCREEN_CENTER_Y+(58-240))
+            self:y(58)
             self:rotationz(180)
             
             self:sleep(0.5)
@@ -95,7 +95,7 @@
         OnCommand="x,10000"
 		DiffP2NormalMessageCommand="%function(self)
             self:x(SCREEN_WIDTH-(640-652))
-            self:y(SCREEN_CENTER_Y+(422-240))
+            self:y(SCREEN_HEIGHT-(480-422))
             self:rotationz(180)
             
             self:sleep(0.5)
@@ -108,7 +108,7 @@
         end"
         DiffP2ReverseMessageCommand="%function(self)
             self:x(SCREEN_WIDTH-(640-652))
-            self:y(SCREEN_CENTER_Y+(58-240))
+            self:y(58)
             self:rotationz(-180)
             
             self:sleep(0.5)
