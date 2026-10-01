@@ -2,7 +2,14 @@
 
     <Layer
         Type="Quad"
+        Condition="not PopCandyGameplayIsOriginal()"
         OnCommand="hidden,1;sleep,3"
+    />
+    
+    <Layer
+        Type="Quad"
+        Condition="PopCandyGameplayIsOriginal()"
+        OnCommand="hidden,1;sleep,2"
     />
 
     <Layer
@@ -10,39 +17,85 @@
         Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"
     />
 
-    <Layer
-        File="../../_black.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,30;zoomy,20.0;diffusealpha,1;linear,0.3;zoomy,5.0;diffusealpha,0.25;sleep,2.4;linear,0.3;zoomy,0"
-    />
 
-    <Layer
-        File="../../_starmodel/star_yellow.model"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,8.0;decelerate,2.4;rotationy,720;linear,0.3;zoom,0"
-    />
+    <Layer Type="ActorFrame" Condition="not PopCandyGameplayIsOriginal()"><children>
+        <Layer
+            File="../../_black.png"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,30;zoomy,20.0;diffusealpha,1;linear,0.3;zoomy,5.0;diffusealpha,0.25;sleep,2.4;linear,0.3;zoomy,0"
+        />
 
-    <Layer
-        File="../../stagetemp/stageframe2.png"
-        Command="diffuse,0.5,1.0,0.8,1;y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+(76-320);diffusealpha,0;linear,0.3;diffusealpha,1;sleep,2.4;linear,0.3;zoomx,0"
-    />
+        <Layer
+            File="../../_starmodel/star_yellow.model"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,8.0;decelerate,2.4;rotationy,720;linear,0.3;zoom,0"
+        />
 
-    <Layer
-        File="../../stagetemp/stageframe2.png"
-        Command="diffuse,0.5,1.0,0.8,1;x,SCREEN_CENTER_X+(564-320);y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.3;diffusealpha,1;sleep,2.4;linear,0.3;zoomx,0"
-    />
+        <Layer
+            File="../../stagetemp/stageframe2.png"
+            Command="diffuse,0.8,1,0.8,1;y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+(76-320);diffusealpha,0;linear,0.3;diffusealpha,1;sleep,2.4;linear,0.3;zoomx,0"
+        />
 
-    <Layer
-        File="num.png"
-        Command="diffuse,0.5,1.0,0.8,1;zoom,0;spin;y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+(76-320);diffusealpha,0;linear,0.3;zoom,0.8;diffusealpha,1;linear,2.4;rotationz,-360;linear,0.3;zoomx,0"
-    />
+        <Layer
+            File="../../stagetemp/stageframe2.png"
+            Command="diffuse,0.8,1,0.8,1;x,SCREEN_CENTER_X+(564-320);y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.3;diffusealpha,1;sleep,2.4;linear,0.3;zoomx,0"
+        />
 
-    <Layer
-        File="num.png"
-        Command="diffuse,0.5,1.0,0.8,1;zoom,0;spin;x,SCREEN_CENTER_X+(564-320);y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.3;zoom,0.8;diffusealpha,1;linear,2.4;rotationz,-360;linear,0.3;zoomx,0"
-    />
+        <Layer
+            File="num.png"
+            Command="diffuse,0.8,1,0.8,1;zoom,0;spin;y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+(76-320);diffusealpha,0;linear,0.3;zoom,0.8;diffusealpha,1;linear,2.4;rotationz,-360;linear,0.3;zoomx,0"
+        />
 
-    <Layer
-        File="stage.png"
-        Command="ShadowLength,5;diffuse,1.0,0.8,0.5,1;y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X;diffusealpha,0;linear,0.3;diffusealpha,1;sleep,2.4;linear,0.3;zoomy,0"
-    />
+        <Layer
+            File="num.png"
+            Command="diffuse,0.8,1,0.8,1;zoom,0;spin;x,SCREEN_CENTER_X+(564-320);y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.3;zoom,0.8;diffusealpha,1;linear,2.4;rotationz,-360;linear,0.3;zoomx,0"
+        />
+
+        <Layer
+            File="stage.png"
+            Command="ShadowLength,5;diffuse,1.0,0.8,0.5,1;y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X;diffusealpha,0;linear,0.3;diffusealpha,1;sleep,2.4;linear,0.3;zoomy,0"
+        />
+    </children></Layer>
+    
+    
+    <Layer Type="ActorFrame" Condition="PopCandyGameplayIsOriginal()"><children>
+        <Layer
+            File="../../_black.png"
+            Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,1;linear,0.3;diffusealpha,0.25"
+        />
+
+        <Layer
+            File="../../stagetemp/stageframe1.png"
+            Command="y,SCREEN_CENTER_Y+(82-240);x,SCREEN_CENTER_X-SCREEN_WIDTH;diffusealpha,0;linear,0.3;diffusealpha,1;x,SCREEN_CENTER_X"
+        />
+
+        <Layer
+            File="../../stagetemp/stageframe1.png"
+            Command="y,SCREEN_CENTER_Y+(398-240);x,SCREEN_CENTER_X+SCREEN_WIDTH;rotationz,-180;diffusealpha,0;linear,0.3;diffusealpha,1;x,SCREEN_CENTER_X"
+        />
+
+        <Layer
+            File="../../stagetemp/stageframe2.png"
+            Command="diffuse,0.8,1,0.8,1;y,SCREEN_CENTER_Y+(76-240);x,SCREEN_CENTER_X+(76-320);diffusealpha,0;linear,0.3;diffusealpha,1"
+        />
+
+        <Layer
+            File="../../stagetemp/stageframe2.png"
+            Command="diffuse,0.8,1,0.8,1;x,SCREEN_CENTER_X+(564-320);y,SCREEN_CENTER_Y+(404-240);diffusealpha,0;linear,0.3;diffusealpha,1"
+        />
+
+        <Layer
+            File="num.png"
+            Command="zoom,0;diffuse,0.8,1,0.8,1;spin;y,SCREEN_CENTER_Y+(76-240);x,SCREEN_CENTER_X+(76-320);diffusealpha,0;linear,0.3;zoom,0.8;diffusealpha,1"
+        />
+
+        <Layer
+            File="num.png"
+            Command="zoom,0;diffuse,0.8,1,0.8,1;spin;x,SCREEN_CENTER_X+(564-320);y,SCREEN_CENTER_Y+(404-240);diffusealpha,0;linear,0.3;zoom,0.8;diffusealpha,1"
+        />
+
+        <Layer
+            File="stage.png"
+            Command="ShadowLength,5;diffuse,0.8,1,0.8,1;y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X;diffusealpha,0;linear,0.3;diffusealpha,1"
+        />
+    </children></Layer>
 
 </children></ActorFrame>

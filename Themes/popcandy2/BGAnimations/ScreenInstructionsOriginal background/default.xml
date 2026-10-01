@@ -7,12 +7,12 @@
 
     <Layer
         File="../stagetemp/loadingframe2.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(300-240);zoomtowidth,SCREEN_WIDTH"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(300-240)"
     />
     
     <Layer
         File="../stagetemp/loadingframe1.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(82-240);zoomtowidth,SCREEN_WIDTH"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(82-240)"
     />
 
 </children></ActorFrame>

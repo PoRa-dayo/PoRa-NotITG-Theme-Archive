@@ -6,6 +6,14 @@ function ScrAddSuffix(ScreenName)
     return ScreenName..suffix
 end
 
+function ScrGameplayAddSuffix(ScreenName)
+    local suffix = ""
+    if PopCandyGameplayIsOriginal() then
+        suffix = "Original"
+    end
+    return ScreenName..suffix
+end
+
 function ScreenTitleBranch()
 	if GAMESTATE:GetCoinMode() == COIN_MODE_HOME then return ScrAddSuffix("ScreenTitleMenu") end
 	return ScrAddSuffix("ScreenTitleJoin")
@@ -28,20 +36,19 @@ function SelectFirstOptionsScreen()
 end
 
 function GetGameplayScreen()
-	if IsExtraStage() or IsExtraStage2() then return "ScreenGameplayExtra" end
-    if GAMESTATE:IsCourseMode() then return "ScreenGameplayCourse" end
-	return "ScreenGameplay"
+	if IsExtraStage() or IsExtraStage2() or IsFinalStage() then return ScrGameplayAddSuffix("ScreenGameplayExtra") end
+    if GAMESTATE:IsCourseMode() then return ScrGameplayAddSuffix("ScreenGameplayCourse") end
+	return ScrGameplayAddSuffix("ScreenGameplay")
 end
 
 function SelectEvaluationScreen()
-	if IsNetConnected() then return "ScreenNetEvaluation" end
 	Mode = PlayModeName()
-	if( Mode == "Regular" ) then return "ScreenEvaluationStage" end
-	if( Mode == "Nonstop" ) then return "ScreenEvaluationNonstop" end
-	if( Mode == "Oni" ) then return "ScreenEvaluationOni" end
-	if( Mode == "Endless" ) then return "ScreenEvaluationEndless" end
-	if( Mode == "Rave" ) then return "ScreenEvaluationRave" end
-	if( Mode == "Battle" ) then return "ScreenEvaluationBattle" end
+	if( Mode == "Regular" ) then return ScrAddSuffix("ScreenEvaluationStage") end
+	if( Mode == "Nonstop" ) then return ScrAddSuffix("ScreenEvaluationNonstop") end
+	if( Mode == "Oni" ) then return ScrAddSuffix("ScreenEvaluationOni") end
+	if( Mode == "Endless" ) then return ScrAddSuffix("ScreenEvaluationEndless") end
+	if( Mode == "Rave" ) then return ScrAddSuffix("ScreenEvaluationRave") end
+	if( Mode == "Battle" ) then return ScrAddSuffix("ScreenEvaluationBattle") end
 end
 
 function IsEventMode()

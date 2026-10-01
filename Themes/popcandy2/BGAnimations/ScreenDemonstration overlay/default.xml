@@ -4,6 +4,10 @@
         Type="Quad"
         OnCommand="hidden,1;sleep,8"
     />
+    
+    <Layer
+        File="../ScreenGameplay overlay"
+    />
 
     <Layer
         File="../_black.png"

@@ -3,7 +3,7 @@
         File="popcandy"
         Condition="PopCandyIsOriginal()"
     />
-    <ActorFrame Condition="not PopCandyIsOriginal()"><children>
+    <Layer Type="ActorFrame" Condition="not PopCandyIsOriginal()"><children>
         <Layer
             File="back1.png"
             Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT"
@@ -58,6 +58,6 @@
             File="../_object1model/object1_green.model"
             Command="x,SCREEN_CENTER_X+(576-320);y,SCREEN_CENTER_Y+(64-240);zoom,4.0;spin;effectmagnitude,75,0,-75"
         />
-    </children></ActorFrame>
+    </children></Layer>
 
 </children></ActorFrame>

@@ -1,0 +1,9 @@
+<ActorFrame><children>
+    <Layer
+        File="../_shared background patten2 fade in"
+    />
+    
+    <Layer
+        File="../_stage-based background original"
+    />
+</children></ActorFrame>

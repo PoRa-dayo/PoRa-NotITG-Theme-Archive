@@ -32,22 +32,22 @@
 
     <Layer
         File="../stagetemp/loadf_3u.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(32-240)"
+        Command="x,SCREEN_WIDTH-320;y,SCREEN_CENTER_Y+(32-240)"
     />
 
     <Layer
         File="../stagetemp/loadf_3d.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(448-240)"
+        Command="x,320;y,SCREEN_CENTER_Y+(448-240)"
     />
 
     <Layer
         File="../stagetemp/loadf_2u.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(128-240)"
+        Command="x,320;y,SCREEN_CENTER_Y+(128-240)"
     />
 
     <Layer
         File="../stagetemp/loadf_2d.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(352-240)"
+        Command="x,SCREEN_WIDTH-320;y,SCREEN_CENTER_Y+(352-240)"
     />
 
     <Layer

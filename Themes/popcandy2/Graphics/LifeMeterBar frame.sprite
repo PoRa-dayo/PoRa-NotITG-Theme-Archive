@@ -1,0 +1,3 @@
+[Sprite]
+Texture=_LifeMB frame
+InitCommand=%function(self) if PopCandyGameplayIsOriginal() then self:Load(THEME:GetPath(EC_GRAPHICS,'','_ORILifeMB frame')) end end

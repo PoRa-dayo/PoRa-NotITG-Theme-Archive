@@ -496,6 +496,14 @@ function GameplayMaxCombo(self)
     self:queuecommand('Update')
 end
 
+--update the BPM counter during gameplay
+function GameplayBPM(self)
+	local GameBpm = SCREENMAN:GetTopScreen():GetChild('BPMDisplay'):GetChild('Text'):GetText()
+	self:settext(GameBpm)
+	self:sleep(.05)
+	self:queuecommand('Update')
+end
+
 function GetRandomBackgrounds(num)
     local PathList = {}
     local CheckList = {}
@@ -609,19 +617,52 @@ end
 -- Other custom option rows
 
 function StepsDetailsIsFrameless()
-    return PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYStepsDetails ~= 1
+    local the = PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYStepsDetails
+    return (the and the ~= 1)
 end
 
 function StepsDetailsIsHidden()
-    return PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYStepsDetails == 3
+    local the = PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYStepsDetails
+    return (the and the == 3)
 end
 
 function PopCandyIsOriginal()
-    return PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYUIOption == 2
+    local the = PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYUIOption
+    return (the and the == 2)
 end
 
 function PopCandyGameplayIsOriginal()
-    return PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYGameplayUIOption == 2
+    local the = PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYGameplayUIOption
+    return (the and the == 2)
+end
+
+function PickSelectMusicBG()
+    local SelectBGOption = PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYSongSelectBG
+    if (not SelectBGOption) or SelectBGOption == 1 then
+    
+        if not GAMESTATE:IsEventMode() then
+            if IsExtraStage2() then
+                return 10
+            elseif IsExtraStage() then
+                return 9
+            elseif IsFinalStage() then
+                return 7
+            elseif GAMESTATE:StageIndex() >= 0 and GAMESTATE:StageIndex() < 7 then
+                return GAMESTATE:StageIndex()
+            elseif GAMESTATE:StageIndex() > 7 then
+                return 8
+            else
+                return 0
+            end
+        else
+            return 0
+        end
+        
+    elseif SelectBGOption == 2 then
+        return math.random(10)-1
+    else
+        return SelectBGOption-3
+    end
 end
 
 function StepsDetailsOption()
@@ -652,6 +693,41 @@ function StepsDetailsOption()
         for ind, val in ipairs(list) do
             if val then
                 PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYStepsDetails = ind
+            end
+        end
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+function SongSelectBGOption()
+	local modList = {"DEFAULT","RANDOM","EVENT MODE","STAGE 1","STAGE 2","STAGE 3","STAGE 4","STAGE 5","STAGE 6","FINAL STAGE","STAGE 7+","EXTRA STAGE","SPECIAL STAGE"}
+    
+	local Params = {
+		Name = "Song Select BG",
+		LayoutType = "ShowOneInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        if not PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYSongSelectBG then
+            list[1] = true
+        elseif PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYSongSelectBG then 
+            for ind, val in ipairs(modList) do
+                if ind == PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYSongSelectBG then
+                    list[ind] = true
+                end
+            end
+        else
+            list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        for ind, val in ipairs(list) do
+            if val then
+                PROFILEMAN:GetMachineProfile():GetSaved().POPCANDYSongSelectBG = ind
             end
         end
     end

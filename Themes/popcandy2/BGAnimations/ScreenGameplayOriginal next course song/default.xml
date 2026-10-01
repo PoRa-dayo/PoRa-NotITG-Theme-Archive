@@ -1,0 +1,58 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,3"
+    />
+    
+    <Layer
+        File="songbackground"
+        NextCourseSongMessageCommand="%function(self) self:LoadFromSongBackground( GAMESTATE:Env().NextSong ) end"
+        StartCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;linear,1;diffusealpha,1"
+        FinishCommand="sleep,.7;diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="../stagetemp/courseframe1.png"
+        StartCommand="y,SCREEN_CENTER_Y+(84-240);x,SCREEN_CENTER_X-SCREEN_WIDTH;diffusealpha,0;linear,0.3;diffusealpha,1;x,SCREEN_CENTER_X"
+        FinishCommand="diffusealpha,1;sleep,.7;linear,0.3;diffusealpha,0;x,SCREEN_CENTER_X+(-320-320)"
+    />
+
+    <Layer
+        File="../stagetemp/courseframe2.png"
+        StartCommand="y,SCREEN_CENTER_Y+(396-240);x,SCREEN_CENTER_X+SCREEN_WIDTH;diffusealpha,0;linear,0.3;diffusealpha,1;x,SCREEN_CENTER_X"
+        FinishCommand="diffusealpha,1;sleep,.7;linear,0.3;diffusealpha,0;x,SCREEN_CENTER_X+(960-320)"
+    />
+
+    <Layer
+        File="../stagetemp/stageframe2.png"
+        StartCommand="zoom,0;y,SCREEN_CENTER_Y+(76-240);x,SCREEN_CENTER_X+(76-320);linear,0.3;zoom,1"
+        FinishCommand="zoom,1;sleep,.7;linear,0.3;zoom,0"
+    />
+
+    <Layer
+        File="../stagetemp/stageframe2.png"
+        StartCommand="zoom,0;x,SCREEN_CENTER_X+(564-320);y,SCREEN_CENTER_Y+(404-240);linear,0.3;zoom,1"
+        FinishCommand="zoom,1;sleep,.7;linear,0.3;zoom,0"
+    />
+
+    <Layer
+        File="num.png"
+        StartCommand="zoom,0;y,SCREEN_CENTER_Y+(76-240);x,SCREEN_CENTER_X+(76-320);diffusealpha,0;linear,0.3;zoom,0.8;diffusealpha,1;linear,1.5;rotationz,-660"
+        FinishCommand="zoom,0.8;sleep,.7;diffusealpha,1;linear,0.3;zoom,0;diffusealpha,0"
+    />
+
+    <Layer
+        File="num.png"
+        StartCommand="zoom,0;x,SCREEN_CENTER_X+(564-320);y,SCREEN_CENTER_Y+(404-240);diffusealpha,0;linear,0.3;zoom,0.8;diffusealpha,1;linear,1.5;rotationz,-660"
+        FinishCommand="zoom,0.8;sleep,.7;diffusealpha,1;linear,0.3;zoom,0;diffusealpha,0"
+    />
+    
+    <Layer
+        File="songbanner"
+        NextCourseSongMessageCommand="%function(self) self:LoadFromSongBanner( GAMESTATE:Env().NextSong ) end"
+        StartCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.3;diffusealpha,1"
+        FinishCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+</children></ActorFrame>

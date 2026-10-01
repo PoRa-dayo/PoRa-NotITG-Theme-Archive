@@ -1,0 +1,167 @@
+<ActorFrame> <children>
+    --SHOWDANGER RECREATION START
+    <ActorFrame
+        Condition="FUCK_EXE and PREFSMAN:GetPreference('ShowDanger') and ((not GAMESTATE:PlayerIsUsingModifier(0,'FailOff')) or (not GAMESTATE:PlayerIsUsingModifier(1,'FailOff')))"
+		OnCommand="hidden,1"
+        CheckCommand="%function(self)
+            local DangerThre = tonumber(THEME:GetMetric('LifeMeterBar','DangerThreshold'))
+            local scr = SCREENMAN:GetTopScreen()
+            local L1 = scr:GetLife(0)
+            local L2 = scr:GetLife(1)
+            if L1 <= DangerThre and L2 <= DangerThre and (L1 > 0 or L2 > 0) then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+        end"
+        Fk_P1_W1MessageCommand="playcommand,Check"
+		Fk_P1_W2MessageCommand="playcommand,Check"
+		Fk_P1_W3MessageCommand="playcommand,Check"
+		Fk_P1_W4MessageCommand="playcommand,Check"
+		Fk_P1_W5MessageCommand="playcommand,Check"
+		Fk_P1_W6MessageCommand="playcommand,Check"
+		Fk_P1_OKMessageCommand="playcommand,Check"
+		Fk_P1_NGMessageCommand="playcommand,Check"
+		Fk_P1_W8MessageCommand="playcommand,Check"
+
+		Fk_P2_W1MessageCommand="playcommand,Check"
+		Fk_P2_W2MessageCommand="playcommand,Check"
+		Fk_P2_W3MessageCommand="playcommand,Check"
+		Fk_P2_W4MessageCommand="playcommand,Check"
+		Fk_P2_W5MessageCommand="playcommand,Check"
+		Fk_P2_W6MessageCommand="playcommand,Check"
+		Fk_P2_OKMessageCommand="queuecommand,Check"
+		Fk_P2_NGMessageCommand="queuecommand,Check"
+		Fk_P2_W8MessageCommand="queuecommand,Check"
+	> <children>
+        <Layer
+            File="../ScreenGameplay underlay/danger2"
+            OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT"
+        />
+        <Layer
+            File="../ScreenGameplay underlay/danger1"
+            OnCommand="vibrate;effectmagnitude,4,8,8;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+        />
+    </children> </ActorFrame>
+    --SHOWDANGER RECREATION END
+    
+	<Layer
+		File="ScreenGameplay life frame"
+		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(36-240);addy,-100;decelerate,0.8;addy,100"
+        OffCommand="decelerate,0.3;addy,20;accelerate,0.7;addy,-120"
+	/>
+	<Layer
+		File="ScreenGameplay score frame"
+		OnCommand="x,SCREEN_CENTER_X+0;y,SCREEN_CENTER_Y+(448-240);addy,100;decelerate,1;addy,-100"
+        OffCommand="accelerate,0.7;addy,120"
+	/>
+    
+    <Layer
+		File="../ScreenGameplay underlay/ScreenGameplay difficulty icons"
+        OnCommand="x,10000"
+		DiffP1NormalMessageCommand="%function(self)
+            self:x(-12)
+            self:y(SCREEN_CENTER_Y+(422-240))
+            self:rotationz(-180)
+            
+            self:sleep(0.5)
+            self:queuecommand('Update')
+            self:sleep(0.5)
+            
+            self:linear(0.5)
+            self:rotationz(0)
+            self:animate(0)
+        end"
+        DiffP1ReverseMessageCommand="%function(self)
+            self:x(-12)
+            self:y(SCREEN_CENTER_Y+(35-240))
+            self:rotationz(180)
+            
+            self:sleep(0.5)
+            self:queuecommand('Update')
+            self:sleep(0.5)
+            
+            self:linear(0.5)
+            self:rotationz(0)
+            self:animate(0)
+        end"
+        CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
+        UpdateCommand="%function(self) GameplayDiffIcon(self,1) end"
+        DiffP1NormalOffMessageCommand="linear,1;rotationz,-180;"
+        DiffP1ReverseOffMessageCommand="linear,1;rotationz,-180;"
+	/>
+    <Layer
+		File="../ScreenGameplay underlay/ScreenGameplay difficulty icons"
+        OnCommand="x,10000"
+		DiffP2NormalMessageCommand="%function(self)
+            self:x(SCREEN_WIDTH-(640-652))
+            self:y(SCREEN_CENTER_Y+(422-240))
+            self:rotationz(180)
+            
+            self:sleep(0.5)
+            self:queuecommand('Update')
+            self:sleep(0.5)
+            
+            self:linear(0.5)
+            self:rotationz(0)
+            self:animate(0)
+        end"
+        DiffP2ReverseMessageCommand="%function(self)
+            self:x(SCREEN_WIDTH-(640-652))
+            self:y(SCREEN_CENTER_Y+(35-240))
+            self:rotationz(-180)
+            
+            self:sleep(0.5)
+            self:queuecommand('Update')
+            self:sleep(0.5)
+            
+            self:linear(0.5)
+            self:rotationz(0)
+            self:animate(0)
+        end"
+        CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
+        UpdateCommand="%function(self) GameplayDiffIcon(self,2) end"
+        DiffP2NormalOffMessageCommand="linear,1;rotationz,180;"
+        DiffP2ReverseOffMessageCommand="linear,1;rotationz,180;"
+	/>
+    
+    <Layer 
+        Type="SongMeterDisplay" 
+        StreamWidth="168" 
+        StreamPath="ScreenGameplay song position meter" 
+        Command="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-30;draworder,1;addy,100;decelerate,1;addy,-100" 
+        OffCommand="decelerate,0.3;addy,-20;accelerate,0.7;addy,120"
+    >
+        <Tip File="ScreenGameplay song position tip" OnCommand="" />
+    </Layer>
+    
+    <!--song title-->
+    <Layer
+		Font="_shared2"
+		Text=""
+        Condition="not GAMESTATE:IsCourseMode()"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;shadowlength,0;diffusealpha,1;maxwidth,600"
+		OnCommand="%function(self)
+            self:queuecommand('GetModText')
+            self:sleep(5)
+            self:linear(1)
+            self:diffusealpha(0)
+		end"
+		GetModTextCommand="%function(self)
+            local songg = GAMESTATE:GetCurrentSong()
+            if songg then
+                self:settext( songg:GetDisplayMainTitle() )
+            end
+		end"
+    />
+    
+    <ActorFrame
+		OnCommand="%function(self)
+			self:stopeffect()
+			if FUCK_EXE then
+				stitch('lua.death').Start()
+			end
+		end" 
+	/>
+</children> </ActorFrame>
+

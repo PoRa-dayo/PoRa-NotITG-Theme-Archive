@@ -2,6 +2,13 @@
 
     <Layer
         File="background.png"
+        Condition="not PopCandyIsOriginal()"
+        OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT"
+    />
+    
+    <Layer
+        File="ORIGINALbackground.png"
+        Condition="PopCandyIsOriginal()"
         OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT"
     />
 

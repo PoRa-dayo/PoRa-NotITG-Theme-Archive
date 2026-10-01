@@ -1,0 +1,11 @@
+<ActorFrame> <children>
+    <Layer
+        File="_blank"
+        Condition="not PopCandyGameplayIsOriginal()"
+    />
+    
+    <Layer
+        File="_menu in"
+        Condition="PopCandyGameplayIsOriginal()"
+    />
+</children> </ActorFrame>

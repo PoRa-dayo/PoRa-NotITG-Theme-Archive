@@ -1,0 +1,27 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,8"
+    />
+    
+    <Layer
+        File="../ScreenGameplayOriginal overlay"
+    />
+
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);zoomtowidth,SCREEN_WIDTH;zoomtoheight,120;diffusealpha,0.25"
+    />
+
+    <Layer
+        File="../ScreenDemonstration overlay/demonstration.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(200-240);diffuseblink;effectperiod,1"
+    />
+
+    <Layer
+        File="../ScreenDemonstration overlay/gameover.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(280-240);diffuseblink;effectperiod,1"
+    />
+
+</children></ActorFrame>
