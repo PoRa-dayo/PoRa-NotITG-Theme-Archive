@@ -1,4 +1,12 @@
-<ActorFrame><children>
+<ActorFrame OnCommand="%function(self)
+    if IsFinalStage() then
+        if (FinalGrade(0) <= 6 or FinalGrade(1) <= 6) then
+            AudioPlay('ScreenEvaluation try extra2')
+        elseif (FinalGrade(0) <= 8 or FinalGrade(1) <= 8) then
+            AudioPlay('ScreenEvaluation try extra1')
+        end
+    end
+end"><children>
     <Layer
         File="../_shared background patten2"
     />

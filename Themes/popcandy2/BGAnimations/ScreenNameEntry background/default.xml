@@ -7,17 +7,40 @@
     
     <Layer
         File="../ScreenLogo background/back1.png"
+        Condition="not PopCandyIsOriginal()"
         OnCommand="xywh,0,0,2048,2048;customtexturerect,0,0,8,8;texcoordvelocity,0,0.1"
     />
-
+    
     <Layer
         File="../star.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);spin;diffuse,0.9,1.0,0.9,1;effectmagnitude,0,0,-5"
+        Condition="not PopCandyIsOriginal()"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;spin;diffuse,0.9,1.0,0.9,1;effectmagnitude,0,0,-5"
     />
 
     <Layer
         File="back1.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);spin;diffuse,0.0,1.0,0.9,1;effectmagnitude,0,0,5"
+        Condition="not PopCandyIsOriginal()"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;spin;diffuse,0.0,1.0,0.9,1;effectmagnitude,0,0,5"
+    />
+    
+    
+    
+    <Layer
+        File="../ScreenLogoOriginal background/back1.png"
+        Condition="PopCandyIsOriginal()"
+        OnCommand="xywh,0,0,2048,2048;customtexturerect,0,0,8,8;texcoordvelocity,0,0.1"
+    />
+    
+    <Layer
+        File="../star.png"
+        Condition="PopCandyIsOriginal()"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;spin;diffuse,1.0,0.9,0.9,1;effectmagnitude,0,0,-5"
+    />
+
+    <Layer
+        File="ORIGINALback1.png"
+        Condition="PopCandyIsOriginal()"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;spin;diffuse,1.0,0.9,0.9,1;effectmagnitude,0,0,5"
     />
 
 </children></ActorFrame>

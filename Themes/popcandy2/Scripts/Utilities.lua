@@ -648,7 +648,7 @@ function PickSelectMusicBG()
             elseif IsFinalStage() then
                 return 7
             elseif GAMESTATE:StageIndex() >= 0 and GAMESTATE:StageIndex() < 7 then
-                return GAMESTATE:StageIndex()
+                return GAMESTATE:StageIndex()+1
             elseif GAMESTATE:StageIndex() > 7 then
                 return 8
             else

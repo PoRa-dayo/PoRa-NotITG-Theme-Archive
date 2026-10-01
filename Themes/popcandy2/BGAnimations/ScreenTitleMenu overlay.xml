@@ -1,0 +1,22 @@
+<ActorFrame InitCommand="%function(self)
+    local ThemeNameTable = THEME:GetThemeNames()
+    for ind, TName in ipairs(ThemeNameTable) do
+        if TName == 'OITGThemerFallback' then
+            return
+        end
+    end
+    OITGThemerFallbackNotDetected = true
+end"> <children>
+    <Layer
+        Type="Quad"
+        Condition="OITGThemerFallbackNotDetected == true"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,0.5"
+    />
+    
+    <Layer
+        Font="_eurostile normal"
+        Condition="OITGThemerFallbackNotDetected == true"
+        Text="MISSING FALLBACK THEME: OITGThemerFallback::PLEASE DOWNLOAD SAID FALLBACK THEME BEFORE USING THIS THEME."
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;wrapwidthpixels,640"
+    />
+</children> </ActorFrame>

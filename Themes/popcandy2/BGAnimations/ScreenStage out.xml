@@ -6,6 +6,6 @@
     
     <Layer
         File="_menu out"
-        Condition="PopCandyGameplayIsOriginal()"
+        Condition="PopCandyGameplayIsOriginal() and PopCandyIsOriginal()"
     />
 </children> </ActorFrame>
