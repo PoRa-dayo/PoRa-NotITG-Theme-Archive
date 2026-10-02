@@ -1,4 +1,12 @@
-<ActorFrame><children>
+<ActorFrame InitCommand="%function(self)
+    local ThemeNameTable = THEME:GetThemeNames()
+    for ind, TName in ipairs(ThemeNameTable) do
+        if TName == 'OITGThemerFallback' then
+            return
+        end
+    end
+    OITGThemerFallbackNotDetected = true
+end"> <children>
 	<!-- OpenITG's Center isn't the ACTUAL center; it's the top left corner, so we need to center it again. -->
 	<!-- StepMania 3.9's CenterX is 320, and CenterY is 240. So i need to do some math in order to makeout what the actual value is using SCREEN_CENTER_Y first and then the value. Thankfully we can let OpenITG do the actual math. -->
 	<Layer File="START"
@@ -35,4 +43,18 @@
 	ThingCommand="x,SCREEN_CENTER_X-80;y,SCREEN_CENTER_Y+(410-240);diffuseblink;effectcolor1,1,1,1,1;effectcolor2,1,1,1,.8;effectperiod,.8;customtexturerect,0,0,2,1;zoomto,2048*0.625,64*0.625;texcoordvelocity,0.2,0"/>
     
 	
+    
+    
+    <Layer
+        Type="Quad"
+        Condition="OITGThemerFallbackNotDetected == true"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,0.5"
+    />
+    
+    <Layer
+        Font="_eurostile normal"
+        Condition="OITGThemerFallbackNotDetected == true"
+        Text="MISSING FALLBACK THEME: OITGThemerFallback::PLEASE DOWNLOAD SAID FALLBACK THEME BEFORE USING THIS THEME."
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;wrapwidthpixels,640"
+    />
 </children></ActorFrame>
