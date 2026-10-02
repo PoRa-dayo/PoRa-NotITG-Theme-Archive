@@ -252,6 +252,7 @@ This theme already has almost every feature you can ask for, so there are very f
 -The Tail Judge Font (Hold Judgment) customization is now separate for each player (it was a joint option in the original because of SM3.9's limitation).\
 -M-Mods now use the built-in system for consistency.\
 -F grades now show up in song selection screen.\
+-CDTitles now automatically scale to fit a certain maximum height/maximum width.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added offset plot and spellcard viewer in results screen.
@@ -489,6 +490,7 @@ Thanks to DarkOverord for posting most of the game's assets on spriters-resource
 -Added a custom default judgment font and hold judgment, and custom combo font.\
 -Folder names and Roulette/Random on the song select screen now have different colors to be less confusing.\
 -Difficulty list now uses its own number font, and also shows the difficulty name and number as well as the stepartist of the currently selected chart.\
+-CDTitles now automatically scale to fit a certain maximum height/maximum width.\
 -Grades now use assets from the original game, with custom-made grade sprites for D and F. The grade system is similar to A.O.I's.\
 -Added ScreenStage (intro before the gameplay) that shows the song title and current stage in a similar manner to the original game.\
 -The default background is now picked randomly from the 7 main backgrounds that appeared in the original game's Story Mode.\
