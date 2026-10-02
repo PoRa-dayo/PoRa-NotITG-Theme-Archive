@@ -432,6 +432,7 @@ Original theme by \_\_LOLO__ (SM3.9). Character art by Hirose Madoka and fether.
 -Added a new window icon.\
 -On the title screen, SELECT GAME is moved to Options. GAME START is now OTHER MODES. Added PLAY MODS (takes you to 2P Versus Dance immediately). EDIT COURSES is removed (does not work in NotITG).\
 -No longer possible to select Solo (6K) mode. HEAVY+ mode from pop * candy 1 is also removed.\
+-Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that). Removed Show Caution and Show Instructions options as it just causes other themes to break.\
 -The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
 -Added roll counter, hand counter to the pane display. Added a steps description (step artist) display.\
 -Pane display now has a frame by default. You can hide the frame, and hide all chart information via Options > Theme Options.\
@@ -445,9 +446,12 @@ Original theme by \_\_LOLO__ (SM3.9). Character art by Hirose Madoka and fether.
 -Added offset plot and spellcard viewer in results screen.\
 -Added a N.G. counter and a mine counter in results screen.\
 -Added the song title in the evaluation screen to account for charts with no banners.\
+-Added percentage score display that always shows up in evaluation screen.\
+-The spinning grades in the evaluation screen are now manually implemented as the built-in one is hardcoded to 7 tiers.\
 -Since Extra stages no longer exist in NotITG, the Try Extra Stage jingles are now used in the final stage to signify whether you got enough score to trigger the credits sequence or not.\
 -The final stage now uses the extra stage's unique UI.\
 -Credits sequences are now triggered purely based on your final grade.\
+-Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
 <img width="200" alt="NotITG-v4 9 1_j4tB2K1GMP" src="https://github.com/user-attachments/assets/e1ab9f7b-e9e7-4d45-8563-8462a4d544b2" />
@@ -535,7 +539,6 @@ Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
 -Added maxwidth to the modifier lists in the course selection screen.\
 -Replaced Sprite.lua with the modern one so that song transitions in courses don't give errors.\
 -The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
--FailImmediate is now automatically applied for Challenge and Endless Modes.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Limited the modifier list in Edit Mode.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
