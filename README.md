@@ -431,6 +431,7 @@ Original theme by \_\_LOLO__ (SM3.9). Character art by Hirose Madoka and fether.
 -The theme can now switch between pop * candy 1 and pop * candy 2's UI via Options > Theme Options. UI for gameplay can be selected individually from the rest of the theme.\
 -Added a new window icon.\
 -On the title screen, SELECT GAME is moved to Options. GAME START is now OTHER MODES. Added PLAY MODS (takes you to 2P Versus Dance immediately). EDIT COURSES is removed (does not work in NotITG).\
+-The How To Play screen is changed to the ITG one that uses a random chart and song that you have, instead of the actual How To Play chart and song like the old How To Play screen, because NotITG completely disabled the old How To Play.\
 -No longer possible to select Solo (6K) mode. HEAVY+ mode from pop * candy 1 is also removed.\
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that). Removed Show Caution and Show Instructions options as it just causes other themes to break.\
 -The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
