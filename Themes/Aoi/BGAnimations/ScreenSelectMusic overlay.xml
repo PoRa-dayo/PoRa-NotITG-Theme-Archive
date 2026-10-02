@@ -113,4 +113,12 @@
 	<Layer File="_shared background/circle.png"
 	OnCommand="spin;effectperiod,0.5;x,SCREEN_RIGHT-45;y,SCREEN_CENTER_Y+(-76-240);diffusealpha,0;decelerate,0.5;diffusealpha,1;addy,100" OffCommand="diffusealpha,1;accelerate,0.5;addy,-100;diffusealpha,0"/>
 	<Layer File="ScreenOptions background/time.png" OnCommand="horizalign,right;x,SCREEN_RIGHT;y,SCREEN_CENTER_Y+(24-240);addy,-100;diffusealpha,0;decelerate,0.5;diffusealpha,1;addy,100" OffCommand="diffusealpha,1;accelerate,0.5;addy,-100;diffusealpha,0"/>
+	
+    
+    <!-- the black fade when the press enter for options message is shown -->
+    <Layer Type="Quad" OnCommand="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,0"
+        IntoOptionsMessageCommand="linear,0.5;diffuse,0,0,0,1"
+    />
+
+
 </children></ActorFrame>
