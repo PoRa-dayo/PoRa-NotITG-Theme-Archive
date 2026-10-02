@@ -335,7 +335,7 @@ Original theme by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 
 # IN THE GROOVE 3: COMPLETE MIX
 A futuristic-looking theme made for In The Groove 3, the "supposedly" third installment in the In The Groove series by Roxor Games, hadn't it been for the Konami acquisition.
 
-This Complete Mix bundle allows you to switch between the interfaces of the original In The Groove 3, In The Groove 3: Encore, and the pre-release of In The Groove 3: Encore Final on the fly!
+This Complete Mix bundle allows you to switch between the interfaces of the original In The Groove 3, In The Groove 3: Encore, and the pre-release of In The Groove 3: Encore Final on the fly! (Via Options > Theme Options)
 
 ## Credits:
 Original theme by LightningXCE and the ITG3 Team, no longer maintained (except for ITG3 Encore Final which they're still working on and there hasn't even been an actual release yet). The ITG3 Final interface in this theme is based on the SM5 port by AJ Kelly and DarkBahamut162. Optimized for NotITG 4.9.1 by PoRa.
@@ -389,7 +389,6 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 -Added "Play Mods" (takes you to 2P Versus Dance immediately)\
 -No longer possible to select Solo (6K) mode (the button is replaced with Doubles mode).\
 -The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
--FailImmediate is now automatically applied for Challenge and Endless Modes.\
 -Added roll counter and steps description (step artist) to the pane display.\
 -Added more sort icons.\
 -Added the banner frame and total time counter in course selection screen.\
@@ -399,6 +398,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 -Added group name display and number of songs in the group like the original IIDX.\
 -Converted the grade system to a 17-tier one.\
 -Noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options.\
+-Adjusted the layering of the gameplay UI to fit with NotITG's requirements.\
 -The Full Combo animation is no longer unused.\
 -Judgment and combo positions no longer get messed up when moved in modfiles.\
 -The animation for the PERFECT judgment being 3 frames caused a bunch of problems in NotITG as well as compatibility with other judgment fonts, so it is changed to just the cyan-white PERFECT with different diffuse colors. It doesn't look accurate anymore, but it still sorta works.\
@@ -415,6 +415,44 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 <img width="200" alt="NotITG-v4 9 1_sHZ8e2srem" src="https://github.com/user-attachments/assets/798dc78f-8857-4e3d-9cde-5136766574ce" />
 <img width="200" alt="NotITG-v4 9 1_UnfWajcjL7" src="https://github.com/user-attachments/assets/f04a3188-6999-4781-90ed-dc1b4c006535" />
 <img width="200" alt="NotITG-v4 9 1_WynyrU45bV" src="https://github.com/user-attachments/assets/db5daea4-0fe4-41db-90b2-19d67a210ed5" />
+
+
+# POP * CANDY 2
+***NOTE: This theme requires you to have the theme OITGThemerFallback for it to work!!! And just like any other fallback theme, do not actually use OITGThemerFallback.***
+
+A cute pastel theme that was a well-known classic back in the Stepmania 3.9 days. It was released alongside the pop * candy song packs and courses, some of which have unfortunately been lost to time.
+
+You can also switch to the mostly-pink visual style of pop * candy 1 via Options > Theme Options. This allows you to experience the visual interface of pop * candy 1 while still having the QoL features of pop * candy 2.
+
+## Credits:
+Original theme by \_\_LOLO__ (SM3.9). Character art by Hirose Madoka and fether. Some inspiration from the theme's SM5 port by Inorizushi. Ported and optimized for NotITG 4.9.1 by PoRa.
+
+## Changelogs (compared to the SM3.9 ver.):
+-The theme can now switch between pop * candy 1 and pop * candy 2's UI via Options > Theme Options. UI for gameplay can be selected individually from the rest of the theme.\
+-Added "Play Mods" (takes you to 2P Versus Dance immediately). Removed Edit Courses (does not work in NotITG).\
+-No longer possible to select Solo (6K) mode. HEAVY+ mode from pop * candy 1 is also removed.\
+-The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
+-Added roll counter, hand counter to the pane display. Added a steps description (step artist) display.\
+-Pane display now has a frame by default. You can hide the frame, and hide all chart information via Options > Theme Options.\
+-You can now change the behavior of the background in the song select screen via Options > Theme Options.\
+-Changed the font of the song titles to a newer version of the ことり文字フォント font that is easier to read.\
+-CDTitles now automatically scale to fit a certain maximum height/maximum width.\
+-Converted the grade system to a 17-tier one.\
+-Noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options.\
+-Adjusted the layering of the gameplay UI to fit with NotITG's requirements.\
+-Modern resolution settings are added. Elements are now made to *mostly* support other screen ratios that can be picked via the in-theme options.\
+-Added offset plot and spellcard viewer in results screen.\
+-Added a N.G. counter and a mine counter in results screen.\
+-Since Extra stages no longer exist in NotITG, the Try Extra Stage jingles are now used in the final stage to signify whether you got enough score to trigger the credits sequence or not.\
+-The final stage now uses the extra stage's unique UI.\
+-Credits sequences are now triggered purely based on your final grade.\
+-Stitch.lua is implemented, alongside FailOverlays and the in-game console.
+
+<img width="200" alt="NotITG-v4 9 1_j4tB2K1GMP" src="https://github.com/user-attachments/assets/e1ab9f7b-e9e7-4d45-8563-8462a4d544b2" />
+<img width="200" alt="NotITG-v4 9 1_Lz0EANR9ZA" src="https://github.com/user-attachments/assets/4b5a9b4a-d35a-4e60-99fa-38ce6ffcb120" />
+<img width="200" alt="NotITG-v4 9 1_RP7U72rAYg" src="https://github.com/user-attachments/assets/4d4c4506-c0fb-4f48-8bf1-5944774675cc" />
+<img width="200" alt="NotITG-v4 9 1_npZpEzti34" src="https://github.com/user-attachments/assets/967508e8-ced8-4464-8c01-26470130dfba" />
+<img width="200" alt="NotITG-v4 9 1_WmaVqVujGg" src="https://github.com/user-attachments/assets/67086556-cbf9-418f-a5f6-48f12fd13a16" />
 
 
 # TOUHOU HISOUTENSOKU
