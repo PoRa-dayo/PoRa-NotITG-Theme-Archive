@@ -1,0 +1,3 @@
+[Sprite]
+Texture=_LifeMB hot
+InitCommand=%function(self) if IsFinalStage() then self:Load(THEME:GetPath(EC_GRAPHICS,'','_LifeMBExtra hot')) end end

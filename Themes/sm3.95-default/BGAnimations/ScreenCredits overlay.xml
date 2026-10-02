@@ -1,0 +1,509 @@
+<!--Yeah OpenITG fucking broke this screen so this is a recreation. Have fun with the stupid repetitive xml code and the long ass credits string.-->
+<ActorFrame OnCommand="%function(self)
+    THEORIGINALSTEPMANIABGPathList = GetRandomBackgrounds(20)
+end"> <children>
+    <!--background scroller-->
+    
+    <ActorFrame InitCommand="x,SCREEN_CENTER_X-160;y,SCREEN_CENTER_Y-5040;linear,30;y,SCREEN_CENTER_Y+720"> <children>
+    
+        <ActorFrame InitCommand="y,240*0"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[1]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*1"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[2]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*2"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[3]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*3"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[4]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*4"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[5]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*5"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[6]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*6"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[7]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*7"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[8]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*8"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[9]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*9"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[10]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*10"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[11]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*11"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[12]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*12"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[13]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*13"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[14]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*14"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[15]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*15"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[16]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*16"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[17]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*17"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[18]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*18"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[19]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+        <ActorFrame InitCommand="y,240*19"> <children>
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    local Path = THEORIGINALSTEPMANIABGPathList[20]
+                    if not Path then
+                        self:diffusealpha(0)
+                    else 
+                        self:LoadBackground( Path )
+                    end
+                    self:zoomto(312,232)
+                end"
+            />
+            <Layer
+                Type="Sprite"
+                OnCommand="%function(self)
+                    self:Load( THEME:GetPath(EC_GRAPHICS,'ScreenCredits','background frame') )
+                    self:zoom(1)
+                end"
+            />
+        </children> </ActorFrame>
+        
+    </children> </ActorFrame>
+    
+    
+    
+    <!--credits-->
+    <Layer
+        Font="ScreenCredits titles"
+        Text="STEPMANIA TEAM::::::::::::☆☆GRAPHICS☆☆::::Lucas “v1ral” Tang::::SPiGuMuS::::Visage::::Ryan “DJ McFox” McKanna::::Lamden “Cloud34” Travis::::Michael “Redcrusher” Curry::::Steve “healing_vision” Klise::::Mauro Panichella::::Popnko::::Griever (Julian)::::Miguel Moore::::Dj “AeON ExOdus” Washington::::Xelf::::James “SPDS” Sanders::::k0ldx::::::::::::☆☆WEB DESIGN☆☆::::Brian “Bork” Bugh::::::::::::☆☆SOUND☆☆::::Kyle “KeeL” Ward::::Jim “Izlude” Cabeen::::::::::::☆☆PROGRAMMING☆☆::::Chris Danford::::Frieza::::Glenn Maynard::::Bruno Figueiredo::::Peter “Dro Kulix” May::::Jared “nmspaz” Roberts::::Brendan “binarys” Walker::::Lance “Neovanglist” Gilbert::::Michel Donais::::Ben “Mantis” Nordstrom::::Chris “Parasyte” Gomez::::Michael “dirkthedaring” Patterson::::Sauleil “angedelamort” Lamarre::::Edwin Evans::::Brian “Bork” Bugh::::Joel “Elvis314” Maher::::Garth “Kefabi” Smith::::Pkillah::::Ryan “DJ McFox” McKanna::::Robert Kemmetmueller::::Ben “Shabach” Andersen::::Will “SlinkyWizard” Valladao::::TheChip::::David “WarriorBob” H::::Mike Waltson::::Kevin “Miryokuteki” Slaughter::::Thad “Coderjoe” Ward::::Steve Checkoway::::Sean Burke::::XPort::::Charles Lohr::::Josh “Axlecrusher” Allen::::::::::::☆☆SPECIAL THANKS TO☆☆::::SimWolf::::DJ DraftHorse::::Dance With Intensity::::BeMaNiRuler::::DDRLlama::::DDRManiaX::::NMR::::DJ Paranoia::::DJ Yuz::::Reo::::Random Hajile::::Chocobo Ghost::::Tyma::::Deluxe::::Lagged::::The Melting Pot::::DDRJamz Global BBS::::Eric “WaffleKing” Webster::::Gotetsu::::Mark “Foobly” Verrey::::Mandarin Blue::::Kenny “AngelTK” Lai::::curewater::::Bill “DMAshura” Shillito::::Illusionz - Issaquah, WA::::Quarters - Kirkland, WA::::Pier Amusements - Bournemouth, UK::::Westcliff Amusements - Bournemouth, UK::::Naoki::::Konami Computer Entertainment Japan::::::::::::::::::::::::::::::::Join the StepMania team::::and help us out!"
+        OnCommand="%function(self)
+            self:diffuse(0.5,0.5,1,1)
+            self:horizalign('center')
+            self:x(SCREEN_WIDTH-160)
+            self:y(SCREEN_CENTER_Y+2000)
+            self:zoom(0.5)
+            
+            self:linear(30)
+            self:y(SCREEN_CENTER_Y-2000)
+        end"
+    />
+    <Layer
+        Font="ScreenCredits titles"
+        Text="              ::::::::::::☆☆GRAPHICS☆☆::::Lucas “v1ral” Tang::::SPiGuMuS::::Visage::::Ryan “DJ McFox” McKanna::::Lamden “Cloud34” Travis::::Michael “Redcrusher” Curry::::Steve “healing_vision” Klise::::Mauro Panichella::::Popnko::::Griever (Julian)::::Miguel Moore::::Dj “AeON ExOdus” Washington::::Xelf::::James “SPDS” Sanders::::k0ldx::::::::::::☆☆WEB DESIGN☆☆::::Brian “Bork” Bugh::::::::::::☆☆SOUND☆☆::::Kyle “KeeL” Ward::::Jim “Izlude” Cabeen::::::::::::☆☆PROGRAMMING☆☆::::Chris Danford::::Frieza::::Glenn Maynard::::Bruno Figueiredo::::Peter “Dro Kulix” May::::Jared “nmspaz” Roberts::::Brendan “binarys” Walker::::Lance “Neovanglist” Gilbert::::Michel Donais::::Ben “Mantis” Nordstrom::::Chris “Parasyte” Gomez::::Michael “dirkthedaring” Patterson::::Sauleil “angedelamort” Lamarre::::Edwin Evans::::Brian “Bork” Bugh::::Joel “Elvis314” Maher::::Garth “Kefabi” Smith::::Pkillah::::Ryan “DJ McFox” McKanna::::Robert Kemmetmueller::::Ben “Shabach” Andersen::::Will “SlinkyWizard” Valladao::::TheChip::::David “WarriorBob” H::::Mike Waltson::::Kevin “Miryokuteki” Slaughter::::Thad “Coderjoe” Ward::::Steve Checkoway::::Sean Burke::::XPort::::Charles Lohr::::Josh “Axlecrusher” Allen::::::::::::☆☆SPECIAL THANKS TO☆☆::::SimWolf::::DJ DraftHorse::::Dance With Intensity::::BeMaNiRuler::::DDRLlama::::DDRManiaX::::NMR::::DJ Paranoia::::DJ Yuz::::Reo::::Random Hajile::::Chocobo Ghost::::Tyma::::Deluxe::::Lagged::::The Melting Pot::::DDRJamz Global BBS::::Eric “WaffleKing” Webster::::Gotetsu::::Mark “Foobly” Verrey::::Mandarin Blue::::Kenny “AngelTK” Lai::::curewater::::Bill “DMAshura” Shillito::::Illusionz - Issaquah, WA::::Quarters - Kirkland, WA::::Pier Amusements - Bournemouth, UK::::Westcliff Amusements - Bournemouth, UK::::Naoki::::Konami Computer Entertainment Japan::::::::::::::::::::::::::::::::                       ::::"
+        OnCommand="%function(self)
+            self:diffuse(1,0.5,0.5,1)
+            self:horizalign('center')
+            self:x(SCREEN_WIDTH-160)
+            self:y(SCREEN_CENTER_Y+2000)
+            self:zoom(0.5)
+            
+            self:linear(30)
+            self:y(SCREEN_CENTER_Y-2000)
+        end"
+    />
+    <Layer
+        Font="ScreenCredits titles"
+        Text="              ::::::::::::              ::::Lucas “v1ral” Tang::::SPiGuMuS::::Visage::::Ryan “DJ McFox” McKanna::::Lamden “Cloud34” Travis::::Michael “Redcrusher” Curry::::Steve “healing_vision” Klise::::Mauro Panichella::::Popnko::::Griever (Julian)::::Miguel Moore::::Dj “AeON ExOdus” Washington::::Xelf::::James “SPDS” Sanders::::k0ldx::::::::::::                ::::Brian “Bork” Bugh::::::::::::          ::::Kyle “KeeL” Ward::::Jim “Izlude” Cabeen::::::::::::                 ::::Chris Danford::::Frieza::::Glenn Maynard::::Bruno Figueiredo::::Peter “Dro Kulix” May::::Jared “nmspaz” Roberts::::Brendan “binarys” Walker::::Lance “Neovanglist” Gilbert::::Michel Donais::::Ben “Mantis” Nordstrom::::Chris “Parasyte” Gomez::::Michael “dirkthedaring” Patterson::::Sauleil “angedelamort” Lamarre::::Edwin Evans::::Brian “Bork” Bugh::::Joel “Elvis314” Maher::::Garth “Kefabi” Smith::::Pkillah::::Ryan “DJ McFox” McKanna::::Robert Kemmetmueller::::Ben “Shabach” Andersen::::Will “SlinkyWizard” Valladao::::TheChip::::David “WarriorBob” H::::Mike Waltson::::Kevin “Miryokuteki” Slaughter::::Thad “Coderjoe” Ward::::Steve Checkoway::::Sean Burke::::XPort::::Charles Lohr::::Josh “Axlecrusher” Allen::::::::::::                       ::::SimWolf::::DJ DraftHorse::::Dance With Intensity::::BeMaNiRuler::::DDRLlama::::DDRManiaX::::NMR::::DJ Paranoia::::DJ Yuz::::Reo::::Random Hajile::::Chocobo Ghost::::Tyma::::Deluxe::::Lagged::::The Melting Pot::::DDRJamz Global BBS::::Eric “WaffleKing” Webster::::Gotetsu::::Mark “Foobly” Verrey::::Mandarin Blue::::Kenny “AngelTK” Lai::::curewater::::Bill “DMAshura” Shillito::::Illusionz - Issaquah, WA::::Quarters - Kirkland, WA::::Pier Amusements - Bournemouth, UK::::Westcliff Amusements - Bournemouth, UK::::Naoki::::Konami Computer Entertainment Japan::::::::::::::::::::::::::::::::                       ::::"
+        OnCommand="%function(self)
+            self:horizalign('center')
+            self:x(SCREEN_WIDTH-160)
+            self:y(SCREEN_CENTER_Y+2000)
+            self:zoom(0.5)
+            
+            self:linear(30)
+            self:y(SCREEN_CENTER_Y-2000)
+        end"
+    />
+    
+    
+    // the gradient
+    // enable texture wrapping so we get hard, black edges
+    <Layer
+        File="_black.png"
+        Command="texturewrapping,1;zoomtowidth,SCREEN_WIDTH;zoomtoheight,60;x,SCREEN_CENTER_X;y,30;diffusebottomedge,1,1,1,0"
+    />
+    // the trailing block
+    // enable texture wrapping so we get hard, black edges
+    <Layer
+        File="_black.png"
+        Command="texturewrapping,1;zoomtowidth,SCREEN_WIDTH;zoomtoheight,60;x,SCREEN_CENTER_X;y,SCREEN_HEIGHT-30;diffusetopedge,1,1,1,0"
+    />
+</children> </ActorFrame>

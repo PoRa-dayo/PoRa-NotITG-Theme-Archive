@@ -1,4 +1,10 @@
-<ActorFrame> <children>
+<ActorFrame OnCommand="%function(self)
+    if IsFinalStage() and (not GAMESTATE:IsCourseMode()) then
+        if (STATSMAN:GetFinalGrade(0) <= 6 or STATSMAN:GetFinalGrade(1) <= 6) then
+            SOUND:PlayOnce(THEME:GetPath(EC_SOUNDS,'ScreenEvaluation','try extra1'))
+        end
+    end
+end"><children>
     <!--Song title-->
     <Layer
         Font="_shared2"

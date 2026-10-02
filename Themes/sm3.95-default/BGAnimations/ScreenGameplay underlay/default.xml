@@ -11,35 +11,59 @@
 	/>
     <Layer
 		File="ScreenGameplay difficulty icons"
-		OnCommand="%function(self)
-            self:x(SCREEN_CENTER_X-259)
-            self:y(SCREEN_CENTER_Y+170)
-            self:addy(100)
+        OnCommand="x,10000"
+		DiffP1NormalMessageCommand="%function(self)
+            self:x(SCREEN_CENTER_X-260)
+            self:y(SCREEN_HEIGHT-70)
+            self:addx(-200)
             self:sleep(0.5)
             self:queuecommand('Update')
             self:linear(1)
-            self:addy(-100)
+            self:addx(200)
+            self:animate(0)
+        end"
+        DiffP1ReverseMessageCommand="%function(self)
+            self:x(SCREEN_CENTER_X-260)
+            self:y(58)
+            self:addx(-200)
+            self:sleep(0.5)
+            self:queuecommand('Update')
+            self:linear(1)
+            self:addx(200)
             self:animate(0)
         end"
         CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
         UpdateCommand="%function(self) GameplayDiffIcon(self,1) end"
-        OffCommand="linear,1;addy,100"
+        DiffP1NormalOffMessageCommand="linear,1;addx,-200"
+        DiffP1ReverseOffMessageCommand="linear,1;addx,-200"
 	/>
     <Layer
 		File="ScreenGameplay difficulty icons"
-		OnCommand="%function(self)
-            self:x(SCREEN_CENTER_X+259)
-            self:y(SCREEN_CENTER_Y+170)
-            self:addy(100)
+		OnCommand="x,10000"
+		DiffP2NormalMessageCommand="%function(self)
+            self:x(SCREEN_CENTER_X+260)
+            self:y(SCREEN_HEIGHT-70)
+            self:addx(200)
             self:sleep(0.5)
             self:queuecommand('Update')
             self:linear(1)
-            self:addy(-100)
+            self:addx(-200)
+            self:animate(0)
+        end"
+        DiffP2ReverseMessageCommand="%function(self)
+            self:x(SCREEN_CENTER_X+260)
+            self:y(58)
+            self:addx(200)
+            self:sleep(0.5)
+            self:queuecommand('Update')
+            self:linear(1)
+            self:addx(-200)
             self:animate(0)
         end"
         CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
         UpdateCommand="%function(self) GameplayDiffIcon(self,2) end"
-        OffCommand="linear,1;addy,100"
+        DiffP2NormalOffMessageCommand="linear,1;addx,200"
+        DiffP2ReverseOffMessageCommand="linear,1;addx,200"
 	/>
     <ActorFrame
 		OnCommand="%function(self)

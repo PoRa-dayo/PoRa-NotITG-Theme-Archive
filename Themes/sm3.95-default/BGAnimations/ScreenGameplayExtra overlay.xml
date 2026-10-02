@@ -3,18 +3,18 @@
 		Font="Common normal"
 		Text="Loading mods..."
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-		InitCommand="x,SCREEN_CENTER_X+0;y,SCREEN_HEIGHT-(480-434)"
+		InitCommand="x,SCREEN_CENTER_X+0;y,46"
 		OnCommand="%function(self)
             self:maxwidth(400)
             self:zoom(0.5)
-            self:addy(100)
+            self:addy(-100)
             self:sleep(0.5)
             self:queuecommand('GetModText')
             self:linear(1)
-            self:addy(-100)
+            self:addy(100)
             self:shadowlength(0)
 		end"
-        OffCommand="linear,1;addy,100"
+        OffCommand="linear,1;addy,-100"
 		GetModTextCommand="%function(self)
 		self:settext( string.gsub(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP1'):GetText(), 'Overhead,', ' ' ) )
 		self:sleep(0.1)
@@ -26,18 +26,18 @@
 		Font="Common normal"
 		Text="Loading mods..."
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-		InitCommand="x,SCREEN_CENTER_X+0;y,SCREEN_HEIGHT-(480-450)"
+		InitCommand="x,SCREEN_CENTER_X+0;y,30"
 		OnCommand="%function(self)
             self:maxwidth(400)
             self:zoom(0.5)
-            self:addy(100)
+            self:addy(-100)
             self:sleep(0.5)
             self:queuecommand('GetModText')
             self:linear(1)
-            self:addy(-100)
+            self:addy(100)
             self:shadowlength(0)
 		end"
-        OffCommand="linear,1;addy,100"
+        OffCommand="linear,1;addy,-100"
 		GetModTextCommand="%function(self)
 		self:settext( string.gsub(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP2'):GetText(), 'Overhead,', ' ' ) )
 		self:sleep(0.1)
@@ -48,18 +48,18 @@
     <Layer
 		Font="Common normal"
 		Text="Loading mods..."
-		InitCommand="x,SCREEN_CENTER_X+0;y,SCREEN_HEIGHT-10"
+		InitCommand="x,SCREEN_CENTER_X+0;y,10"
 		OnCommand="%function(self)
             self:maxwidth(400)
             self:zoom(0.5)
-            self:addy(100)
+            self:addy(-100)
             self:sleep(0.5)
             self:queuecommand('GetModText')
             self:linear(1)
-            self:addy(-100)
+            self:addy(100)
             self:shadowlength(0)
 		end"
-        OffCommand="linear,1;addy,100"
+        OffCommand="linear,1;addy,-100"
 		GetModTextCommand="%function(self)
 		self:settext( SCREENMAN:GetTopScreen():GetChild('SongOptions'):GetText() )
 		self:sleep(0.1)

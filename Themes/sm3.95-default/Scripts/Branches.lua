@@ -30,7 +30,7 @@ function SelectFirstOptionsScreen()
 end
 
 function GetGameplayScreen()
-	if IsExtraStage() or IsExtraStage2() then return "ScreenGameplay" end
+	if IsExtraStage() or IsExtraStage2() or IsFinalStage() then return "ScreenGameplayExtra" end
 	return "ScreenGameplay"
 end
 
@@ -58,7 +58,7 @@ function ScreenBranchNetAfterEval()
 end	
 
 function SelectEndingScreen()
-	if GetBestFinalGrade() >= GRADE_TIER03 then return "ScreenMusicScroll" end
+	if GetBestFinalGrade() >= GRADE_TIER06 then return "ScreenMusicScroll" end
 	return "ScreenCredits"
 end	
 

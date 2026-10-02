@@ -235,6 +235,27 @@ function CalculatePercentage(self, pn, name)
     end
 end
 
+function GetRandomBackgrounds(num)
+    local PathList = {}
+    local CheckList = {}
+    for ind=1,num,1 do
+        local BGPath = nil
+        local songg
+        local times = 1
+        while ((not BGPath) or CheckList[BGPath]) and times < 10 do
+            songg = SONGMAN:GetRandomSong()
+            BGPath = songg:GetBackgroundPath()
+            times = times+1
+        end
+        if not BGPath then
+            BGPath = THEME:GetPath(EC_GRAPHICS,"Common","fallback background")
+        end
+        table.insert(PathList,BGPath)
+        CheckList[BGPath] = 1
+    end
+    return PathList
+end
+
 
 --[[
 Lua Theme Switcher, OpenITG beta 1, version 1.5

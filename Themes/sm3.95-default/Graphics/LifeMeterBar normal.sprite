@@ -1,0 +1,3 @@
+[Sprite]
+Texture=_LifeMB normal
+InitCommand=%function(self) if IsFinalStage() then self:Load(THEME:GetPath(EC_GRAPHICS,'','_LifeMBExtra normal')) end end
