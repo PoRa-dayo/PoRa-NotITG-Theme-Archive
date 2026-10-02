@@ -463,7 +463,7 @@ Original theme by \_\_LOLO__ (SM3.9). Character art by Hirose Madoka and fether.
 
 <img width="200" alt="NotITG-v4 9 1_j4tB2K1GMP" src="https://github.com/user-attachments/assets/e1ab9f7b-e9e7-4d45-8563-8462a4d544b2" />
 <img width="200" alt="NotITG-v4 9 1_Lz0EANR9ZA" src="https://github.com/user-attachments/assets/4b5a9b4a-d35a-4e60-99fa-38ce6ffcb120" />
-<img width="200" alt="NotITG-v4 9 1_RP7U72rAYg" src="https://github.com/user-attachments/assets/4d4c4506-c0fb-4f48-8bf1-5944774675cc" />
+<img width="200" alt="NotITG-v4 9 1_4hS4214rB7" src="https://github.com/user-attachments/assets/5c0538f6-d383-4008-b8e8-6f1396f3f84a" />
 <img width="200" alt="NotITG-v4 9 1_npZpEzti34" src="https://github.com/user-attachments/assets/967508e8-ced8-4464-8c01-26470130dfba" />
 <img width="200" alt="NotITG-v4 9 1_WmaVqVujGg" src="https://github.com/user-attachments/assets/67086556-cbf9-418f-a5f6-48f12fd13a16" />
 
