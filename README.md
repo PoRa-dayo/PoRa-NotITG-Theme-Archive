@@ -428,7 +428,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 
 A cute pastel theme that was a well-known classic back in the Stepmania 3.9 days. It was released alongside the pop * candy song packs and courses, some of which have unfortunately been lost to time.
 
-You can also switch to the mostly-pink visual style of pop * candy 1 via Options > Theme Options. This allows you to experience the visual interface of pop * candy 1 while still having the QoL features of pop * candy 2.
+In this port, you can also switch to the mostly-pink visual style of pop * candy 1 via Options > Theme Options. This allows you to experience the visual interface of pop * candy 1 while still having the QoL features of pop * candy 2.
 
 ## Credits:
 Original theme by \_\_LOLO__ (SM3.9). Character art by Hirose Madoka and fether. Some inspiration from the theme's SM5 port by Inorizushi. Ported and optimized for NotITG 4.9.1 by PoRa.
