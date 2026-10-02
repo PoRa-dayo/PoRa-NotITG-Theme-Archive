@@ -205,7 +205,11 @@ OITGThemerFallback is a fallback theme that's made to make it easier to port SM3
 -Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options, added Music Rate customization option\
 -Replaced the "Loading..." sprite with an original one.\
 -Changed the layering of the player mods, timer bar and difficulty frame, as well as removing some duplicated elements in the song selection screen.\
+-Fixed an issue on the song select screen where all blank grades are shown as gold AAAs before you move the wheel.\
+-CDTitles now automatically scale to fit a certain maximum height/maximum width.\
+-Added the fading to black animation that the original theme used when the press enter for options message is shown.\
 -Changed the layering of the life bar, score bar and difficulty bar so they don't show up in modfiles, and slightly change their animation so that it makes sense.\
+-Danger animation now works properly in NotITG.\
 -Removed the "Player 1" during gameplay. (why is that thereee)\
 -All elements on song selection screen now properly disappear when a song is selected.\
 -Added an extra difficulty number on the song selection screen for difficulties more than 10.\
