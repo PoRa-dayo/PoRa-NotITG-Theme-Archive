@@ -523,11 +523,13 @@ Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
 ## Changelogs:
 -On the title screen, SELECT GAME is moved to Options. GAME START is now OTHER MODES. Added PLAY MODS (takes you to 2P Versus Dance immediately). EDIT COURSES is removed (does not work in NotITG).\
 -Removed the Solo game mode.\
+-The How To Play screen is changed to the ITG one that uses a random chart and song that you have, instead of the actual How To Play chart and song like the old How To Play screen, because NotITG completely disabled the old How To Play.\
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that). Removed Show Caution and Show Instructions options as it just causes other themes to break.\
 -Fixed a bunch of visual errors on widescreen on the music selection and gameplay screens.\
 -Default sort mode is set to Group.\
 -Machine/Profile Percentage High Score and Step Artist are now shown in song selection screen.\
 -Maximum feet shown is now 12 instead of 14. A number is shown on the song selection screen if the difficulty surpasses 12.\
+-Added back the explanation that used to be there in SM3.9 in the course selection screen.\
 -Grading system is now similar to A.O.I.'s.\
 -Added a mine counter next to the misses counter, and a N.G. counter next to the freeze counter in results screen.\
 -Added offset plot and spellcard viewer.\
@@ -541,6 +543,9 @@ Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
 -Replaced Sprite.lua with the modern one so that song transitions in courses don't give errors.\
 -The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
 -FailImmediate is now automatically applied for Challenge and Endless Modes when the mode is first selected.\
+-Since Extra stages no longer exist in NotITG, the Try Extra Stage jingle is now used in the final stage to signify whether you got enough score to trigger the credits sequence or not.\
+-The credits sequence that was broken since OpenITG is now fully recreated.\
+-The final stage now uses the extra stage's unique UI.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Limited the modifier list in Edit Mode.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
