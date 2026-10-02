@@ -430,7 +430,7 @@ Original theme by \_\_LOLO__ (SM3.9). Character art by Hirose Madoka and fether.
 ## Changelogs (compared to the SM3.9 ver.):
 -The theme can now switch between pop * candy 1 and pop * candy 2's UI via Options > Theme Options. UI for gameplay can be selected individually from the rest of the theme.\
 -Added a new window icon.\
--Added "Play Mods" (takes you to 2P Versus Dance immediately). Removed Edit Courses (does not work in NotITG).\
+-On the title screen, SELECT GAME is moved to Options. GAME START is now OTHER MODES. Added PLAY MODS (takes you to 2P Versus Dance immediately). EDIT COURSES is removed (does not work in NotITG).\
 -No longer possible to select Solo (6K) mode. HEAVY+ mode from pop * candy 1 is also removed.\
 -The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
 -Added roll counter, hand counter to the pane display. Added a steps description (step artist) display.\
@@ -516,7 +516,7 @@ I'm the original &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;***Stepma
 Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
 
 ## Changelogs:
--On the title screen, SELECT GAME is moved to Options. GAME START is now OTHER MODES. Added PLAY MODS (takes you to 2P Versus Dance immediately).\
+-On the title screen, SELECT GAME is moved to Options. GAME START is now OTHER MODES. Added PLAY MODS (takes you to 2P Versus Dance immediately). EDIT COURSES is removed (does not work in NotITG).\
 -Removed the Solo game mode.\
 -Moved the Aspect Ratio/Resolution options around and replaced it with a more modern one. Removed Network Options (NotITG doesn't have that). Removed Show Caution and Show Instructions options as it just causes other themes to break.\
 -Fixed a bunch of visual errors on widescreen on the music selection and gameplay screens.\
