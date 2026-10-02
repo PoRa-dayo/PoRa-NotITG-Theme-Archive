@@ -429,6 +429,7 @@ Original theme by \_\_LOLO__ (SM3.9). Character art by Hirose Madoka and fether.
 
 ## Changelogs (compared to the SM3.9 ver.):
 -The theme can now switch between pop * candy 1 and pop * candy 2's UI via Options > Theme Options. UI for gameplay can be selected individually from the rest of the theme.\
+-Added a new window icon.\
 -Added "Play Mods" (takes you to 2P Versus Dance immediately). Removed Edit Courses (does not work in NotITG).\
 -No longer possible to select Solo (6K) mode. HEAVY+ mode from pop * candy 1 is also removed.\
 -The battery gauge in Challenge Mode is now replaced with the lifetime gauge, aka it's now Survival mode instead of Oni. No one likes Oni mode.\
@@ -443,6 +444,7 @@ Original theme by \_\_LOLO__ (SM3.9). Character art by Hirose Madoka and fether.
 -Modern resolution settings are added. Elements are now made to *mostly* support other screen ratios that can be picked via the in-theme options.\
 -Added offset plot and spellcard viewer in results screen.\
 -Added a N.G. counter and a mine counter in results screen.\
+-Added the song title in the evaluation screen to account for charts with no banners.\
 -Since Extra stages no longer exist in NotITG, the Try Extra Stage jingles are now used in the final stage to signify whether you got enough score to trigger the credits sequence or not.\
 -The final stage now uses the extra stage's unique UI.\
 -Credits sequences are now triggered purely based on your final grade.\
