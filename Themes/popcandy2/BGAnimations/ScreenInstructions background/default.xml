@@ -7,7 +7,7 @@
 
     <Layer
         File="../_black.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(240-240)"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT"
     />
 
     <Layer

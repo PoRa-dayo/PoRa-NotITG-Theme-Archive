@@ -12,12 +12,12 @@
 
     <Layer
         File="chr.png"
-        Command="zoom,1;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);diffusealpha,0.5;bob;effectmagnitude,0,10,0"
+        Command="zoom,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0.5;bob;effectmagnitude,0,10,0"
     />
 
     <Layer
-        File="../_white.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;sleep,1.0;diffusealpha,1;linear,1.0;diffusealpha,0"
+        Type="Quad"
+        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,1,1,1,1;sleep,1.0;linear,1.0;diffuse,1,1,1,0"
     />
 
     <Layer
