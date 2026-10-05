@@ -190,6 +190,12 @@
 		if not yo then yo = 0 end
 		return -1*y/oplot_maxOffset*h/2 + yo
 	end
+        
+    function oplot_fitYnoOffset(y,h,yo)
+		if not h then h = oplot_plotHeight end
+		if not yo then yo = 0 end
+		return -1*y/180*h/2 + yo
+	end
 	
 	oplot_hidden = {1,1}
 	curcard = {0,0}
@@ -548,15 +554,15 @@ end"><children>
 				self:SetNumVertices(2)
 				local vert = 2;
 				
-					self:SetVertexPosition(0,0,oplot_fitY(180),1)
+					self:SetVertexPosition(0,0,oplot_fitYnoOffset(180),1)
 					self:SetVertexColor(0,1,1,1,1)
-					self:SetVertexPosition(1,0,oplot_fitY(-180),1)
+					self:SetVertexPosition(1,0,oplot_fitYnoOffset(-180),1)
 					self:SetVertexColor(1,1,1,1,1)
 					
 				self:SetNumVertices(table.getn(BX_CustomLifeChanges[pn]) * 2)
 				for i,lc in pairs(BX_CustomLifeChanges[pn]) do
 					local x = oplot_fitX(lc[1])
-					local y = oplot_fitY(lc[2]*360)+(oplot_plotHeight/2)
+					local y = oplot_fitYnoOffset(lc[2]*360)+(oplot_plotHeight/2)
 					local catc = MRC(lc[2]*10)
 						self:SetVertexPosition((i-1) * 2, x, y, 0)
 						self:SetVertexColor((i-1) * 2, catc[1]*.75, catc[2]*.75, 0, alpha)
@@ -621,16 +627,16 @@ end"><children>
 				self:SetNumVertices(2)
 				local vert = 2;
 				
-					self:SetVertexPosition(0,0,oplot_fitY(180),1)
+					self:SetVertexPosition(0,0,oplot_fitYnoOffset(180),1)
 					self:SetVertexColor(0,1,1,1,alpha)
-					self:SetVertexPosition(1,0,oplot_fitY(-180),1)
+					self:SetVertexPosition(1,0,oplot_fitYnoOffset(-180),1)
 					self:SetVertexColor(1,1,1,1,alpha)
 					
 				self:SetNumVertices(table.getn(BX_CustomLifeChanges[pn]))
 				if table.getn(BX_CustomLifeChanges[pn]) > 1 then
 					for i,lc in pairs(BX_CustomLifeChanges[pn]) do
 						local x = oplot_fitX(lc[1])
-						local y = oplot_fitY(lc[2]*360)+(oplot_plotHeight/2)
+						local y = oplot_fitYnoOffset(lc[2]*360)+(oplot_plotHeight/2)
 						local catc = MRC(lc[2]*10)
 							self:SetVertexPosition(i-1,x,y,0)
 							self:SetVertexColor(i-1,catc[1]*.75,catc[2]*.75,0,alpha)
@@ -1373,15 +1379,15 @@ end"><children>
 				self:SetNumVertices(2)
 				local vert = 2;
 				
-					self:SetVertexPosition(0,0,oplot_fitY(180),1)
+					self:SetVertexPosition(0,0,oplot_fitYnoOffset(180),1)
 					self:SetVertexColor(0,1,1,1,1)
-					self:SetVertexPosition(1,0,oplot_fitY(-180),1)
+					self:SetVertexPosition(1,0,oplot_fitYnoOffset(-180),1)
 					self:SetVertexColor(1,1,1,1,1)
 					
 				self:SetNumVertices(table.getn(BX_CustomLifeChanges[pn]) * 2)
 				for i,lc in pairs(BX_CustomLifeChanges[pn]) do
 					local x = oplot_fitX(lc[1])
-					local y = oplot_fitY(lc[2]*360)+(oplot_plotHeight/2)
+					local y = oplot_fitYnoOffset(lc[2]*360)+(oplot_plotHeight/2)
 					local catc = MRC(lc[2]*10)
 						self:SetVertexPosition((i-1) * 2, x, y, 0)
 						self:SetVertexColor((i-1) * 2, catc[1]*.75, catc[2]*.75, 0, alpha)
@@ -1446,9 +1452,9 @@ end"><children>
 				self:SetNumVertices(2)
 				local vert = 2;
 				
-					self:SetVertexPosition(0,0,oplot_fitY(180),1)
+					self:SetVertexPosition(0,0,oplot_fitYnoOffset(180),1)
 					self:SetVertexColor(0,1,1,1,alpha)
-					self:SetVertexPosition(1,0,oplot_fitY(-180),1)
+					self:SetVertexPosition(1,0,oplot_fitYnoOffset(-180),1)
 					self:SetVertexColor(1,1,1,1,alpha)
 					
 				self:SetNumVertices(table.getn(BX_CustomLifeChanges[pn]))
@@ -1457,7 +1463,7 @@ end"><children>
 					
 					for i,lc in pairs(BX_CustomLifeChanges[pn]) do
 						local x = oplot_fitX(lc[1])
-						local y = oplot_fitY(lc[2]*360)+(oplot_plotHeight/2)
+						local y = oplot_fitYnoOffset(lc[2]*360)+(oplot_plotHeight/2)
 						local catc = MRC(lc[2]*10)
 							self:SetVertexPosition(i-1,x,y,0)
 							self:SetVertexColor(i-1,catc[1]*.75,catc[2]*.75,0,alpha)
