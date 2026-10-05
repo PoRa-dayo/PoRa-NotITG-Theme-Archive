@@ -1,3 +1,5 @@
+***NOTE: All the themes here are not originally made by me, so I have no issues with anyone making your own versions of anything here, and you don't even need to credit me. If you are the author of any of these themes and you do not want your theme to be here, just inform me about it in the Issues and I'll take care of it ASAP.***
+
 This archive only hosts NotITG-compatible themes that do not already have a NotITG fork maintained by anyone else.
 
 So here's a list of usable themes that do have NotITG forks and are still currently maintained by other people:
