@@ -527,7 +527,7 @@ These ***themes*** are ***Pissing*** me off...\
 I'm the original &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;***Stepmania***
 
 ## Credits:
-Original theme by Stepmania 3.95 Team. Optimized for NotITG 4.9.1 by PoRa.
+Original theme by Stepmania 3.95 Team, based on the visual interface of DDRMAX, the 6th game in the Dance Dance Revolution series by Konami. Optimized for NotITG 4.9.1 by PoRa.
 
 ## Changelogs:
 -On the title screen, SELECT GAME is moved to Options. GAME START is now OTHER MODES. Added PLAY MODS (takes you to 2P Versus Dance immediately). EDIT COURSES is removed (does not work in NotITG).\
