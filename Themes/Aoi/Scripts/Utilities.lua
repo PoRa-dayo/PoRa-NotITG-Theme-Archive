@@ -460,9 +460,23 @@ end
 -- Get Final Grade for Player
 function FinalGrade( pn ) return STATSMAN:GetFinalGrade(pn) end
 -- Get Player Difficulty Meter
-function PMeter( pn ) return GAMESTATE:GetCurrentSteps(pn):GetMeter() end
+function PMeter( pn )
+    local CurSteps = GAMESTATE:GetCurrentSteps(pn)
+    if CurSteps then
+        return CurSteps:GetMeter()
+    else
+        return -1
+    end
+end
 -- Get Player Difficulty
-function PDiff( pn ) return GAMESTATE:GetCurrentSteps(pn):GetDifficulty() end
+function PDiff( pn )
+    local CurSteps = GAMESTATE:GetCurrentSteps(pn)
+    if CurSteps then
+        return CurSteps:GetDifficulty()
+    else
+        return -1
+    end
+end
 -- Get Player Stage Number
 function PStage( pn ) return PROFILEMAN:GetProfile(pn):GetTotalNumSongsPlayed() end
 -- Get Current Sort Order
@@ -587,10 +601,13 @@ function GetStepsDescriptionText(n)
 end
 
 function IsEasierDifficulty( pn ) 
-    if not GAMESTATE:GetCurrentSong() then return false end
+    local CurSong = GAMESTATE:GetCurrentSong()
+    if not CurSong then return false end
+    local CurSteps = GAMESTATE:GetCurrentSteps(pn)
+    if not CurSteps then return false end
     -- Apparently GetStepsByStepsType only returns the UNLOCKED steps that match the stepsType, like, WOW DID YOU KNOW THAT?????
-    local stype = GAMESTATE:GetCurrentSteps(pn):GetStepsType()
-    local DiffList = GAMESTATE:GetCurrentSong():GetStepsByStepsType(stype)
+    local stype = CurSteps:GetStepsType()
+    local DiffList = CurSong:GetStepsByStepsType(stype)
     local EasiestDiff = 5
     for _, steps in pairs(DiffList) do
         if steps:GetDifficulty() < EasiestDiff then
@@ -603,9 +620,12 @@ function IsEasierDifficulty( pn )
 end
 
 function IsHarderDifficulty( pn ) 
-    if not GAMESTATE:GetCurrentSong() then return false end
-    local stype = GAMESTATE:GetCurrentSteps(pn):GetStepsType()
-    local DiffList = GAMESTATE:GetCurrentSong():GetStepsByStepsType(stype)
+    local CurSong = GAMESTATE:GetCurrentSong()
+    if not CurSong then return false end
+    local CurSteps = GAMESTATE:GetCurrentSteps(pn)
+    if not CurSteps then return false end
+    local stype = CurSteps:GetStepsType()
+    local DiffList = CurSong:GetStepsByStepsType(stype)
     local HardestDiff = 0
     for _, steps in pairs(DiffList) do
         if steps:GetDifficulty() > HardestDiff then

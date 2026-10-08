@@ -1,9 +1,33 @@
+<!--CurrentSongChanged is not activated when the player opens a group, and this stupid program offers no way to detect that-->
+<!--So I have to keep repeating UpdateWheelTitles in the case GetCurrentSong is not found-->
+<!--The YouShouldChangeThatShitNOW is to minimize the amount of times UpdateWheelTitles gets called-->
 <ActorFrame
-    CurrentSongChangedMessageCommand="queuecommand,SendUpdate"
+    OnCommand="%function(self)
+        DWIGlobVar.MusicWheelList = {}
+    end"
+    CurrentSongChangedMessageCommand="%function(self)
+        self:queuecommand('SendUpdate')
+        self:queuecommand('Update')
+    end"
+    UpdateCommand="%function(self)
+        if DWIGlobVar.YouShouldChangeThatShitNOW then return end
+        DWIGlobVar.YouShouldChangeThatShitNOW=true
+        self:queuecommand('Wheel')
+    end"
+    WheelCommand="%function(self)
+        if DWIGlobVar.YouShouldChangeThatShitNOW then
+            local msg = UpdateWheelTitles()
+            if msg == 'Repeat' then
+                self:sleep(0.01)
+                self:queuecommand('Update')
+            end
+        end
+        DWIGlobVar.YouShouldChangeThatShitNOW = false
+    end"
     CurrentStepsP1ChangedMessageCommand="queuecommand,SendUpdate"
     CurrentStepsP2ChangedMessageCommand="queuecommand,SendUpdate"
     SendUpdateCommand="%function(self)
-    MESSAGEMAN:Broadcast('Update')
+        MESSAGEMAN:Broadcast('Update')
     end"
     ><children>
     <Layer File="@ThemeFile('dwi2-songoverlay')" OnCommand="%function(self) Center(self) end" />
@@ -34,7 +58,7 @@
             Text="0"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
             OnCommand="x,SCREEN_CENTER_X-290;y,SCREEN_CENTER_Y+180;zoom,0.5;horizalign,left"
-            UpdateMessageCommand="%function(self) LevelMeterTicks(self, PLAYER_1, -300) end"
+            CurrentStepsP1ChangedMessageCommand="%function(self) LevelMeterTicks(self, PLAYER_1, -300) end"
             />
         <Layer
             Type="BitmapText"
@@ -43,25 +67,25 @@
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
             OnCommand="x,SCREEN_CENTER_X-305;y,SCREEN_CENTER_Y+165;zoom,0.4;horizalign,left;maxwidth,300;"
             SetCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_1)) end" 
-			UpdateMessageCommand="playcommand,Set" />
+			CurrentStepsP1ChangedMessageCommand="playcommand,Set" />
 
         <Layer
             File="@ThemeFile('Ticks')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
             OnCommand="x,SCREEN_CENTER_X-270;y,SCREEN_CENTER_Y+183;horizalign,left"
-            UpdateMessageCommand="%function(self) TickDisplayMovement(self, PLAYER_1, -300) end" />
+            CurrentStepsP1ChangedMessageCommand="%function(self) TickDisplayMovement(self, PLAYER_1, -300) end" />
         <Layer
             File="@ThemeFile('Ticks')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
             OnCommand="x,SCREEN_CENTER_X-270;y,SCREEN_CENTER_Y+183;horizalign,left"
-            UpdateMessageCommand="%function(self) TickDisplay(self, PLAYER_1) end" />
+            CurrentStepsP1ChangedMessageCommand="%function(self) TickDisplay(self, PLAYER_1) end" />
 
             <Layer
             Font="_sg stroke"
             Text="0"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
             OnCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y+180;zoom,0.5;horizalign,left"
-            UpdateMessageCommand="%function(self) LevelMeterTicks(self, PLAYER_2, -135) end" />
+            CurrentStepsP2ChangedMessageCommand="%function(self) LevelMeterTicks(self, PLAYER_2, -135) end" />
             
         <Layer
             Type="BitmapText"
@@ -70,24 +94,24 @@
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
             OnCommand="x,SCREEN_CENTER_X-30;y,SCREEN_CENTER_Y+165;zoom,0.4;horizalign,right;maxwidth,300;"
             SetCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" 
-			UpdateMessageCommand="playcommand,Set" />
+			CurrentStepsP2ChangedMessageCommand="playcommand,Set" />
 
         <Layer
             File="@ThemeFile('Ticks')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
             OnCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y+183;horizalign,right"
-            UpdateMessageCommand="%function(self) TickDisplayMovement(self, PLAYER_2, -30) end" />
+            CurrentStepsP2ChangedMessageCommand="%function(self) TickDisplayMovement(self, PLAYER_2, -30) end" />
 
         <Layer
             File="@ThemeFile('Ticks')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
             OnCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y+183;horizalign,right"
-            UpdateMessageCommand="%function(self) TickDisplay(self, PLAYER_2) end" />
+            CurrentStepsP2ChangedMessageCommand="%function(self) TickDisplay(self, PLAYER_2) end" />
 
     <Layer Type="ActorFrame" OnCommand="%function(self) self:x(SCREEN_CENTER_X-288); self:y(SCREEN_CENTER_Y-42) end"><children>
             <Layer File="@ThemeFile('_icon challenge')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-            UpdateMessageCommand="%function(self) self:horizalign('left')  CheckForBannerIcon(self, 'Challenge', PLAYER_1) end" />
+            CurrentStepsP1ChangedMessageCommand="%function(self) self:horizalign('left')  CheckForBannerIcon(self, 'Challenge', PLAYER_1) end" />
 
 
             <Layer File="@ThemeFile('_icon battle')"
@@ -97,7 +121,7 @@
 
             <Layer File="@ThemeFile('_icon challenge')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            UpdateMessageCommand="%function(self) self:horizalign('left')  CheckForBannerIcon(self, 'Challenge', PLAYER_2) end" />
+            CurrentStepsP2ChangedMessageCommand="%function(self) self:horizalign('left')  CheckForBannerIcon(self, 'Challenge', PLAYER_2) end" />
 
              <Layer File="@ThemeFile('_icon battle')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
@@ -125,7 +149,7 @@
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
             OnCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-5;diffuseshift;effectcolor1,0.5,0.5,0.5,0.5;effectcolor2,#FFFFFF"
             OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
-            UpdateMessageCommand="%function(self)
+            CurrentStepsP2ChangedMessageCommand="%function(self)
                 if IsEasierDifficulty(PLAYER_2) then
                     self:hidden(0)
                 else
@@ -138,7 +162,7 @@
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
             OnCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y+15;rotationz,180;diffuseshift;effectcolor1,0.5,0.5,0.5,0.5;effectcolor2,#FFFFFF"
             OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
-            UpdateMessageCommand="%function(self)
+            CurrentStepsP2ChangedMessageCommand="%function(self)
                 if IsHarderDifficulty(PLAYER_2) then
                     self:hidden(0)
                 else
@@ -152,7 +176,7 @@
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
             OnCommand="x,SCREEN_CENTER_X-310;y,SCREEN_CENTER_Y-5;diffuseshift;effectcolor1,0,0,0,0.3;effectcolor2,#FFFFFF"
             OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
-            UpdateMessageCommand="%function(self)
+            CurrentStepsP1ChangedMessageCommand="%function(self)
                 if IsEasierDifficulty(PLAYER_1) then
                     self:hidden(0)
                 else
@@ -165,7 +189,7 @@
             Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
             OnCommand="x,SCREEN_CENTER_X-310;y,SCREEN_CENTER_Y+15;rotationz,180;diffuseshift;effectcolor1,0,0,0,0.3;effectcolor2,#FFFFFF"
             OffCommand="diffusealpha,1;accelerate,0.25;diffusealpha,0"
-            UpdateMessageCommand="%function(self)
+            CurrentStepsP1ChangedMessageCommand="%function(self)
                 if IsHarderDifficulty(PLAYER_1) then
                     self:hidden(0)
                 else

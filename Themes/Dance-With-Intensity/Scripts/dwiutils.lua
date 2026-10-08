@@ -12,6 +12,13 @@ function HoldTween(self) self:shadowlength(0) self:diffusealpha(1) self:y(-64) s
 -- MOVED TO METRICS TO PREVENT CRASHES.
 -- Info about it, can be found in the 1.5.0 changelog.
 
+function SetDifficultyFrameFromSteps( Actor, pn )
+	local steps = GAMESTATE:GetCurrentSteps( pn );
+	if steps then 
+		Actor:setstate(steps:GetDifficulty()) 
+	end
+end
+
 
 -- Function for neccesary profile request calls.
 function Profile() return PROFILEMAN:GetMachineProfile():GetSaved() end
@@ -496,6 +503,7 @@ function TickDisplay(self, pn)
     self:diffusealpha(0)
     if GAMESTATE:GetCurrentSong() then
     	if pn == PLAYER_1 then
+            if PMeter(pn) <= 0 then return end
     		if PMeter(pn) < 8 then
     			self:cropright( CropAmmounts[PMeter(pn)][1] )
     			self:x(SCREEN_CENTER_X-300)
@@ -506,6 +514,7 @@ function TickDisplay(self, pn)
     			self:diffuse( TickDiffuses[PDiff(pn)+1][1], TickDiffuses[PDiff(pn)+1][2], TickDiffuses[PDiff(pn)+1][3],1 )
     		end
     	elseif pn == PLAYER_2 then
+            if PMeter(pn) <= 0 then return end
     		if PMeter(pn) < 8 then
     			self:cropleft( CropAmmounts[PMeter(pn)][2] )
     			self:x(SCREEN_CENTER_X-30)
@@ -864,9 +873,23 @@ function LifeBarP2PosX() if IsUsingWideScreen() then return SCREEN_CENTER_X+232 
 -- Get Final Grade for Player
 function FinalGrade( pn ) return STATSMAN:GetFinalGrade(pn) end
 -- Get Player Difficulty Meter
-function PMeter( pn ) return GAMESTATE:GetCurrentSteps(pn):GetMeter() end
+function PMeter( pn )
+    local CurSteps = GAMESTATE:GetCurrentSteps(pn)
+    if CurSteps then
+        return CurSteps:GetMeter()
+    else
+        return -1
+    end
+end
 -- Get Player Difficulty
-function PDiff( pn ) return GAMESTATE:GetCurrentSteps(pn):GetDifficulty() end
+function PDiff( pn )
+    local CurSteps = GAMESTATE:GetCurrentSteps(pn)
+    if CurSteps then
+        return CurSteps:GetDifficulty()
+    else
+        return -1
+    end
+end
 -- Get Player Stage Number
 function PStage( pn ) return PROFILEMAN:GetProfile(pn):GetTotalNumSongsPlayed() end
 -- Get Current Sort Order
@@ -1239,10 +1262,13 @@ function GetStepsDescriptionText(n)
 end
 
 function IsEasierDifficulty( pn ) 
-    if not GAMESTATE:GetCurrentSong() then return false end
+    local CurSong = GAMESTATE:GetCurrentSong()
+    if not CurSong then return false end
+    local CurSteps = GAMESTATE:GetCurrentSteps(pn)
+    if not CurSteps then return false end
     -- Apparently GetStepsByStepsType only returns the UNLOCKED steps that match the stepsType, like, WOW DID YOU KNOW THAT?????
-    local stype = GAMESTATE:GetCurrentSteps(pn):GetStepsType()
-    local DiffList = GAMESTATE:GetCurrentSong():GetStepsByStepsType(stype)
+    local stype = CurSteps:GetStepsType()
+    local DiffList = CurSong:GetStepsByStepsType(stype)
     local EasiestDiff = 5
     for _, steps in pairs(DiffList) do
         if steps:GetDifficulty() < EasiestDiff then
@@ -1255,9 +1281,12 @@ function IsEasierDifficulty( pn )
 end
 
 function IsHarderDifficulty( pn ) 
-    if not GAMESTATE:GetCurrentSong() then return false end
-    local stype = GAMESTATE:GetCurrentSteps(pn):GetStepsType()
-    local DiffList = GAMESTATE:GetCurrentSong():GetStepsByStepsType(stype)
+    local CurSong = GAMESTATE:GetCurrentSong()
+    if not CurSong then return false end
+    local CurSteps = GAMESTATE:GetCurrentSteps(pn)
+    if not CurSteps then return false end
+    local stype = CurSteps:GetStepsType()
+    local DiffList = CurSong:GetStepsByStepsType(stype)
     local HardestDiff = 0
     for _, steps in pairs(DiffList) do
         if steps:GetDifficulty() > HardestDiff then
