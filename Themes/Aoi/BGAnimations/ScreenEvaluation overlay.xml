@@ -1,10 +1,4 @@
 <ActorFrame> <children>
-    <!-- NotITG Offset Plot -->
-    <Layer File="OffsetPlot" OffCommand="%function(self)
-        BX_SaltyResets = 0
-        BX_SaltyResetPos = {}
-    end"/>
-    
     <!-- Mines -->
     <Layer Type="BitmapText" Text="" Font="ScreenManager credits" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
         self:x(SCREEN_CENTER_X+(155-320-55))
@@ -91,5 +85,65 @@
         if NGTxt > 0 then
             self:settext('+'..NGTxt)
         end
+    end"/>
+    
+    <!-- Difficulty meter -->
+        <Layer 
+            File="@THEME:GetPath(EC_GRAPHICS,'CourseEntryDisplay', 'difficulty')"
+            Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="animate,0;zoom,0.9;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X-295;y,SCREEN_CENTER_Y+7;queuecommand,DiffUpdate;sleep,0.5;linear,0.2;diffusealpha,1"
+            DiffUpdateCommand="%function(self)
+                local stepp = GAMESTATE:GetCurrentSteps(PLAYER_1)
+                if stepp then
+                    DiffuseDifficultyColor( self,stepp:GetDifficulty() )
+                end
+           end"
+        />
+        <Layer 
+            Text=""
+            Font="_shared2"
+            Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="horizalign,left;zoom,0.7;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X-285;y,SCREEN_CENTER_Y+7;queuecommand,DiffUpdate;sleep,0.5;linear,0.2;diffusealpha,1"
+            DiffUpdateCommand="%function(self)
+                local stepp = GAMESTATE:GetCurrentSteps(PLAYER_1)
+                if stepp then
+                    self:settext(stepp:GetMeter())
+                else
+                    self:settext('?')
+                end
+           end"
+        />
+        
+        <Layer 
+            File="@THEME:GetPath(EC_GRAPHICS,'CourseEntryDisplay', 'difficulty')"
+            Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            OnCommand="animate,0;zoom,0.9;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X+95;y,SCREEN_CENTER_Y+7;queuecommand,DiffUpdate;sleep,0.5;linear,0.2;diffusealpha,1"
+            DiffUpdateCommand="%function(self)
+                local stepp = GAMESTATE:GetCurrentSteps(PLAYER_2)
+                if stepp then
+                    DiffuseDifficultyColor( self,stepp:GetDifficulty() )
+                end
+           end"
+        />
+        <Layer 
+            Text=""
+            Font="_shared2"
+            Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            OnCommand="horizalign,left;zoom,0.7;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X+105;y,SCREEN_CENTER_Y+7;queuecommand,DiffUpdate;sleep,0.5;linear,0.2;diffusealpha,1"
+            DiffUpdateCommand="%function(self)
+                local stepp = GAMESTATE:GetCurrentSteps(PLAYER_2)
+                if stepp then
+                    self:settext(stepp:GetMeter())
+                else
+                    self:settext('?')
+                end
+           end"
+        />
+        
+        
+    <!-- NotITG Offset Plot -->
+    <Layer File="OffsetPlot" OffCommand="%function(self)
+        BX_SaltyResets = 0
+        BX_SaltyResetPos = {}
     end"/>
 </children> </ActorFrame>

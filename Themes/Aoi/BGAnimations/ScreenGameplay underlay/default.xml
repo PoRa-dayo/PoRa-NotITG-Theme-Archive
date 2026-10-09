@@ -57,11 +57,11 @@
             self:y(SCREEN_CENTER_Y+(464-253))
             self:addy(100)
             self:sleep(0.5)
+            self:queuecommand('Update')
             self:linear(1)
             self:addy(-100)
             self:animate(0)
             self:sleep(0.1)
-            self:queuecommand('Update')
         end"
         CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
         UpdateCommand="%function(self) GameplayDiffIcon(self,1) end"
@@ -74,10 +74,10 @@
             self:y(SCREEN_CENTER_Y+(464-253))
             self:addy(100)
             self:sleep(0.5)
+            self:queuecommand('Update')
             self:linear(1)
             self:addy(-100)
             self:animate(0)
-            self:queuecommand('Update')
         end"
         CurrentSongChangedMessageCommand="sleep,0.1;queuecommand,Update"
         UpdateCommand="%function(self) GameplayDiffIcon(self,2) end"

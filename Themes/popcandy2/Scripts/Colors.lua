@@ -23,6 +23,16 @@ function DifficultyColor( dc )
 	return "1,1,1,1"
 end
 
+function DiffuseDifficultyColor( self,dc )
+	if dc == DIFFICULTY_BEGINNER	then return self:diffuse(0,1,1,1) end
+	if dc == DIFFICULTY_EASY		then return self:diffuse(0.97, 0.66, 0.00,1) end
+	if dc == DIFFICULTY_MEDIUM		then return self:diffuse(0.97, 0.00, 0.63,1) end
+	if dc == DIFFICULTY_HARD		then return self:diffuse(0.41, 0.97, 0.00,1) end
+	if dc == DIFFICULTY_CHALLENGE	then return self:diffuse(0.44, 1.00, 1.00,1) end
+	if dc == DIFFICULTY_EDIT		then return self:diffuse(0.44, 0.41, 0.97,1) end
+	return self:diffuse(1,1,1,1)
+end
+
 
 -- Difficulty Pane Text Colors
 function ContrastingDifficultyColor( dc )

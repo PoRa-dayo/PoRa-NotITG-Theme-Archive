@@ -108,11 +108,12 @@ function JudgmentInit()
     for pn=1,8 do
         local PL = SCREENMAN:GetTopScreen():GetChild('PlayerP'..pn)
         local k
+        local BinaryPn = math.mod(pn,2) == 1 and 1 or 2
         if PL then
             --Judgment font
             local PJudge = PL:GetChild('Judgment'):GetChild('')
-            k = modJudgmentFont[pn%2 == 1 and 1 or 2]
-            PJudge:aux(pn%2 == 1 and 1 or 2)
+            k = modJudgmentFont[BinaryPn]
+            PJudge:aux(BinaryPn)
             
             if k ~= 1 then 
                 PJudge:Load( THEME:GetPath( EC_GRAPHICS, '', '_Judgments/'..judgmentFontList[k] ))
@@ -122,8 +123,8 @@ function JudgmentInit()
             if FUCK_EXE then
                 for col=0,15 do
                     local PHold = PL:GetChild('HoldJudgmentCol'..col):GetChild('')
-                    k = modHoldJudgment[pn%2 == 1 and 1 or 2]
-                    PHold:aux(pn%2 == 1 and 1 or 2)
+                    k = modHoldJudgment[BinaryPn]
+                    PHold:aux(BinaryPn)
                     
                     if k ~= 1 then 
                         PHold:Load( THEME:GetPath( EC_GRAPHICS, '', '_HoldJudgments/'..holdJudgmentList[k] ))

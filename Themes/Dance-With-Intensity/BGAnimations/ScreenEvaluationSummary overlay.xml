@@ -12,13 +12,18 @@
         Condition="not GAMESTATE:IsCourseMode()"
         InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-170;zoom,0.5;draworder,90;diffusetopedge,0,0.5,1,1"
         OnCommand="%function(self)
-        if GAMESTATE:StageIndex() == 1 then
-            self:settext( GAMESTATE:StageIndex().. ' Stage Total' )
-        elseif GAMESTATE:StageIndex() > 1 then
-            self:settext( GAMESTATE:StageIndex().. ' Stages Total' )
-        else
-            self:settext('No Data Found')
-        end
+            local StageInd = GAMESTATE:StageIndex()
+            --when event mode is off, this screen is accessed immediately after the last screenevaluationstage
+            if not GAMESTATE:IsEventMode() then
+                StageInd = StageInd + 1
+            end
+            if StageInd == 1 then
+                self:settext( StageInd.. ' Stage Total' )
+            elseif StageInd > 1 then
+                self:settext( StageInd.. ' Stages Total' )
+            else
+                self:settext('No Data Found')
+            end
         end"
         />
 
