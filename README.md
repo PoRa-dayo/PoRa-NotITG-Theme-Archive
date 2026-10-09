@@ -147,7 +147,7 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Added back the percentage and max combo in results screen of course mode.\
 -Added mod icons for custom noteskins.\
 -Changed the layering of the score frame to be below the arrows for the sake of old modfiles.\
--Edit Mode now accessible and its UI is now complete.\
+-Edit Mode now accessible without having to input the code, and its UI is now complete.\
 -The profile name now prioritizes your local profile's if you're using one.\
 -Added offset plot and spellcard viewer in results screen.\
 -Added back OK counter, as well as an N.G. counter next to it, and a mine counter next to the misses counter in results screen.
