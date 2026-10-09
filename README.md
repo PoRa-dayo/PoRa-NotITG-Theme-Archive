@@ -556,6 +556,7 @@ Original theme by Stepmania 3.95 Team, based on the visual interface of DDRMAX, 
 -Added offset plot and spellcard viewer.\
 -Added the song title in the evaluation screen to account for charts with no banners.\
 -Added percentage score display that always shows up in evaluation screen.\
+-Added difficulty meter display on results screen.\
 -Changed the position of some elements in evaluation screen.\
 -The spinning grades in the evaluation screen are now manually implemented as the built-in one is hardcoded to 7 tiers.\
 -Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options, moved Music Rate customization option to first options page, removed some options that don't work in NotITG from the song options page.\
@@ -576,7 +577,8 @@ Original theme by Stepmania 3.95 Team, based on the visual interface of DDRMAX, 
 <img width="200" alt="NotITG-v4 9 1_ajItghY4FG" src="https://github.com/user-attachments/assets/31d9fb87-feda-4cf8-ab51-5edddea7159e" />
 <img width="200" alt="NotITG-v4 9 1_9BTP0gOJx2" src="https://github.com/user-attachments/assets/66a064d5-8eb1-4a20-85de-aed33a4f04ee" />
 <img width="200" alt="NotITG-v4 9 1_k6Uf9IIVgq" src="https://github.com/user-attachments/assets/2d4a2d96-2693-4b85-b8ea-87e1b987c572" />
-<img width="200" alt="NotITG-v4 9 1_mEZ4yzEE3H" src="https://github.com/user-attachments/assets/c69e7d3b-34ca-4f7b-b5e1-519c73198293" />
+<img width="200" alt="NotITG-v4 9 1_CLWlBZPoY5" src="https://github.com/user-attachments/assets/80ecae3e-db9e-471d-b5b3-9ff7b8ac5743" />
+
 
 
 # Special thanks
