@@ -44,7 +44,7 @@
 		Font="Common Normal"
 		Text="0"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+185;zoom,0.6;draworder,90;diffusealpha,0"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+25;zoom,0.6;draworder,90;diffusealpha,0"
 		NextCourseSongMessageCommand="sleep,1.5"
 		FinishCommand="%function(self)
 		if GAMESTATE:IsPlayerEnabled(PLAYER_1) and GAMESTATE:IsPlayerEnabled(PLAYER_2) then

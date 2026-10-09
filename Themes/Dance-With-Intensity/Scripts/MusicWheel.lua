@@ -56,7 +56,7 @@ function UpdateWheelTitles()
         local TitlStr = DWIGlobVar.GroupTitles[i];
         --SongNameEle contains Title, Subtitle and Artist. A section also has these, it's just hidden.
         --So to display the song amount in a section, we just unhide its SongNameEle and change the text of the Artist.
-        --We'll also use the Title from SongNameEle to display the section name instead.
+        --We'll also use the Title from SongNameEle to display the section name instead, and hide the original section name element.
         --The original section name element will now just be used to grab the color for the MusicWheelItem section/expanded to use.
         local SongNameEle = item:GetChildAt(8)
         local SectionNameEle = item:GetChildAt(9)
@@ -66,14 +66,14 @@ function UpdateWheelTitles()
         local SongNum = GAMESTATE:PlayerUsingBothSides() and DWIGlobVar.GroupSongNumDoubles[TitlStr] or DWIGlobVar.GroupSongNum[TitlStr]
         local SectionR,SectionG,SectionB,SectionA = 1,1,1,1
         
-        --check if the WheelItem at i is a section
+        --check if the WheelItem at i is a normal section
         if TitlStr and TitlStr ~= '' and (not SectionNameEle:GetHidden()) then
             --the section field will now only be used to grab the color
             SectionR,SectionG,SectionB,SectionA = SectionNameEle:getdiffuse()
             if SongNum then
                 --if song amount exists, add the song amount at the Artist field
                 ArtistEle:settext('('..SongNum.. (SongNum == 1 and ' song)' or ' songs)') )
-                ArtistEle:zoom(0.5)
+                ArtistEle:zoom(0.6)
                 ArtistEle:y(10)
                 --change the song amount's color, because by default it will follow the colors in [SongManager] over at metrics.ini
                 ArtistEle:diffuse(1,1,0.5,1)
@@ -102,9 +102,9 @@ function UpdateWheelTitles()
             --and the MusicWheelItem expanded
             item:GetChildAt(4):diffuse(SectionR,SectionG,SectionB,SectionA)
             
-            --so the Roulette is supposed to have diffuse,1,1,1,1
-            --but apparently there's absolutely no way to apply things only to Roulette. Fuck this program.
-            
+        elseif SectionNameEle:GetHidden() and (not RouletteNameEle:GetHidden()) then
+            --don't diffuse the Roulette section
+            item:GetChildAt(3):diffuse(1,1,1,1)
         end
         
         --MusicWheelItem song must be visible for all MusicWheelItems

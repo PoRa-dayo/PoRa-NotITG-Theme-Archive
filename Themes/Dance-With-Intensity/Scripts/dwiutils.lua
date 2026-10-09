@@ -351,7 +351,7 @@ end
 -- Checks where to put the difficulty icon during gameplay.
 function ReverseDiffCheck(self, n)
 	-- Did it find reverse in the mod list for the player?
-	if string.find( SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP'..n):GetText(), 'Reverse' ) then
+	if string.find( string.lower(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP'..n):GetText()), 'reverse' ) then
 		-- Then put the difficulty icon on the top of the screen, not the bottom!
 		self:y(SCREEN_CENTER_Y-190)
 	end
@@ -384,7 +384,7 @@ function DiffPlacement(self, pn, name)
 	else
 		self:setstate(2*name(pn))
 	end
-	self:sleep(0.2)
+	self:sleep(0.1)
 	self:queuecommand('CheckLocation')
 end
 
@@ -746,24 +746,22 @@ end
 -- THE HUGE ANNOUNCER DATA VALUE TREE.
 
 function AnnouncerAudio()
-	-- AAAA
+	-- AAA
     if STATSMAN:GetBestGrade() == 0 then return 'Internal/eval/AAA/sss-00' end 
-    -- AAA and AAAA
-    if STATSMAN:GetBestGrade() >= 1 and STATSMAN:GetBestGrade() < 2 then return 'Internal/eval/AAA/sss-00' end
     -- AA
-    if STATSMAN:GetBestGrade() >= 2 or STATSMAN:GetBestGrade() <= 3  then return 'Internal/eval/AA/s-0'.. RandomNumber end
+    if STATSMAN:GetBestGrade() >= 1 and STATSMAN:GetBestGrade() <= 5 then return 'Internal/eval/AA/s-0'.. RandomNumber end
     -- A
-    if STATSMAN:GetBestGrade() >= 3 or STATSMAN:GetBestGrade() <= 4 then return 'Internal/eval/A/a-0'.. RandomNumber end                        
+    if STATSMAN:GetBestGrade() >= 6 and STATSMAN:GetBestGrade() <= 9  then return 'Internal/eval/A/a-0'.. RandomNumber end
     -- B
-    if STATSMAN:GetBestGrade() >= 4 and STATSMAN:GetBestGrade() < 5 then return 'Internal/eval/B/b-0'.. RandomNumber end     
+    if STATSMAN:GetBestGrade() >= 10 and STATSMAN:GetBestGrade() <= 11 then return 'Internal/eval/B/b-0'.. RandomNumber end                        
     -- C
-    if STATSMAN:GetBestGrade() >= 5 and STATSMAN:GetBestGrade() < 6 then return 'Internal/eval/C/c-0'.. RandomNumber end   
-   	-- D
-   	if STATSMAN:GetBestGrade() >= 7 and STATSMAN:GetBestGrade() < 8 then return 'Internal/eval/D/d-0'.. RandomNumber end    
-    -- E
-   	if STATSMAN:GetBestGrade() >= 6 and STATSMAN:GetBestGrade() < 7 then return 'Internal/eval/E/e-0'.. RandomNumber end                        
-	-- F
-    if STATSMAN:GetBestGrade() > 7 then return 'Internal/eval/E/e-0'.. RandomNumber end
+    if STATSMAN:GetBestGrade() >= 12 and STATSMAN:GetBestGrade() <= 13 then return 'Internal/eval/C/c-0'.. RandomNumber end     
+    -- D
+    if STATSMAN:GetBestGrade() >= 14 and STATSMAN:GetBestGrade() <= 15 then return 'Internal/eval/D/d-0'.. RandomNumber end   
+   	-- E
+   	if STATSMAN:GetBestGrade() >= 16 and STATSMAN:GetBestGrade() <= 19 then return 'Internal/eval/E/e-0'.. RandomNumber end    
+    -- Fail
+   	if STATSMAN:GetBestGrade() >= 20 then return 'Internal/eval/E/e-0'.. RandomNumber end
 
     return 'Internal/eval/E/e-0'
 end
@@ -1090,6 +1088,8 @@ function DWI_StrSplit(str, delim, maxNb)
 -- Save the profile contents of the players.
 -- Thanks to Sora for pointing out some bloddy obvious mistakes.
 -- The mistakes weren't crashes... but messy code.
+
+-- PoRa: you forgor to account for what to do when all that stuff in Profile() doesn't exist
 function SaveToProfile()
 	
 
