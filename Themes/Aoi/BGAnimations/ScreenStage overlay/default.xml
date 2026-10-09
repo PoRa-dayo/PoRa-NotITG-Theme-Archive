@@ -7,7 +7,9 @@
 	<Layer File="../_shared background/bg" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;customtexturerect,0,0,2,1;texcoordvelocity,0.16,0;zoomx,2" />
 	<Layer File="../stars.jpg" OnCommand="%function(self)
         if StarCheck() then
-            self:xywh(SCREEN_CENTER_X,SCREEN_CENTER_Y+100,1024,768)
+            self:x(SCREEN_CENTER_X)
+            self:y(SCREEN_CENTER_Y+100)
+            self:zoomto(1024,768)
             self:customtexturerect(0,0,1,1)
             self:texcoordvelocity(0.12,0)
             self:diffusealpha(0)
@@ -57,7 +59,7 @@
         end
     end" />
 
-	<Layer File="../startsov.png" Condition="StarCheck()" OnCommand="x,SCREEN_CENTER_X;addx,-200;y,SCREEN_CENTER_Y+(335-240);diffusealpha,0;decelerate,0.3;diffusealpha,1;addx,200;sleep,1.2;accelerate,0.25;diffusealpha,0" />
+	<Layer File="../starsov.png" Condition="StarCheck()" OnCommand="x,SCREEN_CENTER_X;addx,-200;y,SCREEN_CENTER_Y+(335-240);diffusealpha,0;decelerate,0.3;diffusealpha,1;addx,200;sleep,1.2;accelerate,0.25;diffusealpha,0" />
 
 	<Layer File="../STAGE/ring.png" OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,0;diffusealpha,0;accelerate,0.7;zoom,10;diffusealpha,1;hibernate,1.05" />
 	<Layer File="../STAGE/arrow.png" OnCommand="x,SCREEN_CENTER_X+(383-320);y,SCREEN_CENTER_Y+(202-240);diffusealpha,0.7;hibernate,0.2;zoom,0;decelerate,0.5;zoom,1;addx,250;addy,-250" />

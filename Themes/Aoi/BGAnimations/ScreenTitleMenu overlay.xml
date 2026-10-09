@@ -10,7 +10,7 @@ end"> <children>
     <Layer
         Type="Quad"
         Condition="OITGThemerFallbackNotDetected == true"
-        Command="xywh,SCREEN_CENTER_X,SCREEN_CENTER_Y,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,0.5"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffuse,0,0,0,0.5"
     />
     
     <Layer

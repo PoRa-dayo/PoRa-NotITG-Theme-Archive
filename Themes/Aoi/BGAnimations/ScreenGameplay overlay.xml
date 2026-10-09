@@ -50,6 +50,7 @@
 
 	<Layer Type="Quad"
 		InitCommand="hidden,1"
+        Condition="FUCK_EXE"
 		OnCommand="%function(self)
             BX_CurCustomLife = {0.5, 0.5}
 			BX_DispCustomLife = {0.5, 0.5}

@@ -3,17 +3,17 @@
 	<children>
 		<Actor
 			File="TripleAss roulette"
-			OnCommand="glowshift;effectperiod,2;    zoom,4;xywh,-20,262,300,600;customtexturerect,0,0,1,1;cropbottom,0.875;texcoordvelocity,0,-1;sleep,3;diffusealpha,0;"
+			OnCommand="glowshift;effectperiod,2;    zoom,4;x,-20;y,262;zoomtowidth,300;zoomtoheight,600;customtexturerect,0,0,1,1;cropbottom,0.875;texcoordvelocity,0,-1;sleep,3;diffusealpha,0;"
             OffCommand="accelerate,0.2;diffusealpha,0"
         />
         <Actor
 			File="TripleAss roulette"
-			OnCommand="glowshift;effectperiod,2;    zoom,4;xywh,-20,262,300,600;customtexturerect,0,0,1,1;cropbottom,0.875;diffusealpha,0;sleep,3;diffusealpha,1;sleep,1;diffusealpha,0;"
+			OnCommand="glowshift;effectperiod,2;    zoom,4;x,-20;y,262;zoomtowidth,300;zoomtoheight,600;customtexturerect,0,0,1,1;cropbottom,0.875;diffusealpha,0;sleep,3;diffusealpha,1;sleep,1;diffusealpha,0;"
             OffCommand="accelerate,0.2;diffusealpha,0"
         />
         <Actor
 			File="TripleAss roulette"
-			OnCommand="glowshift;effectperiod,2;    zoom,4;xywh,-20,262,300,600;customtexturerect,0,0,1,1;cropbottom,0.875;texcoordvelocity,0,1;diffusealpha,0;sleep,4;diffusealpha,1;sleep,0.75;diffusealpha,0;"
+			OnCommand="glowshift;effectperiod,2;    zoom,4;x,-20;y,262;zoomtowidth,300;zoomtoheight,600;customtexturerect,0,0,1,1;cropbottom,0.875;texcoordvelocity,0,1;diffusealpha,0;sleep,4;diffusealpha,1;sleep,0.75;diffusealpha,0;"
             OffCommand="accelerate,0.2;diffusealpha,0"
         />
         <Actor
