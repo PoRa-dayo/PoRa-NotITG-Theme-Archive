@@ -154,7 +154,7 @@
         <Layer 
             File="@THEME:GetPath(EC_GRAPHICS,'CourseEntryDisplay', 'difficulty')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-            OnCommand="animate,0;zoom,0.7;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X-115;y,SCREEN_CENTER_Y-133;queuecommand,DiffUpdate"
+            OnCommand="animate,0;zoom,0.7;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X-115;y,SCREEN_CENTER_Y-135;queuecommand,DiffUpdate"
             DiffUpdateCommand="%function(self)
                 if not PopCandyIsOriginal() then
                     self:y(SCREEN_CENTER_Y-163)
@@ -172,7 +172,7 @@
             Text=""
             Font="../Numbers/DifficultyMeter meter"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-            OnCommand="horizalign,left;zoom,0.5;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X-105;y,SCREEN_CENTER_Y-133;queuecommand,DiffUpdate"
+            OnCommand="horizalign,left;zoom,0.7;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X-105;y,SCREEN_CENTER_Y-135;queuecommand,DiffUpdate"
             DiffUpdateCommand="%function(self)
                 if not PopCandyIsOriginal() then
                     self:y(SCREEN_CENTER_Y-163)
@@ -192,7 +192,7 @@
         <Layer 
             File="@THEME:GetPath(EC_GRAPHICS,'CourseEntryDisplay', 'difficulty')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="animate,0;zoom,0.7;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X+95;y,SCREEN_CENTER_Y-133;queuecommand,DiffUpdate"
+            OnCommand="animate,0;zoom,0.7;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X+95;y,SCREEN_CENTER_Y-135;queuecommand,DiffUpdate"
             DiffUpdateCommand="%function(self)
                 if not PopCandyIsOriginal() then
                     self:y(SCREEN_CENTER_Y-163)
@@ -210,7 +210,7 @@
             Text=""
             Font="../Numbers/DifficultyMeter meter"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="horizalign,left;zoom,0.5;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X+105;y,SCREEN_CENTER_Y-133;queuecommand,DiffUpdate"
+            OnCommand="horizalign,left;zoom,0.7;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X+105;y,SCREEN_CENTER_Y-135;queuecommand,DiffUpdate"
             DiffUpdateCommand="%function(self)
                 if not PopCandyIsOriginal() then
                     self:y(SCREEN_CENTER_Y-163)
