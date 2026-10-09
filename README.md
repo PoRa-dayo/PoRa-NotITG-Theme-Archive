@@ -143,6 +143,7 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -The CLEARED screen is now only 3 seconds long instead of 5.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.\
+-Added back the "It's a new record!!" message on results screen.\
 -Added back the percentage and max combo in results screen of course mode.\
 -Added mod icons for custom noteskins.\
 -Changed the layering of the score frame to be below the arrows for the sake of old modfiles.\
