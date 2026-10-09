@@ -15,7 +15,11 @@ An archive by PoRa that hosts old NotITG-compatible themes, slightly edited to e
 
 These were only tested on NotITG v4.9.1 Coin Mode Home, with Event Mode on and off.
 
-All themes here are ensured to have: modern noteskin customization, modern judgment font customization, modern judgment hold customization (except DWI theme), proper difficulty number, step artist, song length indicator (can just be Long/Marathon indicator, but Course Mode must have the total time), available difficulties indicator (can be a difficulty list, or show whether easier/harder difficulties are available) and result indicator (percentage score and Failed grades must be visible) on song selection screen, hold (OK and NG) and mine counter as well as offset plot/spellcard viewer on results screen, Stitch.lua stuff (FailOverlay, in-game console, etc.), a "Play Mods" button (takes you to 2P Regular immediately), Course (Marathon) Mode being accessible, a Select Theme option, and a Display Resolution option.
+All themes here are ensured to have:
+- Modern noteskin customization, modern judgment font customization, modern judgment hold customization (except DWI theme).
+- Proper difficulty number, step artist, song length indicator (can just be Long/Marathon indicator, but Course Mode must have the total time), available difficulties indicator (can be a difficulty list, or show whether easier/harder difficulties are available) and result indicator (percentage score and Failed grades must be visible) on song selection screen.
+- Hold (OK and NG) and mine counter, difficulty meter, as well as offset plot/spellcard viewer on results screen.
+- Stitch.lua stuff (FailOverlay, in-game console, etc.), a "Play Mods" button (takes you to 2P Regular immediately), Course (Marathon) Mode being accessible, a Select Theme option, and a Display Resolution option.
 
 Other modern features are not necessarily added, mainly for either the sake of keeping it true to the original, or because of UI issues. I also want to keep these themes at a 'frozen in time' state as much as possible, which means the themes' version numbers stay the same, the credits stay the same, the tips and birthdays stay the same no matter how outdated they are, and some menus remain lacking in features, to show that they're products of their time.
 
@@ -144,6 +148,7 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.\
 -Added back the "It's a new record!!" message on results screen.\
+-Added difficulty meter display on results screen.\
 -Added back the percentage and max combo in results screen of course mode.\
 -Added mod icons for custom noteskins.\
 -Changed the layering of the score frame to be below the arrows for the sake of old modfiles.\
@@ -221,6 +226,7 @@ OITGThemerFallback is a fallback theme that's made to make it easier to port SM3
 -Added a new window icon.\
 -Bonus conditions for triggering special star effects in the ScreenStage screen.\
 -Added some missing fonts for BPM/course length display.\
+-Added difficulty meter display on results screen.\
 -Removed the leftover ITG2 frame in the result evaluation screen.\
 -Revamped the entire grading system because every port of A.O.I. uses a different one and it was really inconsistent. E is now the failing grade. The spinning grades in the evaluation screen are now manually implemented as the built-in one is hardcoded to 7 tiers.\
 -Fixed the error where the length indicator in music selection screen never changes.\
@@ -417,6 +423,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 -Finished Edit Mode's UI.\
 -Modern resolution settings are added. Elements are now made to *mostly* support other screen ratios that can be picked via the in-theme options.\
 -Added offset plot and spellcard viewer in results screen.\
+-Added difficulty meter display on results screen.\
 -Added a BAD counter next to the OK counter, and a mine counter next to the misses counter in results screen.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.
 
@@ -457,6 +464,7 @@ Original theme by \_\_LOLO__ (SM3.9). Character art by Hirose Madoka and fether.
 -Modern resolution settings are added. Elements are now made to *mostly* support other screen ratios that can be picked via the in-theme options.\
 -Added offset plot and spellcard viewer in results screen.\
 -Added a N.G. counter and a mine counter in results screen.\
+-Added difficulty meter display on results screen.\
 -Added the song title in the evaluation screen to account for charts with no banners.\
 -Added percentage score display that always shows up in evaluation screen.\
 -The spinning grades in the evaluation screen are now manually implemented as the built-in one is hardcoded to 7 tiers.\
