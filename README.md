@@ -1,4 +1,4 @@
-***NOTE: All the themes here are not originally made by me, so I have no issues with anyone making your own versions of anything here, and you don't even have to credit me. If you are the author of any of these themes and you do not want your theme to be here, just inform me about it in the Issues and I'll take care of it ASAP.***
+***NOTE: All the themes here are not originally made by me, so I have no issues with anyone making your own versions of anything here, and you don't even have to credit me. If you are the author of any of these themes and you do not want your theme to be here, just inform me about it in the [Issues](https://github.com/PoRa-dayo/PoRa-NotITG-Theme-Archive/issues) and I'll take care of it ASAP.***
 
 This archive only hosts NotITG-compatible themes that do not already have a NotITG fork maintained by anyone else.
 
@@ -122,6 +122,8 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Added grades in the song selection like the original DWI, the Failed grade will use the NO DATA sprite, changed the score threshold to a 17-tier one for the grades on song selection to work, and to keep the consistency with other themes (might change back when NotITG has better support for custom score/grade thresholds)\
 -Delayed the theme reload when exiting the theme menu, required to fix the Theme Select button being broken.\
 -Fixed the grade in results screen being broken\
+-Changed the song sections (song groups/song packs or whatever) on the song select screen to look like the original DWI, with a song counter below the group name.\
+-Fixed the DWI Credits screen.\
 -Removed the EVENT MODE screen (ScreenStage) that comes up after exiting song options\
 -Removed the duplicate profile score info in song options screen when Show Score in Select Music is enabled\
 -Fixed the error where part of the course details become transparent.\
@@ -141,7 +143,7 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -The CLEARED screen is now only 3 seconds long instead of 5.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
 -Added step artist display in song selection screen.\
--Added back the percentage in results screen of course mode.\
+-Added back the percentage and max combo in results screen of course mode.\
 -Added mod icons for custom noteskins.\
 -Changed the layering of the score frame to be below the arrows for the sake of old modfiles.\
 -Edit Mode now accessible and its UI is now complete.\
