@@ -157,10 +157,10 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Added offset plot and spellcard viewer in results screen.\
 -Added back OK counter, as well as an N.G. counter next to it, and a mine counter next to the misses counter in results screen.
 
-<img width="200" height="150" alt="NotITG-v4 9 1_AHPX1eOta3" src="https://github.com/user-attachments/assets/873f8787-f810-48cd-ae25-193a1293accc" />
-<img width="200" height="150" alt="NotITG-v4 9 1_eTD2xbfxKg" src="https://github.com/user-attachments/assets/5d7798fc-b9f2-47ea-918f-1c8aaf357760" />
-<img width="200" height="150" alt="NotITG-v4 9 1_emRLmGJCsw" src="https://github.com/user-attachments/assets/509b91eb-c5d7-401d-ad51-5069370aafef" />
-<img width="200" height="150" alt="NotITG-v4 9 1_jTjLyQS3jd" src="https://github.com/user-attachments/assets/1b7b3857-42e2-4062-89d1-a8b4d8c7b432" />
+<img width="200" alt="NotITG-v4 9 1_p32s0OU8Cp" src="https://github.com/user-attachments/assets/191fbddd-bf6f-4d47-ba7a-4051279c22d1" />
+<img width="200" alt="NotITG-v4 9 1_eTD2xbfxKg" src="https://github.com/user-attachments/assets/5d7798fc-b9f2-47ea-918f-1c8aaf357760" />
+<img width="200" alt="NotITG-v4 9 1_emRLmGJCsw" src="https://github.com/user-attachments/assets/509b91eb-c5d7-401d-ad51-5069370aafef" />
+<img width="200" alt="NotITG-v4 9 1_jTjLyQS3jd" src="https://github.com/user-attachments/assets/1b7b3857-42e2-4062-89d1-a8b4d8c7b432" />
 <img width="200" alt="NotITG-v4 9 1_sL99x1X4WB" src="https://github.com/user-attachments/assets/6d3f729b-790c-47a5-bd7f-2b9fc549c636" />
 
 
@@ -432,7 +432,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 <img width="200" alt="NotITG-v4 9 1_GtUzV3sWtd" src="https://github.com/user-attachments/assets/f7e91440-57b8-43ae-8328-64bd20ba9cfe" />
 <img width="200" alt="NotITG-v4 9 1_sHZ8e2srem" src="https://github.com/user-attachments/assets/798dc78f-8857-4e3d-9cde-5136766574ce" />
 <img width="200" alt="NotITG-v4 9 1_UnfWajcjL7" src="https://github.com/user-attachments/assets/f04a3188-6999-4781-90ed-dc1b4c006535" />
-<img width="200" alt="NotITG-v4 9 1_WynyrU45bV" src="https://github.com/user-attachments/assets/db5daea4-0fe4-41db-90b2-19d67a210ed5" />
+<img width="200" alt="NotITG-v4 9 1_vNZFYpKQPj" src="https://github.com/user-attachments/assets/f99763c0-19a2-44fe-90d8-25b50fa00098" />
 
 
 # POP * CANDY 2
@@ -478,7 +478,7 @@ Original theme by \_\_LOLO__ (SM3.9). Character art by Hirose Madoka and fether.
 <img width="200" alt="NotITG-v4 9 1_Lz0EANR9ZA" src="https://github.com/user-attachments/assets/4b5a9b4a-d35a-4e60-99fa-38ce6ffcb120" />
 <img width="200" alt="NotITG-v4 9 1_4hS4214rB7" src="https://github.com/user-attachments/assets/5c0538f6-d383-4008-b8e8-6f1396f3f84a" />
 <img width="200" alt="NotITG-v4 9 1_npZpEzti34" src="https://github.com/user-attachments/assets/967508e8-ced8-4464-8c01-26470130dfba" />
-<img width="200" alt="NotITG-v4 9 1_WmaVqVujGg" src="https://github.com/user-attachments/assets/67086556-cbf9-418f-a5f6-48f12fd13a16" />
+<img width="200" alt="NotITG-v4 9 1_3mJiEjSZ5g" src="https://github.com/user-attachments/assets/b38533ba-ab25-48d5-9c9f-75d75e40a69c" />
 
 
 # TOUHOU HISOUTENSOKU
