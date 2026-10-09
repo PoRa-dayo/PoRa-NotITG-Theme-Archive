@@ -14,6 +14,16 @@ function DifficultyColor( dc )
 	return "1,1,1,1"
 end
 
+function DiffuseDifficultyColor( self,dc )
+	if dc == DIFFICULTY_BEGINNER	then return self:diffuse(0.0,0.9,1.0,1) end
+	if dc == DIFFICULTY_EASY		then return self:diffuse(0.9,0.9,0.0,1) end
+	if dc == DIFFICULTY_MEDIUM		then return self:diffuse(1.0,0.1,0.1,1) end
+	if dc == DIFFICULTY_HARD		then return self:diffuse(0.2,1.0,0.2,1) end
+	if dc == DIFFICULTY_CHALLENGE	then return self:diffuse(0.2,0.6,1.0,1) end
+	if dc == DIFFICULTY_EDIT		then return self:diffuse(0.8,0.8,0.8,1) end
+	return self:diffuse(1,1,1,1)
+end
+
 
 -- (c) 2005 Chris Danford
 -- All rights reserved.
