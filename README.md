@@ -205,7 +205,7 @@ PROJEKT A.O.I. is based on the UI of Beatmania IIDX 12: Happy Sky. It is also kn
 
 OITGThemerFallback is a fallback theme that's made to make it easier to port SM3.9 themes. It also has some documentation in the metrics that you can use as a reference to make your own theme.
 ## Credits:
--Original theme by k//eternal. Original NotITG port by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 by Nhan and PoRa with permission.
+-Original theme by k//eternal. Original NotITG port by Jose Varela, no longer maintained. Optimized for NotITG 4.9.1 by Nhan and PoRa with permission from Jose Varela.
 
 ## Changelogs:
 -Added "Play Mods" (takes you to 2P Regular Hard difficulty immediately)\
