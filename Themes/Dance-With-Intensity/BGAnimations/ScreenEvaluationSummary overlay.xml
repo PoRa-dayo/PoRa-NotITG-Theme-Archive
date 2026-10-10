@@ -1,11 +1,106 @@
 <ActorFrame><children>
-    <Layer
-        File="@ThemeFile('Common fallback banner')"
+    <Layer File="@ThemeFile('Common fallback banner')"
+        Type="Sprite"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-140"
         OnCommand="%function(self)
-        self:x(SCREEN_CENTER_X)
-        self:y(SCREEN_CENTER_Y-140)
-        end"
-        />
+            if FUCK_EXE then
+                local songg = STATSMAN:GetAccumStageStats():GetPlayedSongs()[1]
+                if songg then
+                    local path = songg:GetBannerPath()
+                    if path then
+                        self:Load(path)
+                    else
+                        self:Load(ThemeFile('Common fallback banner'))
+                    end
+                end
+            end
+            self:scaletoclipped(254,79)
+        end" />
+        
+    <Layer File="@ThemeFile('Common fallback banner')"
+        Type="Sprite"
+        Condition="STATSMAN:GetStagesPlayed() >= 2"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-140;diffusealpha,0;sleep,1;queuecommand,Cycle"
+        CycleCommand="@SummaryBannerCycleCmd()"
+        OnCommand="%function(self)
+            if FUCK_EXE then
+                local songg = STATSMAN:GetAccumStageStats():GetPlayedSongs()[2]
+                if songg then
+                    local path = songg:GetBannerPath()
+                    if path then
+                        self:Load(path)
+                    else
+                        self:Load(ThemeFile('Common fallback banner'))
+                    end
+                end
+            end
+            self:scaletoclipped(254,79)
+        end" />
+        
+    <Layer File="@ThemeFile('Common fallback banner')"
+        Type="Sprite"
+        Condition="STATSMAN:GetStagesPlayed() >= 3"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-140;diffusealpha,0;sleep,2;queuecommand,Cycle"
+        CycleCommand="@SummaryBannerCycleCmd()"
+        OnCommand="%function(self)
+            if FUCK_EXE then
+                local songg = STATSMAN:GetAccumStageStats():GetPlayedSongs()[3]
+                if songg then
+                    local path = songg:GetBannerPath()
+                    if path then
+                        self:Load(path)
+                    else
+                        self:Load(ThemeFile('Common fallback banner'))
+                    end
+                end
+            end
+            self:scaletoclipped(254,79)
+        end" />
+        
+    <Layer File="@ThemeFile('Common fallback banner')"
+        Type="Sprite"
+        Condition="STATSMAN:GetStagesPlayed() >= 4"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-140;diffusealpha,0;sleep,3;queuecommand,Cycle"
+        CycleCommand="@SummaryBannerCycleCmd()"
+        OnCommand="%function(self)
+            if FUCK_EXE then
+                local songg = STATSMAN:GetAccumStageStats():GetPlayedSongs()[4]
+                if songg then
+                    local path = songg:GetBannerPath()
+                    if path then
+                        self:Load(path)
+                    else
+                        self:Load(ThemeFile('Common fallback banner'))
+                    end
+                end
+            end
+            self:scaletoclipped(254,79)
+        end" />
+        
+    <Layer File="@ThemeFile('Common fallback banner')"
+        Type="Sprite"
+        Condition="STATSMAN:GetStagesPlayed() >= 5"
+        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-140;diffusealpha,0;sleep,4;queuecommand,Cycle"
+        CycleCommand="@SummaryBannerCycleCmd()"
+        OnCommand="%function(self)
+            self:x(SCREEN_CENTER_X)
+            self:y(SCREEN_CENTER_Y-140)
+            if FUCK_EXE then
+                local songg = STATSMAN:GetAccumStageStats():GetPlayedSongs()[5]
+                if songg then
+                    local path = songg:GetBannerPath()
+                    if path then
+                        self:Load(path)
+                    else
+                        self:Load(ThemeFile('Common fallback banner'))
+                    end
+                end
+            end
+            self:scaletoclipped(254,79)
+        end" />
+        
+        
+        
 	<Layer
         Font="_sg stroke"
         Text="0"

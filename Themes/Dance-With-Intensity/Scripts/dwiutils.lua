@@ -781,7 +781,10 @@ function GetFormattedMaxCombo(pn) return string.format("% 4d",STATSMAN:GetCurSta
 -- If the player has passed AT LEAST one song, take them to the Summary screen if they back out.
 -- Otherwise, return them to the main menu.
 function TitleMusicRedirect()
-	if GAMESTATE:StageIndex() >= 1 then 
+    -- as of NITG 4.9.1 there's a bug with SaltyResets where using it would increase the StageIndex
+    -- so you can have StageIndex be 1 or above without having played any file to the end
+	-- if GAMESTATE:StageIndex() >= 1 then 
+    if STATSMAN:GetStagesPlayed() > 0 then
 		return "ScreenEvaluationSummaryTitle"
 	else
 		return "ScreenTitleMenu"
@@ -1321,6 +1324,12 @@ function SelectMusicCheckScores()
             p2pane:GetChild('CourseProfileHighScoreText'):hidden(1)
         end
     end
+end
+
+function SummaryBannerCycleCmd(ind)
+    local totalNum = STATSMAN:GetStagesPlayed()
+    if totalNum > 5 then totalNum = 5 end
+    return "linear,0.3;diffusealpha,1;sleep,1;linear,0.3;diffusealpha,0;sleep," .. 1*(totalNum-1) .. ";queuecommand,Cycle"
 end
 
 
