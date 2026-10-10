@@ -1,3 +1,4 @@
+--DWIGlobVar.AllSongs is defined in MusicWheel.lua
 <ActorFrame OnCommand="%function(self)
 	DWI_slwalk = 1;
 	TestMode = false;
@@ -6,7 +7,7 @@
 		InitializeProfile()
 	end
 
-	function UpdateTime()  return 0.01 + ( math.random(60,300) / ( table.getn( SONGMAN:GetAllSongs() ) * 8) ) end
+	function UpdateTime()  return 0.01 + ( math.random(60,300) / ( table.getn( DWIGlobVar.AllSongs ) * 8) ) end
 
 end"><children>
 	
@@ -24,7 +25,7 @@ end"><children>
 		<Layer Font="Common Normal" Text="" OnCommand="x,20;y,120;zoom,0.55;shadowlength,0;diffuse,#efef9f;horizalign,left;queuecommand,Hardware"
 			HardwareCommand="%function(self) self:settext('(starting)'); self:sleep(0.8); self:queuecommand('UpdateSongs') end"
 			UpdateSongsCommand="%function(self)
-			local DWI_songlist = SONGMAN:GetAllSongs()
+			local DWI_songlist = DWIGlobVar.AllSongs
 				if DWI_slwalk >= table.getn(DWI_songlist) then
 					self:settext('(done)');
 					if table.getn( DWI_songlist ) > Profile().DWISongs then
@@ -62,7 +63,7 @@ end"><children>
 			self:queuecommand('UpdateBar')
 			end"
 			UpdateBarCommand="%function(self)
-			local DWI_songlist = SONGMAN:GetAllSongs()
+			local DWI_songlist = DWIGlobVar.AllSongs
 			if DWI_slwalk >= table.getn(DWI_songlist) then
 				self:cropright(0)
 			else
@@ -78,7 +79,7 @@ end"><children>
 		<Layer Font="Common Normal" Text="" OnCommand="x,SCREEN_RIGHT-20;y,73;zoom,0.4;shadowlength,0;horizalign,right;diffuse,0.5,0.5,0.5,1;queuecommand,Hardware"
 			HardwareCommand="%function(self) self:settext('Analizing folders and song contents'); self:sleep(0.8); self:queuecommand('UpdateSongs') end"
 			UpdateSongsCommand="%function(self)
-			local DWI_songlist = SONGMAN:GetAllSongs()
+			local DWI_songlist = DWIGlobVar.AllSongs
 				if DWI_slwalk >= table.getn(DWI_songlist) then
 					self:settext( table.getn(DWI_songlist) ..' / '.. table.getn(DWI_songlist) );
 					if table.getn( DWI_songlist ) > Profile().DWISongs then

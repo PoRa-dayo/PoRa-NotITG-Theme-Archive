@@ -1,3 +1,4 @@
+--DWIGlobVar.AllSongs is defined in MusicWheel.lua
 <ActorFrame><children>
 		<Layer
 			File="@ThemeFile('dwi2-dtile')"
@@ -39,10 +40,10 @@
 			end"
 			SongCheckCommand="%function(self)
 				local Profile = PROFILEMAN:GetMachineProfile():GetSaved()
-				if table.getn( SONGMAN:GetAllSongs() ) - Profile.DWISongs == 1 then
-					self:settext( table.getn( SONGMAN:GetAllSongs() ) - Profile.DWISongs ..' New song found.')
+				if table.getn( DWIGlobVar.AllSongs ) - Profile.DWISongs == 1 then
+					self:settext( table.getn( DWIGlobVar.AllSongs ) - Profile.DWISongs ..' New song found.')
 				else
-					self:settext( table.getn( SONGMAN:GetAllSongs() ) - Profile.DWISongs ..' New songs found.')
+					self:settext( table.getn( DWIGlobVar.AllSongs ) - Profile.DWISongs ..' New songs found.')
 				end
 				self:diffuse(1,1,0,1)
 				self:shadowlength(1)
@@ -74,7 +75,7 @@
 		end"
 		UpdateSongAmmountCommand="%function(self)
 		local Profile = PROFILEMAN:GetMachineProfile():GetSaved()
-		Profile.DWISongs = table.getn( SONGMAN:GetAllSongs() )
+		Profile.DWISongs = table.getn( DWIGlobVar.AllSongs )
 		PROFILEMAN:SaveMachineProfile()
 		end"
 		/>
