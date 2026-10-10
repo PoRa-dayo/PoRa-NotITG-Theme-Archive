@@ -246,7 +246,7 @@ OITGThemerFallback is a fallback theme that's made to make it easier to port SM3
 
 <img width="200" height="150" alt="NotITG-v4 9 1_fI2Rc4ccEX" src="https://github.com/user-attachments/assets/42d665a7-7956-4a56-b381-5b2600e8456e" />
 <img width="200" height="150" alt="NotITG-v4 9 1_rAmhAt1GeF" src="https://github.com/user-attachments/assets/7e4efa9c-987e-486a-ba07-4e89dbb3dff8" />
-<img width="200" alt="NotITG-v4 9 1_DDfbIcGTWX" src="https://github.com/user-attachments/assets/fc9402e2-bd02-474c-83cb-b98239a2fddc" />
+<img width="200" alt="NotITG-v4 9 1_RvJNvdPd4C" src="https://github.com/user-attachments/assets/697de69c-bf21-471e-8a5d-7c1b5a0fa570" />
 <img width="200" height="150" alt="NotITG-v4 9 1_isD7hniFEx" src="https://github.com/user-attachments/assets/47f72736-7eaf-45ae-bfd7-22e0a165c422" />
 <img width="200" height="150" alt="NotITG-v4 9 1_nV1CXnBpCu" src="https://github.com/user-attachments/assets/96dd0d70-1574-4480-b898-58e9e1306d97" />
 
