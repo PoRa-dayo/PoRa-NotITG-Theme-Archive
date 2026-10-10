@@ -150,6 +150,8 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Added back the "It's a new record!!" message on results screen.\
 -Added difficulty meter display on results screen.\
 -Added back the percentage and max combo in results screen of course mode.\
+-Summary results screen no longer causes a crash (Assertion 'pSteps' failed) when exiting the song select screen while not selecting a song.\
+-Summary results screen now cycles the banners between 5 songs you've played in a way similar to the original DWI.\
 -Added mod icons for custom noteskins.\
 -Changed the layering of the score frame to be below the arrows for the sake of old modfiles.\
 -Edit Mode now accessible without having to input the code, and its UI is now complete.\
