@@ -91,7 +91,7 @@
         <Layer 
             File="@THEME:GetPath(EC_GRAPHICS,'CourseEntryDisplay', 'difficulty')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-            OnCommand="animate,0;zoom,0.9;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X-295;y,SCREEN_CENTER_Y+7;queuecommand,DiffUpdate;sleep,0.5;linear,0.2;diffusealpha,1"
+            OnCommand="animate,0;zoom,0.9;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X-295;y,SCREEN_CENTER_Y+12;queuecommand,DiffUpdate;sleep,0.5;linear,0.2;diffusealpha,1"
             DiffUpdateCommand="%function(self)
                 local stepp = GAMESTATE:GetCurrentSteps(PLAYER_1)
                 if stepp then
@@ -103,7 +103,7 @@
             Text=""
             Font="_shared2"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-            OnCommand="horizalign,left;zoom,0.7;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X-285;y,SCREEN_CENTER_Y+7;queuecommand,DiffUpdate;sleep,0.5;linear,0.2;diffusealpha,1"
+            OnCommand="horizalign,left;zoom,0.7;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X-285;y,SCREEN_CENTER_Y+12;queuecommand,DiffUpdate;sleep,0.5;linear,0.2;diffusealpha,1"
             DiffUpdateCommand="%function(self)
                 local stepp = GAMESTATE:GetCurrentSteps(PLAYER_1)
                 if stepp then
@@ -117,7 +117,7 @@
         <Layer 
             File="@THEME:GetPath(EC_GRAPHICS,'CourseEntryDisplay', 'difficulty')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="animate,0;zoom,0.9;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X+95;y,SCREEN_CENTER_Y+7;queuecommand,DiffUpdate;sleep,0.5;linear,0.2;diffusealpha,1"
+            OnCommand="animate,0;zoom,0.9;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X+95;y,SCREEN_CENTER_Y+12;queuecommand,DiffUpdate;sleep,0.5;linear,0.2;diffusealpha,1"
             DiffUpdateCommand="%function(self)
                 local stepp = GAMESTATE:GetCurrentSteps(PLAYER_2)
                 if stepp then
@@ -129,7 +129,7 @@
             Text=""
             Font="_shared2"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="horizalign,left;zoom,0.7;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X+105;y,SCREEN_CENTER_Y+7;queuecommand,DiffUpdate;sleep,0.5;linear,0.2;diffusealpha,1"
+            OnCommand="horizalign,left;zoom,0.7;diffusealpha,0;shadowlength,0;x,SCREEN_CENTER_X+105;y,SCREEN_CENTER_Y+12;queuecommand,DiffUpdate;sleep,0.5;linear,0.2;diffusealpha,1"
             DiffUpdateCommand="%function(self)
                 local stepp = GAMESTATE:GetCurrentSteps(PLAYER_2)
                 if stepp then
