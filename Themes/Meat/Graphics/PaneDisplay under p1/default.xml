@@ -16,6 +16,12 @@
 	/>
 	<Layer
 		File="@'Frame'..ITGMeatGlob.world..ITGMeatGlob.dark..'.png'"
+        Condition="ITGMeatGlob.world ~= 8"
 		Command="y,-2;zoom,.46;zoomx,.6"
+	/>
+    <Layer
+		File="@'Frame'..ITGMeatGlob.world..ITGMeatGlob.dark..'.png'"
+        Condition="ITGMeatGlob.world == 8"
+		Command="y,4;zoom,.38;zoomx,.6"
 	/>
 </children></ActorFrame>
