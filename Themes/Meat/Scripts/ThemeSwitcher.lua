@@ -34,11 +34,10 @@ local function GetThemesFiltered()
 	local ret = {}
 	local themes = THEME:GetThemeNames()
 
-	-- lowercase all themes, so we can guarantee case matching.
 	for i=1,table.getn(themes) do
 		if not IsThemeBlacklisted(themes[i]) then
 			Debug( "Adding theme: " .. themes[i] )
-			ret[table.getn(ret)+1] = string.lower(themes[i])
+			ret[table.getn(ret)+1] = themes[i]
 		else
 			Debug( "Threw out theme: " .. themes[i] )
 		end
@@ -71,10 +70,17 @@ function ThemeSwitcher( next_screen )
 	end
 
 	local function Save(self, list, pn)
-		for i=1,amt do if list[i] then
-			local command = "theme," .. Names[i]
-			command = command .. ";screen," .. next_screen
-			GAMESTATE:DelayedGameCommand( command ) end
+        local theme = string.lower(THEME:GetCurThemeName())
+		for i=1,amt do 
+            if list[i] then
+                if theme == string.lower(Names[i]) then
+                    GAMESTATE:DelayedGameCommand( 'reloadtheme' )
+                else
+                    local command = "theme," .. Names[i]
+                    command = command .. ";screen," .. next_screen
+                    GAMESTATE:DelayedGameCommand( command )
+                end
+            end
 		end
 	end
 

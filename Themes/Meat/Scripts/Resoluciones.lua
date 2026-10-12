@@ -40,6 +40,18 @@ local Resolutions =
 		Ratio = 1.777777,
 		Res = { "960x540", "1280x720", "1600x900", "1920x1080" },
 	},
+    
+    ["3:2"] =	
+	{
+		Ratio = 1.5,
+		Res = { "750x500", "1500x1000" },
+	},
+    
+    ["5:4"] =	
+	{
+		Ratio = 1.25,
+		Res = { "625x500", "1250x1000" },
+	},
 }
 
 -- Width, then height. "640x480" -> 640, 480
@@ -89,6 +101,7 @@ function LuaSetAspectRatio()
 				if not fequ(ratio,temp_float) then
 					temp_ratio = Names[i]
 					temp_float = RatioToFloat( temp_ratio )
+					
 					MESSAGEMAN:Broadcast( "AspectRatioChanged" )
 					return
 				end
@@ -139,10 +152,9 @@ function LuaSetResolution( ratio )
 				PREFSMAN:SetPreference( "DisplayHeight", height )
 				PREFSMAN:SetPreference( "DisplayAspectRatio", Resolutions[ratio].Ratio )
 				Debug( "New resolution: " .. width .. "x" .. height .. ", ratio " .. Resolutions[ratio].Ratio )
-				
-				DISPLAY:SetWindowPositionAndSize(0,0,width,height)
 
-				--GAMESTATE:DelayedGameCommand( "reloadtheme" )
+				-- doesn't work here for some reason so i moved it to ThemeSwitcher.lua
+				-- GAMESTATE:DelayedGameCommand( "reloadtheme" )
 			end
 		end
 	end

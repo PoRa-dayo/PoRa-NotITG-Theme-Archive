@@ -66,7 +66,8 @@ local function FloatToRatio( float )
 end
 
 -- holds the aspect ratio that the system will have once everything's set
-local temp_ratio = FloatToRatio( PREFSMAN:GetPreference("DisplayAspectRatio") )
+-- local temp_ratio = FloatToRatio( PREFSMAN:GetPreference("DisplayAspectRatio") )
+local temp_ratio = FloatToRatio( 1.333333 )
 local temp_float = RatioToFloat( temp_ratio )
 
 -- This function only sets a temporary ratio for the other table to pick up on
@@ -142,7 +143,8 @@ function LuaSetResolution( ratio )
 				
 				DISPLAY:SetWindowPositionAndSize(0,0,width,height)
 
-				--GAMESTATE:DelayedGameCommand( "reloadtheme" )
+                -- doesn't work here for some reason so i moved it to ThemeSwitcher.lua
+				-- GAMESTATE:DelayedGameCommand( "reloadtheme" )
 			end
 		end
 	end
