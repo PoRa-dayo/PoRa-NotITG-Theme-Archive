@@ -56,6 +56,7 @@ Pretty insane how functional this theme still is even on NotITG current version
 -Prevented some errors that can occur depending on the selected world and current stage.\
 -_missing font now redirects to Common title font as the Meat font is too big for the debug menu.\
 -Common normal font is now an edited version of Common title (instead of an edited version of Meat) so that the UI that use it fit the game.\
+-Theme fonts can now display more characters, including some Japanese characters.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Since the detailed scores it uses is already similar to the 17-tier one, I also changed the score threshold in metrics.ini to a 17-tier one for consistency across themes.\
 -Dr. Fetus now shows up in the song selection screen on whatever song you failed.\
@@ -79,6 +80,7 @@ The default In The Groove 2 theme, with certain features from NotITG Simply Love
 ## Changelogs:
 -Added "Play Mods" (takes you to 2P Dance immediately)\
 -Fixed the issue that made the speedmod set at setdefault in modfiles get overwritten by player's speedmod.\
+-Theme fonts can now display more characters, including some Japanese characters.\
 -Made noteskins use the entire NoteSkins folder, and judgment fonts use the _Judgments folder. Added Hold Judgment customizations.\
 -Mods now affect players 1-8\
 -Added NotITG MetaMods\
@@ -127,6 +129,7 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -Delayed the theme reload when exiting the theme menu, required to fix the Theme Select button being broken.\
 -Fixed the grade in results screen being broken\
 -Changed the song sections (song groups/song packs or whatever) on the song select screen to look like the original DWI, with a song counter below the group name.\
+-Theme fonts can now display more characters, including some Japanese characters.\
 -Fixed the DWI Credits screen.\
 -Removed the EVENT MODE screen (ScreenStage) that comes up after exiting song options\
 -Removed the duplicate profile score info in song options screen when Show Score in Select Music is enabled\
@@ -176,6 +179,7 @@ A minimal theme based on the game Final Fantasy Tactics by Square, featuring a w
 -Fixed duplicated/overlapping text in the Options menu.\
 -Added Display Mode, Resolution, Select Theme option.\
 -_missing font now redirects to FFT2 white font for better readability in the UI that uses it.\
+-Theme fonts can now display more characters, including some Japanese characters.\
 -Made noteskins option (Note) use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font (Judge) and Hold Judgment (Hold Judge) customization options.\
 -Changed the layering of the BPM number so that it stays hidden during modfiles.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
@@ -214,6 +218,7 @@ OITGThemerFallback is a fallback theme that's made to make it easier to port SM3
 -Changed all the .gif files into .png files.\
 -Changed the roulette and chance banners to the SM3.9 default ones that the original used.\
 -Redirected more fonts into using the _shared1 font.\
+-Theme fonts can now display more characters, including some Japanese characters.\
 -Made noteskins use the entire NoteSkins folder, noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options, added Music Rate customization option\
 -Replaced the "Loading..." sprite with an original one.\
 -Changed the layering of the player mods, timer bar and difficulty frame, as well as removing some duplicated elements in the song selection screen.\
@@ -269,6 +274,7 @@ This theme already has almost every feature you can ask for, so there are very f
 -The Tail Judge Font (Hold Judgment) customization is now separate for each player (it was a joint option in the original because of SM3.9's limitation).\
 -M-Mods now use the built-in system for consistency.\
 -F grades now show up in song selection screen.\
+-Theme fonts can now display more characters, including some Japanese characters.\
 -CDTitles now automatically scale to fit a certain maximum height/maximum width.\
 -Edited a bunch of UI in Edit Mode to fit NotITG's Editor.\
 -Stitch.lua is implemented, alongside FailOverlays and the in-game console.\
@@ -372,6 +378,7 @@ Original theme by LightningXCE and the ITG3 Team, no longer maintained (except f
 -Lowered the max width of the artist display, course titles and course contents in the song/course selection screen.\
 -Increased the spacing between the difficulties and the course entries' titles.\
 -F grades are shown in the song selection screen.\
+-Theme fonts can now display more characters, including some Japanese characters.\
 -Added modernized noteskin, judgment font, and hold judgment customization.\
 -The theme can now detect what default speedmod (set in Data/GamePrefs.ini) you're using.\
 -Timer-related restrictions are now disabled when Menu Timer is Off.\
@@ -553,6 +560,7 @@ Original theme by Stepmania 3.95 Team, based on the visual interface of DDRMAX, 
 -Maximum feet shown is now 12 instead of 14. A number is shown on the song selection screen if the difficulty surpasses 12.\
 -Added back the explanation that used to be there in SM3.9 in the course selection screen.\
 -CDTitles now automatically scale to fit a certain maximum height/maximum width.\
+-Theme fonts can now display more characters, including some Japanese characters.\
 -Grading system is now similar to A.O.I.'s.\
 -Added a mine counter next to the misses counter, and a N.G. counter next to the freeze counter in results screen.\
 -Added offset plot and spellcard viewer.\
