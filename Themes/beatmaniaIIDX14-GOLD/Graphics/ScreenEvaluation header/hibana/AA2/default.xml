@@ -1,0 +1,43 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../rush.sprite"
+        Command="blend,add;x,SCREEN_WIDTH-(640-538);y,SCREEN_CENTER_Y+(163-240);diffusealpha,0;sleep,2.2;diffusealpha,1;linear,.35;addy,-40;linear,0;diffusealpha,0"
+    />
+
+    <Layer
+        File="../rush.sprite"
+        Command="blend,add;x,SCREEN_WIDTH-(640-596);y,SCREEN_CENTER_Y+(177-240);diffusealpha,0;sleep,2.2;diffusealpha,1;linear,.4;addy,-80;linear,0;diffusealpha,0"
+    />
+
+    <Layer
+        File="../rush2.sprite"
+        Command="blend,add;x,SCREEN_WIDTH-(640-548);y,SCREEN_CENTER_Y+(180-240);diffusealpha,0;sleep,2.3;diffusealpha,1;linear,.3;addy,-20;linear,0;diffusealpha,0"
+    />
+
+    <Layer
+        File="../rush2.sprite"
+        Command="blend,add;x,SCREEN_WIDTH-(640-579);y,SCREEN_CENTER_Y+(173-240);diffusealpha,0;sleep,2.35;diffusealpha,1;linear,.3;addy,-40;linear,0;diffusealpha,0"
+    />
+
+    <Layer
+        File="../rush.sprite"
+        Command="blend,add;x,SCREEN_WIDTH-(640-474);y,SCREEN_CENTER_Y+(163-240);diffusealpha,0;sleep,2.3;diffusealpha,1;linear,.35;addy,-40;linear,0;diffusealpha,0"
+    />
+
+    <Layer
+        File="../rush.sprite"
+        Command="blend,add;x,SCREEN_WIDTH-(640-532);y,SCREEN_CENTER_Y+(177-240);diffusealpha,0;sleep,2.3;diffusealpha,1;linear,.4;addy,-80;linear,0;diffusealpha,0"
+    />
+
+    <Layer
+        File="../rush2.sprite"
+        Command="blend,add;x,SCREEN_WIDTH-(640-484);y,SCREEN_CENTER_Y+(180-240);diffusealpha,0;sleep,2.4;diffusealpha,1;linear,.3;addy,-20;linear,0;diffusealpha,0"
+    />
+
+    <Layer
+        File="../rush2.sprite"
+        Command="blend,add;x,SCREEN_WIDTH-(640-515);y,SCREEN_CENTER_Y+(173-240);diffusealpha,0;sleep,2.45;diffusealpha,1;linear,.3;addy,-40;linear,0;diffusealpha,0"
+    />
+
+</children></ActorFrame>

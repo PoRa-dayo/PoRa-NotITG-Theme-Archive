@@ -372,22 +372,6 @@ function GetCurCombo( pn )
     end
 end
 
--- Position For Players
-function PlayerPositionP1()
-	if CurStyleName() == 'solo' then
-		return SCREEN_CENTER_X
-	else
-		return SCREEN_CENTER_X-(SCREEN_WIDTH*160/640)
-	end
-end
-
-function PlayerPositionP2()
-	if CurStyleName() == 'solo' then
-		return SCREEN_CENTER_X
-	else
-		return SCREEN_CENTER_X+(SCREEN_WIDTH*160/640)
-	end
-end
 
 -- You probably saw this in SL and SLGJUVM's Code.
 -- I just love how this makes it simple to do stuff.
@@ -463,6 +447,39 @@ function ToSM39GradeNum(grade)
     return nil
 end
 
+--Get the grade of a player in 7-tier number format
+function GetGrade(pn)
+    local index = GetPSStageStats(pn-1):GetGrade()
+    if index >= 17 then
+        return ToSM39GradeNum("E") -- Failed
+    end
+
+    local tierName = string.format("Tier%02d", index + 1)
+
+    local tierMap = {
+        Tier01 = "AAAA",
+        Tier02 = "AAA",
+        Tier03 = "AAA",
+        Tier04 = "AAA",
+        Tier05 = "AAA",
+        Tier06 = "AAA",
+        Tier07 = "AA",
+        Tier08 = "AA",
+        Tier09 = "A",
+        Tier10 = "A",
+        Tier11 = "B",
+        Tier12 = "B",
+        Tier13 = "C",
+        Tier14 = "C",
+        Tier15 = "D",
+        Tier16 = "D",
+        Tier17 = "D",
+    }
+
+    return ToSM39GradeNum(tierMap[tierName])
+end
+
+--Get the best grade in 7-tier number format
 function GetBestGrade()
     local index = STATSMAN:GetBestGrade()
     if index >= 17 then
@@ -494,6 +511,7 @@ function GetBestGrade()
     return ToSM39GradeNum(tierMap[tierName])
 end
 
+--convert either a tier name (Tier01, Tier02, etc.) or a grade (A, B, C, etc.) to a number in 7-tier format
 function Grade(value)
     local tierMap = {
         Tier01 = "AAAA",

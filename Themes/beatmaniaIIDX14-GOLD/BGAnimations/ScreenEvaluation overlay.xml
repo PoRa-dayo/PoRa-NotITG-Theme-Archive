@@ -150,7 +150,7 @@ end"> <children>
         <Layer 
             File="@THEME:GetPath(EC_GRAPHICS,'CourseEntryDisplay', 'difficulty')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-            OnCommand="animate,0;zoom,0.7;zoomy,0;shadowlength,0;x,SCREEN_CENTER_X-265;y,SCREEN_CENTER_Y-68;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
+            OnCommand="animate,0;zoom,0.7;zoomy,0;shadowlength,0;x,55;y,SCREEN_CENTER_Y-68;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
             DiffUpdateCommand="%function(self)
                 local stepp = GAMESTATE:GetCurrentSteps(PLAYER_1)
                 if stepp then
@@ -162,7 +162,7 @@ end"> <children>
             Text=""
             Font="Common normal"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-            OnCommand="horizalign,left;zoom,0.7;zoomy,0;shadowlength,0;x,SCREEN_CENTER_X-255;y,SCREEN_CENTER_Y-67;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
+            OnCommand="horizalign,left;zoom,0.7;zoomy,0;shadowlength,0;x,75;y,SCREEN_CENTER_Y-67;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
             DiffUpdateCommand="%function(self)
                 local stepp = GAMESTATE:GetCurrentSteps(PLAYER_1)
                 if stepp then
@@ -176,7 +176,7 @@ end"> <children>
         <Layer 
             File="@THEME:GetPath(EC_GRAPHICS,'CourseEntryDisplay', 'difficulty')"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="animate,0;zoom,0.7;zoomy,0;shadowlength,0;x,SCREEN_CENTER_X+95;y,SCREEN_CENTER_Y-68;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
+            OnCommand="animate,0;zoom,0.7;zoomy,0;shadowlength,0;x,SCREEN_WIDTH-(640-415);y,SCREEN_CENTER_Y-68;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
             DiffUpdateCommand="%function(self)
                 local stepp = GAMESTATE:GetCurrentSteps(PLAYER_2)
                 if stepp then
@@ -188,7 +188,7 @@ end"> <children>
             Text=""
             Font="Common normal"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-            OnCommand="horizalign,left;zoom,0.7;zoomy,0;shadowlength,0;x,SCREEN_CENTER_X+105;y,SCREEN_CENTER_Y-67;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
+            OnCommand="horizalign,left;zoom,0.7;zoomy,0;shadowlength,0;x,SCREEN_WIDTH-(640-425);y,SCREEN_CENTER_Y-67;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
             DiffUpdateCommand="%function(self)
                 local stepp = GAMESTATE:GetCurrentSteps(PLAYER_2)
                 if stepp then
