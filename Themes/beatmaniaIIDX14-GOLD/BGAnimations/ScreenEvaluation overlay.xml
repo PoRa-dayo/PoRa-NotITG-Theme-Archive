@@ -162,7 +162,7 @@ end"> <children>
             Text=""
             Font="Common normal"
             Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-            OnCommand="horizalign,left;zoom,0.7;zoomy,0;shadowlength,0;x,75;y,SCREEN_CENTER_Y-67;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
+            OnCommand="horizalign,left;zoom,0.7;zoomy,0;shadowlength,0;x,65;y,SCREEN_CENTER_Y-67;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
             DiffUpdateCommand="%function(self)
                 local stepp = GAMESTATE:GetCurrentSteps(PLAYER_1)
                 if stepp then
