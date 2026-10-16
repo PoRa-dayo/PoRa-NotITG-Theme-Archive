@@ -1,15 +1,17 @@
 import re
 import os
+from pathlib import Path
 
 # ------------------------------------------------------------------
 # Configuration
 # ------------------------------------------------------------------
 
+root_path = Path(__file__).resolve().parent
 # Input file to process
-INPUT_FILE = "BGAnimation.ini"
+INPUT_FILE = root_path / "BGAnimation.ini"
 
 # Output file
-OUTPUT_FILE = "default.xml"
+OUTPUT_FILE = root_path / "default.xml"
 
 # ------------------------------------------------------------------
 # Helper functions
