@@ -1,4 +1,4 @@
-***NOTE: All the themes here are not originally made by me, so I have no issues with anyone making your own versions of anything here, and you don't even have to credit me. If you are the author of any of these themes and you do not want your theme to be here, just inform me about it in the [Issues](https://github.com/PoRa-dayo/PoRa-NotITG-Theme-Archive/issues) and I'll take care of it ASAP.***
+<img width="600" height="450" alt="NotITG-v4 9 1_PrPC7Q23sf" src="https://github.com/user-attachments/assets/ddc6f6b3-c3d4-461e-9741-a7db83f86823" />***NOTE: All the themes here are not originally made by me, so I have no issues with anyone making your own versions of anything here, and you don't even have to credit me. If you are the author of any of these themes and you do not want your theme to be here, just inform me about it in the [Issues](https://github.com/PoRa-dayo/PoRa-NotITG-Theme-Archive/issues) and I'll take care of it ASAP.***
 
 This archive only hosts NotITG-compatible themes that do not already have a NotITG fork maintained by anyone else.
 
@@ -431,6 +431,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 -Toasties now use cropping instead of masking to avoid messing with the playfields. They will not show up in modfiles. The Toasties in 2-player modes now appear behind the playfield of the corresponding player.\
 -Finished Edit Mode's UI.\
 -Modern resolution settings are added. Elements are now made to *mostly* support other screen ratios that can be picked via the in-theme options.\
+-Added the sound effect for the grade animation in results screen.\
 -Added offset plot and spellcard viewer in results screen.\
 -Added difficulty meter display on results screen.\
 -Added a BAD counter next to the OK counter, and a mine counter next to the misses counter in results screen.\
@@ -442,6 +443,26 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 <img width="200" alt="NotITG-v4 9 1_sHZ8e2srem" src="https://github.com/user-attachments/assets/798dc78f-8857-4e3d-9cde-5136766574ce" />
 <img width="200" alt="NotITG-v4 9 1_UnfWajcjL7" src="https://github.com/user-attachments/assets/f04a3188-6999-4781-90ed-dc1b4c006535" />
 <img width="200" alt="NotITG-v4 9 1_vNZFYpKQPj" src="https://github.com/user-attachments/assets/f99763c0-19a2-44fe-90d8-25b50fa00098" />
+
+
+# BEATMANIA IIDX 15: DJ TROOPERS
+***NOTE: This theme requires you to have the theme OITGThemerFallback for it to work!!! And just like any other fallback theme, do not actually use OITGThemerFallback.***
+
+A very animated military-based theme based on the game Beatmania IIDX 15: DJ Troopers, the 15th installment in Konami's Beatmania IIDX series.\
+Enemy plane approach! All members must arrive at the platform station.\
+DJ TROOPERS.
+
+## Credits:
+Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa.
+
+## Changelogs: (compared to the SM3.9 ver)
+-Similar changes to Beatmania IIDX 14: Gold theme.
+
+<img width="200" alt="NotITG-v4 9 1_7sLszMBYCm" src="https://github.com/user-attachments/assets/a4544c3d-3db2-4cc2-a374-6e43a109fd62" />
+<img width="200" alt="NotITG-v4 9 1_GhrlklcEME" src="https://github.com/user-attachments/assets/ef135aaa-1669-4ef0-aac5-7b1736499504" />
+<img width="200" alt="NotITG-v4 9 1_pD8ZGhUwqQ" src="https://github.com/user-attachments/assets/1ea0437b-792a-4568-90ea-0ce60a2d376c" />
+<img width="200" alt="NotITG-v4 9 1_Xwb9m7zhP0" src="https://github.com/user-attachments/assets/b6c09fc2-9089-4d26-9d83-7fc74fb25e70" />
+<img width="200" alt="NotITG-v4 9 1_PrPC7Q23sf" src="https://github.com/user-attachments/assets/64a9581c-4409-4f70-81fb-521420a75007" />
 
 
 # POP * CANDY 2
