@@ -448,7 +448,8 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 # BEATMANIA IIDX 15: DJ TROOPERS
 ***NOTE: This theme requires you to have the theme OITGThemerFallback for it to work!!! And just like any other fallback theme, do not actually use OITGThemerFallback.***
 
-A very animated military-based theme based on the game Beatmania IIDX 15: DJ Troopers, the 15th installment in Konami's Beatmania IIDX series.\
+A very animated military-based theme based on the game Beatmania IIDX 15: DJ Troopers, the 15th installment in Konami's Beatmania IIDX series. With Beatmania IIDX 14 theme finished, porting this one did not take long at all since these two themes are very similar.
+
 Enemy plane approach! All members must arrive at the platform station.\
 DJ TROOPERS.
 
