@@ -1,4 +1,4 @@
-<img width="600" height="450" alt="NotITG-v4 9 1_PrPC7Q23sf" src="https://github.com/user-attachments/assets/ddc6f6b3-c3d4-461e-9741-a7db83f86823" />***NOTE: All the themes here are not originally made by me, so I have no issues with anyone making your own versions of anything here, and you don't even have to credit me. If you are the author of any of these themes and you do not want your theme to be here, just inform me about it in the [Issues](https://github.com/PoRa-dayo/PoRa-NotITG-Theme-Archive/issues) and I'll take care of it ASAP.***
+***NOTE: All the themes here are not originally made by me, so I have no issues with anyone making your own versions of anything here, and you don't even have to credit me. If you are the author of any of these themes and you do not want your theme to be here, just inform me about it in the [Issues](https://github.com/PoRa-dayo/PoRa-NotITG-Theme-Archive/issues) and I'll take care of it ASAP.***
 
 This archive only hosts NotITG-compatible themes that do not already have a NotITG fork maintained by anyone else.
 
