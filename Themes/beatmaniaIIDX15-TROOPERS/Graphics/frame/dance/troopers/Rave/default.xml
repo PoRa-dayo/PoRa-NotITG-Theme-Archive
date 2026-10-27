@@ -1,0 +1,17 @@
+<ActorFrame><children>
+
+    <Layer
+        File="2P.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);diffusealpha,1"
+    />
+
+    <Layer
+        File="songbanner"
+        Command="zoomtowidth,128;zoomtoheight,40;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(452-240);diffusealpha,1"
+    />
+
+    <Layer
+        File="STAGE"
+    />
+
+</children></ActorFrame>

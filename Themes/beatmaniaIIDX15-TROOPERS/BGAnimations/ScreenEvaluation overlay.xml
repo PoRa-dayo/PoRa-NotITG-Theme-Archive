@@ -1,0 +1,216 @@
+<ActorFrame InitCommand="%function(self)
+
+	local prof = PROFILEMAN:GetMachineProfile()
+	for pn=0,1 do
+		_G['uksrt_cached_highscore_'..pn] = 0
+		if GAMESTATE:IsPlayerEnabled(pn) then
+			local sco = 0
+			if GAMESTATE:IsCourseMode() then
+				sco = prof:GetHighScoreForCourseAndTrail( GAMESTATE:GetCurrentCourse(), GAMESTATE:GetCurrentTrail(pn):GetDifficulty() )
+			else
+				sco = prof:GetHighScoreForSongAndSteps( GAMESTATE:GetCurrentSong(), GAMESTATE:GetCurrentSteps(pn):GetDifficulty() )
+			end
+			if sco then
+				_G['uksrt_cached_highscore_'..pn] = math.floor(sco:GetPercentDP()*10000)/10000
+			end
+		end
+	end
+	
+end"> <children>
+    
+    <!-- Mines -->
+    <Layer Type="BitmapText" Text="" Font="Common normal" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+        self:x(139+62)
+        self:y(SCREEN_CENTER_Y+(398-240))
+        self:shadowlength(0)
+        self:zoom(0.5)
+        self:diffuse(1,0.2,0.2,1)
+        self:addx(-320)
+        self:sleep(0.1)
+        self:queuecommand('CalcMine')
+        self:linear(0.2)
+        self:addx(320)
+    end"
+    CalcMineCommand="%function(self)
+        local MineTxt = SCREENMAN:GetTopScreen():GetChild('MinesTextP1'):GetText()
+        local MinePass = string.gsub(MineTxt, '/.*', '')
+        MinePass = string.gsub(MinePass,' ','')
+        local MineTotal = string.gsub(MineTxt, '^.*/', '')
+        MineTotal = string.gsub(MineTotal,' ','')
+        local MineHit = tostring(tonumber(MineTotal) - tonumber(MinePass))
+        if tonumber(MineHit) > 0 then
+            self:settext('+'..MineHit)
+        end
+    end"/>
+    
+    <Layer Type="BitmapText" Text="" Font="Common normal" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
+        self:x(SCREEN_WIDTH-(640-501)-62)
+        self:y(SCREEN_CENTER_Y+(398-240))
+        self:shadowlength(0)
+        self:zoom(0.5)
+        self:diffuse(1,0.2,0.2,1)
+        self:addx(320)
+        self:sleep(0.1)
+        self:queuecommand('CalcMine')
+        self:linear(0.2)
+        self:addx(-320)
+    end"
+    CalcMineCommand="%function(self)
+        local MineTxt = SCREENMAN:GetTopScreen():GetChild('MinesTextP2'):GetText()
+        local MinePass = string.gsub(MineTxt, '/.*', '')
+        MinePass = string.gsub(MinePass,' ','')
+        local MineTotal = string.gsub(MineTxt, '^.*/', '')
+        MineTotal = string.gsub(MineTotal,' ','')
+        local MineHit = tostring(tonumber(MineTotal) - tonumber(MinePass))
+        if tonumber(MineHit) > 0 then
+            self:settext('+'..MineHit)
+        end
+    end"/>
+    
+    <!-- NG -->
+    <Layer Type="BitmapText" Text="" Font="Common normal" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="%function(self)
+        self:x(139+62)
+        self:y(SCREEN_CENTER_Y+(421-240))
+        self:shadowlength(0)
+        self:zoom(0.5)
+        self:diffuse(1,0.2,0.2,1)
+        self:addx(-320)
+        self:sleep(0.1)
+        self:queuecommand('CalcNG')
+        self:linear(0.2)
+        self:addx(320)
+    end"
+    CalcNGCommand="%function(self)
+        local NGTxt = GetPSStageStats(PLAYER_1):GetHoldNoteScores(1)
+        if NGTxt > 0 then
+            self:settext('BAD '..NGTxt)
+        end
+    end"/>
+    
+    <Layer Type="BitmapText" Text="" Font="Common normal" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="%function(self)
+        self:x(SCREEN_WIDTH-(640-501)-62)
+        self:y(SCREEN_CENTER_Y+(421-240))
+        self:shadowlength(0)
+        self:zoom(0.5)
+        self:diffuse(1,0.2,0.2,1)
+        self:addx(320)
+        self:sleep(0.1)
+        self:queuecommand('CalcNG')
+        self:linear(0.2)
+        self:addx(-320)
+    end"
+    CalcNGCommand="%function(self)
+        local NGTxt = GetPSStageStats(PLAYER_2):GetHoldNoteScores(1)
+        if NGTxt > 0 then
+            self:settext('BAD '..NGTxt)
+        end
+    end"/>
+    
+    <!-- New Record -->
+    <Layer File="ScreenEvaluation MachineRecord 01" Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and PlayModeName() ~= 'Endless'" OnCommand="%function(self)
+        self:hidden(1)
+        self:x(140)
+        self:y(SCREEN_CENTER_Y+(114-240))
+        self:draworder(40)
+        self:shadowlength(0)
+        self:zoomy(0)
+        self:diffusealpha(0)
+        self:sleep(3)
+        self:linear(0.15)
+        self:zoomy(1)
+        self:diffusealpha(1)
+        
+        local perc = math.floor(STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_1):GetPercentDancePoints()*10000)/10000
+        if perc > _G['uksrt_cached_highscore_0'] then
+            self:hidden(0)
+        end
+    end"/>
+    
+    <Layer File="ScreenEvaluation MachineRecord 01" Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and PlayModeName() ~= 'Endless'" OnCommand="%function(self)
+        self:hidden(1)
+        self:x(SCREEN_WIDTH-(640-500))
+        self:y(SCREEN_CENTER_Y+(114-240))
+        self:draworder(40)
+        self:shadowlength(0)
+        self:zoomy(0)
+        self:diffusealpha(0)
+        self:sleep(3)
+        self:linear(0.15)
+        self:zoomy(1)
+        self:diffusealpha(1)
+        
+        local perc = math.floor(STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetPercentDancePoints()*10000)/10000
+        if perc > _G['uksrt_cached_highscore_1'] then
+            self:hidden(0)
+        end
+    end"/>
+    
+    
+    <!-- Difficulty meter -->
+        <Layer 
+            File="@THEME:GetPath(EC_GRAPHICS,'CourseEntryDisplay', 'difficulty')"
+            Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="animate,0;zoom,0.7;zoomy,0;shadowlength,0;x,55;y,SCREEN_CENTER_Y-68;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
+            DiffUpdateCommand="%function(self)
+                local stepp = GAMESTATE:GetCurrentSteps(PLAYER_1)
+                if stepp then
+                    DiffuseDifficultyColor( self,stepp:GetDifficulty() )
+                end
+           end"
+        />
+        <Layer 
+            Text=""
+            Font="Common normal"
+            Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+            OnCommand="horizalign,left;zoom,0.7;zoomy,0;shadowlength,0;x,65;y,SCREEN_CENTER_Y-67;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
+            DiffUpdateCommand="%function(self)
+                local stepp = GAMESTATE:GetCurrentSteps(PLAYER_1)
+                if stepp then
+                    self:settext(stepp:GetMeter())
+                else
+                    self:settext('?')
+                end
+           end"
+        />
+        
+        <Layer 
+            File="@THEME:GetPath(EC_GRAPHICS,'CourseEntryDisplay', 'difficulty')"
+            Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            OnCommand="animate,0;zoom,0.7;zoomy,0;shadowlength,0;x,SCREEN_WIDTH-(640-415);y,SCREEN_CENTER_Y-68;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
+            DiffUpdateCommand="%function(self)
+                local stepp = GAMESTATE:GetCurrentSteps(PLAYER_2)
+                if stepp then
+                    DiffuseDifficultyColor( self,stepp:GetDifficulty() )
+                end
+           end"
+        />
+        <Layer 
+            Text=""
+            Font="Common normal"
+            Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+            OnCommand="horizalign,left;zoom,0.7;zoomy,0;shadowlength,0;x,SCREEN_WIDTH-(640-425);y,SCREEN_CENTER_Y-67;queuecommand,DiffUpdate;sleep,2;linear,0.2;zoomy,0.7"
+            DiffUpdateCommand="%function(self)
+                local stepp = GAMESTATE:GetCurrentSteps(PLAYER_2)
+                if stepp then
+                    self:settext(stepp:GetMeter())
+                else
+                    self:settext('?')
+                end
+           end"
+        />
+        
+        
+    <!-- NotITG Offset Plot -->
+    <Layer File="OffsetPlot" InitCommand="%function(self)
+        if PlayModeName() == 'Rave' or PlayModeName() == 'Endless' then
+            BX_CurCustomLife = {0.5, 0.5}
+			BX_DispCustomLife = {0.5, 0.5}
+			BX_CustomLifeChanges = {{{0,0.5}}, {{0, 0.5}}}
+			BX_DisplayedGraph = 'Life'
+        end
+    end"
+    OffCommand="%function(self)
+        BX_SaltyResets = 0
+        BX_SaltyResetPos = {}
+    end"/>
+</children> </ActorFrame>

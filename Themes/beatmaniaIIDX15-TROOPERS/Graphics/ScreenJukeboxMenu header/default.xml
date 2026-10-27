@@ -1,0 +1,16 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../_shared header"
+    />
+
+    <Layer
+        File="../time"
+    />
+
+    <Layer
+        File="EXPERT_T.png"
+        OnCommand="x,52;y,SCREEN_CENTER_Y+(26-240);addx,-10;diffusealpha,0;sleep,0.5;linear,0.3;addx,10;diffusealpha,1"
+    />
+
+</children></ActorFrame>

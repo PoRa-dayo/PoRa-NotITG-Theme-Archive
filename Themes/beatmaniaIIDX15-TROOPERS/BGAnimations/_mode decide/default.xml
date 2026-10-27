@@ -1,0 +1,38 @@
+<ActorFrame><children>
+
+    <Layer
+        File="_white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,1;linear,0.5;diffusealpha,0"
+    />
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(180))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="box.txt"
+            Materials="box.txt"
+            Bones="box.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomz,3;zoomx,4000;zoomy,4000;rotationx,50;rotationy,90;addy,-800"
+            UseLightning="1"
+        />
+
+    </children></ActorFrame>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(180))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="gate.txt"
+            Materials="gate.txt"
+            Bones="gate.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomz,3;zoomx,4000;zoomy,4000;rotationx,50;addy,3400;addz,-3.6;rotationy,90"
+            UseLightning="1"
+        />
+
+    </children></ActorFrame>
+
+</children></ActorFrame>

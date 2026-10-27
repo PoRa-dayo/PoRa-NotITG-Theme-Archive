@@ -1,0 +1,19 @@
+<ActorFrame><children>
+
+    <Layer
+        File="2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+    />
+
+    <Layer
+        File="22.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,noeffect;zwrite,1;clearzbuffer,1"
+    />
+
+    <Layer
+        File="1.png"
+        RepeatCommand="x,SCREEN_CENTER_X;blend,add;ztest,1;zoomy,.75;y,SCREEN_CENTER_Y+(-350-240);linear,2;y,SCREEN_CENTER_Y+(400-240);sleep,(2-2.0);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+</children></ActorFrame>

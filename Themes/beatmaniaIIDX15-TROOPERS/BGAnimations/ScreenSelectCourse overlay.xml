@@ -1,0 +1,70 @@
+<ActorFrame
+    CurrentSongChangedMessageCommand="%function(self)
+        MESSAGEMAN:Broadcast('Update')
+    end"
+    CurrentStepsP1ChangedMessageCommand="%function(self)
+        MESSAGEMAN:Broadcast('Update')
+    end"
+    CurrentStepsP2ChangedMessageCommand="%function(self)
+        MESSAGEMAN:Broadcast('Update')
+    end"
+    ><children>
+    
+    <Layer
+        Type="Quad"
+        OnCommand="%function(self)
+            BMIIDX14Glob.FirstTweening=true
+            self:sleep(0.5)
+            self:queuecommand('Disallow')
+        end"
+        DisallowCommand="%function(self)
+            BMIIDX14Glob.FirstTweening=false
+        end"
+        CurrentSongChangedMessageCommand="%function(self)
+            local ArtEle = BMIIDX14Glob.CourseArtist
+            if ArtEle and (not BMIIDX14Glob.FirstTweening) then
+                ArtEle:finishtweening()
+                ArtEle:diffusealpha(0)
+                ArtEle:addy(-12)
+                
+                ArtEle:decelerate(0.2)
+                ArtEle:diffusealpha(1)
+                ArtEle:addy(12)
+            end
+        end"/>
+    
+    <Layer
+        Type="BitmapText"
+        Font="songtitle 16px"
+        Text="Mirin Template"
+        OnCommand="queuecommand,UpdateTitle;zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-90;horizalign,right;shadowlength,0;maxwidth,460;addx,-24;decelerate,0.3;addx,24"
+        OffCommand=""
+        CurrentSongChangedMessageCommand="%function(self) 
+            if not BMIIDX14Glob.FirstTweening then self:finishtweening() end
+            self:queuecommand('UpdateTitle')
+        end"
+        UpdateTitleCommand="%function(self) 
+            local course = GAMESTATE:GetCurrentCourse()
+            if course then
+                if not BMIIDX14Glob.FirstTweening then
+                    self:diffusealpha(0)
+                    self:addx(-24)
+                end
+                
+                self:settext(course:GetDisplayFullTitle())
+                
+                if not BMIIDX14Glob.FirstTweening then
+                    self:decelerate(0.2)
+                    self:diffusealpha(1)
+                    self:addx(24)
+                end
+            else
+                self:settext('')
+            end
+        end" />
+        
+    <Layer
+        File="ScreenSelectCourse banner frame"
+        OnCommand="zoom,0.62;zoomy,0.6;x,SCREEN_CENTER_X-58;y,SCREEN_CENTER_Y-38;"
+    />
+</children></ActorFrame>

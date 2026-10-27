@@ -1,0 +1,43 @@
+<ActorFrame><children>
+
+    <Layer
+        File="LOOP_BG2"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;zoomy,1.1;diffusealpha,.6;texcoordvelocity,0,.1"
+    />
+
+    <Layer
+        File="LOOP_BG3"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,.2;texcoordvelocity,0,.2"
+    />
+
+    <Layer
+        File="LOOP_BG1"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,.2;texcoordvelocity,0,.3"
+    />
+
+    <Layer
+        File="LOOP_BG2"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffuse,0,0,0,1;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;sleep,.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="LOOP_BG2"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,.2;zoomy,100;sleep,.3;diffusealpha,0;texcoordvelocity,0,1"
+    />
+
+    <Layer
+        File="GREENBALL.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,1;zoom,3;zoomx,100;zoomy,4"
+    />
+
+    <Layer
+        File="BLUEBALL.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,1;zoom,3;zoomx,100;zoomy,4"
+    />
+
+    <Layer
+        File="ring.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,.5;diffusealpha,0;linear,.4;diffusealpha,1;zoom,1"
+    />
+
+</children></ActorFrame>

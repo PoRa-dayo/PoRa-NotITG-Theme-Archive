@@ -1,0 +1,92 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,4"
+    />
+
+    <Layer
+        File="../_mode decide"
+    />
+
+    <Layer
+        File="../texture/DECIDE_GLOW.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoomtowidth,356;addx,-200;diffusealpha,0;sleep,.8;linear,.25;addx,200;diffusealpha,1;linear,.25;addx,200;diffusealpha,0"
+    />
+
+    <Layer
+        File="challenge.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0.8;zoom,3;linear,.2;zoom,2;linear,0.15;zoom,1"
+    />
+
+    <Layer
+        File="../texture/RING.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0.6;zoom,3;linear,.2;zoom,2;linear,0.15;zoom,1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../texture/DECIDE_GLOW.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoom,1.2;linear,0.4;zoom,0.8;diffusealpha,0"
+    />
+
+    <Layer
+        File="../texture/RING.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0.6;zoom,1.2;linear,0.4;zoom,0.8;diffusealpha,0"
+    />
+
+    <Layer
+        File="../texture/RING.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0.6;zoom,1;linear,0.6;zoom,2;diffusealpha,0"
+    />
+
+    <Layer
+        File="challenge-blend.png"
+        Command="x,SCREEN_CENTER_X;diffusealpha,.6;blend,add;y,SCREEN_CENTER_Y+(235-240);zoomy,0;sleep,0.6;linear,0.2;zoomy,1;sleep,1.4;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="challenge-stroke.png"
+        Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(235-240);zoom,.6;diffusealpha,0;sleep,.2;diffusealpha,1;linear,.3;zoom,1.8;diffusealpha,0"
+    />
+
+    <Layer
+        File="../texture/DECIDE_FRAME1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(175-240);addx,10;addy,10;diffusealpha,0;sleep,.5;linear,.2;addx,-10;addy,-10;diffusealpha,.8;sleep,1.4;linear,.1;addy,-10;linear,.1;addx,-10"
+    />
+
+    <Layer
+        File="../texture/DECIDE_FRAME1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(175-240);blend,add;diffusealpha,0;sleep,.8;diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,1.15;diffusealpha,1;sleep,.05;diffusealpha,0"
+    />
+
+    <Layer
+        File="../texture/DECIDE_FRAME2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(305-240);addx,-10;addy,-10;diffusealpha,0;sleep,.5;linear,.2;addx,10;addy,10;diffusealpha,.8;sleep,1.4;linear,.1;addy,10;linear,.1;addx,10"
+    />
+
+    <Layer
+        File="../texture/DECIDE_FRAME2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(305-240);blend,add;diffusealpha,0;sleep,.9;diffusealpha,1;sleep,0.05;diffusealpha,0;sleep,1.05;diffusealpha,1;sleep,.05;diffusealpha,0"
+    />
+
+    <Layer
+        File="../_white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,1;diffusealpha,0;sleep,2.4;linear,.3;diffusealpha,1"
+    />
+
+    <Layer
+        File="../texture/DECISION.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(235-240);cropright,1;sleep,2.2;linear,.3;cropright,0"
+    />
+
+    <Layer
+        File="../_white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,0,0,0,1;diffusealpha,0;sleep,2.6;linear,.3;diffusealpha,1"
+    />
+
+    <Layer
+        File="../_white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.4;diffusealpha,0;blend,add"
+    />
+
+</children></ActorFrame>

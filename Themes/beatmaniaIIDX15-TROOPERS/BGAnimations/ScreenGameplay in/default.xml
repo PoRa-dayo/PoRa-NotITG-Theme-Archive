@@ -1,0 +1,38 @@
+<ActorFrame><children>
+    <!-- Play UI appearing animation of the corresponding mode, defined in BGAnimations/frame, after that it'll disappear and is replaced with the static UI in ScreenGameplay underlay, defined in Graphics/frame -->
+	<Layer File="../frame/dance/troopers/P1_Dance" Condition="GAMESTATE:IsPlayerEnabled(0) and not GAMESTATE:IsPlayerEnabled(1) and PlayModeName() ~= 'Rave'"/>
+    <Layer File="../frame/dance/troopers/P2_Dance" Condition="GAMESTATE:IsPlayerEnabled(1) and not GAMESTATE:IsPlayerEnabled(0) and PlayModeName() ~= 'Rave'"/>
+    <Layer File="../frame/dance/troopers/Versus" Condition="GAMESTATE:IsPlayerEnabled(1) and GAMESTATE:IsPlayerEnabled(0) and PlayModeName() ~= 'Rave'"/>
+    <Layer File="../frame/dance/troopers/Rave" Condition="PlayModeName() == 'Rave'"/>
+    
+    
+    <Layer
+        File="streakmania.jpg"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,2;diffusealpha,0;additiveblend,1;sleep,3.5;linear,.5;zoomx,1.5;diffusealpha,1;linear,.5;zoomx,1;diffusealpha,0"
+    />
+
+    <Layer
+        File="streakmania.jpg"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;glow,.7,.7,1,0;zoomx,3;zoomy,.5;diffusealpha,0;additiveblend,1;sleep,3.5;linear,.5;zoomx,2;glow,.7,.7,1,.2;diffusealpha,1;linear,.5;zoomx,1;diffusealpha,0;glow,1,1,1,0"
+    />
+
+    <Layer
+        File="ready.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;hibernate,3.8;diffusealpha,.4;linear,.9;zoomx,1.5;zoomy,2.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="ready.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;hibernate,3.8;diffusealpha,.5;linear,.8;zoomx,1.3;zoomy,1.75;diffusealpha,0"
+    />
+
+    <Layer
+        File="streakmania.jpg"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;glow,.7,.7,1,0;zoomx,3;zoomy,.5;diffusealpha,0;additiveblend,1;sleep,3.5;linear,.5;zoomx,2;glow,.7,.7,1,.2;diffusealpha,.5;linear,.5;zoomx,1;diffusealpha,0;glow,1,1,1,0"
+    />
+
+    <Layer
+        File="ready.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;zoomx,3;sleep,3.5;decelerate,0.2;zoom,1;diffusealpha,1;glow,1,1,1,.7;linear,0.2;glow,1,1,1,0;sleep,.3;linear,0.4;zoom,1.3;diffusealpha,0"
+    />
+</children></ActorFrame>

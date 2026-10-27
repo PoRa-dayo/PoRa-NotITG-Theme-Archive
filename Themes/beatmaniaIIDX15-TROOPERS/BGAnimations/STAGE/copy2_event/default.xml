@@ -1,0 +1,15 @@
+<ActorFrame><children>
+
+    <Layer
+        File="difficulty"
+    />
+
+    <Layer
+        File="mod"
+    />
+
+    <Layer
+        File="stage"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,34 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../_shared header"
+    />
+
+    <Layer
+        File="option.png"
+        OnCommand="x,80;y,SCREEN_CENTER_Y+(26-240);addx,-10;diffusealpha,0;sleep,0.2;linear,0.3;addx,10;diffusealpha,1"
+    />
+
+    <Layer
+        File="../../Graphics/not-here1.png"
+        OnCommand="x,123;y,SCREEN_CENTER_Y+(428-240);addx,-300;linear,0.25;addx,300"
+    />
+
+    <Layer
+        File="../../Graphics/not-here2.png"
+        OnCommand="x,SCREEN_WIDTH-(640-517);y,SCREEN_CENTER_Y+(428-240);addx,300;linear,0.25;addx,-300"
+    />
+
+    <Layer
+        File="../../Graphics/here1.png"
+        OnCommand="x,123;y,SCREEN_CENTER_Y+(428-240);addx,-300;linear,0.25;addx,300"
+        Condition="GAMESTATE:IsHumanPlayer(0)"
+    />
+
+    <Layer
+        File="../../Graphics/here2.png"
+        OnCommand="x,SCREEN_WIDTH-(640-517);y,SCREEN_CENTER_Y+(428-240);addx,300;linear,0.25;addx,-300"
+        Condition="GAMESTATE:IsHumanPlayer(1)"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,42 @@
+<ActorFrame><children>
+
+    <Layer
+        File="model"
+    />
+
+    <Layer
+        File="RED_LIGHT.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffuseshift;effectperiod,2;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.2;blend,add"
+    />
+
+    <Layer
+        File="BG_MODE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;addx,-15;addy,-15;linear,0.5;addx,15;addy,15;diffusealpha,0.8"
+    />
+
+    <Layer
+        File="UP_PARTS.png"
+        Command="x,SCREEN_CENTER_X+(299-320);y,SCREEN_CENTER_Y+(126-240);blend,add;addy,400;sleep,0.1;linear,0.5;addy,-350;linear,0.15;addy,-50;linear,0.4;diffusealpha,0"
+    />
+
+    <Layer
+        File="MOBG_FLASH1.png"
+        Command="x,SCREEN_CENTER_X+(40-320);y,SCREEN_CENTER_Y+(200-240);blend,add;diffusealpha,0;sleep,0.5;diffusealpha,0.7;sleep,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="MOBG_FLASH2.png"
+        Command="x,SCREEN_CENTER_X+(319-320);y,SCREEN_CENTER_Y+(161-240);blend,add;diffusealpha,0;sleep,0.55;diffusealpha,0.7;sleep,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="MOBG_FLASH3.png"
+        Command="x,SCREEN_CENTER_X+(343-320);y,SCREEN_CENTER_Y+(284-240);blend,add;diffusealpha,0;sleep,0.6;diffusealpha,0.7;sleep,0.1;diffusealpha,0"
+    />
+    
+    <Layer
+        File="../../Graphics/_options page"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,640,480"
+    />
+
+</children></ActorFrame>

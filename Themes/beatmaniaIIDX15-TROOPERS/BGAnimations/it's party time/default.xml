@@ -1,0 +1,63 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,3"
+    />
+
+    <Layer
+        File="PASSAGE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;sleep,0.4;linear,1.6;diffusealpha,1"
+    />
+
+    <Layer
+        File="left.png"
+        Command="y,SCREEN_CENTER_Y;horizalign,left;x,0;zoomtowidth,SCREEN_WIDTH/2;zoomtoheight,SCREEN_HEIGHT;sleep,0.2;linear,0.05;addy,-2;sleep,0.1;linear,0.05;addy,2;sleep,0.1;linear,3.4;addx,-320"
+    />
+
+    <Layer
+        File="right.png"
+        Command="y,SCREEN_CENTER_Y;horizalign,right;x,SCREEN_WIDTH;zoomtowidth,SCREEN_WIDTH/2;zoomtoheight,SCREEN_HEIGHT;sleep,0.2;linear,0.05;addy,2;linear,0.05;addy,2;linear,0.05;addy,-2;linear,0.05;addy,-2;sleep,0.1;linear,3.4;addx,320"
+    />
+
+    <Layer
+        File="OPERATION.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(227-240);blend,add;cropright,1;sleep,0.1;linear,0.3;cropright,0;sleep,1;linear,0.3;y,SCREEN_CENTER_Y+(240-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="TROOPERS.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(246-240);blend,add;cropright,1;sleep,0.2;linear,0.3;cropright,0;sleep,.9;linear,0.3;y,SCREEN_CENTER_Y+(240-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="STAND_BY.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(308-240);blend,add;diffusealpha,0;sleep,0.2;diffusealpha,1;diffuseblink;effectperiod,0.3;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0;sleep,1.4;diffusealpha,0"
+    />
+
+    <Layer
+        File="STAND_BY.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(308-240);blend,add;diffusealpha,0;sleep,1.6;diffusealpha,1"
+    />
+
+    <Layer
+        File="GOOD_LUCK.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;cropright,1;sleep,1.5;linear,0.3;cropright,0"
+    />
+
+    <Layer
+        File="SITE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoom,0.95;diffusealpha,0;sleep,0.2;linear,0.1;zoom,1;diffusealpha,.8"
+    />
+
+    <Layer
+        File="../white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;sleep,2.4;linear,0.3;diffusealpha,1"
+    />
+
+</children></ActorFrame>

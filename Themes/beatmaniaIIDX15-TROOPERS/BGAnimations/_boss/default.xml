@@ -1,0 +1,23 @@
+<ActorFrame><children>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(180))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="boss.txt"
+            Materials="boss.txt"
+            Bones="boss.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomz,5;zoomx,5000;zoomy,5000;addz,-1.5;rotationx,50;spin;effectmagnitude,0,30,0;linear,.5;addz,-5.5;backfacecull,1"
+            UseLightning="1"
+        />
+
+    </children></ActorFrame>
+
+    <Layer
+        File="1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,.5"
+    />
+
+</children></ActorFrame>

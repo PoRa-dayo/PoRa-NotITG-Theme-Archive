@@ -1,0 +1,39 @@
+<ActorFrame><children>
+
+    <Layer
+        File="beginner.png"
+        Condition="GetEasiestNotesDifficulty() == 0"
+        Command="x,SCREEN_WIDTH-(640-320);y,240;blend,add;addx,-10;diffusealpha,0;sleep,.4;linear,.2;addx,10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="light.png"
+        Condition="GetEasiestNotesDifficulty() == 1"
+        Command="x,SCREEN_WIDTH-(640-320);y,240;blend,add;addx,-10;diffusealpha,0;sleep,.4;linear,.2;addx,10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="normal.png"
+        Condition="GetEasiestNotesDifficulty() == 2"
+        Command="x,SCREEN_WIDTH-(640-320);y,240;blend,add;addx,-10;diffusealpha,0;sleep,.4;linear,.2;addx,10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="hyper.png"
+        Condition="GetEasiestNotesDifficulty() == 3"
+        Command="x,SCREEN_WIDTH-(640-320);y,240;blend,add;addx,-10;diffusealpha,0;sleep,.4;linear,.2;addx,10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="another.png"
+        Condition="GetEasiestNotesDifficulty() == 4"
+        Command="x,SCREEN_WIDTH-(640-320);y,240;blend,add;addx,-10;diffusealpha,0;sleep,.4;linear,.2;addx,10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="other.png"
+        Condition="GetEasiestNotesDifficulty() == 5"
+        Command="x,SCREEN_WIDTH-(640-320);y,240;blend,add;addx,-10;diffusealpha,0;sleep,.4;linear,.2;addx,10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+</children></ActorFrame>

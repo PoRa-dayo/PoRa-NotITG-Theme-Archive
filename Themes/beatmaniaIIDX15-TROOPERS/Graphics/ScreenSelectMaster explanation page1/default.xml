@@ -1,0 +1,20 @@
+<ActorFrame><children>
+
+    <Layer
+        File="name.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;cropright,1;sleep,0.5;linear,0.5;cropright,0"
+        Condition="(CurStyleName()=='single' or CurStyleName()=='versus')"
+    />
+
+    <Layer
+        File="name3.png"
+        Command="x,SCREEN_CENTER_X+(1020-320);y,SCREEN_CENTER_Y;cropright,1;sleep,0.5;linear,0.5;cropright,0"
+    />
+
+    <Layer
+        File="name2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;cropright,1;sleep,0.5;linear,0.5;cropright,0"
+        Condition="(CurStyleName()=='double' or CurStyleName()=='solo')"
+    />
+
+</children></ActorFrame>

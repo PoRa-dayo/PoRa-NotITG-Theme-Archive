@@ -1,0 +1,39 @@
+<ActorFrame><children>
+
+    <Layer
+        File="MO_SEL_OUT_FRAME1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(105-240);zoomtowidth,SCREEN_WIDTH;addy,240;linear,0.3;addy,-240"
+    />
+
+    <Layer
+        File="MO_FRAME1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(0-240);zoomtowidth,SCREEN_WIDTH;vertalign,top;addy,-240;linear,0.3;addy,240"
+    />
+
+    <Layer
+        File="MO_SEL_OUT_FRAME2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(376-240);zoomtowidth,SCREEN_WIDTH;addy,-240;linear,0.3;addy,240"
+    />
+
+    <Layer
+        File="MO_FRAME2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(480-240);zoomtowidth,SCREEN_WIDTH;vertalign,bottom;addy,240;linear,0.3;addy,-240"
+    />
+    
+    <Layer
+        File="MO_EFFECTOR.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(480-240);vertalign,bottom;addy,240;linear,0.3;addy,-240"
+    />
+
+    <Layer
+        File="../_white.png"
+        Command="zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;x,SCREEN_CENTER_X;zoomtowidth,SCREEN_WIDTH;y,SCREEN_CENTER_Y+(240-240);linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="EX_FRAME1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(0-240);zoomtowidth,SCREEN_WIDTH;vertalign,top;addy,-240;linear,0.3;addy,240"
+        Condition="PlayModeName() == 'Nonstop' or PlayModeName() == 'Oni' or PlayModeName() == 'Endless'"
+    />
+
+</children></ActorFrame>

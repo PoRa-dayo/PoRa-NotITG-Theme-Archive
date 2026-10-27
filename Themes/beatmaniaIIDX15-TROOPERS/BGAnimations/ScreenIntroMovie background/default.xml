@@ -1,0 +1,13 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,15.4"
+    />
+
+    <Layer
+        File="intro.avi"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"
+    />
+
+</children></ActorFrame>

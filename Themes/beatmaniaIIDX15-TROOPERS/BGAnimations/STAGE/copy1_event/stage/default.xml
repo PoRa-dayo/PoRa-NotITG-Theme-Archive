@@ -1,0 +1,8 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../../stage/event.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,1.75;diffusealpha,1;linear,1;zoom,1.8;diffusealpha,0"
+    />
+
+</children></ActorFrame>

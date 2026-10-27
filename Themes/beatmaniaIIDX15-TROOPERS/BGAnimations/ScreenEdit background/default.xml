@@ -1,0 +1,24 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../_menu out/PASSAGE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,1;zoom,1"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/CARD_BG.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/RED_LIGHT.png"
+        RepeatCommand="x,SCREEN_CENTER_X;blend,add;vertalign,top;y,SCREEN_CENTER_Y+(0-240);zoomtowidth,SCREEN_WIDTH;linear,1;diffusealpha,0;linear,0;diffusealpha,1;sleep,(1-1.0);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,.5"
+    />
+
+</children></ActorFrame>

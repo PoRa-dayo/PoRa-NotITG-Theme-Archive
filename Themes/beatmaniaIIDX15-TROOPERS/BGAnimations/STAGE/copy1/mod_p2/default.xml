@@ -1,0 +1,357 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../../mod_p2/boost.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'boost') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/wave.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'wave') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/expand.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'expand') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/boomerang.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'boomerang') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/brake.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'brake') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/drunk.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'drunk') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/brake.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'brake') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/dizzy.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'dizzy') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/mini.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'65% mini') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/flip.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'flip') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/tornado.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'60% tornado') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/float.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'tipsy') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/beat.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'beat') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/hidden.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'hidden') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/sudden.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'sudden') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/blink.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'blink') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/vanisher.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'randomvanish') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/mirror.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'mirror') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/left.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'left') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/right.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'right') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/shuffle.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'shuffle') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/supershuffle.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'supershuffle') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/quick.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'quick') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/skippy.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'skippy') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/echo.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'echo') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/wide.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'wide') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/stomp.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'stomp') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/big.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'big') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/reverse.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'reverse') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/split.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'split') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/alternate.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'alternate') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/cross.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'cross') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/centered.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'centered') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/bumpy.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'bumpy') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/noholds.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'noholds') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/planted.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'planted') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/twister.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'twister') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/nojumps.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'nojumps') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/nohands.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'nohands') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/incoming.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'incoming') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/space.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'space') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/hallway.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'hallway') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/distant.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'distant') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/autoplay.png"
+        Command="x,SCREEN_CENTER_X;hidden,1;y,SCREEN_CENTER_Y+(360-240);zoomy,0;sleep,.2;linear,0.2;zoomy,1;y,SCREEN_CENTER_Y+(240-240)"
+        Condition="UsingModifier(2,'playerautoplay') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/1.0.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'1x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/1.5.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'1.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/2.0.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'2.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/2.5.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'2.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/3.0.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'3.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/3.5.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'3.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/4.0.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'4.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/4.5.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'4.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/5.0.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'5.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/5.5.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'5.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/6.0.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'6.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/6.5.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'6.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/7.0.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'7.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/8.0.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'8.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../../mod_p2/0.5.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,2.4;diffusealpha,.6;linear,.4;zoom,1.8"
+        Condition="UsingModifier(2,'0.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+</children></ActorFrame>

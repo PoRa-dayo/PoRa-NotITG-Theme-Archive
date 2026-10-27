@@ -1,0 +1,115 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../../../../stage/beginner.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(444-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,14;cropbottom,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,1;cropbottom,0;sleep,.1;addy,-28;linear,.35;addy,14;croptop,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 0"
+    />
+
+    <Layer
+        File="../../../../stage/light.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(444-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,14;cropbottom,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,1;cropbottom,0;sleep,.1;addy,-28;linear,.35;addy,14;croptop,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 1"
+    />
+
+    <Layer
+        File="../../../../stage/normal.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(444-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,14;cropbottom,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,1;cropbottom,0;sleep,.1;addy,-28;linear,.35;addy,14;croptop,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 2"
+    />
+
+    <Layer
+        File="../../../../stage/hyper.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(444-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,14;cropbottom,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,1;cropbottom,0;sleep,.1;addy,-28;linear,.35;addy,14;croptop,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 3"
+    />
+
+    <Layer
+        File="../../../../stage/another.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(444-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,14;cropbottom,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,1;cropbottom,0;sleep,.1;addy,-28;linear,.35;addy,14;croptop,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 4"
+    />
+
+    <Layer
+        File="../../../../stage/other.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(444-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,14;cropbottom,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,1;cropbottom,0;sleep,.1;addy,-28;linear,.35;addy,14;croptop,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 5"
+    />
+
+    <Layer
+        File="../../../../stage/1st.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(194-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,-14;croptop,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,0;cropbottom,1;sleep,.1;addy,28;linear,.35;addy,-14;cropbottom,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="StageIndex() == 0 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+    />
+
+    <Layer
+        File="../../../../stage/2nd.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(194-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,-14;croptop,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,0;cropbottom,1;sleep,.1;addy,28;linear,.35;addy,-14;cropbottom,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="StageIndex() == 1 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+    />
+
+    <Layer
+        File="../../../../stage/3rd.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(194-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,-14;croptop,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,0;cropbottom,1;sleep,.1;addy,28;linear,.35;addy,-14;cropbottom,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="StageIndex() == 2 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+    />
+
+    <Layer
+        File="../../../../stage/4th.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(194-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,-14;croptop,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,0;cropbottom,1;sleep,.1;addy,28;linear,.35;addy,-14;cropbottom,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="StageIndex() == 3 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+    />
+
+    <Layer
+        File="../../../../stage/5th.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(194-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,-14;croptop,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,0;cropbottom,1;sleep,.1;addy,28;linear,.35;addy,-14;cropbottom,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="StageIndex() == 4 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+    />
+
+    <Layer
+        File="../../../../stage/6th.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(194-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,-14;croptop,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,0;cropbottom,1;sleep,.1;addy,28;linear,.35;addy,-14;cropbottom,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="StageIndex() == 5 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+    />
+
+    <Layer
+        File="../../../../stage/final.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(194-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,-14;croptop,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,0;cropbottom,1;sleep,.1;addy,28;linear,.35;addy,-14;cropbottom,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="IsFinalStage() == true"
+    />
+
+    <Layer
+        File="../../../../stage/extra.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(194-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,-14;croptop,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,0;cropbottom,1;sleep,.1;addy,28;linear,.35;addy,-14;cropbottom,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="IsExtraStage() == true"
+    />
+
+    <Layer
+        File="../../../../stage/omes.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(194-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,-14;croptop,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,0;cropbottom,1;sleep,.1;addy,28;linear,.35;addy,-14;cropbottom,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="IsExtraStage2() == true"
+    />
+
+    <Layer
+        File="../../../../stage/2DX15.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(194-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,-14;croptop,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,0;cropbottom,1;sleep,.1;addy,28;linear,.35;addy,-14;cropbottom,0;sleep,(3-2.8000000000000003);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="StageIndex() > 5 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+    />
+
+</children></ActorFrame>

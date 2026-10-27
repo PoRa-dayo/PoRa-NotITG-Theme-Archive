@@ -1,0 +1,34 @@
+<ActorFrame><children>
+	<Layer Type="Quad"
+    OnCommand="zoom,0;sleep,0.01;queuecommand,PlaySound"
+    PlaySoundCommand="%function(self)
+        if not Profile().IIDXDJTroopersDecideSFX then
+            AudioPlay('decide/default') 
+        elseif Profile().IIDXDJTroopersDecideSFX == 'RANDOM' then
+            local RandomSFX = DecideSFXList[math.random(#DecideSFXList-1)]
+            AudioPlay('decide/'..string.lower(RandomSFX))
+        else
+            AudioPlay('decide/'..string.lower(Profile().IIDXDJTroopersDecideSFX)) 
+        end
+    end" />
+    
+    --FOR OFFSET PLOT AND ITS LIFE GRAPH
+	<Layer Type="Quad"
+		OnCommand="%function(self)
+			BX_SaltyResets = 0
+			BX_SaltyResetPos = {}
+		end"
+	/>
+    
+    <Layer File="Quad" OnCommand="%function(self)
+        if not Profile().IIDXDJTroopersToasty then
+            Profile().IIDXDJTroopersToasty = 'Michael a la Mode'
+        end
+        if not Profile().IIDXDJTroopersToastyP2 then
+            Profile().IIDXDJTroopersToastyP2 = 'Michael a la Mode'
+        end
+        self:hidden(1)
+    end"
+    />
+    <ActorFrame Command="%ApplyNoteskin"/>
+</children></ActorFrame>

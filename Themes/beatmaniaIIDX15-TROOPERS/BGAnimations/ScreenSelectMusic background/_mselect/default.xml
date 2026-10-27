@@ -1,0 +1,41 @@
+<ActorFrame><children>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(180))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="1.txt"
+            Materials="1.txt"
+            Bones="1.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,20000;zoomy,20000;zoomz,20;addx,20000;rotationx,20;rotationy,-20;linear,.4;addx,-20000;addz,-20;rotationy,-40;rotationx,15;rotationz,18;addy,-1200;backfacecull,1;blend,add"
+        />
+
+    </children></ActorFrame>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(180))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="i.txt"
+            Materials="i.txt"
+            Bones="i.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,20000;zoomy,20000;zoomz,20;addx,20000;rotationx,20;rotationy,-20;linear,.4;addx,-20000;addz,-20;rotationy,-40;rotationx,15;rotationz,18;addy,-1200;backfacecull,1;blend,add"
+        />
+
+    </children></ActorFrame>
+
+    <Layer
+        File="site_ring.png"
+        Command="blend,add;zoom,0.6;x,SCREEN_CENTER_X+(260-320);y,SCREEN_CENTER_Y+(210-240);rotationy,-30;rotationx,15;zoom,0;linear,.6;zoom,.6;spin;effectmagnitude,0,0,200"
+    />
+
+    <Layer
+        File="hud2.png"
+        Command="blend,add;zoom,0.25;x,SCREEN_CENTER_X+(260-320);y,SCREEN_CENTER_Y+(205-240);rotationy,-10;zoom,0;linear,.6;zoom,.25;spin;effectmagnitude,0,0,200;spin;effectmagnitude,0,0,-200"
+    />
+
+</children></ActorFrame>

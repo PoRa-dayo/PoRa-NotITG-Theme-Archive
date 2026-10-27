@@ -1,0 +1,55 @@
+<ActorFrame><children>
+
+    <Layer
+        File="DJLEVEL_W1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(160-240);blend,add;zoomy,0;bounceend,.2;zoomy,1"
+    />
+
+    <Layer
+        File="DJLEVEL_W2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(340-240);blend,add;zoomy,0;sleep,.1;bounceend,.2;zoomy,1"
+    />
+
+    <Layer
+        File="NANAME_LINE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(160-240);blend,add;texcoordvelocity,-.1,0;cropleft,.215;cropright,.215;zoomy,0;diffusealpha,0;sleep,0.2;linear,0.3;zoomy,1;diffusealpha,.8"
+    />
+
+    <Layer
+        File="judg.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,0;cropbottom,1;sleep,0.2;linear,0.3;diffusealpha,1;cropbottom,0"
+    />
+
+    <Layer
+        File="perfect.sprite"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(267-240);diffusealpha,0;sleep,0.2;linear,0.2;diffusealpha,1;blend,add"
+    />
+
+    <Layer
+        File="djlevel.png"
+        Command="x,107;y,SCREEN_CENTER_Y+(43-240);diffusealpha,0;addx,-20;sleep,0.2;linear,0.2;diffusealpha,1;addx,20"
+    />
+
+    <Layer
+        File="rank.png"
+        Command="x,SCREEN_WIDTH-(640-558);y,SCREEN_CENTER_Y+(64-240);diffusealpha,0;sleep,0.2;linear,0.2;diffusealpha,1;blend,add;hidden,1"
+    />
+
+    <Layer
+        File="rank.png"
+        Command="x,88;y,SCREEN_CENTER_Y+(64-240);diffusealpha,0;sleep,0.2;linear,0.2;diffusealpha,.5;blend,add"
+    />
+    
+    <Layer
+        File="dj.png"
+        Command="x,SCREEN_CENTER_X+(151-320);y,SCREEN_CENTER_Y+(212-240);cropright,1;sleep,.6;linear,.3;cropright,0"
+        Condition="GAMESTATE:IsHumanPlayer(0)"
+    />
+    
+    <Layer
+        File="dj.png"
+        Command="x,SCREEN_CENTER_X+(489-320);y,SCREEN_CENTER_Y+(212-240);cropright,1;sleep,.6;linear,.3;cropright,0"
+        Condition="GAMESTATE:IsHumanPlayer(1)"
+    />
+
+</children></ActorFrame>

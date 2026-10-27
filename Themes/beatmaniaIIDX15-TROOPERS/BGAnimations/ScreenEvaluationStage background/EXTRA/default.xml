@@ -1,0 +1,147 @@
+<ActorFrame><children>
+
+    <Layer
+        File="BOSS_OPEN.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() <= 10"
+    />
+
+    <Layer
+        File="BOSS_OPEN.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;diffusealpha,0.5;sleep,0.03;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() <= 10"
+    />
+
+    <Layer
+        File="BOSS_OPEN.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;diffusealpha,0.5;sleep,0.06;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() <= 10"
+    />
+
+    <Layer
+        File="BOSS_OPEN.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() <= 10"
+    />
+
+    <Layer
+        File="BOSS_OPEN_PLUS.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 10 and Second() <= 20"
+    />
+
+    <Layer
+        File="BOSS_OPEN_PLUS.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;diffusealpha,0.5;sleep,0.03;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 10 and Second() <= 20"
+    />
+
+    <Layer
+        File="BOSS_OPEN_PLUS.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;diffusealpha,0.5;sleep,0.06;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 10 and Second() <= 20"
+    />
+
+    <Layer
+        File="BOSS_OPEN_PLUS.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 10 and Second() <= 20"
+    />
+
+    <Layer
+        File="BOSS1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 20 and Second() <= 30"
+    />
+
+    <Layer
+        File="BOSS1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;diffusealpha,0.5;sleep,0.03;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 20 and Second() <= 30"
+    />
+
+    <Layer
+        File="BOSS1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;diffusealpha,0.5;sleep,0.06;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 20 and Second() <= 30"
+    />
+
+    <Layer
+        File="BOSS1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 20 and Second() <= 30"
+    />
+
+    <Layer
+        File="BOSS2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 30 and Second() <= 40"
+    />
+
+    <Layer
+        File="BOSS2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;diffusealpha,0.5;sleep,0.03;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 30 and Second() <= 40"
+    />
+
+    <Layer
+        File="BOSS2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;diffusealpha,0.5;sleep,0.06;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 30 and Second() <= 40"
+    />
+
+    <Layer
+        File="BOSS2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 30 and Second() <= 40"
+    />
+
+    <Layer
+        File="EXTRA.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 40 and Second() <= 50"
+    />
+
+    <Layer
+        File="EXTRA.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;diffusealpha,0.5;sleep,0.03;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 40 and Second() <= 50"
+    />
+
+    <Layer
+        File="EXTRA.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;diffusealpha,0.5;sleep,0.06;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 40 and Second() <= 50"
+    />
+
+    <Layer
+        File="EXTRA.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 40 and Second() <= 50"
+    />
+
+    <Layer
+        File="ONEMORE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 50 and Second() <= 60"
+    />
+
+    <Layer
+        File="ONEMORE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;diffusealpha,0.5;sleep,0.03;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 50 and Second() <= 60"
+    />
+
+    <Layer
+        File="ONEMORE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;diffusealpha,0.5;sleep,0.06;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 50 and Second() <= 60"
+    />
+
+    <Layer
+        File="ONEMORE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoomto,SCREEN_WIDTH*3,SCREEN_HEIGHT*3;linear,0.3;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.1;diffusealpha,0"
+        Condition="IsFinalStage() and GetBestGrade() <= Grade('AA') and Second() > 50 and Second() <= 60"
+    />
+
+</children></ActorFrame>

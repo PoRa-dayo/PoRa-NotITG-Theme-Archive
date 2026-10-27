@@ -1,0 +1,79 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../_shared header"
+    />
+
+    <Layer
+        File="../not-here1.png"
+        OnCommand="x,123;y,SCREEN_CENTER_Y+(428-240);addx,-300;linear,0.25;addx,300"
+    />
+
+    <Layer
+        File="../not-here2.png"
+        OnCommand="x,SCREEN_WIDTH-(640-517);y,SCREEN_CENTER_Y+(428-240);addx,300;linear,0.25;addx,-300"
+    />
+
+    <Layer
+        File="MODE_INFO_WAKU.png"
+        OnCommand="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(366-240);zoomy,0;sleep,0.5;linear,0.2;zoomy,1"
+    />
+
+    <Layer
+        File="WMMY.png"
+        OnCommand="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(343-240);cropright,1;sleep,0.8;linear,0.2;cropright,0"
+    />
+
+    <Layer
+        File="MODE_T.png"
+        OnCommand="x,73;y,SCREEN_CENTER_Y+(26-240);addx,-10;diffusealpha,0;sleep,0.5;linear,0.3;addx,10;diffusealpha,1"
+    />
+
+    <Layer
+        File="INFO.png"
+        OnCommand="x,64;y,SCREEN_CENTER_Y+(45-240);diffusealpha,0;sleep,0.5;diffusealpha,1"
+    />
+
+    <Layer
+        File="SETSUMEI.png"
+        OnCommand="x,90;y,SCREEN_CENTER_Y+(60-240);cropright,1;sleep,0.6;linear,0.4;cropright,0"
+    />
+
+    <Layer
+        File="BUTTON.png"
+        OnCommand="x,22;y,SCREEN_CENTER_Y+(79-240);zoom,0;sleep,0.6;linear,0.2;zoom,1"
+    />
+
+    <Layer
+        File="B_START.png"
+        OnCommand="x,137;y,SCREEN_CENTER_Y+(79-240);cropright,1;sleep,0.6;linear,0.4;cropright,0"
+    />
+
+    <Layer
+        File="../_white.png"
+        OnCommand="zoomto,SCREEN_WIDTH-10,SCREEN_HEIGHT;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;blend,noeffect;zwrite,1;diffusealpha,1;"
+    />
+
+    <Layer
+        File="B_START_FLASH.png"
+        RepeatCommand="blend,add;diffusealpha,0.6;cropright,1;linear,1;cropright,0;linear,0.6;diffusealpha,0;sleep,(2-1.6);queuecommand,Repeat"
+        Command="ztest,1;x,166;y,SCREEN_CENTER_Y+(79-240);queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../here1.png"
+        OnCommand="x,123;y,SCREEN_CENTER_Y+(428-240);addx,-300;linear,0.25;addx,300"
+        Condition="GAMESTATE:IsHumanPlayer(0)"
+    />
+
+    <Layer
+        File="../here2.png"
+        OnCommand="x,SCREEN_WIDTH-(640-517);y,SCREEN_CENTER_Y+(428-240);addx,300;linear,0.25;addx,-300"
+        Condition="GAMESTATE:IsHumanPlayer(1)"
+    />
+
+    <Layer
+        File="../time"
+    />
+
+</children></ActorFrame>

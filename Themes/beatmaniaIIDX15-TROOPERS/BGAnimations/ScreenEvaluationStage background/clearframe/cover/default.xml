@@ -1,0 +1,111 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../stagescore p1.png"
+        RepeatCommand="x,129;y,SCREEN_CENTER_Y+(235-240);diffusealpha,0.3;blend,add;diffusealpha,0;sleep,0.4;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.5);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../stagescore p2.png"
+        RepeatCommand="x,SCREEN_WIDTH-(640-511);y,SCREEN_CENTER_Y+(235-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.4;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.5);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../maxcombo p1.png"
+        RepeatCommand="x,112;y,SCREEN_CENTER_Y+(258-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.45;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.55);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../maxcombo p2.png"
+        RepeatCommand="x,SCREEN_WIDTH-(640-528);y,SCREEN_CENTER_Y+(258-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.45;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.55);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../perfect p1.png"
+        RepeatCommand="x,112;y,SCREEN_CENTER_Y+(283-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.5;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.6);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../perfect p2.png"
+        RepeatCommand="x,SCREEN_WIDTH-(640-528);y,SCREEN_CENTER_Y+(283-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.5;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.6);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../great p1.png"
+        RepeatCommand="x,104;y,SCREEN_CENTER_Y+(310-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.55;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.65);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../great p2.png"
+        RepeatCommand="x,SCREEN_WIDTH-(640-536);y,SCREEN_CENTER_Y+(310-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.55;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.65);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../cool p1.png"
+        RepeatCommand="x,104;y,SCREEN_CENTER_Y+(333-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.6;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.7);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../cool p2.png"
+        RepeatCommand="x,SCREEN_WIDTH-(640-536);y,SCREEN_CENTER_Y+(333-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.6;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.7);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../good p1.png"
+        RepeatCommand="x,104;y,SCREEN_CENTER_Y+(356-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.65;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.75);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../good p2.png"
+        RepeatCommand="x,SCREEN_WIDTH-(640-536);y,SCREEN_CENTER_Y+(356-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.65;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.75);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../bad p1.png"
+        RepeatCommand="x,104;y,SCREEN_CENTER_Y+(379-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.7;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.7999999999999999);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../bad p2.png"
+        RepeatCommand="x,SCREEN_WIDTH-(640-536);y,SCREEN_CENTER_Y+(379-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.7;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.7999999999999999);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../poor p1.png"
+        RepeatCommand="x,104;y,SCREEN_CENTER_Y+(402-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.75;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.85);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../poor p2.png"
+        RepeatCommand="x,SCREEN_WIDTH-(640-536);y,SCREEN_CENTER_Y+(402-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.75;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.85);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../totalscore p1.png"
+        RepeatCommand="x,114;y,SCREEN_CENTER_Y+(434-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.8;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.9);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../totalscore p2.png"
+        RepeatCommand="x,SCREEN_WIDTH-(640-526);y,SCREEN_CENTER_Y+(434-240);diffusealpha,0.8;blend,add;diffusealpha,0;sleep,0.8;diffusealpha,0.2;linear,0.1;diffusealpha,0;sleep,(3-0.9);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+</children></ActorFrame>

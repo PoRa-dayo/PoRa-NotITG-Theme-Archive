@@ -1,0 +1,67 @@
+<ActorFrame><children>
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;sleep,4"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/TITLE_BG1.png"
+        Command="x,SCREEN_CENTER_X;texcoordvelocity,.2,0;zoom,2;linear,0.35;zoom,1;linear,0.1;zoomx,100;zoomy,0.02;y,SCREEN_CENTER_Y+(250-240);sleep,0.4;zoomy,0.2;sleep,0.2;zoomy,0.1"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/TITLE_BG2.png"
+        Command="x,SCREEN_CENTER_X;texcoordvelocity,-.2,0;blend,add;zoom,2;linear,0.35;zoom,1;linear,0.1;zoomx,100;zoomy,0.02;y,SCREEN_CENTER_Y+(250-240);sleep,0.6;zoomy,0.2;sleep,0.2;zoomy,0.1"
+    />
+
+    <Layer
+        File="TITLE_BG4.png"
+        Command="y,SCREEN_CENTER_Y;texcoordvelocity,-.2,0;x,SCREEN_CENTER_X+(640-320);blend,add;zoom,2;linear,0.35;zoom,1;linear,0.1;zoomx,100;zoomy,0.02"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/TITLE_BG3.png"
+        Command="x,SCREEN_CENTER_X;texcoordvelocity,.22,0;blend,add;zoom,2;linear,0.35;zoom,1;linear,0.1;zoomx,100;zoomy,0.02;y,SCREEN_CENTER_Y+(250-240)"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/TITLE_BG1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;texcoordvelocity,.2,0;zoom,2;linear,0.35;zoom,1;linear,0.1;zoomx,100;zoomy,0.05;blend,add;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/SITE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoom,0.5;linear,0.3;zoom,1;linear,0.2;zoom,1.6;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/SITE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoom,0.5;linear,0.3;zoom,1;linear,0.2;zoom,1.6;diffusealpha,0"
+    />
+
+    <Layer
+        File="START_TXT.png"
+        Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(237-240);addx,-20;diffusealpha,0;sleep,0.7;decelerate,0.2;addx,20;diffusealpha,1"
+    />
+
+    <Layer
+        File="FONT_YAJI.png"
+        Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(263-240);addy,-10;diffusealpha,0;sleep,0.7;decelerate,0.2;addy,10;diffusealpha,1"
+    />
+
+    <Layer
+        File="WELCOME.png"
+        Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(284-240);addy,-10;diffusealpha,0;sleep,0.8;decelerate,0.2;addy,10;diffusealpha,1"
+    />
+
+    <Layer
+        File="../_white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;linear,0.4;diffusealpha,0"
+    />
+
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;sleep,2.2;linear,0.4;diffusealpha,1"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,31 @@
+<ActorFrame><children>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(170))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="../_expert/a.txt"
+            Materials="../_expert/a.txt"
+            Bones="../_expert/a.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;addx,20;linear,.8;zoom,100;rotationy,48;rotationx,-25;addz,5;zoomz,12;backfacecull,0"
+        />
+
+    </children></ActorFrame>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(170))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="../_expert/b.txt"
+            Materials="../_expert/b.txt"
+            Bones="../_expert/b.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;addx,20;linear,.8;zoom,100;rotationy,48;rotationx,-25;addz,5;zoomz,10;backfacecull,0"
+        />
+
+    </children></ActorFrame>
+
+</children></ActorFrame>

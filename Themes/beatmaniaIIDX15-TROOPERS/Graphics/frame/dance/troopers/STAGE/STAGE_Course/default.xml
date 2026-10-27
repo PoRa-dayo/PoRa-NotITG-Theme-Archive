@@ -1,0 +1,30 @@
+<ActorFrame><children>
+
+    <Layer
+        File="nonstop.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(444-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,14;cropbottom,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,1;cropbottom,0;sleep,.1;addy,-28;linear,.35;addy,14;croptop,0;sleep,(3-2.8);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="PlayModeName() == 'Nonstop'"
+    />
+
+    <Layer
+        File="oni.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(444-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,14;cropbottom,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,1;cropbottom,0;sleep,.1;addy,-28;linear,.35;addy,14;croptop,0;sleep,(3-2.8);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="PlayModeName() == 'Oni'"
+    />
+
+    <Layer
+        File="endless.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(444-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,14;cropbottom,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,1;cropbottom,0;sleep,.1;addy,-28;linear,.35;addy,14;croptop,0;sleep,(3-2.8);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="PlayModeName() == 'Endless'"
+    />
+
+    <Layer
+        File="2dx15.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(194-320);y,SCREEN_CENTER_Y+(448-240);sleep,2;linear,.35;addy,-14;croptop,1;diffusealpha,0;sleep,0;diffusealpha,1;croptop,0;cropbottom,1;sleep,.1;addy,28;linear,.35;addy,-14;cropbottom,0;sleep,(3-2.8);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+</children></ActorFrame>

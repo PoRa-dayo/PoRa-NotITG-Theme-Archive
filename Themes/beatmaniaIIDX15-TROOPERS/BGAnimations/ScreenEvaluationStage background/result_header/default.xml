@@ -1,0 +1,63 @@
+<ActorFrame><children>
+
+    <Layer
+        File="BG_FRAME_TOP.png"
+        Command="x,SCREEN_CENTER_X;zoomtowidth,SCREEN_WIDTH;vertalign,top;y,SCREEN_CENTER_Y+(0-240);addy,-60;diffusealpha,0;linear,.25;addy,60;diffusealpha,1"
+    />
+    
+    <Layer
+        File="BG_FRAME_TEXT.png"
+        Command="x,SCREEN_CENTER_X;vertalign,top;y,SCREEN_CENTER_Y+(0-240);addy,-60;diffusealpha,0;linear,.25;addy,60;diffusealpha,1"
+    />
+
+    <Layer
+        File="BG_FRAME_DOWN.png"
+        Command="x,SCREEN_CENTER_X;zoomtowidth,SCREEN_WIDTH;vertalign,bottom;y,SCREEN_CENTER_Y+(475-240);addy,60;diffusealpha,0;linear,.25;addy,-60;diffusealpha,1"
+    />
+
+    <Layer
+        File="grade frame p1.png"
+        Command="x,-3;y,SCREEN_CENTER_Y+(18-240);vertalign,top;horizalign,left;rotationz,-90;diffusealpha,0;linear,.25;rotationz,0;diffusealpha,0.9"
+    />
+
+    <Layer
+        File="grade frame p2.png"
+        Command="x,SCREEN_WIDTH-(640-643);y,SCREEN_CENTER_Y+(18-240);vertalign,top;horizalign,right;rotationz,90;diffusealpha,0;linear,.25;rotationz,0;diffusealpha,0.9"
+    />
+
+    <Layer
+        File="difficulty.png"
+        Command="x,70;y,SCREEN_CENTER_Y+(206-240);addx,-20;diffusealpha,0;linear,0.2;addx,20;diffusealpha,1"
+        Condition="GAMESTATE:IsHumanPlayer(0)"
+    />
+
+    <Layer
+        File="difficulty.png"
+        Command="x,SCREEN_WIDTH-(640-570);y,SCREEN_CENTER_Y+(206-240);addx,20;diffusealpha,0;linear,0.2;addx,-20;diffusealpha,1"
+        Condition="GAMESTATE:IsHumanPlayer(1)"
+    />
+
+    <Layer
+        File="p1 score report.png"
+        Command="x,108;y,SCREEN_CENTER_Y+(18-240);addx,-20;diffusealpha,0;linear,0.2;addx,20;diffusealpha,1"
+        Condition="GAMESTATE:IsHumanPlayer(0)"
+    />
+
+    <Layer
+        File="p2 score report.png"
+        Command="x,SCREEN_WIDTH-(640-532);y,SCREEN_CENTER_Y+(18-240);addx,20;diffusealpha,0;linear,0.2;addx,-20;diffusealpha,1"
+        Condition="GAMESTATE:IsHumanPlayer(1)"
+    />
+
+    <Layer
+        Text="Mirin Template"
+        Font="TextBanner text"
+        Command="%function(self) self:x(SCREEN_CENTER_X+(321-320)) self:y(SCREEN_CENTER_Y+(380-240)) self:zoom(0.8) self:maxwidth(340) self:shadowlength(0) SongTitle(self) end"
+    />
+    
+    <Layer
+        File="selected music.png"
+        Command="%function(self) self:x(SCREEN_CENTER_X) self:y(SCREEN_CENTER_Y+(441-240)) self:diffusealpha(0.7) end"
+    />
+
+</children></ActorFrame>

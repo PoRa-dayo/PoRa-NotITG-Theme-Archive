@@ -1,0 +1,32 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../_black.png"
+        Command="zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);diffusealpha,1;sleep,1;linear,.4;diffusealpha,0"
+    />
+
+    <Layer
+        File="P1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,1"
+    />
+
+    <Layer
+        File="coursebanner"
+        Command="zoomtowidth,128;zoomtoheight,40;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(452-240);diffusealpha,1"
+    />
+
+    <Layer
+        File="../STAGE/STAGE_Course"
+    />
+
+    <Layer
+        File="a1.sprite"
+        Command="x,SCREEN_WIDTH-(640-420);y,SCREEN_CENTER_Y+(26-240)"
+    />
+
+    <Layer
+        File="a2.sprite"
+        Command="x,SCREEN_WIDTH-(640-416);y,SCREEN_CENTER_Y+(26-240)"
+    />
+
+</children></ActorFrame>

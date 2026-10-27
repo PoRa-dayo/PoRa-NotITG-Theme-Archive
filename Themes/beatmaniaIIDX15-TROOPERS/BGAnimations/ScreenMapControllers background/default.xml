@@ -1,0 +1,29 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../_boss"
+    />
+
+    <Layer
+        File="SONAR.png"
+        RepeatCommand="y,SCREEN_CENTER_Y;blend,add;horizalign,right;x,0;linear,1.5;x,SCREEN_WIDTH+142;sleep,(3-1.5);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="SONAR.png"
+        RepeatCommand="y,SCREEN_CENTER_Y;blend,add;horizalign,right;x,0;linear,1.5;x,SCREEN_WIDTH+142;sleep,(3-1.5);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../_white.png"
+        OnCommand="zoomto,SCREEN_WIDTH-10,SCREEN_HEIGHT;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;blend,noeffect;zwrite,1;diffusealpha,1"
+    />
+    
+    <Layer
+        File="../../Graphics/_white.png"
+        Command="zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;linear,0.4;diffusealpha,0"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,83 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,3"
+    />
+
+    <Layer
+        File="MEISAI_RING1.png"
+        Command="x,SCREEN_CENTER_X+(394-320);y,SCREEN_CENTER_Y+(143-240);blend,add;diffusealpha,0;sleep,.2;linear,.05;diffusealpha,1"
+    />
+
+    <Layer
+        File="MEISAI_RING2.png"
+        Command="x,SCREEN_CENTER_X+(394-320);y,SCREEN_CENTER_Y+(336-240);blend,add;diffusealpha,0;sleep,.25;linear,.05;diffusealpha,1"
+    />
+
+    <Layer
+        File="MEISAI_RING3.png"
+        Command="x,SCREEN_CENTER_X+(248-320);y,SCREEN_CENTER_Y+(337-240);blend,add;diffusealpha,0;sleep,.3;linear,.05;diffusealpha,1"
+    />
+
+    <Layer
+        File="MEISAI_RING4.png"
+        Command="x,SCREEN_CENTER_X+(248-320);y,SCREEN_CENTER_Y+(143-240);blend,add;diffusealpha,0;sleep,.35;linear,.05;diffusealpha,1"
+    />
+
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;sleep,.6;linear,.8;diffusealpha,1"
+    />
+
+    <Layer
+        File="GAMEOVER_TXT.png"
+        Command="x,SCREEN_CENTER_X+(321-320);y,SCREEN_CENTER_Y+(240-240);blend,add;addx,-10;diffusealpha,0;sleep,.35;linear,.1;addx,10;diffusealpha,11"
+    />
+
+    <Layer
+        File="SITE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;zoom,.9;diffusealpha,0;linear,.2;zoom,1;diffusealpha,1;sleep,1;linear,.8;diffusealpha,0"
+    />
+
+    <Layer
+        File="THANK.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(258-240);cropright,1;sleep,.4;linear,.4;cropright,0"
+    />
+
+    <Layer
+        File="MEISAI_RING1.png"
+        Command="x,SCREEN_CENTER_X+(394-320);y,SCREEN_CENTER_Y+(143-240);blend,add;diffusealpha,0;sleep,.4;linear,.05;diffusealpha,1;sleep,.05;diffusealpha,0"
+    />
+
+    <Layer
+        File="MEISAI_RING2.png"
+        Command="x,SCREEN_CENTER_X+(394-320);y,SCREEN_CENTER_Y+(336-240);blend,add;diffusealpha,0;sleep,.45;linear,.05;diffusealpha,1;sleep,.05;diffusealpha,0"
+    />
+
+    <Layer
+        File="MEISAI_RING3.png"
+        Command="x,SCREEN_CENTER_X+(248-320);y,SCREEN_CENTER_Y+(337-240);blend,add;diffusealpha,0;sleep,.5;linear,.05;diffusealpha,1;sleep,.05;diffusealpha,0"
+    />
+
+    <Layer
+        File="MEISAI_RING4.png"
+        Command="x,SCREEN_CENTER_X+(248-320);y,SCREEN_CENTER_Y+(143-240);blend,add;diffusealpha,0;sleep,.55;linear,.05;diffusealpha,1;sleep,.05;diffusealpha,0"
+    />
+
+    <Layer
+        File="OVER_LINE.png"
+        Command="x,SCREEN_CENTER_X+(90-320);y,SCREEN_CENTER_Y+(240-240);cropleft,1;sleep,.4;linear,.3;cropleft,0"
+    />
+
+    <Layer
+        File="OVER_LINE.png"
+        Command="x,SCREEN_CENTER_X+(550-320);y,SCREEN_CENTER_Y+(240-240);cropright,1;sleep,.4;linear,.3;cropright,0"
+    />
+
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;sleep,1.6;linear,.4;diffusealpha,1"
+    />
+
+</children></ActorFrame>

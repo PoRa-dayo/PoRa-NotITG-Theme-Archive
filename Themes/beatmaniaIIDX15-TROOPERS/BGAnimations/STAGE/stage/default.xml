@@ -1,0 +1,57 @@
+<ActorFrame><children>
+
+    <Layer
+        File="stage1.png"
+        Condition="StageIndex() == 0 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+        Command="x,320;y,240;blend,add;addx,10;diffusealpha,0;sleep,.4;linear,.2;addx,-10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="stage2.png"
+        Condition="StageIndex() == 1 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+        Command="x,320;y,240;blend,add;addx,10;diffusealpha,0;sleep,.4;linear,.2;addx,-10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="stage3.png"
+        Condition="StageIndex() == 2 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+        Command="x,320;y,240;blend,add;addx,10;diffusealpha,0;sleep,.4;linear,.2;addx,-10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="stage4.png"
+        Condition="StageIndex() == 3 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+        Command="x,320;y,240;blend,add;addx,10;diffusealpha,0;sleep,.4;linear,.2;addx,-10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="stage5.png"
+        Condition="StageIndex() == 4 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+        Command="x,320;y,240;blend,add;addx,10;diffusealpha,0;sleep,.4;linear,.2;addx,-10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="stage6.png"
+        Condition="StageIndex() == 5 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+        Command="x,320;y,240;blend,add;addx,10;diffusealpha,0;sleep,.4;linear,.2;addx,-10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="final.png"
+        Condition="IsFinalStage() == true"
+        Command="x,320;y,240;blend,add;addx,10;diffusealpha,0;sleep,.4;linear,.2;addx,-10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="extra1.png"
+        Condition="IsExtraStage() == true"
+        Command="x,320;y,240;blend,add;addx,10;diffusealpha,0;sleep,.4;linear,.2;addx,-10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+    <Layer
+        File="extra2.png"
+        Condition="IsExtraStage2() == true"
+        Command="x,320;y,240;blend,add;addx,10;diffusealpha,0;sleep,.4;linear,.2;addx,-10;diffusealpha,1;sleep,1.8;linear,.4;zoom,.8"
+    />
+
+</children></ActorFrame>

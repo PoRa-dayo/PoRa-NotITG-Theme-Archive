@@ -1,0 +1,20 @@
+<ActorFrame><children>
+
+    <Layer
+        File="difficulty"
+    />
+
+    <Layer
+        File="mod"
+    />
+
+    <Layer
+        File="stage"
+        Condition="PlayModeName() == 'Regular' or PlayModeName() == 'Rave'"
+    />
+
+    <Layer
+        File="mod_p2"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,120 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../_shared header"
+    />
+
+    <Layer
+        File="../time"
+    />
+
+    <Layer
+        File="EXPERT_T.png"
+        OnCommand="x,80;y,SCREEN_CENTER_Y+(26-240);addx,-10;diffusealpha,0;sleep,0.5;linear,0.3;addx,10;diffusealpha,1"
+    />
+
+    <Layer
+        File="../not-here1.png"
+        OnCommand="x,123;y,SCREEN_CENTER_Y+(428-240);addx,-300;linear,0.25;addx,300"
+    />
+
+    <Layer
+        File="../not-here2.png"
+        OnCommand="x,SCREEN_WIDTH-(640-517);y,SCREEN_CENTER_Y+(428-240);addx,300;linear,0.25;addx,-300"
+    />
+
+    <Layer
+        File="../ScreenSelectMaster header/INFO.png"
+        OnCommand="x,64;y,SCREEN_CENTER_Y+(45-240);diffusealpha,0;sleep,0.5;diffusealpha,1"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic header/SETSUMEI2.png"
+        OnCommand="x,158;y,SCREEN_CENTER_Y+(61-240);cropright,1;sleep,0.6;linear,0.4;cropright,0"
+    />
+
+    <Layer
+        File="../ScreenSelectMaster header/BUTTON.png"
+        OnCommand="x,22;y,SCREEN_CENTER_Y+(79-240);zoom,0;sleep,0.6;linear,0.2;zoom,1"
+    />
+
+    <Layer
+        File="../ScreenSelectMaster header/B_START.png"
+        OnCommand="x,137;y,SCREEN_CENTER_Y+(79-240);cropright,1;sleep,0.6;linear,0.4;cropright,0"
+    />
+
+    <Layer
+        File="../ScreenSelectMaster header/BUTTON.png"
+        OnCommand="x,22;y,SCREEN_CENTER_Y+(96-240);zoom,0;sleep,0.65;linear,0.2;zoom,1"
+    />
+
+    <Layer
+        File="../ScreenSelectMaster header/B_START.png"
+        OnCommand="x,137;y,SCREEN_CENTER_Y+(79-240);cropright,1;sleep,0.6;linear,0.4;cropright,0"
+    />
+
+    <Layer
+        File="../_white.png"
+        OnCommand="zoomto,SCREEN_WIDTH-10,SCREEN_HEIGHT;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);blend,add;blend,noeffect;zwrite,1;diffusealpha,1;sleep,2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenSelectMaster header/B_START_FLASH.png"
+        RepeatCommand="blend,add;diffusealpha,0.6;cropright,1;linear,1;cropright,0;linear,0.6;diffusealpha,0;sleep,(2-1.6);queuecommand,Repeat"
+        Command="ztest,1;x,166;y,SCREEN_CENTER_Y+(79-240);queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic header/B_VEFX.png"
+        OnCommand="x,117;y,SCREEN_CENTER_Y+(96-240);cropright,1;sleep,0.65;linear,0.4;cropright,0"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic header/B_VEFX_FLASH.png"
+        RepeatCommand="blend,add;diffusealpha,0.6;cropright,1;linear,1;cropright,0;linear,0.6;diffusealpha,0;sleep,(2-1.6);queuecommand,Repeat"
+        Command="ztest,1;x,144;y,SCREEN_CENTER_Y+(96-240);queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../here1.png"
+        OnCommand="x,123;y,SCREEN_CENTER_Y+(428-240);addx,-300;linear,0.25;addx,300"
+        Condition="GAMESTATE:IsHumanPlayer(0)"
+    />
+
+    <Layer
+        File="../here2.png"
+        OnCommand="x,SCREEN_WIDTH-(640-517);y,SCREEN_CENTER_Y+(428-240);addx,300;linear,0.25;addx,-300"
+        Condition="GAMESTATE:IsHumanPlayer(1)"
+    />
+
+    <Layer
+        File="single.png"
+        OnCommand="x,SCREEN_CENTER_X+(433-320);y,SCREEN_CENTER_Y+(47-240);zoomy,0;decelerate,0.2;bounceend,0.5;zoomy,1;blend,add"
+        Condition="CurStyleName()=='single' and GAMESTATE:IsHumanPlayer(0) and not GAMESTATE:IsHumanPlayer(1) or CurStyleName()=='single' and GAMESTATE:IsHumanPlayer(1) and not GAMESTATE:IsHumanPlayer(0)"
+    />
+
+    <Layer
+        File="2P.png"
+        OnCommand="x,SCREEN_CENTER_X+(430-320);y,SCREEN_CENTER_Y+(47-240);zoomy,0;decelerate,0.2;bounceend,0.5;zoomy,1;blend,add"
+        Condition="GAMESTATE:IsHumanPlayer(0) and GAMESTATE:IsHumanPlayer(1)"
+    />
+
+    <Layer
+        File="double.png"
+        OnCommand="x,SCREEN_CENTER_X+(432-320);y,SCREEN_CENTER_Y+(47-240);zoomy,0;decelerate,0.2;bounceend,0.5;zoomy,1;blend,add"
+        Condition="CurStyleName()=='double'"
+    />
+
+    <Layer
+        File="../RED_LIGHT.png"
+        RepeatCommand="blend,add;x,SCREEN_CENTER_X;vertalign,top;y,SCREEN_CENTER_Y+(0-240);zoomtowidth,SCREEN_WIDTH;linear,1;diffusealpha,0;linear,0;diffusealpha,1;sleep,(1-1.0);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="PlayModeName() == 'Endless'"
+    />
+
+    <Layer
+        File="bpm.png"
+        Command="x,SCREEN_CENTER_X+(262-320);y,SCREEN_CENTER_Y+(251-240);diffusealpha,0;linear,.3;diffusealpha,1"
+    />
+
+</children></ActorFrame>

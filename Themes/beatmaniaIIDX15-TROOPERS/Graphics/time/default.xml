@@ -1,0 +1,29 @@
+<ActorFrame><children>
+
+    <Layer
+        File="T_REMAIN_BAR.png"
+        Command="x,SCREEN_WIDTH-(640-628);y,SCREEN_CENTER_Y+(87-240);diffusealpha,0.5"
+    />
+
+    <Layer
+        File="T_REMAIN_BAR.png"
+        RepeatCommand="x,SCREEN_WIDTH-(640-628);y,SCREEN_CENTER_Y+(87-240);diffusealpha,1;croptop,.5;linear,0.5;croptop,0;linear,0;croptop,1;linear,0.5;croptop,.5;queuecommand,Repeat"
+        Command="sleep,0.5;queuecommand,Repeat"
+    />
+
+    <Layer
+        File="T_REMAIN_TEN.png"
+        Command="x,SCREEN_WIDTH-(640-629);y,SCREEN_CENTER_Y+(15-240);horizalign,right;vertalign,top;zoomy,0.1;zoomtowidth,640;diffusealpha,0;linear,0.3;zoomx,10;diffusealpha,1;linear,0.05;zoomy,1;zoomx,1"
+    />
+
+    <Layer
+        File="TIME_LINE.png"
+        Command="x,SCREEN_WIDTH-(640-589);y,SCREEN_CENTER_Y+(101-240);cropright,1;sleep,0.5;linear,0.3;cropright,0"
+    />
+
+    <Layer
+        File="T_REMAIN.png"
+        Command="x,SCREEN_WIDTH-(640-623);y,SCREEN_CENTER_Y+(107-240);addy,-30;diffusealpha,0;sleep,0.3;linear,0.3;addy,30;diffusealpha,1"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,88 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,3"
+    />
+
+    <Layer
+        File="left.png"
+        Command="y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH/2;zoomtoheight,SCREEN_HEIGHT;horizalign,left;x,0;addx,-400;linear,0.4;addx,400;linear,0.1;addx,-5;linear,0.1;addx,5"
+    />
+
+    <Layer
+        File="lock-left.png"
+        Command="y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH/2;zoomtoheight,SCREEN_HEIGHT;horizalign,left;x,0;addx,-400;linear,0.4;addx,400;linear,0.1;addx,-5;linear,0.1;addx,5;sleep,.3;linear,.2;addx,-10"
+    />
+
+    <Layer
+        File="right.png"
+        Command="y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH/2;zoomtoheight,SCREEN_HEIGHT;horizalign,right;x,SCREEN_WIDTH;addx,400;linear,0.4;addx,-400;linear,0.1;addx,5;linear,0.1;addx,-5"
+    />
+
+    <Layer
+        File="lock-right.png"
+        Command="y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH/2;zoomtoheight,SCREEN_HEIGHT;horizalign,right;x,SCREEN_WIDTH;addx,400;linear,0.4;addx,-400;linear,0.1;addx,5;linear,0.1;addx,-5;sleep,.3;linear,.2;addx,10"
+    />
+
+    <Layer
+        File="FLARE"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,10;zoomy,30;blend,add;diffusealpha,0;sleep,.1;linear,0.2;diffusealpha,1;linear,0.1;zoomx,0.2;sleep,.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="FLARE"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,10;zoomy,30;blend,add;diffusealpha,0;sleep,.1;linear,0.2;diffusealpha,1;linear,0.1;zoomx,0.2;sleep,.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="FLARE"
+        Command="x,SCREEN_CENTER_X;zoom,1;y,SCREEN_CENTER_Y+(184-240);blend,add;diffusealpha,0;sleep,.4;diffusealpha,1;sleep,.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="SPARK_EF2.png"
+        Command="x,SCREEN_CENTER_X;horizalign,right;vertalign,top;blend,add;y,SCREEN_CENTER_Y+(168-240);rotationz,-10;zoom,0;sleep,.3;linear,.2;zoom,1;diffusealpha,1;linear,0;diffusealpha,0"
+    />
+
+    <Layer
+        File="FLARE"
+        Command="x,SCREEN_CENTER_X;zoom,1;y,SCREEN_CENTER_Y+(296-240);blend,add;diffusealpha,0;sleep,.4;diffusealpha,1;sleep,.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="SPARK_EF1.png"
+        Command="x,SCREEN_CENTER_X;horizalign,left;vertalign,bottom;blend,add;y,SCREEN_CENTER_Y+(312-240);rotationz,50;zoom,0;sleep,.3;linear,.2;zoom,1;diffusealpha,1;linear,0;diffusealpha,0"
+    />
+
+    <Layer
+        File="FAILED_REDLINE.png"
+        Command="x,SCREEN_CENTER_X+(140-320);y,SCREEN_CENTER_Y+(240-240);blend,add;cropleft,1;sleep,.7;linear,.5;cropleft,0"
+    />
+
+    <Layer
+        File="FAILED_REDLINE.png"
+        Command="x,SCREEN_CENTER_X+(493-320);y,SCREEN_CENTER_Y+(240-240);blend,add;cropright,1;sleep,.7;linear,.5;cropright,0"
+    />
+
+    <Layer
+        File="FAILED_F.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;addx,-10;diffusealpha,0;sleep,.6;linear,.2;addx,10;diffusealpha,1"
+    />
+
+    <Layer
+        File="FAILED_FONT_BOKE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;vibrate;diffusealpha,0;sleep,.5;linear,.2;diffusealpha,1;blend,add;effectmagnitude,1,10,1;sleep,0;linear,.4;diffusealpha,0"
+    />
+
+    <Layer
+        File="FAILED_BIGF_BOKE.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;addx,-100;diffusealpha,0;sleep,.8;linear,.2;addx,10;diffusealpha,.2;linear,2;addx,200"
+    />
+
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0;sleep,2;linear,.3;diffusealpha,1"
+    />
+
+</children></ActorFrame>

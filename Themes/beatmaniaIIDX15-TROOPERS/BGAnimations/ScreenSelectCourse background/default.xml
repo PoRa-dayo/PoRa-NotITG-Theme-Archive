@@ -1,0 +1,80 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../_expert"
+        Condition="PlayModeName() == 'Nonstop'"
+    />
+
+    <Layer
+        File="../_challenge"
+        Condition="PlayModeName() == 'Oni'"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic background/_extra"
+        Condition="PlayModeName() == 'Endless'"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic background/EXTRA_BG.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;addx,-15;addy,-15;linear,0.5;addx,15;addy,15;diffusealpha,0.8"
+        Condition="PlayModeName() == 'Endless'"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic background/BG_MUSIC.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;addx,-15;addy,-15;linear,0.5;addx,15;addy,15;diffusealpha,0.6"
+        Condition="PlayModeName() == 'Nonstop' or PlayModeName() == 'Oni'"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic background/MUSIC_WAKU.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(326-320);y,SCREEN_CENTER_Y+(221-240);diffusealpha,0.8"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic background/MUSIC_WAKU_BG.png"
+        Command="blend,add;texcoordvelocity,-.1,0;diffusealpha,0.8;x,SCREEN_CENTER_X+(200-320);y,SCREEN_CENTER_Y+(213-240);cropleft,.235;cropright,.25"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic background/UP_PARTS.png"
+        Command="x,SCREEN_CENTER_X+(299-320);y,SCREEN_CENTER_Y+(126-240);diffusealpha,0.8;blend,add;addy,400;sleep,0.1;linear,0.5;addy,-350;linear,0.15;addy,-50;linear,0.4;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic background/BG_FLASH1.png"
+        Command="x,SCREEN_CENTER_X+(40-320);y,SCREEN_CENTER_Y+(200-240);blend,add;diffusealpha,0;sleep,0.5;diffusealpha,0.7;sleep,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic background/BG_FLASH2.png"
+        Command="x,SCREEN_CENTER_X+(217-320);y,SCREEN_CENTER_Y+(167-240);blend,add;diffusealpha,0;sleep,0.55;diffusealpha,0.7;sleep,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic background/BG_FLASH3.png"
+        Command="x,SCREEN_CENTER_X+(204-320);y,SCREEN_CENTER_Y+(264-240);blend,add;diffusealpha,0;sleep,0.6;diffusealpha,0.7;sleep,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic background/BG_FLASH4.png"
+        Command="x,SCREEN_CENTER_X+(43-320);y,SCREEN_CENTER_Y+(390-240);blend,add;diffusealpha,0;sleep,0.65;diffusealpha,0.7;sleep,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic background/BG_FLASH5.png"
+        Command="x,SCREEN_CENTER_X+(252-320);y,SCREEN_CENTER_Y+(322-240);blend,add;diffusealpha,0;sleep,0.7;diffusealpha,0.7;sleep,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic background/DIFF_CHANGE.png"
+        Command="horizalign,right;x,SCREEN_CENTER_X+(640-320);y,SCREEN_CENTER_Y+(231-240);addx,300;linear,.3;addx,-300;linear,.2;diffusealpha,.5"
+    />
+    
+    <Layer
+        Type="Quad"
+        Command="zoom,0;clearzbuffer,1"
+    />
+
+</children></ActorFrame>

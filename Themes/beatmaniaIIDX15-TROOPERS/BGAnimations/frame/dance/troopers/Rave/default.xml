@@ -1,0 +1,57 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,5"
+    />
+
+    <Layer
+        File="../../../../_black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;sleep,1;linear,0;diffusealpha,0"
+    />
+
+    <Layer
+        File="../../../../_white.png"
+        Command="x,SCREEN_CENTER_X;zoomtowidth,240;zoomtoheight,120;y,SCREEN_CENTER_Y+(250-240);diffusealpha,0;sleep,3;linear,0;diffusealpha,1;linear,.3;zoomx,100;zoomy,0"
+    />
+
+    <Layer
+        File="LV1.png"
+        Command="x,SCREEN_CENTER_X+(135-320);y,SCREEN_CENTER_Y+(448-240);addx,-260;sleep,.05;linear,.25;addx,260;linear,.05;addy,2;linear,.05;addy,-2;sleep,.6;linear,.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="LV2.png"
+        Command="x,SCREEN_CENTER_X+(505-320);y,SCREEN_CENTER_Y+(448-240);addx,260;sleep,.05;linear,.25;addx,-260;linear,.05;addy,2;linear,.05;addy,-2;sleep,.6;linear,.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../BANNER.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(452-240);addy,50;linear,.2;addy,-50;sleep,.1;linear,.05;addy,2;linear,.05;addy,-2;sleep,.6;linear,.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../LIFE_P1.png"
+        Command="x,SCREEN_CENTER_X+(136-320);y,SCREEN_CENTER_Y+(27-240);addx,-260;linear,.2;addx,260;linear,.05;addy,-2;linear,.05;addy,2;sleep,.7;linear,.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../LIFE_P2.png"
+        Command="x,SCREEN_CENTER_X+(501-320);y,SCREEN_CENTER_Y+(27-240);addx,260;linear,.2;addx,-260;linear,.05;addy,-2;linear,.05;addy,2;sleep,.7;linear,.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../BPM.png"
+        Command="x,SCREEN_CENTER_X+(319-320);y,SCREEN_CENTER_Y+(31-240);addy,-50;linear,.2;addy,50;linear,.05;addy,-2;linear,.05;addy,2;sleep,.7;linear,.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="songbanner"
+        Command="zoomtowidth,128;zoomtoheight,40;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(452-240);addy,50;linear,.2;addy,-50;sleep,.1;linear,.05;addy,2;linear,.05;addy,-2;sleep,.6;linear,.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../HIBANA"
+    />
+
+</children></ActorFrame>

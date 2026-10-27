@@ -1,0 +1,112 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../ScreenSelectStyle1 background/CARD_BG.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,1"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/KYOTAI.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(249-240);blend,add;diffusealpha,0.8"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/CARD_SEL_FRAME.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(61-240);zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/RED_LIGHT.png"
+        RepeatCommand="x,SCREEN_CENTER_X;blend,add;vertalign,top;y,SCREEN_CENTER_Y+(0-240);zoomtowidth,SCREEN_WIDTH;linear,1;diffusealpha,0;linear,0;diffusealpha,1;sleep,(1-1.0);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/I_WAKU.png"
+        Command="x,SCREEN_CENTER_X+(160-320);y,SCREEN_CENTER_Y+(269-240);diffusealpha,.8"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/I_WAKU.png"
+        Command="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(269-240);diffusealpha,.8"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/ILINE2.png"
+        Command="x,SCREEN_CENTER_X+(164-320);y,SCREEN_CENTER_Y+(163-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/ILINE3.png"
+        Command="x,SCREEN_CENTER_X+(474-320);y,SCREEN_CENTER_Y+(163-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/ILINE4.png"
+        Command="x,SCREEN_CENTER_X+(49-320);y,SCREEN_CENTER_Y+(268-240);diffusealpha,.6"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/ILINE4.png"
+        Command="x,SCREEN_CENTER_X+(369-320);y,SCREEN_CENTER_Y+(268-240);diffusealpha,.6"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/ILINE5.png"
+        Command="x,SCREEN_CENTER_X+(270-320);y,SCREEN_CENTER_Y+(268-240);diffusealpha,.6"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/ILINE5.png"
+        Command="x,SCREEN_CENTER_X+(590-320);y,SCREEN_CENTER_Y+(268-240);diffusealpha,.6"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/B_SHADOW.png"
+        Command="diffusealpha,0.6;x,SCREEN_CENTER_X+(160-320);y,SCREEN_CENTER_Y+(269-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/B_SHADOW.png"
+        Command="diffusealpha,0.6;x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(269-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/SANKASYA.png"
+        Command="x,SCREEN_CENTER_X+(76-320);y,SCREEN_CENTER_Y+(33-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/pad.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+    />
+
+    <Layer
+        File="BG.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;linear,0.3;diffusealpha,1"
+    />
+
+    <Layer
+        File="text1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(50-240);zoomy,0;linear,0.3;zoomy,1"
+        OffCommand="diffusealpha,0;sleep,0.00001;zoomy,0;linear,0.2;zoomy,1.2;diffusealpha,1;linear,0.1;zoomy,1"
+    />
+
+    <Layer
+        File="text1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(50-240);diffusealpha,0"
+        OffCommand="blend,add;sleep,0.2;diffusealpha,1;sleep,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="text2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(375-240);zoomy,0;linear,0.3;zoomy,1"
+        OffCommand="linear,0.3;addy,20;diffusealpha,0"
+    />
+
+    <Layer
+        File="time_remain.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(404-240);zoomy,0;linear,0.3;zoomy,1"
+    />
+
+</children></ActorFrame>

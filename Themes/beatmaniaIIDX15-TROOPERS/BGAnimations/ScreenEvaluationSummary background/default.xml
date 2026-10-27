@@ -1,0 +1,21 @@
+<ActorFrame><children>
+
+    <Layer
+        File="evaluation"
+    />
+
+    <Layer
+        File="DJLEVEL_FRAME1.png"
+        Command="x,SCREEN_CENTER_X;vertalign,top;y,0;zoomtowidth,SCREEN_WIDTH;addy,-30;linear,.3;addy,30"
+    />
+
+    <Layer
+        File="DJLEVEL_FRAME2.png"
+        Command="x,SCREEN_CENTER_X;vertalign,bottom;y,SCREEN_HEIGHT;zoomtowidth,SCREEN_WIDTH;addy,30;linear,.3;addy,-30"
+    />
+
+    <Layer
+        File="1"
+    />
+
+</children></ActorFrame>
