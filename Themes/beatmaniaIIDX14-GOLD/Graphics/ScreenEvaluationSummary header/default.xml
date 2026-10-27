@@ -1,3 +1,11 @@
-<ActorFrame> <children>
-</children> </ActorFrame>
+<ActorFrame><children>
 
+    <Layer
+        File="grade"
+    />
+    
+    <Layer
+        File="hibana"
+    />
+
+</children></ActorFrame>

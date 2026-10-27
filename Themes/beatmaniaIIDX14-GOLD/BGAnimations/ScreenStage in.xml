@@ -1,6 +1,7 @@
 <ActorFrame><children>
-	<Layer Type="Quad" OnCommand="%function(self)
-        self:zoom(0) 
+	<Layer Type="Quad"
+    OnCommand="zoom,0;sleep,0.01;queuecommand,PlaySound"
+    PlaySoundCommand="%function(self)
         if not Profile().IIDXGoldDecideSFX then
             AudioPlay('decide/default') 
         elseif Profile().IIDXGoldDecideSFX == 'RANDOM' then

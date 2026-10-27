@@ -479,6 +479,38 @@ function GetGrade(pn)
     return ToSM39GradeNum(tierMap[tierName])
 end
 
+--Get the final grade of a player in 7-tier number format
+function GetFinalGrade(pn)
+    local index = FinalGrade(pn-1)
+    if index >= 17 then
+        return ToSM39GradeNum("E") -- Failed
+    end
+
+    local tierName = string.format("Tier%02d", index + 1)
+
+    local tierMap = {
+        Tier01 = "AAAA",
+        Tier02 = "AAA",
+        Tier03 = "AAA",
+        Tier04 = "AAA",
+        Tier05 = "AAA",
+        Tier06 = "AAA",
+        Tier07 = "AA",
+        Tier08 = "AA",
+        Tier09 = "A",
+        Tier10 = "A",
+        Tier11 = "B",
+        Tier12 = "B",
+        Tier13 = "C",
+        Tier14 = "C",
+        Tier15 = "D",
+        Tier16 = "D",
+        Tier17 = "D",
+    }
+
+    return ToSM39GradeNum(tierMap[tierName])
+end
+
 --Get the best grade in 7-tier number format
 function GetBestGrade()
     local index = STATSMAN:GetBestGrade()

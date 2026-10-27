@@ -1,6 +1,12 @@
 <ActorFrame><children>
 
     <Layer
+        Type="Quad"
+        OnCommand="sleep,2.22;queuecommand,Play"
+        PlayCommand="%function(self) AudioPlay('grade_descent') end"
+    />
+
+    <Layer
         File="a.png"
         Command="vertalign,bottom;x,140;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
         Condition="IsPlayerEnabled(1) and GetGrade(1) == Grade('A')"

@@ -2,11 +2,14 @@
     <Layer File="red_part_of_lifebar"
     Condition="FUCK_EXE and GAMESTATE:IsPlayerEnabled(PLAYER_1) and PlayModeName() ~= 'Rave'"
     OnCommand="%function(self)
-        self:x(SCREEN_CENTER_X+(130-320));
+        self:x(SCREEN_CENTER_X+(129-320));
         self:y(SCREEN_CENTER_Y+(26-240));
         self:zoomx(0.59)
+        self:cropright(1)
+        self:sleep(1)
+        self:linear(3.7)
+        self:cropright(PlayModeName() == 'Oni' and 0 or 0.5)
         self:queuecommand('Update')
-        self:cropright(0.1)
     end"
     UpdateCommand="%function(self)
         self:cropright(math.max(0, 1-SCREENMAN:GetTopScreen():GetLife(PLAYER_1)-0.02))
@@ -25,8 +28,11 @@
         self:x(SCREEN_CENTER_X+(511-320));
         self:y(SCREEN_CENTER_Y+(26-240));
         self:zoomx(0.59)
+        self:cropright(1)
+        self:sleep(1)
+        self:linear(3.7)
+        self:cropright(PlayModeName() == 'Oni' and 0 or 0.5)
         self:queuecommand('Update')
-        self:cropright(0.1)
     end"
     UpdateCommand="%function(self)
         self:cropright(math.max(0, 1-SCREENMAN:GetTopScreen():GetLife(PLAYER_2)-0.02))
