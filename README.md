@@ -456,7 +456,8 @@ DJ TROOPERS.
 Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa.
 
 ## Changelogs: (compared to the SM3.9 ver)
--Similar changes to Beatmania IIDX 14: Gold theme.
+-Similar changes to Beatmania IIDX 14: Gold theme.\
+-Removed Free mode and Edit Courses from the game mode selection. Remade the Help page to be relevant for this theme.
 
 <img width="200" alt="NotITG-v4 9 1_7sLszMBYCm" src="https://github.com/user-attachments/assets/a4544c3d-3db2-4cc2-a374-6e43a109fd62" />
 <img width="200" alt="NotITG-v4 9 1_GhrlklcEME" src="https://github.com/user-attachments/assets/ef135aaa-1669-4ef0-aac5-7b1736499504" />
