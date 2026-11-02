@@ -627,7 +627,7 @@ function ScreenFilterOption()
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
 end
 
-CommonBGMList = {"DEFAULT", "EXTRA", "FUNAKI", "LED", "MITSURU", "TAKA", "YOSHITAKA", "RANDOM"}
+CommonBGMList = {"DEFAULT", "EXTRA", "LED", "MITSURU", "TAKA", "YOSHITAKA", "RANDOM"}
 
 function CommonBGMOption()
 	local modList = CommonBGMList
