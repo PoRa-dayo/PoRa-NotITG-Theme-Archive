@@ -19,7 +19,7 @@
 --It does get hidden though, well except for the group name not being hidden on the roulette-type sections, so you can use GetHidden() on it.
 
 --some of the stuff is updated in ScreenSelectMusic overlay
-BMIIDX14Glob={
+BMIIDX15Glob={
     SongTitles = {},
     GroupTitles = {},
     GroupSongNum = {},
@@ -30,8 +30,8 @@ BMIIDX14Glob={
     YouShouldChangeThatShitNOW = false
 }
 local StartIndex=nil
-BMIIDX14Glob.AllSongs = SONGMAN:GetAllSongs()
-BMIIDX14Glob.TotalSongNum = #BMIIDX14Glob.AllSongs
+BMIIDX15Glob.AllSongs = SONGMAN:GetAllSongs()
+BMIIDX15Glob.TotalSongNum = #BMIIDX15Glob.AllSongs
 
 function GetDiffList(songg)
     --this is used as the index of the DiffList: https://craftedcart.gitlab.io/notitg_docs/lua_api/enumerations.html#difficulty
@@ -82,7 +82,7 @@ function GetLongTitleList(songg)
     return {titlList, titlListGroup}
 end
 
-for index, songg in ipairs(BMIIDX14Glob.AllSongs) do
+for index, songg in ipairs(BMIIDX15Glob.AllSongs) do
     --calculate all the song amounts each song folder (group) has
     --check if the song is locked or not with the new NotITG 4.9.0 feature as well
     --it can't detect songs being unlocked mid-session but whatever
@@ -91,17 +91,17 @@ for index, songg in ipairs(BMIIDX14Glob.AllSongs) do
     local DoubleStepsList = songg:GetStepsByStepsType(1)
     local IsSongUnlocked = (not FUCK_EXE) or (not UNLOCKMAN:SongIsLocked(songg))
     if IsSongUnlocked and StepsList and #StepsList > 0 then
-        if not BMIIDX14Glob.GroupSongNum[GroupName] then
-            BMIIDX14Glob.GroupSongNum[GroupName] = 1
+        if not BMIIDX15Glob.GroupSongNum[GroupName] then
+            BMIIDX15Glob.GroupSongNum[GroupName] = 1
         else
-            BMIIDX14Glob.GroupSongNum[GroupName] = BMIIDX14Glob.GroupSongNum[GroupName] + 1
+            BMIIDX15Glob.GroupSongNum[GroupName] = BMIIDX15Glob.GroupSongNum[GroupName] + 1
         end
     end
     if IsSongUnlocked and DoubleStepsList and #DoubleStepsList > 0 then
-        if not BMIIDX14Glob.GroupSongNumDoubles[GroupName] then
-            BMIIDX14Glob.GroupSongNumDoubles[GroupName] = 1
+        if not BMIIDX15Glob.GroupSongNumDoubles[GroupName] then
+            BMIIDX15Glob.GroupSongNumDoubles[GroupName] = 1
         else
-            BMIIDX14Glob.GroupSongNumDoubles[GroupName] = BMIIDX14Glob.GroupSongNumDoubles[GroupName] + 1
+            BMIIDX15Glob.GroupSongNumDoubles[GroupName] = BMIIDX15Glob.GroupSongNumDoubles[GroupName] + 1
         end
     end
     
@@ -122,14 +122,14 @@ for index, songg in ipairs(BMIIDX14Glob.AllSongs) do
         for TitlType=1,#TitlList do
             for ind=1,#TitlList[TitlType] do
                 local keytitl = TitlList[TitlType][ind]
-                if BMIIDX14Glob.SongDiffs[keytitl] then
+                if BMIIDX15Glob.SongDiffs[keytitl] then
                     local n = 2
-                    while BMIIDX14Glob.SongDiffs[TitlList[TitlType][ind] .. n] do
+                    while BMIIDX15Glob.SongDiffs[TitlList[TitlType][ind] .. n] do
                         n = n + 1
                     end
                     keytitl = TitlList[TitlType][ind] .. n
                 end
-                BMIIDX14Glob.SongDiffs[keytitl] = DiffList
+                BMIIDX15Glob.SongDiffs[keytitl] = DiffList
             end
         end
     end
@@ -138,28 +138,28 @@ end
 --these are only for getting stuff from the music wheel
 --this one gives the Subtitle of the MusicWheelItem at the specified index
 function GetWheelSubtitle(ind)
-    if not BMIIDX14Glob.MusicWheelList[ind] then
+    if not BMIIDX15Glob.MusicWheelList[ind] then
         return ''
     end
-    return BMIIDX14Glob.MusicWheelList[ind]:GetChildAt(8):GetChild('Subtitle'):GetText()
+    return BMIIDX15Glob.MusicWheelList[ind]:GetChildAt(8):GetChild('Subtitle'):GetText()
 end
 
 --gives the LongTitle of the MusicWheelItem at the specified index
 --e.g. GetWheelLongTitle(CurWheelIndex()) in console gives you the LongTitle of the current selected song on the wheel
---BMIIDX14Glob.SongDiffs[GetWheelLongTitle(CurWheelIndex())] gives you the DiffList of that song
+--BMIIDX15Glob.SongDiffs[GetWheelLongTitle(CurWheelIndex())] gives you the DiffList of that song
 function GetWheelLongTitle(index)
-    if not (BMIIDX14Glob.SongTitles and BMIIDX14Glob.ArtistTitles) then
+    if not (BMIIDX15Glob.SongTitles and BMIIDX15Glob.ArtistTitles) then
         return ''
     end
-    return (BMIIDX14Glob.SongTitles[index] or '').." "..GetWheelSubtitle(index).." "..(BMIIDX14Glob.ArtistTitles[index] or '')
+    return (BMIIDX15Glob.SongTitles[index] or '').." "..GetWheelSubtitle(index).." "..(BMIIDX15Glob.ArtistTitles[index] or '')
 end
 
 --check whether the MusicWheelItem at the specified index is roulette-type
 function IsRoulette(ind)
-    if not BMIIDX14Glob.MusicWheelList[ind] then
+    if not BMIIDX15Glob.MusicWheelList[ind] then
         return false
     end
-    return (not BMIIDX14Glob.MusicWheelList[ind]:GetChildAt(10):GetHidden()) and (not BMIIDX14Glob.MusicWheelList[(ind % #BMIIDX14Glob.MusicWheelList)+1]:GetChildAt(10):GetHidden())
+    return (not BMIIDX15Glob.MusicWheelList[ind]:GetChildAt(10):GetHidden()) and (not BMIIDX15Glob.MusicWheelList[(ind % #BMIIDX15Glob.MusicWheelList)+1]:GetChildAt(10):GetHidden())
 end
 
 --so since the TextBanner only lets you use one font, I had to resort to... this
@@ -202,36 +202,36 @@ end
 function UpdateWheelTitles(FirstUpdate)
     if not FUCK_EXE then return end
     if GAMESTATE:IsCourseMode() or (not SCREENMAN:GetTopScreen():GetChild('MusicWheel')) then
-        BMIIDX14Glob.MusicWheelList = {}
+        BMIIDX15Glob.MusicWheelList = {}
         return
     end
     --some of the stuff is defined in ScreenSelectMusic overlay, depending on when I want it to reset
-    BMIIDX14Glob.SongTitles={}
-    BMIIDX14Glob.GroupTitles={}
+    BMIIDX15Glob.SongTitles={}
+    BMIIDX15Glob.GroupTitles={}
     local UsedTitles={}
     
     local CSong = GAMESTATE:GetCurrentSong()
     
     --modulo loops my beloved
     --go from StartIndex to #MusicWheelList, then go back to 1 to StartIndex-1
-    local Count = #BMIIDX14Glob.MusicWheelList
+    local Count = #BMIIDX15Glob.MusicWheelList
     local StartIndex = FindStartPoint()
     for i = 0, Count - 1 do
         if Count == 0 then return end
         local index = ((StartIndex - 1 + i) % Count) + 1
-        local item = BMIIDX14Glob.MusicWheelList[index]
+        local item = BMIIDX15Glob.MusicWheelList[index]
         
         --grab the titles and subtitles on the music wheel and store them in their corresponding tables
-        BMIIDX14Glob.SongTitles[index] = item:GetChildAt(8):GetChild('Title'):GetText()
-        BMIIDX14Glob.GroupTitles[index] = item:GetChildAt(9):GetText()
+        BMIIDX15Glob.SongTitles[index] = item:GetChildAt(8):GetChild('Title'):GetText()
+        BMIIDX15Glob.GroupTitles[index] = item:GetChildAt(9):GetText()
 
         -- if the Artist has not been changed to a diff number (corrupted), put it in ArtistTitles
         local ArtistDisp = item:GetChildAt(8):GetChild('Artist')
         if not ArtistCorrupted(ArtistDisp:GetText()) then
-            BMIIDX14Glob.ArtistTitles[index] = ArtistDisp:GetText()
+            BMIIDX15Glob.ArtistTitles[index] = ArtistDisp:GetText()
         end
         
-        if BMIIDX14Glob.ArtistTitles[index] then
+        if BMIIDX15Glob.ArtistTitles[index] then
             --assemble the full title
             local FullTitl = GetWheelLongTitle(index)
             --if the sort order is Group, add the Group name in front
@@ -244,7 +244,7 @@ function UpdateWheelTitles(FirstUpdate)
             --check that next duplicate (add a number behind the title, and keep increasing that number)
             --do this until an unused title is found
             local KeyTitl = FullTitl
-            local SDff = BMIIDX14Glob.SongDiffs
+            local SDff = BMIIDX15Glob.SongDiffs
             if UsedTitles[KeyTitl] or (not IsHaveSongDiffOfCurrentMode(SDff[KeyTitl])) then
                 local n = 2
                 while ( UsedTitles[FullTitl .. n] or (not IsHaveSongDiffOfCurrentMode(SDff[FullTitl .. n])) ) and IsHaveSongDiffOfCurrentMode(SDff[FullTitl .. n+1]) do
@@ -264,21 +264,21 @@ function UpdateWheelTitles(FirstUpdate)
             end
             
             --grab the song's diff table
-            local DifffList = BMIIDX14Glob.SongDiffs[KeyTitl]
+            local DifffList = BMIIDX15Glob.SongDiffs[KeyTitl]
             UsedTitles[KeyTitl] = true
 
             
             -- change the Artist to a diff number
             if DifffList and item:GetChildAt(8):GetChild('Artist') ~= '' then
-                local ClosestDiff = GetClosestDiff(DifffList, BMIIDX14Glob.CurDiff)
-                BMIIDX14Glob.DiffNumTitles[index] = DiffMeterConvert(DifffList[ClosestDiff])
+                local ClosestDiff = GetClosestDiff(DifffList, BMIIDX15Glob.CurDiff)
+                BMIIDX15Glob.DiffNumTitles[index] = DiffMeterConvert(DifffList[ClosestDiff])
                 if not ClosestDiff then
-                    ClosestDiff = BMIIDX14Glob.CurDiff
+                    ClosestDiff = BMIIDX15Glob.CurDiff
                 end
                 if GAMESTATE:PlayerUsingBothSides() then
                     ClosestDiff = ClosestDiff - 10
                 end
-                ArtistDisp:settext( BMIIDX14Glob.DiffNumTitles[index] )
+                ArtistDisp:settext( BMIIDX15Glob.DiffNumTitles[index] )
                 DiffuseDifficultyTopGradient(ArtistDisp, ClosestDiff)
                 DiffuseDifficultyBottomGradient(ArtistDisp, ClosestDiff)
                 ArtistDisp:zoom(1)
@@ -294,7 +294,7 @@ function CurWheelIndex()
     --which means, avoid detecting with this immediately when switching songs
     local smallestAbs = 999
     local returnInd = 1
-    for index, item in ipairs(BMIIDX14Glob.MusicWheelList) do
+    for index, item in ipairs(BMIIDX15Glob.MusicWheelList) do
         local ypos = item:GetY()
         if math.abs(ypos) < smallestAbs then
             returnInd = index
@@ -366,12 +366,12 @@ end
 --If they are then check from the bottom for where that bunch of duplicates started.
 function FindStartPoint()
     local FirstTitl = GetWheelLongTitle(1)
-    local LastTitl = GetWheelLongTitle(#BMIIDX14Glob.MusicWheelList)
+    local LastTitl = GetWheelLongTitle(#BMIIDX15Glob.MusicWheelList)
     if FirstTitl ~= LastTitl then
         return 1
     end
     
-    local StartPt = #BMIIDX14Glob.MusicWheelList
+    local StartPt = #BMIIDX15Glob.MusicWheelList
     while StartPt > 1 and GetWheelLongTitle(StartPt-1) == FirstTitl do
         StartPt = StartPt - 1
     end
@@ -383,7 +383,7 @@ function UpdateDiffOfCSong(KeyTitl)
     if CSong then
         --if it matches, and there's no information about one of the difficulties, then it's probably a new difficulty
         --that the player unlocked. If that's the case, update the SongDiffs.
-        local DifffList = BMIIDX14Glob.SongDiffs[KeyTitl]
+        local DifffList = BMIIDX15Glob.SongDiffs[KeyTitl]
         if not DifffList then
             return
         end
@@ -391,7 +391,7 @@ function UpdateDiffOfCSong(KeyTitl)
         if next(DList) ~= nil then
             for ind,val in pairs(DList) do
                 if DList[ind] and (not DifffList[ind]) then
-                    BMIIDX14Glob.SongDiffs[KeyTitl][ind] = DList[ind]
+                    BMIIDX15Glob.SongDiffs[KeyTitl][ind] = DList[ind]
                 end
             end
         end
