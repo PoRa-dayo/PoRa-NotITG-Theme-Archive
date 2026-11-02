@@ -18,7 +18,7 @@ end"><children>
             self:shadowlength(0)
             self:accelerate(0.5)
             self:diffusealpha(1)
-            self:maxwidth(800)
+            self:maxwidth(550)
         end"
         OffCommand="accelerate,0.25;diffusealpha,0"
     />
