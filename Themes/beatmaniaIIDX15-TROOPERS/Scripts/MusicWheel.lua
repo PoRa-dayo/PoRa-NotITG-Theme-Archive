@@ -25,6 +25,7 @@ BMIIDX15Glob={
     GroupSongNum = {},
     GroupSongNumDoubles = {},
     SongDiffs = {},
+    SongBanners = {},
     MusicWheelList = {},
     CurDiff = 7,
     YouShouldChangeThatShitNOW = false
@@ -130,6 +131,15 @@ for index, songg in ipairs(BMIIDX15Glob.AllSongs) do
                     keytitl = TitlList[TitlType][ind] .. n
                 end
                 BMIIDX15Glob.SongDiffs[keytitl] = DiffList
+                
+                if BMIIDX15Glob.SongBanners[keytitl] then
+                    local n = 2
+                    while BMIIDX15Glob.SongBanners[TitlList[TitlType][ind] .. n] do
+                        n = n + 1
+                    end
+                    keytitl = TitlList[TitlType][ind] .. n
+                end
+                BMIIDX15Glob.SongBanners[keytitl] = songg:GetBannerPath()
             end
         end
     end
@@ -222,11 +232,12 @@ function UpdateWheelTitles(FirstUpdate)
         local item = BMIIDX15Glob.MusicWheelList[index]
         
         --grab the titles and subtitles on the music wheel and store them in their corresponding tables
-        BMIIDX15Glob.SongTitles[index] = item:GetChildAt(8):GetChild('Title'):GetText()
+        local SongNameEle = item:GetChildAt(8)
+        BMIIDX15Glob.SongTitles[index] = SongNameEle:GetChild('Title'):GetText()
         BMIIDX15Glob.GroupTitles[index] = item:GetChildAt(9):GetText()
 
         -- if the Artist has not been changed to a diff number (corrupted), put it in ArtistTitles
-        local ArtistDisp = item:GetChildAt(8):GetChild('Artist')
+        local ArtistDisp = SongNameEle:GetChild('Artist')
         if not ArtistCorrupted(ArtistDisp:GetText()) then
             BMIIDX15Glob.ArtistTitles[index] = ArtistDisp:GetText()
         end
@@ -269,7 +280,7 @@ function UpdateWheelTitles(FirstUpdate)
 
             
             -- change the Artist to a diff number
-            if DifffList and item:GetChildAt(8):GetChild('Artist') ~= '' then
+            if DifffList and SongNameEle:GetChild('Artist') ~= '' then
                 local ClosestDiff = GetClosestDiff(DifffList, BMIIDX15Glob.CurDiff)
                 BMIIDX15Glob.DiffNumTitles[index] = DiffMeterConvert(DifffList[ClosestDiff])
                 if not ClosestDiff then
@@ -282,6 +293,35 @@ function UpdateWheelTitles(FirstUpdate)
                 DiffuseDifficultyTopGradient(ArtistDisp, ClosestDiff)
                 DiffuseDifficultyBottomGradient(ArtistDisp, ClosestDiff)
                 ArtistDisp:zoom(1)
+            end
+            
+            if Profile().IIDXDJTroopersMusicWheelBanner == "ON" then
+                --replace the MusicWheelItem sort graphic with the banner
+                local BnPath = BMIIDX15Glob.SongBanners[KeyTitl]
+                local ItemBG = item:GetChildAt(6)
+                if (not SongNameEle:GetHidden()) then
+                    if ItemBG:GetHidden() then
+                        ItemBG:hidden(0)
+                        if BnPath then
+                            ItemBG:LoadBanner(BnPath)
+                        else
+                            ItemBG:Load(THEME:GetPath(EC_GRAPHICS,'','_blank'))
+                        end
+                        ItemBG:animate(0)
+                        ItemBG:x(70)
+                        ItemBG:zoomto(90,28)
+                        ItemBG:diffuseleftedge(1,1,1,0)
+                    else
+                        ItemBG:hidden(0)
+                    end
+                elseif GAMESTATE:GetSortOrder() == 13 then
+                    --unless the player is selecting the sort mode, then return the MusicWheelItem sort graphic back to normal
+                    ItemBG:hidden(0)
+                    ItemBG:x(0)
+                    ItemBG:zoom(1)
+                    ItemBG:diffuseleftedge(1,1,1,1)
+                    ItemBG:Load(THEME:GetPath(EC_GRAPHICS,'MusicWheelItem','sort'))
+                end
             end
         end
     end

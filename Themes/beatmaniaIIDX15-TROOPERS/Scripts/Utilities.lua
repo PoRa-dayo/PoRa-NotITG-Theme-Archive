@@ -776,6 +776,42 @@ function ToastyP2Option()
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
 end
 
+function MusicWheelBannerOption()
+	local modList = {"OFF", "ON"}
+    
+	local Params = {
+		Name = "Music Wheel\nBanner",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        if not Profile().IIDXDJTroopersMusicWheelBanner then
+            list[1] = true
+        elseif Profile().IIDXDJTroopersToastyP2 then 
+            for ind, val in ipairs(modList) do
+                if val == Profile().IIDXDJTroopersMusicWheelBanner then
+                    list[ind] = true
+                end
+            end
+        else
+            list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        for ind, val in ipairs(list) do
+            if val then
+                Profile().IIDXDJTroopersMusicWheelBanner = modList[ind]
+            end
+        end
+        SaveProfiles()
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
 
 --[[
 Lua Theme Switcher, OpenITG beta 1, version 1.5
