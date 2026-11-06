@@ -308,7 +308,7 @@ function UpdateWheelTitles(FirstUpdate)
                             ItemBG:Load(THEME:GetPath(EC_GRAPHICS,'','_blank'))
                         end
                         ItemBG:animate(0)
-                        ItemBG:x(70)
+                        ItemBG:x((SCREEN_WIDTH-98) - math.max(SCREEN_CENTER_X+(540-320),SCREEN_WIDTH-125) + 70)
                         ItemBG:zoomto(90,28)
                         ItemBG:diffuseleftedge(1,1,1,0)
                     else

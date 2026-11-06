@@ -70,8 +70,9 @@
 		<Layer
 		Type="Quad"
 		OnCommand="%function(self)
-		self:sleep(10)
-		self:queuecommand('UpdateSongAmmount')
+        self:sleep(1)
+        self:queuecommand('UpdateSongAmmount')
+		self:sleep(9)
 		end"
 		UpdateSongAmmountCommand="%function(self)
 		local Profile = PROFILEMAN:GetMachineProfile():GetSaved()
