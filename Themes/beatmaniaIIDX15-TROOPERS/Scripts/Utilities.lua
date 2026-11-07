@@ -696,7 +696,6 @@ function DecideSFXOption()
                 Profile().IIDXDJTroopersDecideSFX = modList[ind]
             end
         end
-        SaveProfiles()
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
@@ -733,7 +732,6 @@ function ToastyP1Option()
                 Profile().IIDXDJTroopersToasty = modList[ind]
             end
         end
-        SaveProfiles()
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
@@ -806,7 +804,6 @@ function MusicWheelBannerOption()
                 Profile().IIDXDJTroopersMusicWheelBanner = modList[ind]
             end
         end
-        SaveProfiles()
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)

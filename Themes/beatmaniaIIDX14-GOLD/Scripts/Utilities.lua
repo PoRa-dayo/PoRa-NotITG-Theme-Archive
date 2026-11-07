@@ -696,7 +696,6 @@ function DecideSFXOption()
                 Profile().IIDXGoldDecideSFX = modList[ind]
             end
         end
-        SaveProfiles()
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
@@ -733,7 +732,6 @@ function ToastyP1Option()
                 Profile().IIDXGoldToasty = modList[ind]
             end
         end
-        SaveProfiles()
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
@@ -806,7 +804,6 @@ function MusicWheelBannerOption()
                 Profile().IIDXGoldMusicWheelBanner = modList[ind]
             end
         end
-        SaveProfiles()
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
