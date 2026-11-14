@@ -43,7 +43,7 @@ Pretty insane how functional this theme still is even on NotITG current version
 -Original theme by Mad Matt, no longer maintained. Optimized for NotITG 4.9.1 by PoRa
 
 ## Changelogs:
--Added "Play Mods" (takes you to 2P Regular immediately, also note that this will always pick The Forest since this theme doesn't save the world you picked last session)\
+-Added "Play Mods" (takes you to 2P Regular immediately, also note that this will pick The Forest if you haven't chosen a world before, since this theme doesn't save the world you picked last session)\
 -The theme now uses less arbitrarily named global variables to avoid conflicts with modfiles.\
 -Fixed the issue that made the speedmod set at setdefault in modfiles get overwritten by player's speedmod.\
 -Made noteskins use the entire NoteSkins folder, judgment fonts use the _Judgments folder, added Hold Judgment customizations, and moved around some options.\
