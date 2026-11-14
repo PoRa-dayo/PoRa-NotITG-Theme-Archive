@@ -67,4 +67,102 @@
         File="ScreenSelectCourse banner frame"
         OnCommand="zoom,0.62;zoomy,0.6;x,SCREEN_CENTER_X-58;y,SCREEN_CENTER_Y-38;"
     />
+    
+    
+    <Layer
+        File="ScrollBar parts"
+        Condition="FUCK_EXE"
+        OnCommand="%function(self)
+            self:animate(0)
+            self:setstate(0)
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y-220/2-self:GetHeight()/2 -15)
+            
+            self:addx(30)
+            self:sleep(0.5)
+            self:decelerate(0.2)
+            self:addx(-30)
+        end"
+    />
+    <Layer
+        File="ScrollBar parts"
+        Condition="FUCK_EXE"
+        OnCommand="%function(self)
+            self:animate(0)
+            self:setstate(1)
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y -15)
+            self:zoomtoheight(220)
+            
+            self:addx(30)
+            self:sleep(0.5)
+            self:decelerate(0.2)
+            self:addx(-30)
+        end"
+    />
+    <Layer
+        File="ScrollBar parts"
+        Condition="FUCK_EXE"
+        OnCommand="%function(self)
+            self:animate(0)
+            self:setstate(2)
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y+220/2+self:GetHeight()/2 -15)
+            
+            self:addx(30)
+            self:sleep(0.5)
+            self:decelerate(0.2)
+            self:addx(-30)
+        end"
+    />
+    <Layer
+        Type="ActorFrame"
+        Condition="FUCK_EXE"
+        OnCommand="x,SCREEN_WIDTH-98+102-18;y,SCREEN_CENTER_Y-15"
+        CurrentSongChangedMessageCommand="queuecommand,UpdateThumb"
+        UpdateThumbCommand="%function(self)
+            local ScrollBarEle = SCREENMAN:GetTopScreen():GetChild('MusicWheel'):GetChild('')
+            local EndDelta = 0
+            local T1ZoomY = ScrollBarEle:GetChildAt(1):GetZoomY()
+            local T2ZoomY = ScrollBarEle:GetChildAt(2):GetZoomY()
+            local T1Y = ScrollBarEle:GetChildAt(1):GetY()
+            local T2Y = ScrollBarEle:GetChildAt(2):GetY()
+            
+            if T2ZoomY >= T1ZoomY+0.01 then
+                if T2ZoomY > 0 then
+                    EndDelta = (T1ZoomY/2)*(T1ZoomY/T2ZoomY)
+                end
+                self:y(SCREEN_CENTER_Y+T2Y+EndDelta -15)
+            else
+                if T2ZoomY > 0 then
+                    EndDelta = (T1ZoomY/2)*(T2ZoomY/T1ZoomY)
+                end
+                self:y(SCREEN_CENTER_Y+T1Y-EndDelta -15)
+            end
+        end"
+    ><children>
+        <Layer
+            File="ScrollBar thumb"
+            OnCommand="%function(self)
+                self:addx(30)
+                self:sleep(0.5)
+                self:decelerate(0.2)
+                self:addx(-30)
+            end"
+        />
+        <Layer
+            File="ScrollBar thumb"
+            OnCommand="%function(self)
+                self:blend('add')
+                self:diffuseramp()
+                self:effectcolor1(1,1,1,0.3)
+                self:effectcolor2(1,1,1,0.7)
+                
+                self:addx(30)
+                self:sleep(0.5)
+                self:decelerate(0.2)
+                self:addx(-30)
+            end"
+        />
+    </children></Layer>
 </children></ActorFrame>

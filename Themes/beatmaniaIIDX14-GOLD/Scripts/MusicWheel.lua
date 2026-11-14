@@ -28,7 +28,8 @@ BMIIDX14Glob={
     SongBanners = {},
     MusicWheelList = {},
     CurDiff = 7,
-    YouShouldChangeThatShitNOW = false
+    YouShouldChangeThatShitNOW = false,
+    ScrollUpdate = false
 }
 local StartIndex=nil
 BMIIDX14Glob.AllSongs = SONGMAN:GetAllSongs()
