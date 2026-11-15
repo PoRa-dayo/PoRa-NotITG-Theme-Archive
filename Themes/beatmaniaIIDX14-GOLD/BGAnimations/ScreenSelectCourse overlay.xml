@@ -10,16 +10,16 @@
         MESSAGEMAN:Broadcast('Update')
     end"
     UpdateScrollCommand="%function(self)
-        if BMIIDX14Glob.ScrollUpdate then return end
-        BMIIDX14Glob.ScrollUpdate=true
+        if BMIIDX14Glob.ScrollUpdateNOW then return end
+        BMIIDX14Glob.ScrollUpdateNOW=true
         self:queuecommand('Scroll')
     end"
     ScrollCommand="%function(self)
-        if BMIIDX14Glob.ScrollUpdate then
+        if BMIIDX14Glob.ScrollUpdateNOW then
             self:sleep(0.1)
             self:queuecommand('WheelSelect')
         end
-        BMIIDX14Glob.ScrollUpdate = false
+        BMIIDX14Glob.ScrollUpdateNOW = false
     end"
     WheelSelectCommand="%function(self)
         UpdateWheelSelection()
@@ -32,7 +32,8 @@
             BMIIDX14Glob.MusicWheelList = {}
             BMIIDX14Glob.SelectedWheelItems = {}
             BMIIDX14Glob.FirstTweening=true
-            BMIIDX14Glob.ScrollUpdate = false
+            BMIIDX14Glob.ScrollUpdateNOW = false
+            BMIIDX14Glob.DirCompare=nil
             self:sleep(0.5)
             self:queuecommand('Disallow')
         end"
@@ -138,7 +139,13 @@
         Type="ActorFrame"
         Condition="FUCK_EXE"
         OnCommand="x,SCREEN_WIDTH-98+102-18;y,SCREEN_CENTER_Y-15"
-        CurrentSongChangedMessageCommand="queuecommand,UpdateThumb"
+        CurrentSongChangedMessageCommand="%function(self)
+            self:queuecommand('UpdateThumb')
+            if not BMIIDX14Glob.FirstTweening then
+                BMIIDX14Glob.PrevCWI = CurWheelIndex()
+                BMIIDX14Glob.DirCompare = BMIIDX14Glob.MusicWheelList[CurWheelIndex()]:GetY()
+            end
+        end"
         UpdateThumbCommand="%function(self)
             local ScrollBarEle = SCREENMAN:GetTopScreen():GetChild('MusicWheel'):GetChild('')
             local EndDelta = 0
@@ -161,6 +168,17 @@
                     EndDelta = (T1ZoomY/2)*(T2ZoomY/T1ZoomY)
                 end
                 self:y(SCREEN_CENTER_Y+T1Y-EndDelta -15)
+            end
+            
+            if not BMIIDX14Glob.FirstTweening then
+                local NewDirCompare = BMIIDX14Glob.MusicWheelList[BMIIDX14Glob.PrevCWI]:GetY()
+                if BMIIDX14Glob.DirCompare and BMIIDX14Glob.DirCompare < NewDirCompare then
+                    BMIIDX14Glob.DirCompare = nil
+                    MESSAGEMAN:Broadcast('ScrollUp')
+                elseif BMIIDX14Glob.DirCompare and BMIIDX14Glob.DirCompare > NewDirCompare then
+                    BMIIDX14Glob.DirCompare = nil
+                    MESSAGEMAN:Broadcast('ScrollDown')
+                end
             end
         end"
     ><children>
@@ -188,4 +206,34 @@
             end"
         />
     </children></Layer>
+    <Layer
+        File="ScrollBar thumb"
+        OnCommand="%function(self)
+            self:zoomy(0.5)
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y-220/2-self:GetHeight()/2+4 -15)
+            self:diffusealpha(0)
+        end"
+        ScrollUpMessageCommand="%function(self)
+            self:finishtweening()
+            self:diffusealpha(1)
+            self:linear(0.2)
+            self:diffusealpha(0)
+        end"
+    />
+    <Layer
+        File="ScrollBar thumb"
+        OnCommand="%function(self)
+            self:zoomy(0.5)
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y+220/2+self:GetHeight()/2-4 -15)
+            self:diffusealpha(0)
+        end"
+        ScrollDownMessageCommand="%function(self)
+            self:finishtweening()
+            self:diffusealpha(1)
+            self:linear(0.2)
+            self:diffusealpha(0)
+        end"
+    />
 </children></ActorFrame>

@@ -29,6 +29,7 @@ BMIIDX14Glob={
     MusicWheelList = {},
     SelectedWheelItems = {},
     CurDiff = 7,
+    FirstTweening = true,
     YouShouldChangeThatShitNOW = false,
     ScrollUpdate = false
 }
@@ -271,9 +272,9 @@ function UpdateWheelTitles(FirstUpdate)
                 end
             end
             
-            if FirstUpdate and index == 11 then
+            if FirstUpdate and index == math.ceil(Count) then
                 --this is ONLY activated when the ScreenSelectMusic screen is first initiated,
-                --so the wheel index of the currently selected song is guaranteed to be 11, not affected by scrolling anims.
+                --so the wheel index of the currently selected song is guaranteed to be math.ceil(Count), not affected by scrolling anims.
                 UpdateDiffOfCSong(KeyTitl)
             end
             
@@ -311,7 +312,7 @@ function UpdateWheelTitles(FirstUpdate)
                             ItemBG:Load(THEME:GetPath(EC_GRAPHICS,'','_blank'))
                         end
                         ItemBG:animate(0)
-                        ItemBG:x((SCREEN_WIDTH-98) - math.max(SCREEN_CENTER_X+(540-320),SCREEN_WIDTH-125) + 75)
+                        ItemBG:x((SCREEN_WIDTH-98) - math.max(SCREEN_CENTER_X+(540-320),SCREEN_WIDTH-114) + 75)
                         ItemBG:zoomto(90,28)
                         ItemBG:diffuseleftedge(1,1,1,0)
                     else
@@ -448,7 +449,7 @@ function WheelSelectItem(WheelIndex)
     for ind = 0,14 do
         local DaChild = item:GetChildAt(ind)
         DaChild:finishtweening()
-        DaChild:linear(0.05)
+        DaChild:decelerate(0.05)
         DaChild:addx(-11)
     end
 end
@@ -459,7 +460,7 @@ function WheelDeselectItem(WheelIndex)
     for ind = 0,14 do
         local DaChild = item:GetChildAt(ind)
         DaChild:finishtweening()
-        DaChild:linear(0.05)
+        DaChild:decelerate(0.05)
         DaChild:addx(11)
     end
 end
