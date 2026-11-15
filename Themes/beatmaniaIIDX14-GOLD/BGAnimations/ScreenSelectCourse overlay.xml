@@ -128,6 +128,10 @@
             local T1Y = ScrollBarEle:GetChildAt(1):GetY()
             local T2Y = ScrollBarEle:GetChildAt(2):GetY()
             
+            if not BMIIDX14Glob.FirstTweening then
+                self:finishtweening()
+                self:decelerate(0.1)
+            end
             if T2ZoomY >= T1ZoomY+0.01 then
                 if T2ZoomY > 0 then
                     EndDelta = (T1ZoomY/2)*(T1ZoomY/T2ZoomY)
