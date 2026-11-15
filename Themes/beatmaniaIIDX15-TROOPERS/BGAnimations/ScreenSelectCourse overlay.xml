@@ -1,6 +1,7 @@
 <ActorFrame
     CurrentSongChangedMessageCommand="%function(self)
         MESSAGEMAN:Broadcast('Update')
+        self:queuecommand('UpdateScroll')
     end"
     CurrentStepsP1ChangedMessageCommand="%function(self)
         MESSAGEMAN:Broadcast('Update')
@@ -8,12 +9,31 @@
     CurrentStepsP2ChangedMessageCommand="%function(self)
         MESSAGEMAN:Broadcast('Update')
     end"
+    UpdateScrollCommand="%function(self)
+        if BMIIDX15Glob.ScrollUpdateNOW then return end
+        BMIIDX15Glob.ScrollUpdateNOW=true
+        self:queuecommand('Scroll')
+    end"
+    ScrollCommand="%function(self)
+        if BMIIDX15Glob.ScrollUpdateNOW then
+            self:sleep(0.1)
+            self:queuecommand('WheelSelect')
+        end
+        BMIIDX15Glob.ScrollUpdateNOW = false
+    end"
+    WheelSelectCommand="%function(self)
+        UpdateWheelSelection()
+    end"
     ><children>
     
     <Layer
         Type="Quad"
         OnCommand="%function(self)
+            BMIIDX15Glob.MusicWheelList = {}
+            BMIIDX15Glob.SelectedWheelItems = {}
             BMIIDX15Glob.FirstTweening=true
+            BMIIDX15Glob.ScrollUpdateNOW = false
+            BMIIDX15Glob.DirCompare=nil
             self:sleep(0.5)
             self:queuecommand('Disallow')
         end"
@@ -129,7 +149,13 @@
         Type="ActorFrame"
         Condition="FUCK_EXE"
         OnCommand="x,SCREEN_WIDTH-98+102-15;y,SCREEN_CENTER_Y+50"
-        CurrentSongChangedMessageCommand="queuecommand,UpdateThumb"
+        CurrentSongChangedMessageCommand="%function(self)
+            self:queuecommand('UpdateThumb')
+            if not BMIIDX15Glob.FirstTweening then
+                BMIIDX15Glob.PrevCWI = CurWheelIndex()
+                BMIIDX15Glob.DirCompare = BMIIDX15Glob.MusicWheelList[CurWheelIndex()]:GetY()
+            end
+        end"
         UpdateThumbCommand="%function(self)
             local ScrollBarEle = SCREENMAN:GetTopScreen():GetChild('MusicWheel'):GetChild('')
             local EndDelta = 0
@@ -153,11 +179,23 @@
                 end
                 self:y(SCREEN_CENTER_Y+T1Y-EndDelta +58)
             end
+            
+            if not BMIIDX15Glob.FirstTweening then
+                local NewDirCompare = BMIIDX15Glob.MusicWheelList[BMIIDX15Glob.PrevCWI]:GetY()
+                if BMIIDX15Glob.DirCompare and BMIIDX15Glob.DirCompare < NewDirCompare then
+                    BMIIDX15Glob.DirCompare = nil
+                    MESSAGEMAN:Broadcast('ScrollUp')
+                elseif BMIIDX15Glob.DirCompare and BMIIDX15Glob.DirCompare > NewDirCompare then
+                    BMIIDX15Glob.DirCompare = nil
+                    MESSAGEMAN:Broadcast('ScrollDown')
+                end
+            end
         end"
     ><children>
         <Layer
             File="ScrollBar thumb"
             OnCommand="%function(self)
+                self:blend('add')
                 self:diffuse(0,0,0,0)
                 self:sleep(0.4)
                 self:linear(0.2)
@@ -179,4 +217,36 @@
             end"
         />
     </children></Layer>
+    <Layer
+        File="ScrollBar thumb"
+        OnCommand="%function(self)
+            self:blend('add')
+            self:zoomy(0.3)
+            self:x(SCREEN_WIDTH-98+102-15)
+            self:y(SCREEN_CENTER_Y-240/2-self:GetHeight()/2+24 +58)
+            self:diffusealpha(0)
+        end"
+        ScrollUpMessageCommand="%function(self)
+            self:finishtweening()
+            self:diffusealpha(1)
+            self:linear(0.2)
+            self:diffusealpha(0)
+        end"
+    />
+    <Layer
+        File="ScrollBar thumb"
+        OnCommand="%function(self)
+            self:blend('add')
+            self:zoomy(0.3)
+            self:x(SCREEN_WIDTH-98+102-15)
+            self:y(SCREEN_CENTER_Y+240/2+self:GetHeight()/2-24 +58)
+            self:diffusealpha(0)
+        end"
+        ScrollDownMessageCommand="%function(self)
+            self:finishtweening()
+            self:diffusealpha(1)
+            self:linear(0.2)
+            self:diffusealpha(0)
+        end"
+    />
 </children></ActorFrame>

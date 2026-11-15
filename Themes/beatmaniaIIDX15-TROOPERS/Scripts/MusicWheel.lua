@@ -27,8 +27,11 @@ BMIIDX15Glob={
     SongDiffs = {},
     SongBanners = {},
     MusicWheelList = {},
+    SelectedWheelItems = {},
     CurDiff = 7,
-    YouShouldChangeThatShitNOW = false
+    FirstTweening = true,
+    YouShouldChangeThatShitNOW = false,
+    ScrollUpdate = false
 }
 local StartIndex=nil
 BMIIDX15Glob.AllSongs = SONGMAN:GetAllSongs()
@@ -211,7 +214,8 @@ end
 --where the diff numbers on wheel magic begins
 function UpdateWheelTitles(FirstUpdate)
     if not FUCK_EXE then return end
-    if GAMESTATE:IsCourseMode() or (not SCREENMAN:GetTopScreen():GetChild('MusicWheel')) then
+    if GAMESTATE:IsCourseMode() then return end
+    if (not SCREENMAN:GetTopScreen():GetChild('MusicWheel')) then
         BMIIDX15Glob.MusicWheelList = {}
         return
     end
@@ -268,9 +272,9 @@ function UpdateWheelTitles(FirstUpdate)
                 end
             end
             
-            if FirstUpdate and index == 11 then
+            if FirstUpdate and index == math.ceil(Count) then
                 --this is ONLY activated when the ScreenSelectMusic screen is first initiated,
-                --so the wheel index of the currently selected song is guaranteed to be 11, not affected by scrolling anims.
+                --so the wheel index of the currently selected song is guaranteed to be math.ceil(Count), not affected by scrolling anims.
                 UpdateDiffOfCSong(KeyTitl)
             end
             
@@ -308,7 +312,7 @@ function UpdateWheelTitles(FirstUpdate)
                             ItemBG:Load(THEME:GetPath(EC_GRAPHICS,'','_blank'))
                         end
                         ItemBG:animate(0)
-                        ItemBG:x((SCREEN_WIDTH-98) - math.max(SCREEN_CENTER_X+(540-320),SCREEN_WIDTH-125) + 70)
+                        ItemBG:x((SCREEN_WIDTH-98) - math.max(SCREEN_CENTER_X+(540-320),SCREEN_WIDTH-114) + 75)
                         ItemBG:zoomto(90,28)
                         ItemBG:diffuseleftedge(1,1,1,0)
                     else
@@ -434,6 +438,40 @@ function UpdateDiffOfCSong(KeyTitl)
                     BMIIDX15Glob.SongDiffs[KeyTitl][ind] = DList[ind]
                 end
             end
+        end
+    end
+end
+
+--The game locked the positions of the parent WheelItem actors, so we have to modify each individual child
+function WheelSelectItem(WheelIndex)
+    BMIIDX15Glob.SelectedWheelItems[WheelIndex] = true
+    local item = BMIIDX15Glob.MusicWheelList[WheelIndex]
+    for ind = 0,14 do
+        local DaChild = item:GetChildAt(ind)
+        DaChild:finishtweening()
+        DaChild:decelerate(0.05)
+        DaChild:addx(-11)
+    end
+end
+
+function WheelDeselectItem(WheelIndex)
+    BMIIDX15Glob.SelectedWheelItems[WheelIndex] = nil
+    local item = BMIIDX15Glob.MusicWheelList[WheelIndex]
+    for ind = 0,14 do
+        local DaChild = item:GetChildAt(ind)
+        DaChild:finishtweening()
+        DaChild:decelerate(0.05)
+        DaChild:addx(11)
+    end
+end
+
+function UpdateWheelSelection()
+    local CWI = CurWheelIndex()
+    for ind = 1,#BMIIDX15Glob.MusicWheelList do
+        if BMIIDX15Glob.SelectedWheelItems[ind] and ind ~= CWI then
+            WheelDeselectItem(ind)
+        elseif (not BMIIDX15Glob.SelectedWheelItems[ind]) and ind == CWI then
+            WheelSelectItem(ind)
         end
     end
 end
