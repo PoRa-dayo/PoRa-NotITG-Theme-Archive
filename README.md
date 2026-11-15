@@ -423,7 +423,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 -Above the banner in the song selection screen is now the song title, song subtitle and song artist, instead of just the song artist.\
 -The difficulties on the music wheel are now more like in the original IIDX.\
 -Added group name display and number of songs in the group like the original IIDX.\
--Changed the music wheel starting animation to be more like the original IIDX, added an option to show banner on music wheel.\
+-Changed the music wheel starting animation to be more like the original IIDX, the selected music wheel item now moves slightly to the left like the original game, added an option to show banner on music wheel.\
 -Scroll bar in course/music select screen now behaves similarly to the original game.\
 -Converted the grade system to a 17-tier one.\
 -Noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options.\
@@ -443,7 +443,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 
 <img width="200" alt="NotITG-v4 9 1_NJKWbTCH2e" src="https://github.com/user-attachments/assets/85104be9-b12b-44b3-b650-20dfa4f0c3fa" />
 <img width="200" alt="NotITG-v4 9 1_GtUzV3sWtd" src="https://github.com/user-attachments/assets/f7e91440-57b8-43ae-8328-64bd20ba9cfe" />
-<img width="200" alt="NotITG-v4 9 1_sHZ8e2srem" src="https://github.com/user-attachments/assets/798dc78f-8857-4e3d-9cde-5136766574ce" />
+<img width="200" alt="NotITG-v4 9 1_49EelrzTSi" src="https://github.com/user-attachments/assets/6a8955d4-77f0-4f98-9ff4-a9493ef3d1ab" />
 <img width="200" alt="NotITG-v4 9 1_UnfWajcjL7" src="https://github.com/user-attachments/assets/f04a3188-6999-4781-90ed-dc1b4c006535" />
 <img width="200" alt="NotITG-v4 9 1_vNZFYpKQPj" src="https://github.com/user-attachments/assets/f99763c0-19a2-44fe-90d8-25b50fa00098" />
 
@@ -465,7 +465,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 
 <img width="200" alt="NotITG-v4 9 1_7sLszMBYCm" src="https://github.com/user-attachments/assets/a4544c3d-3db2-4cc2-a374-6e43a109fd62" />
 <img width="200" alt="NotITG-v4 9 1_GhrlklcEME" src="https://github.com/user-attachments/assets/ef135aaa-1669-4ef0-aac5-7b1736499504" />
-<img width="200" alt="NotITG-v4 9 1_pD8ZGhUwqQ" src="https://github.com/user-attachments/assets/1ea0437b-792a-4568-90ea-0ce60a2d376c" />
+<img width="200" alt="NotITG-v4 9 1_XnXLCSHlee" src="https://github.com/user-attachments/assets/26667aff-ee05-4838-bd58-093f5c8f7b9c" />
 <img width="200" alt="NotITG-v4 9 1_Xwb9m7zhP0" src="https://github.com/user-attachments/assets/b6c09fc2-9089-4d26-9d83-7fc74fb25e70" />
 <img width="200" alt="NotITG-v4 9 1_PrPC7Q23sf" src="https://github.com/user-attachments/assets/64a9581c-4409-4f70-81fb-521420a75007" />
 
