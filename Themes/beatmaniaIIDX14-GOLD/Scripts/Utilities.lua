@@ -585,6 +585,176 @@ function SaveProfiles() return PROFILEMAN:SaveMachineProfile() end
 
 --Theme Options
 
+CommonBGMList = {"DEFAULT", "EXTRA", "LED", "SUZAKU", "TAKA", "YOSHITAKA", "RANDOM"}
+
+function CommonBGMOption()
+	local modList = CommonBGMList
+    
+	local Params = {
+		Name = "Common BGM",
+		LayoutType = "ShowOneInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true,
+        ExportOnChange = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        BMIIDX14Glob.TempCommonBGM = nil
+        if not Profile().IIDXGoldCommonBGM then
+            list[1] = true
+        elseif Profile().IIDXGoldCommonBGM then 
+            for ind, val in ipairs(modList) do
+                if val == Profile().IIDXGoldCommonBGM then
+                    list[ind] = true
+                end
+            end
+        else
+            list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        for ind, val in ipairs(list) do
+            if val then
+                BMIIDX14Glob.TempCommonBGM = modList[ind]
+                
+                local SoundPlayer = BMIIDX14Glob.OptionsSoundActor
+                local path = THEME:GetPath( EC_SOUNDS, '', 'mm_previews/'..string.lower(modList[ind]) )
+                SoundPlayer:load(path)
+                SoundPlayer:start()
+                SoundPlayer:get():startsecond(0)
+            end
+        end
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+DecideSFXList = {"DEFAULT", "EXTRA", "LED", "SUZAKU", "TAKA", "YOSHITAKA", "RANDOM"}
+
+function DecideSFXOption()
+	local modList = DecideSFXList
+    
+	local Params = {
+		Name = "Decide SFX",
+		LayoutType = "ShowOneInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true,
+        ExportOnChange = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        BMIIDX14Glob.TempDecideSFX = nil
+        if not Profile().IIDXGoldDecideSFX then
+            list[1] = true
+        elseif Profile().IIDXGoldDecideSFX then 
+            for ind, val in ipairs(modList) do
+                if val == Profile().IIDXGoldDecideSFX then
+                    list[ind] = true
+                end
+            end
+        else
+            list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        for ind, val in ipairs(list) do
+            if val then
+                BMIIDX14Glob.TempDecideSFX = modList[ind]
+                
+                local SoundPlayer = BMIIDX14Glob.OptionsSoundActor
+                local path = THEME:GetPath( EC_SOUNDS, '', 'decide/'..string.lower(modList[ind]) )
+                SoundPlayer:load(path)
+                SoundPlayer:start()
+                SoundPlayer:get():startsecond(0)
+            end
+        end
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+
+function ToastyP1Option()
+	local modList = {"Michael a la Mode", "Happy Sky", "DistorteD", "Gold", "Troopers", "Empress", "SIRIUS", "OFF"}
+    
+	local Params = {
+		Name = "P1 Toasty",
+		LayoutType = "ShowOneInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true,
+        ExportOnChange = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        BMIIDX14Glob.TempToasty = nil
+        if not Profile().IIDXGoldToasty then
+            list[1] = true
+        elseif Profile().IIDXGoldToasty then 
+            for ind, val in ipairs(modList) do
+                if val == Profile().IIDXGoldToasty then
+                    list[ind] = true
+                end
+            end
+        else
+            list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        for ind, val in ipairs(list) do
+            if val then
+                BMIIDX14Glob.TempToasty = modList[ind]
+                MESSAGEMAN:Broadcast('LoadToastyP1')
+            end
+        end
+        BMIIDX14Glob.OptionsSoundActor:stop()
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
+
+function ToastyP2Option()
+	local modList = {"Michael a la Mode", "Happy Sky", "DistorteD", "Gold", "Troopers", "Empress", "SIRIUS", "OFF"}
+    
+	local Params = {
+		Name = "P2 Toasty",
+		LayoutType = "ShowOneInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true,
+        ExportOnChange = true
+	}
+    
+    local loadFunc = function(self, list, pn)
+        BMIIDX14Glob.TempToastyP2 = nil
+        if not Profile().IIDXGoldToastyP2 then
+            list[1] = true
+        elseif Profile().IIDXGoldToastyP2 then 
+            for ind, val in ipairs(modList) do
+                if val == Profile().IIDXGoldToastyP2 then
+                    list[ind] = true
+                end
+            end
+        else
+            list[1] = true
+        end
+    end
+
+    local saveFunc = function(self, list, pn)
+        for ind, val in ipairs(list) do
+            if val then
+                BMIIDX14Glob.TempToastyP2 = modList[ind]
+                MESSAGEMAN:Broadcast('LoadToastyP2')
+            end
+        end
+        BMIIDX14Glob.OptionsSoundActor:stop()
+    end
+    
+	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
+end
+
 function ScreenFilterOption()
 	local modList = {"OFF", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0"}
     
@@ -622,153 +792,7 @@ function ScreenFilterOption()
                 Profile().IIDXGoldScreenFilter = modList[ind]
             end
         end
-    end
-    
-	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
-end
-
-CommonBGMList = {"DEFAULT", "EXTRA", "LED", "SUZAKU", "TAKA", "YOSHITAKA", "RANDOM"}
-
-function CommonBGMOption()
-	local modList = CommonBGMList
-    
-	local Params = {
-		Name = "Common BGM",
-		LayoutType = "ShowOneInRow",
-		SelectType = "SelectOne",
-		OneChoiceForAllPlayers = true
-	}
-    
-    local loadFunc = function(self, list, pn)
-        if not Profile().IIDXGoldCommonBGM then
-            list[1] = true
-        elseif Profile().IIDXGoldCommonBGM then 
-            for ind, val in ipairs(modList) do
-                if val == Profile().IIDXGoldCommonBGM then
-                    list[ind] = true
-                end
-            end
-        else
-            list[1] = true
-        end
-    end
-
-    local saveFunc = function(self, list, pn)
-        for ind, val in ipairs(list) do
-            if val then
-                Profile().IIDXGoldCommonBGM = modList[ind]
-            end
-        end
-    end
-    
-	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
-end
-
-DecideSFXList = {"DEFAULT", "EXTRA", "LED", "SUZAKU", "TAKA", "YOSHITAKA", "RANDOM"}
-
-function DecideSFXOption()
-	local modList = DecideSFXList
-    
-	local Params = {
-		Name = "Decide SFX",
-		LayoutType = "ShowOneInRow",
-		SelectType = "SelectOne",
-		OneChoiceForAllPlayers = true
-	}
-    
-    local loadFunc = function(self, list, pn)
-        if not Profile().IIDXGoldDecideSFX then
-            list[1] = true
-        elseif Profile().IIDXGoldDecideSFX then 
-            for ind, val in ipairs(modList) do
-                if val == Profile().IIDXGoldDecideSFX then
-                    list[ind] = true
-                end
-            end
-        else
-            list[1] = true
-        end
-    end
-
-    local saveFunc = function(self, list, pn)
-        for ind, val in ipairs(list) do
-            if val then
-                Profile().IIDXGoldDecideSFX = modList[ind]
-            end
-        end
-    end
-    
-	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
-end
-
-
-function ToastyP1Option()
-	local modList = {"Michael a la Mode", "Happy Sky", "DistorteD", "Gold", "Troopers", "Empress", "SIRIUS", "OFF"}
-    
-	local Params = {
-		Name = "P1 Toasty",
-		LayoutType = "ShowOneInRow",
-		SelectType = "SelectOne",
-		OneChoiceForAllPlayers = true
-	}
-    
-    local loadFunc = function(self, list, pn)
-        if not Profile().IIDXGoldToasty then
-            list[1] = true
-        elseif Profile().IIDXGoldToasty then 
-            for ind, val in ipairs(modList) do
-                if val == Profile().IIDXGoldToasty then
-                    list[ind] = true
-                end
-            end
-        else
-            list[1] = true
-        end
-    end
-
-    local saveFunc = function(self, list, pn)
-        for ind, val in ipairs(list) do
-            if val then
-                Profile().IIDXGoldToasty = modList[ind]
-            end
-        end
-    end
-    
-	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
-end
-
-
-function ToastyP2Option()
-	local modList = {"Michael a la Mode", "Happy Sky", "DistorteD", "Gold", "Troopers", "Empress", "SIRIUS", "OFF"}
-    
-	local Params = {
-		Name = "P2 Toasty",
-		LayoutType = "ShowOneInRow",
-		SelectType = "SelectOne",
-		OneChoiceForAllPlayers = true
-	}
-    
-    local loadFunc = function(self, list, pn)
-        if not Profile().IIDXGoldToastyP2 then
-            list[1] = true
-        elseif Profile().IIDXGoldToastyP2 then 
-            for ind, val in ipairs(modList) do
-                if val == Profile().IIDXGoldToastyP2 then
-                    list[ind] = true
-                end
-            end
-        else
-            list[1] = true
-        end
-    end
-
-    local saveFunc = function(self, list, pn)
-        for ind, val in ipairs(list) do
-            if val then
-                Profile().IIDXGoldToastyP2 = modList[ind]
-            end
-        end
-        SaveProfiles()
+        BMIIDX14Glob.OptionsSoundActor:stop()
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
@@ -802,8 +826,15 @@ function MusicWheelBannerOption()
         for ind, val in ipairs(list) do
             if val then
                 Profile().IIDXGoldMusicWheelBanner = modList[ind]
+                
+                BMIIDX14Glob.OptionsSoundActor:stop()
+                Profile().IIDXGoldDecideSFX = BMIIDX14Glob.TempDecideSFX
+                Profile().IIDXGoldCommonBGM = BMIIDX14Glob.TempCommonBGM
+                Profile().IIDXGoldToasty = BMIIDX14Glob.TempToasty
+                Profile().IIDXGoldToastyP2 = BMIIDX14Glob.TempToastyP2
             end
         end
+        SaveProfiles()
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
