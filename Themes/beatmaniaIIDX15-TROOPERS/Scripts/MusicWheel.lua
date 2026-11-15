@@ -321,8 +321,10 @@ function UpdateWheelTitles(FirstUpdate)
                 elseif GAMESTATE:GetSortOrder() == 13 then
                     --unless the player is selecting the sort mode, then return the MusicWheelItem sort graphic back to normal
                     ItemBG:hidden(0)
-                    ItemBG:x(0)
-                    ItemBG:zoom(1)
+                    if ItemBG:GetZoom() ~= 1 then
+                        ItemBG:x(index == CurWheelIndex() and -11 or 0)
+                        ItemBG:zoom(1)
+                    end
                     ItemBG:diffuseleftedge(1,1,1,1)
                     ItemBG:Load(THEME:GetPath(EC_GRAPHICS,'MusicWheelItem','sort'))
                 end
