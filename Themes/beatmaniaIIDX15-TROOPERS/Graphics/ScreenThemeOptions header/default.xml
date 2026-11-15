@@ -1,0 +1,12 @@
+<ActorFrame><children>
+    <ActorSound
+        File="@THEME:GetPath( EC_SOUNDS, '', '_silent' )"
+        Condition="FUCK_EXE"
+        InitCommand="%function(self) BMIIDX15Glob.OptionsSoundActor = self end"
+    />
+    
+    <Layer
+        File="@THEME:GetPath( EC_BGANIMATIONS, '', 'toasty/preview' )"
+    />
+
+</children></ActorFrame>

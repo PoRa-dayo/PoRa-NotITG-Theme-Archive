@@ -1,0 +1,104 @@
+<ActorFrame
+    Condition="FUCK_EXE"
+    ><children>
+    
+    //PLAYER 1
+    <Layer
+        File="../../meter stream"
+        OnCommand="draworder,-1;diffusealpha,0"
+        LoadToastyP1MessageCommand="%function(self)
+            self:stoptweening()
+            self:diffusealpha(0)
+            self:Load(THEME:GetPath(EC_BGANIMATIONS, '', 'toasty/' .. string.lower(BMIIDX15Glob.TempToasty) .. '/toastyP1_bg_static.png'))
+            self:queuecommand('ToastyP1')
+        end"
+        ToastyP1Command="x,SCREEN_CENTER_X-159;y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.166;diffusealpha,1;sleep,1;linear,0.166;diffusealpha,0"/>
+        
+    <Layer
+        File="../../meter stream"
+        OnCommand="draworder,-1;diffusealpha,0;blend,add;"
+        LoadToastyP1MessageCommand="%function(self)
+            self:stoptweening()
+            self:diffusealpha(0)
+            self:Load(THEME:GetPath(EC_BGANIMATIONS, '', 'toasty/' .. string.lower(BMIIDX15Glob.TempToasty) .. '/toastyP1_bg.png'))
+            self:queuecommand('ToastyP1')
+        end"
+        ToastyP1Command="addx,0;x,SCREEN_CENTER_X+(292-320)-159;y,SCREEN_CENTER_Y;cropleft,0.24;cropright,0;diffusealpha,0;sleep,0.066;linear,0.1;diffusealpha,0.8;linear,0.668;addx,56;cropleft,0;cropright,0.24;linear,0.1;diffusealpha,0"/>
+        
+    <Layer
+        File="../../meter stream"
+        OnCommand="draworder,-1;diffusealpha,0;"
+        LoadToastyP1MessageCommand="%function(self)
+            self:stoptweening()
+            self:diffusealpha(0)
+            if string.lower(BMIIDX15Glob.TempToasty) == 'michael a la mode' then
+                self:Load(THEME:GetPath(EC_BGANIMATIONS, '', 'toasty/michael a la mode/toastyP1.sprite'))
+            else
+                self:Load(THEME:GetPath(EC_BGANIMATIONS, '', 'toasty/' .. string.lower(BMIIDX15Glob.TempToasty) .. '/toastyP1.png'))
+            end
+            self:queuecommand('ToastyP1')
+        end"
+        ToastyP1Command="setstate,0;animate,1;x,SCREEN_CENTER_X-159;y,SCREEN_CENTER_Y+(364-240);addy,-120;diffusealpha,0;sleep,0.066;linear,0.1;addy,-4;diffusealpha,1;linear,1;addy,-10;linear,0.1;addy,-4;diffusealpha,0"/>
+               
+    <Layer
+        File="../../meter stream"
+        OnCommand="draworder,-1;diffusealpha,0;"
+        LoadToastyP1MessageCommand="%function(self)
+            self:stoptweening()
+            self:diffusealpha(0)
+            self:Load(THEME:GetPath(EC_BGANIMATIONS, '', 'toasty/' .. string.lower(BMIIDX15Glob.TempToasty) .. '/toastyP1_gradient.png'))
+            self:queuecommand('ToastyP1')
+        end"
+        ToastyP1Command="x,SCREEN_CENTER_X-159;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,0.166;linear,0.5;diffusealpha,0.8;linear,0.5;diffusealpha,0"/>
+
+
+    //PLAYER 2
+    <Layer
+        File="../../meter stream"
+        OnCommand="draworder,-1;diffusealpha,0"
+        LoadToastyP2MessageCommand="%function(self)
+            self:stoptweening()
+            self:diffusealpha(0)
+            self:Load(THEME:GetPath(EC_BGANIMATIONS, '', 'toasty/' .. string.lower(BMIIDX15Glob.TempToastyP2) .. '/toastyP1_bg_static.png'))
+            self:queuecommand('ToastyP2')
+        end"
+        ToastyP2Command="x,SCREEN_CENTER_X+159;y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.166;diffusealpha,1;sleep,1;linear,0.166;diffusealpha,0"/>
+        
+    <Layer
+        File="../../meter stream"
+        OnCommand="draworder,-1;diffusealpha,0;blend,add"
+        LoadToastyP2MessageCommand="%function(self)
+            self:stoptweening()
+            self:diffusealpha(0)
+            self:Load(THEME:GetPath(EC_BGANIMATIONS, '', 'toasty/' .. string.lower(BMIIDX15Glob.TempToastyP2) .. '/toastyP1_bg.png'))
+            self:queuecommand('ToastyP2')
+        end"
+        ToastyP2Command="addx,0;x,SCREEN_CENTER_X+(292-320)+159;y,SCREEN_CENTER_Y;cropleft,0.24;cropright,0;diffusealpha,0;sleep,0.066;linear,0.1;diffusealpha,0.8;linear,0.668;addx,56;cropleft,0;cropright,0.24;linear,0.1;diffusealpha,0"/>
+        
+    <Layer
+        File="../../meter stream"
+        OnCommand="draworder,-1;diffusealpha,0;rotationy,180"
+        LoadToastyP2MessageCommand="%function(self)
+            self:stoptweening()
+            self:diffusealpha(0)
+            if string.lower(BMIIDX15Glob.TempToastyP2) == 'michael a la mode' then
+                self:Load(THEME:GetPath(EC_BGANIMATIONS, '', 'toasty/michael a la mode/toastyP1.sprite'))
+            else
+                self:Load(THEME:GetPath(EC_BGANIMATIONS, '', 'toasty/' .. string.lower(BMIIDX15Glob.TempToastyP2) .. '/toastyP1.png'))
+            end
+            self:queuecommand('ToastyP2')
+        end"
+        ToastyP2Command="setstate,0;animate,1;x,SCREEN_CENTER_X+159;y,SCREEN_CENTER_Y+(364-240);addy,-120;diffusealpha,0;sleep,0.066;linear,0.1;addy,-4;diffusealpha,1;linear,1;addy,-10;linear,0.1;addy,-4;diffusealpha,0"/>
+               
+    <Layer
+        File="../../meter stream"
+        OnCommand="draworder,-1;diffusealpha,0;"
+        LoadToastyP2MessageCommand="%function(self)
+            self:stoptweening()
+            self:diffusealpha(0)
+            self:Load(THEME:GetPath(EC_BGANIMATIONS, '', 'toasty/' .. string.lower(BMIIDX15Glob.TempToastyP2) .. '/toastyP1_gradient.png'))
+            self:queuecommand('ToastyP2')
+        end"
+        ToastyP2Command="x,SCREEN_CENTER_X+159;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,0.166;linear,0.5;diffusealpha,0.8;linear,0.5;diffusealpha,0"/>
+
+</children></ActorFrame>
