@@ -34,9 +34,16 @@
             if not GAMESTATE:GetCurrentSong() then
                 self:sleep(0.1)
                 self:queuecommand('UpdateScroll')
+                self:queuecommand('WheelSelect')
+            else
+                self:sleep(0.1)
+                self:queuecommand('WheelSelect')
             end
         end
         BMIIDX14Glob.ScrollUpdate = false
+    end"
+    WheelSelectCommand="%function(self)
+        UpdateWheelSelection()
     end"
     ><children>
     
@@ -50,6 +57,7 @@
             BMIIDX14Glob.MusicWheelList = {}
             BMIIDX14Glob.ArtistTitles = {}
             BMIIDX14Glob.DiffNumTitles = {}
+            BMIIDX14Glob.SelectedWheelItems = {}
             BMIIDX14Glob.FirstTweening=true
             BMIIDX14Glob.Rand=1
             self:sleep(0.1)

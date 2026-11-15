@@ -27,6 +27,7 @@ BMIIDX14Glob={
     SongDiffs = {},
     SongBanners = {},
     MusicWheelList = {},
+    SelectedWheelItems = {},
     CurDiff = 7,
     YouShouldChangeThatShitNOW = false,
     ScrollUpdate = false
@@ -212,7 +213,8 @@ end
 --where the diff numbers on wheel magic begins
 function UpdateWheelTitles(FirstUpdate)
     if not FUCK_EXE then return end
-    if GAMESTATE:IsCourseMode() or (not SCREENMAN:GetTopScreen():GetChild('MusicWheel')) then
+    if GAMESTATE:IsCourseMode() then return end
+    if (not SCREENMAN:GetTopScreen():GetChild('MusicWheel')) then
         BMIIDX14Glob.MusicWheelList = {}
         return
     end
@@ -435,6 +437,40 @@ function UpdateDiffOfCSong(KeyTitl)
                     BMIIDX14Glob.SongDiffs[KeyTitl][ind] = DList[ind]
                 end
             end
+        end
+    end
+end
+
+--The game locked the positions of the parent WheelItem actors, so we have to modify each individual child
+function WheelSelectItem(WheelIndex)
+    BMIIDX14Glob.SelectedWheelItems[WheelIndex] = true
+    local item = BMIIDX14Glob.MusicWheelList[WheelIndex]
+    for ind = 0,14 do
+        local DaChild = item:GetChildAt(ind)
+        DaChild:finishtweening()
+        DaChild:linear(0.05)
+        DaChild:addx(-11)
+    end
+end
+
+function WheelDeselectItem(WheelIndex)
+    BMIIDX14Glob.SelectedWheelItems[WheelIndex] = nil
+    local item = BMIIDX14Glob.MusicWheelList[WheelIndex]
+    for ind = 0,14 do
+        local DaChild = item:GetChildAt(ind)
+        DaChild:finishtweening()
+        DaChild:linear(0.05)
+        DaChild:addx(11)
+    end
+end
+
+function UpdateWheelSelection()
+    local CWI = CurWheelIndex()
+    for ind = 1,#BMIIDX14Glob.MusicWheelList do
+        if BMIIDX14Glob.SelectedWheelItems[ind] and ind ~= CWI then
+            WheelDeselectItem(ind)
+        elseif (not BMIIDX14Glob.SelectedWheelItems[ind]) and ind == CWI then
+            WheelSelectItem(ind)
         end
     end
 end

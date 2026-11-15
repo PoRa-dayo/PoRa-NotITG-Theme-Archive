@@ -1,6 +1,7 @@
 <ActorFrame
     CurrentSongChangedMessageCommand="%function(self)
         MESSAGEMAN:Broadcast('Update')
+        self:queuecommand('UpdateScroll')
     end"
     CurrentStepsP1ChangedMessageCommand="%function(self)
         MESSAGEMAN:Broadcast('Update')
@@ -8,12 +9,30 @@
     CurrentStepsP2ChangedMessageCommand="%function(self)
         MESSAGEMAN:Broadcast('Update')
     end"
+    UpdateScrollCommand="%function(self)
+        if BMIIDX14Glob.ScrollUpdate then return end
+        BMIIDX14Glob.ScrollUpdate=true
+        self:queuecommand('Scroll')
+    end"
+    ScrollCommand="%function(self)
+        if BMIIDX14Glob.ScrollUpdate then
+            self:sleep(0.1)
+            self:queuecommand('WheelSelect')
+        end
+        BMIIDX14Glob.ScrollUpdate = false
+    end"
+    WheelSelectCommand="%function(self)
+        UpdateWheelSelection()
+    end"
     ><children>
     
     <Layer
         Type="Quad"
         OnCommand="%function(self)
+            BMIIDX14Glob.MusicWheelList = {}
+            BMIIDX14Glob.SelectedWheelItems = {}
             BMIIDX14Glob.FirstTweening=true
+            BMIIDX14Glob.ScrollUpdate = false
             self:sleep(0.5)
             self:queuecommand('Disallow')
         end"
