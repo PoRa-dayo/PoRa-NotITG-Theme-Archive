@@ -144,6 +144,7 @@ A minimal theme based on the game Dance With Intensity by SimWolf and DJ DraftHo
 -CDTitles now automatically scale to fit a certain maximum height/maximum width (instead of clipping off the excess part).\
 -Course entries' titles are now properly left-aligned like in the original DWI.\
 -Course mode's music now properly loops.\
+-Scroll bar in course/music select screen now behaves similarly to the original game.\
 -Little triangles are shown in song selection screen whenever there's an easier or harder difficulty available.\
 -Machine/Profile Percentage High Score is now shown in song selection screen when Show Score in Select Music option is enabled.\
 -Added the song title in the evaluation screen to account for charts with no text in their banners.\
@@ -423,6 +424,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 -The difficulties on the music wheel are now more like in the original IIDX.\
 -Added group name display and number of songs in the group like the original IIDX.\
 -Changed the music wheel starting animation to be more like the original IIDX, added an option to show banner on music wheel.\
+-Scroll bar in course/music select screen now behaves similarly to the original game.\
 -Converted the grade system to a 17-tier one.\
 -Noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options.\
 -Adjusted the layering of the gameplay UI to fit with NotITG's requirements.\
