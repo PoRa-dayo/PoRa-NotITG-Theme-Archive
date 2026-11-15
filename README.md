@@ -398,8 +398,8 @@ Original theme by LightningXCE and the ITG3 Team, no longer maintained (except f
 <img width="200" alt="NotITG-v4 9 1_ZaDX4Z6FzO" src="https://github.com/user-attachments/assets/c3fc6cb3-0ad1-4f20-a12c-e841e0ca1af3" />
 <img width="200" alt="NotITG-v4 9 1_3k7t9OViez" src="https://github.com/user-attachments/assets/caebef17-fdb5-4918-bddc-1c7b0768e2cb" />
 <img width="200" alt="NotITG-v4 9 1_4SbJSLvXq1" src="https://github.com/user-attachments/assets/04909583-8d27-4c31-95d5-f4f991e25ab5" />
-<img width="200" alt="NotITG-v4 9 1_VkF9NpK1dn" src="https://github.com/user-attachments/assets/3071c484-8264-4398-b86e-dc9c6ddacf26" />
 <img width="200" alt="NotITG-v4 9 1_RVcx7xfHGU" src="https://github.com/user-attachments/assets/3f80d15f-cdcb-485e-9c01-ca0243453dac" />
+<img width="200" alt="NotITG-v4 9 1_VkF9NpK1dn" src="https://github.com/user-attachments/assets/3071c484-8264-4398-b86e-dc9c6ddacf26" />
 
 
 
