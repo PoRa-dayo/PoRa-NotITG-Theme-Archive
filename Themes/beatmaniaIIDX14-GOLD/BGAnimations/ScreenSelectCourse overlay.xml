@@ -16,7 +16,9 @@
     end"
     ScrollCommand="%function(self)
         if BMIIDX14Glob.ScrollUpdateNOW then
+            MESSAGEMAN:Broadcast('UpdateScrollThumb')
             self:sleep(0.1)
+            self:queuecommand('UpdateScroll')
             self:queuecommand('WheelSelect')
         end
         BMIIDX14Glob.ScrollUpdateNOW = false
@@ -139,8 +141,8 @@
         Type="ActorFrame"
         Condition="FUCK_EXE"
         OnCommand="x,SCREEN_WIDTH-98+102-18;y,SCREEN_CENTER_Y-15"
+        UpdateScrollThumbMessageCommand="queuecommand,UpdateThumb"
         CurrentSongChangedMessageCommand="%function(self)
-            self:queuecommand('UpdateThumb')
             if not BMIIDX14Glob.FirstTweening then
                 BMIIDX14Glob.PrevCWI = CurWheelIndex()
                 BMIIDX14Glob.DirCompare = BMIIDX14Glob.MusicWheelList[CurWheelIndex()]:GetY()

@@ -1,4 +1,5 @@
 --better avoid using GAMESTATE:GetEasiestStepsDifficulty() too many times as it lowers performance
+--WheelSelect and UpdateScroll have to be called continuously to not be faulty
 <ActorFrame
     CurrentSongChangedMessageCommand="%function(self)
         MESSAGEMAN:Broadcast('Update')
@@ -31,14 +32,9 @@
     ScrollCommand="%function(self)
         if BMIIDX14Glob.ScrollUpdateNOW then
             MESSAGEMAN:Broadcast('UpdateScrollThumb')
-            if not GAMESTATE:GetCurrentSong() then
-                self:sleep(0.1)
-                self:queuecommand('UpdateScroll')
-                self:queuecommand('WheelSelect')
-            else
-                self:sleep(0.1)
-                self:queuecommand('WheelSelect')
-            end
+            self:sleep(0.1)
+            self:queuecommand('UpdateScroll')
+            self:queuecommand('WheelSelect')
         end
         BMIIDX14Glob.ScrollUpdateNOW = false
     end"
