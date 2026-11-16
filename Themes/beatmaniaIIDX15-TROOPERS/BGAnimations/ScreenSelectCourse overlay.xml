@@ -1,7 +1,7 @@
 <ActorFrame
+    OnCommand="queuecommand,UpdateScroll"
     CurrentSongChangedMessageCommand="%function(self)
         MESSAGEMAN:Broadcast('Update')
-        self:queuecommand('UpdateScroll')
     end"
     CurrentStepsP1ChangedMessageCommand="%function(self)
         MESSAGEMAN:Broadcast('Update')
@@ -183,7 +183,7 @@
             end
             
             if not BMIIDX15Glob.FirstTweening then
-                local NewDirCompare = BMIIDX15Glob.MusicWheelList[BMIIDX15Glob.PrevCWI]:GetY()
+                local NewDirCompare = BMIIDX15Glob.MusicWheelList[BMIIDX15Glob.PrevCWI or CurWheelIndex()]:GetY()
                 if BMIIDX15Glob.DirCompare and BMIIDX15Glob.DirCompare < NewDirCompare then
                     BMIIDX15Glob.DirCompare = nil
                     MESSAGEMAN:Broadcast('ScrollUp')

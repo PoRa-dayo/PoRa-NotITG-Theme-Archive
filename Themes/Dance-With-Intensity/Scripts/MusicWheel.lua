@@ -9,7 +9,8 @@ DWIGlobVar={
     GroupSongNum = {},
     GroupSongNumDoubles = {},
     MusicWheelList = {},
-    YouShouldChangeThatShitNOW = false
+    YouShouldChangeThatShitNOW = false,
+    ScrollUpdateNOW = false
 }
 DWIGlobVar.AllSongs = SONGMAN:GetAllSongs()
 DWIGlobVar.TotalSongNum = #DWIGlobVar.AllSongs
@@ -109,11 +110,6 @@ function UpdateWheelTitles()
         
         --MusicWheelItem song must be visible for all MusicWheelItems
         item:GetChildAt(2):hidden(0)
-    end
-    --CurrentSongChanged is not activated when the player opens a group, and this stupid program offers no way to detect that
-    --So I have to keep repeating UpdateWheelTitles in the case GetCurrentSong is not found
-    if not GAMESTATE:GetCurrentSong() then
-        return 'Repeat'
     end
 end
 

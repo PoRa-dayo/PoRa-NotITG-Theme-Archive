@@ -1,27 +1,26 @@
 <!--CurrentSongChanged is not activated when the player opens a group, and this stupid program offers no way to detect that-->
-<!--So I have to keep repeating UpdateWheelTitles in the case GetCurrentSong is not found-->
-<!--The YouShouldChangeThatShitNOW is to minimize the amount of times UpdateWheelTitles gets called-->
+<!--So I have to keep repeating UpdateWheelTitles and UpdateScrollThumb-->
+<!--The YouShouldChangeThatShitNOW is to minimize the amount of times UpdateWheelTitles and UpdateScrollThumb get called-->
 <ActorFrame
     OnCommand="%function(self)
+        DWIGlobVar.YouShouldChangeThatShitNOW=false
         DWIGlobVar.MusicWheelList = {}
+        self:queuecommand('WheelUpdate')
     end"
     CurrentSongChangedMessageCommand="%function(self)
         self:queuecommand('SendUpdate')
-        self:queuecommand('Update')
     end"
-    UpdateCommand="%function(self)
+    WheelUpdateCommand="%function(self)
         if DWIGlobVar.YouShouldChangeThatShitNOW then return end
         DWIGlobVar.YouShouldChangeThatShitNOW=true
         self:queuecommand('Wheel')
     end"
     WheelCommand="%function(self)
         if DWIGlobVar.YouShouldChangeThatShitNOW then
-            local msg = UpdateWheelTitles()
+            UpdateWheelTitles()
             MESSAGEMAN:Broadcast('UpdateScrollThumb')
-            if msg == 'Repeat' then
-                self:sleep(0.01)
-                self:queuecommand('Update')
-            end
+            self:sleep(0.01)
+            self:queuecommand('WheelUpdate')
         end
         DWIGlobVar.YouShouldChangeThatShitNOW = false
     end"

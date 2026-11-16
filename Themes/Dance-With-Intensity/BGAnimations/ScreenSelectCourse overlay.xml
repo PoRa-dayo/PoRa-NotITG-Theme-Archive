@@ -1,8 +1,27 @@
 <ActorFrame
+    OnCommand="%function(self)
+        DWIGlobVar.YouShouldChangeThatShitNOW=false
+    end"
 	CurrentStepsP1ChangedMessageCommand="sleep,0.01;queuecommand,UpdateSend1"
 	CurrentStepsP2ChangedMessageCommand="sleep,0.01;queuecommand,UpdateSend2"
 	UpdateSend1Command="%function(self) if GAMESTATE:IsHumanPlayer(PLAYER_1) and GAMESTATE:IsPlayerEnabled(PLAYER_1) then MESSAGEMAN:Broadcast('UpdateP1') end end"
 	UpdateSend2Command="%function(self) if GAMESTATE:IsHumanPlayer(PLAYER_2) and GAMESTATE:IsPlayerEnabled(PLAYER_2) then MESSAGEMAN:Broadcast('UpdateP2') end end"
+    CurrentSongChangedMessageCommand="%function(self)
+        self:queuecommand('UpdateThumb')
+    end"
+    UpdateThumbCommand="%function(self)
+        if DWIGlobVar.YouShouldChangeThatShitNOW then return end
+        DWIGlobVar.YouShouldChangeThatShitNOW=true
+        self:queuecommand('Thumb')
+    end"
+    ThumbCommand="%function(self)
+        if DWIGlobVar.YouShouldChangeThatShitNOW then
+            MESSAGEMAN:Broadcast('UpdateScrollThumb')
+            self:sleep(0.01)
+            self:queuecommand('UpdateThumb')
+        end
+        DWIGlobVar.YouShouldChangeThatShitNOW = false
+    end"
 	><children>
 	<Layer File="@ThemeFile('dwi2-courseoverlay')" OnCommand="%function(self) Center(self) end" />
 
@@ -54,7 +73,7 @@
         File="ScrollBar thumb"
         Condition="FUCK_EXE"
         OnCommand="@'x,SCREEN_CENTER_X+160+'..ScrollBarPos()..';y,SCREEN_CENTER_Y'"
-        CurrentSongChangedMessageCommand="queuecommand,UpdateThumb"
+        UpdateScrollThumbMessageCommand="queuecommand,UpdateThumb"
         UpdateThumbCommand="%function(self)
             local ScrollBarEle = SCREENMAN:GetTopScreen():GetChild('MusicWheel'):GetChild('')
             local EndDelta = 0

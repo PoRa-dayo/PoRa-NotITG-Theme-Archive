@@ -1,10 +1,10 @@
 --better avoid using GAMESTATE:GetEasiestStepsDifficulty() too many times as it lowers performance
 --WheelSelect and UpdateScroll have to be called continuously to not be faulty
 <ActorFrame
+    OnCommand="queuecommand,UpdateScroll"
     CurrentSongChangedMessageCommand="%function(self)
         MESSAGEMAN:Broadcast('Update')
         MESSAGEMAN:Broadcast('SongUpdate')
-        self:queuecommand('UpdateScroll')
     end"
     CurrentStepsP1ChangedMessageCommand="%function(self)
         if not GAMESTATE:IsCourseMode() then
@@ -442,7 +442,7 @@
             end
             
             if not BMIIDX15Glob.FirstTweening then
-                local NewDirCompare = BMIIDX15Glob.MusicWheelList[BMIIDX15Glob.PrevCWI]:GetY()
+                local NewDirCompare = BMIIDX15Glob.MusicWheelList[BMIIDX15Glob.PrevCWI or CurWheelIndex()]:GetY()
                 if BMIIDX15Glob.DirCompare and BMIIDX15Glob.DirCompare < NewDirCompare then
                     BMIIDX15Glob.DirCompare = nil
                     MESSAGEMAN:Broadcast('ScrollUp')
