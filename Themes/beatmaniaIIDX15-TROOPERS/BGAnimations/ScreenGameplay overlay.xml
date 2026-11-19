@@ -130,13 +130,13 @@
     --FOR COMBO CHECK
     <Layer Type="Quad"
 		InitCommand="hidden,1"
-        OnCommand="%function(self) IsFC = {true, true} end"
-        Fk_P1_W4MessageCommand="%function(self) IsFC[1] = false end"
-		Fk_P2_W4MessageCommand="%function(self) IsFC[2] = false end"
-        Fk_P1_W5MessageCommand="%function(self) IsFC[1] = false end"
-		Fk_P2_W5MessageCommand="%function(self) IsFC[2] = false end"
-        Fk_P1_W6MessageCommand="%function(self) IsFC[1] = false end"
-		Fk_P2_W6MessageCommand="%function(self) IsFC[2] = false end"
+        OnCommand="%function(self) BMIIDX15Glob.IsFC = {true, true} end"
+        Fk_P1_W4MessageCommand="%function(self) BMIIDX15Glob.IsFC[1] = false end"
+		Fk_P2_W4MessageCommand="%function(self) BMIIDX15Glob.IsFC[2] = false end"
+        Fk_P1_W5MessageCommand="%function(self) BMIIDX15Glob.IsFC[1] = false end"
+		Fk_P2_W5MessageCommand="%function(self) BMIIDX15Glob.IsFC[2] = false end"
+        Fk_P1_W6MessageCommand="%function(self) BMIIDX15Glob.IsFC[1] = false end"
+		Fk_P2_W6MessageCommand="%function(self) BMIIDX15Glob.IsFC[2] = false end"
     />
 
     --FOR OFFSET PLOT AND ITS LIFE GRAPH: START

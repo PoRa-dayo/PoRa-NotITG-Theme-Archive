@@ -414,7 +414,9 @@
         CurrentSongChangedMessageCommand="%function(self)
             if not BMIIDX15Glob.FirstTweening then
                 BMIIDX15Glob.PrevCWI = CurWheelIndex()
-                BMIIDX15Glob.DirCompare = BMIIDX15Glob.MusicWheelList[CurWheelIndex()]:GetY()
+                if BMIIDX15Glob.MusicWheelList[BMIIDX15Glob.PrevCWI] then
+                    BMIIDX15Glob.DirCompare = BMIIDX15Glob.MusicWheelList[BMIIDX15Glob.PrevCWI]:GetY()
+                end
             end
         end"
         UpdateThumbCommand="%function(self)
@@ -442,13 +444,16 @@
             end
             
             if not BMIIDX15Glob.FirstTweening then
-                local NewDirCompare = BMIIDX15Glob.MusicWheelList[BMIIDX15Glob.PrevCWI or CurWheelIndex()]:GetY()
-                if BMIIDX15Glob.DirCompare and BMIIDX15Glob.DirCompare < NewDirCompare then
-                    BMIIDX15Glob.DirCompare = nil
-                    MESSAGEMAN:Broadcast('ScrollUp')
-                elseif BMIIDX15Glob.DirCompare and BMIIDX15Glob.DirCompare > NewDirCompare then
-                    BMIIDX15Glob.DirCompare = nil
-                    MESSAGEMAN:Broadcast('ScrollDown')
+                local ItemInd = BMIIDX15Glob.PrevCWI or CurWheelIndex()
+                if BMIIDX15Glob.MusicWheelList[ItemInd] then
+                    local NewDirCompare = BMIIDX15Glob.MusicWheelList[ItemInd]:GetY()
+                    if BMIIDX15Glob.DirCompare and BMIIDX15Glob.DirCompare < NewDirCompare then
+                        BMIIDX15Glob.DirCompare = nil
+                        MESSAGEMAN:Broadcast('ScrollUp')
+                    elseif BMIIDX15Glob.DirCompare and BMIIDX15Glob.DirCompare > NewDirCompare then
+                        BMIIDX15Glob.DirCompare = nil
+                        MESSAGEMAN:Broadcast('ScrollDown')
+                    end
                 end
             end
         end"

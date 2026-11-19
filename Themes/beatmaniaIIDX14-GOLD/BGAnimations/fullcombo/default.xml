@@ -6,7 +6,7 @@
         self:queuecommand('GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppears')
     end"
     GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppearsCommand="%function(self)
-        if IsFC[1] then
+        if BMIIDX14Glob.IsFC[1] then
             self:zoom(1)
         end
     end"/>
@@ -17,7 +17,7 @@
         self:queuecommand('GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppears')
     end"
     GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppearsCommand="%function(self)
-        if IsFC[2] then
+        if BMIIDX14Glob.IsFC[2] then
             self:zoom(1)
         end
     end"/>
@@ -28,7 +28,7 @@
         self:queuecommand('GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppears')
     end"
     GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppearsCommand="%function(self)
-        if IsFC[1] then
+        if BMIIDX14Glob.IsFC[1] then
             self:zoom(1)
         end
     end"/>
