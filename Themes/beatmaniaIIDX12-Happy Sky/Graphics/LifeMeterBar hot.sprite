@@ -1,0 +1,3 @@
+[Sprite]
+Texture=ru21/red
+InitCommand=%function(self) self:Load(THEME:GetPath(EC_GRAPHICS,'','ru21/'..string.lower(Profile().IIDXHappySkyMaxedLifeColor or 'red'))) end

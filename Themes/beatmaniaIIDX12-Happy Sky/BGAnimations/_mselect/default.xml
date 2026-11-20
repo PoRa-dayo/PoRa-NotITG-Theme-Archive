@@ -1,0 +1,96 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+    />
+
+    <Layer Type="ActorFrame" OnCommand="%function(self)
+        self:fov(RealFOV(95))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="sky.txt"
+            Materials="sky.txt"
+            Bones="sky.txt"
+            Command="y,SCREEN_CENTER_Y;zoomx,34;zoomy,34;zoomz,34;spin;effectmagnitude,0,-30,0;x,SCREEN_CENTER_X+(1000-320);rotationx,-3"
+        />
+
+    </children></Layer>
+
+    <Layer
+        File="glow.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+    />
+
+    <Layer Type="ActorFrame" OnCommand="%function(self)
+        self:fov(RealFOV(100))
+        self:rotationy(1)
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="ring1.txt"
+            Materials="ring1.txt"
+            Bones="ring1.txt"
+            Command="y,SCREEN_CENTER_Y;zoomx,3.2;zoomy,3;zoomz,3.5;spin;effectmagnitude,0,30,0;x,SCREEN_CENTER_X+(210-320);z,320;rotationx,-2;cullmode,front;blend,add;clearzbuffer,1"
+        />
+        <Layer
+            Type="Model"
+            Meshes="ring2.txt"
+            Materials="ring2.txt"
+            Bones="ring2.txt"
+            Command="y,SCREEN_CENTER_Y;zoomx,3.2;zoomy,3;zoomz,3.5;spin;effectmagnitude,0,30,0;x,SCREEN_CENTER_X+(210-320);z,320;rotationx,-2;cullmode,front;blend,add;clearzbuffer,1"
+        />
+        <Layer
+            Type="Model"
+            Meshes="ring3.txt"
+            Materials="ring3.txt"
+            Bones="ring3.txt"
+            Command="y,SCREEN_CENTER_Y;zoomx,3.2;zoomy,3;zoomz,3.5;spin;effectmagnitude,0,30,0;x,SCREEN_CENTER_X+(210-320);z,320;rotationx,-2;cullmode,front;blend,add;clearzbuffer,1"
+        />
+        <Layer
+            Type="Model"
+            Meshes="ring4.txt"
+            Materials="ring4.txt"
+            Bones="ring4.txt"
+            Command="y,SCREEN_CENTER_Y;zoomx,3.2;zoomy,3;zoomz,3.5;spin;effectmagnitude,0,30,0;x,SCREEN_CENTER_X+(210-320);z,320;rotationx,-2;cullmode,front;blend,add;clearzbuffer,1"
+        />
+        <Layer
+            Type="Model"
+            Meshes="ring5.txt"
+            Materials="ring5.txt"
+            Bones="ring5.txt"
+            Command="y,SCREEN_CENTER_Y;zoomx,3.2;zoomy,3;zoomz,3.5;spin;effectmagnitude,0,30,0;x,SCREEN_CENTER_X+(210-320);z,320;rotationx,-2;cullmode,front;blend,add;clearzbuffer,1"
+        />
+        <Layer
+            Type="Model"
+            Meshes="ring6.txt"
+            Materials="ring6.txt"
+            Bones="ring6.txt"
+            Command="y,SCREEN_CENTER_Y;zoomx,3.2;zoomy,3;zoomz,3.5;spin;effectmagnitude,0,30,0;x,SCREEN_CENTER_X+(210-320);z,320;rotationx,-2;cullmode,front;blend,add;clearzbuffer,1"
+        />
+        <Layer
+            Type="Model"
+            Meshes="ring7.txt"
+            Materials="ring7.txt"
+            Bones="ring7.txt"
+            Command="y,SCREEN_CENTER_Y;zoomx,3.2;zoomy,3;zoomz,3.5;spin;effectmagnitude,0,30,0;x,SCREEN_CENTER_X+(210-320);z,320;rotationx,-2;cullmode,front;blend,add;clearzbuffer,1"
+        />
+        <Layer
+            Type="Model"
+            Meshes="ring8.txt"
+            Materials="ring8.txt"
+            Bones="ring8.txt"
+            Command="y,SCREEN_CENTER_Y;zoomx,3.2;zoomy,3;zoomz,3.5;spin;effectmagnitude,0,30,0;x,SCREEN_CENTER_X+(210-320);z,320;rotationx,-2;cullmode,front;blend,add;clearzbuffer,1"
+        />
+
+    </children></Layer>
+
+    <Layer
+        File="fade.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0.8;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+    />
+
+</children></ActorFrame>

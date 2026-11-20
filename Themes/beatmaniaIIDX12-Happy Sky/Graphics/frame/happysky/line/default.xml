@@ -1,0 +1,23 @@
+<ActorFrame><children>
+
+    <Layer
+        File="line.png"
+        Command="horizalign,right;x,SCREEN_CENTER_X+(258-320);y,SCREEN_CENTER_Y+(456-240);addy,30;rotationz,5;zoomx,2;accelerate,0.5;addy,-30;rotationz,0;zoomx,1"
+    />
+
+    <Layer
+        File="line.png"
+        Command="horizalign,right;x,SCREEN_CENTER_X+(382-320);y,SCREEN_CENTER_Y+(456-240);addy,30;rotationz,175;zoomx,2;accelerate,0.5;addy,-30;rotationz,180;zoomx,1"
+    />
+
+    <Layer
+        File="line.png"
+        Command="horizalign,right;rotationz,95;zoomy,4;x,SCREEN_CENTER_X+(0-320);y,SCREEN_CENTER_Y+(430-240);addy,80;linear,0.6;addx,280;addy,-80;rotationz,0;zoomy,0;zoomx,2"
+    />
+
+    <Layer
+        File="line.png"
+        Command="horizalign,right;rotationz,85;zoomy,4;x,SCREEN_CENTER_X+(640-320);y,SCREEN_CENTER_Y+(430-240);addy,80;linear,0.6;addx,-280;addy,-80;rotationz,180;zoomy,0;zoomx,2"
+    />
+
+</children></ActorFrame>

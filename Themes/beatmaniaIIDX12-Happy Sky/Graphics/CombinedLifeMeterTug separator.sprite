@@ -1,0 +1,8 @@
+[Sprite]
+Texture=CombinedLifeMeter 3x1
+Frame0000=0
+Delay0000=0.033
+Frame0001=1
+Delay0001=0.033
+Frame0002=2
+Delay0002=0.033

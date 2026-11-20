@@ -1,0 +1,18 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../_mselect"
+        Condition="not IsExtraStage() == true and not IsExtraStage2() == true"
+    />
+
+    <Layer
+        File="../_extra"
+        Condition="IsExtraStage() == true"
+    />
+
+    <Layer
+        File="../_extra"
+        Condition="IsExtraStage2() == true"
+    />
+
+</children></ActorFrame>

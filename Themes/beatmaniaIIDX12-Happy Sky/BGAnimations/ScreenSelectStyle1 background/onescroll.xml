@@ -1,0 +1,8 @@
+<ActorFrame><children>
+    <Layer
+        File="oneplayer"
+        Command="blend,add;queuecommand,Stop"
+        StopCommand="texcoordvelocity,0,0;sleep,1;queuecommand,Move"
+        MoveCommand="texcoordvelocity,1,0;linear,0.5;diffusealpha,0.5;linear,0.5;diffusealpha,1;queuecommand,Stop"
+    />
+</children></ActorFrame>

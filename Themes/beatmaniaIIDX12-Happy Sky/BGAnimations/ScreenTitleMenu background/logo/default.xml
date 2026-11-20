@@ -1,0 +1,57 @@
+<ActorFrame><children>
+
+    <Layer
+        File="1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,8.2-7.65;queuecommand,Action"
+        ActionCommand="linear,0.1;diffusealpha,1;linear,0.3;diffusealpha,0;sleep,8.5-0.4;queuecommand,Action"
+    />
+
+    <Layer
+        File="2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,8.3-7.65;queuecommand,Action"
+        ActionCommand="linear,0.1;diffusealpha,1;linear,0.3;diffusealpha,0;sleep,8.5-0.4;queuecommand,Action"
+    />
+
+    <Layer
+        File="3.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,8.4-7.65;queuecommand,Action"
+        ActionCommand="linear,0.1;diffusealpha,1;linear,0.3;diffusealpha,0;sleep,8.5-0.4;queuecommand,Action"
+    />
+
+    <Layer
+        File="4.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,8.5-7.65;queuecommand,Action"
+        ActionCommand="linear,0.1;diffusealpha,1;linear,0.3;diffusealpha,0;sleep,8.5-0.4;queuecommand,Action"
+    />
+    
+    <Layer
+        File="5.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,8.6-7.65;queuecommand,Action"
+        ActionCommand="linear,0.1;diffusealpha,1;linear,0.3;diffusealpha,0;sleep,8.5-0.4;queuecommand,Action"
+    />
+
+    <Layer
+        File="../flash.png"
+        Command="zoom,5;x,SCREEN_CENTER_X+(330-320);y,SCREEN_CENTER_Y+(205-240);blend,add;diffusealpha,0;sleep,7.9-7.65;queuecommand,Action"
+        ActionCommand="zoomy,5;linear,0.1;diffusealpha,1;linear,0.15;zoomy,0.2;sleep,0.1;linear,0.2;diffusealpha,0;sleep,8.5-0.55;queuecommand,Action"
+    />
+
+    <Layer
+        File="../flash.png"
+        Command="zoom,3;x,SCREEN_CENTER_X+(535-320);y,SCREEN_CENTER_Y+(235-240);blend,add;diffusealpha,0;sleep,8.1-7.65;queuecommand,Action"
+        ActionCommand="zoomy,3;linear,0.1;diffusealpha,1;linear,0.15;zoomy,0.2;sleep,0.1;linear,0.2;diffusealpha,0;sleep,8.5-0.55;queuecommand,Action"
+    />
+
+    <Layer
+        File="../sunlight.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(100-240);zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;blend,add;diffusealpha,0;sleep,9-7.65;queuecommand,Action"
+        ActionCommand="linear,0.1;diffusealpha,1;y,SCREEN_CENTER_Y+(100-240);linear,0.05;diffusealpha,0;sleep,8.5-0.15;queuecommand,Action"
+    />
+
+    <Layer
+        File="../sunlight.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(100-240);zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;blend,add;diffusealpha,0;sleep,9.1-7.65;queuecommand,Action"
+        ActionCommand="linear,0.1;diffusealpha,1;y,SCREEN_CENTER_Y+(100-240);linear,3;diffusealpha,0;sleep,8.5-3.1;queuecommand,Action"
+    />
+
+</children></ActorFrame>

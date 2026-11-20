@@ -1,0 +1,88 @@
+<ActorFrame><children>
+
+    <Layer
+        File="bg.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;addx,-10;addy,-10;linear,0.2;addx,10;addy,10"
+    />
+
+    <Layer
+        File="SANKASYA.png"
+        Command="x,73;y,SCREEN_CENTER_Y+(44-240);addx,400;linear,0.2;addx,-400"
+    />
+
+    <Layer
+        File="time remain.png"
+        Command="x,SCREEN_WIDTH-(640-545);y,SCREEN_CENTER_Y+(51-240);addx,100;linear,0.1;addx,-100"
+    />
+
+    <Layer
+        File="cab.png"
+        Command="x,SCREEN_CENTER_X;diffusealpha,0.3;y,SCREEN_CENTER_Y+(222-240);blend,add;zoomy,5;linear,0.2;zoomy,1;diffusealpha,0"
+    />
+
+    <Layer
+        File="cab.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(222-240);blend,add;zoomy,0;linear,0.25;zoomy,1;diffusealpha,0.8"
+    />
+
+    <Layer
+        File="boxfill.png"
+        Command="x,SCREEN_CENTER_X+(15-320);y,SCREEN_CENTER_Y+(96-240);diffusealpha,0;sleep,0.2;diffusealpha,0.5;zoomx,0;zoomy,0;horizalign,left;vertalign,top;diffusealpha,0.5;linear,0.4;zoomx,1;zoomy,1"
+    />
+
+    <Layer
+        File="1p.png"
+        Command="x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(255-240);zoomy,0;linear,0.3;zoomy,1"
+    />
+
+    <Layer
+        File="boxfill.png"
+        Command="x,SCREEN_CENTER_X+(215-320);y,SCREEN_CENTER_Y+(96-240);diffusealpha,0;sleep,0.2;diffusealpha,0.5;zoomx,0;zoomy,0;horizalign,left;vertalign,top;diffusealpha,0.5;linear,0.4;zoomx,1;zoomy,1"
+    />
+
+    <Layer
+        File="2p.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(255-240);zoomy,0;linear,0.3;zoomy,1"
+    />
+
+    <Layer
+        File="boxfill.png"
+        Command="x,SCREEN_CENTER_X+(415-320);y,SCREEN_CENTER_Y+(96-240);diffusealpha,0;sleep,0.2;diffusealpha,0.5;zoomx,0;zoomy,0;horizalign,left;vertalign,top;diffusealpha,0.5;linear,0.4;zoomx,1;zoomy,1"
+    />
+
+    <Layer
+        File="db.png"
+        Command="x,SCREEN_CENTER_X+(520-320);y,SCREEN_CENTER_Y+(255-240);zoomy,0;linear,0.3;zoomy,1"
+    />
+
+    <Layer
+        File="onescroll"
+        Command="x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(204-240);zoomy,0;diffusealpha,0;sleep,0.2;diffusealpha,1;linear,0.3;zoomy,1"
+    />
+
+    <Layer
+        File="twoscroll"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(204-240);zoomy,0;diffusealpha,0;sleep,0.2;diffusealpha,1;linear,0.3;zoomy,1"
+    />
+
+    <Layer
+        File="dblscroll"
+        Command="x,SCREEN_CENTER_X+(520-320);y,SCREEN_CENTER_Y+(204-240);zoomy,0;diffusealpha,0;sleep,0.2;diffusealpha,1;linear,0.3;zoomy,1"
+    />
+
+    <Layer
+        File="whiteline.png"
+        Command="x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(226-240);diffusealpha,0;sleep,0.2;diffusealpha,1;zoomx,0;linear,0.2;zoomx,1"
+    />
+
+    <Layer
+        File="whiteline.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(226-240);diffusealpha,0;sleep,0.2;diffusealpha,1;zoomx,0;linear,0.2;zoomx,1"
+    />
+
+    <Layer
+        File="whiteline.png"
+        Command="x,SCREEN_CENTER_X+(520-320);y,SCREEN_CENTER_Y+(226-240);diffusealpha,0;sleep,0.2;diffusealpha,1;zoomx,0;linear,0.2;zoomx,1"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,18 @@
+[Sprite]
+Texture=HAPPY 1x8.PNG
+Frame0000=2
+Delay0000=0.1
+Frame0001=3
+Delay0001=0.1
+Frame0002=4
+Delay0002=0.1
+Frame0003=5
+Delay0003=0.1
+Frame0004=6
+Delay0004=0.1
+Frame0005=7
+Delay0005=0.1
+Frame0006=0
+Delay0006=0.1
+Frame0007=1
+Delay0007=0.1

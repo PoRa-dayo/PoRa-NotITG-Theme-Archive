@@ -1,0 +1,357 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../mod/boost.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'boost') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/wave.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'wave') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/expand.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'expand') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/boomerang.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'boomerang') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/brake.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'brake') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/drunk.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'drunk') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/brake.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'brake') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/dizzy.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'dizzy') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/mini.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'65% mini') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/flip.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'flip') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/tornado.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'60% tornado') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/float.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'tipsy') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/beat.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'beat') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/hidden.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'hidden') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/sudden.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'sudden') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/blink.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'blink') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/vanisher.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'randomvanish') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/mirror.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'mirror') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/left.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'left') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/right.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'right') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/shuffle.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'shuffle') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/supershuffle.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'supershuffle') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/quick.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'quick') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/skippy.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'skippy') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/echo.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'echo') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/wide.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'wide') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/stomp.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'stomp') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/big.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'big') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/reverse.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'reverse') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/split.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'split') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/alternate.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'alternate') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/cross.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'cross') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/centered.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'centered') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/bumpy.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'bumpy') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/noholds.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'noholds') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/planted.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'planted') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/twister.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'twister') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/nojumps.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'nojumps') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/nohands.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'nohands') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/incoming.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'incoming') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/space.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'space') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/hallway.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'hallway') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/distant.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'distant') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/autoplay.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1;hidden,1"
+        Condition="UsingModifier(1,'autoplay') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/1.0.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'1x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/1.5.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'1.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/2.0.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'2.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/2.5.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'2.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/3.0.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'3.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/3.5.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'3.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/4.0.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'4.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/4.5.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'4.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/5.0.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'5.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/5.5.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'5.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/6.0.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'6.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/6.5.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'6.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/7.0.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'7.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/8.0.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'8.0x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="../mod/0.5.png"
+        Command="x,SCREEN_CENTER_X+(628-320);y,SCREEN_CENTER_Y+(385-240);zoomy,0;linear,0.25;zoomy,1"
+        Condition="UsingModifier(2,'0.5x') and GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+</children></ActorFrame>

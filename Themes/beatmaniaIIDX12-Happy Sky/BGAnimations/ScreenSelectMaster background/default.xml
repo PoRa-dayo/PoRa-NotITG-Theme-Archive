@@ -1,0 +1,67 @@
+<ActorFrame><children>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(154))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="sky2.txt"
+            Materials="sky2.txt"
+            Bones="sky2.txt"
+            Command="x,SCREEN_CENTER_X;sleep,0.3;y,SCREEN_CENTER_Y+(400-240);rotationx,-22;zoomz,2.6;zoomx,7;zoomy,3;addz,120;spin;effectmagnitude,0,-15,0;cullmode,front"
+        />
+
+    </children></ActorFrame>
+
+    <Layer
+        File="1.jpg"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(400-240);zoomtowidth,SCREEN_WIDTH*2;zoomtoheight,SCREEN_HEIGHT*2;linear,0.3;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;y,SCREEN_CENTER_Y+(240-240);linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="blend.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;sleep,0.5;linear,0.4;diffusealpha,1"
+    />
+
+    <Layer
+        File="fade.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(440-240);zoomtowidth,SCREEN_WIDTH;diffusealpha,0;sleep,0.5;linear,0.4;diffusealpha,1"
+    />
+
+    <Layer
+        File="bar.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomy,0;sleep,0.2;linear,0.1;zoomy,1"
+    />
+
+    <Layer
+        File="../effector.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(500-240);linear,0.45;y,SCREEN_CENTER_Y+(455-240)"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/orange2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(343-240);zoomx,0;sleep,0.3;linear,0.5;zoomx,11.5"
+    />
+
+    <Layer
+        File="text1.png"
+        Command="x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(196-240);cropright,1;sleep,0.5;linear,0.3;cropright,0"
+    />
+
+    <Layer
+        File="text2.png"
+        Command="x,SCREEN_CENTER_X+(87-320);y,SCREEN_CENTER_Y+(118-240);cropright,1;sleep,0.7;linear,0.3;cropright,0"
+    />
+
+    <Layer
+        File="sun.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;blend,add;sleep,0.3;linear,0.4;diffusealpha,0"
+    />
+
+    <Layer
+        File="wall.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(210-240);zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;linear,0.3;addy,-550"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,83 @@
+<ActorFrame><children>
+
+    <Layer
+        File="1.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(280-240);zoomx,0;diffusealpha,0;linear,0.3;zoomx,1;diffusealpha,0.2"
+    />
+
+    <Layer
+        File="1.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(314-240);zoomx,0;diffusealpha,0;sleep,0.05;linear,0.3;zoomx,1;diffusealpha,0.2"
+    />
+
+    <Layer
+        File="1.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(348-240);zoomx,0;diffusealpha,0;sleep,0.1;linear,0.3;zoomx,1;diffusealpha,0.2"
+    />
+
+    <Layer
+        File="1.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(382-240);zoomx,0;diffusealpha,0;sleep,0.15;linear,0.3;zoomx,1;diffusealpha,0.2"
+    />
+
+    <Layer
+        File="1.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(416-240);zoomx,0;diffusealpha,0;sleep,0.2;linear,0.3;zoomx,1;diffusealpha,0.2"
+    />
+
+    <Layer
+        File="2.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(437-240);zoomx,0;diffusealpha,0;sleep,0.25;linear,0.3;zoomx,1;diffusealpha,0.2"
+    />
+
+    <Layer
+        File="judg.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(360-240);diffusealpha,0;addy,-10;sleep,0.2;linear,0.2;diffusealpha,1;addy,10"
+    />
+
+    <Layer
+        File="perfect.sprite"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(258-240);diffusealpha,0;addy,-10;sleep,0.2;linear,0.2;diffusealpha,1;addy,10"
+    />
+
+    <Layer
+        File="4.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(150-240);diffusealpha,0;addy,20;sleep,0.2;linear,0.2;diffusealpha,1;addy,-20"
+    />
+
+    <Layer
+        File="p1.png"
+        Command="x,SCREEN_CENTER_X+(140-320);y,SCREEN_CENTER_Y+(220-240);diffusealpha,0;addx,-20;sleep,0.2;linear,0.2;diffusealpha,1;addx,20"
+    />
+
+    <Layer
+        File="p2.png"
+        Command="x,SCREEN_CENTER_X+(500-320);y,SCREEN_CENTER_Y+(220-240);diffusealpha,0;addx,20;sleep,0.2;linear,0.2;diffusealpha,1;addx,-20"
+    />
+
+    <Layer
+        File="logo.png"
+        Command="x,SCREEN_CENTER_X+(582-320);y,SCREEN_CENTER_Y+(45-240);diffusealpha,0;addx,-20;sleep,0.2;linear,0.2;diffusealpha,1;addx,20"
+    />
+
+    <Layer
+        File="djlevel.png"
+        Command="x,SCREEN_CENTER_X+(110-320);y,SCREEN_CENTER_Y+(43-240);diffusealpha,0;addx,-20;sleep,0.2;linear,0.2;diffusealpha,1;addx,20"
+    />
+
+    <Layer
+        File="rank.png"
+        Command="x,SCREEN_CENTER_X+(558-320);y,SCREEN_CENTER_Y+(64-240);diffusealpha,0;sleep,0.2;linear,0.2;diffusealpha,1"
+    />
+
+    <Layer
+        File="rank.png"
+        Command="x,SCREEN_CENTER_X+(86-320);y,SCREEN_CENTER_Y+(64-240);diffusealpha,0;sleep,0.2;linear,0.2;diffusealpha,1"
+    />
+
+    <Layer
+        File="arrow.png"
+        Command="x,SCREEN_CENTER_X+(210-320);y,SCREEN_CENTER_Y+(500-240);blend,add;linear,0.12;y,SCREEN_CENTER_Y+(320-240);linear,0.12;y,SCREEN_CENTER_Y+(200-240);zoomx,1.4;linear,0.3;y,SCREEN_CENTER_Y+(-140-240);zoomx,1"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,14 @@
+<ActorFrame> <children>
+    <AutoActor 
+        File="Options"
+        InitCommand="diffuseshift;effectcolor1,1,1,1,1;effectcolor2,0.5,0.5,0.5,1;effectperiod,0.5"
+        OnCommand="%function(self)
+            if GAMESTATE:GetCoinMode() ~= 2 then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+            self:shadowlength(0)
+        end"
+    />
+</children> </ActorFrame>

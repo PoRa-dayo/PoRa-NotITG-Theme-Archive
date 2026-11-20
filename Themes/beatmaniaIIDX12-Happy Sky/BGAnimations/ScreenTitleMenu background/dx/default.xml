@@ -1,0 +1,71 @@
+<ActorFrame><children>
+
+    <Layer
+        File="d1.png"
+        Command="diffusealpha,0;sleep,8.35-7.65;diffusealpha,0;x,SCREEN_CENTER_X+(40-320);y,SCREEN_CENTER_Y+(335-240);linear,0.3;diffusealpha,1;x,SCREEN_CENTER_X+(40-320);y,SCREEN_CENTER_Y+(325-240)"
+    />
+
+    <Layer
+        File="d1.png"
+        Command="x,SCREEN_CENTER_X+(40-320);y,SCREEN_CENTER_Y+(325-240);blend,add;diffusealpha,0;sleep,10.7-7.65;queuecommand,Flash"
+        FlashCommand="diffusealpha,0;linear,0.1;diffusealpha,1;linear,0.3;diffusealpha,0;sleep,7-0.4;queuecommand,Flash"
+    />
+
+    <Layer
+        File="d1.png"
+        Command="x,SCREEN_CENTER_X+(40-320);y,SCREEN_CENTER_Y+(325-240);blend,add;diffusealpha,0;sleep,13-7.65;queuecommand,Flash"
+        FlashCommand="diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;sleep,7-0.4;queuecommand,Flash"
+    />
+
+    <Layer
+        File="d2.png"
+        Command="diffusealpha,0;sleep,8.4-7.65;diffusealpha,0;x,SCREEN_CENTER_X+(81-320);y,SCREEN_CENTER_Y+(335-240);linear,0.3;diffusealpha,1;x,SCREEN_CENTER_X+(81-320);y,SCREEN_CENTER_Y+(325-240)"
+    />
+
+    <Layer
+        File="d2.png"
+        Command="x,SCREEN_CENTER_X+(81-320);y,SCREEN_CENTER_Y+(325-240);blend,add;diffusealpha,0;sleep,10.75-7.65;queuecommand,Flash"
+        FlashCommand="diffusealpha,0;linear,0.1;diffusealpha,1;linear,0.3;diffusealpha,0;sleep,7-0.4;queuecommand,Flash"
+    />
+
+    <Layer
+        File="d2.png"
+        Command="x,SCREEN_CENTER_X+(81-320);y,SCREEN_CENTER_Y+(325-240);blend,add;diffusealpha,0;sleep,13.8-7.65;queuecommand,Flash"
+        FlashCommand="diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;sleep,7-0.4;queuecommand,Flash"
+    />
+
+    <Layer
+        File="d3.png"
+        Command="diffusealpha,0;sleep,8.45-7.65;diffusealpha,0;x,SCREEN_CENTER_X+(122-320);y,SCREEN_CENTER_Y+(335-240);linear,0.3;diffusealpha,1;x,SCREEN_CENTER_X+(122-320);y,SCREEN_CENTER_Y+(325-240)"
+    />
+
+    <Layer
+        File="d3.png"
+        Command="x,SCREEN_CENTER_X+(122-320);y,SCREEN_CENTER_Y+(325-240);blend,add;diffusealpha,0;sleep,10.8-7.65;queuecommand,Flash"
+        FlashCommand="diffusealpha,0;linear,0.1;diffusealpha,1;linear,0.3;diffusealpha,0;sleep,7-0.4;queuecommand,Flash"
+    />
+
+    <Layer
+        File="d3.png"
+        Command="x,SCREEN_CENTER_X+(122-320);y,SCREEN_CENTER_Y+(325-240);blend,add;diffusealpha,0;sleep,14.6-7.65;queuecommand,Flash"
+        FlashCommand="diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;sleep,7-0.4;queuecommand,Flash"
+    />
+
+    <Layer
+        File="d4.png"
+        Command="diffusealpha,0;sleep,8.5-7.65;diffusealpha,0;x,SCREEN_CENTER_X+(163-320);y,SCREEN_CENTER_Y+(335-240);linear,0.3;diffusealpha,1;x,SCREEN_CENTER_X+(163-320);y,SCREEN_CENTER_Y+(325-240)"
+    />
+
+    <Layer
+        File="d4.png"
+        Command="x,SCREEN_CENTER_X+(163-320);y,SCREEN_CENTER_Y+(325-240);blend,add;diffusealpha,0;sleep,10.85-7.65;queuecommand,Flash"
+        FlashCommand="diffusealpha,0;linear,0.1;diffusealpha,1;linear,0.3;diffusealpha,0;sleep,7-0.4;queuecommand,Flash"
+    />
+
+    <Layer
+        File="d4.png"
+        Command="x,SCREEN_CENTER_X+(163-320);y,SCREEN_CENTER_Y+(325-240);blend,add;diffusealpha,0;sleep,15.4-7.65;queuecommand,Flash"
+        FlashCommand="diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;linear,0.05;diffusealpha,1;linear,0.05;diffusealpha,0;sleep,7-0.4;queuecommand,Flash"
+    />
+
+</children></ActorFrame>

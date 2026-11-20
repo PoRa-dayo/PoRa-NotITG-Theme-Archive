@@ -1,0 +1,107 @@
+<ActorFrame><children>
+
+    <Layer
+        File="fade_top.png"
+        InitCommand="%function(self)
+            self:x(math.max(SCREEN_CENTER_X+(540-320),SCREEN_WIDTH-114)-17)
+            self:y(SCREEN_TOP+34)
+        end"
+        OnCommand="diffusebottomedge,0,0,0,0;diffusetopedge,0,0,0,0;sleep,0.8;linear,0.4;diffusetopedge,0,0,0,1"
+    />
+    
+    <Layer
+        File="fade.png"
+        InitCommand="%function(self)
+            self:x(math.max(SCREEN_CENTER_X+(540-320),SCREEN_WIDTH-114)-17)
+            self:y(SCREEN_BOTTOM-34)
+        end"
+        OnCommand="diffusebottomedge,0,0,0,0;diffusetopedge,0,0,0,0;sleep,0.8;linear,0.4;diffusebottomedge,0,0,0,1"
+    />
+    
+    <Layer
+        File="../here_abscence"
+        Command="x,118;y,SCREEN_CENTER_Y+(436-240);addx,-300;linear,0.25;addx,300"
+    />
+
+    <Layer
+        File="../here_abscence2"
+        Command="x,SCREEN_WIDTH-(640-523);y,SCREEN_CENTER_Y+(436-240);addx,300;linear,0.25;addx,-300"
+    />
+
+    <Layer
+        File="../here1"
+        Command="x,SCREEN_CENTER_X+(118-320);y,SCREEN_CENTER_Y+(436-240);glowshift;effectcolor1,1,1,1,0;effectcolor2,1,1,.9,.1;effectperiod,1;addx,-300;linear,0.25;addx,300"
+        Condition="GAMESTATE:IsHumanPlayer(0)"
+    />
+
+    <Layer
+        File="../here2"
+        Command="x,SCREEN_CENTER_X+(523-320);y,SCREEN_CENTER_Y+(436-240);glowshift;effectcolor1,1,1,1,0;effectcolor2,1,1,.9,.1;effectperiod,1;addx,-300;linear,0.25;addx,300"
+        Condition="GAMESTATE:IsHumanPlayer(1)"
+    />
+
+    <Layer
+        File="../head.png"
+        OnCommand="blend,add;diffusealpha,0.5;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH*1.2;zoomtoheight,SCREEN_HEIGHT*1.2;linear,0.3;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+    />
+
+    <Layer
+        File="../head.png"
+        OnCommand="blend,add;diffusealpha,0.5;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH*0.8;zoomtoheight,SCREEN_HEIGHT*0.8;linear,0.3;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,1;linear,0.01;diffusealpha,0"
+    />
+
+    <Layer
+        File="../clock/clock.png"
+        Command="x,SCREEN_CENTER_X+(632-320);y,SCREEN_CENTER_Y+(108-240);linear,0.3;rotationz,-90"
+    />
+
+    <Layer
+        File="../clock/circle.sprite"
+        OnCommand="blend,add;x,SCREEN_CENTER_X+(586-320);y,SCREEN_CENTER_Y+(63-240);diffusealpha,0;sleep,0.2;linear,0.1;diffusealpha,1"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic header/up.png"
+        RepeatCommand="zoomx,1.3;blend,add;x,SCREEN_CENTER_X+(365-320);y,SCREEN_CENTER_Y+(100-240);addy,20;diffusealpha,0.8;linear,0.3;addy,-10;diffusealpha,1;linear,0.3;addy,-10;diffusealpha,0;sleep,(0.9-0.6);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="not IsExtraStage2()"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic header/down.png"
+        RepeatCommand="zoomx,1.3;blend,add;x,SCREEN_CENTER_X+(365-320);y,SCREEN_CENTER_Y+(420-240);addy,-20;diffusealpha,0.8;linear,0.3;addy,10;diffusealpha,1;linear,0.3;addy,10;diffusealpha,0;sleep,(0.9-0.6);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="not IsExtraStage2()"
+    />
+
+    <Layer
+        File="courseselect.png"
+        Command="x,SCREEN_CENTER_X+(140-320);y,SCREEN_CENTER_Y+(28-240);addx,-100;linear,0.2;addx,100"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic header/info.png"
+        Command="x,SCREEN_CENTER_X+(92-320);y,SCREEN_CENTER_Y+(60-240);zoomy,0;sleep,0.2;linear,0.2;zoomy,1"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic header/operation.png"
+        Command="x,SCREEN_CENTER_X+(420-320);y,SCREEN_CENTER_Y+(31-240);zoomy,0;sleep,0.4;linear,0.2;zoomy,1"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic header/info1.png"
+        Command="diffusealpha,0;x,SCREEN_CENTER_X+(330-320);y,SCREEN_CENTER_Y+(240-240);sleep,0.5;linear,0.2;x,SCREEN_CENTER_X+(320-320);diffusealpha,1"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic header/info2.png"
+        Command="diffusealpha,0;x,SCREEN_CENTER_X+(330-320);y,SCREEN_CENTER_Y+(240-240);sleep,0.65;linear,0.2;x,SCREEN_CENTER_X+(320-320);diffusealpha,1"
+    />
+
+    <Layer
+        File="steel.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(234-240)"
+    />
+
+</children></ActorFrame>

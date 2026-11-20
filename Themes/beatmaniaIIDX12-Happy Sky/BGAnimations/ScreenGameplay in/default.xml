@@ -1,0 +1,67 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,2"
+    />
+
+    <Layer
+        File="white.png"
+        Command="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+(160-320);zoomy,8;diffusealpha,0;sleep,4;linear,0.12;zoomy,.15;diffusealpha,1;sleep,0.1;linear,0.2;zoomx,0.2;diffusealpha,0"
+        Condition="(CurStyleName()=='single') and GAMESTATE:IsHumanPlayer(0)"
+    />
+
+    <Layer
+        File="ready.png"
+        Command="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+(160-320);zoomy,0.2;diffusealpha,0;sleep,4.1;linear,0.15;zoomy,1.2;diffusealpha,1;linear,0.1;zoomy,1;sleep,0.4;linear,0.4;y,SCREEN_CENTER_Y+(250-240);diffusealpha,0"
+        Condition="(CurStyleName()=='single') and GAMESTATE:IsHumanPlayer(0)"
+    />
+
+    <Layer
+        File="rwhite.png"
+        Command="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+(160-320);diffusealpha,0;sleep,4.23;linear,0.01;diffusealpha,1;linear,0.1;diffusealpha,0"
+        Condition="(CurStyleName()=='single') and GAMESTATE:IsHumanPlayer(0)"
+    />
+    
+    
+    
+    <Layer
+        File="white.png"
+        Command="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+(160);zoomy,8;diffusealpha,0;sleep,4;linear,0.12;zoomy,.15;diffusealpha,1;sleep,0.1;linear,0.2;zoomx,0.2;diffusealpha,0"
+        Condition="(CurStyleName()=='single') and GAMESTATE:IsHumanPlayer(1)"
+    />
+
+    <Layer
+        File="ready.png"
+        Command="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+(160);zoomy,0.2;diffusealpha,0;sleep,4.1;linear,0.15;zoomy,1.2;diffusealpha,1;linear,0.1;zoomy,1;sleep,0.4;linear,0.4;y,SCREEN_CENTER_Y+(250-240);diffusealpha,0"
+        Condition="(CurStyleName()=='single') and GAMESTATE:IsHumanPlayer(1)"
+    />
+
+    <Layer
+        File="rwhite.png"
+        Command="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+(160);diffusealpha,0;sleep,4.23;linear,0.01;diffusealpha,1;linear,0.1;diffusealpha,0"
+        Condition="(CurStyleName()=='single') and GAMESTATE:IsHumanPlayer(1)"
+    />
+    
+    
+    
+
+    <Layer
+        File="white.png"
+        Command="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X;zoomy,8;diffusealpha,0;sleep,4;linear,0.12;zoomy,.15;diffusealpha,1;sleep,0.1;linear,0.2;zoomx,0.2;diffusealpha,0"
+        Condition="(CurStyleName()=='double' or CurStyleName()=='solo' or CurStyleName()=='versus')"
+    />
+
+    <Layer
+        File="ready.png"
+        Command="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X;zoomy,0.2;diffusealpha,0;sleep,4.1;linear,0.15;zoomy,1.2;diffusealpha,1;linear,0.1;zoomy,1;sleep,0.4;linear,0.4;y,SCREEN_CENTER_Y+(250-240);diffusealpha,0"
+        Condition="(CurStyleName()=='double' or CurStyleName()=='solo' or CurStyleName()=='versus')"
+    />
+
+    <Layer
+        File="rwhite.png"
+        Command="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X;diffusealpha,0;sleep,4.23;linear,0.01;diffusealpha,1;linear,0.1;diffusealpha,0"
+        Condition="(CurStyleName()=='double' or CurStyleName()=='solo' or CurStyleName()=='versus')"
+    />
+
+</children></ActorFrame>

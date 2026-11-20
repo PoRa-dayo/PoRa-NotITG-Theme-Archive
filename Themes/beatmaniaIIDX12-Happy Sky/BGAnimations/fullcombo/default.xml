@@ -1,0 +1,43 @@
+<ActorFrame><children>
+    <Layer File="left" Condition="FUCK_EXE and CurStyleName()~='double' and GAMESTATE:IsPlayerEnabled(0)"
+    OnCommand="%function(self)
+        self:zoom(0)
+        self:addy(30)
+        self:sleep(0.2)
+        self:queuecommand('GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppears')
+    end"
+    GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppearsCommand="%function(self)
+        self:zoom(1)
+        if BMIIDX12Glob.IsFC[1] then
+            MESSAGEMAN:Broadcast('LeftFC')
+        end
+    end"/>
+    <Layer File="right" Condition="FUCK_EXE and CurStyleName()~='double' and GAMESTATE:IsPlayerEnabled(1)"
+    OnCommand="%function(self)
+        self:addx(320)
+        self:addy(30)
+        self:zoom(0)
+        self:sleep(0.2)
+        self:queuecommand('GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppears')
+    end"
+    GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppearsCommand="%function(self)
+        self:zoom(1)
+        if BMIIDX12Glob.IsFC[1] then
+            MESSAGEMAN:Broadcast('RightFC')
+        end
+    end"/>
+    <Layer File="center" Condition="FUCK_EXE and CurStyleName()=='double'"
+    OnCommand="%function(self)
+        self:zoom(0)
+        self:addy(30)
+        self:sleep(0.2)
+        self:queuecommand('GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppears')
+    end"
+    GottaDoThisToMakeItNotActivateRightWhenScreenGameplayAppearsCommand="%function(self)
+        self:zoom(1)
+        if BMIIDX12Glob.IsFC[1] then
+            MESSAGEMAN:Broadcast('CenterFC')
+        end
+    end"/>
+</children></ActorFrame>
+

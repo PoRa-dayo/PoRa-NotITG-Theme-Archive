@@ -1,0 +1,57 @@
+<ActorFrame><children>
+
+    <Layer
+        File="stage1.png"
+        Condition="StageIndex() == 0 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+        Command="y,SCREEN_CENTER_Y+(193-240);x,480;linear,0.3;x,112"
+    />
+
+    <Layer
+        File="stage2.png"
+        Condition="StageIndex() == 1 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+        Command="y,SCREEN_CENTER_Y+(193-240);x,480;linear,0.3;x,112"
+    />
+
+    <Layer
+        File="stage3.png"
+        Condition="StageIndex() == 2 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+        Command="y,SCREEN_CENTER_Y+(193-240);x,480;linear,0.3;x,112"
+    />
+
+    <Layer
+        File="stage4.png"
+        Condition="StageIndex() == 3 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+        Command="y,SCREEN_CENTER_Y+(193-240);x,480;linear,0.3;x,112"
+    />
+
+    <Layer
+        File="stage5.png"
+        Condition="StageIndex() == 4 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+        Command="y,SCREEN_CENTER_Y+(193-240);x,480;linear,0.3;x,112"
+    />
+
+    <Layer
+        File="stage6.png"
+        Condition="StageIndex() == 5 and IsFinalStage() == false and IsExtraStage() == false and IsExtraStage2() == false"
+        Command="y,SCREEN_CENTER_Y+(193-240);x,480;linear,0.3;x,112"
+    />
+
+    <Layer
+        File="final.png"
+        Condition="IsFinalStage() == true"
+        Command="y,SCREEN_CENTER_Y+(193-240);x,480;linear,0.3;x,112"
+    />
+
+    <Layer
+        File="extra1.png"
+        Condition="IsExtraStage() == true"
+        Command="y,SCREEN_CENTER_Y+(193-240);x,480;linear,0.3;x,130"
+    />
+
+    <Layer
+        File="extra2.png"
+        Condition="IsExtraStage2() == true"
+        Command="y,SCREEN_CENTER_Y+(193-240);x,480;linear,0.3;x,130"
+    />
+
+</children></ActorFrame>

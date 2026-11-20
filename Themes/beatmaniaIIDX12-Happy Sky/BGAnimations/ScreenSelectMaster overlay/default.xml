@@ -1,0 +1,83 @@
+--all this was omitted in the original SM3.9 version, but fuck this animation is too cool for me to not port it
+<ActorFrame><children>
+    <Layer
+        File="world_end_blackbox.png"
+        Command="x,SCREEN_CENTER_X+(109-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.1;decelerate,0.3;zoomx,1;sleep,0.2;diffusealpha,0"
+    />
+    
+    <Layer
+        File="world_end_blackbox.png"
+        Command="x,SCREEN_CENTER_X+(217-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.2;decelerate,0.3;zoomx,1;sleep,0.2;diffusealpha,0"
+    />
+    
+    <Layer
+        File="world_end_blackbox.png"
+        Command="x,SCREEN_CENTER_X+1;y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.3;decelerate,0.3;zoomx,1;sleep,0.2;diffusealpha,0"
+    />
+    
+    <Layer
+        File="world_end_blackbox.png"
+        Command="x,SCREEN_CENTER_X+(425-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.4;decelerate,0.3;zoomx,1;sleep,0.2;diffusealpha,0"
+    />
+    
+    <Layer
+        File="world_end_blackbox.png"
+        Command="x,SCREEN_CENTER_X+(529-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.5;decelerate,0.3;zoomx,1;sleep,0.2;diffusealpha,0"
+    />
+
+
+
+    <Layer
+        File="spinning_box.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(109-320);y,SCREEN_CENTER_Y+(340-240);zoomx,0.1;zoomy,0.2;rotationz,-70;diffusealpha,0;sleep,0.25;diffusealpha,1;linear,0.2;zoomx,1;zoomy,1;rotationz,0;sleep,0.05;diffusealpha,0"
+    />
+    
+    <Layer
+        File="spinning_box.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(217-320);y,SCREEN_CENTER_Y+(340-240);zoomx,0.1;zoomy,0.2;rotationz,-70;diffusealpha,0;sleep,0.35;diffusealpha,1;linear,0.2;zoomx,1;zoomy,1;rotationz,0;sleep,0.05;diffusealpha,0"
+    />
+    
+    <Layer
+        File="spinning_box.png"
+        Command="blend,add;x,SCREEN_CENTER_X+1;y,SCREEN_CENTER_Y+(340-240);zoomx,0.1;zoomy,0.2;rotationz,-70;diffusealpha,0;sleep,0.45;diffusealpha,1;linear,0.2;zoomx,1;zoomy,1;rotationz,0;sleep,0.05;diffusealpha,0"
+    />
+    
+    <Layer
+        File="spinning_box.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(425-320);y,SCREEN_CENTER_Y+(340-240);zoomx,0.1;zoomy,0.2;rotationz,-70;diffusealpha,0;sleep,0.55;diffusealpha,1;linear,0.2;zoomx,1;zoomy,1;rotationz,0;sleep,0.05;diffusealpha,0"
+    />
+    
+    <Layer
+        File="spinning_box.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(529-320);y,SCREEN_CENTER_Y+(340-240);zoomx,0.1;zoomy,0.2;rotationz,-70;diffusealpha,0;sleep,0.65;diffusealpha,1;linear,0.2;zoomx,1;zoomy,1;rotationz,0;sleep,0.05;diffusealpha,0"
+    />
+    
+    
+    
+    
+    <Layer
+        File="dance.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(109-320);y,SCREEN_CENTER_Y+(339-240);zoom,0;sleep,0.4;linear,0.15;zoom,1;sleep,0.05;zoom,0"
+    />
+    
+    <Layer
+        File="battle.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(217-320);y,SCREEN_CENTER_Y+(339-240);zoom,0;sleep,0.5;linear,0.15;zoom,1;sleep,0.05;zoom,0"
+    />
+    
+    <Layer
+        File="nonstop.png"
+        Command="blend,add;x,SCREEN_CENTER_X+1;y,SCREEN_CENTER_Y+(339-240);zoom,0;sleep,0.6;linear,0.15;zoom,1;sleep,0.05;zoom,0"
+    />
+    
+    <Layer
+        File="challenge.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(425-320);y,SCREEN_CENTER_Y+(339-240);zoom,0;sleep,0.7;linear,0.15;zoom,1;sleep,0.05;zoom,0"
+    />
+    
+    <Layer
+        File="endless.png"
+        Command="blend,add;x,SCREEN_CENTER_X+(529-320);y,SCREEN_CENTER_Y+(339-240);zoom,0;sleep,0.8;linear,0.15;zoom,1;sleep,0.05;zoom,0"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,7 @@
+<ActorFrame><children>
+    <Layer
+        File="stage.png"
+        Command="x,110;y,SCREEN_CENTER_Y+(107-240);addx,-400;bounceend,0.5;addx,400"
+    />
+
+</children></ActorFrame>

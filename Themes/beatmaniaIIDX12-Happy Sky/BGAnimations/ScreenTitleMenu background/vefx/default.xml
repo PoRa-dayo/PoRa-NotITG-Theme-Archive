@@ -1,0 +1,15 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../vefx.png"
+        Command="diffusealpha,0;sleep,8.2-7.65;y,SCREEN_CENTER_Y+(310-240);x,SCREEN_CENTER_X+(420-320);diffusealpha,1;queuecommand,Blink"
+        BlinkCommand="linear,0.8;diffusealpha,0.2;linear,0.8;diffusealpha,1;queuecommand,Blink"
+    />
+
+    <Layer
+        File="../vefx.png"
+        Command="diffusealpha,0;sleep,8.3-7.65;y,SCREEN_CENTER_Y+(310-240);x,SCREEN_CENTER_X+(420-320);queuecommand,Zoom"
+        ZoomCommand="linear,0.1;diffusealpha,0.3;zoomx,1.15;linear,0.2;zoomx,1;diffusealpha,0;sleep,4.4;queuecommand,Zoom"
+    />
+
+</children></ActorFrame>

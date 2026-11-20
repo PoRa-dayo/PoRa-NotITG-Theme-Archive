@@ -1,0 +1,83 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../ScreenSelectStyle1 background/bg.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/SANKASYA.png"
+        Command="x,73;y,SCREEN_CENTER_Y+(44-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/time remain.png"
+        Command="x,SCREEN_WIDTH-(640-545);y,SCREEN_CENTER_Y+(51-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/cab.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(222-240);blend,add;diffusealpha,0.8"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/boxfill.png"
+        Command="x,SCREEN_CENTER_X+(15-320);y,SCREEN_CENTER_Y+(96-240);horizalign,left;vertalign,top;diffusealpha,0.5"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/1p.png"
+        Command="x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(255-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/boxfill.png"
+        Command="x,SCREEN_CENTER_X+(215-320);y,SCREEN_CENTER_Y+(96-240);horizalign,left;vertalign,top;diffusealpha,0.5"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/2p.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(255-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/boxfill.png"
+        Command="x,SCREEN_CENTER_X+(415-320);y,SCREEN_CENTER_Y+(96-240);horizalign,left;vertalign,top;diffusealpha,0.5"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/db.png"
+        Command="x,SCREEN_CENTER_X+(520-320);y,SCREEN_CENTER_Y+(255-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/onescroll"
+        Command="x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(204-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/twoscroll"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(204-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/dblscroll"
+        Command="x,SCREEN_CENTER_X+(520-320);y,SCREEN_CENTER_Y+(204-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/whiteline.png"
+        Command="x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(226-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/whiteline.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(226-240)"
+    />
+
+    <Layer
+        File="../ScreenSelectStyle1 background/whiteline.png"
+        Command="x,SCREEN_CENTER_X+(520-320);y,SCREEN_CENTER_Y+(226-240)"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,66 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../head.png"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;blend,add;diffusealpha,0.5"
+    />
+
+    <Layer
+        File="../here1"
+        Command="x,118;y,SCREEN_CENTER_Y+(436-240);glowshift;effectcolor1,1,1,1,0;effectcolor2,1,1,.9,.1;effectperiod,1"
+        Condition="GAMESTATE:IsHumanPlayer(0)"
+    />
+
+    <Layer
+        File="../here2"
+        Command="x,SCREEN_WIDTH-(640-523);y,SCREEN_CENTER_Y+(436-240);glowshift;effectcolor1,1,1,1,0;effectcolor2,1,1,.9,.1;effectperiod,1"
+        Condition="GAMESTATE:IsHumanPlayer(1)"
+    />
+
+    <Layer
+        File="../clock/clock.png"
+        Command="x,SCREEN_WIDTH-(640-632);y,SCREEN_CENTER_Y+(108-240);linear,0.3;rotationz,-90"
+    />
+
+    <Layer
+        File="../clock/circle.sprite"
+        OnCommand="blend,add;x,SCREEN_WIDTH-(640-586);y,SCREEN_CENTER_Y+(63-240);diffusealpha,0;sleep,0.2;linear,0.1;diffusealpha,1"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic header/info.png"
+        Command="x,92;y,SCREEN_CENTER_Y+(60-240);zoomy,0;sleep,0.1;linear,0.2;zoomy,1"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic header/operation.png"
+        Command="x,SCREEN_WIDTH-(640-420);y,SCREEN_CENTER_Y+(31-240);zoomy,0;sleep,0.3;linear,0.2;zoomy,1"
+    />
+
+    <Layer
+        File="../ScreenSelectMusic header/info1.png"
+        Command="diffusealpha,0;x,330;y,SCREEN_CENTER_Y+(240-240);sleep,0.4;linear,0.2;x,320;diffusealpha,1"
+    />
+
+    <Layer
+        File="../effector.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(500-240);linear,0.45;y,SCREEN_CENTER_Y+(455-240);diffusealpha,1"
+    />
+
+    <Layer
+        File="battle.png"
+        Command="x,SCREEN_CENTER_X+(217-320);y,SCREEN_CENTER_Y+(323-240);zoomx,0;sleep,0.55;decelerate,0.3;zoomx,1;shadowlength,0"
+        Condition="(CurStyleName()=='double' or CurStyleName()=='solo')"
+    />
+
+    <Layer
+        File="modeselect.png"
+        Command="x,119;y,SCREEN_CENTER_Y+(28-240);addx,-100;linear,0.2;addx,100"
+    />
+
+    <Layer
+        File="name.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;cropright,1;sleep,0.5;linear,0.5;cropright,0"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,248 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../_black.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,1;sleep,2.48;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../bg.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(240-240);zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;sleep,1;linear,0.2;diffusealpha,1;sleep,2.2;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="time1.png"
+        Command="x,SCREEN_CENTER_X+(26-320);y,SCREEN_CENTER_Y+(224-240);addy,-500;linear,0.5;addy,500"
+    />
+
+    <Layer
+        File="time2.png"
+        Command="x,SCREEN_CENTER_X+(614-320);y,SCREEN_CENTER_Y+(224-240);addy,-500;linear,0.5;addy,500"
+    />
+
+    <Layer
+        File="turntableP1.png"
+        Command="x,SCREEN_CENTER_X+(30-320);y,SCREEN_CENTER_Y+(398-240);addy,-500;linear,0.5;addy,500"
+        Condition="GAMESTATE:IsPlayerEnabled(0)"
+    />
+
+    <Layer
+        File="turntableP2.png"
+        Command="x,SCREEN_CENTER_X+(610-320);y,SCREEN_CENTER_Y+(398-240);addy,-500;linear,0.5;addy,500"
+        Condition="GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="default.png"
+        Command="x,SCREEN_CENTER_X+(612-320);y,SCREEN_CENTER_Y+(396-240);spin;diffusealpha,0;sleep,0.6;linear,0.2;diffusealpha,1"
+        Condition="GAMESTATE:IsPlayerEnabled(1)"
+    />
+    
+    <Layer
+        File="default.png"
+        Command="x,SCREEN_CENTER_X+(28-320);y,SCREEN_CENTER_Y+(396-240);spin;diffusealpha,0;sleep,0.6;linear,0.2;diffusealpha,1"
+        Condition="GAMESTATE:IsPlayerEnabled(0)"
+    />
+
+    <Layer
+        File="ap.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(492-240);vertalign,bottom;zoomx,.8;diffusealpha,0;sleep,0.4;linear,0.2;zoomx,1;diffusealpha,1;glow,0,1,1,0;linear,0.05;glow,0,1,1,1;linear,0.2;glow,0,0,1,0"
+    />
+
+    <Layer
+        File="difficulty.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(492-240);vertalign,bottom;cropright,0.5;addx,-500;linear,0.5;addx,500"
+    />
+
+    <Layer
+        File="difficulty.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(492-240);vertalign,bottom;cropleft,0.5;addx,500;linear,0.5;addx,-500"
+    />
+
+    <Layer
+        File="../stage"
+    />
+
+    <Layer
+        File="scoreframe.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(492-240);vertalign,bottom;cropright,0.5;addx,-500;linear,0.5;addx,500"
+    />
+
+    <Layer
+        File="scoreframe.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(492-240);vertalign,bottom;cropleft,0.5;addx,500;linear,0.5;addx,-500"
+    />
+
+    <Layer
+        File="lifeframeleft.png"
+        Command="x,SCREEN_CENTER_X+(100-320);y,SCREEN_CENTER_Y+(429-240);addy,-500;linear,0.5;addy,500"
+    />
+
+    <Layer
+        File="lifeframeright.png"
+        Command="x,SCREEN_CENTER_X+(540-320);y,SCREEN_CENTER_Y+(429-240);addy,-500;linear,0.5;addy,500"
+    />
+
+    <Layer
+        File="bpm.png"
+        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(460-240);addy,120;decelerate,0.4;addy,-120"
+    />
+    
+    <Layer
+        File="light.png"
+        Command="x,SCREEN_CENTER_X+(217-320);y,SCREEN_CENTER_Y+(427-240);diffusealpha,0;sleep,0.4;addy,40;linear,0.2;addy,-40;diffusealpha,1"
+    />
+
+    <Layer
+        File="light.png"
+        Command="x,SCREEN_CENTER_X+(422-320);y,SCREEN_CENTER_Y+(427-240);diffusealpha,0;sleep,0.4;addy,40;linear,0.2;addy,-40;diffusealpha,1"
+    />
+
+    <Layer
+        File="glow.png"
+        Command="x,SCREEN_CENTER_X+(217-320);y,SCREEN_CENTER_Y+(427-240);blend,add;diffuseblink;effectperiod,0.07;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;diffusealpha,0;sleep,0.5;diffusealpha,1"
+        Condition="GAMESTATE:IsPlayerEnabled(0)"
+    />
+
+    <Layer
+        File="glow.png"
+        Command="x,SCREEN_CENTER_X+(422-320);y,SCREEN_CENTER_Y+(427-240);blend,add;diffuseblink;effectperiod,0.07;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;diffusealpha,0;sleep,0.5;diffusealpha,1"
+        Condition="GAMESTATE:IsPlayerEnabled(1)"
+    />
+
+    <Layer
+        File="bolt2.sprite"
+        Command="horizalign,right;blend,add;x,SCREEN_CENTER_X+(250-320);y,SCREEN_CENTER_Y+(446-240);addy,30;rotationz,60;zoomy,1.8;linear,0.5;addy,-30;zoomy,0;linear,0.00001;zoomy,1;rotationz,0;zoomx,0.5;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt.sprite"
+        Command="zoom,2;blend,add;x,SCREEN_CENTER_X+(250-320);y,SCREEN_CENTER_Y+(444-240);addy,120;decelerate,0.4;addy,-120;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt.sprite"
+        Command="zoom,2;blend,add;x,SCREEN_CENTER_X+(90-320);y,SCREEN_CENTER_Y+(444-240);addy,-500;linear,0.5;addy,500;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt2.sprite"
+        Command="horizalign,right;blend,add;x,SCREEN_CENTER_X+(390-320);y,SCREEN_CENTER_Y+(446-240);addy,30;rotationz,120;zoomy,1.8;linear,0.5;addy,-30;zoomy,0;linear,0.00001;zoomy,1;rotationz,180;zoomx,0.5;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt.sprite"
+        Command="zoom,2;blend,add;x,SCREEN_CENTER_X+(390-320);y,SCREEN_CENTER_Y+(444-240);addy,120;decelerate,0.4;addy,-120;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt.sprite"
+        Command="zoom,2;blend,add;x,SCREEN_CENTER_X+(550-320);y,SCREEN_CENTER_Y+(444-240);addy,-500;linear,0.5;addy,500;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt2.sprite"
+        Command="horizalign,right;blend,add;x,SCREEN_CENTER_X+(250-320);y,SCREEN_CENTER_Y+(446-240);addy,30;rotationz,10;accelerate,0.5;addy,-30;rotationz,0;cropleft,1"
+    />
+
+    <Layer
+        File="bolt.sprite"
+        Command="zoom,2;blend,add;x,SCREEN_CENTER_X+(244-320);y,SCREEN_CENTER_Y+(452-240);addx,-500;linear,0.5;addx,500;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt2.sprite"
+        Command="horizalign,right;blend,add;x,SCREEN_CENTER_X+(390-320);y,SCREEN_CENTER_Y+(446-240);addy,30;rotationz,170;accelerate,0.5;addy,-30;rotationz,180;cropleft,1"
+    />
+
+    <Layer
+        File="bolt.sprite"
+        Command="zoom,2;blend,add;x,SCREEN_CENTER_X+(396-320);y,SCREEN_CENTER_Y+(452-240);addx,500;linear,0.5;addx,-500;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt2.sprite"
+        Command="y,SCREEN_CENTER_Y;blend,add;rotationz,90;zoomy,1.4;x,SCREEN_CENTER_X+(10-320);diffusealpha,0;sleep,0.5;diffusealpha,1;sleep,0.1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt2.sprite"
+        Command="y,SCREEN_CENTER_Y;blend,add;rotationz,90;zoomy,1.4;x,SCREEN_CENTER_X+(630-320);diffusealpha,0;sleep,0.5;diffusealpha,1;sleep,0.1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt1.sprite"
+        Command="blend,add;x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(446-240);diffusealpha,0;sleep,0.6;diffusealpha,1;sleep,0.1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt1.sprite"
+        Command="blend,add;rotationz,90;x,SCREEN_CENTER_X+(80-320);y,SCREEN_CENTER_Y+(446-240);diffusealpha,0;sleep,0.65;diffusealpha,1;sleep,0.1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt1.sprite"
+        Command="blend,add;rotationz,-90;x,SCREEN_CENTER_X+(420-320);y,SCREEN_CENTER_Y+(446-240);diffusealpha,0;sleep,0.7;diffusealpha,1;sleep,0.1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt3.sprite"
+        Command="blend,add;x,SCREEN_CENTER_X+(550-320);y,SCREEN_CENTER_Y+(446-240);diffusealpha,0;sleep,0.75;diffusealpha,1;sleep,0.1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt3.sprite"
+        Command="blend,add;rotationz,-90;x,SCREEN_CENTER_X+(50-320);y,SCREEN_CENTER_Y+(446-240);diffusealpha,0;sleep,0.8;diffusealpha,1;sleep,0.1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt3.sprite"
+        Command="blend,add;rotationz,90;x,SCREEN_CENTER_X+(220-320);y,SCREEN_CENTER_Y+(446-240);diffusealpha,0;sleep,0.8;diffusealpha,1;sleep,0.1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt3.sprite"
+        Command="blend,add;x,SCREEN_CENTER_X+(24-320);y,SCREEN_CENTER_Y+(390-240);diffusealpha,0;sleep,0.7;diffusealpha,1;sleep,0.1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt2.sprite"
+        Command="blend,add;horizalign,left;zoomx,0.7;x,SCREEN_CENTER_X+(0-320);y,SCREEN_CENTER_Y+(430-240);diffusealpha,0;sleep,0.5;diffusealpha,1;linear,0.5;addy,-480;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt2.sprite"
+        Command="blend,add;horizalign,left;zoomx,0.7;x,SCREEN_CENTER_X+(0-320);y,SCREEN_CENTER_Y+(430-240);diffusealpha,0;sleep,0.5;diffusealpha,1;linear,0.5;addy,-100;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt2.sprite"
+        Command="blend,add;rotationz,90;zoomy,1.3;x,SCREEN_CENTER_X+(224-320);y,SCREEN_CENTER_Y+(220-240);diffusealpha,0;sleep,0.5;diffusealpha,1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt2.sprite"
+        Command="blend,add;horizalign,right;zoomx,0.7;x,SCREEN_CENTER_X+(640-320);y,SCREEN_CENTER_Y+(430-240);diffusealpha,0;sleep,0.5;diffusealpha,1;linear,0.5;addy,-480;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt2.sprite"
+        Command="blend,add;horizalign,right;zoomx,0.7;x,SCREEN_CENTER_X+(640-320);y,SCREEN_CENTER_Y+(430-240);diffusealpha,0;sleep,0.5;diffusealpha,1;linear,0.5;addy,-120;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt2.sprite"
+        Command="blend,add;rotationz,90;zoomy,1.3;x,SCREEN_CENTER_X+(416-320);y,SCREEN_CENTER_Y+(220-240);diffusealpha,0;sleep,0.5;diffusealpha,1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt3.sprite"
+        Command="blend,add;rotationz,180;x,SCREEN_CENTER_X+(160-320);y,SCREEN_CENTER_Y+(390-240);diffusealpha,0;sleep,0.7;diffusealpha,1;sleep,0.1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="bolt3.sprite"
+        Command="blend,add;rotationz,-90;x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(400-240);diffusealpha,0;sleep,0.9;diffusealpha,1;sleep,0.1;linear,0.2;diffusealpha,0"
+    />
+
+</children></ActorFrame>

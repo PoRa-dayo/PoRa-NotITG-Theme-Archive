@@ -1,0 +1,73 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,3"
+    />
+
+    <Layer
+        File="sky.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomy,0;linear,0.15;zoomy,1;sleep,2;linear,0.2;zoomy,0"
+    />
+
+    <Layer
+        File="sky.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,0.3;linear,0.8;diffusealpha,0.2;linear,0.8;diffusealpha,0"
+    />
+
+    <Layer
+        File="over-b.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(230-240);sleep,2.3;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="over.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(227-240);zoomx,1.1;diffusealpha,0;sleep,0.1;linear,0.2;zoomx,1;diffusealpha,1;sleep,2;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="over.png"
+        Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(227-240);diffusealpha,0;sleep,0.3;linear,0.3;diffusealpha,1;linear,0.6;diffusealpha,0"
+    />
+
+    <Layer
+        File="thankyou.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(250-240);zoomx,1.1;diffusealpha,0;linear,0.2;zoomx,1;diffusealpha,1"
+    />
+
+    <Layer
+        File="3.png"
+        Command="y,SCREEN_CENTER_Y;blend,add;x,SCREEN_CENTER_X+(320-320);linear,0.2;x,SCREEN_CENTER_X+(10-320);sleep,2;linear,0.1;x,SCREEN_CENTER_X+(220-320);diffusealpha,0"
+    />
+
+    <Layer
+        File="4.png"
+        Command="y,SCREEN_CENTER_Y;blend,add;x,SCREEN_CENTER_X+(320-320);linear,0.2;x,SCREEN_CENTER_X+(630-320);sleep,2;linear,0.1;x,SCREEN_CENTER_X+(420-320);diffusealpha,0"
+    />
+
+    <Layer
+        File="1.png"
+        Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(240-240);linear,0.15;y,SCREEN_CENTER_Y+(50-240);sleep,1.85;linear,0.2;y,SCREEN_CENTER_Y+(120-240);diffusealpha,1;linear,0.2;y,SCREEN_CENTER_Y+(240-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="2.png"
+        Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(240-240);linear,0.15;y,SCREEN_CENTER_Y+(430-240);sleep,1.85;linear,0.2;y,SCREEN_CENTER_Y+(360-240);diffusealpha,1;linear,0.2;y,SCREEN_CENTER_Y+(240-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="1.png"
+        Command="x,SCREEN_CENTER_X;blend,add;zoom,.5;y,SCREEN_CENTER_Y+(240-240);linear,2;y,SCREEN_CENTER_Y+(50-240);zoom,1;linear,0.001;diffusealpha,0"
+    />
+
+    <Layer
+        File="2.png"
+        Command="x,SCREEN_CENTER_X;blend,add;zoom,.5;y,SCREEN_CENTER_Y+(240-240);linear,2;y,SCREEN_CENTER_Y+(430-240);zoom,1;linear,0.001;diffusealpha,0"
+    />
+
+    <Layer
+        File="flash.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(235-240);blend,add;zoom,2;zoomy,4;diffusealpha,0;sleep,2.35;diffusealpha,1;linear,0.1;zoomy,0"
+    />
+
+</children></ActorFrame>

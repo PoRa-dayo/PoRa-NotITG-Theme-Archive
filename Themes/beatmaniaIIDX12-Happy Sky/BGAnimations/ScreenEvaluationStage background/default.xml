@@ -1,0 +1,32 @@
+<ActorFrame><children>
+    <Layer
+        File="FAILED"
+    />
+
+    <Layer
+        File="CLEAR"
+    />
+
+    <Layer
+        File="A"
+    />
+
+    <Layer
+        File="AA"
+    />
+
+    <Layer
+        File="AAA"
+    />
+
+    <Layer
+        File="EXTRA"
+    />
+    
+    <Layer
+        Text="Mirin Template"
+        Font="font"
+        Command="%function(self) self:x(SCREEN_CENTER_X+(321-320)) self:y(SCREEN_CENTER_Y+(443-240)) self:zoom(0.5) self:maxwidth(420) self:shadowlength(0) SongTitle(self) end"
+    />
+
+</children></ActorFrame>

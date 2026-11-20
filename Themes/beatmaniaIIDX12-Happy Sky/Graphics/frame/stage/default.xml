@@ -1,0 +1,99 @@
+<ActorFrame><children>
+
+    <Layer
+        File="beginner.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(198-320);y,SCREEN_CENTER_Y+(455-240);sleep,4;linear,0.4;y,SCREEN_CENTER_Y+(436-240);diffusealpha,0;linear,0.01;y,SCREEN_CENTER_Y+(473-240);linear,0.01;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(455-240);sleep,(1.5-0.82);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 0 and GAMESTATE:IsPlayerEnabled(0)"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="light.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(198-320);y,SCREEN_CENTER_Y+(455-240);sleep,4;linear,0.4;y,SCREEN_CENTER_Y+(436-240);diffusealpha,0;linear,0.01;y,SCREEN_CENTER_Y+(473-240);linear,0.01;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(455-240);sleep,(1.5-0.82);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 1 and GAMESTATE:IsPlayerEnabled(0)"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="normal.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(198-320);y,SCREEN_CENTER_Y+(455-240);sleep,4;linear,0.4;y,SCREEN_CENTER_Y+(436-240);diffusealpha,0;linear,0.01;y,SCREEN_CENTER_Y+(473-240);linear,0.01;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(455-240);sleep,(1.5-0.82);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 2 and GAMESTATE:IsPlayerEnabled(0)"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="hyper.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(198-320);y,SCREEN_CENTER_Y+(455-240);sleep,4;linear,0.4;y,SCREEN_CENTER_Y+(436-240);diffusealpha,0;linear,0.01;y,SCREEN_CENTER_Y+(473-240);linear,0.01;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(455-240);sleep,(1.5-0.82);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 3 and GAMESTATE:IsPlayerEnabled(0)"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="another.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(198-320);y,SCREEN_CENTER_Y+(455-240);sleep,4;linear,0.4;y,SCREEN_CENTER_Y+(436-240);diffusealpha,0;linear,0.01;y,SCREEN_CENTER_Y+(473-240);linear,0.01;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(455-240);sleep,(1.5-0.82);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 4 and GAMESTATE:IsPlayerEnabled(0)"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="other.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(198-320);y,SCREEN_CENTER_Y+(455-240);sleep,4;linear,0.4;y,SCREEN_CENTER_Y+(436-240);diffusealpha,0;linear,0.01;y,SCREEN_CENTER_Y+(473-240);linear,0.01;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(455-240);sleep,(1.5-0.82);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 5 and GAMESTATE:IsPlayerEnabled(0)"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="beginner.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(442-320);y,SCREEN_CENTER_Y+(455-240);sleep,4;linear,0.4;y,SCREEN_CENTER_Y+(463-240);diffusealpha,0;linear,0.01;y,SCREEN_CENTER_Y+(426-240);linear,0.01;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(455-240);sleep,(1.5-0.82);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 0 and GAMESTATE:IsPlayerEnabled(1)"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="light.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(442-320);y,SCREEN_CENTER_Y+(455-240);sleep,4;linear,0.4;y,SCREEN_CENTER_Y+(463-240);diffusealpha,0;linear,0.01;y,SCREEN_CENTER_Y+(426-240);linear,0.01;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(455-240);sleep,(1.5-0.82);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 1 and GAMESTATE:IsPlayerEnabled(1)"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="normal.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(442-320);y,SCREEN_CENTER_Y+(455-240);sleep,4;linear,0.4;y,SCREEN_CENTER_Y+(463-240);diffusealpha,0;linear,0.01;y,SCREEN_CENTER_Y+(426-240);linear,0.01;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(455-240);sleep,(1.5-0.82);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 2 and GAMESTATE:IsPlayerEnabled(1)"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="hyper.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(442-320);y,SCREEN_CENTER_Y+(455-240);sleep,4;linear,0.4;y,SCREEN_CENTER_Y+(463-240);diffusealpha,0;linear,0.01;y,SCREEN_CENTER_Y+(426-240);linear,0.01;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(455-240);sleep,(1.5-0.82);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 3 and GAMESTATE:IsPlayerEnabled(1)"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="another.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(442-320);y,SCREEN_CENTER_Y+(455-240);sleep,4;linear,0.4;y,SCREEN_CENTER_Y+(463-240);diffusealpha,0;linear,0.01;y,SCREEN_CENTER_Y+(426-240);linear,0.01;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(455-240);sleep,(1.5-0.82);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 4 and GAMESTATE:IsPlayerEnabled(1)"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="other.png"
+        RepeatCommand="x,SCREEN_CENTER_X+(442-320);y,SCREEN_CENTER_Y+(455-240);sleep,4;linear,0.4;y,SCREEN_CENTER_Y+(463-240);diffusealpha,0;linear,0.01;y,SCREEN_CENTER_Y+(426-240);linear,0.01;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(455-240);sleep,(1.5-0.82);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+        Condition="GetEasiestNotesDifficulty() == 5 and GAMESTATE:IsPlayerEnabled(1)"
+        OffCommand="diffusealpha,1;linear,0.3;diffusealpha,0"
+    />
+
+</children></ActorFrame>

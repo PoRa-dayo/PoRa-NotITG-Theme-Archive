@@ -1,0 +1,193 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,4"
+    />
+
+    <Layer
+        File="../white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;sleep,0.3;linear,0.1;diffusealpha,1"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/sky.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH*1.3;zoomtoheight,SCREEN_HEIGHT*1.3;diffusealpha,0;sleep,0.1;linear,0.1;diffusealpha,1;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;sleep,3;linear,0.1;zoomtowidth,SCREEN_WIDTH;zoomy,0.0;sleep,0.1;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/sky-blur.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;blend,add;sleep,3.1;linear,0.1;diffusealpha,1;zoomtowidth,SCREEN_WIDTH*1.2;zoomtoheight,SCREEN_HEIGHT*1.2;linear,0.1;zoomy,0;zoomx,1.4"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/sky-blur.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;sleep,1.2;linear,0.01;diffusealpha,1;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;linear,1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../light/logo.png"
+        Command="blend,add;zoomy,0;x,SCREEN_WIDTH-(640-585);y,SCREEN_CENTER_Y+(20-240);diffusealpha,0;sleep,0.3;linear,0.3;zoomy,1;diffusealpha,1;sleep,2.5;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ring.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,0;blend,add;diffusealpha,0;sleep,0.1;linear,0.01;diffusealpha,1;linear,1.3;zoom,8;diffusealpha,0"
+    />
+
+    <Layer
+        File="challenge.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(230-240);zoom,1.3;diffusealpha,0;sleep,0.1;linear,0.2;diffusealpha,1;zoom,1;sleep,2.7;linear,0.2;zoom,0.6;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/flash2.jpg"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,2;zoomy,5;blend,add;diffusealpha,0;sleep,0.1;linear,0.2;diffusealpha,1;linear,0.4;zoomy,0.5;linear,0.2;zoomy,0.01;linear,1;diffusealpha,0"
+    />
+
+    <Layer
+        File="challenge-white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(230-240);blend,add;zoom,3;diffusealpha,0;sleep,0.4;linear,0.2;diffusealpha,1;zoom,1;linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="challenge.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(230-240);diffusealpha,0;sleep,0.3;linear,1;diffusealpha,1;sleep,1.7;linear,0.2;zoom,0.6;diffusealpha,0"
+    />
+
+    <Layer
+        File="challenge-blend.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(230-240);blend,add;zoom,2;diffusealpha,0;sleep,0.6;diffusealpha,1;linear,0.3;zoom,1;sleep,2.1;linear,0.2;zoom,2.5;diffusealpha,0.5;linear,0.1;zoomy,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/pop.png"
+        Command="x,SCREEN_CENTER_X+(250-320);y,SCREEN_CENTER_Y+(240-240);blend,add;diffusealpha,0;sleep,0.2;diffusealpha,1;linear,1;rotationz,540;x,SCREEN_CENTER_X+(450-320);zoomx,0.6;diffusealpha,0"
+    />
+
+    <Layer
+        File="../light/light1.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(220-240);blend,add;diffusealpha,0;sleep,0.8;linear,0.1;diffusealpha,0.3;zoom,1;linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="../light/light2.png"
+        Command="x,SCREEN_WIDTH;y,SCREEN_CENTER_Y+(220-240);blend,add;diffusealpha,0;sleep,1;linear,0.1;diffusealpha,0.3;zoom,1;linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/sunlight.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;blend,add;diffusealpha,0;sleep,1;linear,0.2;diffusealpha,1;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="../light/light3.png"
+        Command="x,0;y,SCREEN_CENTER_Y+(220-240);blend,add;diffusealpha,0;sleep,1.2;linear,0.1;diffusealpha,0.3;zoom,1;linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="style.png"
+        Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(330-240);zoom,0.1;diffusealpha,0;sleep,1;linear,0.5;diffusealpha,0.5;zoom,0.65;sleep,1.7;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../light/k.png"
+        Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(330-240);zoom,0.1;diffusealpha,0;sleep,0.7;linear,0.5;diffusealpha,0.5;rotationz,90;zoom,1;linear,0.3;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/flash2.jpg"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(258-240);zoomy,0.02;blend,add;diffusealpha,0;sleep,0.1;linear,0.2;diffusealpha,0.8;sleep,2.7;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../light/miniflash.png"
+        Command="x,-80;y,SCREEN_CENTER_Y+(258-240);blend,add;diffusealpha,0;sleep,0.5;linear,0.2;diffusealpha,1;linear,0.5;x,SCREEN_WIDTH-(640-750)"
+    />
+
+    <Layer
+        File="../light/white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(440-240);blend,add;diffusealpha,0;sleep,0.5;linear,0.1;diffusealpha,0.1;linear,0.4;zoomx,15;sleep,2;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../light/loading.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(446-240);blend,add;diffusealpha,0;sleep,0.5;linear,0.2;diffusealpha,1;sleep,1.7;linear,0.1;addy,5;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/text/4 2x1.png"
+        Command="zoomy,0.5;x,SCREEN_CENTER_X+(284-320);y,SCREEN_CENTER_Y+(447-240);blend,add;diffusealpha,0;sleep,0.5;linear,0.2;diffusealpha,1;sleep,1.7;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/text/4 2x1.png"
+        Command="zoomy,0.5;x,SCREEN_CENTER_X+(357-320);y,SCREEN_CENTER_Y+(447-240);blend,add;diffusealpha,0;sleep,0.5;linear,0.2;diffusealpha,1;sleep,1.7;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/arrow.png"
+        Command="x,SCREEN_CENTER_X+(500-320);y,SCREEN_CENTER_Y+(480-240);blend,add;diffusealpha,0;sleep,1.6;diffusealpha,0.5;linear,0.2;y,SCREEN_CENTER_Y+(220-240);linear,0.4;y,SCREEN_CENTER_Y+(190-240);linear,0.2;y,SCREEN_CENTER_Y+(-60-240);linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/arrow.png"
+        Command="x,SCREEN_CENTER_X+(520-320);y,SCREEN_CENTER_Y+(480-240);blend,add;diffusealpha,0;sleep,1.6;diffusealpha,0.5;linear,0.2;y,SCREEN_CENTER_Y+(-60-240);linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/arrow.png"
+        Command="x,SCREEN_CENTER_X+(530-320);y,SCREEN_CENTER_Y+(480-240);blend,add;diffusealpha,0;sleep,1.6;diffusealpha,0.5;linear,1.2;y,SCREEN_CENTER_Y+(-60-240);linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/arrow.png"
+        Command="x,SCREEN_CENTER_X+(560-320);y,SCREEN_CENTER_Y+(480-240);blend,add;diffusealpha,0;sleep,1.6;diffusealpha,0.5;linear,0.2;y,SCREEN_CENTER_Y+(320-240);linear,0.4;y,SCREEN_CENTER_Y+(250-240);linear,0.1;y,SCREEN_CENTER_Y+(-60-240);linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/arrow.png"
+        Command="x,SCREEN_CENTER_X+(540-320);y,SCREEN_CENTER_Y+(480-240);blend,add;diffusealpha,0;sleep,2;diffusealpha,0.5;linear,0.3;y,SCREEN_CENTER_Y+(-60-240);linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/arrow.png"
+        Command="x,SCREEN_CENTER_X+(600-320);y,SCREEN_CENTER_Y+(480-240);blend,add;diffusealpha,0;sleep,2.2;diffusealpha,0.5;linear,0.3;y,SCREEN_CENTER_Y+(-60-240);linear,0.2;diffusealpha,0"
+    />
+
+    <Layer
+        File="../ScreenTitleMenu background/flash.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomx,6;zoomy,2;blend,add;diffusealpha,0;sleep,3;linear,0.2;diffusealpha,1;linear,0.1;zoomy,0.2;zoomx,3;linear,0.1;diffusealpha,0"
+    />
+
+    <Layer
+        File="../light/white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomy,0.5;zoomx,100;blend,add;diffusealpha,0;sleep,3.1;linear,0.1;diffusealpha,1;linear,0.2;zoomx,0"
+    />
+
+    <Layer
+        File="../light/1.png"
+        Command="x,SCREEN_CENTER_X+(321-320);y,SCREEN_CENTER_Y+(440-240);blend,add;diffusealpha,0;sleep,0.4;diffusealpha,1;sleep,2.7;diffusealpha,0"
+    />
+
+    <Layer
+        File="../light/white.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(440-240);zoomx,15;cropright,1;sleep,1.2;linear,1.2;cropright,0;sleep,0.7;diffusealpha,0"
+    />
+
+    <Layer
+        File="../light/standby.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(446-240);blend,add;addy,-5;diffusealpha,0;sleep,2.45;linear,0.1;addy,5;diffusealpha,1;sleep,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="../mode-decide.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(270-240);blend,add;diffusealpha,0;sleep,1.3;linear,0.2;diffusealpha,1;sleep,1.5;linear,0.1;diffusealpha,0"
+    />
+
+</children></ActorFrame>

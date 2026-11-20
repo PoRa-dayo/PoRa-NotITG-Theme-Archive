@@ -1,0 +1,241 @@
+<ActorFrame
+    OnCommand="queuecommand,UpdateScroll"
+    CurrentSongChangedMessageCommand="%function(self)
+        MESSAGEMAN:Broadcast('Update')
+    end"
+    CurrentStepsP1ChangedMessageCommand="%function(self)
+        MESSAGEMAN:Broadcast('Update')
+    end"
+    CurrentStepsP2ChangedMessageCommand="%function(self)
+        MESSAGEMAN:Broadcast('Update')
+    end"
+    UpdateScrollCommand="%function(self)
+        if BMIIDX12Glob.ScrollUpdateNOW then return end
+        BMIIDX12Glob.ScrollUpdateNOW=true
+        self:queuecommand('Scroll')
+    end"
+    ScrollCommand="%function(self)
+        if BMIIDX12Glob.ScrollUpdateNOW then
+            MESSAGEMAN:Broadcast('UpdateScrollThumb')
+            self:sleep(0.1)
+            self:queuecommand('UpdateScroll')
+            self:queuecommand('WheelSelect')
+        end
+        BMIIDX12Glob.ScrollUpdateNOW = false
+    end"
+    WheelSelectCommand="%function(self)
+        UpdateWheelSelection()
+    end"
+    ><children>
+    
+    <Layer
+        Type="Quad"
+        OnCommand="%function(self)
+            BMIIDX12Glob.MusicWheelList = {}
+            BMIIDX12Glob.SelectedWheelItems = {}
+            BMIIDX12Glob.FirstTweening=true
+            BMIIDX12Glob.ScrollUpdateNOW = false
+            BMIIDX12Glob.DirCompare=nil
+            self:sleep(0.5)
+            self:queuecommand('Disallow')
+        end"
+        DisallowCommand="%function(self)
+            BMIIDX12Glob.FirstTweening=false
+        end"
+        CurrentSongChangedMessageCommand="%function(self)
+            local ArtEle = BMIIDX12Glob.CourseArtist
+            if ArtEle and (not BMIIDX12Glob.FirstTweening) then
+                ArtEle:finishtweening()
+                ArtEle:diffusealpha(0)
+                ArtEle:addy(-12)
+                
+                ArtEle:decelerate(0.2)
+                ArtEle:diffusealpha(1)
+                ArtEle:addy(12)
+            end
+        end"/>
+    
+    <Layer
+        Type="BitmapText"
+        Font="songtitle 16px"
+        Text="Mirin Template"
+        OnCommand="queuecommand,UpdateTitle;zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-90;horizalign,right;shadowlength,0;maxwidth,460;addx,-24;decelerate,0.3;addx,24"
+        OffCommand=""
+        CurrentSongChangedMessageCommand="%function(self) 
+            if not BMIIDX12Glob.FirstTweening then self:finishtweening() end
+            self:queuecommand('UpdateTitle')
+        end"
+        UpdateTitleCommand="%function(self) 
+            local course = GAMESTATE:GetCurrentCourse()
+            if course then
+                if not BMIIDX12Glob.FirstTweening then
+                    self:diffusealpha(0)
+                    self:addx(-24)
+                end
+                
+                self:settext(course:GetDisplayFullTitle())
+                
+                if not BMIIDX12Glob.FirstTweening then
+                    self:decelerate(0.2)
+                    self:diffusealpha(1)
+                    self:addx(24)
+                end
+            else
+                self:settext('')
+            end
+        end" />
+        
+    <Layer
+        File="ScreenSelectCourse banner frame"
+        OnCommand="zoom,0.62;zoomy,0.6;x,SCREEN_CENTER_X-58;y,SCREEN_CENTER_Y-38;"
+    />
+    
+    
+    <Layer
+        File="ScrollBar parts"
+        Condition="FUCK_EXE"
+        OnCommand="%function(self)
+            self:animate(0)
+            self:setstate(0)
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y-220/2-self:GetHeight()/2 -15)
+            
+            self:addx(30)
+            self:sleep(0.5)
+            self:decelerate(0.2)
+            self:addx(-30)
+        end"
+    />
+    <Layer
+        File="ScrollBar parts"
+        Condition="FUCK_EXE"
+        OnCommand="%function(self)
+            self:animate(0)
+            self:setstate(1)
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y -15)
+            self:zoomtoheight(220)
+            
+            self:addx(30)
+            self:sleep(0.5)
+            self:decelerate(0.2)
+            self:addx(-30)
+        end"
+    />
+    <Layer
+        File="ScrollBar parts"
+        Condition="FUCK_EXE"
+        OnCommand="%function(self)
+            self:animate(0)
+            self:setstate(2)
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y+220/2+self:GetHeight()/2 -15)
+            
+            self:addx(30)
+            self:sleep(0.5)
+            self:decelerate(0.2)
+            self:addx(-30)
+        end"
+    />
+    <Layer
+        Type="ActorFrame"
+        Condition="FUCK_EXE"
+        OnCommand="x,SCREEN_WIDTH-98+102-18;y,SCREEN_CENTER_Y-15"
+        UpdateScrollThumbMessageCommand="queuecommand,UpdateThumb"
+        CurrentSongChangedMessageCommand="%function(self)
+            if not BMIIDX12Glob.FirstTweening then
+                BMIIDX12Glob.PrevCWI = CurWheelIndex()
+                BMIIDX12Glob.DirCompare = BMIIDX12Glob.MusicWheelList[CurWheelIndex()]:GetY()
+            end
+        end"
+        UpdateThumbCommand="%function(self)
+            local ScrollBarEle = SCREENMAN:GetTopScreen():GetChild('MusicWheel'):GetChild('')
+            local EndDelta = 0
+            local T1ZoomY = ScrollBarEle:GetChildAt(1):GetZoomY()
+            local T2ZoomY = ScrollBarEle:GetChildAt(2):GetZoomY()
+            local T1Y = ScrollBarEle:GetChildAt(1):GetY()
+            local T2Y = ScrollBarEle:GetChildAt(2):GetY()
+            
+            if not BMIIDX12Glob.FirstTweening then
+                self:finishtweening()
+                self:decelerate(0.1)
+            end
+            if T2ZoomY >= T1ZoomY+0.01 then
+                if T2ZoomY > 0 then
+                    EndDelta = (T1ZoomY/2)*(T1ZoomY/T2ZoomY)
+                end
+                self:y(SCREEN_CENTER_Y+T2Y+EndDelta -15)
+            else
+                if T2ZoomY > 0 then
+                    EndDelta = (T1ZoomY/2)*(T2ZoomY/T1ZoomY)
+                end
+                self:y(SCREEN_CENTER_Y+T1Y-EndDelta -15)
+            end
+            
+            if not BMIIDX12Glob.FirstTweening then
+                local NewDirCompare = BMIIDX12Glob.MusicWheelList[BMIIDX12Glob.PrevCWI or CurWheelIndex()]:GetY()
+                if BMIIDX12Glob.DirCompare and BMIIDX12Glob.DirCompare < NewDirCompare then
+                    BMIIDX12Glob.DirCompare = nil
+                    MESSAGEMAN:Broadcast('ScrollUp')
+                elseif BMIIDX12Glob.DirCompare and BMIIDX12Glob.DirCompare > NewDirCompare then
+                    BMIIDX12Glob.DirCompare = nil
+                    MESSAGEMAN:Broadcast('ScrollDown')
+                end
+            end
+        end"
+    ><children>
+        <Layer
+            File="ScrollBar thumb"
+            OnCommand="%function(self)
+                self:addx(30)
+                self:sleep(0.5)
+                self:decelerate(0.2)
+                self:addx(-30)
+            end"
+        />
+        <Layer
+            File="ScrollBar thumb"
+            OnCommand="%function(self)
+                self:blend('add')
+                self:diffuseramp()
+                self:effectcolor1(1,1,1,0.3)
+                self:effectcolor2(1,1,1,0.7)
+                
+                self:addx(30)
+                self:sleep(0.5)
+                self:decelerate(0.2)
+                self:addx(-30)
+            end"
+        />
+    </children></Layer>
+    <Layer
+        File="ScrollBar thumb"
+        OnCommand="%function(self)
+            self:zoomy(0.5)
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y-220/2-self:GetHeight()/2+4 -15)
+            self:diffusealpha(0)
+        end"
+        ScrollUpMessageCommand="%function(self)
+            self:finishtweening()
+            self:diffusealpha(1)
+            self:linear(0.2)
+            self:diffusealpha(0)
+        end"
+    />
+    <Layer
+        File="ScrollBar thumb"
+        OnCommand="%function(self)
+            self:zoomy(0.5)
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y+220/2+self:GetHeight()/2-4 -15)
+            self:diffusealpha(0)
+        end"
+        ScrollDownMessageCommand="%function(self)
+            self:finishtweening()
+            self:diffusealpha(1)
+            self:linear(0.2)
+            self:diffusealpha(0)
+        end"
+    />
+</children></ActorFrame>

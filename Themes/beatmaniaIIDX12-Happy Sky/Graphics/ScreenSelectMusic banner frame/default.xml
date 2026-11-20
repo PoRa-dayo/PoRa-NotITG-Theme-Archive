@@ -1,0 +1,20 @@
+#The black thing below the Stage is now in ScreenSelectMusic underlay
+#The BPM label is now in ScreenSelectMusic overlay
+<ActorFrame><children>
+
+    <Layer
+        File="bannerframe.png"
+        Command="x,259;y,SCREEN_CENTER_Y+(210-240);hibernate,0.2;diffusealpha,0;decelerate,0.2;diffusealpha,1"
+    />
+
+    <Layer
+        File="stuff.png"
+        Command="x,320;y,SCREEN_CENTER_Y+(216-240)"
+    />
+
+    <Layer
+        File="../musicsort.png"
+        Command="x,SCREEN_CENTER_X-(SCREEN_CENTER_X-320);y,SCREEN_CENTER_Y+(500-240);linear,0.3;y,SCREEN_CENTER_Y+(455-240);diffusealpha,1"
+    />
+
+</children></ActorFrame>

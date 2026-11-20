@@ -1,0 +1,18 @@
+<ActorFrame><children>
+
+    <Layer
+        File="../_shared background"
+        Condition="GetBestGrade() <= Grade('B')"
+    />
+
+    <Layer
+        File="red.png"
+        OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,1;texcoordvelocity,0.16,0"
+        Condition="GetBestGrade() > Grade('B')"
+    />
+
+    <Layer
+        File="1"
+    />
+
+</children></ActorFrame>

@@ -706,7 +706,9 @@ function ToastyP1Option()
         for ind, val in ipairs(list) do
             if val then
                 BMIIDX14Glob.TempToasty = modList[ind]
-                MESSAGEMAN:Broadcast('LoadToastyP1')
+                if modList[ind] ~= "OFF" then
+                    MESSAGEMAN:Broadcast('LoadToastyP1')
+                end
             end
         end
         BMIIDX14Glob.OptionsSoundActor:stop()
@@ -746,7 +748,9 @@ function ToastyP2Option()
         for ind, val in ipairs(list) do
             if val then
                 BMIIDX14Glob.TempToastyP2 = modList[ind]
-                MESSAGEMAN:Broadcast('LoadToastyP2')
+                if modList[ind] ~= "OFF" then
+                    MESSAGEMAN:Broadcast('LoadToastyP2')
+                end
             end
         end
         BMIIDX14Glob.OptionsSoundActor:stop()

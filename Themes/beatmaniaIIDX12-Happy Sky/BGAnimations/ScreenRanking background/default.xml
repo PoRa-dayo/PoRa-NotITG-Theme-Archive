@@ -1,0 +1,12 @@
+<ActorFrame><children>
+
+    <Layer
+        File="ranking.png"
+    />
+
+    <Layer
+        File="hs.png"
+        Command="x,SCREEN_CENTER_X+(137-320);y,SCREEN_CENTER_Y+(44-240);blend,add"
+    />
+
+</children></ActorFrame>

@@ -1,0 +1,62 @@
+<ActorFrame><children>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(160))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="sky.txt"
+            Materials="sky.txt"
+            Bones="sky.txt"
+            Command="y,SCREEN_CENTER_Y+(200-240);x,SCREEN_CENTER_X+(280-320);zoomx,5;zoomy,4;addz,50;rotationx,-55;spin;effectmagnitude,0,-80,0;cullmode,front"
+        />
+
+    </children></ActorFrame>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(160))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="cloud.txt"
+            Materials="cloud.txt"
+            Bones="cloud.txt"
+            Command="y,SCREEN_CENTER_Y+(200-240);x,SCREEN_CENTER_X+(280-320);zoomx,5;zoomy,4;addz,50;rotationx,-55;spin;effectmagnitude,0,-100,0;cullmode,back;blend,add"
+        />
+
+    </children></ActorFrame>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(160))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="cloud2.txt"
+            Materials="cloud2.txt"
+            Bones="cloud2.txt"
+            Command="y,SCREEN_CENTER_Y+(200-240);x,SCREEN_CENTER_X+(280-320);zoomx,5;zoomy,4;addz,50;rotationx,-55;spin;effectmagnitude,0,-60,0;cullmode,back;blend,add"
+        />
+
+    </children></ActorFrame>
+
+    <Layer
+        File="fade2.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0.8;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+    />
+
+    <Layer
+        File="fade.png"
+        RepeatCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0.2;linear,0.1;diffusealpha,0;linear,0.1;diffusealpha,0.2;linear,0.1;diffusealpha,0;linear,0.1;diffusealpha,0.2;linear,0.1;diffusealpha,0;linear,0.1;diffusealpha,0.2;sleep,(2-0.6);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+    <Layer
+        File="fade.png"
+        RepeatCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;blend,add;diffusealpha,0.4;linear,0.1;diffusealpha,0;linear,0.1;diffusealpha,0.4;linear,0.1;diffusealpha,0;linear,0.1;diffusealpha,0.4;linear,0.1;diffusealpha,0;linear,0.1;diffusealpha,0;sleep,(2-0.6);queuecommand,Repeat"
+        Command="queuecommand,Repeat"
+    />
+
+</children></ActorFrame>

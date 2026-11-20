@@ -1,0 +1,124 @@
+<ActorFrame><children>
+
+    <Layer
+        Type="Quad"
+        OnCommand="hidden,1;sleep,3"
+    />
+
+    <Layer
+        File="flash.png"
+        Command="x,SCREEN_CENTER_X+(160-320);y,SCREEN_CENTER_Y+(383-240);blend,add;diffusealpha,0;sleep,0.05;diffusealpha,1;zoomx,55;zoomy,0;linear,0.1;zoomy,1;sleep,0.001;linear,0.5;zoomx,0.5;sleep,0.001;linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="laser.png"
+        Command="x,SCREEN_CENTER_X+(150-320);blend,add;y,SCREEN_CENTER_Y+(600-240);linear,0.5;y,SCREEN_CENTER_Y+(-100-240);linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="laser.png"
+        Command="x,SCREEN_CENTER_X+(170-320);blend,add;y,SCREEN_CENTER_Y+(600-240);sleep,0.1;linear,0.5;y,SCREEN_CENTER_Y+(-100-240);linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="laser.png"
+        Command="x,SCREEN_CENTER_X+(155-320);blend,add;y,SCREEN_CENTER_Y+(600-240);sleep,0.15;linear,0.5;y,SCREEN_CENTER_Y+(-100-240);linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="laser.png"
+        Command="x,SCREEN_CENTER_X+(145-320);blend,add;y,SCREEN_CENTER_Y+(600-240);sleep,0.3;linear,0.5;y,SCREEN_CENTER_Y+(-100-240);linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="laser.png"
+        Command="x,SCREEN_CENTER_X+(180-320);blend,add;y,SCREEN_CENTER_Y+(600-240);sleep,0.4;linear,0.5;y,SCREEN_CENTER_Y+(-100-240);linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="laser.png"
+        Command="x,SCREEN_CENTER_X+(155-320);blend,add;y,SCREEN_CENTER_Y+(600-240);sleep,0.5;linear,0.5;y,SCREEN_CENTER_Y+(-100-240);linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="laser.png"
+        Command="x,SCREEN_CENTER_X+(105-320);blend,add;y,SCREEN_CENTER_Y+(600-240);linear,0.5;y,SCREEN_CENTER_Y+(-100-240);linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="laser.png"
+        Command="diffusealpha,0.8;x,SCREEN_CENTER_X+(120-320);blend,add;y,SCREEN_CENTER_Y+(600-240);sleep,0.7;linear,0.5;y,SCREEN_CENTER_Y+(-100-240);linear,0.5;diffusealpha,0"
+    />
+
+    <Layer
+        File="rush.sprite"
+        Command="x,SCREEN_CENTER_X+(75-320);y,SCREEN_CENTER_Y+(390-240);blend,add;linear,1;y,SCREEN_CENTER_Y+(350-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="rush.sprite"
+        Command="x,SCREEN_CENTER_X+(110-320);y,SCREEN_CENTER_Y+(330-240);blend,add;linear,0.8;y,SCREEN_CENTER_Y+(290-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="rush.sprite"
+        Command="x,SCREEN_CENTER_X+(160-320);y,SCREEN_CENTER_Y+(310-240);blend,add;linear,1;y,SCREEN_CENTER_Y+(270-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="rush.sprite"
+        Command="x,SCREEN_CENTER_X+(180-320);y,SCREEN_CENTER_Y+(290-240);blend,add;linear,1;y,SCREEN_CENTER_Y+(190-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="rush.sprite"
+        Command="x,SCREEN_CENTER_X+(200-320);y,SCREEN_CENTER_Y+(300-240);blend,add;linear,1;y,SCREEN_CENTER_Y+(230-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="rush.sprite"
+        Command="x,SCREEN_CENTER_X+(160-320);y,SCREEN_CENTER_Y+(350-240);blend,add;linear,1;y,SCREEN_CENTER_Y+(290-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="rush.sprite"
+        Command="x,SCREEN_CENTER_X+(150-320);y,SCREEN_CENTER_Y+(420-240);blend,add;linear,1;y,SCREEN_CENTER_Y+(350-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="rush.sprite"
+        Command="x,SCREEN_CENTER_X+(170-320);y,SCREEN_CENTER_Y+(430-240);blend,add;linear,1.2;y,SCREEN_CENTER_Y+(370-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="rush.sprite"
+        Command="x,SCREEN_CENTER_X+(200-320);y,SCREEN_CENTER_Y+(400-240);blend,add;linear,1.2;y,SCREEN_CENTER_Y+(350-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="rush.sprite"
+        Command="x,SCREEN_CENTER_X+(220-320);y,SCREEN_CENTER_Y+(350-240);blend,add;diffusealpha,0;sleep,0.4;linear,0.01;diffusealpha,1;linear,1.2;y,SCREEN_CENTER_Y+(190-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="rush.sprite"
+        Command="x,SCREEN_CENTER_X+(240-320);y,SCREEN_CENTER_Y+(390-240);blend,add;diffusealpha,0;sleep,0.3;linear,0.01;diffusealpha,1;linear,1.2;y,SCREEN_CENTER_Y+(350-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="rush.sprite"
+        Command="x,SCREEN_CENTER_X+(120-320);y,SCREEN_CENTER_Y+(390-240);blend,add;diffusealpha,0;sleep,0.2;linear,0.01;diffusealpha,1;linear,1.2;y,SCREEN_CENTER_Y+(370-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="smoke.png"
+        Command="x,SCREEN_CENTER_X+(160-320);y,SCREEN_CENTER_Y+(270-240);blend,add;diffusealpha,0;sleep,0.1;linear,0.01;diffusealpha,1;linear,1.2;y,SCREEN_CENTER_Y+(250-240);diffusealpha,0"
+    />
+
+    <Layer
+        File="fullcombo.png"
+        Command="y,SCREEN_CENTER_Y;x,SCREEN_CENTER_X+(160-320);zoom,0;diffusealpha,0"
+        LeftFCMessageCommand="zoom,0;diffusealpha,0;linear,0.2;zoom,1;diffusealpha,1;linear,1;zoom,1.1;linear,0.1;zoomx,2;zoomy,0"
+    />
+
+</children></ActorFrame>

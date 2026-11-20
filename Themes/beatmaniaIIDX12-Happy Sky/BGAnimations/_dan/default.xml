@@ -1,0 +1,50 @@
+<ActorFrame><children>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(160))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="sky.txt"
+            Materials="sky.txt"
+            Bones="sky.txt"
+            Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(400-240);zoomx,5;zoomy,4;addz,50;spin;effectmagnitude,0,-15,0;cullmode,front"
+        />
+
+    </children></ActorFrame>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(160))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="cloud.txt"
+            Materials="cloud.txt"
+            Bones="cloud.txt"
+            Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(400-240);zoomx,5;zoomy,4;addz,50;spin;effectmagnitude,0,-25,0;cullmode,front"
+        />
+
+    </children></ActorFrame>
+
+    <ActorFrame OnCommand="%function(self)
+        self:fov(RealFOV(160))
+    end"><children>
+
+        <Layer
+            Type="Model"
+            Meshes="cloud2.txt"
+            Materials="cloud2.txt"
+            Bones="cloud2.txt"
+            Command="x,SCREEN_CENTER_X;hidden,1;blend,add;y,SCREEN_CENTER_Y+(350-240);zoomx,5;zoomy,4;addz,50;spin;effectmagnitude,0,-30,0;cullmode,front"
+        />
+
+    </children></ActorFrame>
+
+    <Layer
+        File="blend.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
+    />
+
+</children></ActorFrame>

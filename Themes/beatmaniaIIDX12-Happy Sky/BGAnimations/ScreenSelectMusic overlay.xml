@@ -1,0 +1,734 @@
+--better avoid using GAMESTATE:GetEasiestStepsDifficulty() too many times as it lowers performance
+--WheelSelect and UpdateScroll have to be called continuously to not be faulty
+<ActorFrame
+    OnCommand="queuecommand,UpdateScroll"
+    CurrentSongChangedMessageCommand="%function(self)
+        MESSAGEMAN:Broadcast('Update')
+        MESSAGEMAN:Broadcast('SongUpdate')
+    end"
+    CurrentStepsP1ChangedMessageCommand="%function(self)
+        if not GAMESTATE:IsCourseMode() then
+            local temp = GAMESTATE:GetEasiestStepsDifficulty()
+            if temp < 6 then
+                BMIIDX12Glob.CurDiff = GAMESTATE:GetEasiestStepsDifficulty()
+            end
+        end
+        MESSAGEMAN:Broadcast('Update')
+    end"
+    CurrentStepsP2ChangedMessageCommand="%function(self)
+        if not GAMESTATE:IsCourseMode() then
+            local temp = GAMESTATE:GetEasiestStepsDifficulty()
+            if temp < 6 then
+                BMIIDX12Glob.CurDiff = GAMESTATE:GetEasiestStepsDifficulty()
+            end
+        end
+        MESSAGEMAN:Broadcast('Update')
+    end"
+    UpdateScrollCommand="%function(self)
+        if BMIIDX12Glob.ScrollUpdateNOW then return end
+        BMIIDX12Glob.ScrollUpdateNOW=true
+        self:queuecommand('Scroll')
+    end"
+    ScrollCommand="%function(self)
+        if BMIIDX12Glob.ScrollUpdateNOW then
+            MESSAGEMAN:Broadcast('UpdateScrollThumb')
+            self:sleep(0.1)
+            self:queuecommand('UpdateScroll')
+            self:queuecommand('WheelSelect')
+        end
+        BMIIDX12Glob.ScrollUpdateNOW = false
+    end"
+    WheelSelectCommand="%function(self)
+        UpdateWheelSelection()
+    end"
+    ><children>
+    
+        
+    <!--CurrentSongChanged is not used here because the Artist commands in [TextBanner] in metrics.ini do a better job. -->
+    <!--As CurrentSongChanged is not activated when the player opens a group. -->
+    <!--The YouShouldChangeThatShitNOW is to minimize the amount of times UpdateWheelTitles gets called-->
+    <!--Similarly, ScrollUpdateNOW is to minimize the amount of times UpdateWheelSelection gets called-->
+    <Layer
+        Type="Quad"
+        OnCommand="%function(self)
+            BMIIDX12Glob.MusicWheelList = {}
+            BMIIDX12Glob.ArtistTitles = {}
+            BMIIDX12Glob.DiffNumTitles = {}
+            BMIIDX12Glob.SelectedWheelItems = {}
+            BMIIDX12Glob.FirstTweening=true
+            BMIIDX12Glob.Rand=1
+            BMIIDX12Glob.DirCompare=nil
+            self:sleep(0.1)
+            self:queuecommand('FirstUpdate')
+            self:sleep(0.5)
+            self:queuecommand('Disallow')
+        end"
+        DisallowCommand="%function(self)
+            BMIIDX12Glob.FirstTweening=false
+        end"
+        FirstUpdateCommand="%function(self)
+            UpdateWheelTitles(true)
+            BMIIDX12Glob.YouShouldChangeThatShitNOW = false
+            BMIIDX12Glob.ScrollUpdateNOW = false
+        end"
+        UpdateMessageCommand="%function(self)
+            if BMIIDX12Glob.YouShouldChangeThatShitNOW then return end
+            BMIIDX12Glob.YouShouldChangeThatShitNOW=true
+            self:queuecommand('Wheel')
+        end"
+        WheelCommand="%function(self)
+            if BMIIDX12Glob.YouShouldChangeThatShitNOW then
+                UpdateWheelTitles()
+            end
+            BMIIDX12Glob.YouShouldChangeThatShitNOW = false
+        end"/>
+        
+        
+    #BPM DISPLAY
+        
+    <Layer
+        File="bpm.png"
+        Command="x,SCREEN_CENTER_X+(332-320);y,SCREEN_CENTER_Y+(135-240);hibernate,0.2;diffusealpha,0;decelerate,0.2;diffusealpha,1"
+        SongUpdateMessageCommand="%function(self) 
+            self:finishtweening()
+            local ind = CurWheelIndex()
+            local song = GAMESTATE:GetCurrentSong()
+            if song then
+                self:hidden(0)
+            elseif (not song) and IsRoulette(ind) then
+                self:hidden(0)
+                self:sleep(0.05)
+                self:queuecommand('SongUpdate')
+            else
+                self:hidden(1)
+                self:sleep(0.1)
+                self:queuecommand('SongUpdate')
+            end
+        end"
+    />
+        
+    <Layer
+        Type="BitmapText"
+        Font="../Numbers/BPMDisplay bpm"
+        Condition="FUCK_EXE and (not GAMESTATE:IsCourseMode())"
+        Text=""
+        OnCommand="horizalign,right;x,SCREEN_CENTER_X+(360-320);y,SCREEN_CENTER_Y+(204-240);diffusealpha,0;sleep,0.2;decelerate,0.25;diffusealpha,1;shadowlength,1"
+        OffCommand=""
+        SongUpdateMessageCommand="%function(self) 
+            self:finishtweening()
+            local ind = CurWheelIndex()
+            local song = GAMESTATE:GetCurrentSong()
+            if song then
+                self:hidden(0)
+                self:settext(math.floor(song:GetMinBPM()))
+            elseif (not song) and IsRoulette(ind) then
+                self:settext(string.format('%03d', math.floor(BMIIDX12Glob.AllSongs[BMIIDX12Glob.Rand]:GetMinBPM())))
+                self:sleep(0.05)
+                self:queuecommand('SongUpdate')
+            else
+                self:settext('')
+                self:sleep(0.1)
+                self:queuecommand('SongUpdate')
+            end
+        end"/>
+        
+    <Layer
+        Type="BitmapText"
+        Font="../Numbers/BPMDisplay bpm"
+        Condition="FUCK_EXE and (not GAMESTATE:IsCourseMode())"
+        Text=""
+        OnCommand="horizalign,right;x,SCREEN_CENTER_X+(360-320);y,SCREEN_CENTER_Y+(224-240);diffusealpha,0;sleep,0.2;decelerate,0.25;diffusealpha,1;shadowlength,1"
+        OffCommand=""
+        SongUpdateMessageCommand="%function(self) 
+            local song = GAMESTATE:GetCurrentSong()
+            if song then
+                self:hidden(0)
+                local minBPM = math.floor(song:GetMinBPM())
+                local maxBPM = math.floor(song:GetMaxBPM())
+                if minBPM ~= maxBPM then
+                    self:settext(math.floor(maxBPM))
+                else
+                    self:settext('')
+                end
+            else
+                self:hidden(1)
+            end
+        end"/>  
+        
+        
+    #Song titles
+
+    <Layer
+        Type="BitmapText"
+        Font="songtitle"
+        Text="Mirin Template"
+        OnCommand="zoom,0.8;zoomx,0.7;maxwidth,410;draworder,33;x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-92;horizalign,right;shadowlength,0;addx,-170;linear,0.3;addx,170"
+        OffCommand=""
+        SongUpdateMessageCommand="%function(self) 
+            if not BMIIDX12Glob.FirstTweening then self:finishtweening() end
+
+            local song = GAMESTATE:GetCurrentSong()
+            local course = GAMESTATE:GetCurrentCourse()
+            local ind = CurWheelIndex()
+            if song then
+                if not BMIIDX12Glob.FirstTweening then
+                    self:diffusealpha(0.2)
+                    self:addx(-170)
+                end
+                
+                self:settext(song:GetDisplayMainTitle())
+                
+                if not BMIIDX12Glob.FirstTweening then
+                    self:linear(0.3)
+                    self:diffusealpha(1)
+                    self:addx(170)
+                end
+            elseif course then
+                self:settext(course:GetDisplayFullTitle())
+            elseif IsRoulette(ind) then
+                BMIIDX12Glob.Rand = math.random(BMIIDX12Glob.TotalSongNum)
+                self:settext(BMIIDX12Glob.AllSongs[BMIIDX12Glob.Rand]:GetDisplayMainTitle())
+                self:sleep(0.05)
+                self:queuecommand('SongUpdate')
+            else
+                self:settext('')
+                self:sleep(0.1)
+                self:queuecommand('SongUpdate')
+            end
+        end"/>
+    <Layer
+        Type="BitmapText"
+        Font="artist 16px"
+        Text="Subtitle"
+        Condition="not GAMESTATE:IsCourseMode()"
+        OnCommand="zoom,0.6;maxwidth,480;draworder,34;x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-113;horizalign,right;shadowlength,0;addx,-24;linear,0.2;addx,24"
+        OffCommand=""
+        SongUpdateMessageCommand="%function(self)
+            if not BMIIDX12Glob.FirstTweening then self:finishtweening() end
+            local ind = CurWheelIndex()
+            local song = GAMESTATE:GetCurrentSong()
+            if song then
+                if not BMIIDX12Glob.FirstTweening then
+                    self:diffusealpha(0)
+                    self:addx(-24)
+                end
+                
+                self:settext(song:GetDisplaySubTitle())
+                
+                if not BMIIDX12Glob.FirstTweening then
+                    self:sleep(0.2)
+                    self:linear(0.2)
+                    self:diffusealpha(1)
+                    self:addx(24)
+                end
+            elseif IsRoulette(ind) then
+                self:settext(BMIIDX12Glob.AllSongs[BMIIDX12Glob.Rand]:GetDisplaySubTitle())
+                self:sleep(0.05)
+                self:queuecommand('SongUpdate')
+            else
+                self:settext('')
+                self:sleep(0.1)
+                self:queuecommand('SongUpdate')
+            end
+        end" />
+    <Layer
+        Type="BitmapText"
+        Font="artist 16px"
+        Text="Artist"
+        Condition="not GAMESTATE:IsCourseMode()"
+        OnCommand="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y+(176-240);maxwidth,480;zoom,0.6;draworder,34;shadowlength,0;horizalign,right;addy,-8;linear,0.1;addy,8"
+        OffCommand=""
+        SongUpdateMessageCommand="%function(self)
+            if not BMIIDX12Glob.FirstTweening then self:finishtweening() end
+            
+            local ind = CurWheelIndex()
+            local song = GAMESTATE:GetCurrentSong()
+            if song then
+                if not BMIIDX12Glob.FirstTweening then
+                    self:diffusealpha(0)
+                    self:addy(-8)
+                end
+                
+                self:settext(song:GetDisplayArtist())
+                
+                if not BMIIDX12Glob.FirstTweening then
+                    self:sleep(0.3)
+                    self:linear(0.1)
+                    self:diffusealpha(1)
+                    self:addy(8)
+                end
+            elseif IsRoulette(ind) then
+                self:settext(BMIIDX12Glob.AllSongs[BMIIDX12Glob.Rand]:GetDisplayArtist())
+                self:sleep(0.05)
+                self:queuecommand('SongUpdate')
+            else
+                self:settext('')
+                self:sleep(0.1)
+                self:queuecommand('SongUpdate')
+            end
+        end" />
+        
+        
+    <!--shows up when a group is selected-->    
+    <ActorFrame Condition="FUCK_EXE"
+    UpdateMessageCommand="%function(self) 
+        self:finishtweening()
+        self:sleep(0.1)
+        self:queuecommand('Recheck')
+    end"
+    RecheckCommand="%function(self)
+        local ind = CurWheelIndex()
+        local group = BMIIDX12Glob.GroupTitles[ind]
+        if (not GAMESTATE:GetCurrentSong()) and (not IsRoulette(ind)) and GAMESTATE:GetSortOrder() ~= 13 and group then
+            self:hidden(0)
+        else
+            self:hidden(1)
+        end
+    end" ><children>
+        <Layer
+            File="section_gradient"
+            Condition="not GAMESTATE:IsCourseMode()"
+            OnCommand="x,SCREEN_CENTER_X-126;y,SCREEN_CENTER_Y-83;diffusealpha,0"
+            OffCommand=""
+            UpdateCommand="%function(self)
+                self:finishtweening()
+                self:diffusealpha(0)
+                self:addy(8)
+                self:linear(0.25)
+                self:diffusealpha(1)
+                self:addy(-8)
+            end"
+        /> 
+        <Layer
+            Type="Quad"
+            Condition="not GAMESTATE:IsCourseMode()"
+            OnCommand="vertalign,top;diffuse,0,0,0,1;zoomtowidth,338;zoomtoheight,10;x,SCREEN_CENTER_X-126;y,SCREEN_CENTER_Y-74"
+            OffCommand=""
+            UpdateCommand="%function(self)
+                self:finishtweening()
+                self:zoomtoheight(0)
+                self:linear(0.05)
+                self:zoomtoheight(10)
+            end"
+        /> 
+        <Layer
+            Type="BitmapText"
+            Font="Common Normal"
+            Text="CATEGORY SELECT_"
+            Condition="not GAMESTATE:IsCourseMode()"
+            OnCommand="zoom,0.4;zoomx,0.9;draworder,32;x,SCREEN_CENTER_X-150;y,SCREEN_CENTER_Y-68;horizalign,right;shadowlength,0;maxwidth,150;"
+            OffCommand=""
+            UpdateCommand="%function(self)
+                self:finishtweening()
+                self:cropright(1)
+                self:sleep(0.05)
+                self:linear(0.5)
+                self:cropright(0)
+            end"
+            />  
+        <Layer
+            Type="BitmapText"
+            Font="grouptitle"
+            Text="Group Name"
+            OnCommand="zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-93;horizalign,right;shadowlength,1;maxwidth,460;"
+            OffCommand=""
+            UpdateMessageCommand="%function(self) 
+                self:finishtweening()
+                self:diffusealpha(0)
+                self:addy(8)
+                self:linear(0.1)
+                self:diffusealpha(0.2)
+                self:addy(-2)
+                self:queuecommand('Group')
+                self:linear(0.15)
+                self:diffusealpha(1)
+                self:addy(-6)
+            end"
+            GroupCommand="%function(self)
+                local ind = CurWheelIndex()
+                local group = BMIIDX12Glob.GroupTitles[ind]
+                if (not GAMESTATE:GetCurrentSong()) and group then
+                    self:settext(group)
+                else
+                    self:settext('')
+                end
+            end" />
+        <Layer
+            Type="BitmapText"
+            Font="font"
+            Text="MUSIC NUMBER"
+            Condition="not GAMESTATE:IsCourseMode()"
+            OnCommand="zoom,0.4;draworder,32;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-62;horizalign,right;shadowlength,0;"
+            OffCommand=""
+            UpdateMessageCommand="%function(self) 
+                self:finishtweening()
+                local ind = CurWheelIndex()
+                local group = BMIIDX12Glob.GroupTitles[ind]
+                if GAMESTATE:GetSortOrder() ~= 1 then
+                    self:hidden(1)
+                else
+                    self:hidden(0)
+                end
+            end" />
+        <Layer
+            Type="BitmapText"
+            Font="font"
+            Text=""
+            Condition="not GAMESTATE:IsCourseMode()"
+            OnCommand="zoom,0.6;zoomy,0.7;draworder,32;x,SCREEN_CENTER_X+42;y,SCREEN_CENTER_Y-62;horizalign,right;shadowlength,0;maxwidth,150;"
+            OffCommand=""
+            UpdateMessageCommand="%function(self) 
+                self:finishtweening()
+                if GAMESTATE:GetSortOrder() ~= 1 then
+                    self:hidden(1)
+                else
+                    self:hidden(0)
+                end
+                self:sleep(0.1)
+                self:queuecommand('Group')
+            end" 
+            GroupCommand="%function(self)
+                local ind = CurWheelIndex()
+                local group = BMIIDX12Glob.GroupTitles[ind]
+                local SongNum = GAMESTATE:PlayerUsingBothSides() and BMIIDX12Glob.GroupSongNumDoubles[group] or BMIIDX12Glob.GroupSongNum[group]
+                if (not GAMESTATE:GetCurrentSong()) and SongNum then
+                    self:settext(SongNum)
+                else
+                    self:settext('')
+                end
+            end" />
+    </children></ActorFrame>
+    
+    
+    #the shiny animation whenever the song/section changes
+    
+    <Layer
+        File="flash.png"
+        Command="zoomy,2;x,SCREEN_CENTER_X-15;y,SCREEN_CENTER_Y-90;blend,add;diffusealpha,0;"
+        CurrentSongChangedMessageCommand="finishtweening;diffusealpha,0;zoomx,5;sleep,0.25;linear,0.1;diffusealpha,0.8;linear,0.5;zoomx,1;diffusealpha,0"
+    />
+    
+    <Layer
+        File="ScreenTitleMenu background/pop"
+        Command="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-90;diffusealpha,0"
+        CurrentSongChangedMessageCommand="finishtweening;diffusealpha,0;x,SCREEN_CENTER_X+(300-320);rotationz,0;zoomx,1;sleep,0.25;diffusealpha,1;linear,1;rotationz,540;x,SCREEN_CENTER_X+(400-320);zoomx,0.6;diffusealpha,0"
+    />
+    
+    <Layer
+        File="ScreenTitleMenu background/ring.png"
+        Command="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-90;diffusealpha,0;blend,add"
+        CurrentSongChangedMessageCommand="finishtweening;diffusealpha,0;zoom,0;sleep,0.25;linear,0.1;diffusealpha,1;zoomy,0.4;zoomx,0.5;linear,0.7;zoomy,0.6;zoomx,0.7;diffusealpha,0"
+    />
+        
+        
+    <Layer
+        Type="BitmapText"
+        Font="_shared1"
+        Text=""
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+        OnCommand="draworder,102;x,25;y,SCREEN_CENTER_Y+(415-240);horizalign,left;shadowlength,0;maxwidth,420;zoom,0.45"
+        OffCommand=""
+        UpdateMessageCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_1)) end" />
+    <Layer
+        Type="BitmapText"
+        Font="_shared1"
+        Text=""
+        Condition="not GAMESTATE:IsCourseMode() and GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+        OnCommand="draworder,102;x,SCREEN_WIDTH-(600-390);y,SCREEN_CENTER_Y+(415-240);horizalign,left;shadowlength,0;maxwidth,420;zoom,0.45"
+        OffCommand=""
+        UpdateMessageCommand="%function(self) self:settext(GetStepsDescriptionText(PLAYER_2)) end" />
+        
+        
+        
+    <Layer
+        File="ScrollBar parts"
+        Condition="FUCK_EXE"
+        OnCommand="%function(self)
+            self:animate(0)
+            self:setstate(0)
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y-210/2-self:GetHeight()/2 -15)
+            
+            self:zoomy(0)
+            self:sleep(0.2)
+            self:decelerate(0.5)
+            self:zoomy(1)
+        end"
+    />
+    <Layer
+        File="ScrollBar parts"
+        Condition="FUCK_EXE"
+        OnCommand="%function(self)
+            self:animate(0)
+            self:setstate(1)
+            self:vertalign('top')
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y-210/2-self:GetHeight()/2 -15)
+            self:zoomtoheight(0)
+            
+            self:sleep(0.2)
+            self:decelerate(0.5)
+            self:y(SCREEN_CENTER_Y-210/2 -15)
+            self:zoomtoheight(210)
+        end"
+    />
+    <Layer
+        File="ScrollBar parts"
+        Condition="FUCK_EXE"
+        OnCommand="%function(self)
+            self:animate(0)
+            self:setstate(2)
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y-210/2-self:GetHeight()/2 -15)
+            self:zoomy(0)
+            
+            self:sleep(0.2)
+            self:decelerate(0.5)
+            self:y(SCREEN_CENTER_Y+210/2+self:GetHeight()/2 -15)
+            self:zoomy(1)
+        end"
+    />
+    <Layer
+        Type="ActorFrame"
+        Condition="FUCK_EXE"
+        OnCommand="x,SCREEN_WIDTH-98+102-18;y,SCREEN_CENTER_Y-15"
+        UpdateScrollThumbMessageCommand="queuecommand,UpdateThumb"
+        CurrentSongChangedMessageCommand="%function(self)
+            if not BMIIDX12Glob.FirstTweening then
+                BMIIDX12Glob.PrevCWI = CurWheelIndex()
+                if BMIIDX12Glob.MusicWheelList[BMIIDX12Glob.PrevCWI] then
+                    BMIIDX12Glob.DirCompare = BMIIDX12Glob.MusicWheelList[BMIIDX12Glob.PrevCWI]:GetY()
+                end
+            end
+        end"
+        UpdateThumbCommand="%function(self)
+            local ScrollBarEle = SCREENMAN:GetTopScreen():GetChild('MusicWheel'):GetChild('')
+            local EndDelta = 0
+            local T1ZoomY = ScrollBarEle:GetChildAt(1):GetZoomY()
+            local T2ZoomY = ScrollBarEle:GetChildAt(2):GetZoomY()
+            local T1Y = ScrollBarEle:GetChildAt(1):GetY()
+            local T2Y = ScrollBarEle:GetChildAt(2):GetY()
+            
+            if not BMIIDX12Glob.FirstTweening then
+                self:finishtweening()
+                self:decelerate(0.1)
+            end
+            if T2ZoomY >= T1ZoomY+0.01 then
+                if T2ZoomY > 0 then
+                    EndDelta = (T1ZoomY/2)*(T1ZoomY/T2ZoomY)
+                end
+                self:y(SCREEN_CENTER_Y+T2Y+EndDelta -15)
+            else
+                if T2ZoomY > 0 then
+                    EndDelta = (T1ZoomY/2)*(T2ZoomY/T1ZoomY)
+                end
+                self:y(SCREEN_CENTER_Y+T1Y-EndDelta -15)
+            end
+            
+            if not BMIIDX12Glob.FirstTweening then
+                local ItemInd = BMIIDX12Glob.PrevCWI or CurWheelIndex()
+                if BMIIDX12Glob.MusicWheelList[ItemInd] then
+                    local NewDirCompare = BMIIDX12Glob.MusicWheelList[ItemInd]:GetY()
+                    if BMIIDX12Glob.DirCompare and BMIIDX12Glob.DirCompare < NewDirCompare then
+                        BMIIDX12Glob.DirCompare = nil
+                        MESSAGEMAN:Broadcast('ScrollUp')
+                    elseif BMIIDX12Glob.DirCompare and BMIIDX12Glob.DirCompare > NewDirCompare then
+                        BMIIDX12Glob.DirCompare = nil
+                        MESSAGEMAN:Broadcast('ScrollDown')
+                    end
+                end
+            end
+        end"
+    ><children>
+        <Layer
+            File="ScrollBar thumb"
+            OnCommand="%function(self)
+                self:blend('add')
+                self:diffuse(0,0,0,0)
+                self:sleep(0.4)
+                self:linear(0.2)
+                self:diffuse(1,1,1,1)
+            end"
+        />
+        <Layer
+            File="ScrollBar thumb"
+            OnCommand="%function(self)
+                self:blend('add')
+                self:diffuseramp()
+                self:effectcolor1(1,1,1,0)
+                self:effectcolor2(1,1,1,0.3)
+                
+                self:diffuse(0,0,0,0)
+                self:sleep(0.4)
+                self:linear(0.2)
+                self:diffuse(1,1,1,1)
+            end"
+        />
+    </children></Layer>
+    <Layer
+        File="ScreenSelectMusic menu left"
+        OnCommand="%function(self)
+            self:blend('add')
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y-210/2-self:GetHeight()/2+5 -15)
+            self:diffusealpha(0)
+        end"
+        ScrollUpMessageCommand="%function(self)
+            self:finishtweening()
+            self:diffusealpha(1)
+            self:linear(0.2)
+            self:diffusealpha(0)
+        end"
+    />
+    <Layer
+        File="ScreenSelectMusic menu right"
+        OnCommand="%function(self)
+            self:blend('add')
+            self:x(SCREEN_WIDTH-98+102-18)
+            self:y(SCREEN_CENTER_Y+210/2+self:GetHeight()/2-5 -15)
+            self:diffusealpha(0)
+        end"
+        ScrollDownMessageCommand="%function(self)
+            self:finishtweening()
+            self:diffusealpha(1)
+            self:linear(0.2)
+            self:diffusealpha(0)
+        end"
+    />
+    
+    
+    
+    #DIFFICULTY SHINE
+    <Layer
+        File="_DifficultyShine"
+        Condition="FUCK_EXE"
+        OnCommand="%function(self)
+            self:blend('add')
+            self:x(SCREEN_CENTER_X-83)
+            self:y(SCREEN_CENTER_Y+34)
+            self:diffusealpha(0)
+            self:sleep(1)
+            self:queuecommand('Shine')
+        end"
+        ShineCommand="%function(self)
+            local DiffList = SCREENMAN:GetTopScreen():GetChild('DifficultyList')
+            local DiffRow
+            local DiffName
+            local DiffNum=0
+            for RowInd=0,22 do
+                local ele = DiffList:GetChildAt(RowInd)
+                if ele ~= DiffList:GetChild('CursorP1') and ele ~= DiffList:GetChild('CursorP2') and ele:GetY() > -1 and ele:GetY() < 28 then
+                    DiffRow = ele
+                    break
+                end
+            end
+            if DiffRow then
+                DiffNum = tonumber(DiffRow:GetChild('Meter'):GetText())
+                DiffName = DiffRow:GetChild('Difficulty'):GetText()
+                for SlotInd=0,5 do
+                    if DifficultyToThemedString(SlotInd) == DiffName then
+                        DiffuseDifficultyColor(self,SlotInd)
+                    end
+                end
+            end
+            if not DiffNum then DiffNum=0 end
+            DiffNum = math.min(DiffNum,12)
+            self:diffusealpha(0.5)
+            self:cropright(1)
+            self:linear(0.3/12*DiffNum)
+            self:cropright(1/12*(12-DiffNum))
+            self:linear(1)
+            self:diffusealpha(0)
+            self:sleep(0.3-0.3/12*DiffNum)
+            self:queuecommand('Shine')
+        end"
+    />
+    <Layer
+        File="_DifficultyShine"
+        Condition="FUCK_EXE"
+        OnCommand="%function(self)
+            self:blend('add')
+            self:x(SCREEN_CENTER_X-83)
+            self:y(SCREEN_CENTER_Y+62)
+            self:diffusealpha(0)
+            self:sleep(1.2)
+            self:queuecommand('Shine')
+        end"
+        ShineCommand="%function(self)
+            local DiffList = SCREENMAN:GetTopScreen():GetChild('DifficultyList')
+            local DiffRow
+            local DiffName
+            local DiffNum=0
+            for RowInd=0,22 do
+                local ele = DiffList:GetChildAt(RowInd)
+                if ele ~= DiffList:GetChild('CursorP1') and ele ~= DiffList:GetChild('CursorP2') and ele:GetY() > 28 and ele:GetY() < 56 then
+                    DiffRow = ele
+                    break
+                end
+            end
+            if DiffRow then
+                DiffNum = tonumber(DiffRow:GetChild('Meter'):GetText())
+                DiffName = DiffRow:GetChild('Difficulty'):GetText()
+                for SlotInd=0,5 do
+                    if DifficultyToThemedString(SlotInd) == DiffName then
+                        DiffuseDifficultyColor(self,SlotInd)
+                    end
+                end
+            end
+            if not DiffNum then DiffNum=0 end
+            DiffNum = math.min(DiffNum,12)
+            self:diffusealpha(0.5)
+            self:cropright(1)
+            self:linear(0.3/12*DiffNum)
+            self:cropright(1/12*(12-DiffNum))
+            self:linear(1)
+            self:diffusealpha(0)
+            self:sleep(0.3-0.3/12*DiffNum)
+            self:queuecommand('Shine')
+        end"
+    />
+    <Layer
+        File="_DifficultyShine"
+        Condition="FUCK_EXE"
+        OnCommand="%function(self)
+            self:blend('add')
+            self:x(SCREEN_CENTER_X-83)
+            self:y(SCREEN_CENTER_Y+92)
+            self:diffusealpha(0)
+            self:sleep(1.4)
+            self:queuecommand('Shine')
+        end"
+        ShineCommand="%function(self)
+            local DiffList = SCREENMAN:GetTopScreen():GetChild('DifficultyList')
+            local DiffRow
+            local DiffName
+            local DiffNum=0
+            for RowInd=0,22 do
+                local ele = DiffList:GetChildAt(RowInd)
+                if ele ~= DiffList:GetChild('CursorP1') and ele ~= DiffList:GetChild('CursorP2') and ele:GetY() > 56 and ele:GetY() < 84 then
+                    DiffRow = ele
+                    break
+                end
+            end
+            if DiffRow then
+                DiffNum = tonumber(DiffRow:GetChild('Meter'):GetText())
+                DiffName = DiffRow:GetChild('Difficulty'):GetText()
+                for SlotInd=0,5 do
+                    if DifficultyToThemedString(SlotInd) == DiffName then
+                        DiffuseDifficultyColor(self,SlotInd)
+                    end
+                end
+            end
+            if not DiffNum then DiffNum=0 end
+            DiffNum = math.min(DiffNum,12)
+            self:diffusealpha(0.5)
+            self:cropright(1)
+            self:linear(0.3/12*DiffNum)
+            self:cropright(1/12*(12-DiffNum))
+            self:linear(1)
+            self:diffusealpha(0)
+            self:sleep(0.3-0.3/12*DiffNum)
+            self:queuecommand('Shine')
+        end"
+    />
+</children></ActorFrame>
