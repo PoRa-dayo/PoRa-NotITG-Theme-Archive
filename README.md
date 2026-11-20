@@ -429,6 +429,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 -Changed the music wheel starting animation to be more like the original IIDX, the selected music wheel item now moves slightly to the left like the original game, added an option to show banner on music wheel.\
 -Scroll bar in course/music select screen now behaves similarly to the original game.\
 -Converted the grade system to a 17-tier one.\
+-Added the song subtitle to the song decision screen (ScreenStage).\
 -Noteskins now affect players 1-8, added Judgment Font and Hold Judgment customization options.\
 -Adjusted the layering of the gameplay UI to fit with NotITG's requirements.\
 -The Full Combo animation is no longer unused.\
