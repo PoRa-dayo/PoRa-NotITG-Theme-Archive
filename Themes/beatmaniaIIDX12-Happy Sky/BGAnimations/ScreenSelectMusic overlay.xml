@@ -491,7 +491,7 @@
     <Layer
         Type="ActorFrame"
         Condition="FUCK_EXE"
-        OnCommand="x,SCREEN_WIDTH-98+102-18;y,SCREEN_CENTER_Y-15"
+        OnCommand="x,SCREEN_WIDTH-98+102-18-1;y,SCREEN_CENTER_Y-15"
         UpdateScrollThumbMessageCommand="queuecommand,UpdateThumb"
         CurrentSongChangedMessageCommand="%function(self)
             if not BMIIDX12Glob.FirstTweening then
@@ -636,7 +636,7 @@
             self:diffusealpha(0.5)
             self:cropright(1)
             self:linear(0.3/12*DiffNum)
-            self:cropright(1/12*(12-DiffNum))
+            self:cropright(1/14*(13-DiffNum))
             self:linear(1)
             self:diffusealpha(0)
             self:sleep(0.3-0.3/12*DiffNum)
@@ -680,7 +680,7 @@
             self:diffusealpha(0.5)
             self:cropright(1)
             self:linear(0.3/12*DiffNum)
-            self:cropright(1/12*(12-DiffNum))
+            self:cropright(1/14*(13-DiffNum))
             self:linear(1)
             self:diffusealpha(0)
             self:sleep(0.3-0.3/12*DiffNum)
@@ -724,7 +724,7 @@
             self:diffusealpha(0.5)
             self:cropright(1)
             self:linear(0.3/12*DiffNum)
-            self:cropright(1/12*(12-DiffNum))
+            self:cropright(1/14*(13-DiffNum))
             self:linear(1)
             self:diffusealpha(0)
             self:sleep(0.3-0.3/12*DiffNum)

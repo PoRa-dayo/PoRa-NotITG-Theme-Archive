@@ -14,7 +14,6 @@
     end"/>
     <Layer File="right" Condition="FUCK_EXE and CurStyleName()~='double' and GAMESTATE:IsPlayerEnabled(1)"
     OnCommand="%function(self)
-        self:addx(320)
         self:addy(30)
         self:zoom(0)
         self:sleep(0.2)

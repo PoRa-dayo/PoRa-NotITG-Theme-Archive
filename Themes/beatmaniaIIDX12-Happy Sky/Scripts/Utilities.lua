@@ -838,7 +838,6 @@ function MusicWheelBannerOption()
                 Profile().IIDXHappySkyToastyP2 = BMIIDX12Glob.TempToastyP2
             end
         end
-        SaveProfiles()
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)
@@ -911,6 +910,7 @@ function MaxedLifeColorOption()
                 Profile().IIDXHappySkyMaxedLifeColor = modList[ind]
             end
         end
+        SaveProfiles()
     end
     
 	return CreateOptionRow(Params, modList, loadFunc, saveFunc)

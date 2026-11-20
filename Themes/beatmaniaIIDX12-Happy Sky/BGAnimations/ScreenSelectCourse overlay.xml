@@ -47,19 +47,68 @@
             if ArtEle and (not BMIIDX12Glob.FirstTweening) then
                 ArtEle:finishtweening()
                 ArtEle:diffusealpha(0)
-                ArtEle:addy(-12)
+                ArtEle:addy(-8)
                 
-                ArtEle:decelerate(0.2)
+                ArtEle:sleep(0.3)
+                ArtEle:linear(0.1)
                 ArtEle:diffusealpha(1)
-                ArtEle:addy(12)
+                ArtEle:addy(8)
             end
         end"/>
+        
+    #BPM DISPLAY
+        
+    <Layer
+        File="bpm.png"
+        Command="x,SCREEN_CENTER_X+(332-320);y,SCREEN_CENTER_Y+(135-240);hibernate,0.2;diffusealpha,0;decelerate,0.2;diffusealpha,1"
+    />
+        
+    <Layer
+        Type="BitmapText"
+        Font="../Numbers/BPMDisplay bpm"
+        Condition="FUCK_EXE"
+        Text=""
+        OnCommand="horizalign,right;x,SCREEN_CENTER_X+(360-320);y,SCREEN_CENTER_Y+(204-240);diffusealpha,0;sleep,0.2;decelerate,0.25;diffusealpha,1;shadowlength,1"
+        OffCommand=""
+        CurrentSongChangedMessageCommand="queuecommand,CourseUpdate"
+        CourseUpdateCommand="%function(self) 
+            local BPMDisplayEle = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
+            if BPMDisplayEle then
+                local BPMText = BPMDisplayEle:GetChild('Text'):GetText()
+                local TargetInd = string.find(BPMText, '~', 1, true)
+                local MinNum = TargetInd and string.sub(BPMText, 1, TargetInd - 1) or BPMText
+                if (not tonumber(MinNum)) then
+                    self:settext('--')
+                else
+                    self:settext(string.format('%03d', MinNum))
+                end
+            end
+        end"/>
+        
+    <Layer
+        Type="BitmapText"
+        Font="../Numbers/BPMDisplay bpm"
+        Condition="FUCK_EXE"
+        Text=""
+        OnCommand="horizalign,right;x,SCREEN_CENTER_X+(360-320);y,SCREEN_CENTER_Y+(224-240);diffusealpha,0;sleep,0.2;decelerate,0.25;diffusealpha,1;shadowlength,1"
+        OffCommand=""
+        CurrentSongChangedMessageCommand="queuecommand,CourseUpdate"
+        CourseUpdateCommand="%function(self)
+            local BPMDisplayEle = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
+            if BPMDisplayEle then
+                local BPMText = BPMDisplayEle:GetChild('Text'):GetText()
+                local _, TargetInd = string.find(BPMText, '~', 1, true)
+                local MaxNum = TargetInd and string.sub(BPMText, TargetInd + 1) or ''
+                self:settext(MaxNum)
+            end
+            
+        end"/>  
     
     <Layer
         Type="BitmapText"
-        Font="songtitle 16px"
+        Font="songtitle"
         Text="Mirin Template"
-        OnCommand="queuecommand,UpdateTitle;zoom,0.8;zoomx,0.7;draworder,33;x,SCREEN_CENTER_X+20;y,SCREEN_CENTER_Y-90;horizalign,right;shadowlength,0;maxwidth,460;addx,-24;decelerate,0.3;addx,24"
+        OnCommand="zoom,0.8;zoomx,0.7;maxwidth,410;draworder,33;x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-92;horizalign,right;shadowlength,0;addx,-170;linear,0.3;addx,170"
         OffCommand=""
         CurrentSongChangedMessageCommand="%function(self) 
             if not BMIIDX12Glob.FirstTweening then self:finishtweening() end
@@ -69,25 +118,47 @@
             local course = GAMESTATE:GetCurrentCourse()
             if course then
                 if not BMIIDX12Glob.FirstTweening then
-                    self:diffusealpha(0)
-                    self:addx(-24)
+                    self:diffusealpha(0.2)
+                    self:addx(-170)
                 end
                 
                 self:settext(course:GetDisplayFullTitle())
                 
                 if not BMIIDX12Glob.FirstTweening then
-                    self:decelerate(0.2)
+                    self:linear(0.3)
                     self:diffusealpha(1)
-                    self:addx(24)
+                    self:addx(170)
                 end
             else
                 self:settext('')
             end
-        end" />
+        end"/>
         
     <Layer
         File="ScreenSelectCourse banner frame"
-        OnCommand="zoom,0.62;zoomy,0.6;x,SCREEN_CENTER_X-58;y,SCREEN_CENTER_Y-38;"
+        OnCommand="zoom,0.62;x,259;y,SCREEN_CENTER_Y+(210-240);hibernate,0.2;diffusealpha,0;decelerate,0.2;diffusealpha,1"
+    />
+    
+    
+    
+    #the shiny animation whenever the course changes
+    
+    <Layer
+        File="flash.png"
+        Command="zoomy,2;x,SCREEN_CENTER_X-15;y,SCREEN_CENTER_Y-90;blend,add;diffusealpha,0;"
+        CurrentSongChangedMessageCommand="finishtweening;diffusealpha,0;zoomx,5;sleep,0.25;linear,0.1;diffusealpha,0.8;linear,0.5;zoomx,1;diffusealpha,0"
+    />
+    
+    <Layer
+        File="ScreenTitleMenu background/pop"
+        Command="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-90;diffusealpha,0"
+        CurrentSongChangedMessageCommand="finishtweening;diffusealpha,0;x,SCREEN_CENTER_X+(300-320);rotationz,0;zoomx,1;sleep,0.25;diffusealpha,1;linear,1;rotationz,540;x,SCREEN_CENTER_X+(400-320);zoomx,0.6;diffusealpha,0"
+    />
+    
+    <Layer
+        File="ScreenTitleMenu background/ring.png"
+        Command="x,SCREEN_CENTER_X-20;y,SCREEN_CENTER_Y-90;diffusealpha,0;blend,add"
+        CurrentSongChangedMessageCommand="finishtweening;diffusealpha,0;zoom,0;sleep,0.25;linear,0.1;diffusealpha,1;zoomy,0.4;zoomx,0.5;linear,0.7;zoomy,0.6;zoomx,0.7;diffusealpha,0"
     />
     
     
@@ -98,12 +169,12 @@
             self:animate(0)
             self:setstate(0)
             self:x(SCREEN_WIDTH-98+102-18)
-            self:y(SCREEN_CENTER_Y-220/2-self:GetHeight()/2 -15)
+            self:y(SCREEN_CENTER_Y-210/2-self:GetHeight()/2 -15)
             
-            self:addx(30)
-            self:sleep(0.5)
-            self:decelerate(0.2)
-            self:addx(-30)
+            self:zoomy(0)
+            self:sleep(0.2)
+            self:decelerate(0.5)
+            self:zoomy(1)
         end"
     />
     <Layer
@@ -112,14 +183,15 @@
         OnCommand="%function(self)
             self:animate(0)
             self:setstate(1)
+            self:vertalign('top')
             self:x(SCREEN_WIDTH-98+102-18)
-            self:y(SCREEN_CENTER_Y -15)
-            self:zoomtoheight(220)
+            self:y(SCREEN_CENTER_Y-210/2-self:GetHeight()/2 -15)
+            self:zoomtoheight(0)
             
-            self:addx(30)
-            self:sleep(0.5)
-            self:decelerate(0.2)
-            self:addx(-30)
+            self:sleep(0.2)
+            self:decelerate(0.5)
+            self:y(SCREEN_CENTER_Y-210/2 -15)
+            self:zoomtoheight(210)
         end"
     />
     <Layer
@@ -129,23 +201,26 @@
             self:animate(0)
             self:setstate(2)
             self:x(SCREEN_WIDTH-98+102-18)
-            self:y(SCREEN_CENTER_Y+220/2+self:GetHeight()/2 -15)
+            self:y(SCREEN_CENTER_Y-210/2-self:GetHeight()/2 -15)
+            self:zoomy(0)
             
-            self:addx(30)
-            self:sleep(0.5)
-            self:decelerate(0.2)
-            self:addx(-30)
+            self:sleep(0.2)
+            self:decelerate(0.5)
+            self:y(SCREEN_CENTER_Y+210/2+self:GetHeight()/2 -15)
+            self:zoomy(1)
         end"
     />
     <Layer
         Type="ActorFrame"
         Condition="FUCK_EXE"
-        OnCommand="x,SCREEN_WIDTH-98+102-18;y,SCREEN_CENTER_Y-15"
+        OnCommand="x,SCREEN_WIDTH-98+102-18-1;y,SCREEN_CENTER_Y-15"
         UpdateScrollThumbMessageCommand="queuecommand,UpdateThumb"
         CurrentSongChangedMessageCommand="%function(self)
             if not BMIIDX12Glob.FirstTweening then
                 BMIIDX12Glob.PrevCWI = CurWheelIndex()
-                BMIIDX12Glob.DirCompare = BMIIDX12Glob.MusicWheelList[CurWheelIndex()]:GetY()
+                if BMIIDX12Glob.MusicWheelList[BMIIDX12Glob.PrevCWI] then
+                    BMIIDX12Glob.DirCompare = BMIIDX12Glob.MusicWheelList[BMIIDX12Glob.PrevCWI]:GetY()
+                end
             end
         end"
         UpdateThumbCommand="%function(self)
@@ -173,13 +248,16 @@
             end
             
             if not BMIIDX12Glob.FirstTweening then
-                local NewDirCompare = BMIIDX12Glob.MusicWheelList[BMIIDX12Glob.PrevCWI or CurWheelIndex()]:GetY()
-                if BMIIDX12Glob.DirCompare and BMIIDX12Glob.DirCompare < NewDirCompare then
-                    BMIIDX12Glob.DirCompare = nil
-                    MESSAGEMAN:Broadcast('ScrollUp')
-                elseif BMIIDX12Glob.DirCompare and BMIIDX12Glob.DirCompare > NewDirCompare then
-                    BMIIDX12Glob.DirCompare = nil
-                    MESSAGEMAN:Broadcast('ScrollDown')
+                local ItemInd = BMIIDX12Glob.PrevCWI or CurWheelIndex()
+                if BMIIDX12Glob.MusicWheelList[ItemInd] then
+                    local NewDirCompare = BMIIDX12Glob.MusicWheelList[ItemInd]:GetY()
+                    if BMIIDX12Glob.DirCompare and BMIIDX12Glob.DirCompare < NewDirCompare then
+                        BMIIDX12Glob.DirCompare = nil
+                        MESSAGEMAN:Broadcast('ScrollUp')
+                    elseif BMIIDX12Glob.DirCompare and BMIIDX12Glob.DirCompare > NewDirCompare then
+                        BMIIDX12Glob.DirCompare = nil
+                        MESSAGEMAN:Broadcast('ScrollDown')
+                    end
                 end
             end
         end"
@@ -187,10 +265,11 @@
         <Layer
             File="ScrollBar thumb"
             OnCommand="%function(self)
-                self:addx(30)
-                self:sleep(0.5)
-                self:decelerate(0.2)
-                self:addx(-30)
+                self:blend('add')
+                self:diffuse(0,0,0,0)
+                self:sleep(0.4)
+                self:linear(0.2)
+                self:diffuse(1,1,1,1)
             end"
         />
         <Layer
@@ -198,22 +277,22 @@
             OnCommand="%function(self)
                 self:blend('add')
                 self:diffuseramp()
-                self:effectcolor1(1,1,1,0.3)
-                self:effectcolor2(1,1,1,0.7)
+                self:effectcolor1(1,1,1,0)
+                self:effectcolor2(1,1,1,0.3)
                 
-                self:addx(30)
-                self:sleep(0.5)
-                self:decelerate(0.2)
-                self:addx(-30)
+                self:diffuse(0,0,0,0)
+                self:sleep(0.4)
+                self:linear(0.2)
+                self:diffuse(1,1,1,1)
             end"
         />
     </children></Layer>
     <Layer
-        File="ScrollBar thumb"
+        File="ScreenSelectMusic menu left"
         OnCommand="%function(self)
-            self:zoomy(0.5)
+            self:blend('add')
             self:x(SCREEN_WIDTH-98+102-18)
-            self:y(SCREEN_CENTER_Y-220/2-self:GetHeight()/2+4 -15)
+            self:y(SCREEN_CENTER_Y-210/2-self:GetHeight()/2+5 -15)
             self:diffusealpha(0)
         end"
         ScrollUpMessageCommand="%function(self)
@@ -224,11 +303,11 @@
         end"
     />
     <Layer
-        File="ScrollBar thumb"
+        File="ScreenSelectMusic menu right"
         OnCommand="%function(self)
-            self:zoomy(0.5)
+            self:blend('add')
             self:x(SCREEN_WIDTH-98+102-18)
-            self:y(SCREEN_CENTER_Y+220/2+self:GetHeight()/2-4 -15)
+            self:y(SCREEN_CENTER_Y+210/2+self:GetHeight()/2-5 -15)
             self:diffusealpha(0)
         end"
         ScrollDownMessageCommand="%function(self)

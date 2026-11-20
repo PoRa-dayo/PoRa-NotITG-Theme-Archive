@@ -44,10 +44,20 @@
         File="happy.png"
         Command="x,SCREEN_WIDTH-1024/2;y,SCREEN_CENTER_Y+(300-240);linear,0.3;y,SCREEN_CENTER_Y+(263-240)"
     />
-
+    
     <Layer
         File="title.png"
         Command="y,SCREEN_CENTER_Y+(200-240);x,0;linear,0.3;x,310"
+    />
+
+    <Layer
+        File="title.png"
+        Command="y,SCREEN_CENTER_Y+(200-240);x,SCREEN_CENTER_X+(0-320);linear,0.3;x,SCREEN_WIDTH-(640-310)"
+    />
+    
+    <Layer
+        File="decide.png"
+        Command="y,SCREEN_CENTER_Y+(231-240);x,SCREEN_WIDTH-(640-480);linear,0.3/(SCREEN_CENTER_X/320);x,SCREEN_WIDTH-(640-320);linear,0.3-0.3/(SCREEN_CENTER_X/320);zoomtowidth,SCREEN_WIDTH*2"
     />
 
     <Layer
@@ -138,12 +148,12 @@
 
     <Layer
         File="../ring.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,0;blend,add;diffusealpha,0;sleep,0.3;linear,0.01;diffusealpha,.5;linear,1;zoom,6;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,0;blend,add;diffusealpha,0;sleep,0.3;linear,0.01;diffusealpha,.5;linear,1;zoomy,6;zoomx,7;diffusealpha,0"
     />
 
     <Layer
         File="../ring.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,0;blend,add;diffusealpha,0;sleep,0.3;linear,0.01;diffusealpha,1;linear,1;zoom,6;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,0;blend,add;diffusealpha,0;sleep,0.3;linear,0.01;diffusealpha,1;linear,1;zoomy,6;zoomx,7;diffusealpha,0"
     />
 
     <Layer
@@ -186,7 +196,7 @@
         Font="artist 16px"
         Text="Subtitle"
         Condition="not GAMESTATE:IsCourseMode()"
-        OnCommand="x,0;y,SCREEN_CENTER_Y+(158-240);queuecommand,Update;zoom,0.6;shadowlength,0;horizalign,right;maxwidth,380;x,0;linear,0.2;x,SCREEN_WIDTH-(640-585);sleep,2;linear,0.1;diffusealpha,0"
+        OnCommand="x,0;y,SCREEN_CENTER_Y+(158-240);queuecommand,Update;zoom,0.6;shadowlength,0;horizalign,right;maxwidth,380;x,0;sleep,0.2;linear,0.2;x,SCREEN_WIDTH-(640-585);sleep,1.8;linear,0.1;diffusealpha,0"
         OffCommand="accelerate,0.2;diffusealpha,0"
         UpdateCommand="%function(self)
             local song = GAMESTATE:GetCurrentSong()
@@ -199,7 +209,7 @@
         Font="songtitle"
         Text=""
         Condition="not GAMESTATE:IsCourseMode()"
-        OnCommand="blend,add;horizalign,right;maxwidth,380;shadowlength,0;x,SCREEN_WIDTH-(640-585);y,SCREEN_CENTER_Y+(180-240);diffusealpha,0;queuecommand,Update;sleep,0.2;diffusealpha,1;linear,0.6;x,SCREEN_WIDTH-(640-625);diffusealpha,0"
+        OnCommand="blend,add;horizalign,right;maxwidth,380;shadowlength,0;x,SCREEN_WIDTH-(640-585);y,SCREEN_CENTER_Y+(180-240);diffusealpha,0;queuecommand,Update;sleep,0.4;diffusealpha,1;linear,0.6;x,SCREEN_WIDTH-(640-625);diffusealpha,0"
         OffCommand="accelerate,0.2;diffusealpha,0"
         UpdateCommand="%function(self)
             local song = GAMESTATE:GetCurrentSong()

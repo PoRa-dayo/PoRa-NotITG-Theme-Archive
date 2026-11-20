@@ -6,12 +6,12 @@
     
     <Layer
         File="../../Graphics/here_abscence"
-        Command="x,118;y,SCREEN_CENTER_Y+(436-240);addx,-300;linear,0.25;addx,300"
+        Command="x,118;y,SCREEN_CENTER_Y+(436-240);addx,-300;linear,0.4;addx,300"
     />
 
     <Layer
         File="../../Graphics/here_abscence2"
-        Command="x,SCREEN_WIDTH-(640-523);y,SCREEN_CENTER_Y+(436-240);addx,300;linear,0.25;addx,-300"
+        Command="x,SCREEN_WIDTH-(640-523);y,SCREEN_CENTER_Y+(436-240);addx,300;linear,0.4;addx,-300"
     />
     
     <Layer
@@ -26,13 +26,13 @@
 
     <Layer
         File="../../Graphics/here1"
-        Command="x,118;y,SCREEN_CENTER_Y+(436-240);glowshift;effectcolor1,1,1,1,0;effectcolor2,1,1,.9,.1;effectperiod,1;addx,-300;linear,0.25;addx,300"
+        Command="x,118;y,SCREEN_CENTER_Y+(436-240);addx,-300;linear,0.4;addx,300;glow,1,1,1,0;linear,0.05;glow,.9,.9,0,.9;linear,0.05;glow,1,1,1,0;"
         Condition="GAMESTATE:IsHumanPlayer(0)"
     />
 
     <Layer
         File="../../Graphics/here2"
-        Command="x,SCREEN_WIDTH-(640-523);y,SCREEN_CENTER_Y+(436-240);glowshift;effectcolor1,1,1,1,0;effectcolor2,1,1,.9,.1;effectperiod,1;addx,300;linear,0.25;addx,-300"
+        Command="x,SCREEN_WIDTH-(640-523);y,SCREEN_CENTER_Y+(436-240);addx,300;linear,0.4;addx,-300;glow,1,1,1,0;linear,0.05;glow,.9,.9,0,.9;linear,0.05;glow,1,1,1,0;"
         Condition="GAMESTATE:IsHumanPlayer(1)"
     />
 
@@ -53,7 +53,7 @@
 
     <Layer
         File="../../Graphics/ScreenSelectMusic header/info.png"
-        Command="x,92;y,SCREEN_CENTER_Y+(60-240);zoomy,0;linear,0.2;zoomy,1"
+        Command="x,92;y,SCREEN_CENTER_Y+(60-240);zoomy,0;sleep,0.2;linear,0.2;zoomy,1;glow,1,1,1,0;linear,0.05;glow,.9,.9,0,.9;linear,0.05;glow,1,1,1,0;"
     />
 
     <Layer

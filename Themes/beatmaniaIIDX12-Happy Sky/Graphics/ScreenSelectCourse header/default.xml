@@ -20,23 +20,23 @@
     
     <Layer
         File="../here_abscence"
-        Command="x,118;y,SCREEN_CENTER_Y+(436-240);addx,-300;linear,0.25;addx,300"
+        Command="x,118;y,SCREEN_CENTER_Y+(436-240);addx,-300;linear,0.4;addx,300"
     />
 
     <Layer
         File="../here_abscence2"
-        Command="x,SCREEN_WIDTH-(640-523);y,SCREEN_CENTER_Y+(436-240);addx,300;linear,0.25;addx,-300"
+        Command="x,SCREEN_WIDTH-(640-523);y,SCREEN_CENTER_Y+(436-240);addx,300;linear,0.4;addx,-300"
     />
 
     <Layer
         File="../here1"
-        Command="x,SCREEN_CENTER_X+(118-320);y,SCREEN_CENTER_Y+(436-240);glowshift;effectcolor1,1,1,1,0;effectcolor2,1,1,.9,.1;effectperiod,1;addx,-300;linear,0.25;addx,300"
+        Command="x,118;y,SCREEN_CENTER_Y+(436-240);addx,-300;linear,0.4;addx,300;glow,1,1,1,0;linear,0.05;glow,.9,.9,0,.9;linear,0.05;glow,1,1,1,0;"
         Condition="GAMESTATE:IsHumanPlayer(0)"
     />
 
     <Layer
         File="../here2"
-        Command="x,SCREEN_CENTER_X+(523-320);y,SCREEN_CENTER_Y+(436-240);glowshift;effectcolor1,1,1,1,0;effectcolor2,1,1,.9,.1;effectperiod,1;addx,-300;linear,0.25;addx,300"
+        Command="x,SCREEN_WIDTH-(640-523);y,SCREEN_CENTER_Y+(436-240);addx,300;linear,0.4;addx,-300;glow,1,1,1,0;linear,0.05;glow,.9,.9,0,.9;linear,0.05;glow,1,1,1,0;"
         Condition="GAMESTATE:IsHumanPlayer(1)"
     />
 
@@ -52,12 +52,12 @@
 
     <Layer
         File="../clock/clock.png"
-        Command="x,SCREEN_CENTER_X+(632-320);y,SCREEN_CENTER_Y+(108-240);linear,0.3;rotationz,-90"
+        Command="x,SCREEN_WIDTH-(640-632);y,SCREEN_CENTER_Y+(108-240);linear,0.3;rotationz,-90"
     />
 
     <Layer
         File="../clock/circle.sprite"
-        OnCommand="blend,add;x,SCREEN_CENTER_X+(586-320);y,SCREEN_CENTER_Y+(63-240);diffusealpha,0;sleep,0.2;linear,0.1;diffusealpha,1"
+        OnCommand="blend,add;x,SCREEN_WIDTH-(640-586);y,SCREEN_CENTER_Y+(63-240);diffusealpha,0;sleep,0.2;linear,0.1;diffusealpha,1"
     />
 
     <Layer
@@ -76,32 +76,46 @@
 
     <Layer
         File="courseselect.png"
-        Command="x,SCREEN_CENTER_X+(140-320);y,SCREEN_CENTER_Y+(28-240);addx,-100;linear,0.2;addx,100"
+        Command="x,140;y,SCREEN_CENTER_Y+(28-240);addx,-100;linear,0.2;addx,100"
     />
 
     <Layer
         File="../ScreenSelectMusic header/info.png"
-        Command="x,SCREEN_CENTER_X+(92-320);y,SCREEN_CENTER_Y+(60-240);zoomy,0;sleep,0.2;linear,0.2;zoomy,1"
+        Command="x,92;y,SCREEN_CENTER_Y+(60-240);zoomy,0;sleep,0.2;linear,0.2;zoomy,1;glow,1,1,1,0;linear,0.05;glow,.9,.9,0,.9;linear,0.05;glow,1,1,1,0;"
     />
 
     <Layer
         File="../ScreenSelectMusic header/operation.png"
-        Command="x,SCREEN_CENTER_X+(420-320);y,SCREEN_CENTER_Y+(31-240);zoomy,0;sleep,0.4;linear,0.2;zoomy,1"
+        Command="x,SCREEN_WIDTH-(640-420);y,SCREEN_CENTER_Y+(31-240);zoomy,0;sleep,0.4;linear,0.2;zoomy,1"
     />
 
     <Layer
         File="../ScreenSelectMusic header/info1.png"
-        Command="diffusealpha,0;x,SCREEN_CENTER_X+(330-320);y,SCREEN_CENTER_Y+(240-240);sleep,0.5;linear,0.2;x,SCREEN_CENTER_X+(320-320);diffusealpha,1"
+        Command="diffusealpha,0;x,330;y,SCREEN_CENTER_Y;sleep,0.5;linear,0.2;x,320;diffusealpha,1"
     />
 
     <Layer
         File="../ScreenSelectMusic header/info2.png"
-        Command="diffusealpha,0;x,SCREEN_CENTER_X+(330-320);y,SCREEN_CENTER_Y+(240-240);sleep,0.65;linear,0.2;x,SCREEN_CENTER_X+(320-320);diffusealpha,1"
+        Command="diffusealpha,0;x,330;y,SCREEN_CENTER_Y;sleep,0.65;linear,0.2;x,320;diffusealpha,1"
     />
 
     <Layer
-        File="steel.png"
-        Command="x,SCREEN_CENTER_X+(320-320);y,SCREEN_CENTER_Y+(234-240)"
+        File="../ScreenSelectMusic header/steel.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(205-240);cropright,1;linear,0.5;cropright,0"
+    />
+    
+    <Layer
+        File="../ScreenSelectMusic header/steel_extend.png"
+        Command="%function(self) 
+            self:x(SCREEN_CENTER_X+320)
+            self:y(SCREEN_CENTER_Y+(205-240))
+            self:horizalign('left')
+            self:zoomx(64)
+            self:cropright(1)
+            self:sleep(0.5)
+            self:linear(0.5)
+            self:cropright(0)
+        end"
     />
 
 </children></ActorFrame>
