@@ -3,9 +3,5 @@
     <Layer
         File="grade"
     />
-    
-    <Layer
-        File="hibana"
-    />
 
 </children></ActorFrame>

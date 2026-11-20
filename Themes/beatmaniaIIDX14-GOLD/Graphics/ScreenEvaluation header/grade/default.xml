@@ -8,7 +8,7 @@
 
     <Layer
         File="a.png"
-        Command="vertalign,bottom;x,140;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
+        Command="vertalign,bottom;x,140+(SCREEN_CENTER_X-320)/1.2;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
         Condition="IsPlayerEnabled(1) and GetGrade(1) == Grade('A')"
     />
 
@@ -20,7 +20,7 @@
 
     <Layer
         File="b.png"
-        Command="vertalign,bottom;x,140;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
+        Command="vertalign,bottom;x,140+(SCREEN_CENTER_X-320)/1.2;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
         Condition="IsPlayerEnabled(1) and GetGrade(1) == Grade('B')"
     />
 
@@ -32,7 +32,7 @@
 
     <Layer
         File="c.png"
-        Command="vertalign,bottom;x,140;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
+        Command="vertalign,bottom;x,140+(SCREEN_CENTER_X-320)/1.2;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
         Condition="IsPlayerEnabled(1) and GetGrade(1) == Grade('C')"
     />
 
@@ -44,7 +44,7 @@
 
     <Layer
         File="d.png"
-        Command="vertalign,bottom;x,140;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
+        Command="vertalign,bottom;x,140+(SCREEN_CENTER_X-320)/1.2;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
         Condition="IsPlayerEnabled(1) and GetGrade(1) == Grade('D')"
     />
 
@@ -56,7 +56,7 @@
 
     <Layer
         File="e.png"
-        Command="vertalign,bottom;x,140;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
+        Command="vertalign,bottom;x,140+(SCREEN_CENTER_X-320)/1.2;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
         Condition="IsPlayerEnabled(1) and GetGrade(1) >= Grade('E')"
     />
 
@@ -68,31 +68,31 @@
 
     <Layer
         File="a.png"
-        Command="vertalign,bottom;x,140;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
+        Command="vertalign,bottom;x,140+(SCREEN_CENTER_X-320)/1.2;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
         Condition="IsPlayerEnabled(1) and GetGrade(1) <= Grade('AAA')"
     />
 
     <Layer
         File="aa.png"
-        Command="vertalign,bottom;x,140;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.3;linear,0.1;zoomy,1;diffusealpha,1"
+        Command="vertalign,bottom;x,140+(SCREEN_CENTER_X-320)/1.2;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.3;linear,0.1;zoomy,1;diffusealpha,1"
         Condition="IsPlayerEnabled(1) and GetGrade(1) <= Grade('AAA')"
     />
 
     <Layer
         File="aaa.png"
-        Command="vertalign,bottom;x,140;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.4;linear,0.1;zoomy,1;diffusealpha,1"
+        Command="vertalign,bottom;x,140+(SCREEN_CENTER_X-320)/1.2;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.4;linear,0.1;zoomy,1;diffusealpha,1"
         Condition="IsPlayerEnabled(1) and GetGrade(1) <= Grade('AAA')"
     />
 
     <Layer
         File="a.png"
-        Command="vertalign,bottom;x,140;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
+        Command="vertalign,bottom;x,140+(SCREEN_CENTER_X-320)/1.2;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.2;linear,0.1;zoomy,1;diffusealpha,1"
         Condition="IsPlayerEnabled(1) and GetGrade(1) == Grade('AA')"
     />
 
     <Layer
         File="aa.png"
-        Command="vertalign,bottom;x,140;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.3;linear,0.1;zoomy,1;diffusealpha,1"
+        Command="vertalign,bottom;x,140+(SCREEN_CENTER_X-320)/1.2;y,SCREEN_CENTER_Y+(176-240);zoomy,10;diffusealpha,0;sleep,2.3;linear,0.1;zoomy,1;diffusealpha,1"
         Condition="IsPlayerEnabled(1) and GetGrade(1) == Grade('AA')"
     />
 

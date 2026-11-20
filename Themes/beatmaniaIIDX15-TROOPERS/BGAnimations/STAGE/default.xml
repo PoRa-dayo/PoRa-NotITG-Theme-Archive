@@ -216,5 +216,14 @@
         File="course"
         Condition="PlayModeName() == 'Nonstop' or PlayModeName() == 'Oni' or PlayModeName() == 'Endless'"
     />
+    
+    
+    
+    <Layer
+        Text="@GAMESTATE:GetCurrentSong():GetDisplaySubTitle()"
+        Font="artist 16px"
+        Condition="GAMESTATE:GetCurrentSong()"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(165-240);maxwidth,300;zoom,0.6;shadowlength,0;horizalign,center;y,SCREEN_CENTER_Y+(155-240);addy,20;diffusealpha,0;linear,0.2;addy,-20;diffusealpha,1;sleep,2.2;linear,0;diffusealpha,0.2;linear,.4;zoom,.4;diffusealpha,0;y,SCREEN_CENTER_Y+(175-240)"
+    />
 
 </children></ActorFrame>

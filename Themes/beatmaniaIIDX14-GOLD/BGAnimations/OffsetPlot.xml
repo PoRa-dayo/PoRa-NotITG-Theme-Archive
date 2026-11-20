@@ -19,16 +19,16 @@
     -- SC Info refers to the SC Title, Diff, Percent, Judgments, and its background.
     -- Early and Late refers to the Early (-180ms)/Late (+180ms) markers.
 	
-    P1X = 137
+    P1X = 137+(SCREEN_CENTER_X-320)/2.4
     P1AddY = -162
-    P1Zoom = 0.75
+    P1Zoom = 0.75*(SCREEN_CENTER_X/320*0.95)
     SCHighlightAddHeightP1 = -13
     SCHighlightYP1 = -67
     SCScrollBarAddXP1 = 0
     
-    P2X = SCREEN_WIDTH-137
+    P2X = SCREEN_WIDTH-137-(SCREEN_CENTER_X-320)/2.4
     P2AddY = -162
-    P2Zoom = 0.75
+    P2Zoom = 0.75*(SCREEN_CENTER_X/320*0.95)
     SCHighlightAddHeightP2 = -13
     SCHighlightYP2 = -67
     SCScrollBarAddXP2 = 0
