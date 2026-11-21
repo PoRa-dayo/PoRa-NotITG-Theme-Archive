@@ -7,7 +7,20 @@
 
     <Layer
         File="BACKGROUND.PNG"
+        Condition="not GAMESTATE:IsCourseMode()"
         Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(240-240);zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;linear,1.3;y,SCREEN_CENTER_Y+(200-240)"
+    />
+    
+    <Layer
+        File="COURSE_BACKGROUND.PNG"
+        Condition="GAMESTATE:IsCourseMode()"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(240-240);zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;decelerate,2;y,SCREEN_CENTER_Y+(0-240)"
+    />
+    
+    <Layer
+        File="COURSE_EX"
+        Condition="GAMESTATE:IsCourseMode()"
+        Command="blend,add;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(100-240);zoomtowidth,SCREEN_WIDTH;diffusealpha,0;sleep,0.5;linear,0.3;diffusealpha,0.5;y,SCREEN_CENTER_Y+(110-240)"
     />
 
     <Layer
@@ -140,6 +153,74 @@
     <Layer
         File="mod"
     />
+    
+    
+    
+    <Layer
+        Type="BitmapText"
+        Font="artist 16px"
+        Text="Subtitle"
+        Condition="not GAMESTATE:IsCourseMode()"
+        OnCommand="x,0;y,SCREEN_CENTER_Y+(158-240);queuecommand,Update;zoom,0.6;shadowlength,0;horizalign,right;maxwidth,380;x,0;sleep,0.2;linear,0.2;x,SCREEN_WIDTH-(640-585);sleep,1.8;linear,0.1;diffusealpha,0"
+        OffCommand="accelerate,0.2;diffusealpha,0"
+        UpdateCommand="%function(self)
+            local song = GAMESTATE:GetCurrentSong()
+            if song then
+                self:settext(song:GetDisplaySubTitle())
+            end
+        end" />
+    <Layer
+        Type="BitmapText"
+        Font="songtitle"
+        Text=""
+        Condition="not GAMESTATE:IsCourseMode()"
+        OnCommand="shadowlength,0;horizalign,right;maxwidth,380;y,SCREEN_CENTER_Y+(180-240);x,0;queuecommand,Update;sleep,0.2;linear,0.2;x,SCREEN_WIDTH-(640-585);sleep,1.8;linear,0.1;diffusealpha,0"
+        OffCommand="accelerate,0.2;diffusealpha,0"
+        UpdateCommand="%function(self)
+            local song = GAMESTATE:GetCurrentSong()
+            if song then
+                self:settext(song:GetDisplayMainTitle())
+            end
+        end" />
+    <Layer
+        Type="BitmapText"
+        Font="songtitle"
+        Text=""
+        Condition="not GAMESTATE:IsCourseMode()"
+        OnCommand="blend,add;horizalign,right;maxwidth,380;shadowlength,0;x,SCREEN_WIDTH-(640-585);y,SCREEN_CENTER_Y+(180-240);diffusealpha,0;queuecommand,Update;sleep,0.4;diffusealpha,1;linear,0.6;x,SCREEN_WIDTH-(640-625);diffusealpha,0"
+        OffCommand="accelerate,0.2;diffusealpha,0"
+        UpdateCommand="%function(self)
+            local song = GAMESTATE:GetCurrentSong()
+            if song then
+                self:settext(song:GetDisplayMainTitle())
+            end
+        end" />
+    <Layer
+        Type="BitmapText"
+        Font="artist 16px"
+        Text="Artist"
+        Condition="not GAMESTATE:IsCourseMode()"
+        OnCommand="zoom,0.6;shadowlength,0;horizalign,right;maxwidth,380;x,0;y,SCREEN_CENTER_Y+(218-240);queuecommand,Update;sleep,0.2;linear,0.2;x,SCREEN_WIDTH-(640-585);sleep,1.8;linear,0.1;diffusealpha,0"
+        OffCommand="accelerate,0.2;diffusealpha,0"
+        UpdateCommand="%function(self)
+            local song = GAMESTATE:GetCurrentSong()
+            if song then
+                self:settext(song:GetDisplayArtist())
+            end
+        end" />
+        
+        
+    <Layer
+        File="HAPPY_SKY"
+        Condition="GAMESTATE:IsCourseMode()"
+        Command="shadowlength,0;horizalign,right;zoom,0.8;y,SCREEN_CENTER_Y+(180-240);x,0;sleep,0.2;linear,0.2;x,SCREEN_WIDTH-(640-585);sleep,1.8;linear,0.1;diffusealpha,0"
+    />
+    <Layer
+        File="HAPPY_SKY"
+        Condition="GAMESTATE:IsCourseMode()"
+        Command="blend,add;horizalign,right;zoom,0.8;shadowlength,0;x,SCREEN_WIDTH-(640-585);y,SCREEN_CENTER_Y+(180-240);diffusealpha,0;queuecommand,Update;sleep,0.4;diffusealpha,1;linear,0.6;x,SCREEN_WIDTH-(640-625);diffusealpha,0"
+    />
+    
 
     <Layer
         File="../white.png"
@@ -162,12 +243,12 @@
     />
 
     <Layer
-        File="BACKGROUND.PNG"
+        File="@GAMESTATE:IsCourseMode() and 'COURSE_BACKGROUND.png' or 'BACKGROUND.PNG'"
         Command="x,SCREEN_CENTER_X;blend,add;zoomtowidth,SCREEN_WIDTH*1.1;zoomtoheight,SCREEN_HEIGHT*1.1;y,SCREEN_CENTER_Y+(200-240);diffusealpha,0;sleep,2.1;linear,0.2;zoomtowidth,SCREEN_WIDTH*1.3;zoomtoheight,SCREEN_HEIGHT*1.3;diffusealpha,0.5;sleep,0.01;linear,0.1;diffusealpha,0"
     />
 
     <Layer
-        File="BACKGROUND.PNG"
+        File="@GAMESTATE:IsCourseMode() and 'COURSE_BACKGROUND.png' or 'BACKGROUND.PNG'"
         Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;sleep,2.3;linear,0.01;diffusealpha,1;linear,0.1;zoomy,0;zoomtowidth,SCREEN_WIDTH*1.5"
     />
 
@@ -190,32 +271,5 @@
         File="musicdecide.png"
         Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(235-240);diffusealpha,0;sleep,2.3;linear,0.1;diffusealpha,1;sleep,0.1;linear,0.5;diffusealpha,0"
     />
-    
-    <Layer
-        Type="BitmapText"
-        Font="artist 16px"
-        Text="Subtitle"
-        Condition="not GAMESTATE:IsCourseMode()"
-        OnCommand="x,0;y,SCREEN_CENTER_Y+(158-240);queuecommand,Update;zoom,0.6;shadowlength,0;horizalign,right;maxwidth,380;x,0;sleep,0.2;linear,0.2;x,SCREEN_WIDTH-(640-585);sleep,1.8;linear,0.1;diffusealpha,0"
-        OffCommand="accelerate,0.2;diffusealpha,0"
-        UpdateCommand="%function(self)
-            local song = GAMESTATE:GetCurrentSong()
-            if song then
-                self:settext(song:GetDisplaySubTitle())
-            end
-        end" />
-    <Layer
-        Type="BitmapText"
-        Font="songtitle"
-        Text=""
-        Condition="not GAMESTATE:IsCourseMode()"
-        OnCommand="blend,add;horizalign,right;maxwidth,380;shadowlength,0;x,SCREEN_WIDTH-(640-585);y,SCREEN_CENTER_Y+(180-240);diffusealpha,0;queuecommand,Update;sleep,0.4;diffusealpha,1;linear,0.6;x,SCREEN_WIDTH-(640-625);diffusealpha,0"
-        OffCommand="accelerate,0.2;diffusealpha,0"
-        UpdateCommand="%function(self)
-            local song = GAMESTATE:GetCurrentSong()
-            if song then
-                self:settext(song:GetDisplayMainTitle())
-            end
-        end" />
 
 </children></ActorFrame>

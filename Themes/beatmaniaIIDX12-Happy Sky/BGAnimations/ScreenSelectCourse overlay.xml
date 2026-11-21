@@ -136,7 +136,7 @@
         
     <Layer
         File="ScreenSelectCourse banner frame"
-        OnCommand="zoom,0.62;x,259;y,SCREEN_CENTER_Y+(210-240);hibernate,0.2;diffusealpha,0;decelerate,0.2;diffusealpha,1"
+        OnCommand="zoom,0.62;x,SCREEN_CENTER_X+(260-320);y,SCREEN_CENTER_Y+(209-240);hibernate,0.2;diffusealpha,0;decelerate,0.2;diffusealpha,1"
     />
     
     
@@ -168,8 +168,8 @@
         OnCommand="%function(self)
             self:animate(0)
             self:setstate(0)
-            self:x(SCREEN_WIDTH-98+102-18)
-            self:y(SCREEN_CENTER_Y-210/2-self:GetHeight()/2 -15)
+            self:x(SCREEN_WIDTH-98+102-25)
+            self:y(SCREEN_CENTER_Y-200/2-self:GetHeight()/2 -15)
             
             self:zoomy(0)
             self:sleep(0.2)
@@ -184,14 +184,14 @@
             self:animate(0)
             self:setstate(1)
             self:vertalign('top')
-            self:x(SCREEN_WIDTH-98+102-18)
-            self:y(SCREEN_CENTER_Y-210/2-self:GetHeight()/2 -15)
+            self:x(SCREEN_WIDTH-98+102-25)
+            self:y(SCREEN_CENTER_Y-200/2-self:GetHeight()/2 -15)
             self:zoomtoheight(0)
             
             self:sleep(0.2)
             self:decelerate(0.5)
-            self:y(SCREEN_CENTER_Y-210/2 -15)
-            self:zoomtoheight(210)
+            self:y(SCREEN_CENTER_Y-200/2 -15)
+            self:zoomtoheight(200)
         end"
     />
     <Layer
@@ -200,20 +200,20 @@
         OnCommand="%function(self)
             self:animate(0)
             self:setstate(2)
-            self:x(SCREEN_WIDTH-98+102-18)
-            self:y(SCREEN_CENTER_Y-210/2-self:GetHeight()/2 -15)
+            self:x(SCREEN_WIDTH-98+102-25)
+            self:y(SCREEN_CENTER_Y-200/2-self:GetHeight()/2 -15)
             self:zoomy(0)
             
             self:sleep(0.2)
             self:decelerate(0.5)
-            self:y(SCREEN_CENTER_Y+210/2+self:GetHeight()/2 -15)
+            self:y(SCREEN_CENTER_Y+200/2+self:GetHeight()/2 -15)
             self:zoomy(1)
         end"
     />
     <Layer
         Type="ActorFrame"
         Condition="FUCK_EXE"
-        OnCommand="x,SCREEN_WIDTH-98+102-18-1;y,SCREEN_CENTER_Y-15"
+        OnCommand="x,SCREEN_WIDTH-98+102-25-1;y,SCREEN_CENTER_Y-15"
         UpdateScrollThumbMessageCommand="queuecommand,UpdateThumb"
         CurrentSongChangedMessageCommand="%function(self)
             if not BMIIDX12Glob.FirstTweening then
@@ -291,8 +291,8 @@
         File="ScreenSelectMusic menu left"
         OnCommand="%function(self)
             self:blend('add')
-            self:x(SCREEN_WIDTH-98+102-18)
-            self:y(SCREEN_CENTER_Y-210/2-self:GetHeight()/2+5 -15)
+            self:x(SCREEN_WIDTH-98+102-25)
+            self:y(SCREEN_CENTER_Y-200/2-self:GetHeight()/2+5 -15)
             self:diffusealpha(0)
         end"
         ScrollUpMessageCommand="%function(self)
@@ -306,8 +306,8 @@
         File="ScreenSelectMusic menu right"
         OnCommand="%function(self)
             self:blend('add')
-            self:x(SCREEN_WIDTH-98+102-18)
-            self:y(SCREEN_CENTER_Y+210/2+self:GetHeight()/2-5 -15)
+            self:x(SCREEN_WIDTH-98+102-25)
+            self:y(SCREEN_CENTER_Y+200/2+self:GetHeight()/2-5 -15)
             self:diffusealpha(0)
         end"
         ScrollDownMessageCommand="%function(self)

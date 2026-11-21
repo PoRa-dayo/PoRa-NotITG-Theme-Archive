@@ -2,27 +2,27 @@
 <ActorFrame><children>
     <Layer
         File="world_end_blackbox.png"
-        Command="x,SCREEN_CENTER_X+(109-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.1;decelerate,0.3;zoomx,1;sleep,0.2;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X+(109-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.1;decelerate,0.3;zoomx,1;sleep,0;glow,1,1,1,1;linear,0.05;glow,1,1,1,0;sleep,0.15;diffusealpha,0"
     />
     
     <Layer
         File="world_end_blackbox.png"
-        Command="x,SCREEN_CENTER_X+(217-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.2;decelerate,0.3;zoomx,1;sleep,0.2;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X+(217-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.2;decelerate,0.3;zoomx,1;sleep,0;glow,1,1,1,1;linear,0.05;glow,1,1,1,0;sleep,0.15;diffusealpha,0"
     />
     
     <Layer
         File="world_end_blackbox.png"
-        Command="x,SCREEN_CENTER_X+1;y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.3;decelerate,0.3;zoomx,1;sleep,0.2;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X+1;y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.3;decelerate,0.3;zoomx,1;sleep,0;glow,1,1,1,1;linear,0.05;glow,1,1,1,0;sleep,0.15;diffusealpha,0"
     />
     
     <Layer
         File="world_end_blackbox.png"
-        Command="x,SCREEN_CENTER_X+(425-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.4;decelerate,0.3;zoomx,1;sleep,0.2;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X+(425-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.4;decelerate,0.3;zoomx,1;sleep,0;glow,1,1,1,1;linear,0.05;glow,1,1,1,0;sleep,0.15;diffusealpha,0"
     />
     
     <Layer
         File="world_end_blackbox.png"
-        Command="x,SCREEN_CENTER_X+(529-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.5;decelerate,0.3;zoomx,1;sleep,0.2;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X+(529-320);y,SCREEN_CENTER_Y+(340-240);diffusealpha,1;zoomx,0;sleep,0.5;decelerate,0.3;zoomx,1;sleep,0;glow,1,1,1,1;linear,0.05;glow,1,1,1,0;sleep,0.15;diffusealpha,0"
     />
 
 

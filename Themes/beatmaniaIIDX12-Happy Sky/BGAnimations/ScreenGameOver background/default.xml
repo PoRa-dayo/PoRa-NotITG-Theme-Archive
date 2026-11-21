@@ -7,12 +7,12 @@
 
     <Layer
         File="sky.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomy,0;linear,0.15;zoomy,1;sleep,2;linear,0.2;zoomy,0"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomy,0;linear,0.15;zoomtoheight,SCREEN_HEIGHT;sleep,2;linear,0.2;zoomy,0"
     />
 
     <Layer
         File="sky.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,0.3;linear,0.8;diffusealpha,0.2;linear,0.8;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;blend,add;diffusealpha,0;sleep,0.3;linear,0.8;diffusealpha,0.2;linear,0.8;diffusealpha,0"
     />
 
     <Layer

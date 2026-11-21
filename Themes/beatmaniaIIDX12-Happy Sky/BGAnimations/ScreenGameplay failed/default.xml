@@ -7,72 +7,77 @@
 
     <Layer
         File="../ScreenTitleMenu background/black.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;sleep,0.4;diffusealpha,1"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;sleep,0.4;diffusealpha,1"
     />
 
     <Layer
         File="flash.png"
-        Command="x,SCREEN_CENTER_X+(800-320);y,SCREEN_CENTER_Y+(160-240);zoomy,10;sleep,0.4;linear,2.3;x,SCREEN_CENTER_X+(-300-320)"
+        Command="x,SCREEN_WIDTH-(640-800);y,SCREEN_CENTER_Y+(160-240);zoomy,10;sleep,0.4;linear,2.3;x,-300"
     />
 
     <Layer
         File="flash.png"
-        Command="rotationz,180;x,SCREEN_CENTER_X+(-300-320);y,SCREEN_CENTER_Y+(330-240);zoomy,10;sleep,0.1;linear,2.3;x,SCREEN_CENTER_X+(800-320)"
+        Command="rotationz,180;x,-300;y,SCREEN_CENTER_Y+(330-240);zoomy,10;sleep,0.1;linear,2.3;x,SCREEN_WIDTH-(640-800)"
     />
 
     <Layer
         File="2.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(-100-240);diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(213-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(-100-240);zoomtowidth,SCREEN_WIDTH;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(213-240)"
     />
 
     <Layer
         File="1.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(-100-240);diffusealpha,1;linear,0.35;y,SCREEN_CENTER_Y+(173-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(-100-240);zoomtowidth,SCREEN_WIDTH;diffusealpha,1;linear,0.35;y,SCREEN_CENTER_Y+(173-240)"
     />
 
     <Layer
         File="in.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(-100-240);linear,0.3;y,SCREEN_CENTER_Y+(92-240);sleep,0.1;linear,0.01;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(-100-240);zoomtowidth,SCREEN_WIDTH;linear,0.3;y,SCREEN_CENTER_Y+(92-240);sleep,0.1;linear,0.01;diffusealpha,0"
     />
 
     <Layer
         File="in2.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(92-240);diffusealpha,0;sleep,0.4;diffusealpha,1"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(92-240);zoomtowidth,SCREEN_WIDTH;diffusealpha,0;sleep,0.4;diffusealpha,1"
     />
 
     <Layer
         File="in2.png"
-        Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(92-240);diffusealpha,0;sleep,0.4;linear,0.01;diffusealpha,1;linear,0.7;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X;blend,add;y,SCREEN_CENTER_Y+(92-240);zoomtowidth,SCREEN_WIDTH;diffusealpha,0;sleep,0.4;linear,0.01;diffusealpha,1;linear,0.7;diffusealpha,0"
     />
 
     <Layer
         File="2.png"
-        Command="x,SCREEN_CENTER_X;rotationz,180;y,SCREEN_CENTER_Y+(580-240);diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(267-240)"
+        Command="x,SCREEN_CENTER_X;rotationz,180;y,SCREEN_CENTER_Y+(580-240);zoomtowidth,SCREEN_WIDTH;diffusealpha,1;linear,0.4;y,SCREEN_CENTER_Y+(267-240)"
     />
 
     <Layer
         File="1.png"
-        Command="x,SCREEN_CENTER_X;rotationz,180;y,SCREEN_CENTER_Y+(580-240);diffusealpha,1;linear,0.35;y,SCREEN_CENTER_Y+(307-240)"
+        Command="x,SCREEN_CENTER_X;rotationz,180;y,SCREEN_CENTER_Y+(580-240);zoomtowidth,SCREEN_WIDTH;diffusealpha,1;linear,0.35;y,SCREEN_CENTER_Y+(307-240)"
     />
 
     <Layer
         File="in.png"
-        Command="x,SCREEN_CENTER_X;rotationz,180;y,SCREEN_CENTER_Y+(580-240);linear,0.3;y,SCREEN_CENTER_Y+(388-240);sleep,0.1;linear,0.01;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X;rotationz,180;y,SCREEN_CENTER_Y+(580-240);zoomtowidth,SCREEN_WIDTH;linear,0.3;y,SCREEN_CENTER_Y+(388-240);sleep,0.1;linear,0.01;diffusealpha,0"
     />
 
     <Layer
         File="in2.png"
-        Command="x,SCREEN_CENTER_X;rotationz,180;y,SCREEN_CENTER_Y+(388-240);diffusealpha,0;sleep,0.4;diffusealpha,1"
+        Command="x,SCREEN_CENTER_X;rotationz,180;y,SCREEN_CENTER_Y+(388-240);zoomtowidth,SCREEN_WIDTH;diffusealpha,0;sleep,0.4;diffusealpha,1"
     />
 
     <Layer
         File="in2.png"
-        Command="x,SCREEN_CENTER_X;blend,add;rotationz,180;y,SCREEN_CENTER_Y+(388-240);diffusealpha,0;sleep,0.4;linear,0.01;diffusealpha,1;linear,0.7;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X;blend,add;rotationz,180;y,SCREEN_CENTER_Y+(388-240);zoomtowidth,SCREEN_WIDTH;diffusealpha,0;sleep,0.4;linear,0.01;diffusealpha,1;linear,0.7;diffusealpha,0"
     />
 
     <Layer
         File="stagefailed.png"
         Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,1.2;diffusealpha,0;sleep,0.3;linear,0.2;zoom,1;diffusealpha,1"
+    />
+    
+    <Layer
+        File="../ScreenTitleMenu background/black.png"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,0;sleep,2.5;linear,0.3;diffusealpha,1"
     />
 
 </children></ActorFrame>

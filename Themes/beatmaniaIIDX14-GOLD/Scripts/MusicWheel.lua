@@ -314,7 +314,7 @@ function UpdateWheelTitles(FirstUpdate)
                         ItemBG:animate(0)
                         ItemBG:x((SCREEN_WIDTH-98) - math.max(SCREEN_CENTER_X+(540-320),SCREEN_WIDTH-114) + 75)
                         ItemBG:zoomto(90,28)
-                        ItemBG:diffuseleftedge(1,1,1,0)
+                        ItemBG:fadeleft(0.2)
                     else
                         ItemBG:hidden(0)
                     end
@@ -325,7 +325,7 @@ function UpdateWheelTitles(FirstUpdate)
                         ItemBG:x(index == CurWheelIndex() and -11 or 0)
                         ItemBG:zoom(1)
                     end
-                    ItemBG:diffuseleftedge(1,1,1,1)
+                    ItemBG:fadeleft(0)
                     ItemBG:Load(THEME:GetPath(EC_GRAPHICS,'MusicWheelItem','sort'))
                 end
             end

@@ -2,17 +2,17 @@
 
     <Layer
         File="END_BG.PNG"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT"
     />
 
     <Layer
         File="END_BG.PNG"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;linear,2;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;blend,add;linear,2;diffusealpha,0"
     />
 
     <Layer
         File="END_BG.PNG"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;blend,add;diffusealpha,0;sleep,1;diffusealpha,0.3;linear,2;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;blend,add;diffusealpha,0;sleep,1;diffusealpha,0.3;linear,2;diffusealpha,0"
     />
 
     <Layer
@@ -62,62 +62,67 @@
 
     <Layer
         File="bga.sprite"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;rotationz,30;zoom,1.7;diffusealpha,0;sleep,3;linear,2;diffusealpha,1;linear,60;rotationz,720;linear,60;rotationz,1440;linear,60;rotationz,2160"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;rotationz,30;zoomtowidth,SCREEN_WIDTH*1.7;zoomtoheight,SCREEN_HEIGHT*1.7;diffusealpha,0;sleep,3;linear,2;diffusealpha,1;linear,60;rotationz,720;linear,60;rotationz,1440;linear,60;rotationz,2160"
+    />
+    
+    <Layer
+        File="bga.sprite"
+        Command="rainbow;effectperiod,20;fadetop,0.5;fadebottom,0.5;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;rotationz,30;zoomtowidth,SCREEN_WIDTH*1.7;zoomtoheight,SCREEN_HEIGHT*1.7;diffusealpha,0;sleep,3;linear,2;linear,60;rotationz,720;linear,1;diffusealpha,0.5;rotationz,720+12;linear,39;rotationz,720+12*40;linear,1;diffusealpha,0;rotationz,720+12*41;linear,19;rotationz,1440"
     />
 
     <Layer
         File="staff1.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,3.5;linear,0.1;linear,15;y,SCREEN_CENTER_Y+(-640-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,3.5;linear,0.1;linear,20;y,SCREEN_CENTER_Y+(-640-240)"
     />
 
     <Layer
         File="staff2.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,12.5;linear,0.1;linear,15;y,SCREEN_CENTER_Y+(-640-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,15.5;linear,0.1;linear,20;y,SCREEN_CENTER_Y+(-640-240)"
     />
 
     <Layer
         File="staff3.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,21.5;linear,0.1;linear,15;y,SCREEN_CENTER_Y+(-640-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,27.5;linear,0.1;linear,20;y,SCREEN_CENTER_Y+(-640-240)"
     />
 
     <Layer
         File="staff4.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,30.3;linear,0.1;linear,15;y,SCREEN_CENTER_Y+(-640-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,39.3;linear,0.1;linear,20;y,SCREEN_CENTER_Y+(-640-240)"
     />
 
     <Layer
         File="staff5.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,39.3;linear,0.1;linear,15;y,SCREEN_CENTER_Y+(-640-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,51.3;linear,0.1;linear,20;y,SCREEN_CENTER_Y+(-640-240)"
     />
 
     <Layer
         File="staff6.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,48.5;linear,0.1;linear,15;y,SCREEN_CENTER_Y+(-640-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,63.5;linear,0.1;linear,20;y,SCREEN_CENTER_Y+(-640-240)"
     />
 
     <Layer
         File="staff7.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,57.3;linear,0.1;linear,15;y,SCREEN_CENTER_Y+(-640-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,75.3;linear,0.1;linear,20;y,SCREEN_CENTER_Y+(-640-240)"
     />
 
     <Layer
         File="staff8.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,66.5;linear,0.1;linear,15;y,SCREEN_CENTER_Y+(-640-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(960-240);sleep,87.5;linear,0.1;linear,20;y,SCREEN_CENTER_Y+(-640-240)"
     />
 
     <Layer
         File="staff9.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(1368-240);sleep,73.5;linear,0.1;linear,19;y,SCREEN_CENTER_Y+(-640-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(1368-240);sleep,97.5;linear,0.1;linear,24;y,SCREEN_CENTER_Y+(-640-240)"
     />
 
     <Layer
         File="thankyou.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(640-240);sleep,88.5;linear,0.1;linear,3.72;y,SCREEN_CENTER_Y+(240-240)"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+(640-240);sleep,115.5;linear,0.1;linear,5.5;y,SCREEN_CENTER_Y+(240-240)"
     />
 
     <Layer
         File="../white.png"
-        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;linear,0.3;diffusealpha,0"
+        Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;linear,0.3;diffusealpha,0"
     />
 
 </children></ActorFrame>
