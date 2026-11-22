@@ -474,6 +474,31 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 <img width="200" alt="NotITG-v4 9 1_PrPC7Q23sf" src="https://github.com/user-attachments/assets/64a9581c-4409-4f70-81fb-521420a75007" />
 
 
+# BEATMANIA IIDX 12: HAPPY SKY
+***NOTE: This theme requires you to have the theme OITGThemerFallback for it to work!!! And just like any other fallback theme, do not actually use OITGThemerFallback.***
+
+A very animated theme that takes you to the skies, based on the game Beatmania IIDX 12: Happy Sky, the 12th installment in Konami's Beatmania IIDX series.
+
+ARE YOU ^ HAPPY?
+
+## Credits:
+Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa.
+
+## Changelogs: (compared to the SM3.9 ver)
+-Similar changes to Beatmania IIDX 14: Gold theme.\
+-At the select number of players screen, selecting 1 Player no longer lets you pick between Single and Solo (it'll just pick Single).\
+-Added a few animations that were there in the original Beatmania IIDX 12 but omitted in the original theme.\
+-Changed the font used for song titles to DFGHSGothic-W9 like the original Beatmania IIDX 12 instead of Impact.\
+-Reorganize the UI for the song select screen to be more like the original Beatmania IIDX 12.\
+-Finished the UI for Battle mode.
+
+<img width="200" alt="NotITG-v4 9 1_zUukEMn1sv" src="https://github.com/user-attachments/assets/bc9710ec-411d-4440-bd62-fc3329fa042e" />
+<img width="200" alt="NotITG-v4 9 1_t2HHDs0Oqp" src="https://github.com/user-attachments/assets/4bf046a1-d3b1-4990-832e-d5833a4db205" />
+<img width="200" alt="NotITG-v4 9 1_t2HHDs0Oqp" src="https://github.com/user-attachments/assets/86bc2995-738e-4bde-b384-d41fd8cdabf5" />
+<img width="200" alt="NotITG-v4 9 1_mjELEHHl4j" src="https://github.com/user-attachments/assets/c57462f0-710b-4a4d-a1f7-02f849b7774a" />
+<img width="200" alt="NotITG-v4 9 1_YWLO5HO6X3" src="https://github.com/user-attachments/assets/d1a0fc7a-30a5-4723-b44c-f067aad7bb5d" />
+
+
 # POP * CANDY 2
 ***NOTE: This theme requires you to have the theme OITGThemerFallback for it to work!!! And just like any other fallback theme, do not actually use OITGThemerFallback.***
 
