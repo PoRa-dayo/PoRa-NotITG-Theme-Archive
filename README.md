@@ -496,7 +496,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 -The option to change the lifebar's color is now in Options > Theme Options, while the option to change the gameplay frame is now part of player options.
 
 <img width="200" alt="NotITG-v4 9 1_zUukEMn1sv" src="https://github.com/user-attachments/assets/bc9710ec-411d-4440-bd62-fc3329fa042e" />
-<img width="200" alt="NotITG-v4 9 1_t2HHDs0Oqp" src="https://github.com/user-attachments/assets/4bf046a1-d3b1-4990-832e-d5833a4db205" />
+<img width="200" alt="NotITG-v4 9 1_xF3RqPGp9Q" src="https://github.com/user-attachments/assets/210422c7-188c-4a63-8922-94f29346aade" />
 <img width="200" alt="NotITG-v4 9 1_t2HHDs0Oqp" src="https://github.com/user-attachments/assets/86bc2995-738e-4bde-b384-d41fd8cdabf5" />
 <img width="200" alt="NotITG-v4 9 1_mjELEHHl4j" src="https://github.com/user-attachments/assets/c57462f0-710b-4a4d-a1f7-02f849b7774a" />
 <img width="200" alt="NotITG-v4 9 1_YWLO5HO6X3" src="https://github.com/user-attachments/assets/d1a0fc7a-30a5-4723-b44c-f067aad7bb5d" />
