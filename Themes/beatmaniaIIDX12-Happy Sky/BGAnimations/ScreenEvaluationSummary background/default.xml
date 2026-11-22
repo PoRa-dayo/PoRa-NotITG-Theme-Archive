@@ -6,7 +6,7 @@
     />
 
     <Layer
-        File="red.png"
+        File="red"
         OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH;zoomtoheight,SCREEN_HEIGHT;diffusealpha,1;texcoordvelocity,0.16,0"
         Condition="GetBestGrade() > Grade('B')"
     />
