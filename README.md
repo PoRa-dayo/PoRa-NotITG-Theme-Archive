@@ -489,8 +489,11 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 -At the select number of players screen, selecting 1 Player no longer lets you pick between Single and Solo (it'll just pick Single).\
 -Added a few animations that were there in the original Beatmania IIDX 12 but omitted in the original theme.\
 -Changed the font used for song titles to DFGHSGothic-W9 like the original Beatmania IIDX 12 instead of Impact.\
+-Changed the font used for the timer to that used in the original Beatmania IIDX 12.\
 -Reorganize the UI for the song select screen to be more like the original Beatmania IIDX 12.\
--Finished the UI for Battle mode.
+-Slightly changed the background of the song select screen for Dance mode.\
+-Finished the UI for Battle mode.\
+-The option to change the lifebar's color is now in Options > Theme Options, while the option to change the gameplay frame is now part of player options.
 
 <img width="200" alt="NotITG-v4 9 1_zUukEMn1sv" src="https://github.com/user-attachments/assets/bc9710ec-411d-4440-bd62-fc3329fa042e" />
 <img width="200" alt="NotITG-v4 9 1_t2HHDs0Oqp" src="https://github.com/user-attachments/assets/4bf046a1-d3b1-4990-832e-d5833a4db205" />
