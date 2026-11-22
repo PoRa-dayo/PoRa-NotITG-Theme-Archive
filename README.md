@@ -486,6 +486,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 
 ## Changelogs: (compared to the SM3.9 ver)
 -Similar changes to Beatmania IIDX 14: Gold theme.\
+-Separated the intro animation and title screen loop animation into two different screens.\
 -At the select number of players screen, selecting 1 Player no longer lets you pick between Single and Solo (it'll just pick Single).\
 -Added a few animations that were there in the original Beatmania IIDX 12 but omitted in the original theme.\
 -Changed the font used for song titles to DFGHSGothic-W9 like the original Beatmania IIDX 12 instead of Impact.\
