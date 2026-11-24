@@ -30,58 +30,62 @@
     />
     
     <Layer
-        File="../ScreenTitleMenu background/arrow.png"
+        File="arrow.png"
         Command="blend,add;diffusealpha,0;sleep,11.4;queuecommand,Action"
         ActionCommand="x,SCREEN_CENTER_X+(480-320);y,SCREEN_CENTER_Y+(310-240);diffusealpha,1;linear,0.3;y,SCREEN_CENTER_Y+(150-240);linear,1;y,SCREEN_CENTER_Y+(50-240);linear,0.2;y,SCREEN_CENTER_Y+(-170-240);sleep,8.7-1.5;queuecommand,Action"
     />
+    
+    
 
     <Layer
-        File="../ScreenTitleMenu background/text/h.png"
+        File="text/h.png"
         Command="diffusealpha,0;blend,add;sleep,11.5;queuecommand,Action"
         ActionCommand="diffusealpha,0;x,SCREEN_CENTER_X+(515-320);y,SCREEN_CENTER_Y+(120-240);linear,0.3;diffusealpha,1;y,SCREEN_CENTER_Y+(110-240);sleep,0.85;linear,0.2;y,SCREEN_CENTER_Y+(100-240);diffusealpha,0;sleep,8.7-1.35;queuecommand,Action"
     />
 
     <Layer
-        File="../ScreenTitleMenu background/text/a.png"
+        File="text/a.png"
         Command="diffusealpha,0;blend,add;sleep,11.55;queuecommand,Action"
         ActionCommand="diffusealpha,0;x,SCREEN_CENTER_X+(531-320);y,SCREEN_CENTER_Y+(120-240);linear,0.3;diffusealpha,1;y,SCREEN_CENTER_Y+(110-240);sleep,0.8;linear,0.2;y,SCREEN_CENTER_Y+(100-240);diffusealpha,0;sleep,8.7-1.3;queuecommand,Action"
     />
 
     <Layer
-        File="../ScreenTitleMenu background/text/p.png"
+        File="text/p.png"
         Command="diffusealpha,0;blend,add;sleep,11.6;queuecommand,Action"
         ActionCommand="diffusealpha,0;x,SCREEN_CENTER_X+(546-320);y,SCREEN_CENTER_Y+(120-240);linear,0.3;diffusealpha,1;y,SCREEN_CENTER_Y+(110-240);sleep,0.75;linear,0.2;y,SCREEN_CENTER_Y+(100-240);diffusealpha,0;sleep,8.7-1.25;queuecommand,Action"
     />
 
     <Layer
-        File="../ScreenTitleMenu background/text/p.png"
+        File="text/p.png"
         Command="diffusealpha,0;blend,add;sleep,11.65;queuecommand,Action"
         ActionCommand="diffusealpha,0;x,SCREEN_CENTER_X+(561-320);y,SCREEN_CENTER_Y+(120-240);linear,0.3;diffusealpha,1;y,SCREEN_CENTER_Y+(110-240);sleep,0.7;linear,0.2;y,SCREEN_CENTER_Y+(100-240);diffusealpha,0;sleep,8.7-1.2;queuecommand,Action"
     />
 
     <Layer
-        File="../ScreenTitleMenu background/text/y.png"
+        File="text/y.png"
         Command="diffusealpha,0;blend,add;sleep,11.7;queuecommand,Action"
         ActionCommand="diffusealpha,0;x,SCREEN_CENTER_X+(577-320);y,SCREEN_CENTER_Y+(120-240);linear,0.3;diffusealpha,1;y,SCREEN_CENTER_Y+(110-240);sleep,0.65;linear,0.2;y,SCREEN_CENTER_Y+(100-240);diffusealpha,0;sleep,8.7-1.15;queuecommand,Action"
     />
 
     <Layer
-        File="../ScreenTitleMenu background/text/!.png"
+        File="text/!.png"
         Command="diffusealpha,0;blend,add;sleep,11.75;queuecommand,Action"
         ActionCommand="diffusealpha,0;rotationz,0;x,SCREEN_CENTER_X+(592-320);y,SCREEN_CENTER_Y+(120-240);linear,0.3;diffusealpha,1;y,SCREEN_CENTER_Y+(110-240);sleep,0.1;linear,0.3;rotationz,360;sleep,0.2;linear,0.2;y,SCREEN_CENTER_Y+(100-240);diffusealpha,0;sleep,8.7-1.1;queuecommand,Action"
     />
     
     <Layer
-        File="../ScreenTitleMenu background/text/text1.png"
+        File="text/text1.png"
         Command="diffusealpha,0;blend,add;sleep,11.4;queuecommand,Action"
         ActionCommand="diffusealpha,0;x,SCREEN_CENTER_X+(555-320);y,SCREEN_CENTER_Y+(113-240);linear,0.3;diffusealpha,1;y,SCREEN_CENTER_Y+(123-240);sleep,0.9;linear,0.2;y,SCREEN_CENTER_Y+(133-240);diffusealpha,0;sleep,8.7-1.4;queuecommand,Action"
     />
     
     <Layer
-        File="../ScreenTitleMenu background/text/4 2x1.png"
+        File="text/4 2x1.png"
         Command="diffusealpha,0;blend,add;sleep,11.8;queuecommand,Action"
         ActionCommand="diffusealpha,0;x,SCREEN_CENTER_X+(605-320);y,SCREEN_CENTER_Y+(125-240);linear,0.3;diffusealpha,1;y,SCREEN_CENTER_Y+(115-240);sleep,0.55;linear,0.2;y,SCREEN_CENTER_Y+(100-240);diffusealpha,0;sleep,8.7-1.05;queuecommand,Action"
     />
+    
+    
 
     <Layer
         File="logo.png"
@@ -139,7 +143,18 @@
 
     <Layer
         File="text/!1.png"
-        Command="diffusealpha,0;sleep,8.45-7.65;diffusealpha,0;x,SCREEN_CENTER_X+(104-320);y,SCREEN_CENTER_Y+(310-240);linear,0.3;diffusealpha,0.8;x,SCREEN_CENTER_X+(104-320);y,SCREEN_CENTER_Y+(300-240);sleep,0.1;linear,0.3;rotationz,360"
+        Command="diffusealpha,0;sleep,8.45-7.65;diffusealpha,0;x,SCREEN_CENTER_X+(104-320);y,SCREEN_CENTER_Y+(310-240);linear,0.3;diffusealpha,0.8;x,SCREEN_CENTER_X+(104-320);y,SCREEN_CENTER_Y+(300-240);sleep,0.1;queuecommand,Action"
+        ActionCommand="rotationz,0;linear,0.3;rotationz,360;sleep,5-0.3;queuecommand,Action"
+    />
+    
+    <Layer
+        File="text/kanji.png"
+        Command="diffusealpha,0;sleep,8.55-7.65;diffusealpha,0;x,SCREEN_CENTER_X+(130-320);y,SCREEN_CENTER_Y+(303-240);linear,0.3;diffusealpha,0.8"
+    />
+    
+    <Layer
+        File="text/kanji2.png"
+        Command="diffusealpha,0;sleep,8.65-7.65;diffusealpha,0;x,SCREEN_CENTER_X+(143-320);y,SCREEN_CENTER_Y+(303-240);linear,0.3;diffusealpha,0.8"
     />
 
     <Layer
@@ -213,7 +228,7 @@
 
     <Layer
         File="text/version.png"
-        Command="x,SCREEN_CENTER_X+(0-320);y,SCREEN_CENTER_Y+(344-240);diffusealpha,0;sleep,8.4-7.65;linear,0.4;diffusealpha,0.8;x,SCREEN_CENTER_X+(570-320);linear,0.5;rotationz,360"
+        Command="x,SCREEN_CENTER_X+(0-320);y,SCREEN_CENTER_Y+(344-240);diffusealpha,0;sleep,8.4-7.65;linear,0.4;diffusealpha,0.5;x,SCREEN_CENTER_X+(570-320);linear,0.5;rotationz,360"
     />
 
     <Layer
