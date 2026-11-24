@@ -479,7 +479,7 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 
 A very animated theme that takes you to the skies, based on the game Beatmania IIDX 12: Happy Sky, the 12th installment in Konami's Beatmania IIDX series.
 
-ARE YOU ^ HAPPY?
+Just Got Splash Beats! ARE YOU ^ HAPPY?
 
 ## Credits:
 Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa.
@@ -496,7 +496,8 @@ Original theme by DJ.Tony (SM3.9). Ported and optimized for NotITG 4.9.1 by PoRa
 -Finished the UI for Battle mode.\
 -The option to change the lifebar's color is now in Options > Theme Options, while the option to change the gameplay frame is now part of player options.
 
-<img width="200" alt="NotITG-v4 9 1_zUukEMn1sv" src="https://github.com/user-attachments/assets/bc9710ec-411d-4440-bd62-fc3329fa042e" />
+
+<img width="200" alt="NotITG-v4 9 1_2jfXgO3Vyq" src="https://github.com/user-attachments/assets/ba173ab8-edd5-4303-8741-e51641219d17" />
 <img width="200" alt="NotITG-v4 9 1_xF3RqPGp9Q" src="https://github.com/user-attachments/assets/210422c7-188c-4a63-8922-94f29346aade" />
 <img width="200" alt="NotITG-v4 9 1_t2HHDs0Oqp" src="https://github.com/user-attachments/assets/86bc2995-738e-4bde-b384-d41fd8cdabf5" />
 <img width="200" alt="NotITG-v4 9 1_mjELEHHl4j" src="https://github.com/user-attachments/assets/c57462f0-710b-4a4d-a1f7-02f849b7774a" />
