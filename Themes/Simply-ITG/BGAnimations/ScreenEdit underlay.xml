@@ -1,19 +1,32 @@
 <ActorFrame>
 	<children>
-		<BitmapText
+        <BitmapText
 			Text="EDITOR"
-			Font="_eurostile blue glow"
-			InitCommand="ShadowLength,4;horizalign,left;x,SCREEN_LEFT+40;y,SCREEN_TOP+40;DiffuseAlpha,0.7"
+			File="_eurostile white glow"
+			InitCommand="%function(self) self:diffuse(ColorRGB(1)); self:shadowlength(4); self:horizalign('left') self:x(SCREEN_LEFT+40) self:y(SCREEN_TOP+40) self:diffusealpha(0.7) end"
 			OnCommand=""
 			OffCommand=""
 		/>
-		<BitmapText 
-			Font="_eurostile blue glow"
+			<BitmapText
+			Text="EDITOR"
+			File="_eurostile normal"
+			InitCommand="%function(self) self:shadowlength(4); self:horizalign('left') self:x(SCREEN_LEFT+40) self:y(SCREEN_TOP+40) self:diffusealpha(0.7) end"
+			OnCommand=""
+			OffCommand=""
+		/>
+        <BitmapText
+			File="_eurostile white glow"
+			OnCommand="DiffuseAlpha,0.8;maxwidth,184;x,SCREEN_LEFT+105;y,SCREEN_CENTER_Y-80;PlayCommand,Refresh"
+			RefreshCommand="%function(self) self:diffuse(ColorRGB(1)); self:settext(GetEditStepsText()) self:sleep(0.5); self:queuecommand('Refresh') end" 
+		/>
+        <BitmapText
+			File="_eurostile normal"
 			OnCommand="DiffuseAlpha,0.8;maxwidth,184;x,SCREEN_LEFT+100;y,SCREEN_CENTER_Y-80;PlayCommand,Refresh"
 			RefreshCommand="%function(self) self:settext(GetEditStepsText()) self:sleep(0.5); self:queuecommand('Refresh') end" 
 		/>
-		<FadingBanner 
-			OnCommand="%function(self) self:LoadFromSong(GAMESTATE:GetCurrentSong()); self:x(SCREEN_LEFT+100); self:y(SCREEN_CENTER_Y-40); self:zoom(0.30); end" 
+		<Layer
+            Type="Sprite"
+			OnCommand="%function(self) self:hidden(1) local BNpath = GAMESTATE:GetCurrentSong():GetBannerPath() if BNpath then self:hidden(0) self:LoadBanner(GAMESTATE:GetCurrentSong():GetBannerPath()); self:x(SCREEN_LEFT+100); self:y(SCREEN_CENTER_Y-40); local HeightRatio = 94.2/self:GetHeight() local WidthRatio = 125.4/self:GetWidth() self:zoom(math.min(HeightRatio,WidthRatio)) end end" 
 		/>
 		<BitmapText
 			Text="Press F1::  for a list::  of commands::::Press ESC::  button for the::  Edit Menu::::Press ENTER::  button for the::  Area Menu"

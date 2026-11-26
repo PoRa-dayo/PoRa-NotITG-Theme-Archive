@@ -2,7 +2,14 @@
 	<children>
 		<BitmapText
 			Text="EDIT MANAGER"
-			File="_eurostile blue glow"
+			File="_eurostile white glow"
+			InitCommand="%function(self) self:diffuse(ColorRGB(1)); self:shadowlength(4); self:x(self:GetWidth()/2) self:skewx(-0.16) end"
+			OnCommand=""
+			OffCommand=""
+		/>
+			<BitmapText
+			Text="EDIT MANAGER"
+			File="_eurostile normal"
 			InitCommand="%function(self) self:shadowlength(4); self:x(self:GetWidth()/2) self:skewx(-0.16) end"
 			OnCommand=""
 			OffCommand=""

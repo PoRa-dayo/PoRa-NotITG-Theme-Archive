@@ -1,0 +1,3 @@
+[Sprite]
+Texture=ScreenSelectMusicBannerMaskNormal
+InitCommand=%function(self) if SCREEN_WIDTH>640 then self:Load(THEME:GetPath(EC_GRAPHICS,'','ScreenSelectMusicBannerMaskWide')) end end

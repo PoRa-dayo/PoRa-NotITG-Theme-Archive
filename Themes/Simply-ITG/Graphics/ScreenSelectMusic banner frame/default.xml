@@ -2,8 +2,8 @@
 	<children>
 		<ActorFrame 
 			FOV="58"
-			OnCommand="x,-10;y,2;zoomy,0.985;rotationy,-20;addx,450;decelerate,0.75;addx,-450"
-			OffCommand="accelerate,0.75;addx,450" 
+			OnCommand="x,-10;y,2;zoomy,0.985;rotationy,-20;addx,450;decelerate,0.77;addx,-450"
+			OffCommand="accelerate,0.75*math.max(1,SCREEN_WIDTH/640/1.1);addx,450+(SCREEN_WIDTH-640)" 
 		>
 			<children>
 				<AutoActor 
@@ -11,9 +11,20 @@
 					OnCommand="x,-200;horizalign,left;zoomx,1"
 					 
 				/>
+                <AutoActor 
+					File="right frame middle"
+                    Condition="SCREEN_WIDTH<=640"
+					OnCommand="x,-200+158;horizalign,left;zoomx,40"
+				/>
 				<AutoActor 
 					File="right frame middle" 
-					OnCommand="x,-200+158;horizalign,left;zoomx,40"
+                    Condition="SCREEN_WIDTH>640"
+					OnCommand="x,-200+158;horizalign,left;zoomtowidth,6.5*40"
+				/>
+                <AutoActor 
+                    File="right frame right" 
+                    Condition="SCREEN_WIDTH>640"
+                    OnCommand="x,-200+158+6.5*40;horizalign,left" 
 				/>
 			</children>
 		</ActorFrame>
@@ -41,8 +52,8 @@
 		</ActorFrame>
 		<AutoActor 
 			File="left frame"
-			OnCommand="x,-380;y,1;addx,-150;decelerate,0.5;addx,150"
-			OffCommand="sleep,0.2;accelerate,0.6;addx,-150"
+			OnCommand="x,-380;y,1;addx,-150-(SCREEN_WIDTH-640);decelerate,0.5;addx,150+(SCREEN_WIDTH-640)"
+			OffCommand="sleep,0.2;accelerate,0.6;addx,-150-(SCREEN_WIDTH-640)"
 		/>
 	</children>
 </ActorFrame>

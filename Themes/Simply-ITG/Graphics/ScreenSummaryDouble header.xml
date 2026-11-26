@@ -2,8 +2,14 @@
 	<children>
 		<BitmapText
 			Text="DOUBLE SCORE SUMMARY"
-			File="_eurostile blue glow"
+			File="_eurostile white glow"
+			InitCommand="%function(self) self:diffuse(ColorRGB(1)); self:shadowlength(4); self:x(self:GetWidth()/2) self:skewx(-0.16) end"
+		/>
+			<BitmapText
+			Text="DOUBLE SCORE SUMMARY"
+			File="_eurostile normal"
 			InitCommand="%function(self) self:shadowlength(4); self:x(self:GetWidth()/2) self:skewx(-0.16) end"
 		/>
 	</children>
 </ActorFrame>
+
