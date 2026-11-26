@@ -1,7 +1,7 @@
 <ActorFrame> <children>
     <Layer 
         File="../Graphics/ScreenSelectMusic options glow"
-        OnCommand="animate,0;x,SCREEN_CENTER_X;y,240;hidden,1"
+        OnCommand="animate,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;hidden,1"
         SongChosenMessageCommand="stoptweening;queuecommand,B"
         BCommand="@'hidden,0;'..THEME:GetMetric('ScreenSelectMusic','OptionsMessageOnCommand')"
         EnterModsMenuMessageCommand="setstate,1"
