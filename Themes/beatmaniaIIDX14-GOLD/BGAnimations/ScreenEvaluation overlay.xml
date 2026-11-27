@@ -109,7 +109,8 @@ end"> <children>
     <!-- New Record -->
     <Layer File="ScreenEvaluation MachineRecord 01" Condition="GAMESTATE:IsHumanPlayer(PLAYER_1) and PlayModeName() ~= 'Endless'" OnCommand="%function(self)
         self:hidden(1)
-        self:x(140)
+        self:zoomx(SCREEN_CENTER_X/320)
+        self:x(140+(SCREEN_CENTER_X-320)/2.4)
         self:y(SCREEN_CENTER_Y+(114-240))
         self:draworder(40)
         self:shadowlength(0)
@@ -128,7 +129,8 @@ end"> <children>
     
     <Layer File="ScreenEvaluation MachineRecord 01" Condition="GAMESTATE:IsHumanPlayer(PLAYER_2) and PlayModeName() ~= 'Endless'" OnCommand="%function(self)
         self:hidden(1)
-        self:x(SCREEN_WIDTH-(640-500))
+        self:zoomx(SCREEN_CENTER_X/320)
+        self:x(SCREEN_WIDTH-(640-500)-(SCREEN_CENTER_X-320)/2.4)
         self:y(SCREEN_CENTER_Y+(114-240))
         self:draworder(40)
         self:shadowlength(0)
