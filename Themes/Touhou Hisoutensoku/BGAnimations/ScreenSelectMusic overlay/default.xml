@@ -145,6 +145,7 @@
     />
     
     
+    
     <Layer
        File="../MusicWheel/ScenarioSelect"
        InitCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+8"
@@ -165,7 +166,7 @@
     <Layer
        File="../MusicWheel/chr_profile1"
        Condition="PROFILEMAN:IsPersistentProfile(PLAYER_1)"
-       InitCommand="x,SCREEN_LEFT+110;y,SCREEN_BOTTOM-65"
+       InitCommand="x,SCREEN_CENTER_X+(110-320);y,SCREEN_BOTTOM-65"
     />
     
     <Layer
@@ -173,7 +174,7 @@
 		Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_1)"
         Condition="PROFILEMAN:IsPersistentProfile(PLAYER_1)"
 		OnCommand="%function(self)
-            self:x(SCREEN_LEFT+100)
+            self:x(SCREEN_CENTER_X+(100-320))
             self:y(SCREEN_BOTTOM-63)
             self:zoom(0.4)
             self:shadowlength(1)
@@ -185,7 +186,7 @@
     <Layer
        File="../MusicWheel/chr_profile2"
        Condition="PROFILEMAN:IsPersistentProfile(PLAYER_2)"
-       InitCommand="x,SCREEN_LEFT+110;y,SCREEN_BOTTOM-40"
+       InitCommand="x,SCREEN_CENTER_X+(110-320);y,SCREEN_BOTTOM-40"
     />
     
     <Layer
@@ -193,7 +194,7 @@
 		Text="@GAMESTATE:GetPlayerDisplayName(PLAYER_2)"
         Condition="PROFILEMAN:IsPersistentProfile(PLAYER_2)"
 		OnCommand="%function(self)
-            self:x(SCREEN_LEFT+100)
+            self:x(SCREEN_CENTER_X+(100-320))
             self:y(SCREEN_BOTTOM-38)
             self:zoom(0.4)
             self:shadowlength(1)
